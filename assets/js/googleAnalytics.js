@@ -11,7 +11,7 @@
     m.parentNode.insertBefore(a, m)
 })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-// xx是统计ID
+// UA-68980203-1 是统计ID
 ga('create', 'UA-68980203-1', 'auto');
 ga('send', 'pageview');
 
