@@ -2,10 +2,9 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
+  //border-top: 5px solid $grey-color-dark;  // Bob delete
   border-bottom: 1px solid $grey-color-light;
   min-height: 56px;
-
   // Positioning context for the mobile navigation icon
   position: relative;
 }
@@ -16,7 +15,6 @@
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
-
   &,
   &:visited {
     color: $grey-color-dark;
