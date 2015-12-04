@@ -1,5 +1,3 @@
-stepbyme.iml
-/.idea/
-/.sass-cache
-/_site
+_site
 
+/.idea
