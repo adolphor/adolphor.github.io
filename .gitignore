@@ -1,7 +1,5 @@
-#_site
-#.sass-cache/
-
-.idea/
 stepbyme.iml
-pom.xml
+/.idea/
+/.sass-cache
+/_site
 
