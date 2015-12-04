@@ -5,7 +5,7 @@
 
 * 博文贴片展示
 
-  ![贴片功能]({{site.url}}/assets/images/other/feathers01.jpg "贴片功能")
+  ![贴片功能](https://raw.githubusercontent.com/NorthFacing/stepByMe.com/gh-pages/assets/images/other/feathers01.jpg "贴片功能")
 
 * 搜索
 
