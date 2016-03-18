@@ -6,7 +6,7 @@ name: 四百米
 description: <p>念念不忘，必有回响。</p><p>不忘初心，方得始终。</p>
 
 # url is currently only used only for the RSS feed in feed.xml
-url: http://stepbyme.com
+url: http://northfacing.github.io
 
 # baseurl will often be '', but for a project page on gh-pages, it needs to
 # be the project name.

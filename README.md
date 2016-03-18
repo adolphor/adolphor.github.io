@@ -24,3 +24,5 @@ the latest changes. Pull requests are encouraged and accepted!
 
 # 域名
 添加一个CNAME文件，将域名写进去即可。
+
+https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/
