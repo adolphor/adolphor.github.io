@@ -1,19 +1,35 @@
-# Site settings
-title: 四百米
-email: 0haizhu0@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://stepByMe.com" # the base hostname & protocol for your site
-Email: 0haizhu0@gmail.com
-github_username:  NorthFacing
+# Jekyll configuration
 
-# sass config
-sass:
-  sass_dir: assets/css/_sass/    # sass import文件时的根目录
-#  style:    compressed           # sass 编译输出类型
+encoding: utf-8
 
-# Build settings
+name: 四百米
+description: <p>念念不忘，必有回响。</p><p>不忘初心，方得始终。</p>
+
+# url is currently only used only for the RSS feed in feed.xml
+url: http://stepbyme.com
+
+# baseurl will often be '', but for a project page on gh-pages, it needs to
+# be the project name.
+# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
+#     run it like so: jekyll serve --baseurl=''
+baseurl: ''
+
+# This can be '' to hide the Github nav button
+github: 'NorthFacing'
+
+# Set this to your UA-# value, or '' to disable the block completely
+gaaccount: 'UA-68980203-1'
+
+# Set this to your disqus shortname to enable comments. Note that the 'comments'
+# setting below must also be true. Individual posts can override 'comments' to
+# disable on a post-by-post basis
+disqus: 'stepbyme'
+comments: true
+
+gems: [jekyll-paginate]
+permalink: /:year/:month/:title
+paginate: 5
+
 markdown: kramdown
+
+exclude: ['README.md', 'LICENSE']

@@ -1,7 +1,8 @@
-_site
-.sass-cache/
+# IDE
+/.idea
+/*.iml
 
-.idea/
-stepbyme.iml
-pom.xml
+#project
+_site
+/.sass-cache
 
