@@ -1,6 +1,7 @@
-_site/
-_drafts/
-.DS_Store
-/.sass-cache
+# IDE
 /.idea
-/northfacing.github.io.iml
+/*.iml
+
+#project
+_site
+/.sass-cache

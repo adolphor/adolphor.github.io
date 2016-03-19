@@ -1,0 +1,35 @@
+# Jekyll configuration
+
+encoding: utf-8
+
+name: 四百米
+description: <p>念念不忘，必有回响。</p><p>不忘初心，方得始终。</p>
+
+# url is currently only used only for the RSS feed in feed.xml
+url: http://northfacing.github.io
+
+# baseurl will often be '', but for a project page on gh-pages, it needs to
+# be the project name.
+# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
+#     run it like so: jekyll serve --baseurl=''
+baseurl: 'northfacing.github.io'
+
+# This can be '' to hide the Github nav button
+github: 'NorthFacing'
+
+# Set this to your UA-# value, or '' to disable the block completely
+gaaccount: 'UA-68980203-1'
+
+# Set this to your disqus shortname to enable comments. Note that the 'comments'
+# setting below must also be true. Individual posts can override 'comments' to
+# disable on a post-by-post basis
+disqus: 'stepbyme'
+comments: true
+
+gems: [jekyll-paginate]
+permalink: /:year/:month/:title
+paginate: 5
+
+markdown: kramdown
+
+exclude: ['README.md', 'LICENSE']
