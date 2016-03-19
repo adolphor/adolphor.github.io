@@ -7,11 +7,12 @@ jekyll server
 jekyll server --drafts
 
 
-# jekyll theme
+# Referenct
 
-forked form [Huxpro](https://github.com/Huxpro/huxpro.github.io)
- 
- 
+## jekyll资料
+[官网](http://jekyllrb.com/)
+[jekyll theme](https://github.com/Huxpro/huxpro.github.io)
+  
  
  
  
