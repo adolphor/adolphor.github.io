@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2016-07-17
-categories: jekyll update
+categories: posts
 tags:
     - Adolphor
 ---

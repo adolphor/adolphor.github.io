@@ -8,5 +8,13 @@ layout: default
   </header>
   <div class="post-content" itemprop="articleBody">
     {{ content }}
+
+    <p class='post-footer'>
+      原文地址：
+      <a href='{{ post.url | prepend: site.baseurl }}'>{{ post.url | prepend: site.baseurl }}</a>
+      <br/>版权声明：自由转载-非商用-非衍生-保持署名|
+      <a href='http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh'>Creative Commons BY-NC-ND 3.0</a>
+    </p>
+
   </div>
 </article>

@@ -2,7 +2,7 @@
 layout: post
 title:  "template!"
 date:   2016-07-24
-categories: adolphor
+categories: posts
 tags:
     - Adolphor
 ---
