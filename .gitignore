@@ -1,3 +1,8 @@
 /northfacing.github.io.iml
 /.idea
 /_site
+/.idea/
+_site
+.sass-cache
+.jekyll-metadata
+

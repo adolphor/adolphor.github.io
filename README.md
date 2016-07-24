@@ -10,7 +10,7 @@ jekyll server --drafts
 # Reference
 
 ## jekyll资料
-* [官网](http://jekyllrb.com/)
+* [jekyll 官网](http://jekyllrb.com/)
 * [jekyll theme](https://github.com/Huxpro/huxpro.github.io)
 
 
