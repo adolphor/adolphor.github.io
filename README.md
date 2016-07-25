@@ -31,5 +31,5 @@ jekyll server --drafts
 * 高度固定
 * 前一篇，后一篇
 * 代码高亮
-
+* footer 美化：https://powerbi.microsoft.com/en-us/integrations/google-analytics/?WT.srch=1&WT.mc_id=SEM_cOi8RIKy&utm_source=Google&utm_medium=CPC&utm_term=google%20analytics%20analytics&utm_campaign=Power_BI&gclid=CjwKEAjw8da8BRDssvyH8uPEgnoSJABJmwYoFjAnYqjJLSpkI08fF1pvMCZJpUX6w5xnSyqXOFCpexoCxpXw_wcB
 

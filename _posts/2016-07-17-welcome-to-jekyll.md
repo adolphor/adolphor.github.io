@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: menuPage
 title:  "Welcome to Jekyll!"
 date:   2016-07-17
+postId: 2016-07-17-22-50-00
 categories: [posts,java]
 tags: [tag1,tag2]
 ---
