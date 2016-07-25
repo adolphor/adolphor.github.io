@@ -30,5 +30,6 @@ jekyll server --drafts
 * 评论功能
 * 高度固定
 * 前一篇，后一篇
+* 代码高亮
 
 

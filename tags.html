@@ -1,0 +1,13 @@
+---
+layout: menuPage
+title: 标签
+---
+
+{% for tag in site.tags %}
+  tagName:{{ tag[0] }}<br>
+  post:<br>
+  {% for post in tag[1] %}
+    <a href="{{ post.url }}">{{ post.title }}</a><br>
+  {% endfor %}
+  <br><br>
+{% endfor %}
