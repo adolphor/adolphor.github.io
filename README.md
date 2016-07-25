@@ -16,6 +16,11 @@ jekyll server --drafts
 * markdown support
 
 
+# 主题参考
+* [http://liberize.me](https://github.com/liberize/liberize.github.com)
+* [http://www.winseliu.com/](https://github.com/winse/winse.github.com)
+
+
 # TODO
 * 日期格式化
 * 最近文章
@@ -25,3 +30,5 @@ jekyll server --drafts
 * 评论功能
 * 高度固定
 * 前一篇，后一篇
+
+
