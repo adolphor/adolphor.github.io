@@ -13,12 +13,21 @@
 }
 
 #sidebar {
-    /*border-right: 1px solid #e8e8e8;*/
 }
 
 #contents {
     padding-left: 40px;
     border-left: 1px solid #e8e8e8;
+}
+
+.page-heading {
+    margin-left: 40px;
+    margin-bottom: 60px;
+}
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
 }
 
 .post-header {
@@ -38,4 +47,9 @@
 
 .post-content {
     margin-bottom: 30px;
+}
+
+.center {
+    display: table;
+    margin: 0 auto;
 }

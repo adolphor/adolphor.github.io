@@ -2,7 +2,7 @@
 layout: menuPage
 ---
 
-<div class="home">
+<div class="row">
   <h1 class="page-heading">全部文章</h1>
   <ul class="post-list">
     {% for post in paginator.posts %}
@@ -15,9 +15,9 @@ layout: menuPage
     {% endfor %}
   </ul>
   <!--分页开始-->
-  <nav>
+  <nav style="margin-top: 70px">
     {% if paginator.total_pages > 1 %}
-    <ul class="pagination">
+    <ul class="pagination center">
       {% if paginator.previous_page %}
       <li>
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"
