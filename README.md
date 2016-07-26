@@ -22,14 +22,19 @@ jekyll server --drafts
 
 
 # TODO
-* 日期格式化
 * 最近文章
-* category分类
 * 版权声明
-* 访问统计
-* 评论功能
-* 高度固定
 * 前一篇，后一篇
-* 代码高亮
-* footer 美化：https://powerbi.microsoft.com/en-us/integrations/google-analytics/?WT.srch=1&WT.mc_id=SEM_cOi8RIKy&utm_source=Google&utm_medium=CPC&utm_term=google%20analytics%20analytics&utm_campaign=Power_BI&gclid=CjwKEAjw8da8BRDssvyH8uPEgnoSJABJmwYoFjAnYqjJLSpkI08fF1pvMCZJpUX6w5xnSyqXOFCpexoCxpXw_wcB
+* 显示代码行数
+* 自动生成文章导航标题
 
+## REMIAN
+* footer 美化
+
+## DONE
+* 访问统计 DONE
+* 评论功能 DONE
+* 高度固定 DONE
+* 代码高亮 DONE
+* 日期格式化 DONE
+* category分类 DONE

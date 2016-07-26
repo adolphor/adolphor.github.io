@@ -1,0 +1,16 @@
+<div id="foot">
+    <!--网站访问量统计-->
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <!--读取config.yml配置的参数，多说和谷歌分析中的JS要引用此变量-->
+    <script type="text/javascript">
+        var duoshuoId = '{{ site.duoshuoId }}';
+        var googleAnalyticsId = '{{ site.googleAnalyticsId }}';
+    </script>
+    <!--多说-->
+    <script src="{{ '/js/duoshuo.js' | prepend: site.baseurl }}"></script>
+    <!--谷歌分析-->
+    <script src="{{ '/js/google.analytics.js' | prepend: site.baseurl }}"></script>
+
+    <script src="{{ '/js/custom.js' | prepend: site.baseurl }}"></script>
+</div>
