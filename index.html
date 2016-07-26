@@ -3,65 +3,64 @@ layout: menuPage
 ---
 
 <div class="home">
+  <h1 class="page-heading">全部文章</h1>
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%Y %b %-d" }}</span>
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+    </li>
+    {% endfor %}
+  </ul>
+  <!--分页开始-->
+  <nav>
+    {% if paginator.total_pages > 1 %}
+    <ul class="pagination">
+      {% if paginator.previous_page %}
+      <li>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"
+           aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      {% else %}
+      <li><a>
+        <span aria-hidden="true">&laquo;</span>
+      </a></li>
+      {% endif %}
 
-    <h1 class="page-heading">全部文章</h1>
+      {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+      <li class="active">
+        <a>
+          <span aria-hidden="true">{{ page }}</span>
+        </a>
+      </li>
+      {% elsif page == 1 %}
+      <li>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+      </li>
+      {% else %}
+      <li>
+        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">
+          {{ page }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
 
-    <ul class="post-list">
-        {% for post in paginator.posts %}
-        <li>
-            <span class="post-meta">{{ post.date | date: "%Y %b %-d" }}</span>
-            <h2>
-                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-            </h2>
-        </li>
-        {% endfor %}
+      {% if paginator.next_page %}
+      <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+        <span aria-hidden="true">&raquo;</span>
+      </a></li>
+      {% else %}
+      <li><a>
+        <span aria-hidden="true">&raquo;</span>
+      </a></li>
+      {% endif %}
     </ul>
-
-    <nav>
-        {% if paginator.total_pages > 1 %}
-        <ul class="pagination">
-            {% if paginator.previous_page %}
-            <li>
-                <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"
-                   aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            {% else %}
-            <li><a>
-                <span aria-hidden="true">&laquo;</span>
-            </a></li>
-            {% endif %}
-
-            {% for page in (1..paginator.total_pages) %}
-            {% if page == paginator.page %}
-            <li class="active">
-                <a>
-                    <span aria-hidden="true">{{ page }}</span>
-                </a>
-            </li>
-            {% elsif page == 1 %}
-            <li>
-                <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-            </li>
-            {% else %}
-            <li>
-                <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">
-                {{ page }}</a>
-            </li>
-            {% endif %}
-            {% endfor %}
-
-            {% if paginator.next_page %}
-            <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
-                <span aria-hidden="true">&raquo;</span>
-            </a></li>
-            {% else %}
-            <li><a>
-                <span aria-hidden="true">&raquo;</span>
-            </a></li>
-            {% endif %}
-        </ul>
-        {% endif %}
-    </nav>
+    {% endif %}
+  </nav>
+  <!--分页结束-->
 </div>

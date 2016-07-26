@@ -2,14 +2,16 @@
 layout: menuPage
 title: 分类
 ---
-
 {% for category in site.categories %}
-<h2>{{ category | first }}</h2>
-</span>{{ category | last | size }}</span>
+<div class="row">
+  <h2>{{ category | first }}</h2>
+  </span>共 {{ category | last | size }} 篇</span>
+</div>
+
 <ul class="arc-list">
-    {% for post in category.last %}
+  {% for post in category.last %}
     <li>{{ post.date | date:"%d/%m/%Y"}}<a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
+  {% endfor %}
 </ul>
 {% endfor %}
 

@@ -4,10 +4,14 @@ title: 标签
 ---
 
 {% for tag in site.tags %}
-  tagName:{{ tag[0] }}<br>
-  post:<br>
+<div>
+  <h2>{{ tag[0] }}</h2>
+</div>
+<div>
   {% for post in tag[1] %}
-    <a href="{{ post.url }}">{{ post.title }}</a><br>
+    <ul>
+      <li>{{ post.date | date:"%Y-%m-%d" }} <a href="{{ post.url }}">{{ post.title }}</a></li>
+    </ul>
   {% endfor %}
-  <br><br>
+</div>
 {% endfor %}
