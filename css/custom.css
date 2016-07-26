@@ -1,8 +1,41 @@
 .docs-footer {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    margin-top: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 50px;
     color: #767676;
-    text-align: center;
     border-top: 1px solid #e5e5e5;
+}
+
+.site-footer {
+    text-align: center;
+    border-top: 1px solid #e8e8e8;
+    padding: 30px 0;
+}
+
+#sidebar {
+    /*border-right: 1px solid #e8e8e8;*/
+}
+
+#contents {
+    padding-left: 40px;
+    border-left: 1px solid #e8e8e8;
+}
+
+.post-header {
+    margin-bottom: 30px;
+}
+
+.post-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #828282;
+}
+
+.post-content {
+    margin-bottom: 30px;
 }

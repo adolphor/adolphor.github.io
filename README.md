@@ -27,7 +27,7 @@ jekyll server --drafts
 * 前一篇，后一篇
 * 显示代码行数
 * 自动生成文章导航标题
-
+* [谷歌广告](https://support.google.com/adsense/answer/3180977?hl=zh-Hans&rd=1)
 ## REMIAN
 * footer 美化
 
@@ -38,3 +38,6 @@ jekyll server --drafts
 * 代码高亮 DONE
 * 日期格式化 DONE
 * category分类 DONE
+
+
+

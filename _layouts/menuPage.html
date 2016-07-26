@@ -2,14 +2,10 @@
 layout: default
 ---
 <div class="row">
-  <div class="col-md-3">
+  <aside id="sidebar" class="col-md-3">
     {% include menu.html %}
-  </div>
-  <div class="col-sm-12 col-md-9">
-    <article class="post">
-      <div class="post-content">
-        {{ content }}
-      </div>
-    </article>
-  </div>
+  </aside>
+  <article id="contents" class="col-sm-12 col-md-9">
+    {{ content }}
+  </article>
 </div>

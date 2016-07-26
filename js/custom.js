@@ -5,6 +5,6 @@ $(document).ready(function () {
 function heightFunctions() {
     var winHeight = $(window).height();
     if (winHeight) {
-        $("#content").css("min-height", winHeight);
+        $("#sidebar,#contents").css("min-height", winHeight);
     }
 }
