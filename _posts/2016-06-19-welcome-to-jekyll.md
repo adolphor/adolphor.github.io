@@ -1,5 +1,5 @@
 ---
-layout: menuPost
+layout: post
 title:  "Welcome to Jekyll!"
 date:   2016-06-19
 postId: 2016-06-19-22-50-00
