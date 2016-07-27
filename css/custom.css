@@ -13,10 +13,10 @@
 }
 
 #sidebar {
+    padding-right: 40px;
 }
 
 #contents {
-    padding-left: 40px;
     border-left: 1px solid #e8e8e8;
 }
 
