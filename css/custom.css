@@ -1,34 +1,84 @@
-.docs-footer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: 50px;
-    color: #767676;
-    border-top: 1px solid #e5e5e5;
+/*全局参数开始*/
+/*bootstrap参数开始*/
+/*bootstrap-覆写*/
+.navbar {
+    margin-bottom: 0px;
 }
 
-.site-footer {
-    text-align: center;
-    border-top: 1px solid #e8e8e8;
-    padding: 30px 0;
+/*bootstrap-扩展*/
+.navbar-default .navbar-nav > li > a {
+    font-weight: bold;
+    font-size: initial;
 }
 
-#sidebar {
-    padding-right: 40px;
-    height: 100%;
-}
-
-#contents {
-    height: 100%;
-}
-
-.page-heading {
+.page-header {
     margin-left: 40px;
     margin-bottom: 60px;
 }
 
+/*bootstrap参数结束*/
+
+/*自定义参数*/
+.body {
+    background-color: #e7e7e7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-rendering: optimizelegibility;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+/*全局参数结束*/
+
+/*工具类开始*/
+.center {
+    display: table;
+    margin: 0 auto;
+}
+
+/*工具类结束*/
+
+/*导航栏*/
+.navTitle {
+    font-weight: bold;
+}
+
+/*content开始*/
+
+/*菜单栏*/
+#sidebar {
+    padding-right: 40px;
+    /*height: auto;*/
+    color: #777;
+}
+
+.sideSection {
+    margin-top: 2em;
+    /*border-left: 1px solid #e8e8e8;*/
+    /*border-right: 1px solid #e8e8e8;*/
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.sideSection .row {
+    margin-left: 15px;
+}
+
+/*内容区域*/
+#content {
+    /*height: auto;*/
+    background-color: #fcfcfc;
+}
+
 .post-list {
-    margin-left: 0;
+    /*margin-left: 0;*/
     list-style: none;
+    line-height: 2.0;
+    margin-bottom: 50px;
+}
+
+.tag-name {
+    margin-left: 40px;
 }
 
 .post-header {
@@ -50,7 +100,24 @@
     margin-bottom: 30px;
 }
 
-.center {
-    display: table;
-    margin: 0 auto;
+/*content结束*/
+
+/*footer开始*/
+.footer {
+    background-color: #f8f8f8;
 }
+
+.docs-footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    color: #767676;
+    border-top: 1px solid #e5e5e5;
+}
+
+.site-footer {
+    text-align: center;
+    padding-top: 2px;
+}
+
+/*footer结束*/

@@ -9,4 +9,5 @@ var duoshuoQuery = {short_name: duoshuoId};
     (document.getElementsByTagName('head')[0]
     || document.getElementsByTagName('body')[0]).appendChild(ds);
 })();
+
 <!-- 多说公共JS代码 end -->
