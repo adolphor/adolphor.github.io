@@ -77,6 +77,16 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #dadada;
 }
 
+.left-section .left-title {
+    padding: 10px 0px 10px 25px;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.left-section .left-ul{
+    margin-top: 20px;
+}
+
 /*右POST区域内容*/
 
 .post-list {

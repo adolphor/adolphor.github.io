@@ -8,7 +8,7 @@ postId: categories
     <h1 class="post-title">分类</h1>
   </header>
   {% for category in site.categories %}
-  <div class="tag-name">
+  <div id="{{ category | first }}" class="tag-name">
     <h2>{{ category | first }}</h2>
     <!--</span>共 {{ category | last | size }} 篇</span>-->
   </div>
