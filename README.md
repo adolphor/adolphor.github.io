@@ -22,7 +22,6 @@ jekyll server --drafts
 
 
 # TODO
-* 最近文章
 * 版权声明
 * 前一篇，后一篇
 * 显示代码行数
@@ -31,13 +30,6 @@ jekyll server --drafts
 ## REMIAN
 * footer 美化
 
-## DONE
-* 访问统计 DONE
-* 评论功能 DONE
-* 高度固定 DONE
-* 代码高亮 DONE
-* 日期格式化 DONE
-* category分类 DONE
 
 
 

@@ -40,37 +40,44 @@ h1, h2, h3, h4, h5, h6 {
 /*工具类结束*/
 
 /*导航栏*/
-.navTitle {
-    font-weight: bold;
-}
 
 /*content开始*/
 
-/*菜单栏*/
-#sidebar {
-    padding-right: 40px;
-    /*height: auto;*/
-    color: #777;
-    /*background-color: #fcfcfc;*/
+.height-fix {
+    overflow: hidden;
 }
 
-.side-section {
+.left-side {
+    color: #777;
+    /*background-color: #e5000a;*/
+    padding-bottom: 1000px;
+    margin-bottom: -1000px;
+    height: 100%;
+
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3), 0 0 30px rgba(10, 10, 0, 0.1) inset;
+}
+
+.post-side {
+    padding-bottom: 1000px;
+    margin-bottom: -1000px;
+    height: 100%;
+
+    background-color: #fcfcfc;
+}
+
+/*左菜单栏内容*/
+.left-section {
     margin-top: 2em;
     /*border-left: 1px solid #e8e8e8;*/
     /*border-right: 1px solid #e8e8e8;*/
     /*border-bottom: 1px solid #e7e7e7;*/
-    /*box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3), 0 0 30px rgba(10, 10, 0, 0.1) inset;*/
 }
 
-.side-section .row {
-    margin-left: 15px;
+.left-section .row {
+    background-color: #dadada;
 }
 
-/*内容区域*/
-#post {
-    /*height: auto;*/
-    background-color: #fcfcfc;
-}
+/*右POST区域内容*/
 
 .post-list {
     /*margin-left: 0;*/
@@ -105,25 +112,13 @@ h1, h2, h3, h4, h5, h6 {
 /*content结束*/
 
 /*footer开始*/
+
 .footer {
     background-color: #f8f8f8;
-}
-
-.docs-footer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: 50px;
+    text-align: center;
+    padding: 40px 0px 30px;
     color: #767676;
     border-top: 1px solid #e5e5e5;
 }
 
-.site-footer {
-    text-align: center;
-    padding-top: 2px;
-}
-
 /*footer结束*/
-
-.side {
-
-}
