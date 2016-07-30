@@ -10,10 +10,15 @@ postId: index
   <ul class="post-list">
     {% for post in paginator.posts %}
     <li>
-      <span class="post-meta">{{ post.date | date: "%Y-%m-%-d" }}</span>
-      <h2>
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </h2>
+      <article class="post-content">
+        <h2>
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <span class="post-meta">{{ post.date | date: "%Y-%m-%-d" }}</span>
+        </h2>
+        <p>
+          {{ post.content | truncate:300 }}
+        </p>
+      </article>
     </li>
     {% endfor %}
   </ul>
