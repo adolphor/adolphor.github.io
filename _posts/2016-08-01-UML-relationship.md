@@ -114,7 +114,7 @@ public class Leg {
 ![image]({{ '/image/post/2016/08/20160801-UML04.jpg' }})
 
 
-##聚合关系(Aggregation `/ˌægrɪ'geʃən/`)
+## 聚合关系(Aggregation `/ˌægrɪ'geʃən/`)
 
 聚合关系（Aggregation）：表示的是整体和部分的关系，整体与部分可以分开.
 
@@ -136,7 +136,7 @@ public class Student {
 {% endhighlight %}
 ![image]({{ '/image/post/2016/08/20160801-UML05.jpg' }})
 
-##关联关系(Association `/ə,soʃɪ'eʃən/` )
+## 关联关系(Association `/ə,soʃɪ'eʃən/` )
 
 关联关系（Association）:类之间的联系，如客户和订单，每个订单对应特定的客户，每个客户对应一些特定的订单，再如篮球队员与球队之间的关联。
 其中，关联两边的"employee"和“employer”标示了两者之间的关系，而数字表示两者的关系的限制，是关联两者之间的多重性。
@@ -200,5 +200,7 @@ class Car {
 
 
 ## 参考文章
+
 http://blog.csdn.net/fatherican/article/details/44966891
+
 http://www.open-open.com/lib/view/open1328059700311.html
