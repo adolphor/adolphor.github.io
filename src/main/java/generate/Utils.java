@@ -38,7 +38,7 @@ public class Utils {
   public static String getSourcePath() {
     Date date = new Date();
     String YY = format(date, "YYYY");
-    String MM = format(date, "mm");
+    String MM = format(date, "MM");
     String src = System.getProperty("user.dir")
             + "\\src\\main\\java"
             + "\\Y" + YY + "\\M" + MM;
@@ -48,7 +48,7 @@ public class Utils {
   public static String getImgPath() {
     Date date = new Date();
     String YY = format(date, "YYYY");
-    String MM = format(date, "mm");
+    String MM = format(date, "MM");
     String src = System.getProperty("user.dir")
             + "\\image\\post"
             + "\\" + YY + "\\" + MM;
