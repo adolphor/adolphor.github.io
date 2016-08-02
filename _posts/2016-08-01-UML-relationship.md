@@ -22,7 +22,7 @@ UML图中类之间的关系有如下几种：依赖，关联，泛化，实现�
 ![image]({{ '/image/post/2016/08/20160801-UML00.png' }})
 
 
-## 泛化（Generalization `/ˌdʒɛnərəlɪˈzeʃən/`）
+## 泛化关系（Generalization `/ˌdʒɛnərəlɪˈzeʃən/`）
 泛化关系（Generalization）：A是B和C的父类，B,C具有公共类（父类）A，说明A是B,C的一般化（概括，也称泛化）
 
 * 泛化关系(Generalization)也就是继承关系，也称为“is-a-kind-of”关系，泛化关系用于描述父类与子类之间的关系，父类又称作基类或超类，
@@ -52,7 +52,7 @@ public class Teacher extends Person{
 ![image]({{ '/image/post/2016/08/20160801-UML02.jpg' }})
 
 
-## 实现（Realization `/ˌriələ'zeʃən/`）
+## 实现关系（Realization `/ˌriələ'zeʃən/`）
 实现关系（Implementation）：是用来规定接口和实线接口的类或者构建结构的关系，接口是操作的集合，而这些操作就用于规定类或者构建的一种服务。
 
 * 接口之间也可以有与类之间关系类似的继承关系和依赖关系，但是接口和类之间还存在一种实现关系(Realization)，在这种关系中，类实现了接口，
