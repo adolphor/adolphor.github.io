@@ -15,9 +15,9 @@ postId: index
           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           <span class="post-meta">{{ post.date | date: "%Y-%m-%-d" }}</span>
         </h2>
-        <p>
-          {{ post.content | truncate:300 }}
-        </p>
+        <!--<p>-->
+          <!--{{ post.content | truncate:300 }}-->
+        <!--</p>-->
       </article>
     </li>
     {% endfor %}

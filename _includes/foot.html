@@ -8,9 +8,9 @@
         var googleAnalyticsId = '{{ site.googleAnalyticsId }}';
     </script>
     <!--多说-->
-    <script src="{{ '/js/duoshuo.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/js/duoshuo.js?version=' | append:site.cacheVersion }}"></script>
     <!--谷歌分析-->
-    <script src="{{ '/js/google.analytics.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/js/google.analytics.js?version=' | append:site.cacheVersion }}"></script>
 
-    <script src="{{ '/js/main.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/js/main.js?version=' | append:site.cacheVersion }}"></script>
 </div>

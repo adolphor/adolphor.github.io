@@ -42,7 +42,6 @@ a {
     }
 }
 
-
 /**
  * Icons
  */
@@ -59,7 +58,6 @@ a {
         }
     }
 }
-
 
 /*bootstrap start*/
 /*bootstrap-override*/
@@ -81,35 +79,23 @@ a {
 /*bootstrap end*/
 
 /*content start*/
-
-.height-fix {
-    overflow: hidden;
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
 }
 
 .left-side {
     color: #777;
-    /*background-color: #e5000a;*/
-    padding-bottom: 1000px;
-    margin-bottom: -1000px;
-    height: 100%;
-
-    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3), 0 0 30px rgba(10, 10, 0, 0.1) inset;
 }
 
 .post-side {
-    padding-bottom: 1000px;
-    margin-bottom: -1000px;
-    height: 100%;
-
     background-color: #fcfcfc;
 }
 
 /*left start*/
 .left-section {
-    margin-top: 2em;
-    /*border-left: 1px solid #e8e8e8;*/
-    /*border-right: 1px solid #e8e8e8;*/
-    /*border-bottom: 1px solid #e7e7e7;*/
 }
 
 .left-section .row {
@@ -123,7 +109,7 @@ a {
 }
 
 .left-section .left-ul{
-    margin-top: 20px;
+    margin: 20px 0 40px 0;
 }
 
 /*right start*/
