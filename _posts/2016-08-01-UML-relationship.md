@@ -19,8 +19,6 @@ UML图中类之间的关系有如下几种：依赖，关联，泛化，实现�
 * 泛化关系就是继承关系，关键字：extends
 * 实现关系就是实现接口，关键字：implements
 
-![image]({{ '/image/post/2016/08/20160801-UML00.png' }})
-
 
 ## 泛化关系（Generalization `/ˌdʒɛnərəlɪˈzeʃən/`）
 泛化关系（Generalization）：A是B和C的父类，B,C具有公共类（父类）A，说明A是B,C的一般化（概括，也称泛化）
@@ -197,6 +195,11 @@ class Car {
 {% endhighlight %}
 
 ![依赖关系图示]({{ '/image/post/2016/08/20160801-UML01.png' }})
+
+
+## 综合示例
+
+![image]({{ '/image/post/2016/08/20160801-UML00.png' }})
 
 
 ## 源码文件目录
