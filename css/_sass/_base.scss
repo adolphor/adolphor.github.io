@@ -1,11 +1,73 @@
-/*全局参数开始*/
-/*bootstrap参数开始*/
-/*bootstrap-覆写*/
+/**
+ * Basic styling
+ */
+body {
+    background-color: #e7e7e7;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-rendering: optimizelegibility;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+/**
+ * Images
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/**
+ * Links
+ */
+a {
+    color: $brand-color;
+    text-decoration: none;
+
+    &:visited {
+        color: darken($brand-color, 15%);
+    }
+
+    &:hover {
+        color: $text-color;
+        text-decoration: underline;
+    }
+}
+
+
+/**
+ * Icons
+ */
+.icon {
+
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+
+        path {
+            fill: $grey-color;
+        }
+    }
+}
+
+
+/*bootstrap start*/
+/*bootstrap-override*/
 .navbar {
     margin-bottom: 0px;
 }
 
-/*bootstrap-扩展*/
+/*bootstrap-extends*/
 .navbar-default .navbar-nav > li > a {
     font-weight: bold;
     font-size: initial;
@@ -16,32 +78,9 @@
     margin-bottom: 60px;
 }
 
-/*bootstrap参数结束*/
+/*bootstrap end*/
 
-/*自定义参数*/
-.body {
-    background-color: #e7e7e7;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    text-rendering: optimizelegibility;
-    margin-bottom: 1em;
-    font-weight: bold;
-}
-
-/*全局参数结束*/
-
-/*工具类开始*/
-.center {
-    display: table;
-    margin: 0 auto;
-}
-
-/*工具类结束*/
-
-/*导航栏*/
-
-/*content开始*/
+/*content start*/
 
 .height-fix {
     overflow: hidden;
@@ -65,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #fcfcfc;
 }
 
-/*左菜单栏内容*/
+/*left start*/
 .left-section {
     margin-top: 2em;
     /*border-left: 1px solid #e8e8e8;*/
@@ -87,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 20px;
 }
 
-/*右POST区域内容*/
+/*right start*/
 
 .post-list {
     /*margin-left: 0;*/
@@ -120,9 +159,9 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid #eee;
 }
 
-/*content结束*/
+/*content end*/
 
-/*footer开始*/
+/*footer start*/
 
 .footer {
     background-color: #f8f8f8;
@@ -132,4 +171,4 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 1px solid #e5e5e5;
 }
 
-/*footer结束*/
+/*footer end*/

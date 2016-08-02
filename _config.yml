@@ -30,3 +30,7 @@ duoshuoId: adolphor
 
 # google 分析
 googleAnalyticsId: UA-68980203-2
+
+sass:
+    sass_dir: ./css/_sass
+    style: compressed
