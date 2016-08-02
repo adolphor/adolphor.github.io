@@ -7,5 +7,12 @@
     <artifactId>northfacing.github.io</artifactId>
     <version>0.1-SNAPSHOT</version>
     <url>northfacing.github.io</url>
-    <description>本POM文件是为了导入IDE方便而建立</description>
+    <description>集成Java项目</description>
+    <dependencies>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.23</version>
+        </dependency>
+    </dependencies>
 </project>
