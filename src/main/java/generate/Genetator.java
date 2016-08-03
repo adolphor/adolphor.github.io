@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public class Genetator {
 
-  private static String postTitle = "test-title";
+  private static String postTitle = "JDK-source-code-List";
 
 
   private static Configuration cfg;
@@ -34,7 +34,7 @@ public class Genetator {
     Configuration configuration = getConfiguration(templatePath);
     Template temp = configuration.getTemplate("post.ftl");
     String url = System.getProperty("user.dir") + File.separator + "_posts"
-            + File.separator + Utils.getPostTitle(postTitle);
+            + File.separator + Utils.getPostTitle(postTitle)+".md";
 
     File file = new File(url);
     createFile(file);

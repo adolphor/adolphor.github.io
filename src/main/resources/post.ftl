@@ -1,5 +1,5 @@
 ---
-layout: post
+layout:     post
 postTitle:  ${postTitle}
 postDate:   ${postDate} +0800
 postId:     ${postId}
