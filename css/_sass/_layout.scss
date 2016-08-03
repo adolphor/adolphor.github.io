@@ -2,44 +2,44 @@
  * Basic styling
  */
 body {
-    background-color: #e7e7e7;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-feature-settings: "kern" 1;
-    -moz-font-feature-settings: "kern" 1;
-    -o-font-feature-settings: "kern" 1;
-    font-feature-settings: "kern" 1;
-    font-kerning: normal;
+  background-color: #e7e7e7;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    text-rendering: optimizelegibility;
-    margin-bottom: 1em;
-    font-weight: bold;
+  text-rendering: optimizelegibility;
+  margin-bottom: 1em;
+  font-weight: bold;
 }
 
 /**
  * Images
  */
 img {
-    max-width: 100%;
-    vertical-align: middle;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 /**
  * Links
  */
 a {
-    color: $brand-color;
-    text-decoration: none;
+  color: $brand-color;
+  text-decoration: none;
 
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
+  &:visited {
+    color: darken($brand-color, 15%);
+  }
 
-    &:hover {
-        color: $text-color;
-        text-decoration: underline;
-    }
+  &:hover {
+    color: $text-color;
+    text-decoration: underline;
+  }
 }
 
 /**
@@ -47,33 +47,33 @@ a {
  */
 .icon {
 
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
+  > svg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
 
-        path {
-            fill: $grey-color;
-        }
+    path {
+      fill: $grey-color;
     }
+  }
 }
 
 /*bootstrap start*/
 /*bootstrap-override*/
 .navbar {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 /*bootstrap-extends*/
 .navbar-default .navbar-nav > li > a {
-    font-weight: bold;
-    font-size: initial;
+  font-weight: bold;
+  font-size: initial;
 }
 
 .page-header {
-    margin-left: 40px;
-    margin-bottom: 60px;
+  margin-left: 40px;
+  margin-bottom: 60px;
 }
 
 /*bootstrap end*/
@@ -81,11 +81,12 @@ a {
 /*content start*/
 
 .menu-side {
-    color: #777;
+  color: #777;
 }
 
 .post-side {
-    background-color: #fcfcfc;
+  line-height: 2;
+  background-color: #fcfcfc;
 }
 
 /*left start*/
@@ -93,50 +94,76 @@ a {
 }
 
 .left-section .row {
-    background-color: #dadada;
+  background-color: #dadada;
 }
 
-.left-section .left-title {
-    padding: 10px 0px 10px 25px;
-    font-size: 150%;
-    font-weight: bold;
+.left-title {
+  padding: 10px 0px 10px 25px;
+  font-size: 150%;
+  font-weight: bold;
 }
 
-.left-section .left-ul{
-    margin: 20px 0 40px 0;
+.left-ul {
+  margin: 20px 0 40px 0;
 }
+
+.menu-ul {
+  padding-left: 0px;
+  list-style: none;
+}
+
+.menu-li {
+  margin-left: -15px;
+}
+
+.menu-li a {
+  padding-left: 20px;
+}
+
+.sub-menu-ul {
+  padding-left: 0px;
+  list-style: none;
+}
+
+.sub-menu-li{
+  padding-left: 20px;
+}
+//
+//.sub-menu-li a {
+//  padding-left: 15px;
+//}
 
 /*right start*/
 
 .post-list {
-    /*margin-left: 0;*/
-    list-style: none;
-    line-height: 2.0;
-    margin-bottom: 50px;
+  /*margin-left: 0;*/
+  list-style: none;
+  line-height: 2.0;
+  margin-bottom: 50px;
 }
 
 .tag-name {
-    margin-left: 40px;
+  margin-left: 40px;
 }
 
 .post-header {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .post-title {
-    font-size: 42px;
-    letter-spacing: -1px;
-    line-height: 1;
+  font-size: 42px;
+  letter-spacing: -1px;
+  line-height: 1;
 }
 
 .post-meta {
-    font-size: 14px;
-    color: #828282;
+  font-size: 14px;
+  color: #828282;
 }
 
 .post-content {
-    margin: 0 30px 60px 0;
-    border-bottom: 1px solid #eee;
+  margin: 0 30px 60px 0;
+  border-bottom: 1px solid #eee;
 }
 
 /*content end*/
@@ -144,11 +171,11 @@ a {
 /*footer start*/
 
 .footer {
-    background-color: #f8f8f8;
-    text-align: center;
-    padding: 40px 0px 30px;
-    color: #767676;
-    border-top: 1px solid #e5e5e5;
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 40px 0px 30px;
+  color: #767676;
+  border-top: 1px solid #e5e5e5;
 }
 
 /*footer end*/

@@ -1,10 +1,11 @@
 ---
-layout: post
-title:  "UML中的类图关系"
-date:   2016-08-01 16:08:00 +0800
-postId: 2016-08-01-16-08-00
+layout:     post
+title:      "UML中的类图关系"
+date:       2016-08-01 16:08:00 +0800
+postId:     2016-08-01-16-08-00
 categories: [UML]
-tags: [UML]
+tags:       [UML]
+geneMenu:   true
 ---
 ## 概述
 
@@ -200,11 +201,6 @@ class Car {
 ## 综合示例
 
 ![image]({{ '/image/post/2016/08/20160801-UML00.png' }})
-
-
-## 源码文件目录
-
-src/main/java/Y2016/M08/D01_UML
 
 
 ## 参考文章
