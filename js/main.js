@@ -14,7 +14,8 @@ function heightFunctions() {
 function geneMenu() {
     var height = $(".post-content").height();
     var isGene = $("#geneMenu").text();
-    if (isGene == "true" && height > 800) {
+    var len = $(".post-side h2").length + $(".post-side h3").length;
+    if (isGene == "true" && len > 4 && height > 800) {
         var section = '<section id="articleMenu" class="left-section "> <div class="row"><div class="left-title">' +
             ' 文章导航 </div> </div> <ul class="left-ul menu-ul">';
         var pathname = window.location.pathname;
@@ -34,7 +35,7 @@ function geneMenu() {
                 section += subLink;
             });
             section += "</ul>";
-        });
+        })
         section += ("</ul></section>");
 
         $(".menu-side").append(section);

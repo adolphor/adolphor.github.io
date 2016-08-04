@@ -11,10 +11,10 @@ postId: index
     {% for post in paginator.posts %}
     <li>
       <article class="post-content">
-        <h2>
+        <h3>
           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           <span class="post-meta">{{ post.date | date: "%Y-%m-%-d" }}</span>
-        </h2>
+        </h3>
         <!--<p>-->
           <!--{{ post.content | truncate:300 }}-->
         <!--</p>-->

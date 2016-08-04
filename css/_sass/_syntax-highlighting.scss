@@ -40,8 +40,6 @@ pre {
 
     .c     { color: #998; font-style: italic } // Comment
     .err   { color: #a61717; background-color: #e3d2d2 } // Error
-    .k     { font-weight: bold } // Keyword
-    .o     { color: #A9B7C6; } // Operator
     .cm    { color: #998; font-style: italic } // Comment.Multiline
     .cp    { color: #999; font-weight: bold } // Comment.Preproc
     .c1    { color: #998; font-style: italic } // Comment.Single
@@ -58,28 +56,30 @@ pre {
     .gs    { font-weight: bold } // Generic.Strong
     .gu    { color: #aaa } // Generic.Subheading
     .gt    { color: #a00 } // Generic.Traceback
-    .k     { font-weight: bold; color: #cc7832 } //
-    .kn    { font-weight: bold; color: #cc7832 } //
+    .k     { font-weight: bold; color: #bb5908 } //
+    .kn    { font-weight: bold; color: #bb5908 } //
     .kc    { color:#8A8A8A } // Keyword.Constant
-    .kd    { font-weight: bold; color: #cc7832  } // Keyword.Declaration: public,private...
+    .kd    { font-weight: bold; color: #bb5908  } // Keyword.Declaration: public,private...
     .kp    { font-weight: bold} // Keyword.Pseudo
     .kr    { font-weight: bold } // Keyword.Reserved
-    .kt    { color: #458; font-weight: bold } // Keyword.Type
+    .kt    { color: #bb5908; font-weight: bold } // Keyword.Type
     .m     { color: #099 } // Literal.Number
     .s     { color: #d14 } // Literal.String
-    .n     { color: #A9B7C6 } //
+    .n     { color: #9bb4ce } //
     .na    { color: #008080 } // Name.Attribute
     .nb    { color: #0086B3 } // Name.Builtin
-    .nc    { color: #A9B7C6; font-weight: bold } // Name.Class
+    .nc    { color: #9bb4ce; font-weight: bold } // Name.Class
     .no    { color: #008080 } // Name.Constant
     .ni    { color: #800080 } // Name.Entity
     .nd    { color: #BBB529} // Annotation.
     .ne    { color: #900; font-weight: bold } // Name.Exception
-    .nf    { color: #900; font-weight: bold } // Name.Function
+    .nf    { color: #d60202; font-weight: bold } // Name.Function
     .nn    { color: #AF891A } // Name.Namespace
     .nt    { color: #000080 } // Name.Tag
     .nv    { color: #008080 } // Name.Variable
+    .o     { color: #9bb4ce; } // Operator
     .ow    { font-weight: bold } // Operator.Word
+    .p     { color: #9bb4ce } //
     .w     { color: #bbb } // Text.Whitespace
     .mf    { color: #099 } // Literal.Number.Float
     .mh    { color: #099 } // Literal.Number.Hex

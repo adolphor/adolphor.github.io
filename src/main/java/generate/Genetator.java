@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public class Genetator {
 
-  private static String postTitle = "JDK-source-code-List";
+  private static String postTitle = "title";
 
 
   private static Configuration cfg;
