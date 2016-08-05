@@ -8,11 +8,20 @@
     <version>0.1-SNAPSHOT</version>
     <url>northfacing.github.io</url>
     <description>集成Java项目</description>
+    <properties>
+        <freemarker.version>2.3.23</freemarker.version>
+        <junit.version>4.12</junit.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
-            <version>2.3.23</version>
+            <version>${freemarker.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
         </dependency>
     </dependencies>
 </project>
