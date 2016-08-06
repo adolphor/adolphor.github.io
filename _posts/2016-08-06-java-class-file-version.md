@@ -50,6 +50,7 @@ JDK/J2SDK|Default Source|Source Range|Default Target|Target Range
 ## 查看class文件target版本的方法
 
 ### 测试代码
+    ClassVersionDemo.java
 {% highlight java %}
 public class ClassVersionDemo {
   public static void main(String[] args) {

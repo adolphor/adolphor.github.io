@@ -112,8 +112,8 @@ boolean equals(Object o)
 基本数据类型比较值是否相等；引用对象使用equals方法判断否相等（范例：Teacher.java）。
 如果equals方法有被覆写，则按照覆写之后的规则判断两个对象是否相等（范例：Student.java）。
 
+    EqualsDemo.java
 {% highlight java %}
-
 import java.util.ArrayList;
 import org.junit.Assert;
 
@@ -224,6 +224,7 @@ boolean retainAll(Collection<?> c)
 
 如果方法调用过程中删除了集合中的至少一个元素，返回true；如果没有删除任何一个元素，返回false。
 
+    RetainAllDemo.java
 {% highlight java %}
 import java.util.ArrayList;
 
