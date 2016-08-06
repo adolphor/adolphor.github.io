@@ -6,6 +6,7 @@ postId:     2016-08-06-14-28-53
 categories: [java, class]
 tags:       [java, class]
 geneMenu:   true
+excerpt:    Java class version, Java class file, Java class 编译版本相关设置和查看，从class文件查看Java版本，javap -verbose，major version，minor version
 ---
 
 ## Java版本介绍
