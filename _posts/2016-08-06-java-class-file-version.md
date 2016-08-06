@@ -28,7 +28,6 @@ JDK version| major version | minor version
 1.8 | 52 | 0
 
 
-
 ### 各版本兼容性
 
 Default javac Source and Target Settings
