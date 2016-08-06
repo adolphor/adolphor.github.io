@@ -9,3 +9,7 @@ geneMenu:   true
 ---
 
 开始写作吧
+
+{% highlight java %}
+
+{% endhighlight %}

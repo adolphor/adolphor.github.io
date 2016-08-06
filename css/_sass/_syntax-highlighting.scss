@@ -31,15 +31,29 @@ pre {
  * Syntax highlighting styles
  */
 .highlight {
-    background: #fff;
     margin-bottom: 15px;
+    overflow: auto;
+
+    pre {
+        max-height: 600px;
+        overflow: auto;
+    }
+
+    // shell color
+    .language-shell{
+        color: #ffbc00;
+    }
+
+    .language-byte{
+        color: #9bb4ce;
+    }
 
     .highlighter-rouge & {
       background: #eef;
     }
 
     .c     { color: #998; font-style: italic } // Comment
-    .err   { color: #a61717; background-color: #e3d2d2 } // Error
+    .err   { color: #a61717 } // Error
     .cm    { color: #998; font-style: italic } // Comment.Multiline
     .cp    { color: #999; font-weight: bold } // Comment.Preproc
     .c1    { color: #998; font-style: italic } // Comment.Single
@@ -74,6 +88,7 @@ pre {
     .nd    { color: #BBB529} // Annotation.
     .ne    { color: #900; font-weight: bold } // Name.Exception
     .nf    { color: #d60202; font-weight: bold } // Name.Function
+    .nl    { color: #9bb4ce } //
     .nn    { color: #AF891A } // Name.Namespace
     .nt    { color: #000080 } // Name.Tag
     .nv    { color: #008080 } // Name.Variable
