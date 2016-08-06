@@ -63,7 +63,7 @@ public class ClassVersionDemo {
 javac ClassVersionDemo.java
 {% endhighlight %}
 
-### 命令行查看
+### 使用命令行查看
 
 On Unix / Linux:
 {% highlight shell %}
@@ -152,7 +152,7 @@ SourceFile: "ClassVersionDemo.java"
 可以看到，“ minor version: 0，major version: 52 ”，也就是1.8。
 
 
-### class文件查看
+### 从class文件源码查看
 使用文本编辑器（比如sublime Text）打开 ClassVersionDemo.class 文件，内容如下：
 {% highlight byte %}
 cafe babe 0000 0034 001d 0a00 0600 0f09
