@@ -109,7 +109,8 @@ boolean equals(Object o)
 才能称这两个集合相等。
 
 另外，要注意集合中的元素的equals方法是否被覆写，如果没有被覆写，按照默认equels方法进行判断：
-基本数据类型比较值是否相等；引用对象使用equals方法判断否相等。
+基本数据类型比较值是否相等；引用对象使用equals方法判断否相等（范例：Teacher.java）。
+如果equals方法有被覆写，则按照覆写之后的规则判断两个对象是否相等（范例：Student.java）。
 
 {% highlight java %}
 
@@ -170,7 +171,7 @@ public class EqualsDemo {
 }
 
 /**
- * 不覆写equals方法
+ * 不覆写equals方法，按照引用地址进行equals判断
  */
 class Teacher {
   private Integer cardNum;
@@ -181,7 +182,7 @@ class Teacher {
 }
 
 /**
- * 覆写equals方法
+ * 覆写equals方法，按照自定义规则进行equals判断
  */
 class Student {
   private Integer cardNum;
