@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      【JDK8源码阅读笔记】Collection框架总述
+title:      【Java8源码阅读笔记】Collection框架总述
 date:       2016-08-03 21:08:24 +0800
 postId:     2016-08-03-21-08-24
 categories: [Collection]
@@ -21,7 +21,7 @@ Deque       |               |   ArrayDeque      |                   |   LinkedLi
 Map         |   HashMap     |                   |  TreeMap          |                   |   LinkedHashMap
 
 ### 图示
-先看下JDK8中Collection各继承和实现关系图，先看下精简之后的关系图：
+先看下Java8中Collection各继承和实现关系图，先看下精简之后的关系图：
 
 ![Collection类图](/image/post/2016/08/03/20160803-Collection01.png)
 
@@ -54,9 +54,13 @@ Map         |   HashMap     |                   |  TreeMap          |           
 只提供了一些继承此接口的特殊子接口，像`Set`和`List`。所有这些通用的`Collection`实现类，都应该实现两个“标准”构造器：一个
 无参构造器，调用此构造器的时候会创建一个空集合；一个含有一个`Collection`类型参数的构造器，会创建一个和此参数元素相同的集合。
 
-Collection接口具体定义，参考[【JDK8源码阅读笔记】Collection框架之Collection](/collection/2016/08/04/JDK-source-code-Collection-Collection.html)
+Collection接口具体定义，参考[【Java8源码阅读笔记】Collection框架之Collection](/collection/2016/08/04/JDK-source-code-Collection-Collection.html)
 
 ### AbstractCollection 抽象类
+此抽象类实现了`Collection`接口中的大部分接口定义，只需要在子类实现中实现`iterator`和`size`方法即可。
+但是需要注意的一点是，iterator方法必须实现`hasNext`和`next`方法。
+
+AbstractCollection具体实现，参考[【Java8源码阅读笔记】Collection框架之AbstractCollection](/collection/2016/08/08/JDK-source-code-Collection-AbstractCollection.html)
 
 ## List 族群
 
