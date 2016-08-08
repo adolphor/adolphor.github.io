@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      【JDK8源码阅读】Collection框架总述
+title:      【JDK8源码阅读笔记】Collection框架总述
 date:       2016-08-03 21:08:24 +0800
 postId:     2016-08-03-21-08-24
 categories: [JAVA8]

@@ -1,6 +1,7 @@
-package JDK.collection.collection;
+package Y2016.M08.D04_collection.equals;
 
 import java.util.ArrayList;
+
 import org.junit.Assert;
 
 /**
@@ -78,11 +79,22 @@ class Student {
   }
 
   @Override
-  public boolean equals(Object object) { // 学号相同就认为是同一个学生
-    Student student = (Student) object;
-    if (this.cardNum == student.cardNum)
-      return true;
-    else
+  public boolean equals(Object o) {
+    if (o == null)
       return false;
+    if (!(o instanceof Student))
+      return false;
+    Student other = (Student) o;
+    boolean result = this.cardNum == other.cardNum; // 学号相同就认为是同一个学生
+    return result;
   }
+
+  // 如果覆写了equals方法，一定要同时进行hashCode方法的覆写
+  // 否则，对于hash表存储类型的数据，会有潜在错误
+  // TODO hashCode 和 equals 的使用
+  @Override
+  public int hashCode() {
+    return this.cardNum;
+  }
+
 }
