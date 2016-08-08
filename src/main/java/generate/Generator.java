@@ -16,9 +16,9 @@ import java.util.Map;
 /**
  * Created by Bob on 2016/8/2.
  */
-public class Genetator {
+public class Generator {
 
-  private static String postTitle = "title";
+  private static String postTitle = "TITLE";
 
 
   private static Configuration cfg;

@@ -1,4 +1,4 @@
-package Y2016.M08.D04_collection.equals;
+package Y2016.M08.D04_Collection.equals;
 
 import java.util.ArrayList;
 

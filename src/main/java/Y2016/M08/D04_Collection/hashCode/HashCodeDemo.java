@@ -1,4 +1,4 @@
-package Y2016.M08.D04_collection.hashCode;
+package Y2016.M08.D04_Collection.hashCode;
 
 import java.util.ArrayList;
 import java.util.List;

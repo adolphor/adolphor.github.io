@@ -5,7 +5,7 @@ date:       2016-08-03 21:08:24 +0800
 postId:     2016-08-03-21-08-24
 categories: [Collection]
 tags:       [Collection]
-geneMenu:   true
+excerpt:    excerpt
 ---
 
 ## Collection总类图
@@ -21,9 +21,18 @@ Deque       |               |   ArrayDeque      |                   |   LinkedLi
 Map         |   HashMap     |                   |  TreeMap          |                   |   LinkedHashMap
 
 ### 图示
-先看下JDK8中Collection各继承和实现关系总图：
+先看下JDK8中Collection各继承和实现关系图，先看下精简之后的关系图：
 
-![Collection类图](/image/post/2016/08/20160803-Collection00.png)
+![Collection类图](/image/post/2016/08/03/20160803-Collection01.png)
+
+再看下稍微补充抽象继承类之后的关系图：
+
+![Collection类图](/image/post/2016/08/03/20160803-Collection02.png)
+
+下面是Collection集合类的全部关系图：
+
+![Collection类图](/image/post/2016/08/03/20160803-Collection03.png)
+
 
 ## 公共接口
 

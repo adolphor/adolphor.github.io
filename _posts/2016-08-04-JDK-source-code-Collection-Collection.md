@@ -224,7 +224,6 @@ default Stream<E> stream()
 default Stream<E> parallelStream()
 {% endhighlight %}
 
-
 ## 比较熟悉的接口
 
 ### add 
@@ -312,6 +311,34 @@ Object[] toArray()
 {% highlight java %}
 <T> T[] toArray(T[] a)
 {% endhighlight %}
+
+
+## 接口中的默认方法
+Java8之后，还有一个新特性，就是接口中支持默认方法实现：
+{% highlight java %}
+public interface DefaultMethodOfInterface {
+  void method1();
+  default void method2() {
+    System.out.println("I'm method2 from interface.");
+  }
+}
+public class DefaultMehtodImplements implements DefaultMethodOfInterface {
+  @Override
+  public void method1() {
+    System.out.println("I'm method1 from implement.");
+  }
+}
+public class Demo {
+  public static void main(String[] args) {
+    DefaultMehtodImplements dmi = new DefaultMehtodImplements();
+    dmi.method1();
+    dmi.method2();
+  }
+}
+{% endhighlight %}
+
+TODO 问题：默认方法相比于抽象实现类，有点在哪里？
+* 继承的单一性限制
 
 
 ## 参考文档

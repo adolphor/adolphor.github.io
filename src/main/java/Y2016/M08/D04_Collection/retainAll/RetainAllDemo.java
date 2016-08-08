@@ -1,4 +1,4 @@
-package Y2016.M08.D04_collection.retainAll;
+package Y2016.M08.D04_Collection.retainAll;
 
 import java.util.ArrayList;
 
