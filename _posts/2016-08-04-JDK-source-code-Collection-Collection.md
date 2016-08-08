@@ -3,13 +3,13 @@ layout:     post
 title:      【JDK8源码阅读笔记】Collection框架之Collection
 date:       2016-08-04 16:29:34 +0800
 postId:     2016-08-04-16-29-34
-categories: [JAVA8]
-tags:       [JAVA8, Collection]
+categories: [Collection]
+tags:       [Collection, JAVA8]
 geneMenu:   true
 ---
 ## Collection
 
-`Collection`集合的继承以及各个实现类之间的关系，参考[【JDK8源码阅读】Collection框架总述]({{ site.url }}),
+`Collection`集合的继承以及各个实现类之间的关系，参考[【JDK8源码阅读】Collection框架总述](/collection/2016/08/03/JDK-source-code-Collection.html),
 本文主要讲解各个接口定义以及用途。
 
 ## 比较陌生的接口
