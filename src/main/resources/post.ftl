@@ -14,3 +14,7 @@ excerpt:    excerpt
 {% highlight java %}
 
 {% endhighlight %}
+
+## 参考资料
+
+[test](test.html)
