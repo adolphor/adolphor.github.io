@@ -71,23 +71,7 @@ public Object[] toArray() {
             return Arrays.copyOf(r, i);
         r[i] = it.next();
     }
-    return it.hasNext() ? finishToArray(r, it) : r;
-}
-private static <T> T[] finishToArray(T[] r, Iterator<?> it) {
-    int i = r.length;
-    while (it.hasNext()) {
-        int cap = r.length;
-        if (i == cap) {
-            int newCap = cap + (cap >> 1) + 1;
-            // overflow-conscious code
-            if (newCap - MAX_ARRAY_SIZE > 0)
-                newCap = hugeCapacity(cap + 1);
-            r = Arrays.copyOf(r, newCap);
-        }
-        r[i++] = (T)it.next();
-    }
-    // trim if overallocated
-    return (i == r.length) ? r : Arrays.copyOf(r, i);
+    return it.hasNext() ? finishToArray(r, it) : r;     // finishToArray用来修正toArray方法执行过程中的数组长度的变化
 }
 {% endhighlight %}
 
@@ -127,7 +111,7 @@ public <T> T[] toArray(T[] a) {
     int size = size();
     T[] r = a.length >= size ? a :
               (T[])java.lang.reflect.Array
-              .newInstance(a.getClass().getComponentType(), size);
+              .newInstance(a.getClass().getComponentType(), size);  // 获取正确数据类型的容器
     Iterator<E> it = iterator();    // 需要子类实现iterator方法
 
     for (int i = 0; i < r.length; i++) {
@@ -161,12 +145,12 @@ public boolean remove(Object o) {
         while (it.hasNext()) {
             if (it.next()==null) {
                 it.remove();
-                return true;
+                return true;        // 这样移除的是符合条件的第一个元素
             }
         }
     } else {
         while (it.hasNext()) {
-            if (o.equals(it.next())) {
+            if (o.equals(it.next())) {      // equals方法进行比较
                 it.remove();
                 return true;
             }
@@ -180,7 +164,7 @@ public boolean remove(Object o) {
 {% highlight java %}
 public boolean containsAll(Collection<?> c) {
     for (Object e : c)
-        if (!contains(e)) // contains需要子类实现iterator方法
+        if (!contains(e)) // contains需要子类实现iterator方法，参考本文最上面的contains方法
             return false;
     return true;
 }
@@ -190,7 +174,7 @@ public boolean containsAll(Collection<?> c) {
 {% highlight java %}
 public boolean addAll(Collection<? extends E> c) {
     boolean modified = false;
-    for (E e : c)
+    for (E e : c)        // 遍历新增
         if (add(e))      // 需要子类实现add方法
             modified = true;
     return modified;
@@ -204,7 +188,7 @@ public boolean removeAll(Collection<?> c) {
     boolean modified = false;
     Iterator<?> it = iterator();    // 需要子类实现add方法
     while (it.hasNext()) {
-        if (c.contains(it.next())) {
+        if (c.contains(it.next())) {    // 遍历移除
             it.remove();
             modified = true;
         }
@@ -234,13 +218,31 @@ public boolean retainAll(Collection<?> c) {
 {% highlight java %}
 public void clear() {
     Iterator<E> it = iterator();    // 需要子类实现add方法
-    while (it.hasNext()) {
+    while (it.hasNext()) {          // 遍历移除
         it.next();
         it.remove();
     }
 }
 {% endhighlight %}
 
+## 未实现方法
 
+### iterator
+所有涉及到集合遍历的操作都要使用
 
+### size
+size方法获取当前集合的元素的个数，也就是集合的长度，在新增和删除的时候都有变动
 
+### add
+add方法是一个比较特殊的存在，它并不是抽象方法，但也并没有完全实现，而是需要子类去覆写，在本抽象类中的实现方式如下：
+{% highlight java %}
+public boolean add(E e) {
+    throw new UnsupportedOperationException();
+}
+{% endhighlight %}
+
+本方法只是抛出了一个未支持的操作的异常信息，既然如此，为什么不直接设置未抽象呢？
+
+## 参考资料
+
+[JDK文档 之 AbstractCollection](https://docs.oracle.com/javase/8/docs/api/java/util/AbstractCollection.html)

@@ -58,7 +58,8 @@ Collection接口具体定义，参考[【Java8源码阅读笔记】Collection框
 
 ### AbstractCollection 抽象类
 此抽象类实现了`Collection`接口中的大部分接口定义，只需要在子类实现中实现`iterator`和`size`方法即可。
-但是需要注意的一点是，iterator方法必须实现`hasNext`和`next`方法。
+但是需要注意的一点是，iterator方法的返回對象必须实现`hasNext`和`next`方法。
+
 
 AbstractCollection具体实现，参考[【Java8源码阅读笔记】Collection框架之AbstractCollection](/collection/2016/08/08/JDK-source-code-Collection-AbstractCollection.html)
 
