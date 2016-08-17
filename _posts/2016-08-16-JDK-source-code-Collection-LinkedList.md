@@ -95,6 +95,9 @@ since 1.6，调用addLast方法，为了向前兼容？
 将指定位置元素设置为新值：ele，相当于修改操作，  
 时间复杂度为O(N)
 
+### push(E e)
+since 1.6，调用addFirst方法
+
 ### get(int index)
 获取指定位置的节点元素，和add方法一样，使用 [node(index)](#nodeIndexCode) 方法实现，时间复杂度O(N)
 
@@ -111,7 +114,7 @@ since 1.5，直接调用的 [getFirst](#getFirst) 方法，应该是为了向前
 
 ### peek()
 since 1.5，查看第一个元素，和 [getFirst](#getFirst) 类似，但如果集合为空，则返回null。
-直接访问first节点属性，时间复杂度O(1)
+直接访问first节点属性，时间复杂度O(1)。
 
 ### peekFirst()
 since 1.6，查看第一个元素，但如果集合为空，则返回null。
@@ -121,6 +124,7 @@ since 1.6，查看最后一个元素，但如果集合为空，则返回null。
 
 ### poll()
 since 1.5，移除第一个元素并返回，如果集合为空，返回null。
+直接访问first节点元素，时间复杂度为O(1)。
 移除第一个元素的实现如下：
 
 ###### unlinkFirst(Node<E> f) 方法实现 {#unlinkFirstCode}
@@ -144,30 +148,73 @@ private E unlinkFirst(Node<E> f) {
 
 
 ### pollFirst()
+since 1.6，等同于poll()方法
 
 ### pollLast()
-
-### pop()
-
-### push(E e)
+since 1.6，删除最后一个元素并返回，如果集合为空，返回null。实现方法和 [unlinkFirst(Node<E> f)](#unlinkFirstCode) 类似。
+直接访问last节点元素，时间复杂度为O(1)。
 
 ### remove()
-since 1.5，
+since 1.5，调用 removeFirst 方法
 
 ### remove(int index)
-
-### remove(Object o)
+删除定点位置元素， [node(index)](#nodeIndexCode) 方法实现，时间复杂度O(N)。
 
 ### removeFirst()
-
-### removeFirstOccurrence(Object o)
+删除第一个元素，如果集合为空，抛出NoSuchElementException异常。
 
 ### removeLast()
+删除第一个元素，如果集合为空，抛出NoSuchElementException异常。
+
+### pop()
+since 1.6，调用 removeFirst() 。
+
+### remove(Object o) {#removeObjectCode}
+如果集合中含有equals此参数的元素，进行移除。
+从first进行遍历比较，实现方式如下：
+{% highlight java %}
+public boolean remove(Object o) {
+    if (o == null) {
+        for (Node<E> x = first; x != null; x = x.next) {
+            if (x.item == null) {
+                unlink(x);  // 解除此元素链接，进行链接的重新建立操作
+                return true;
+            }
+        }
+    } else {
+        for (Node<E> x = first; x != null; x = x.next) {
+            if (o.equals(x.item)) {
+                unlink(x);
+                return true;
+            }
+        }
+    }
+    return false;
+}
+{% endhighlight %}
+
+### removeFirstOccurrence(Object o)
+since 1.6，删除第一个符合条件的元素，直接调用的 [remove(Object o)](removeObjectCode) 方法。
 
 ### removeLastOccurrence(Object o)
-
+since 1.6，删除最后一个符合条件的元素，从last开始进行遍历比较。
 
 ### clear()
+清空集合中的所有元素，虽然“没有必要”将所有节点之间的链接都解除，但是这样做有助于垃圾回收。
+{% highlight java %}
+public void clear() {
+    for (Node<E> x = first; x != null; ) {
+        Node<E> next = x.next;
+        x.item = null;
+        x.next = null;
+        x.prev = null;
+        x = next;
+    }
+    first = last = null;
+    size = 0;
+    modCount++;
+}
+{% endhighlight %}
 
 ### clone()
 
