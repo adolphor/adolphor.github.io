@@ -15,9 +15,9 @@ function geneMenu() {
     var height = $(".post-content").height();
     var isGene = $("#geneMenu").text();
     var len = $(".post-side h2").length + $(".post-side h3").length;
-    if (isGene == "true" && len > 4 && height > 800) {
-        var section = '<section id="articleMenu" class="left-section "> <div class="row"><div class="left-title">' +
-            ' 文章导航 </div> </div> <ul class="left-ul menu-ul">';
+    if (isGene == "true" && len > 4 && height > 800) {  // 文章导航生成条件
+        var section = '<section id="articleMenu" class="left-section row"><div class="col-md-12"><div class="left-title row">' +
+            ' 文章导航 </div> <ul class="left-ul row menu-ul">';
         var pathname = window.location.pathname;
         var h2Array = $(".post-side h2");
         $.each(h2Array, function () {
@@ -36,16 +36,22 @@ function geneMenu() {
             });
             section += "</ul>";
         })
-        section += ("</ul></section>");
-
+        section += ("</ul></div></section>");
         $(".menu-side").append(section);
+
+        var windowHeight = $(window).height();
+        var width = $("aside section:first").width();
+        $("#articleMenu").css("width",width);
+        $("#articleMenu ul:first").css("overflow-y","auto")
+            .css("height",(windowHeight - 110))
+            .css("width",(width - 18));
 
         var position = $('#articleMenu').offset();
         $(window).scroll(function () {
-            // 滚动鼠标的时候进行高度矫正
-            var sideHight = $(".menu-side").height();
-            var contHight = $(".post-side").height();
-            var height = (sideHight > contHight) ? sideHight : contHight;
+            // 滚动鼠标的时候进行高度校正
+            var sideHeight = $(".menu-side").height();
+            var contHeight = $(".post-side").height();
+            var height = (sideHeight > contHeight) ? sideHeight : contHeight;
             $(".menu-side, .post-side").css("min-height", height);
 
             // 定位菜单位置

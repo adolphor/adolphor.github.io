@@ -1,98 +1,100 @@
-<section class="left-section">
-  <div class="row">
-    <!--<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>-->
-    <div class="left-title">
+<section class="left-section row">
+  <div class="col-md-12">
+    <div class="left-title row">
+      <!--<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>-->
       最近发表
     </div>
+    <ul class="left-ul row">
+      {% for post in site.posts offset: 0 limit: 5 %}
+      <li style="margin-bottom: 10px;"><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
   </div>
-  <ul class="left-ul">
-    {% for post in site.posts offset: 0 limit: 5 %}
-    <li style="margin-bottom: 10px;"><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
 </section>
 
 <!-- Content -->
-<section class="left-section ">
-  <div class="row">
-    <!--<span class="glyphicon glyphicon-list" aria-hidden="true"></span>-->
-    <div class="left-title">
+<section class="left-section row">
+  <div class="col-md-12">
+    <div class="left-title row">
+      <!--<span class="glyphicon glyphicon-list" aria-hidden="true"></span>-->
       分类
     </div>
-  </div>
-  <ul class="left-ul">
-    {% for category in site.categories order:ascending %}
-    <li>
-      <a href="/categories.html#{{ category | first }}" class="categories-list-item"
-         cate="{{ category | first }}">
+    <ul class="left-ul row">
+      {% for category in site.categories order:ascending %}
+      <li>
+        <a href="/categories.html#{{ category | first }}" class="categories-list-item"
+           cate="{{ category | first }}">
             <span class="name">
                 {{ category | first }}
             </span>
-        <span class="badge">{{ category | last | size }}</span>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+          <span class="badge">{{ category | last | size }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 <!-- 其他div框放到这里 -->
-<section class="left-section">
-  <div class="row">
-    <!--<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>-->
-    <div class="left-title">
+<section class="left-section row">
+  <div class="col-md-12">
+    <div class="left-title row">
+      <!--<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>-->
       标签
     </div>
-  </div>
-  <div class="left-ul">
-    {% assign first = site.tags.first %}
-    {% assign max = first[1].size %}
-    {% assign min = max %}
-    {% for tag in site.tags offset:1 %}
-    {% if tag[1].size > max %}
-    {% assign max = tag[1].size %}
-    {% elsif tag[1].size < min %}
-    {% assign min = tag[1].size %}
-    {% endif %}
-    {% endfor %}
+    <div class="left-ul row">
+      {% assign first = site.tags.first %}
+      {% assign max = first[1].size %}
+      {% assign min = max %}
+      {% for tag in site.tags offset:1 %}
+      {% if tag[1].size > max %}
+      {% assign max = tag[1].size %}
+      {% elsif tag[1].size < min %}
+      {% assign min = tag[1].size %}
+      {% endif %}
+      {% endfor %}
 
-    {% if max == min %}
-    {% assign diff = 1 %}
-    {% else %}
-    {% assign diff = max | minus: min %}
-    {% endif %}
+      {% if max == min %}
+      {% assign diff = 1 %}
+      {% else %}
+      {% assign diff = max | minus: min %}
+      {% endif %}
 
-    {% for tag in site.tags %}
-    {% assign temp = tag[1].size | minus: min | times: 36 | divided_by: diff %}
-    {% assign base = temp | divided_by: 4 %}
-    {% assign remain = temp | modulo: 4 %}
-    {% if remain == 0 %}
-    {% assign size = base | plus: 9 %}
-    {% elsif remain == 1 or remain == 2 %}
-    {% assign size = base | plus: 9 | append: '.5' %}
-    {% else %}
-    {% assign size = base | plus: 10 %}
-    {% endif %}
-    {% if remain == 0 or remain == 1 %}
-    {% assign color = 9 | minus: base %}
-    {% else %}
-    {% assign color = 8 | minus: base %}
-    {% endif %}
-    <a href="/tags.html#{{ tag[0] }}"
-       style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
-    {% endfor %}
+      {% for tag in site.tags %}
+      {% assign temp = tag[1].size | minus: min | times: 36 | divided_by: diff %}
+      {% assign base = temp | divided_by: 4 %}
+      {% assign remain = temp | modulo: 4 %}
+      {% if remain == 0 %}
+      {% assign size = base | plus: 9 %}
+      {% elsif remain == 1 or remain == 2 %}
+      {% assign size = base | plus: 9 | append: '.5' %}
+      {% else %}
+      {% assign size = base | plus: 10 %}
+      {% endif %}
+      {% if remain == 0 or remain == 1 %}
+      {% assign color = 9 | minus: base %}
+      {% else %}
+      {% assign color = 8 | minus: base %}
+      {% endif %}
+      <a href="/tags.html#{{ tag[0] }}"
+         style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
-<section class="left-section">
-  <div class="row">
-    <!--<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>-->
-    <div class="left-title">访问量统计</div>
-  </div>
-  <div class="left-ul">
-    <span id="busuanzi_container_site_pv">本站总访问量 <b><span id="busuanzi_value_site_pv"></span></b> 次</span>
-    <br>
-    <span id="busuanzi_container_site_uv">本站总访客数 <b><span id="busuanzi_value_site_uv"></span></b> 人次</span>
-    <br>
-    <span id="busuanzi_container_page_pv">本文总阅读量 <b><span id="busuanzi_value_page_pv"></span></b> 次</span>
-    <br>
+<section class="left-section row">
+  <div class="col-md-12">
+    <div class="left-title row">
+      <!--<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>-->
+      访问量统计
+    </div>
+    <div class="left-ul row">
+      <span id="busuanzi_container_site_pv">本站总访问量 <b><span id="busuanzi_value_site_pv"></span></b> 次</span>
+      <br>
+      <span id="busuanzi_container_site_uv">本站总访客数 <b><span id="busuanzi_value_site_uv"></span></b> 人次</span>
+      <br>
+      <span id="busuanzi_container_page_pv">本文总阅读量 <b><span id="busuanzi_value_page_pv"></span></b> 次</span>
+      <br>
+    </div>
   </div>
 </section>

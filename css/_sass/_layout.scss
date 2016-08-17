@@ -93,7 +93,7 @@ a {
 .left-section {
 }
 
-.left-section .row {
+.left-section .left-title {
   background-color: #dadada;
 }
 
@@ -125,9 +125,10 @@ a {
   list-style: none;
 }
 
-.sub-menu-li{
+.sub-menu-li {
   padding-left: 20px;
 }
+
 //
 //.sub-menu-li a {
 //  padding-left: 15px;
@@ -173,7 +174,7 @@ a {
 .footer {
   background-color: #f8f8f8;
   text-align: center;
-  padding: 40px 0px 30px;
+  padding: 5px 0px 0px;
   color: #767676;
   border-top: 1px solid #e5e5e5;
 }
