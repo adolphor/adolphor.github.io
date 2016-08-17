@@ -4,7 +4,7 @@ title:      【Java8源码阅读笔记】Collection框架之Collection
 date:       2016-08-04 16:29:34 +0800
 postId:     2016-08-04-16-29-34
 categories: [Collection]
-tags:       [Collection, JAVA8]
+tags:       [Collection]
 geneMenu:   true
 ---
 ## Collection
