@@ -12,10 +12,78 @@ excerpt:    【Java8源码阅读笔记】Collection框架之AbstractCollection
 ## AbstractCollection
 `AbstractCollection`是集合实现类的根抽象实现类，实现了`Collection`接口，集合中的三个分支`Set`,`List`,`Queue`
 都是继承此类之后再进行各自实现的扩展，分别是`AbstractSet`,`AbstractList`,`AbstractQueue`。
+但是三个分支的具体实现是不一样的，那么Collection作为抽象父类，具体实现时内部存储结构是数组实现，
+而LinkedList内部存储结构是链表，这样大部分方法都要自己重新实现。
 
 ## 实现的方法
 
-### contains
+### boolean addAll(Collection<? extends E> c)
+{% highlight java %}
+public boolean addAll(Collection<? extends E> c) {
+    boolean modified = false;
+    for (E e : c)        // 遍历新增
+        if (add(e))      // 需要子类实现add方法
+            modified = true;
+    return modified;
+}
+{% endhighlight %}
+
+### boolean remove(Object o)
+{% highlight java %}
+public boolean remove(Object o) {
+    Iterator<E> it = iterator();    // 需要子类实现iterator方法
+    if (o==null) {
+        while (it.hasNext()) {
+            if (it.next()==null) {
+                it.remove();
+                return true;        // 这样移除的是符合条件的第一个元素
+            }
+        }
+    } else {
+        while (it.hasNext()) {
+            if (o.equals(it.next())) {      // equals方法进行比较
+                it.remove();
+                return true;
+            }
+        }
+    }
+    return false;
+}
+{% endhighlight %}
+
+### boolean removeAll(Collection<?> c)
+{% highlight java %}
+public boolean removeAll(Collection<?> c) {
+    Objects.requireNonNull(c);
+    boolean modified = false;
+    Iterator<?> it = iterator();    // 需要子类实现iterator方法
+    while (it.hasNext()) {
+        if (c.contains(it.next())) {    // 遍历移除
+            it.remove();
+            modified = true;
+        }
+    }
+    return modified;
+}
+{% endhighlight %}
+
+### boolean retainAll(Collection<?> c)
+{% highlight java %}
+public boolean retainAll(Collection<?> c) {
+    Objects.requireNonNull(c);
+    boolean modified = false;
+    Iterator<E> it = iterator();    // 需要子类实现iterator方法
+    while (it.hasNext()) {
+        if (!c.contains(it.next())) {
+            it.remove();
+            modified = true;
+        }
+    }
+    return modified;
+}
+{% endhighlight %}
+
+### boolean contains(Object o)
 {% highlight java %}
 public boolean contains(Object o) {
     Iterator<E> it = iterator();    // 需要子类实现add方法
@@ -59,8 +127,35 @@ AbstractCollection虽然实现了`contains`方法，但是并没有实现`iterat
     * ArrayDeque：内部存储结构是数组，遍历数组进行equals方法  
     * PriorityQueue：内部存储结构是数组，依赖于`private int indexOf(Object o)`方法，遍历数组进行equals方法  
 
+### boolean containsAll(Collection<?> c)
+{% highlight java %}
+public boolean containsAll(Collection<?> c) {
+    for (Object e : c)
+        if (!contains(e)) // contains需要子类实现iterator方法，参考本文最上面的contains方法
+            return false;
+    return true;
+}
+{% endhighlight %}
 
-### toArray
+### void clear()
+{% highlight java %}
+public void clear() {
+    Iterator<E> it = iterator();    // 需要子类实现iterator方法
+    while (it.hasNext()) {          // 遍历移除
+        it.next();
+        it.remove();
+    }
+}
+{% endhighlight %}
+
+### boolean isEmpty()
+{% highlight java %}
+public boolean isEmpty() {
+    return size() == 0;
+}
+{% endhighlight %}
+
+### Object[] toArray()
 {% highlight java %}
 public Object[] toArray() {
     // Estimate size of array; be prepared to see more or fewer elements
@@ -103,7 +198,7 @@ public Object[] toArray() {
     * PriorityQueue：`Arrays.copyOf(queue, size)`  
 
 
-### T[] toArray
+### <T> T[] toArray(T[] a)
 
 {% highlight java %}
 public <T> T[] toArray(T[] a) {
@@ -137,103 +232,28 @@ public <T> T[] toArray(T[] a) {
 
 指定数据类型的数组转换，
 
-### remove
+### String toString()
 {% highlight java %}
-public boolean remove(Object o) {
-    Iterator<E> it = iterator();    // 需要子类实现iterator方法
-    if (o==null) {
-        while (it.hasNext()) {
-            if (it.next()==null) {
-                it.remove();
-                return true;        // 这样移除的是符合条件的第一个元素
-            }
-        }
-    } else {
-        while (it.hasNext()) {
-            if (o.equals(it.next())) {      // equals方法进行比较
-                it.remove();
-                return true;
-            }
-        }
-    }
-    return false;
-}
-{% endhighlight %}
-
-### containsAll
-{% highlight java %}
-public boolean containsAll(Collection<?> c) {
-    for (Object e : c)
-        if (!contains(e)) // contains需要子类实现iterator方法，参考本文最上面的contains方法
-            return false;
-    return true;
-}
-{% endhighlight %}
-
-### addAll
-{% highlight java %}
-public boolean addAll(Collection<? extends E> c) {
-    boolean modified = false;
-    for (E e : c)        // 遍历新增
-        if (add(e))      // 需要子类实现add方法
-            modified = true;
-    return modified;
-}
-{% endhighlight %}
-
-### removeAll
-{% highlight java %}
-public boolean removeAll(Collection<?> c) {
-    Objects.requireNonNull(c);
-    boolean modified = false;
-    Iterator<?> it = iterator();    // 需要子类实现add方法
-    while (it.hasNext()) {
-        if (c.contains(it.next())) {    // 遍历移除
-            it.remove();
-            modified = true;
-        }
-    }
-    return modified;
-}
-{% endhighlight %}
-
-
-### retainAll
-{% highlight java %}
-public boolean retainAll(Collection<?> c) {
-    Objects.requireNonNull(c);
-    boolean modified = false;
-    Iterator<E> it = iterator();    // 需要子类实现add方法
-    while (it.hasNext()) {
-        if (!c.contains(it.next())) {
-            it.remove();
-            modified = true;
-        }
-    }
-    return modified;
-}
-{% endhighlight %}
-
-### clear
-{% highlight java %}
-public void clear() {
-    Iterator<E> it = iterator();    // 需要子类实现add方法
-    while (it.hasNext()) {          // 遍历移除
-        it.next();
-        it.remove();
+public String toString() {
+    Iterator<E> it = iterator();
+    if (! it.hasNext())
+        return "[]";
+    StringBuilder sb = new StringBuilder();
+    sb.append('[');
+    for (;;) {
+        E e = it.next();
+        sb.append(e == this ? "(this Collection)" : e);
+        if (! it.hasNext())
+            return sb.append(']').toString();
+        sb.append(',').append(' ');
     }
 }
 {% endhighlight %}
+
 
 ## 未实现方法
 
-### iterator
-所有涉及到集合遍历的操作都要使用
-
-### size
-size方法获取当前集合的元素的个数，也就是集合的长度，在新增和删除的时候都有变动
-
-### add
+### boolean add(E e)
 add方法是一个比较特殊的存在，它并不是抽象方法，但也并没有完全实现，而是需要子类去覆写，在本抽象类中的实现方式如下：
 {% highlight java %}
 public boolean add(E e) {
@@ -241,7 +261,25 @@ public boolean add(E e) {
 }
 {% endhighlight %}
 
-本方法只是抛出了一个未支持的操作的异常信息，既然如此，为什么不直接设置未抽象呢？
+本方法只是抛出了一个未支持的操作的异常信息，既然如此，为什么不直接设置为抽象呢？
+
+### abstract Iterator<E> iterator()
+所有涉及到集合遍历的操作都要使用
+
+### abstract int size()
+size方法获取当前集合的元素的个数，也就是集合的长度，在新增和删除的时候都有变动
+
+## 继承的方法
+
+### Collection
+
+equals, hashCode, parallelStream, removeIf, spliterator, stream
+
+### Iterable
+
+#### default void forEach(Consumer<? super T> action)
+since 1.8，TODO
+
 
 ## 参考资料
 
