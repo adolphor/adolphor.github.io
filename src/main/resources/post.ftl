@@ -13,7 +13,7 @@ excerpt:    excerpt
 
 ## 参考资料
 
-[test](test.html)
+* [test](test.html)
 
 {% highlight java %}
 {% endhighlight %}

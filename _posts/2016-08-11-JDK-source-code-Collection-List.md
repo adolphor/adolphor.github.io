@@ -106,7 +106,7 @@ since 1.8，TODO
 
 ## 参考资料
 
-[JDK文档 之 List](https://docs.oracle.com/javase/8/docs/api/java/util/List.html)
+* [JDK文档 之 List](https://docs.oracle.com/javase/8/docs/api/java/util/List.html)
 
 
 {% highlight java %}

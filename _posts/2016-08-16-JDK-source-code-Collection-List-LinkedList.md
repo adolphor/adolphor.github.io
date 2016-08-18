@@ -278,4 +278,4 @@ public <T> T[] toArray(T[] a) {
 
 ## 参考资料
 
-[JDK文档 之 LinkedList](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html)
+* [JDK文档 之 LinkedList](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html)

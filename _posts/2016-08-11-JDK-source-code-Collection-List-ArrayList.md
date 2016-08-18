@@ -114,4 +114,4 @@ public int indexOf(Object o) {
 
 ## 参考资料
 
-[JDK文档 之 ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
+* [JDK文档 之 ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)

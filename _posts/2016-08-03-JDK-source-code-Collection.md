@@ -101,6 +101,6 @@ AbstractCollection具体实现，参考[【Java8源码阅读笔记】Collection�
 
 ## 参考资料
 
-[The Collections Framework](https://docs.oracle.com/javase/8/docs/technotes/guides/collections/index.html)  
-[Collections API](https://docs.oracle.com/javase/8/docs/api/java/util/package-summary.html)  
+* [The Collections Framework](https://docs.oracle.com/javase/8/docs/technotes/guides/collections/index.html)  
+* [Collections API](https://docs.oracle.com/javase/8/docs/api/java/util/package-summary.html)  
 

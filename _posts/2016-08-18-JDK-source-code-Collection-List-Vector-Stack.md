@@ -37,4 +37,4 @@ since unknown，查找元素在栈中的位置并返回
 
 ## 参考资料
 
-[JDK文档 之 Stack](https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html)
+* [JDK文档 之 Stack](https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html)

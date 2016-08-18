@@ -29,6 +29,6 @@ num|ArrayList | Vector
 
 ## 参考资料
 
-[JDK文档 之 Vector](https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html)
+* [JDK文档 之 Vector](https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html)
 
-[Difference between ArrayList and Vector](http://www.javatpoint.com/difference-between-arraylist-and-vector)
+* [Difference between ArrayList and Vector](http://www.javatpoint.com/difference-between-arraylist-and-vector)

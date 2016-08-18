@@ -56,7 +56,7 @@ since 1.8，TODO
 
 ## 参考资料
 
-[JDK文档 之 Set](https://docs.oracle.com/javase/8/docs/api/java/util/Set.html)
+* [JDK文档 之 Set](https://docs.oracle.com/javase/8/docs/api/java/util/Set.html)
 
 {% highlight java %}
 {% endhighlight %}

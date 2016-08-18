@@ -288,7 +288,7 @@ TODO 问题：默认方法相比于抽象实现类，有点在哪里？
 
 ## 参考资料
 
-[JDK文档 之 Collection](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html)
+* [JDK文档 之 Collection](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html)
 
 
 

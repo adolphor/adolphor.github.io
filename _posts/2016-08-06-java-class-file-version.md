@@ -217,7 +217,7 @@ Modules -> Language level
 
 ## 参考文献
 
-[java compiler target version](http://javapapers.com/core-java/how-to-find-java-the-compiler-target-version-from-a-java-class-file)
+* [java compiler target version](http://javapapers.com/core-java/how-to-find-java-the-compiler-target-version-from-a-java-class-file)
 
-[source_target_class_file_version](https://blogs.oracle.com/darcy/entry/source_target_class_file_version)
+* [source_target_class_file_version](https://blogs.oracle.com/darcy/entry/source_target_class_file_version)
 

@@ -282,4 +282,4 @@ since 1.8，TODO
 
 ## 参考资料
 
-[JDK文档 之 AbstractCollection](https://docs.oracle.com/javase/8/docs/api/java/util/AbstractCollection.html)
+* [JDK文档 之 AbstractCollection](https://docs.oracle.com/javase/8/docs/api/java/util/AbstractCollection.html)
