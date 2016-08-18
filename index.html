@@ -16,16 +16,16 @@ postId: index
           <span class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</span>
         </h3>
         <!--<p>-->
-          <!--{{ post.content | truncate:300 }}-->
+        <!--{{ post.content | truncate:300 }}-->
         <!--</p>-->
       </article>
     </li>
     {% endfor %}
   </ul>
   <!--分页开始-->
-  <nav style="margin-top: 70px">
+  <nav style="margin: 0 0 30px 0; text-align:center;">
     {% if paginator.total_pages > 1 %}
-    <ul class="pagination center">
+    <ul class="pagination">
       {% if paginator.previous_page %}
       <li>
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"

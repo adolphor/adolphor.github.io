@@ -6,7 +6,7 @@ postId:     2016-08-08-10-58-19
 categories: [Collection]
 tags:       [Collection]
 geneMenu:   true
-excerpt:    excerpt
+excerpt:    【Java8源码阅读笔记】Collection框架之AbstractCollection
 ---
 
 ## AbstractCollection

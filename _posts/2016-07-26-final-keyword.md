@@ -6,6 +6,7 @@ postId:     2016-07-26-22-00-00
 categories: [java]
 tags:       [java]
 geneMenu:   true
+excerpt:    java final关键字解析
 ---
 
 `final` 表示“不能改变”，不进行改变的理由可能是设计或者效率。但修饰不同的对象的时候，含义不尽相同，

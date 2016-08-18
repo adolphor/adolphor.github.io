@@ -6,6 +6,7 @@ postId:     2016-08-01-16-08-00
 categories: [UML]
 tags:       [UML]
 geneMenu:   true
+excerpt:    java UML中的类图关系
 ---
 ## 概述
 

@@ -6,18 +6,85 @@ postId:     2016-08-04-16-29-34
 categories: [Collection]
 tags:       [Collection]
 geneMenu:   true
+excerpt:    【Java8源码阅读笔记】Collection框架之Collection
 ---
 ## Collection
 
 `Collection`集合的继承以及各个实现类之间的关系，参考[【Java8源码阅读】Collection框架总述](/collection/2016/08/03/JDK-source-code-Collection.html),
 本文主要讲解各个接口定义以及用途。
 
-## 比较陌生的接口
+## 接口定义
 
-### hashCode
+
+### boolean add(E e) 
+
+新增元素到集合，对于是否支持null值，按照需要在实现类中自行控制。
+
+新增成功返回true，新增失败返回false。
+
+### boolean addAll(Collection<? extends E> c)
+
+将参数中包含的所有元素添加到集合。
+
+新增成功返回true，新增失败返回false。
+
+### boolean remove(Object o) 
+
+从集合中删除元素，如果存在至少一个相等的元素，就为true。
+
+删除成功返回true，删除失败返回false。
+
+### boolean removeAll(Collection<?> c)
+
+将参数中包含的所有元素从集合中删除（如果集合中存在的话）
+
+### boolean retainAll(Collection<?> c)
+
+集合中的对象如果不在参数c中就进行删除操作，最后集合中保留下来的元素是参数c的子集。
+
+如果方法调用过程中删除了集合中的至少一个元素，返回true；如果没有删除任何一个元素，返回false。
+
+    RetainAllDemo.java
+
 {% highlight java %}
-int hashCode()
+import java.util.ArrayList;
+
+public class RetainAllDemo {
+  public static void main(String[] args) {
+    ArrayList<String> temp1 = new ArrayList<>();
+    temp1.add("A");
+    temp1.add("B");
+    temp1.add("C");
+    ArrayList<String> temp2 = new ArrayList<>();
+    temp2.add("A");
+    temp2.add("B");
+
+    boolean result = temp1.retainAll(temp2);  // true：删除元素C
+    System.out.println(result);
+    System.out.println("temp1：" + temp1);
+    System.out.println("temp2：" + temp2);
+
+    result = temp1.retainAll(temp2);          // false：没有需要移除的元素
+    System.out.println(result);
+    System.out.println("temp1：" + temp1);
+    System.out.println("temp2：" + temp2);
+
+    temp1.remove("A");
+    temp1.add("D");
+    result = temp1.retainAll(temp2);          // true：删除元素D，temp2中的A对集合中的元素没有影响
+    System.out.println(result);
+    System.out.println("temp1：" + temp1);
+    System.out.println("temp2：" + temp2);
+  }
+}
 {% endhighlight %}
+
+### void clear()
+
+将集合清空
+
+
+### int hashCode()
 
 此hashCode方法，是计算整个集合的hashCode，本方法使用较少。
 
@@ -43,10 +110,7 @@ public class HashCodeDemo {
 {% endhighlight %}
 
 
-### equals
-{% highlight java %}
-boolean equals(Object o)
-{% endhighlight %}
+### boolean equals(Object o)
 
 此接口用于判断两个集合是否相等：只有集合和参数具有相同的元素的个数，而且在对应的元素相等（equals），
 才能称这两个集合相等。
@@ -151,172 +215,54 @@ class Student {
   public int hashCode() {
     return this.cardNum;
   }
-
 }
 {% endhighlight %}
 
+### boolean contains(Object o)
+是否包含参数元素
 
-### retainAll
-{% highlight java %}
-boolean retainAll(Collection<?> c)
-{% endhighlight %}
+### boolean containsAll(Collection<?> c)
+集合中是否包含参数集合中的所有元素
 
-集合中的对象如果不在参数c中就进行删除操作，最后集合中保留下来的元素是参数c的子集。
-
-如果方法调用过程中删除了集合中的至少一个元素，返回true；如果没有删除任何一个元素，返回false。
-
-    RetainAllDemo.java
-{% highlight java %}
-import java.util.ArrayList;
-
-public class RetainAllDemo {
-  public static void main(String[] args) {
-    ArrayList<String> temp1 = new ArrayList<>();
-    temp1.add("A");
-    temp1.add("B");
-    temp1.add("C");
-    ArrayList<String> temp2 = new ArrayList<>();
-    temp2.add("A");
-    temp2.add("B");
-
-    boolean result = temp1.retainAll(temp2);  // true：删除元素C
-    System.out.println(result);
-    System.out.println("temp1：" + temp1);
-    System.out.println("temp2：" + temp2);
-
-    result = temp1.retainAll(temp2);          // false：没有需要移除的元素
-    System.out.println(result);
-    System.out.println("temp1：" + temp1);
-    System.out.println("temp2：" + temp2);
-
-    temp1.remove("A");
-    temp1.add("D");
-    result = temp1.retainAll(temp2);          // true：删除元素D，temp2中的A对集合中的元素没有影响
-    System.out.println(result);
-    System.out.println("temp1：" + temp1);
-    System.out.println("temp2：" + temp2);
-  }
-}
-{% endhighlight %}
-
-## java8新特性
-
-### spliterator
-{% highlight java %}
-default Spliterator<E> spliterator()
-{% endhighlight %}
-
-### removeIf
-{% highlight java %}
-default boolean removeIf(Predicate<? super E> filter)
-{% endhighlight %}
-
-{% highlight java %}
-{% endhighlight %}
-
-### stream
-{% highlight java %}
-default Stream<E> stream()
-{% endhighlight %}
-
-### parallelStream
-{% highlight java %}
-default Stream<E> parallelStream()
-{% endhighlight %}
-
-## 比较熟悉的接口
-
-### add 
-{% highlight java %}
-boolean add(E e)
-{% endhighlight %}
-
-新增元素到集合，对于是否支持null值，按照需要在实现类中自行控制。
-
-新增成功返回true，新增失败返回false。
-
-### addAll
-{% highlight java %}
-boolean addAll(Collection<? extends E> c)
-{% endhighlight %}
-
-将参数中包含的所有元素添加到集合。
-
-新增成功返回true，新增失败返回false。
-
-
-### remove 
-{% highlight java %}
-boolean remove(Object o)
-{% endhighlight %}
-
-从集合中删除元素，如果存在至少一个相等的元素，就为true。
-
-删除成功返回true，删除失败返回false。
-
-### removeAll
-{% highlight java %}
-boolean removeAll(Collection<?> c)
-{% endhighlight %}
-
-将参数中包含的所有元素从集合中删除（如果集合中存在的话）
-
-### clear
-{% highlight java %}
-void clear()
-{% endhighlight %}
-
-将集合清空
-
-### isEmpty 
-{% highlight java %}
-boolean isEmpty()
-{% endhighlight %}
+### boolean isEmpty() 
 
 集合是否为空
 
-### size
-{% highlight java %}
-int size()
-{% endhighlight %}
+### int size()
 
 集合当前含有的元素的个数
 
+### Object[] toArray()
 
-### contains
-{% highlight java %}
-boolean contains(Object o)
-{% endhighlight %}
+将集合转换为数组
 
-### containsAll
-{% highlight java %}
-boolean containsAll(Collection<?> c)
-{% endhighlight %}
+### <T> T[] toArray(T[] a)
 
-{% highlight java %}
-{% endhighlight %}
-集合中是否包含参数集合中的所有元素
+将集合转换为指定数据类型的数组
 
-### iterator
-{% highlight java %}
-Iterator<E> iterator()
-{% endhighlight %}
+### Iterator<E> iterator()
+集合遍历封装类
 
-### toArray
-{% highlight java %}
-Object[] toArray()
-{% endhighlight %}
+### default Spliterator<E> spliterator()
 
-### toArray (T[] a)
-{% highlight java %}
-<T> T[] toArray(T[] a)
-{% endhighlight %}
+Java8 TODO
 
+### default boolean removeIf(Predicate<? super E> filter)
+
+Java8 TODO
+
+### default Stream<E> stream()
+
+Java8 TODO
+
+### default Stream<E> parallelStream()
+
+Java8 TODO
 
 ## 接口中的默认方法
 Java8之后，还有一个新特性，就是接口中支持默认方法实现：
 {% highlight java %}
-public interface DefaultMethodOfInterface {
+public interface  {
   void method1();
   default void method2() {
     System.out.println("I'm method2 from interface.");
@@ -339,7 +285,6 @@ public class Demo {
 
 TODO 问题：默认方法相比于抽象实现类，有点在哪里？
 * 继承的单一性限制
-
 
 ## 参考资料
 
