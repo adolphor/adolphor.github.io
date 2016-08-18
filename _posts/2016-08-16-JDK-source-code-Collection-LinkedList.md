@@ -33,6 +33,18 @@ private static class Node<E> {
 }
 {% endhighlight %}
 
+LinkedList含有很多接口，大概可以划分如下几类：
+
+* 增加 add / offer
+* 获取 get / poll / peek
+* 删除 remove / pop / clear
+* 修改 set
+* 遍历 iterator
+
+可以看出除了修改和遍历，有很多方法是重复实现的，从刚开始的 add/get/remove 到 后来的 offer/poll/peek/pop ，
+实际上是一个从根据操作的动作进行命名到根据操作的目的进行命名的一个变化过程。
+但是应该是为了向前兼容旧版本，所以原有的命名接口依然进行了保留。
+
 
 ## 接口实现
 
