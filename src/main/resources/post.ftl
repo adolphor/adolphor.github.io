@@ -11,10 +11,9 @@ excerpt:    excerpt
 
 开始写作吧
 
-{% highlight java %}
-
-{% endhighlight %}
-
 ## 参考资料
 
 [test](test.html)
+
+{% highlight java %}
+{% endhighlight %}

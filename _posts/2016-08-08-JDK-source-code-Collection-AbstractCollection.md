@@ -180,18 +180,17 @@ public Object[] toArray() {
 
 * Set  
     * HashSet：实现iterator()方法  
-        ```
-        public Iterator<E> iterator() {
-            return map.keySet().iterator();
-        }
-        ```
+
+            public Iterator<E> iterator() {
+                return map.keySet().iterator();
+            }
+
     * LinkedHashSet：继承`HashSet`  
     * TreeSet：实现iterator()方法  
-        ```
-        public Iterator<E> iterator() {
-            return m.navigableKeySet().iterator();
-        }
-        ```
+
+            public Iterator<E> iterator() {
+                return m.navigableKeySet().iterator();
+            }
         
 * Queue  
     * ArrayDeque：`System.arraycopy()`  
@@ -199,6 +198,7 @@ public Object[] toArray() {
 
 
 ### <T> T[] toArray(T[] a)
+指定数据类型的数组转换
 
 {% highlight java %}
 public <T> T[] toArray(T[] a) {
@@ -230,7 +230,6 @@ public <T> T[] toArray(T[] a) {
 }
 {% endhighlight %}
 
-指定数据类型的数组转换，
 
 ### String toString()
 {% highlight java %}
