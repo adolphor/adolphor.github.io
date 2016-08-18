@@ -1,4 +1,4 @@
-package Y2016.M08.D16_LinkedList.addIndex;
+package Y2016.M08.D16_LinkedList.add;
 
 import java.util.LinkedList;
 

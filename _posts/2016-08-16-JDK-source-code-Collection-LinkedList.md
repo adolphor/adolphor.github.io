@@ -6,7 +6,7 @@ postId:     2016-08-16-15-59-31
 categories: [Collection]
 tags:       [Collection, List]
 geneMenu:   true
-excerpt:    excerpt
+excerpt:    【Java8源码阅读笔记】Collection框架之LinkedList
 ---
 
 ## LinkedList
@@ -194,13 +194,13 @@ public boolean remove(Object o) {
 {% endhighlight %}
 
 ### removeFirstOccurrence(Object o)
-since 1.6，删除第一个符合条件的元素，直接调用的 [remove(Object o)](removeObjectCode) 方法。
+since 1.6，删除第一个符合条件的元素，直接调用的 [remove(Object o)](#removeObjectCode) 方法。
 
 ### removeLastOccurrence(Object o)
 since 1.6，删除最后一个符合条件的元素，从last开始进行遍历比较。
 
 ### clear()
-清空集合中的所有元素，虽然“没有必要”将所有节点之间的链接都解除，但是这样做有助于垃圾回收。
+清空集合中的所有元素，虽然 “没有必要” 将所有节点之间的链接都解除，但是这样做有助于垃圾回收。
 {% highlight java %}
 public void clear() {
     for (Node<E> x = first; x != null; ) {
@@ -217,27 +217,51 @@ public void clear() {
 {% endhighlight %}
 
 ### clone()
+克隆集合，遍历原集合并将其添加到克隆之后的集合中。
 
-### contains(Object o)
-
-### descendingIterator()
-
-### indexOf(Object o)
+### indexOf(Object o) {#indexOf}
+遍历集合进行equals方法比较，返回所在位置下标。
 
 ### lastIndexOf(Object o)
+倒序遍历集合进行equals方法比较，返回所在位置下标。
+
+### contains(Object o)
+利用 [indexOf(Object o)](#indexOf) 方法实现。
+
+### descendingIterator()
+since 1.6，倒序iterator
 
 ### listIterator(int index)
+since unknown，从index位置开始iterator
 
 ### size()
+since unknown，LinkedList长度
 
 ### spliterator()
+since 1.8，Java8新特性，TODO
 
 ### toArray()
+since unknown，将LinkedList转换为数组，但是数组元素对象类型为Object。
 
 ### toArray(T[] a)
-
+since unknown，将LinkedList转换为数组，区别在于转换数组的过程中指定了数组元素对象类型为T。
+但是数组中的原有的元素并不会影响转换之后的结果，唯一起作用的就是对象类型，代码实现如下：
 
 {% highlight java %}
+public <T> T[] toArray(T[] a) {
+    if (a.length < size)
+        a = (T[])java.lang.reflect.Array.newInstance(       // 初始化一个新数组
+                            a.getClass().getComponentType(),    // 类型为传递过来的参数的类型
+                            size                            // 数组长度为LinkedList当前长度
+                        );
+    int i = 0;
+    Object[] result = a;
+    for (Node<E> x = first; x != null; x = x.next)      // 遍历List
+        result[i++] = x.item;       // 赋值到数组
+    if (a.length > size)            // 如果数组长度大于List长度
+        a[size] = null;             // 将原数组中List之后的数据舍弃
+    return a;
+}
 {% endhighlight %}
 
 ## 参考资料
