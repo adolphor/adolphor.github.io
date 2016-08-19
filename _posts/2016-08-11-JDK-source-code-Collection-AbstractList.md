@@ -128,14 +128,11 @@ public int hashCode() {
 {% endhighlight %}
 
 
-## 继承接口
+## 接口继承
 
 ### AbstractCollection
 
 addAll, contains, containsAll, isEmpty, remove, removeAll, retainAll, size, toArray, toArray, toString
-
-###
-
 
 ## 参考资料
 

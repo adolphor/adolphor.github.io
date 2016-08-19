@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public class Generator {
 
-  private static String postTitle = "TITLE";
+  private static String postTitle = "-JDK-source-code-Collection-Set-AbstractSet";
 
 
   private static Configuration cfg;
@@ -32,7 +32,7 @@ public class Generator {
 
     String templatePath = System.getProperty("user.dir") + "\\src\\main\\resources";
     Configuration configuration = getConfiguration(templatePath);
-    Template temp = configuration.getTemplate("post.ftl");
+    Template temp = configuration.getTemplate("post-Collection.ftl");
     String url = System.getProperty("user.dir") + File.separator + "_posts"
             + File.separator + Utils.getPostTitle(postTitle)+".md";
 
