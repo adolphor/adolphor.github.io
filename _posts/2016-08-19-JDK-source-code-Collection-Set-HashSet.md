@@ -27,6 +27,16 @@ public HashSet(Collection<? extends E> c) { //
     map = new HashMap<>(Math.max((int) (c.size()/.75f) + 1, 16));
     addAll(c);  // 构造函数中直接调用addAll方法
 }
+public HashSet(int initialCapacity) {
+    map = new HashMap<>(initialCapacity);
+}
+public HashSet(int initialCapacity, float loadFactor) {
+    map = new HashMap<>(initialCapacity, loadFactor);
+}
+HashSet(int initialCapacity, float loadFactor, boolean dummy) {
+    map = new LinkedHashMap<>(initialCapacity, loadFactor);
+}
+
 {% endhighlight %}
 全局变量 `map` 作为HashSet内部实现的存储容器，
 全局静态变量 `PRESENT` 作为所有的key键的value值。
@@ -35,7 +45,11 @@ public HashSet(Collection<? extends E> c) { //
 这样才能保证添加到集合中的时候不会出现类型转换错误，关键字 `extends` 是 “上界通配符”。
 下面在看下 `Math.max((int) (c.size()/.75f) + 1, 16)` ，将c长度扩大三分之一之后和16进行比较，
 取两者之间较大的值：这样如果c长度小于12，初始化长度就是16；如果c长度大于12，初始化长度就是c的长度
-的三分之四倍大小。（除以0.75等于乘以三分之四，也就是增加了三分之一）
+的三分之四倍大小（除以0.75等于乘以三分之四，也就是增加了三分之一）。
+第三个构造函数指定了初始化大小，第四个构造函数指定初始化大小和负载因子（loadFactor）。
+第五个构造函数指定了初始化大小、负载因子以及 `dummy` 标志参数，如果有这个参数，
+则内部容器使用LinkedHashMap，如果没有这个参数（前四种构造函数）则使用HashMap作为存储容器。
+HashSet 的子类 LinkedHashSet 就是调用这个构造函数来进行初始化，这也是 HashSet 和 LinkedHashSet 最主要的区别。
 
 ## 接口实现
 因为内部存储结构是HashMap，所以绝大部分函数实现都依赖于HashMap函数特性。
