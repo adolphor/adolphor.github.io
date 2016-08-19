@@ -1,7 +1,12 @@
 $(document).ready(function () {
     heightFunctions();
     geneMenu();
+
+    $(window).resize(function () {
+        reSize();
+    });
 });
+
 
 function heightFunctions() {
     var winHeight = $(window).height();
@@ -39,30 +44,34 @@ function geneMenu() {
         section += ("</ul></div></section>");
         $(".menu-side").append(section);
 
-        var windowHeight = $(window).height();
-        var width = $("aside section:first").width();
-        $("#articleMenu").css("width",width);
-        $("#articleMenu ul:first").css("overflow-y","auto")
-            .css("height",(windowHeight - 110))
-            .css("width",(width - 18));
+        reSize();
 
-        var position = $('#articleMenu').offset();
-        $(window).scroll(function () {
-            // 滚动鼠标的时候进行高度校正
-            var sideHeight = $(".menu-side").height();
-            var contHeight = $(".post-side").height();
-            var height = (sideHeight > contHeight) ? sideHeight : contHeight;
-            $(".menu-side, .post-side").css("min-height", height);
-
-            // 定位菜单位置
-            if ($(window).scrollTop() > position.top) {
-                $('#articleMenu').css('position', 'fixed').css('top', '0');
-            } else {
-                $('#articleMenu').css('position', 'static');
-            }
-        });
     }
 
+}
 
+function reSize() {
+    var windowHeight = $(window).height();
+    var width = $("aside section:first").width();
+    $("#articleMenu").css("width", width);
+    $("#articleMenu ul:first").css("overflow-y", "auto")
+        .css("height", (windowHeight - 110))
+        .css("width", (width - 18));
+
+    var position = $('#articleMenu').offset();
+    $(window).scroll(function () {
+        // 滚动鼠标的时候进行高度校正
+        var sideHeight = $(".menu-side").height();
+        var contHeight = $(".post-side").height();
+        var height = (sideHeight > contHeight) ? sideHeight : contHeight;
+        $(".menu-side, .post-side").css("min-height", height);
+
+        // 定位菜单位置
+        if ($(window).scrollTop() > position.top) {
+            $('#articleMenu').css('position', 'fixed').css('top', '0');
+        } else {
+            $('#articleMenu').css('position', 'static');
+        }
+    });
 }
 
