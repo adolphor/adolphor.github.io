@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public class Generator {
 
-  private static String postTitle = "-JDK-source-code-Collection-Set-AbstractSet";
+  private static String postTitle = "JDK-source-code-Collection-Set";
 
 
   private static Configuration cfg;

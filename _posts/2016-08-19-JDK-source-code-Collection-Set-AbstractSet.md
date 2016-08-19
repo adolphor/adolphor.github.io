@@ -18,7 +18,7 @@ Since 1.2，本类没有覆写 `AbstractCollection` 中的任何方法，
 ### boolean equals(Object o)
 equals 方法判断的时候，先从最简单直接的特性进行比较：如果是自身，肯定相等；
 如果不是Set类型，肯定不等；如果长度不等，肯定不等；
-至此集合和参数长度相等，值没有重复，如果集合包含参数中的每一个元素，
+至此集合和参数长度相等，值没有重复，那么如果集合包含参数中的每一个元素，
 则说明两者相等。
 
 {% highlight java %}
@@ -59,7 +59,8 @@ public int hashCode() {
 
 
 ### boolean removeAll(Collection<?> c)
-遍历小的那个集合来提高效率：
+AbstractCollection中已经实现了此方法，默认使用下面else中的实现。
+覆写之后的实现是：进行判断之后，遍历小的那个集合来提高效率：
 
 {% highlight java %}
 public boolean removeAll(Collection<?> c) {
@@ -85,6 +86,11 @@ public boolean removeAll(Collection<?> c) {
 
 ### AbstractCollection
 add, addAll, clear, contains, containsAll, isEmpty, iterator, remove, retainAll, size, toArray, toArray, toString
+
+## 遗留问题
+
+* removeAll覆写应该不是单单为了提高这么一点效率吧？
+那AbstractCollection中为什么没有使用这种实现方式呢？
 
 ## 参考资料
 

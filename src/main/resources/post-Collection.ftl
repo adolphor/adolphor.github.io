@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      ${postTitle}
+title:      【Java8源码阅读笔记】Collection框架之HashSet
 date:       ${postDate} +0800
 postId:     ${postId}
-categories: [java, java]
-tags:       [tag, tag]
+categories: [Collection]
+tags:       [Collection, Set]
 geneMenu:   true
-excerpt:    excerpt
+excerpt:    【Java8源码阅读笔记】Collection框架之HashSet
 ---
 
 开始写作吧
