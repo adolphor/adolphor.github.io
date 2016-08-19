@@ -11,9 +11,13 @@ excerpt:    【Java8源码阅读笔记】Collection框架之Set
 
 ## Set
 
-since 1.2，Set是一个不包含重复元素的集合。一般来说，不会包含`e1.equals(e2)`的两个元素，
-而且最后含有一个`null`值。和它名称所暗示的一样，此接口模拟了数学中的set概念。
+since 1.2，Set是一个不包含重复元素的集合。一般来说，不会包含 `e1.equals(e2)` 的两个元素，
+而且最后含有一个 `null` 值。和它名称所暗示的一样，此接口模拟了数学中的set概念。
 (As implied by its name, this interface models the mathematical set abstraction.)
+
+Set接口中的所有接口都继承自 `Collection`，只是增加了不能含有重复元素的限制条件。
+
+此接口下有 `TreeSet`, `HashSet`, `LinkedHashSet` 三个实现类。
 
 ## Set独有接口
 Set没有独有接口，所有的接口都继承自父类，sad.... 

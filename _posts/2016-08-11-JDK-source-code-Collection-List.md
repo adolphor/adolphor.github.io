@@ -10,7 +10,7 @@ excerpt:    【Java8源码阅读笔记】Collection框架之List
 ---
 ## List
 `List`接口是List集合分支的中接口定义，所有的List实现类都直接或间接实现此接口，而此接口继承自`Collection`，
-此接口下有`ArrayList`, `LinkedList`, `Vector`, `Stack` 四个实现类。
+此接口下有 `ArrayList`, `LinkedList`, `Vector`, `Stack` 四个实现类。
 
 List允许重复元素，允许空值null，
 
