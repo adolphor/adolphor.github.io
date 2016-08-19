@@ -1,4 +1,4 @@
-package Y2016.M08.D19_AbstractSet.equals;
+package Y2016.M08.D19_AbstractSet;
 
 import java.util.AbstractSet;
 import java.util.Collection;
@@ -43,4 +43,5 @@ public class MySet<E>
   public int size() {
     return map.size();
   }
+
 }

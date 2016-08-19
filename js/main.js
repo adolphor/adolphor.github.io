@@ -45,7 +45,6 @@ function geneMenu() {
         })
         section += ("</ul></div></section>");
         $(".menu-side").append(section);
-        console.log("append")
         reSize();
 
         position = $('#articleMenu').offset();

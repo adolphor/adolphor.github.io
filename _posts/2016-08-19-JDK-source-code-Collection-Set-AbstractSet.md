@@ -60,7 +60,6 @@ public int hashCode() {
 
 ### boolean removeAll(Collection<?> c)
 遍历小的那个集合来提高效率：
-如果
 
 {% highlight java %}
 public boolean removeAll(Collection<?> c) {
