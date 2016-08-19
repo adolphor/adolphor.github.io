@@ -15,6 +15,71 @@ Since 1.2，本类没有覆写 `AbstractCollection` 中的任何方法，
 
 ## 接口实现
 
+### boolean equals(Object o)
+equals 方法判断的时候，先从最简单直接的特性进行比较：如果是自身，肯定相等；
+如果不是Set类型，肯定不等；如果长度不等，肯定不等；
+至此集合和参数长度相等，值没有重复，如果集合包含参数中的每一个元素，
+则说明两者相等。
+
+{% highlight java %}
+public boolean equals(Object o) {
+    if (o == this)              // 是否是自身
+        return true;
+    if (!(o instanceof Set))    // 是否是Set类型
+        return false;
+    Collection<?> c = (Collection<?>) o;
+    if (c.size() != size())     // 长度是否相等
+        return false;
+    try {
+        return containsAll(c);  // 包含参数中的所有元素 => 相等
+    } catch (ClassCastException unused)   {
+        return false;           // 类型转换异常
+    } catch (NullPointerException unused) {
+        return false;
+    }
+}
+{% endhighlight %}
+
+
+### t hashCode()
+额，最简单的每个元素的哈希码求和……
+
+{% highlight java %}
+public int hashCode() {
+    int h = 0;
+    Iterator<E> i = iterator();
+    while (i.hasNext()) {
+        E obj = i.next();
+        if (obj != null)
+            h += obj.hashCode();
+    }
+    return h;
+}
+{% endhighlight %}
+
+
+### boolean removeAll(Collection<?> c)
+遍历小的那个集合来提高效率：
+如果
+
+{% highlight java %}
+public boolean removeAll(Collection<?> c) {
+    Objects.requireNonNull(c);
+    boolean modified = false;
+    if (size() > c.size()) {
+        for (Iterator<?> i = c.iterator(); i.hasNext(); )
+            modified |= remove(i.next());
+    } else {
+        for (Iterator<?> i = iterator(); i.hasNext(); ) {
+            if (c.contains(i.next())) {
+                i.remove();
+                modified = true;
+            }
+        }
+    }
+    return modified;
+}
+{% endhighlight %}
 
 
 ## 接口继承

@@ -280,6 +280,11 @@ equals, hashCode, parallelStream, removeIf, spliterator, stream
 since 1.8，TODO
 
 
+## 遺留问题
+
+* 为什么没有实现equals和hashCode方法？
+* 子类中实现的hashCode方法求值，如果哈希码重复，分别是怎么处理的？
+
 ## 参考资料
 
 * [JDK文档 之 AbstractCollection](https://docs.oracle.com/javase/8/docs/api/java/util/AbstractCollection.html)
