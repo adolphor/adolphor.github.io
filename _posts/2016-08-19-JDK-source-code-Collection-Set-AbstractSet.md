@@ -41,17 +41,17 @@ public boolean equals(Object o) {
 {% endhighlight %}
 
 
-### t hashCode()
+### int hashCode()
 额，最简单的每个元素的哈希码求和……
 
 {% highlight java %}
 public int hashCode() {
     int h = 0;
     Iterator<E> i = iterator();
-    while (i.hasNext()) {
+    while (i.hasNext()) {   // 遍历
         E obj = i.next();
         if (obj != null)
-            h += obj.hashCode();
+            h += obj.hashCode(); // 求和
     }
     return h;
 }
@@ -65,9 +65,9 @@ public int hashCode() {
 public boolean removeAll(Collection<?> c) {
     Objects.requireNonNull(c);
     boolean modified = false;
-    if (size() > c.size()) {
+    if (size() > c.size()) {    // 遍历较小的那个
         for (Iterator<?> i = c.iterator(); i.hasNext(); )
-            modified |= remove(i.next());
+            modified |= remove(i.next());   // 位或操作：只要有一个true就是true，两个都是false才是false
     } else {
         for (Iterator<?> i = iterator(); i.hasNext(); ) {
             if (c.contains(i.next())) {
