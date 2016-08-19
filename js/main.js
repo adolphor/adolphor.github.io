@@ -5,8 +5,10 @@ $(document).ready(function () {
     $(window).resize(function () {
         reSize();
     });
+
 });
 
+var position;
 
 function heightFunctions() {
     var winHeight = $(window).height();
@@ -43,9 +45,24 @@ function geneMenu() {
         })
         section += ("</ul></div></section>");
         $(".menu-side").append(section);
-
+        console.log("append")
         reSize();
 
+        position = $('#articleMenu').offset();
+        $(window).scroll(function () {
+            // 滚动鼠标的时候进行高度校正
+            var sideHeight = $(".menu-side").height();
+            var contHeight = $(".post-side").height();
+            var height = (sideHeight > contHeight) ? sideHeight : contHeight;
+            $(".menu-side, .post-side").css("min-height", height);
+
+            // 定位菜单位置
+            if ($(window).scrollTop() > position.top) {
+                $('#articleMenu').css('position', 'fixed').css('top', '0');
+            } else {
+                $('#articleMenu').css('position', 'static');
+            }
+        });
     }
 
 }
@@ -58,20 +75,6 @@ function reSize() {
         .css("height", (windowHeight - 110))
         .css("width", (width - 18));
 
-    var position = $('#articleMenu').offset();
-    $(window).scroll(function () {
-        // 滚动鼠标的时候进行高度校正
-        var sideHeight = $(".menu-side").height();
-        var contHeight = $(".post-side").height();
-        var height = (sideHeight > contHeight) ? sideHeight : contHeight;
-        $(".menu-side, .post-side").css("min-height", height);
-
-        // 定位菜单位置
-        if ($(window).scrollTop() > position.top) {
-            $('#articleMenu').css('position', 'fixed').css('top', '0');
-        } else {
-            $('#articleMenu').css('position', 'static');
-        }
-    });
+    position = $('#articleMenu').offset();
 }
 
