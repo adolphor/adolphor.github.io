@@ -27,6 +27,9 @@ markdown: kramdown
 # 多说
 duoshuoId: adolphor
 
+# disqus
+disqusId: adolphor
+
 # google 分析
 googleAnalyticsId: UA-68980203-2
 

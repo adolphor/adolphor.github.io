@@ -6,9 +6,15 @@
 
     <!--读取config.yml配置的参数，多说和谷歌分析中的JS要引用此变量-->
     <script type="text/javascript">
+        var disqusId = '{{ site.disqusId }}';
+        var pageUrl = '{{ page.url | prepend: site.url }}';
+        var pagePostId = '{{ page.postId }}';
+
         var duoshuoId = '{{ site.duoshuoId }}';
         var googleAnalyticsId = '{{ site.googleAnalyticsId }}';
     </script>
+    <!--disqus-->
+    <script src="{{ '/js/disqus.js?version=' | append:site.cacheVersion }}"></script>
     <!--多说-->
     <script src="{{ '/js/duoshuo.js?version=' | append:site.cacheVersion }}"></script>
     <!--谷歌分析-->
