@@ -20,7 +20,8 @@ excerpt:    excerpt
 * 国内外三个不同领域巨头分享的Redis实战经验及使用场景  
 http://www.csdn.net/article/2013-10-07/2817107-three-giant-share-redis-experience
 
-
+* Redis 设计与实现
+redisbook.com
 
 {% highlight java %}
 {% endhighlight %}
