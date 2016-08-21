@@ -11,18 +11,6 @@ excerpt:    【redis设计与实现】读书笔记
 
 ## 引言
 
-### 数据库对象（Object）
-
-#### 字符串对象（string Object）
-
-#### 列表对象（list Object）
-
-#### 哈希对象（hash Object）
-
-#### 集合对象（set Object）
-
-#### 有序集合对象（sorted set Object）
-
 ## 数据结构与对象
 
 ### 简单动态字符串
@@ -103,7 +91,7 @@ typedef struct dict {
     void *privData; // 私有数据
     dictht ht[2];   // 哈希表
 }
-// 
+// 字典类型
 typedef struct dictType {
     ......          // 一系列函数
 } dictType;
@@ -174,19 +162,119 @@ int16_t、int32_t 或者 int64_t 的整数值，并且保证集合中不会出�
 #### 整数集合的实现
 {% highlight java %}
 typedef struct intset {
-    uint32_t encoding;
-    uint32_t length;
-    int8_t contents[];
+    uint32_t encoding;  // 编码方式
+    uint32_t length;    // 集合包含的元素数量
+    int8_t contents[];  // 保存元素的数组
 } intset;
 {% endhighlight %}
-
+虽然 intset 结构将 contents 属性生命为 int8_t 类型的数组，
+但实际上 contents 数组并不保存 int8_t 类型的值，contents 数组
+的真正类型取决于 encoding 属性的值。也就是所 contents 中的数据的
+长度是可变的，还能够进行 “升级” 操作。
 
 #### 整数集合API
-
+略
 
 ### 压缩列表
+压缩列表（ziplist）是为了节约内存空间而开发的，是由一系列特殊编码的连续内存块组成的顺序型数据结构。
+当一个列表键只包含少量列表项，并且每个列表项要么就是小整数值，要么就是长度比较短的字符串，
+那么Redis就会使用压缩列表来做列表键的底层实现。
+
+* 压缩列表是一种为节约内存而开发的顺序新数据结构
+* 压缩列表是列表键和哈希键的底层实现之一。
+* 压缩列表可以包含多个节点，每个节点可以保存一个字节数组或者整数值
+* 添加新节点到压缩列表，或者从压缩列表中删除节点，可能会引发连锁更新操作，但这种操作出现的几率并不高
+
+#### 压缩列表的构成
+{% highlight java %}
+typedef struct ziplist {
+    uint32_t zlbytes;   // 压缩列表所占用的内存字节数
+    uint32_t zltail;    // 压缩列表表尾节点距离压缩列表的起始地址有多少字节
+    uint16_t zllen;     // 压缩列表包含的节点数量
+    zipNode *entryX;    // 压缩列表节点(注意，这里并不是指向数组的指针，此结构就包含数组本身，分别指向每个节点)
+    uint8_t zlend;      // 特殊值0xFF(十进制255)，用于标记压缩列表末端
+} ziplist;
+typedef struct zipNode {
+    previous_entry_length;  // 压缩列表中前一个节点的长度
+    encoding;               // content属性所保存的数据的类型和长度
+    content;                // content属性负责保存节点的值，可以是一个字节数组或者整数
+} zipNode;
+{% endhighlight %}
+
+#### 压缩列表API
+略
 
 ### 对象
+
+* Redis数据库中的每个键值对的键和值都是一个对象
+* Redis是基于上面的数据结构创造的一个对象系统，包含如下五种对象：  
+    * 字符串对象（string Object）
+    * 列表对象（list Object）
+    * 哈希对象（hash Object）
+    * 集合对象（set Object）
+    * 有序集合对象（sorted set Object）
+* 服务器在执行某些命令之前，会向检查给定键的类型能否执行指定的命令，而检查一个键的类型
+就是检查键的值的对象的类型
+* Redis的对下给你系统带有应用计数实现的内存回收机制
+* Redis会共享值为 0 到 9999 的字符串对象
+* 对象会记录自己的最后一次被访问的时间，这个时间可以用于计算对象的空转时间
+
+
+#### 对象的类型和编码
+Redis中的每个对象都由一个redisObject结构表示，该结构中和保存数据有关的三个属性分别是
+type属性、encoding属性和ptr属性：
+{% highlight java %}
+typedef struct redisObject {
+    unsigned type:4;    // 类型
+    unsigned encoding:4;// 编码
+    void *ptr;          // 指向底层实现数据结构的指针
+} redisObject;
+{% endhighlight %}
+
+##### 类型
+对象的type属性记录了对象的类型，对于Redis来说，键总是一个字符串对象，
+而值可以是字符串对象、列表对象、哈希对象、集合对象或者有序集合对象的其中一种。
+
+类型常量         | 对象名称
+---             | ---
+REDIS_STRING    | 字符串对象
+REDIS_LIST      | 列表对象
+REDIS_HASH      | 哈希对象
+REDIS_SET       | 集合对象
+REDIS_ZSET      | 有序集合对象
+
+##### 编码和底层实现
+
+对象的ptr指针指向对象的底层实现数据结构，而这些数据结构由对象的encoding属性决定。
+encoding属性记录了对象所使用的编码，也就是说这个对象使用了生命数据结构作为对象的底层实现。
+
+编码常量                     | 编码所对应的底层数据结构
+---                         | ---
+REDIS_ENCODING_INT          | long类型的整数
+REDIS_ENCODING_EMBSTR       | embstr编码的简单动态字符串
+REDIS_ENCODING_RAW          | 简单动态字符串
+REDIS_ENCODING_HT           | 字典
+REDIS_ENCODING_LINKEDLIST   | 双端链表
+REDIS_ENCODING_ZIPLIST      | 压缩列表
+REDIS_ENCODING_INTSET       | 整数集合
+REDIS_ENCODING_SKIPLIST     | 跳跃表和字典
+
+每种类型的对象都至少使用了两种不同的编码：
+
+类型            | 编码                       
+REDIS_STRING    |REDIS_ENCODING_INT 
+REDIS_STRING    |REDIS_ENCODING_EMBSTR
+REDIS_STRING    |REDIS_ENCODING_RAW
+REDIS_LIST      |REDIS_ENCODING_ZIPLIST
+REDIS_LIST      |REDIS_ENCODING_LINKEDLIST
+REDIS_HASH      |REDIS_ENCODING_ZIPLIST
+REDIS_HASH      |REDIS_ENCODING_HT
+REDIS_SET       |REDIS_ENCODING_INTSET
+REDIS_SET       |REDIS_ENCODING_HT
+REDIS_ZSET      |REDIS_ENCODING_ZIPLIST
+REDIS_ZSET      |REDIS_ENCODING_SKIPLIST
+
+使用 `OBJECT ENCODING` 命令可以查看一个数据库键的值对象的编码。
 
 ## 单机数据库的实现
 
