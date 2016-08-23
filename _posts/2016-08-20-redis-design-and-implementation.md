@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      【redis设计与实现】读书笔记
+title:      【Redis设计与实现 —— 黄健宏】读书笔记
 date:       2016-08-20 00:39:42 +0800
 postId:     2016-08-20-00-39-42
 categories: [redis]
@@ -43,8 +43,6 @@ struct sdshdr {
 * 兼容部分C字符串函数  
     都以空字符结尾，符合C语言字符串规范（当然，中间含有空字符除外）
 
-#### SDS API
-对SDS进行的各种CRUD操作，略
 
 ### 链表
 C语言并没有实现链表结构，所以Redis构建了自己的链表实现。
@@ -73,8 +71,6 @@ Redis实现的链表的特性：
 * 带链表长度计数器
 * 多态
 
-#### 链表和链表节点API
-对链表的各种CRUD操作，略
 
 ### 字典
 字典，又称为符号表（symbol table）、关联数组（associative array）或映射（map），
@@ -122,8 +118,6 @@ dictht 的 table 属性是一个指向数组的指针，而数组中的每个元
 继续进行散列，直至不冲突，另一种方案是直接挂在当前数组所含有的 dictEntry 后面，形成数组中的链表。Redis 采用的是第二种方案。
 dictEntry 中的 v 属性保存着键值对中的值，这个值可以是一个指针，或者是一个 uint64_t 整数，或者是一个 int64_t 整数。
 
-#### 字典API
-对字典的各种CRUD操作，略
 
 ### 跳跃表
 跳跃表（skipList）是一种有序数据结构，它通过在每个节点中维持多个指向其他节点的指针，从而达到快速访问的目的。
@@ -152,8 +146,6 @@ typedef struct zskiplistNode {
 } zskiplistNode;
 {% endhighlight %}
 
-#### 跳跃表API
-略
 
 ### 整数集合
 整数集合（intset）是集合键的底层实现之一。用于保存整数值的抽象数据结构，它可以保存类型为
@@ -172,8 +164,6 @@ typedef struct intset {
 的真正类型取决于 encoding 属性的值。也就是所 contents 中的数据的
 长度是可变的，还能够进行 “升级” 操作。
 
-#### 整数集合API
-略
 
 ### 压缩列表
 压缩列表（ziplist）是为了节约内存空间而开发的，是由一系列特殊编码的连续内存块组成的顺序型数据结构。
@@ -185,13 +175,16 @@ typedef struct intset {
 * 压缩列表可以包含多个节点，每个节点可以保存一个字节数组或者整数值
 * 添加新节点到压缩列表，或者从压缩列表中删除节点，可能会引发连锁更新操作，但这种操作出现的几率并不高
 
-#### 压缩列表的构成
+#### 压缩列表的实现
 {% highlight java %}
 typedef struct ziplist {
     uint32_t zlbytes;   // 压缩列表所占用的内存字节数
     uint32_t zltail;    // 压缩列表表尾节点距离压缩列表的起始地址有多少字节
     uint16_t zllen;     // 压缩列表包含的节点数量
-    zipNode *entryX;    // 压缩列表节点(注意，这里并不是指向数组的指针，此结构就包含数组本身，分别指向每个节点)
+    zipNode *entryA;    // 压缩列表节点(注意，这里并不是指向数组的指针，此结构就包含数组本身，分别指向每个节点)
+    zipNode *entryB;
+    ......
+    zipNode *entryX;
     uint8_t zlend;      // 特殊值0xFF(十进制255)，用于标记压缩列表末端
 } ziplist;
 typedef struct zipNode {
@@ -201,10 +194,8 @@ typedef struct zipNode {
 } zipNode;
 {% endhighlight %}
 
-#### 压缩列表API
-略
 
-### 对象
+### 对象 {#redisObject}
 
 * Redis数据库中的每个键值对的键和值都是一个对象
 * Redis是基于上面的数据结构创造的一个对象系统，包含如下五种对象：  
@@ -261,34 +252,185 @@ REDIS_ENCODING_SKIPLIST     | 跳跃表和字典
 
 每种类型的对象都至少使用了两种不同的编码：
 
-类型            | 编码                       
-REDIS_STRING    |REDIS_ENCODING_INT 
-REDIS_STRING    |REDIS_ENCODING_EMBSTR
-REDIS_STRING    |REDIS_ENCODING_RAW
-REDIS_LIST      |REDIS_ENCODING_ZIPLIST
-REDIS_LIST      |REDIS_ENCODING_LINKEDLIST
-REDIS_HASH      |REDIS_ENCODING_ZIPLIST
-REDIS_HASH      |REDIS_ENCODING_HT
-REDIS_SET       |REDIS_ENCODING_INTSET
-REDIS_SET       |REDIS_ENCODING_HT
-REDIS_ZSET      |REDIS_ENCODING_ZIPLIST
-REDIS_ZSET      |REDIS_ENCODING_SKIPLIST
+类型            | 编码
+---             | ---
+REDIS_STRING    | REDIS_ENCODING_INT 
+REDIS_STRING    | REDIS_ENCODING_EMBSTR
+REDIS_STRING    | REDIS_ENCODING_RAW
+REDIS_LIST      | REDIS_ENCODING_ZIPLIST
+REDIS_LIST      | REDIS_ENCODING_LINKEDLIST
+REDIS_HASH      | REDIS_ENCODING_ZIPLIST
+REDIS_HASH      | REDIS_ENCODING_HT
+REDIS_SET       | REDIS_ENCODING_INTSET
+REDIS_SET       | REDIS_ENCODING_HT
+REDIS_ZSET      | REDIS_ENCODING_ZIPLIST
+REDIS_ZSET      | REDIS_ENCODING_SKIPLIST
 
 使用 `OBJECT ENCODING` 命令可以查看一个数据库键的值对象的编码。
+
 
 ## 单机数据库的实现
 
 ### 数据库
 
+#### 数据库的实现
+数据库服务端和客户端实现的数据结构：
+{% highlight java %}
+typedef struct redisServer {
+    int dbnum;          // 服务器的数据库数量，默认值是16
+    redisDb[] *db;      // 一个数组，保存着服务器中的所有数据库，数组大小由dbnum决定
+    ......
+    list *clients;      // 连接到此服务器的客户端链表
+} redisServer;
+typedef struct redisClient {
+    redisDb *db;    // 记录客户端当前正在使用的数据库
+    dict *dict;     // 键空间，字典类型，保存着数据库中的所有键值对
+    dict *expires;  // 过期时间，字典类型，键是指向对象的指针，值是long类型的时间戳
+    ......
+} redisClient;
+{% endhighlight %}
+
+数据库客户端和服务端的关系如图所示：
+![数据库](/image/post/2016/08/20/20160822-0902.png)
+
+
+上节图示中连接的是1号数据库，切换数据库指令：`SELECT <dbnum>`，比如 `SELECT 2`，就能够切换到2号数据库。
+
+#### 数据库键空间
+
+* 键空间的键也就是数据库的键，每个键都是一个字符串对象
+* 键空间的值也就是数据库的值，每个值都可以是前面所述五种 [对象](#redisObject) 的其中一种
+
+![数据库键空间范例](/image/post/2016/08/20/20160822-0912.jpg)
+
+#### Redis的过期键删除策略
+
+对于过期键的删除一般有如下三种方式：  
+
+* 定时删除
+    在设置键的过期时间的同时，创建一个定时器（timer），定时结束立即删除
+* 惰性删除
+    每次响应请求从键空间获取键的时候检查是否过期，如果过期进行删除
+* 定期删除
+    每隔一段时间，对数据库进行检查，批量删除过期的键，是上述两种方法的整合和折中
+
+Redis是配合使用惰性删除和定期删除两种策略，以很好得在合理使用CPU时间和避免浪费内存空间之间取得平衡。
+
+#### AOF、RDB 和 复制功能 对过期键的处理
+
+当服务器运行在复制模式（主从模式）下时，从服务器的过期键删除动作由主服务器控制。
+也就是说主服务器检测到一个键过期时候会进行删除，同时发送给所有从服务器一条删除指令，进行从服务器过期键的删除。
+我们知道，主服务收到请求的时候，会先检查键是否过期，如果不过期返回value，如果过期，返回nil。
+但从服务器收到请求的时候不会进行检查，只要没有收到主服务器发送过来的删除指令进行删除，即便过期也会返回value。
+ 
+![数据库键空间范例](/image/post/2016/08/20/20160822-0918.jpg)
+
+#### 数据库通知
+
+* 键空间通知（key-space notification）：某个键执行了什么命令
+* 键事件通知（key-event notification）：某个命令被什么键执行了
+
+
 ### RDB持久化
+
+#### RDB文件的创建与载入
+
+Redis所有数据都保存在内存中，那么一旦服务器进程退出，Redis数据就消失。
+为了避免数据意外丢失，Redis提供了RDB持久化功能。
+RDB持久化生成的RDB文件是一个经过压缩的二进制文件，通过RDB文件可以还原到
+生成文件时候的数据库状态。
+
+![RDB持久化](/image/post/2016/08/20/20160822-1002.jpg)
+
+持久化命令有两个：  
+* SAVE：阻塞式持久化，持久化过程中不能使用Redis其他指令
+* BGSAVE：非阻塞式持久化，会新开一个子线程来进行持久化，不影响Redis其他指令
+
+只要有RDB文件，启动Redis的时候就会自动载入，不需要手动调用指令。
+
+#### 自动间隔性保存
+
+默认配置：  
+
+    save 900 1
+    save 300 10
+    save 60 10000
+
+只要满足900秒修改了一次，300秒修改了10次 或 60秒修改了1000次，那就自动执行一次 BGSAVE 操作。
+
 
 ### AOF持久化
 
+RDB持久化的是数据库状态，也就是将数据库中所有有效数据保存到RDB文件；
+而AOF持久化的是操作命令，也就是将对数据新增、修改的指令保存到AOF文件。
+
+* 如果开启了AOF持久化功能，那么服务器会优先使用AOF文件还原数据库状态
+* 只有AOF持久化出于关闭状态时，服务器才会使用RDB文件来还原数据库状态
+
+![AOF持久化](/image/post/2016/08/20/20160822-1101.jpg)
+
+#### AOF持久化的实现
+
+* 命令追加（append）  
+    appendfsync有三个配置选项：always、everysec、no
+* 文件写入
+* 文件同步（sync）
+
+#### AOF文件的载入与数据还原
+读取AOF文件，将所有命令重新执行一遍
+
+#### AOF重写
+如果一条list数据有新增，有修改删除，那么很多条指令之后可能只包含了很少的有效数据，
+这时候可以从数据库读取当前有效的数据，用一条新增指令替换掉之前的很多条指令。
+
 ### 事件
+Redis是一个事件驱动服务器，服务器需要处理以下两类事件:  
+* 文件事件（file event）
+* 时间时间（time event）
+
+#### 文件事件
+Redis服务器通过套接字与客户端连接，而文件事件就是套接字对文件事件的抽象。
+服务器与客户端的通信会产生相应的文件事件，而服务器则通过监听并处理这些事件来完成一系列网络通信操作。
+
+![文件事件](/image/post/2016/08/20/20160822-1201.jpg)
+
+#### 时间事件
+时间事件分为如下两类：
+* 定时事件
+* 周期性事件
 
 ### 客户端
 
+#### 客户端属性
+
+* 通用属性
+* 特定功能相关属性
+
+
 ### 服务器
+
+#### 命令请求的执行过程
+
+![客户端请求](/image/post/2016/08/20/20160822-1401.jpg)
+![服务端回复](/image/post/2016/08/20/20160822-1408.jpg)
+
+#### serverCron函数
+Redis服务器中的serverCron函数每隔100毫秒执行一次，这个函数负责管理服务器的资源，
+并保持服务器自身的良好运转。
+
+* 更新服务器时间缓存
+* 更新LRU时钟
+* 更新服务器每秒执行命令次数
+* 更新服务器内存峰值记录
+* 处理SIGTERM信号
+* 管理客户端资源
+* 管理数据库资源
+* 执行被延迟的BGREWRITEAOF
+* 检查持久化操作的运行状态
+* 将AOF缓冲区的内容写入到AOF文件
+* 关闭异步客户端
+* 更新cronloops计数器的值
+
 
 ## 多机数据库的实现
 
@@ -322,7 +464,9 @@ REDIS_ZSET      |REDIS_ENCODING_SKIPLIST
 
 ## 参考资料
 
-* [redis设计与实现](http://redisbook.com)
+* [Redis设计与实现 —— 黄健宏](http://redisbook.com)
 
 {% highlight java %}
 {% endhighlight %}
+
+

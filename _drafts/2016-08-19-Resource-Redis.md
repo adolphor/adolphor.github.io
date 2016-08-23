@@ -10,10 +10,9 @@ excerpt:    excerpt
 ---
 ## Q
 
+* 什么时候使用Redis？哪些数据放入Redis？
 * Redis如何处理高并发
 * Redis是否有锁
-* Redis是否有
-
 
 ## 参考资料
 

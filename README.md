@@ -1,7 +1,7 @@
 
 # 本地启动
 ## 启动预览
-jekyll server 
+jekyll server --
 
 ## 增加草稿预览
 jekyll server --drafts

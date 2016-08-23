@@ -18,7 +18,8 @@ import java.util.Map;
  */
 public class Generator {
 
-  private static String postTitle = "JDK-source-code-Collection-Set";
+//  private static String postTitle = "JDK-source-code-Collection-Set-TreeSet";
+  private static String postTitle = "redis-design-and-implementation";
 
 
   private static Configuration cfg;
