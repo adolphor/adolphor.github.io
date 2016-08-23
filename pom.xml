@@ -12,10 +12,18 @@
         <freemarker.version>2.3.23</freemarker.version>
         <junit.version>4.12</junit.version>
 
+        <jedis.version>2.1.0</jedis.version>
+
         <source.version>1.7</source.version>
         <target.version>1.7</target.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>${jedis.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
