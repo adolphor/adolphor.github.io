@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      【Redis设计与实现 —— 黄健宏】读书笔记
+title:      《Redis设计与实现 —— 黄健宏》读书笔记
 date:       2016-08-20 00:39:42 +0800
 postId:     2016-08-20-00-39-42
 categories: [Redis]
