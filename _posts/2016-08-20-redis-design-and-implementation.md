@@ -19,8 +19,8 @@ excerpt:    【redis设计与实现】读书笔记
 Redis没有直接使用C语言传统的字符串表示，而是自己构建了一种名为简单字符串
 （simple dynamic string, SDS）的抽象类型，并将SDS用做Redis的默认字符串表示。
 
-{% highlight java %}
-struct sdshdr {
+{% highlight C %}
+typedef struct sdshdr {
     int len;    // 已使用长度
     int free;   // 未使用长度
     char buf[]; // 字节数组，用于保存字符串
@@ -51,7 +51,7 @@ Redis服务器还使用链表来保存多个客户端的状态信息，以及使
 
 #### 链表和链表节点的实现
 链表结构如下：
-{% highlight java %}
+{% highlight C %}
 typedef struct list {
     listNode *head;     // 表头节点
     listNode *tail;     // 表尾节点
@@ -80,7 +80,7 @@ C语言并没有实现字典结构，所以Redis构建了自己的字典实现�
 
 #### 字典的实现
 字典实现结构如下：
-{% highlight java %}
+{% highlight C %}
 // 字典
 typedef struct dict {
     dictType *type; // 类型特定函数
@@ -125,7 +125,7 @@ dictEntry 中的 v 属性保存着键值对中的值，这个值可以是一个�
 有序集合键，一个是在集群节点中用作内部数据结构。
 
 #### 跳跃表的实现
-{% highlight java %}
+{% highlight C %}
 // 跳跃表
 typedef struct zskiplist {
     structz skiplistNode *header, *tail;    // 表头节点 和表尾节点
@@ -152,7 +152,7 @@ typedef struct zskiplistNode {
 int16_t、int32_t 或者 int64_t 的整数值，并且保证集合中不会出现重复元素。
 
 #### 整数集合的实现
-{% highlight java %}
+{% highlight C %}
 typedef struct intset {
     uint32_t encoding;  // 编码方式
     uint32_t length;    // 集合包含的元素数量
@@ -176,7 +176,7 @@ typedef struct intset {
 * 添加新节点到压缩列表，或者从压缩列表中删除节点，可能会引发连锁更新操作，但这种操作出现的几率并不高
 
 #### 压缩列表的实现
-{% highlight java %}
+{% highlight C %}
 typedef struct ziplist {
     uint32_t zlbytes;   // 压缩列表所占用的内存字节数
     uint32_t zltail;    // 压缩列表表尾节点距离压缩列表的起始地址有多少字节
@@ -214,7 +214,7 @@ typedef struct zipNode {
 #### 对象的类型和编码
 Redis中的每个对象都由一个redisObject结构表示，该结构中和保存数据有关的三个属性分别是
 type属性、encoding属性和ptr属性：
-{% highlight java %}
+{% highlight C %}
 typedef struct redisObject {
     unsigned type:4;    // 类型
     unsigned encoding:4;// 编码
@@ -275,7 +275,7 @@ REDIS_ZSET      | REDIS_ENCODING_SKIPLIST
 
 #### 数据库的实现
 数据库服务端和客户端实现的数据结构：
-{% highlight java %}
+{% highlight C %}
 typedef struct redisServer {
     int dbnum;          // 服务器的数据库数量，默认值是16
     redisDb[] *db;      // 一个数组，保存着服务器中的所有数据库，数组大小由dbnum决定
@@ -506,7 +506,7 @@ Redis集群是Redis提供的分布式数据库方案，集群通过分片（shar
 
 * [Redis设计与实现 —— 黄健宏](http://redisbook.com)
 
-{% highlight java %}
+{% highlight C %}
 {% endhighlight %}
 
 
