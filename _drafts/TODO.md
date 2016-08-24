@@ -3,3 +3,22 @@
 https://github.com/easychen/howto-make-more-money
 
 
+JDK源码学习，主要分的那几个包下：
+
+lang
+util
+data
+jdbc
+……
+
+
+# 参考文章
+
+[如何阅读Java源码](http://www.cnblogs.com/xing----hao/p/3414233.html)
+
+
+
+
+
+
+
