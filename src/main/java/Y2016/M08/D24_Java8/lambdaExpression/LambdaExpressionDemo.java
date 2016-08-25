@@ -1,6 +1,5 @@
 package Y2016.M08.D24_Java8.lambdaExpression;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -38,5 +37,34 @@ public class LambdaExpressionDemo {
      */
     names.forEach(name -> System.out.println(name));
 
+
+    /**
+     * 范例：没有返回值
+     */
+    GreetingService greetService2 = (message) -> System.out.println("Hello " + message);    // 带有圆括号
+    GreetingService greetService1 = message -> System.out.println("Hello " + message);    // 省略圆括号
+
+    greetService1.sayMessage("Mahesh");
+    greetService2.sayMessage("Suresh");
+
+    /**
+     * 范例：有返回值
+     */
+    Converter<String, Integer> converter = source -> Integer.valueOf(source); // 只有一个参数，省略圆括号
+    Integer integer = converter.convert("123");
+    System.out.println(integer);
+
   }
 }
+
+@FunctionalInterface
+interface GreetingService {
+  void sayMessage(String message);
+}
+
+@FunctionalInterface
+interface Converter<V, T> {
+  T convert(V v);
+}
+
+

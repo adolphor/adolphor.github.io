@@ -13,12 +13,12 @@ Java8 新特性主要有一下几个方面：
 
 * lambda表达式（Lambda Expressions）  
     Java中加入了函数式处理功能
-* Method References  
-    Referencing functions by their names instead of invoking them directly. Using functions as parameter.    
-* Functional Interfaces
-
-* Default Methods  
-    Interface to have default method implementation.
+* 方法引用（Method References）  
+    直接使用方法名称而不是invoking方法进行方法的引用，将方法作为一个参数
+* 函数式接口（Functional Interfaces）  
+    只有一个抽象方法的接口，可以作为函数式接口
+* 默认方法（Default Methods）  
+    在接口中有默认实现的方法，相等于抽象类中有抽象接口，有实现方法
 * Streams  
     New stream API to facilitate pipeline processing.
 * Optional Class  
@@ -30,7 +30,9 @@ Java8 新特性主要有一下几个方面：
 * Base64  
 
 ## Lambda Expressions
-当接口只定义了一个方法的时候，lambda表达式可以代替接口的实现类。
+当接口只定义了一个方法的时候，lambda表达式可以代替接口的实现类。也就是lambda表达式是有返回值的，
+这个返回值类型就是被实现的函数式接口的类型。这也是下节所讲的函数式接口可以直接等于一个lambda表达式。
+所以，在需要特定接口类型参数的地方，就可以使用lambda表达式进行替换。
 
 ### 语法
 
@@ -40,6 +42,9 @@ Java8 新特性主要有一下几个方面：
 * 如果只有一个参数，圆括号可选
 * 如果只有一个表达式，花括号可选
 * 如果只有一个返回表达式，return关键字可选
+
+### 作用域
+
 
 ### 范例
 *  () -> System.out.println(this)
@@ -54,90 +59,30 @@ Java8 新特性主要有一下几个方面：
     LambdaExpressionDemo.java
 
 {% highlight Java %}
-/**
- * Created by Bob on 2016/1/22.
- */
-interface MathOperation {
-  int operation(int a, int b);
-}
 
-class Operate {
-  public int execute(int a, int b, MathOperation mathOperation) {
-    return mathOperation.operation(a, b);
-  }
-}
-
-interface GreetingService {
-  void sayMessage(String message);
-}
-
-public class LambdaExpressionDemo {
-
-  public static void main(String args[]) {
-
-    /**
-     * 范例1：省略实现继承类
-     */
-    GreetingService greetService2 = (message) -> System.out.println("Hello " + message);    // 带有圆括号
-    GreetingService greetService1 = message -> System.out.println("Hello " + message);    // 省略圆括号
-
-    greetService1.sayMessage("Mahesh");
-    greetService2.sayMessage("Suresh");
-
-    /**
-     * 范例2：（这个应该是服务注册的实现吧）
-     */
-    // 分别实现如下4个接口：
-    MathOperation addition = (int a, int b) -> a + b;    // 带有参数类型声明
-    MathOperation subtraction = (a, b) -> a - b;    // 省略参数类型声明
-    MathOperation multiplication = (a, b) -> { return a * b; };    // 带有return关键字
-    MathOperation division = (a, b) -> a / b;    // 省略return关键字
-
-    Operate operate = new Operate();
-
-    // 2.1、调用范例
-    System.out.println("10 + 5 = " + operate.execute(10, 5, addition));
-    System.out.println("10 - 5 = " + operate.execute(10, 5, subtraction));
-    System.out.println("10 x 5 = " + operate.execute(10, 5, multiplication));
-    System.out.println("10 / 5 = " + operate.execute(10, 5, division));
-
-    // 2.2、也可以使用匿名实现的方式
-    System.out.println("10 + 5 = " + operate.execute(10, 5, (a, b) -> a + b));
-    System.out.println("10 - 5 = " + operate.execute(10, 5, (a, b) -> a - b));
-    System.out.println("10 x 5 = " + operate.execute(10, 5, (a, b) -> a * b));
-    System.out.println("10 / 5 = " + operate.execute(10, 5, (a, b) -> a / b));
-
-  }
-}
 {% endhighlight %}
 
 运行结果如下：
 
-    Hello Mahesh
-    Hello Suresh
-    10 + 5 = 15
-    10 - 5 = 5
-    10 x 5 = 50
-    10 / 5 = 2
-    10 + 5 = 15
-    10 - 5 = 5
-    10 x 5 = 50
-    10 / 5 = 2
-
 
 
 ## Functional Interfaces
-当接口中只有一个抽象方法的时候，就可以作为函数式接口使用，
-但可以包含一个或一个以上的默认实现方法。
+当接口中只有一个抽象方法（但可以包含一个或一个以上的默认实现方法）的时候，就可以作为函数式接口使用。
+作为函数式接口实现有三种方式，第一种是最原始的继承接口的实现类，第二种是lambda表达式，第三种是方法引用。
+本节主要讲解前两种。
 
 ## 方法引用（Method References）
+在lambda表达式章节中可知，在需要特定接口类型参数的地方，就可以使用lambda表达式进行替换。
+而部分lambda表达式有一种更简单的书写方式，那就是使用方法引用。
+虽然不是所有的lambda表达式都可以使用方法引用替换，但所有的方法引用都可以使用lambda表达式进行替换。
+还有一个特点就是方法引用可以直接引用已经存在的实例的方法作为函数式接口的实现，而这个实例方法并不要求
+必须继承自函数式接口，任何符合函数式接口定义的方法，都可以被引用。
 
 方法引用有以下三种使用方式：
 
 * 静态方法
+* 构造函数
 * 实例方法
-* 构造函数初始化
-
 
 
 
