@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      Java8 新特性
+title:      Java8 新特性 —— lambda表达式
 date:       2016-08-24 09:00:57 +0800
 postId:     2016-08-24-09-00-57
 categories: [Java]
 tags:       [Java, Java8]
 geneMenu:   true
-excerpt:    Java8 新特性
+excerpt:    Java8 新特性 —— lambda表达式
 ---
 
 Java8 新特性主要有一下几个方面：
@@ -293,7 +293,7 @@ Function | 对数据内容进行操作，比如修改、删除，比如数据类
 Operator | 对数据内容进行操作，有返回值，只不过参数类型和返回值类型全部一致，可以看做Function的特例情况
 Consumer | 对数据内容进行消费，没有返回值
 Supplier | 不需要传入参数，有返回值，可以看做Consumer的反函数，而且Supplier主要用于引用函数
-Predicate | 对数据进行检测判断的规则，相当于过滤条件的封装
+Predicate | 对数据进行检测判断的规则，相当于判断条件的封装
 
 Function系列接口使用范例，比如输入两个 String 字符串，求出 int 类型的两个字符串长度之和：
 {% highlight Java %}
@@ -596,7 +596,7 @@ import java.util.function.UnaryOperator;
 public class FunctionalInterfaceDemo {
 
   public static void main(String args[]) {
-
+  
     /**
      * 范例：
      */
@@ -747,11 +747,76 @@ class PersonFactory {
 必须继承自函数式接口，任何符合函数式接口定义的方法，都可以被引用。
 
 ### 使用方法
-方法引用有以下三种使用方式：
+方法引用有以下三种使用方式，而且方法引用不需要声明和指定参数及参数类型，JVM会根据函数式接口的定义，自动进行参数和类型的推断：
 
 * 静态方法
 * 构造函数
 * 实例方法
+
+引用静态方法范例，
+下面是调用Integer的valueOf静态方法，将一个String类型转换为Integer类型：
+{% highlight java %}
+// lambda表达式方式，作为函数式接口实现
+Function<String, Integer> converter1 = num -> Integer.valueOf(num);  
+// 方法引用方式：调用静态方法，作为函数式接口实现
+Function<String, Integer> converter2 = Integer::valueOf;  
+
+// 再来看另外一个范例：
+List<String> names = Arrays.asList("Mahesh", "Suresh", "Ramesh", "Naresh", "Kalpesh");
+// lambda表达式方式进行遍历的方式
+names.forEach((name) -> System.out.println(name));    
+// 方法引用：调用系统静态方法进行遍历
+names.forEach(System.out::println); 
+{% endhighlight %}
+
+引用构造函数范例：
+
+{% highlight java %}
+// lambda表达式方式
+BiFunction<String, Integer, Person> biFunction = (name, age) -> new Person(name, age); 
+// 方法引用方式：构造函数
+BiFunction<String, Integer, Person> factory2 = Person::new;  
+{% endhighlight %}
+
+引用实例方法范例：
+
+{% highlight java %}
+// 定义任意一个服务类
+class Something {
+  String startsWith(String s) {
+    return String.valueOf(s.charAt(0));
+  }
+  String endsWith(String s) {
+    return String.valueOf(s.charAt(s.length() - 1));
+  }
+}
+// 实例化
+Something something = new Something();
+// 将实例的startsWith方法作为函数接口的实现
+UnaryOperator<String> starts = something::startsWith;
+UnaryOperator<String> ends = something::endsWith;
+{% endhighlight %}
+
+不同于前面两个的测试，我们这里增加一个Function测试类
+{% highlight java %}
+class TestFunction {
+  public Object funResult(Function function, String str) {
+    return function.apply(str);
+  }
+}
+{% endhighlight %}
+一共需要两个参数，一个 Function 实例，一个被操作的参数，用这个函数式接口实例对数据进行处理。
+因为所有Operator系列的接口都是 `Function` 类的子类，所以，UnaryOperator的实例可以作为参数传入，
+测试如下：
+{% highlight java %}
+TestFunction testFun = new TestFunction();
+System.out.println("Java starts with: " + testFun.funResult(starts, "Java"));
+System.out.println("Java ends with: " + testFun.funResult(ends, "Java"));
+{% endhighlight %}
+也就是说，funResult方法相当于一个接口规范，需要的是一个 Function 实例，这个实例的具体实现可以根据需要自由实现，
+本例的实现是直接调用其他实例（Something）的方法（startsWith、endsWith）作为自己的实现，Something不必遵守函数式接口规范，
+但它的方法却可以被函数式接口调用，这样函数式接口的实现方式更加灵活。
+
 
 
 ### 范例代码
@@ -759,10 +824,12 @@ class PersonFactory {
     LambdaExpressionDemo.java
 
 {% highlight Java %}
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.BiFunction;
+import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 /**
  * Created by Bob on 2016/8/24.
@@ -774,63 +841,48 @@ public class MethodReferenceDemo {
      * 范例1
      */
     // lambda表达式：作为函数式接口实现参考上节范例
-    Converter<String, Integer> converter = Integer::valueOf;  // 方法引用：调用静态方法，作为函数式接口实现
-    Integer i = converter.convert("123");
-    System.out.println(i);
+    Function<String, Integer> converter1 = num -> Integer.valueOf(num);  // lambda表达式方式
+    Integer i1 = converter1.apply("123");
+    System.out.println(i1);
+    Function<String, Integer> converter2 = Integer::valueOf;  // 方法引用：调用静态方法，作为函数式接口实现
+    Integer i2 = converter2.apply("123");
+    System.out.println(i2);
 
     /**
      * 范例2
      */
     List<String> names = Arrays.asList("Mahesh", "Suresh", "Ramesh", "Naresh", "Kalpesh");
     Collections.sort(names, (a, b) -> a.compareTo(b)); // lambda表达式进行排序
-    names.forEach((name) -> System.out.println(name));    // 前面讲过，lambda表达式方式进行遍历的方式
+    names.forEach((name) -> System.out.println(name));    // lambda表达式方式进行遍历的方式
     names.forEach(System.out::println); // 方法引用：调用系统静态方法进行遍历
 
     /**
      * 范例3
      */
-    PersonFactory<Person> factory1 = (name, age) -> new Person(); // lambda表达式
-    Person person1 = factory1.create("Person1", 28);
+    BiFunction<String, Integer, Person> biFunction1 = (name, age) -> new Person(name, age); // lambda表达式
+    Person person1 = biFunction1.apply("Person1", 28);
     person1.eat();
 
-    PersonFactory<Person> factory2 = Person::new;  // 方法引用：构造函数
-    Person person2 = factory2.create("Person2", 28);
-    person2.eat();
+    BiFunction<String, Integer, Person> biFunction2 = Person::new;  // 方法引用：构造函数
+    Person person2 = biFunction2.apply("Person2", 28);
+    person2.run(100);
 
     /**
      * 范例4
      */
     Something something = new Something();
-    OperateUtil<String, String> startsUtil = something::startsWith;
-    OperateUtil<String, String> endsUtil = something::endsWith;
-    TestOperateUtil testOperate = new TestOperateUtil();
-    System.out.println("Java starts with: " + testOperate.oerateResult(startsUtil, "Java"));
-    System.out.println("Java ends with: " + testOperate.oerateResult(endsUtil, "Java"));
-    // 相当于此接口的实现类调用自身的方法用作函数式接口的实现，只是这里的实现类和函数式接口之间并没有继承关系，
-    // 只要符合参数类型，任何函数式接口都可以作为此实例方法的引用，而函数式接口实例对此实例方法本身没有任何影响
-    // 比如，此实例方法甚至可以使用 Converter 函数式接口进行接收和引用
-    Converter<String, String> startsWith = something::startsWith;
-    // 只不过换了一个方法名，也就是将一个实例方法抽象化为另一个接口类型的实现了
-    System.out.println("Java starts with: " + startsWith.convert("Java"));
+    UnaryOperator<String> starts = something::startsWith;
+    UnaryOperator<String> ends = something::endsWith;
+    TestFunction testFun = new TestFunction();
+    System.out.println("Java starts with: " + testFun.funResult(starts, "Java"));
+    System.out.println("Java ends with: " + testFun.funResult(ends, "Java"));
 
   }
-}
-
-@FunctionalInterface
-interface Converter<V, T> {
-  T convert(V v);
 }
 
 class Person {
   public String name;
   public int age;
-
-  Person() {
-  }
-
-  Person(String name) {
-    this.name = name;
-  }
 
   Person(String name, int age) {
     this.name = name;
@@ -847,25 +899,9 @@ class Person {
 
 }
 
-@FunctionalInterface
-interface PersonFactory<P extends Person> {
-  P create(String name, int age);
-}
-
-/**
- * 泛型化的函数式接口
- *
- * @param <T> 参数类型
- * @param <V> 返回值类型
- */
-@FunctionalInterface
-interface OperateUtil<T, V> {
-  V operate(T t);
-}
-
-class TestOperateUtil {
-  public Object oerateResult(OperateUtil operateUtil, String str) {
-    return operateUtil.operate(str);
+class TestFunction {
+  public Object funResult(Function function, String str) {
+    return function.apply(str);
   }
 }
 
@@ -884,22 +920,18 @@ class Something {
 
 ## 默认方法（Default Methods） {#DefaultMethods}
 
+### 简介
+
 默认方法是 Java8 在接口中引入的一个新的概念：当往一个接口中添加新的方法时，可以提供该方法的默认实现。
 一般所遵循的接口方法的原则是不删除或修改已有的功能，而是添加新的功能作为替代。已有代码可以继续使用原有的功能，而新的代码则可以使用新的功能。
 默认方法的主要目标之一是解决接口的演化问题：对于已有的接口使用者来说，代码可以继续运行；新的代码则可以使用该方法，也可以覆写默认的实现。
 因为 Java 开发中所推荐的实践是面向接口而不是实现来编程，虽然具体实现可以不断地演化，但接口作为不同组件之间的契约，接口本身的演化则比较困难。
 当接口发生变化时，该接口的所有实现类都需要做出相应的修改。所以，如果在新版本中对接口进行了修改或添加了新的方法，都会导致早期版本的代码无法运行。
 而为了这种二进制向后兼容（新的JDK要能够运行旧版本JDK编译的出的二进制代码），引入了默认方法的概念。
-这样，一些原有的接口，就可以使用Java8的lambda表达式功能。比如，‘List’ 和 ‘Collection’ 
-接口并没有声明 ‘forEach’ 函数，增加默认方法之后，集合类就被赋予了lambda函数式计算的能力。
+这样，一些原有的接口，就可以使用Java8的lambda表达式功能。比如，`List` 和 `Collection` 
+接口并没有声明 `forEach` 函数，增加默认方法之后，集合类就被赋予了lambda函数式计算的能力。
 
-参考[Default Methods](http://www.tutorialspoint.com/java8/java8_default_methods.htm)
-
-> Q：在集合框架中有一个Collection的抽象实现，即便没有默认方法功能，也只需要在集合框架接口中声明
-之后再抽象实现类中实现即可。而所有的实现类都是此抽象类的子类，所以也并没有增加过多冗余代码。那么，
-Java8中引入默认方法的实现是单纯为了Foreach方法的复用吗？
-
-范例代码：
+### 范例代码
 
     DefaultMethodDemo.java
 
@@ -932,14 +964,12 @@ interface FourWheeler {
 
 class Car implements Vehicle, FourWheeler {
   public void print() {
-    // TODO “super” 关键字：在非静态方法中引用静态方法
     Vehicle.super.print();
     FourWheeler.super.print();
     Vehicle.blowHorn();
     System.out.println("I am a car!");
   }
 }
-
 {% endhighlight %}
 
 
@@ -957,25 +987,13 @@ class Car implements Vehicle, FourWheeler {
 
 主要有以下几个数据流操作相关的概念：
 
-* Sequence of elements  
-    流是一组按照一定顺序排列的特定类型的元素
-* Source   
-    源可以将集合、数组和 I/O 资源作为输入源
-* Aggregate operations  
-    流提供了一系列的聚合操作，像 filter, map, limit, reduce, find, match 等
-* Pipelining  
-    大多数流操作都是在管道（Pipeline）中进行的，这些操作叫做中间操作（intermediate operations），
-    他们的功能是加载并处理数据流，之后输出到目标地点。一般将 `collect()` 方法用于数据流操作的末尾，
-    标志着数据流处理的结束。
-* Automatic iterations  
-     流操作提供了数据遍历的功能
-
-获取数据流有如下两个方法：
-
-* stream()  
-    此方法返回顺序数据流
-* parallelStream()  
-    此方法返回并行计算数据流
+名称 | 详解
+---|---
+Sequence of elements  |    流是一组按照一定顺序排列的特定类型的元素
+Source   |    源可以将集合、数组和 I/O 资源作为输入源
+Aggregate operations  |    流提供了一系列的聚合操作，像 filter, map, limit, reduce, find, match 等
+Pipelining  |    大多数流操作都是在管道（Pipeline）中进行的，这些操作叫做中间操作（intermediate operations），他们的功能是加载并处理数据流，之后输出到目标地点。一般将 `collect()` 方法用于数据流操作的末尾，标志着数据流处理的结束。
+Automatic iterations  |     流操作提供了数据遍历的功能
 
 ### 数据流操作方法
 
@@ -986,6 +1004,8 @@ class Car implements Vehicle, FourWheeler {
 
 方法名 | 作用 | 范例
 ---|---|---
+stream()  |    此方法返回顺序数据流 | numbers.stream()
+parallelStream()  |    此方法返回并行计算数据流 | numbers.parallelStream()
 forEach | 遍历数据流 | numbers.stream().forEach(System.out::println);
 map | 对数据流数据进行操作 | numbers.stream().map(n -> n * n);
 filter | 过滤符合条件的数据 | numbers.stream().filter(n -> n > 3);
@@ -1043,10 +1063,9 @@ public class StreamDemo {
 
     System.out.print("\n并行：");
     numbers.parallelStream().filter(n -> n > 3).forEach(n -> System.out.print(n + "、"));
-    // 但是要注意，不能使用并行数据流进行排序，每次排序结果都不一样
+    // 但是要注意，不能使用并行数据流进行排序，每次排序结果都不一样 TODO
     System.out.print("\n并行排序失败：");
     numbers.parallelStream().sorted().forEach(n -> System.out.print(n + "、"));
-
 
     System.out.print("\n集合：");
     List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
@@ -1055,7 +1074,6 @@ public class StreamDemo {
     System.out.print("\n集合：");
     String mergedString = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
     System.out.print(mergedString);
-
 
     System.out.print("\nStatistics：\n");
     IntSummaryStatistics stats = numbers.stream().mapToInt((x) -> x).summaryStatistics();
@@ -1068,17 +1086,6 @@ public class StreamDemo {
 }
 {% endhighlight %}
 
-
-## New Date/Time API {#NewDateTimeAPI}
-
-
-## Base64 {#Base64}
-
-## Optional Class {#OptionalClass}
-见范例，但是好像并没有什么实际卵用……
-
-## Nashorn JavaScript {#NashornJavaScript}
-在JVM上运行JS，可以实现Java和JS的互相调用，也没什么卵用……
 
 
 
