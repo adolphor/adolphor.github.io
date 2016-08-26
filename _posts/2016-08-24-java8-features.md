@@ -11,9 +11,9 @@ excerpt:    Java8 新特性
 
 Java8 新特性主要有一下几个方面：
 
+* [函数式接口（Functional Interfaces）](#FunctionalInterfaces)  
 * [lambda表达式（Lambda Expressions）](#LambdaExpressions)  
 * [方法引用（Method References）](#MethodReferences)  
-* [函数式接口（Functional Interfaces）](#FunctionalInterfaces)  
 * [默认方法（Default Methods）](#DefaultMethods)  
 * [流操作（Streams）](#Streams)  
 * [New Date/Time API](#NewDateTimeAPI)  
@@ -22,31 +22,119 @@ Java8 新特性主要有一下几个方面：
 * [Nashorn JavaScript](#NashornJavaScript)  
 
 ## lambda表达式（Lambda Expressions） {#LambdaExpressions}
-lambda表达式是Java8中引入的最重要的一个概念之一，使得Java拥有了进行函数式编程的能力。
+lambda 表达式是 Java8 中引入的最重要的一个概念之一，使得 Java 拥有了进行函数式编程的能力。
 
-### 什么是lambda
-当接口只定义了一个方法的时候，lambda表达式可以代替接口的实现类。也就是lambda表达式是有返回值的，
-这个返回值类型就是被实现的函数式接口的类型。这也是下节所讲的函数式接口可以直接等于一个lambda表达式。
-所以，在需要特定接口类型参数的地方，就可以使用lambda表达式进行替换。
+### 简介
+lambda 表达式就是一个匿名函数，Java8中可以使用lambda语法来代替匿名的内部类，先看一个范例：
+首先定义一个String类型的List变量：
+
+    List<String> names = Arrays.asList("Mahesh", "Suresh", "Ramesh", "Naresh", "Kalpesh");
+
+如果要对这个list排序，按照以前Java7版本的JDK，需要使用 `Comparator` 接口，对于接口我们一般的使用方法是继承接口，
+实现自己的实现类，则有如下的实现类：
+
+    class MyComparator implements Comparator<String> {
+      @Override
+      public int compare(String a, String b) {
+        return a.compareTo(b);
+      }
+    }
+
+比较的时候传入 `Comparator` 实例对象:
+    
+    // 初始化实例
+    Comparator<String> myComparator = new MyComparator();
+    Collections.sort(names, myComparator);
+    // 匿名方式
+    Collections.sort(names, new MyComparator());
+
+简单一些的话，不需要定义具体的实现类，只需要在实例化接口的时候覆写接口内的抽象方法即可：
+
+    Collections.sort(names, new Comparator<String>() {
+      @Override
+      public int compare(String a, String b) {
+        return b.compareTo(a);
+      }
+    });
+
+上面使用了一个匿名内部实现类，复写了compare方法，这是Java8之前进行排序时最简单的实现方式。
+下面使用lambda表达式的方式实现：
+
+    Collections.sort(names, (String a, String b) -> {
+      return b.compareTo(a);
+    });
+
+使用 `(a, b) -> b.compareTo(a)` 代替了匿名内部类，这就是lambda表达式的使用方式。
+下面会对此方法更进一步进行简化。
+
 
 ### 语法
 
-    parameter -> expression body
+参数列表 | 表达式符号 | 函数体
+---|---|---
+parameter | -> | expression body
 
-* 参数类型声明是可选项，可写可不写
+
+* 参数类型声明是可选项，可写可不写，Java8可以自动进行类型推断
 * 如果只有一个参数，圆括号可选
 * 如果只有一个表达式，花括号可选
 * 如果只有一个返回表达式，return关键字可选
 
-### 作用域
+形如下面的几种用法：  
 
-
-### 范例
 *  () -> System.out.println(this)
 *  (String str) -> System.out.println(str)
 *  str -> System.out.println(str)
 *  (String s1, String s2) -> { return s2.length() - s1.length(); }
 *  (s1, s2) -> s2.length() - s1.length()
+
+我们对上面的排序代码继续进行简化，因为它只有一个返回表达式，所以可以省略 return 和 大括号，简写为：
+    
+    Collections.sort(names, (String a, String b) -> b.compareTo(a));
+    
+又 lambda 可以自动进行类型推断，所以可以省略参数类型，更进一步简写为：
+
+    Collections.sort(names, (a, b) -> b.compareTo(a));
+
+至此，已经将排序方法代码由四行简化为一行。
+
+### 目标类型（target type）
+
+既然可以使用lambda表达式替换匿名内部类，那么lambda表达式就具有匿名内部类的特性，
+而匿名内部类是具有特定的接口(对象)类型的，那么lambda表达式也应该具有特定的目标类型（target type）。
+比如上面的排序方法：
+
+    Collections.sort(names, new Comparator<String>() {
+      @Override
+      public int compare(String a, String b) {
+        return b.compareTo(a);
+      }
+    });
+
+此匿名内部类的类型是 `Comparator`：
+
+    Comparator<String> comparator = new Comparator<String>() {
+      @Override
+      public int compare(String a, String b) {
+        return b.compareTo(a);
+      }
+    };
+    
+那么对于上述排序方法处使用的lambda表达式的 target type 同样也是 `Comparator`：
+
+    Comparator<String> comparator = (a, b) -> a.compareTo(b);
+
+也就是说，上面排序方法需要的只是 `Comparator` 接口类的实现，至于是自定义继承类实现实例，还是使用接口实例化，
+或者使用lambda表达式，效果都是等价的，都是为了进行如下的动作：
+
+    Collections.sort(names, comparator);
+
+但lambda表达式肯定不是只用于排序，那么
+
+### 作用域
+
+
+### 范例
 
 
 范例代码：
@@ -125,14 +213,23 @@ interface Converter<V, T> {
 
 
 ## 函数式接口（Functional Interfaces） {#FunctionalInterfaces}
-当接口中只有一个抽象方法（但可以包含一个或一个以上的默认实现方法）的时候，就可以作为函数式接口使用。
 
-在 Java 8 中定义了很多函数接口供lambda表达式使用，下面是 `java.util.Function` 包中定义的函数接口列表：
-TODO 参考：http://www.tutorialspoint.com/java8/java8_functional_interfaces.htm
+### 什么是函数式接口
+简单来说，函数式接口是只包含一个抽象方法（但可以包含一个或一个以上的默认实现方法）的接口。比如 Java 标准库中的
+ `java.lang.Runnable` 和 `java.util.Comparator` 
+都是典型的函数式接口。对于函数式接口，除了可以使用 Java 中标准的方法来创建实现对象之外，还可以使用 lambda 表达式来创建
+实现对象。这可以在很大程度上简化代码的实现。在使用 lambda 表达式时，只需要提供形式参数和方法体。由于函数式接口只有一个
+抽象方法，所以通过 lambda 表达式声明的方法体就肯定是这个唯一的抽象方法的实现，而且形式参数的类型可以根据方法的类型声明
+进行自动推断。
 
 
 作为函数式接口实现有三种方式，第一种是最原始的继承接口的实现类，第二种是lambda表达式，第三种是方法引用。
 本节主要讲解前两种。
+
+
+在 Java 8 中定义了很多函数接口供 lambda 表达式使用，下面是 `java.util.Function` 包中定义的函数接口列表：
+TODO 参考：http://www.tutorialspoint.com/java8/java8_functional_interfaces.htm
+
 
 范例代码：
 
@@ -349,11 +446,14 @@ class Something {
 
 ## 默认方法（Default Methods） {#DefaultMethods}
 
-默认方法是 Java8 在接口中引入的一个新的概念，之所以加入这个特性是为了（二进制）向后兼容，
+默认方法是 Java8 在接口中引入的一个新的概念：当往一个接口中添加新的方法时，可以提供该方法的默认实现。
+一般所遵循的接口方法的原则是不删除或修改已有的功能，而是添加新的功能作为替代。已有代码可以继续使用原有的功能，而新的代码则可以使用新的功能。
+默认方法的主要目标之一是解决接口的演化问题：对于已有的接口使用者来说，代码可以继续运行；新的代码则可以使用该方法，也可以覆写默认的实现。
+因为 Java 开发中所推荐的实践是面向接口而不是实现来编程，虽然具体实现可以不断地演化，但接口作为不同组件之间的契约，接口本身的演化则比较困难。
+当接口发生变化时，该接口的所有实现类都需要做出相应的修改。所以，如果在新版本中对接口进行了修改或添加了新的方法，都会导致早期版本的代码无法运行。
+而为了这种二进制向后兼容（新的JDK要能够运行旧版本JDK编译的出的二进制代码），引入了默认方法的概念。
 这样，一些原有的接口，就可以使用Java8的lambda表达式功能。比如，‘List’ 和 ‘Collection’ 
-接口并没有声明 ‘forEach’ 函数，即便在Java8中添加这个接口定义，也需要在每个继承类中进行实现，
-而这个并没有区别，所以可以直接在方法中进行默认实现，这样所有的继承类都不必再进行自己的实现，而
-可以直接拿来使用。
+接口并没有声明 ‘forEach’ 函数，增加默认方法之后，集合类就被赋予了lambda函数式计算的能力。
 
 参考[Default Methods](http://www.tutorialspoint.com/java8/java8_default_methods.htm)
 
@@ -551,5 +651,10 @@ public class StreamDemo {
 * [Java8 tutorials point](http://www.tutorialspoint.com/java8/index.htm)
 * [Nashorn: JavaScript made great in Java 8](http://www.javaworld.com/article/2144908/scripting-jvm-languages/nashorn--javascript-made-great-in-java-8.html)
 * [jvmlangsummit - Nashorn](http://wiki.jvmlangsummit.com/images/c/ce/Nashorn.pdf)
+
+* [State of the Lambda](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-4.html)
+* [State of the Lambda: Libraries Edition](http://cr.openjdk.java.net/%7Ebriangoetz/lambda/collections-overview.html)
+* [Translation of Lambda Expressions](http://cr.openjdk.java.net/%7Ebriangoetz/lambda/lambda-translation.html)
+
 {% highlight Java %}
 {% endhighlight %}
