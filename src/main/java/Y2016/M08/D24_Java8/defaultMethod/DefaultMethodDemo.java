@@ -28,7 +28,6 @@ interface FourWheeler {
 
 class Car implements Vehicle, FourWheeler {
   public void print() {
-    // TODO “super” 关键字：在非静态方法中引用静态方法
     Vehicle.super.print();
     FourWheeler.super.print();
     Vehicle.blowHorn();
