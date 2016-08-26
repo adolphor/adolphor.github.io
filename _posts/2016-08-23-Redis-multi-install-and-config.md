@@ -13,8 +13,8 @@ excerpt:    Redis源码安装和多服务配置
 
 ### 安装
 通过查看官网源码下载地址 `http://redis.io/download` 可知，
-当前最新版本为3.2.3，压缩包地址为 `http://download.redis.io/releases/redis-3.2.3.tar.gz`，
-如果是其他版本，替换版本号即可。进入下载目录，依次进行如下操作：
+当前最新版本为3.2.3，[下载地址](http://download.redis.io/releases/redis-3.2.3.tar.gz)，
+如果是其他版本，下面的命令替换版本号即可。进入下载目录，依次进行如下操作：
 
     # 下载
     wget http://download.redis.io/releases/redis-3.2.3.tar.gz
@@ -93,13 +93,9 @@ adolphor 替换为你需要的密码，为了方便地使用 `/etc/init.d/redis_
 
 
 ## 配置参数详解
-
-
-
+TODO
 
 ## 参考资料
-
-* [test](test.html)
 
 {% highlight java %}
 {% endhighlight %}
