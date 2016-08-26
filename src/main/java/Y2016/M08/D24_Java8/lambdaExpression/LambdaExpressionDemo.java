@@ -32,15 +32,15 @@ public class LambdaExpressionDemo {
     Collections.sort(names, new Comparator<String>() {
       @Override
       public int compare(String a, String b) {
-        return b.compareTo(a);
+        return a.compareTo(b);
       }
     });
 
     Collections.sort(names, (String a, String b) -> {  // 带有参数类型声明 和 return 关键字
-      return b.compareTo(a);
+      return a.compareTo(b);
     });
-    Collections.sort(names, (String a, String b) -> b.compareTo(a));  // 省略return关键字
-    Collections.sort(names, (a, b) -> b.compareTo(a)); // 省略参数类型声明
+    Collections.sort(names, (String a, String b) -> a.compareTo(b));  // 省略return关键字
+    Collections.sort(names, (a, b) -> a.compareTo(b)); // 省略参数类型声明
 
     GreetingService greetService = message -> System.out.println("Hello " + message);    // 省略圆括号
     greetService.sayMessage("Mahesh");
@@ -53,13 +53,21 @@ public class LambdaExpressionDemo {
     Comparator<String> comparator1 = new Comparator<String>() {
       @Override
       public int compare(String a, String b) {
-        return b.compareTo(a);
+        return a.compareTo(b);
       }
     };
     Collections.sort(names, comparator1);
 
     Comparator<String> comparator2 = (a, b) -> a.compareTo(b);
     Collections.sort(names, comparator2);
+
+    // scope
+    String scopeTestStr = "Bob";
+    Collections.sort(names, (a, b) -> {
+      System.out.println(scopeTestStr);   // 可以访问非final变量
+      // scopeTestStr = "change";         // 但不能进行修改
+      return a.compareTo(b);
+    });
 
   }
 }
@@ -73,5 +81,3 @@ interface GreetingService {
 interface Converter<V, T> {
   T convert(V v);
 }
-
-

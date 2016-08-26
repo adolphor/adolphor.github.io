@@ -28,59 +28,70 @@ lambda 表达式是 Java8 中引入的最重要的一个概念之一，使得 Ja
 lambda 表达式就是一个匿名函数，Java8中可以使用lambda语法来代替匿名的内部类，先看一个范例：
 首先定义一个String类型的List变量：
 
+{% highlight Java %}
     List<String> names = Arrays.asList("Mahesh", "Suresh", "Ramesh", "Naresh", "Kalpesh");
+{% endhighlight %}
 
 如果要对这个list排序，按照以前Java7版本的JDK，需要使用 `Comparator` 接口，对于接口我们一般的使用方法是继承接口，
 实现自己的实现类，则有如下的实现类：
-
+{% highlight Java %}
     class MyComparator implements Comparator<String> {
       @Override
       public int compare(String a, String b) {
         return a.compareTo(b);
       }
     }
+{% endhighlight %}
 
 比较的时候传入 `Comparator` 实例对象:
     
+{% highlight Java %}
     // 初始化实例
     Comparator<String> myComparator = new MyComparator();
     Collections.sort(names, myComparator);
     // 匿名方式
     Collections.sort(names, new MyComparator());
+{% endhighlight %}
 
 简单一些的话，不需要定义具体的实现类，只需要在实例化接口的时候覆写接口内的抽象方法即可：
 
+{% highlight Java %}
     Collections.sort(names, new Comparator<String>() {
       @Override
       public int compare(String a, String b) {
-        return b.compareTo(a);
+        return a.compareTo(b);
       }
     });
+{% endhighlight %}
 
-上面使用了一个匿名内部实现类，复写了compare方法，这是Java8之前进行排序时最简单的实现方式。
+上面使用了一个匿名内部实现类，覆写了compare方法，这是Java8之前进行排序时最简单的实现方式。
 下面使用lambda表达式的方式实现：
 
+{% highlight Java %}
     Collections.sort(names, (String a, String b) -> {
-      return b.compareTo(a);
+      return a.compareTo(b);
     });
+{% endhighlight %}
 
-使用 `(a, b) -> b.compareTo(a)` 代替了匿名内部类，这就是lambda表达式的使用方式。
+使用 lambda表达式 代替了匿名内部实现类，这就是lambda表达式的使用情景之一。
 下面会对此方法更进一步进行简化。
 
 
-### 语法
+### 语法（Syntax）
 
 参数列表 | 表达式符号 | 函数体
 ---|---|---
 parameter | -> | expression body
+(args1, args2, args3, ……) | -> | { expression body }
 
+lambda语法结构如上所示，具体规则如下：
 
 * 参数类型声明是可选项，可写可不写，Java8可以自动进行类型推断
 * 如果只有一个参数，圆括号可选
 * 如果只有一个表达式，花括号可选
 * 如果只有一个返回表达式，return关键字可选
 
-形如下面的几种用法：  
+也就是说，lambda可能的表达式形式，有如下几种：  
 
 *  () -> System.out.println(this)
 *  (String str) -> System.out.println(str)
@@ -88,13 +99,18 @@ parameter | -> | expression body
 *  (String s1, String s2) -> { return s2.length() - s1.length(); }
 *  (s1, s2) -> s2.length() - s1.length()
 
-我们对上面的排序代码继续进行简化，因为它只有一个返回表达式，所以可以省略 return 和 大括号，简写为：
+至此，已经知道了lambda表达式的详细语法，利用此规则，我们对前面的排序代码继续进行简化，
+因为它只有一个返回表达式，所以可以省略 return 和 大括号，简写为：
     
-    Collections.sort(names, (String a, String b) -> b.compareTo(a));
+{% highlight Java %}
+    Collections.sort(names, (String a, String b) -> a.compareTo(b));
+{% endhighlight %}
     
 又 lambda 可以自动进行类型推断，所以可以省略参数类型，更进一步简写为：
 
-    Collections.sort(names, (a, b) -> b.compareTo(a));
+{% highlight Java %}
+    Collections.sort(names, (a, b) -> a.compareTo(b));
+{% endhighlight %}
 
 至此，已经将排序方法代码由四行简化为一行。
 
@@ -104,40 +120,64 @@ parameter | -> | expression body
 而匿名内部类是具有特定的接口(对象)类型的，那么lambda表达式也应该具有特定的目标类型（target type）。
 比如上面的排序方法：
 
+{% highlight Java %}
     Collections.sort(names, new Comparator<String>() {
       @Override
       public int compare(String a, String b) {
-        return b.compareTo(a);
+        return a.compareTo(b);
       }
     });
+{% endhighlight %}
 
 此匿名内部类的类型是 `Comparator`：
 
+{% highlight Java %}
     Comparator<String> comparator = new Comparator<String>() {
       @Override
       public int compare(String a, String b) {
-        return b.compareTo(a);
+        return a.compareTo(b);
       }
     };
+{% endhighlight %}
     
 那么对于上述排序方法处使用的lambda表达式的 target type 同样也是 `Comparator`：
 
+{% highlight Java %}
     Comparator<String> comparator = (a, b) -> a.compareTo(b);
+{% endhighlight %}
 
 也就是说，上面排序方法需要的只是 `Comparator` 接口类的实现，至于是自定义继承类实现实例，还是使用接口实例化，
 或者使用lambda表达式，效果都是等价的，都是为了进行如下的动作：
 
+{% highlight Java %}
     Collections.sort(names, comparator);
+{% endhighlight %}
 
-但lambda表达式肯定不是只用于排序，那么
+这也是list排序可以简写为如下 lambda 方式的原因： 
+   
+{% highlight Java %}
+    Collections.sort(names, (a, b) -> a.compareTo(b));
+{% endhighlight %}
 
-### 作用域
+但 lambda 表达式肯定不是只用于排序，target type 也不只是 `Comparator`，
+只要一个接口符合函数式接口规范（函数式接口见下面章节的介绍），那么在使用此接口
+的地方都可以使用 lambda 表达式。所以，lambda表达式的泛型化，也是真的吊了。
 
+### 作用域（effective scope）
 
-### 范例
+lambda 表达式可以访问表达式外部的非final变量，但不能进行修改，
+这样，这个变量对于lambda表达式来说相当于一个隐式的final变量，比如：
 
+{% highlight Java %}
+    String scopeTestStr = "Bob";
+    Collections.sort(names, (a, b) -> {
+      System.out.println(scopeTestStr);   // 可以访问非final变量
+      // scopeTestStr = "change";         // 但不能进行修改
+      return a.compareTo(b);
+    });
+{% endhighlight %}
 
-范例代码：
+### 范例代码
 
     LambdaExpressionDemo.java
 
@@ -158,43 +198,57 @@ public class LambdaExpressionDemo {
     /**
      * 原始实现方式
      */
+    class MyComparator implements Comparator<String> {
+      @Override
+      public int compare(String a, String b) {
+        return a.compareTo(b);
+      }
+    }
+    // 初始化实例
+    Comparator<String> myComparator = new MyComparator();
+    Collections.sort(names, myComparator);
+    // 匿名方式
+    Collections.sort(names, new MyComparator());
+
     Collections.sort(names, new Comparator<String>() {
       @Override
       public int compare(String a, String b) {
-        return b.compareTo(a);
+        return a.compareTo(b);
       }
     });
 
-    /**
-     * lambda表达式方式，以下三种方式是等价的
-     */
     Collections.sort(names, (String a, String b) -> {  // 带有参数类型声明 和 return 关键字
-      return b.compareTo(a);
+      return a.compareTo(b);
     });
-    Collections.sort(names, (String a, String b) -> b.compareTo(a));  // 省略return关键字
-    Collections.sort(names, (a, b) -> b.compareTo(a)); // 省略参数类型声明
+    Collections.sort(names, (String a, String b) -> a.compareTo(b));  // 省略return关键字
+    Collections.sort(names, (a, b) -> a.compareTo(b)); // 省略参数类型声明
 
-    /**
-     * 使用lambda表达式进行遍历
-     */
-    names.forEach(name -> System.out.println(name));
+    GreetingService greetService = message -> System.out.println("Hello " + message);    // 省略圆括号
+    greetService.sayMessage("Mahesh");
 
-
-    /**
-     * 范例：没有返回值
-     */
-    GreetingService greetService2 = (message) -> System.out.println("Hello " + message);    // 带有圆括号
-    GreetingService greetService1 = message -> System.out.println("Hello " + message);    // 省略圆括号
-
-    greetService1.sayMessage("Mahesh");
-    greetService2.sayMessage("Suresh");
-
-    /**
-     * 范例：有返回值
-     */
     Converter<String, Integer> converter = source -> Integer.valueOf(source); // 只有一个参数，省略圆括号
     Integer integer = converter.convert("123");
     System.out.println(integer);
+
+    // target type
+    Comparator<String> comparator1 = new Comparator<String>() {
+      @Override
+      public int compare(String a, String b) {
+        return a.compareTo(b);
+      }
+    };
+    Collections.sort(names, comparator1);
+
+    Comparator<String> comparator2 = (a, b) -> a.compareTo(b);
+    Collections.sort(names, comparator2);
+
+    // scope
+    String scopeTestStr = "Bob";
+    Collections.sort(names, (a, b) -> {
+      System.out.println(scopeTestStr);   // 可以访问非final变量
+      // scopeTestStr = "change";         // 但不能进行修改
+      return a.compareTo(b);
+    });
 
   }
 }
@@ -214,28 +268,346 @@ interface Converter<V, T> {
 
 ## 函数式接口（Functional Interfaces） {#FunctionalInterfaces}
 
-### 什么是函数式接口
+### 简介
+
 简单来说，函数式接口是只包含一个抽象方法（但可以包含一个或一个以上的默认实现方法）的接口。比如 Java 标准库中的
  `java.lang.Runnable` 和 `java.util.Comparator` 
 都是典型的函数式接口。对于函数式接口，除了可以使用 Java 中标准的方法来创建实现对象之外，还可以使用 lambda 表达式来创建
 实现对象。这可以在很大程度上简化代码的实现。在使用 lambda 表达式时，只需要提供形式参数和方法体。由于函数式接口只有一个
 抽象方法，所以通过 lambda 表达式声明的方法体就肯定是这个唯一的抽象方法的实现，而且形式参数的类型可以根据方法的类型声明
-进行自动推断。
+进行自动推断。函数式接口可以在类上加上 `@FunctionalInterface` 注解，其作用相当于 `@Override` 注解的作用。
 
+### 实现方式（implements）
 
-作为函数式接口实现有三种方式，第一种是最原始的继承接口的实现类，第二种是lambda表达式，第三种是方法引用。
+函数式接口只是一种特定类型的接口（只含有一个抽象方法），接口的各个性质同样适用于函数式接口。
+作为函数式接口实现有三种方式，第一种是最原始的接口的实现类，第二种是lambda表达式，第三种是方法引用。
 本节主要讲解前两种。
 
+接口的实现类，是最原始的实现方式，比如上面的 `MyComparator` 就是 `Comparator` 接口的实现类，
+或者在需要接口实例的地方，使用如上面的匿名实现类的方式：
 
-在 Java 8 中定义了很多函数接口供 lambda 表达式使用，下面是 `java.util.Function` 包中定义的函数接口列表：
-TODO 参考：http://www.tutorialspoint.com/java8/java8_functional_interfaces.htm
+{% highlight Java %}
+    Collections.sort(names, new Comparator<String>() {
+      @Override
+      public int compare(String a, String b) {
+        return a.compareTo(b);
+      }
+    });
+{% endhighlight %}
+
+第二种就是在需要接口实例的地方，使用 lambda表达式方式：
+{% highlight Java %}
+    Collections.sort(names, (a, b) -> a.compareTo(b)});
+{% endhighlight %}
 
 
-范例代码：
+### 函数式接口列表
+
+在 Java 8 中定义了很多函数接口供 lambda 表达式使用， `java.util.Function` 包中定义的函数接口列表有下面五类：
+
+接口类型 | 接口作用
+---|---
+Function | 对数据内容进行操作，比如修改、删除，比如数据类型转换，有返回值
+Operator | 对数据内容进行操作，有返回值，只不过参数类型和返回值类型全部一致，可以看做Function的特例情况
+Consumer | 对数据内容进行消费，没有返回值
+Supplier | 不需要传入参数，有返回值，可以看做Consumer的反函数，而且Supplier主要用于引用函数
+Predicate | 对数据进行检测判断的规则，相当于过滤条件的封装
+
+Function系列接口使用范例，比如输入两个 String 字符串，求出 int 类型的两个字符串长度之和：
+{% highlight Java %}
+BiFunction<String, String, Integer> biFunction = (a, b) -> (a + b).length();
+System.out.println("BiFunction<String, String, Integer> => " + biFunction.apply("Hello", "Bob"));
+{% endhighlight %}
+
+Operator系列接口使用范例，Operator相当于Function的特例，只是入参类型和返回值类型都一样，比如都是String类型：
+{% highlight Java %}
+BinaryOperator<String> binaryOperator = (a, b) -> a + b;
+System.out.println("BinaryOperator<String> => " + binaryOperator.apply("Hello", "Bob"));
+{% endhighlight %}
+
+Consumer系列接口使用范例，比如一个任意类型，一个int类型：
+{% highlight Java %}
+ObjIntConsumer<String> objIntConsumer = (a, b) -> System.out.println(a + b);
+objIntConsumer.accept("Hello Num: ", 11);
+{% endhighlight %}
+
+Supplier系列接口使用范例，一种重要的使用情景是方法引用，具体的方法引用见下节详解：
+{% highlight Java %}
+Supplier<Person> personSupplier = Person::new;
+Person person = personSupplier.get();
+System.out.println(person.name);
+{% endhighlight %}
+
+Predicate系列接口使用范例，可以看做是判断条件的封装，比如判断当前对象是否大于18岁，是否是男性：
+{% highlight Java %}
+BiPredicate<Integer, String> biPredicate = (a, b) -> a > 18 && b.equals("Male");
+System.out.println("BiPredicate<Integer, String> => " + biPredicate.test(person.age, person.gender));
+{% endhighlight %}
+
+Java8中的函数接口一般位于 `java.util.function` 包下，各详细接口定义汇总如下：
+
+<table>
+  <thead></thead>
+  <tbody>
+  <tr>
+    <td rowspan="17">
+      <h4>Function系列</h4>
+    </td>
+    <td>Function&lt;T,R&gt;</td>
+    <td>
+      T：入参类型<br/>
+      R：返回值类型
+    </td>
+  </tr>
+  <tr>
+    <td>BiFunction&lt;T,U,R&gt;</td>
+    <td>
+      T：入参1类型<br/>
+      U：入参2类型<br/>
+      R：返回值类型
+    </td>
+  </tr>
+  <tr>
+    <td>DoubleFunction&lt;R&gt;</td>
+    <td>
+      R：返回值类型
+    </td>
+  </tr>
+  <tr>
+    <td>DoubleToIntFunction</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>DoubleToLongFunction</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>IntFunction&lt;R&gt;</td>
+    <td>
+      R：返回值类型
+    </td>
+  </tr>
+  <tr>
+    <td>IntToDoubleFunction</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>IntToLongFunction</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>LongFunction&lt;R&gt;</td>
+    <td>
+      R：返回值类型
+    </td>
+  </tr>
+  <tr>
+    <td>LongToDoubleFunction</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>LongToIntFunction</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ToDoubleFunction&lt;T&gt;</td>
+    <td>
+      T：入参类型
+    </td>
+  </tr>
+  <tr>
+    <td>ToDoubleBiFunction&lt;T,U&gt;</td>
+    <td>
+      T：入参1类型<br/>
+      U：入参2类型
+    </td>
+  </tr>
+  <tr>
+    <td>ToIntFunction&lt;T&gt;</td>
+    <td>
+      T：入参类型
+    </td>
+  </tr>
+  <tr>
+    <td>ToIntBiFunction&lt;T,U&gt;</td>
+    <td>
+      T：入参1类型<br/>
+      U：入参2类型
+    </td>
+  </tr>
+  <tr>
+    <td>ToLongFunction&lt;T&gt;</td>
+    <td>
+      T：入参类型
+    </td>
+  </tr>
+  <tr>
+    <td>ToLongBiFunction&lt;T,U&gt;</td>
+    <td>
+      T：入参1类型<br/>
+      U：入参2类型
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="8">
+      <h4>Operator系列</h4>
+    </td>
+    <td>BinaryOperator&lt;T&gt;</td>
+    <td>
+      T：入参类型
+    </td>
+  </tr>
+  <tr>
+    <td>UnaryOperator&lt;T&gt;</td>
+    <td>
+      T：入参类型
+    </td>
+  </tr>
+  <tr>
+    <td>DoubleBinaryOperator</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>DoubleUnaryOperator</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>IntBinaryOperator</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>IntUnaryOperator</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>LongBinaryOperator</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>LongUnaryOperator</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td rowspan="8">
+      <h4>Consumer系列</h4>
+    </td>
+    <td>Consumer&lt;T&gt;</td>
+    <td>
+      T：入参类型
+    </td>
+  </tr>
+  <tr>
+    <td>BiConsumer&lt;T,U&gt;</td>
+    <td>
+      T：入参1类型<br/>
+      U：入参2类型
+    </td>
+  </tr>
+  <tr>
+    <td>DoubleConsumer</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>IntConsumer</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>LongConsumer</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ObjDoubleConsumer&lt;T&gt;</td>
+    <td>
+      T：入参类型
+    </td>
+  </tr>
+  <tr>
+    <td>ObjIntConsumer&lt;T&gt;</td>
+    <td>
+      T：入参类型
+    </td>
+  </tr>
+  <tr>
+    <td>ObjLongConsumer&lt;T&gt;</td>
+    <td>
+      T：入参类型
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="5">
+      <h4>Supplier系列</h4>
+    </td>
+    <td>Supplier&lt;T&gt;</td>
+    <td>
+      T：入参类型
+    </td>
+  </tr>
+  <tr>
+    <td>DoubleSupplier</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>IntSupplier</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>LongSupplier</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>BooleanSupplier</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td rowspan="5">
+      <h4>Predicate系列</h4>
+    </td>
+    <td>Predicate&lt;T&gt;</td>
+    <td>
+      T：入参类型
+    </td>
+  </tr>
+  <tr>
+    <td>BiPredicate&lt;T,U&gt;</td>
+    <td>
+      T：入参1类型<br/>
+      U：入参2类型
+    </td>
+  </tr>
+  <tr>
+    <td>DoublePredicate</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>IntPredicate</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>LongPredicate</td>
+    <td></td>
+  </tr>
+  </tbody>
+</table>
+
+### 范例代码
 
     FunctionalInterfaceDemo.java
 
 {% highlight Java %}
+import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
+import java.util.function.BinaryOperator;
+import java.util.function.Consumer;
+import java.util.function.DoubleFunction;
+import java.util.function.DoubleSupplier;
+import java.util.function.Function;
+import java.util.function.IntBinaryOperator;
+import java.util.function.IntToLongFunction;
+import java.util.function.ObjIntConsumer;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
+
 /**
  * Created by Bob on 2016/1/22.
  */
@@ -270,6 +642,78 @@ public class FunctionalInterfaceDemo {
     System.out.println("10 - 5 = " + testOperation.operateResult(10, 5, (a, b) -> a - b));
     System.out.println("10 x 5 = " + testOperation.operateResult(10, 5, (a, b) -> a * b));
     System.out.println("10 / 5 = " + testOperation.operateResult(10, 5, (a, b) -> a / b));
+
+    // Java8 函数接口
+    // Function 范例
+    Function<String, Integer> function = (a) -> a.length();
+    System.out.println("Function<String, String> => " + function.apply("Bob"));
+
+    BiFunction<String, String, Integer> biFunction = (a, b) -> (a + b).length();
+    System.out.println("BiFunction<String, String, Integer> => " + biFunction.apply("Hello", "Bob"));
+
+    DoubleFunction<String> doubleFunction1 = (a) -> "Double arg is " + a;
+    System.out.println("DoubleFunction<String> => " + doubleFunction1.apply(11.11));
+
+    IntToLongFunction intToLongFunction = (a) -> a;
+    System.out.println("IntToLongFunction => " + intToLongFunction.applyAsLong(11));
+
+    // Operator 范例（operator就是Function的特例情况）
+    BinaryOperator<String> binaryOperator = (a, b) -> a + b;
+    System.out.println("BinaryOperator<String> => " + binaryOperator.apply("Hello", "Bob"));
+
+    UnaryOperator<String> unaryOperator = (a) -> "unary msg: " + a;
+    System.out.println("UnaryOperator<String> => " + unaryOperator.apply("Hello"));
+
+    IntBinaryOperator intBinaryOperator = (a, b) -> a + b;
+    System.out.println("IntBinaryOperator => " + intBinaryOperator.applyAsInt(13, 14));
+
+    // Consumer 范例
+    Consumer<String> consumer = (a) -> System.out.println(a);
+    System.out.println("Consumer<String> => ");
+    consumer.accept("Hello Bob");
+
+    ObjIntConsumer<String> objIntConsumer = (a, b) -> System.out.println(a + b);
+    objIntConsumer.accept("Hello Num: ", 11);
+
+    // Supplier 范例：Supplier用于方法引用
+    Supplier<String> supplier = () -> "Supplier test";
+    System.out.println("Supplier<String> => " + supplier.get());
+
+    DoubleSupplier doubleSupplier = () -> 11.11;
+    System.out.println("DoubleSupplier => " + doubleSupplier.getAsDouble());
+
+    // Suppliers may reference constructor methods:
+    Supplier<Person> personSupplier1 = Person::new;
+    Person person1 = personSupplier1.get();
+    System.out.println(person1.name);
+    // Supplier referencing a static method
+    Supplier<Person> personSupplier2 = PersonFactory::producePerson;
+    Person person2 = personSupplier2.get();
+    System.out.println(person2.name);
+    // Supplier referencing an instance method
+    Person person3 = new FunctionalInterfaceDemo().getPerson();
+    System.out.println(person3.name);
+
+    // Predicate 范例
+    Predicate<Integer> predicate = (a) -> a > 18;
+    System.out.println("Predicate<String> => " + predicate.test(10));
+
+    BiPredicate<Integer, String> biPredicate = (a, b) -> a > 18 && b.equals("Male");
+    System.out.println("BiPredicate<Integer, String> => " + biPredicate.test(20, "Male"));
+
+  }
+
+  private Person getPerson() {
+    // Supplier referencing an instance method
+    Supplier<Person> userSupplier = this::producePerson;
+    Person person = userSupplier.get();
+    return person;
+  }
+
+  private Person producePerson() {
+    Person person = new Person();
+    person.name = "Person by instance method";
+    return person;
   }
 
 }
@@ -293,22 +737,34 @@ class TestMathOperation {
   }
 }
 
+class Person {
+  public String name;
+
+  Person() {
+    name = "Person by constructor methods";
+  }
+}
+
+class PersonFactory {
+  public static Person producePerson() {
+    Person person = new Person();
+    person.name = "Person by static method";
+    return person;
+  }
+}
 {% endhighlight %}
 
-运行结果如下：
-
-    10 + 5 = 15
-    10 - 5 = 5
-    10 x 5 = 50
-    10 / 5 = 2
 
 ## 方法引用（Method References） {#MethodReferences}
+
+### 简介
 在lambda表达式章节中可知，在需要特定接口类型参数的地方，就可以使用lambda表达式进行替换。
 而部分lambda表达式有一种更简单的书写方式，那就是使用方法引用。
 虽然不是所有的lambda表达式都可以使用方法引用替换，但所有的方法引用都可以使用lambda表达式进行替换。
 还有一个特点就是方法引用可以直接引用已经存在的实例的方法作为函数式接口的实现，而这个实例方法并不要求
 必须继承自函数式接口，任何符合函数式接口定义的方法，都可以被引用。
 
+### 使用方法
 方法引用有以下三种使用方式：
 
 * 静态方法
@@ -316,7 +772,7 @@ class TestMathOperation {
 * 实例方法
 
 
-范例代码：
+### 范例代码
 
     LambdaExpressionDemo.java
 
@@ -655,6 +1111,8 @@ public class StreamDemo {
 * [State of the Lambda](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-4.html)
 * [State of the Lambda: Libraries Edition](http://cr.openjdk.java.net/%7Ebriangoetz/lambda/collections-overview.html)
 * [Translation of Lambda Expressions](http://cr.openjdk.java.net/%7Ebriangoetz/lambda/lambda-translation.html)
+* [Java 8 Parallel Streams](http://www.byteslounge.com/tutorials/java-8-parallel-streams)
+
 
 {% highlight Java %}
 {% endhighlight %}
