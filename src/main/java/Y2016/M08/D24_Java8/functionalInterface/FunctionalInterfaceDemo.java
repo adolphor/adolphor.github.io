@@ -8,7 +8,7 @@ public class FunctionalInterfaceDemo {
   public static void main(String args[]) {
 
     /**
-     * 范例2：（这个应该是服务注册的实现吧）
+     * 范例：
      */
     // 分别实现如下4个函数式接口：
     MathOperation addition = (a, b) -> a + b;
@@ -16,20 +16,20 @@ public class FunctionalInterfaceDemo {
     MathOperation multiplication = (a, b) -> a * b;
     MathOperation division = (a, b) -> a / b;
 
-    // 3.1、调用范例
+    // 1、调用范例
     System.out.println("10 + 5 = " + addition.operate(10, 5));
     System.out.println("10 - 5 = " + subtraction.operate(10, 5));
     System.out.println("10 x 5 = " + multiplication.operate(10, 5));
     System.out.println("10 / 5 = " + division.operate(10, 5));
 
     TestMathOperation testOperation = new TestMathOperation();
-    // 3.2、像实现类实例一样，函数式接口实现也可以作为参数传递，之后再进行调用
+    // 2、像实现类实例一样，函数式接口实现也可以作为参数传递，之后再进行调用
     System.out.println("10 + 5 = " + testOperation.operateResult(10, 5, addition));
     System.out.println("10 - 5 = " + testOperation.operateResult(10, 5, subtraction));
     System.out.println("10 x 5 = " + testOperation.operateResult(10, 5, multiplication));
     System.out.println("10 / 5 = " + testOperation.operateResult(10, 5, division));
 
-    // 3.3、也可以使用匿名实现的方式
+    // 3、也可以使用匿名实现的方式
     System.out.println("10 + 5 = " + testOperation.operateResult(10, 5, (a, b) -> a + b));
     System.out.println("10 - 5 = " + testOperation.operateResult(10, 5, (a, b) -> a - b));
     System.out.println("10 x 5 = " + testOperation.operateResult(10, 5, (a, b) -> a * b));
