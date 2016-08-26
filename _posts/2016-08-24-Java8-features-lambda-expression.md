@@ -9,17 +9,13 @@ geneMenu:   true
 excerpt:    Java8 新特性 —— lambda表达式
 ---
 
-Java8 新特性主要有一下几个方面：
+本文主要介绍 Java8 的以下几个新特性：
 
 * [函数式接口（Functional Interfaces）](#FunctionalInterfaces)  
 * [lambda表达式（Lambda Expressions）](#LambdaExpressions)  
 * [方法引用（Method References）](#MethodReferences)  
 * [默认方法（Default Methods）](#DefaultMethods)  
 * [流操作（Streams）](#Streams)  
-* [New Date/Time API](#NewDateTimeAPI)  
-* [Base64](#Base64)  
-* [Optional Class](#OptionalClass)  
-* [Nashorn JavaScript](#NashornJavaScript)  
 
 ## lambda表达式（Lambda Expressions） {#LambdaExpressions}
 lambda 表达式是 Java8 中引入的最重要的一个概念之一，使得 Java 拥有了进行函数式编程的能力。
@@ -74,7 +70,7 @@ lambda 表达式就是一个匿名函数，Java8中可以使用lambda语法来�
 {% endhighlight %}
 
 使用 lambda表达式 代替了匿名内部实现类，这就是lambda表达式的使用情景之一。
-下面会对此方法更进一步进行简化。
+虽然这样看起来并不比旧方法简单，但下面会对此方法更进一步进行简化。
 
 
 ### 语法（Syntax）
@@ -815,7 +811,7 @@ System.out.println("Java ends with: " + testFun.funResult(ends, "Java"));
 {% endhighlight %}
 也就是说，funResult方法相当于一个接口规范，需要的是一个 Function 实例，这个实例的具体实现可以根据需要自由实现，
 本例的实现是直接调用其他实例（Something）的方法（startsWith、endsWith）作为自己的实现，Something不必遵守函数式接口规范，
-但它的方法却可以被函数式接口调用，这样函数式接口的实现方式更加灵活。
+但它的方法却可以被函数式接口调用，这样使得函数式接口的实现方式更加灵活。
 
 
 
@@ -987,7 +983,7 @@ class Car implements Vehicle, FourWheeler {
 
 主要有以下几个数据流操作相关的概念：
 
-名称 | 详解
+概念 | 详解
 ---|---
 Sequence of elements  |    流是一组按照一定顺序排列的特定类型的元素
 Source   |    源可以将集合、数组和 I/O 资源作为输入源
@@ -995,28 +991,69 @@ Aggregate operations  |    流提供了一系列的聚合操作，像 filter, ma
 Pipelining  |    大多数流操作都是在管道（Pipeline）中进行的，这些操作叫做中间操作（intermediate operations），他们的功能是加载并处理数据流，之后输出到目标地点。一般将 `collect()` 方法用于数据流操作的末尾，标志着数据流处理的结束。
 Automatic iterations  |     流操作提供了数据遍历的功能
 
-### 数据流操作方法
+### 数据流操作详解
+流操作带来最大的遍历就是可以链式操作，更加语义化，使得代码可读性更高。
 
-范例中的streams定义如下
+先定义两个List变量如下
 
     List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
     List<String> strings = Arrays.asList("abc", "bc", "efg", "abcd", "jkl");
 
+数据流操作的主要方法有：
+
 方法名 | 作用 | 范例
 ---|---|---
 stream()  |    此方法返回顺序数据流 | numbers.stream()
-parallelStream()  |    此方法返回并行计算数据流 | numbers.parallelStream()
-forEach | 遍历数据流 | numbers.stream().forEach(System.out::println);
+parallelStream()  |    此方法返回并行计算数据流 | numbers.parallelStream().filter(n -> n > 3);
 map | 对数据流数据进行操作 | numbers.stream().map(n -> n * n);
 filter | 过滤符合条件的数据 | numbers.stream().filter(n -> n > 3);
 limit | 截取特定数量的数据元素 | numbers.stream().limit(4);
 sorted | 排序 | numbers.stream((a, b) -> a.compareTo(b)).sorted();
-Parallel Processing | 并行操作 | numbers.parallelStream().filter(n -> n > 3);
 distinct | 排重 |stream.distinct();
+forEach | 遍历数据流 | numbers.stream().forEach(System.out::println);
 Collectors | 集合操作 | strings.stream().collect(Collectors.toList());
 Statistics | Statistics | numbers.stream().mapToInt((x) -> x).summaryStatistics();
 
-    TODO: Stream类接口详解
+
+### 数据流操作方法
+
+Stream类中定义的函数式接口汇总如下：
+
+方法名 | 接口规范
+---|---
+limit |     Stream<T> limit(long maxSize);
+map | <R> Stream<R> map(Function<? super T, ? extends R> mapper)
+mapToInt | IntStream mapToInt(ToIntFunction<? super T> mapper);
+mapToLong | LongStream mapToLong(ToLongFunction<? super T> mapper);
+mapToDouble | DoubleStream mapToDouble(ToDoubleFunction<? super T> mapper);
+flatMap | <R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper)
+flatMapToInt | IntStream flatMapToInt(Function<? super T, ? extends IntStream> mapper);
+flatMapToLong | LongStream flatMapToLong(Function<? super T, ? extends LongStream> mapper);
+flatMapToDouble | DoubleStream flatMapToDouble(Function<? super T, ? extends DoubleStream> mapper);
+skip |     Stream<T> skip(long n);
+filter | Stream<T> filter(Predicate<? super T> predicate) 
+anyMatch | boolean anyMatch(Predicate<? super T> predicate);
+allMatch | boolean allMatch(Predicate<? super T> predicate);
+noneMatch | boolean noneMatch(Predicate<? super T> predicate);
+findFirst | Optional<T> findFirst();
+findAny | Optional<T> findAny();
+peek | Stream<T> peek(Consumer<? super T> action) 
+distinct | Stream<T> distinct()
+min | Optional<T> min(Comparator<? super T> comparator);
+max | Optional<T> max(Comparator<? super T> comparator);
+sorted | Stream<T> sorted() 
+sorted | Stream<T> sorted(Comparator<? super T> comparator);
+reduce | T reduce(T identity, BinaryOperator<T> accumulator);
+reduce | Optional<T> reduce(BinaryOperator<T> accumulator);
+reduce | <U> U reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner);
+forEach | void forEach(Consumer<? super T> action);
+forEachOrdered | void forEachOrdered(Consumer<? super T> action);
+toArray | Object[] toArray();
+toArray | <A> A[] toArray(IntFunction<A[]> generator);
+count | long count();
+collect | <R> R collect(Supplier<R> supplier, BiConsumer<R, ? super T> accumulator, BiConsumer<R, R> combiner);
+collect | <R, A> R collect(Collector<? super T, A, R> collector);
+
 
 
 范例代码：
