@@ -42,13 +42,6 @@ public class LambdaExpressionDemo {
     Collections.sort(names, (String a, String b) -> a.compareTo(b));  // 省略return关键字
     Collections.sort(names, (a, b) -> a.compareTo(b)); // 省略参数类型声明
 
-    GreetingService greetService = message -> System.out.println("Hello " + message);    // 省略圆括号
-    greetService.sayMessage("Mahesh");
-
-    Converter<String, Integer> converter = source -> Integer.valueOf(source); // 只有一个参数，省略圆括号
-    Integer integer = converter.convert("123");
-    System.out.println(integer);
-
     // target type
     Comparator<String> comparator1 = new Comparator<String>() {
       @Override
@@ -70,14 +63,4 @@ public class LambdaExpressionDemo {
     });
 
   }
-}
-
-@FunctionalInterface
-interface GreetingService {
-  void sayMessage(String message);
-}
-
-@FunctionalInterface
-interface Converter<V, T> {
-  T convert(V v);
 }
