@@ -270,20 +270,16 @@ size方法获取当前集合的元素的个数，也就是集合的长度，在�
 
 ## 继承的方法
 
+AbstractCollection 继承了两个类：`Iterable` 和 `Collection`，
+方法的具体实现参考：[Collection框架之Collection]({% post_url 2016-08-04-JDK-source-code-Collection-Collection %})
+
 ### Collection
 
-equals, hashCode, parallelStream, removeIf, spliterator, stream
+equals, hashCode, parallelStream, removeIf, spliterator, stream, forEach
 
 ### Iterable
 
-#### default void forEach(Consumer<? super T> action)
-since 1.8，TODO
-
-
-## 遺留问题
-
-* 为什么没有实现equals和hashCode方法？
-* 子类中实现的hashCode方法求值，如果哈希码重复，分别是怎么处理的？
+forEach
 
 ## 参考资料
 
