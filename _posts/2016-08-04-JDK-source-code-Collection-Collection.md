@@ -246,21 +246,70 @@ class Student {
 
 ## Java8 lambda表达式相关接口
 
-Java8数据流并行操作操作，参考
+Java8数据流操作相关方法，参考
 [Java8 新特性 —— lambda表达式]({% post_url 2016-08-24-Java8-features-lambda-expression %})
 流处理部分
 
 ### default Stream<E> stream()
 将数据读取为数据流
+{% highlight java %}
+default Stream<E> stream() {
+    return StreamSupport.stream(spliterator(), false);  // false：非并行
+}
+{% endhighlight %}
 
 ### default Stream<E> parallelStream()
 将数据读取为并行数据流
+{% highlight java %}
+default Stream<E> parallelStream() {
+    return StreamSupport.stream(spliterator(), true);   // true：并行
+}
+{% endhighlight %}
 
 ### default Spliterator<E> spliterator()
-对数据流并行迭代处理
+对数据流并行迭代预处理
+{% highlight java %}
+@Override
+default Spliterator<E> spliterator() {
+    return Spliterators.spliterator(this, 0);   // 
+}
+{% endhighlight %}
 
 ### default boolean removeIf(Predicate<? super E> filter)
 过滤不符合条件的数据
+
+{% highlight java %}
+default boolean removeIf(Predicate<? super E> filter) {
+    Objects.requireNonNull(filter); // 非空
+    boolean removed = false;
+    final Iterator<E> each = iterator();
+    while (each.hasNext()) {        // 迭代校验
+        if (filter.test(each.next())) {
+            each.remove();          // 满足条件的进行移除操作
+            removed = true;
+        }
+    }
+    return removed;
+}
+{% endhighlight %}
+
+
+## 继承的方法
+
+### Iterable
+
+#### default void forEach(Consumer<? super T> action)
+{% highlight java %}
+default void forEach(Consumer<? super T> action) {
+    Objects.requireNonNull(action);
+    for (T t : this) {  // 遍历
+        action.accept(t); // 执行lambda具体操作
+    }
+}
+{% endhighlight %}
+
+Java8数据流操作相关方法，参考
+[Java8 新特性 —— lambda表达式]({% post_url 2016-08-24-Java8-features-lambda-expression %})
 
 ## 参考资料
 
