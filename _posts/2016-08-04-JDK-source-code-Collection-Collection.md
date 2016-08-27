@@ -37,6 +37,7 @@ excerpt:    【Java8源码阅读笔记】Collection框架之Collection
 ### boolean removeAll(Collection<?> c)
 
 将参数中包含的所有元素从集合中删除（如果集合中存在的话）
+删除成功返回true，删除失败返回false。
 
 ### boolean retainAll(Collection<?> c)
 
@@ -86,7 +87,7 @@ public class RetainAllDemo {
 
 ### int hashCode()
 
-此hashCode方法，是计算整个集合的hashCode，本方法使用较少。
+此hashCode方法，是计算整个集合的hashCode
 
 {% highlight java %}
 import java.util.ArrayList;
@@ -243,48 +244,23 @@ class Student {
 ### Iterator<E> iterator()
 集合遍历封装类
 
-### default Spliterator<E> spliterator()
+## Java8 lambda表达式相关接口
 
-Java8 TODO
-
-### default boolean removeIf(Predicate<? super E> filter)
-
-Java8 TODO
+Java8数据流并行操作操作，参考
+[Java8 新特性 —— lambda表达式]({% post_url 2016-08-24-Java8-features-lambda-expression %})
+流处理部分
 
 ### default Stream<E> stream()
-
-Java8 TODO
+将数据读取为数据流
 
 ### default Stream<E> parallelStream()
+将数据读取为并行数据流
 
-Java8 TODO
+### default Spliterator<E> spliterator()
+对数据流并行迭代处理
 
-## 接口中的默认方法
-Java8之后，还有一个新特性，就是接口中支持默认方法实现：
-{% highlight java %}
-public interface  {
-  void method1();
-  default void method2() {
-    System.out.println("I'm method2 from interface.");
-  }
-}
-public class DefaultMehtodImplements implements DefaultMethodOfInterface {
-  @Override
-  public void method1() {
-    System.out.println("I'm method1 from implement.");
-  }
-}
-public class Demo {
-  public static void main(String[] args) {
-    DefaultMehtodImplements dmi = new DefaultMehtodImplements();
-    dmi.method1();
-    dmi.method2();
-  }
-}
-{% endhighlight %}
-
-TODO 问题：默认方法相比于抽象实现类，有点在哪里？
-* 继承的单一性限制
+### default boolean removeIf(Predicate<? super E> filter)
+过滤不符合条件的数据
 
 ## 参考资料
 
