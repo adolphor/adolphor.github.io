@@ -270,7 +270,7 @@ size方法获取当前集合的元素的个数，也就是集合的长度，在�
 
 ## 继承的方法
 
-AbstractCollection 继承了两个类：`Iterable` 和 `Collection`，
+AbstractCollection 继承自 `Collection`，`Collection` 继承自 `Iterable` 。
 方法的具体实现参考：[Collection框架之Collection]({% post_url 2016-08-04-JDK-source-code-Collection-Collection %})
 
 ### Collection
