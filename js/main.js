@@ -30,7 +30,7 @@ function geneMenu() {
         $.each(h2Array, function () {
             var h2Title = $(this).text();
             var h2Id = $(this).attr("id");
-            var link = '<li class="menu-li"><a href="' + pathname + '#' + h2Id + '">' + h2Title + '</a></li>'
+            var link = '<li class="menu-li" title="' + h2Title + '"><a href="' + pathname + '#' + h2Id + '">' + h2Title + '</a></li>'
             section += link;
 
             var h3Array = $(this).nextUntil('h2').filter("h3");
@@ -38,7 +38,7 @@ function geneMenu() {
             $.each(h3Array, function () {
                 var h3Title = $(this).text();
                 var h3Id = $(this).attr("id");
-                var subLink = '<li class="sub-menu-li"><a href="' + pathname + '#' + h3Id + '">' + h3Title + '</a></li>'
+                var subLink = '<li class="sub-menu-li" title="' + h3Title + '"><a href="' + pathname + '#' + h3Id + '">' + h3Title + '</a></li>'
                 section += subLink;
             });
             section += "</ul>";
