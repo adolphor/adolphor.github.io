@@ -6,7 +6,7 @@ postId:     ${postId}
 categories: [java, java]
 tags:       [tag, tag]
 geneMenu:   true
-excerpt:    excerpt
+excerpt:    ${postTitle}
 ---
 
 开始写作吧
