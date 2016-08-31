@@ -156,12 +156,191 @@ int main() {
 }
 {% endhighlight %}
 
-上述代码中，std::cin >> value 的返回值是一个iostream，那么对I/O对象进行test的时候，规则如何呢？
+上述代码中，`std::cin >> value` 的返回值是一个iostream，那么对I/O对象进行test的时候，规则如何呢？
 在本范例中，因为使用value进行输入参数的接收，那么当输入的参数是int类型的时候，test为true；当输入的
 参数不是int类型的时候，test为false。或者使用 *end of file* 来表示输入的结束，此时test也为false。
 while检测到false之后，就会跳出循环，继续下面代码的运行。
 
 Q：并不会抛异常……
+
+##### 1.4.4. The if Statement
+
+和Java无差啦……
+
+范例：
+
+    prog6.cc
+{% highlight C++ %}
+#include <iostream>
+int main() {
+    // currVal is the number we're counting; we'll read new values into val
+    int currVal = 0, val = 0;
+    // read first number and ensure that we have data to process
+    if (std::cin >> currVal) {
+        int cnt = 1; // store the count for the current value we're processing
+        while (std::cin >> val) { // read the remaining numbers
+            if (val == currVal) // if the values are the same
+            ++cnt; // add 1 to cnt
+            else { // otherwise, print the count for the previous value
+                std::cout << currVal << " occurs "
+                    << cnt << " times" << std::endl;
+                currVal = val; // remember the new value
+                cnt = 1; // reset the counter
+            }
+        } // while loop ends here
+        // remember to print the count for the last value in the file
+        std::cout << currVal << " occurs "
+            << cnt << " times" << std::endl;
+    } // outermost if statement ends here
+    return 0;
+}
+{% endhighlight %}
+
+    # Input
+    42 42 42 42 42 55 55 62 100 100 100 done
+
+    # Output
+    42 occurs 5 times
+    55 occurs 2 times
+    62 occurs 1 times
+    100 occurs 3 times
+
+#### 1.5. Introducing Classes
+
+类作为头文件 (header file) 引入，一般以 `.h` 作为后缀，或者 `.H`, `.hpp`, `.hxx` 作为后缀。
+在C++标准库中，甚至没有后缀，编译器并不在乎这些后缀，但有些IDE可能在乎。
+
+
+##### 1.5.1. The Sales_item Class
+
+定义一个 `Sales_item` 类，实现如下：
+
+    Sales_item.h
+{% highlight C++ %}
+#ifndef SALESITEM_H
+#define SALESITEM_H
+#include <iostream>
+#include <string>
+
+class Sales_item
+{
+public:
+    Sales_item(const std::string &book):isbn(book),units_sold(0),revenue(0.0){}
+    Sales_item(std::istream &is){ is >> *this;}
+    friend std::istream& operator>>(std::istream &,Sales_item &);
+    friend std::ostream& operator<<(std::ostream &,const Sales_item &);
+public:
+    Sales_item & operator+=(const Sales_item&);
+public:
+    double avg_price() const;
+bool same_isbn(const Sales_item &rhs)const
+{
+    return isbn == rhs.isbn;
+}
+Sales_item():units_sold(0),revenue(0.0){}
+public:
+    std::string isbn;
+    unsigned units_sold;
+    double revenue;
+};
+ 
+using std::istream;
+using std::ostream;
+Sales_item operator+(const Sales_item &,const Sales_item &);
+inline bool operator==(const Sales_item &lhs,const Sales_item &rhs)
+{
+    return lhs.units_sold == rhs.units_sold && lhs.revenue == rhs.revenue && lhs.same_isbn(rhs);
+}
+inline bool operator!=(const Sales_item &lhs,const Sales_item &rhs)
+{
+    return !(lhs == rhs);
+}
+ 
+inline Sales_item & Sales_item::operator +=(const Sales_item &rhs)
+{
+    units_sold += rhs.units_sold;
+    revenue += rhs.revenue;
+    return *this;
+}
+inline Sales_item operator+(const Sales_item &lhs,const Sales_item &rhs)
+{
+    Sales_item ret(lhs);
+    ret += rhs;
+    return ret;
+}
+inline istream& operator>>(istream &in,Sales_item &s)
+{
+    double price;
+    in >> s.isbn >> s.units_sold >> price;
+    if(in)
+         s.revenue = s.units_sold * price;
+    else
+    s = Sales_item();
+    return in;
+}
+inline ostream& operator<<(ostream &out,const Sales_item &s)
+{
+    out << s.isbn << "t" <<s.units_sold << "t" << s.revenue << "t" << s.avg_price();
+    return out;
+}
+inline double Sales_item::avg_price() const
+{
+    if(units_sold)
+        return revenue/units_sold;
+    else
+    return 0;
+}
+#endif
+{% endhighlight %}
+
+下面看一些操作范例：
+
+    prog7.cc
+{% highlight C++ %}
+#include <iostream>
+#include "Sales_item.h"
+int main() {
+    Sales_item book;
+    // read ISBN, number of copies sold, and sales price
+    std::cin >> book;
+    // write ISBN, number of copies sold, total revenue, and average price
+    std::cout << book << std::endl;
+    return 0;
+}
+{% endhighlight %}
+
+对于标准库的引用，使用 `#include <iostream>` 尖括号包裹，
+对于自定义的类的引用，使用的 `#include "Sales_item.h"` 双引号包裹。
+
+    # Input
+    0-201-70353-X 4 24.99
+
+    # Output
+    0-201-70353-X   4       99.96   24.99
+
+再来一个范例：
+
+    prog8.cc
+{% highlight C++ %}
+#include <iostream>
+#include "Sales_item.h"
+int main() {
+    Sales_item book;
+    // read ISBN, number of copies sold, and sales price
+    std::cin >> book;
+    // write ISBN, number of copies sold, total revenue, and average price
+    std::cout << book << std::endl;
+    return 0;
+}
+{% endhighlight %}
+
+    # Input
+    0-201-78345-X 3 20.00
+    0-201-78345-X 3 20.00
+
+    # Output
+    0-201-78345-X   6       120     20
+    
 
 ## Part1: The Basics
 
