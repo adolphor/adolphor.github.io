@@ -74,8 +74,8 @@ pre {
     .kn    { font-weight: bold; color: #bb5908 } //
     .kc    { color:#8A8A8A } // Keyword.Constant
     .kd    { font-weight: bold; color: #bb5908  } // Keyword.Declaration: public,private...
-    .kp    { font-weight: bold} // Keyword.Pseudo
-    .kr    { font-weight: bold } // Keyword.Reserved
+    .kp    { color: #bb5908; font-weight: bold} // Keyword.Pseudo
+    .kr    { color: #bb5908; font-weight: bold } // Keyword.Reserved
     .kt    { color: #bb5908; font-weight: bold } // Keyword.Type
     .m     { color: #099 } // Literal.Number
     .s     { color: #2529c3 } // Literal.String
