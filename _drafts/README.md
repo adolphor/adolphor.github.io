@@ -4,6 +4,4 @@
 * 预览草稿的方法：  
 > jekyll serve --drafts
 
-{% highlight C++ %}
-{% endhighlight %}
 

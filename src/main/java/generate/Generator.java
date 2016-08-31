@@ -19,8 +19,8 @@ import java.util.Map;
 public class Generator {
 
 //  private static String postTitle = "JDK-source-code-Collection-Set-TreeSet";
-  private static String postTitle = "redis-design-and-implementation";
-
+  private static String urlTitle = "C++-primer-Stanley-B-Lippman";
+  private static String postTitle = "《C++primer —— Stanley B. Lippman》读书笔记";
 
   private static Configuration cfg;
 
@@ -33,9 +33,9 @@ public class Generator {
 
     String templatePath = System.getProperty("user.dir") + "\\src\\main\\resources";
     Configuration configuration = getConfiguration(templatePath);
-    Template temp = configuration.getTemplate("post-Collection.ftl");
-    String url = System.getProperty("user.dir") + File.separator + "_posts"
-            + File.separator + Utils.getPostTitle(postTitle)+".md";
+    Template temp = configuration.getTemplate("post.ftl");
+    String url = System.getProperty("user.dir") + File.separator + "_drafts"
+            + File.separator + Utils.getPostTitle(urlTitle)+".md";
 
     File file = new File(url);
     createFile(file);

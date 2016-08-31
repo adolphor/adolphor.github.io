@@ -336,11 +336,41 @@ int main() {
 
     # Input
     0-201-78345-X 3 20.00
-    0-201-78345-X 3 20.00
+    0-201-78345-X 2 25.00
 
     # Output
-    0-201-78345-X   6       120     20
+    0-201-78345-X   5       110     22
     
+##### 1.5.2. A First Look at Member Functions
+先上代码：
+
+    prog9.cc
+{% highlight C++ %}
+#include <iostream>
+#include "Sales_item.h"
+int main() {
+    Sales_item item1, item2;
+    std::cin >> item1 >> item2;
+    // first check that item1 and item2 represent the same book
+    if (item1.isbn() == item2.isbn()) {
+        std::cout << item1 + item2 << std::endl;
+        return 0; // indicate success
+    } else {
+        std::cerr << "Data must refer to same ISBN"
+            << std::endl;
+        return -1; // indicate failure
+    }
+}
+{% endhighlight %}
+
+代码 `item1.isbn() == item2.isbn()` 中就引用了一个叫做 `isbn` 的 `member function`。 
+A member function is a function that is defined as part of a class. 
+Member functions are sometimes referred to as methods.
+作为类的一部分，有时候作为method使用？ method 和 function有啥子区别？
+
+#### 1.6. The Bookstore Program
+
+
 
 ## Part1: The Basics
 
