@@ -4,9 +4,9 @@
             http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.bob</groupId>
-    <artifactId>northfacing.github.io</artifactId>
+    <artifactId>adolphor</artifactId>
     <version>0.1-SNAPSHOT</version>
-    <url>northfacing.github.io</url>
+    <url>adolphor.com</url>
     <description>jekyll集成Java项目</description>
     <properties>
         <freemarker.version>2.3.23</freemarker.version>
