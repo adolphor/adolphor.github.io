@@ -3,8 +3,8 @@ layout:     post
 title:      【Java8源码阅读笔记】Collection框架之TreeSet
 date:       2016-08-19 23:35:40 +0800
 postId:     2016-08-19-23-35-40
-categories: [Collection]
-tags:       [Collection, Set]
+categories: [Java]
+tags:       [Java, Collection, Set]
 geneMenu:   true
 excerpt:    【Java8源码阅读笔记】Collection框架之TreeSet
 ---

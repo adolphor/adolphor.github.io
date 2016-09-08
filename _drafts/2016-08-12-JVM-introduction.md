@@ -3,8 +3,8 @@ layout:     post
 title:      JVM虚拟机简介
 date:       2016-08-12 13:31:56 +0800
 postId:     2016-08-12-13-31-56
-categories: [JVM]
-tags:       [JVM]
+categories: [Java]
+tags:       [Java, JVM]
 geneMenu:   true
 excerpt:    excerpt
 ---

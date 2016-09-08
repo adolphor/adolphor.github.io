@@ -3,8 +3,8 @@ layout:     post
 title:      java binary structure
 date:       2016-08-06 14:52:07 +0800
 postId:     2016-08-06-14-52-08
-categories: [java, java]
-tags:       [tag, tag]
+categories: [Java]
+tags:       [Java, class]
 geneMenu:   true
 ---
 
