@@ -3,7 +3,7 @@ layout:     post
 title:      ${postTitle}
 date:       ${postDate} +0800
 postId:     ${postId}
-categories: [java, java]
+categories: [Java, Java]
 tags:       [tag, tag]
 geneMenu:   true
 excerpt:    ${postTitle}
