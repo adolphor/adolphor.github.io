@@ -1,9 +1,11 @@
 $(document).ready(function () {
     heightFunctions();
     geneMenu();
+    heightResize();
 
+    // 如果调整
     $(window).resize(function () {
-        reSize();
+        menuResize();
     });
 
 });
@@ -45,16 +47,10 @@ function geneMenu() {
         })
         section += ("</ul></div></section>");
         $(".menu-side").append(section);
-        reSize();
 
-        position = $('#articleMenu').offset();
+        menuResize();
+
         $(window).scroll(function () {
-            // 滚动鼠标的时候进行高度校正
-            var sideHeight = $(".menu-side").height();
-            var contHeight = $(".post-side").height();
-            var height = (sideHeight > contHeight) ? sideHeight : contHeight;
-            $(".menu-side, .post-side").css("min-height", height);
-
             // 定位菜单位置
             if ($(window).scrollTop() > position.top) {
                 $('#articleMenu').css('position', 'fixed').css('top', '0');
@@ -66,7 +62,7 @@ function geneMenu() {
 
 }
 
-function reSize() {
+function menuResize() {
     var windowHeight = $(window).height();
     var width = $("aside section:first").width();
     $("#articleMenu").css("width", width);
@@ -74,6 +70,16 @@ function reSize() {
         .css("height", (windowHeight - 110))
         .css("width", (width - 18));
 
-    position = $('#articleMenu').offset();
+    // bugFix:只需要赋值一次就可以了
+    if (!position) {
+        position = $('#articleMenu').offset();
+    }
+
 }
 
+function heightResize() {
+    var sideHeight = $(".menu-side").height();
+    var contHeight = $(".post-side").height();
+    var height = Math.max(sideHeight, contHeight);
+    $(".menu-side, .post-side").css("min-height", height);
+}
