@@ -19,8 +19,8 @@ import java.util.Map;
 public class Generator {
 
 //  private static String postTitle = "JDK-source-code-Collection-Set-TreeSet";
-  private static String urlTitle = "C++-primer-Stanley-B-Lippman";
-  private static String postTitle = "《C++primer —— Stanley B. Lippman》读书笔记";
+  private static String urlTitle = "understanding-the-jvm-second-edition";
+  private static String postTitle = "《深入理解Java虚拟机：JVM高级特性与最佳实践 —— 周志明》读书笔记";
 
   private static Configuration cfg;
 
