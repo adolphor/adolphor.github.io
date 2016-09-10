@@ -58,6 +58,23 @@ excerpt:    《The C Programming Language —— K&R》读书笔记
 ### 2.12 Precedence and Order of Evaluation
 
 ## C3 Control Flow
+
+### 3.1 Statements and Blocks
+
+### 3.2 If-Else
+
+### 3.3 Else-If
+
+### 3.3 Else-If
+
+### 3.5 Loops - While and For
+
+### 3.6 Loops - Do-While
+
+### 3.7 Break and Continue
+
+### 3.8 Goto and labels
+
 ## C4 Functions and Program Structure
 ## C5 Pointers and Arrays
 ## C6 Structures
