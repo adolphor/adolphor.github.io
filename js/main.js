@@ -81,5 +81,5 @@ function heightResize() {
     var sideHeight = $(".menu-side").height();
     var contHeight = $(".post-side").height();
     var height = Math.max(sideHeight, contHeight);
-    $(".menu-side, .post-side").css("min-height", height);
+    $(".menu-side, .post-side").css("min-height", height + 260);
 }
