@@ -119,7 +119,7 @@ IBM 的 J9 VM，并不是 IBM 开发的唯一的虚拟机，但是当前主力�
 如果正在执行的是Native方法，这个计数器值则为空（undefined）。
 
 Q：
-1.没有规定OutOfMemoryError，那么是固定大小的吗？
+1.没有规定OutOfMemoryError，那么是固定大小的吗？  
 2.如何查看当前内存大小？  
 
 
