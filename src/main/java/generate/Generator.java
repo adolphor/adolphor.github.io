@@ -16,11 +16,12 @@ import java.util.Map;
 /**
  * Created by Bob on 2016/8/2.
  */
+
 public class Generator {
 
 //  private static String postTitle = "JDK-source-code-Collection-Set-TreeSet";
-  private static String urlTitle = "understanding-the-jvm-second-edition";
-  private static String postTitle = "《深入理解Java虚拟机：JVM高级特性与最佳实践 —— 周志明》读书笔记";
+  private static String urlTitle = "annotation-tutorial";
+  private static String postTitle = "Annotation 注解";
 
   private static Configuration cfg;
 

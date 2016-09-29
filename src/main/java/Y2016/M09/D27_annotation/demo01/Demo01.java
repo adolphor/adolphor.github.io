@@ -8,7 +8,8 @@ import java.lang.reflect.Method;
  */
 public class Demo01 {
   public static void main(String[] args) throws Exception {
-    Class<AnnotatedClass> object = AnnotatedClass.class;
+
+    Class<AnnotatedTest> object = AnnotatedTest.class;
     // Retrieve all annotations from the class
     Annotation[] annotations = object.getAnnotations();
     for (Annotation annotation : annotations) {
@@ -19,13 +20,21 @@ public class Demo01 {
     if (object.isAnnotationPresent(CustomClassAnnotation.class)) {
       // Gets the desired annotation
       Annotation annotation = object.getAnnotation(CustomClassAnnotation.class);
-      System.out.println(annotation);
+      CustomClassAnnotation customClassAnnotation = (CustomClassAnnotation) annotation;
+      String author = customClassAnnotation.author();
+      String date = customClassAnnotation.date();
+      System.out.println(customClassAnnotation + " => " + author + ", " + date);
     }
+
     // the same for all methods of the class
     for (Method method : object.getDeclaredMethods()) {
       if (method.isAnnotationPresent(CustomMethodAnnotation.class)) {
         Annotation annotation = method.getAnnotation(CustomMethodAnnotation.class);
-        System.out.println(annotation);
+        CustomMethodAnnotation customMethodAnnotation = (CustomMethodAnnotation) annotation;
+        String author = customMethodAnnotation.author();
+        String date = customMethodAnnotation.date();
+        String description = customMethodAnnotation.description();
+        System.out.println(annotation + " => " + author + ", " + date + ", " + description);
       }
     }
   }
