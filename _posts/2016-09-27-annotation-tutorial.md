@@ -115,12 +115,15 @@ void monitorTemperature() throws @Critical TemperatureException { ... }
 * `@FunctionalInterface`  
 
 第二类注解，java.lang.annotation 包下，称为元注解（meta-annotations）：  
+
 * `@Retention` 表示注解被如何存储，有如下三个可选项：  
+
     * `RetentionPolicy.SOURCE` 源码级，被编译器忽略  
     * `RetentionPolicy.CLASS` 文件级，编译期间有效，被JVM忽略  
     * `RetentionPolicy.RUNTIME` 运行期，一直到运行期间都有效      
 * `@Documented` 可被 Javadoc tool 工具调用   
 * `@Target` 注解可被用于何处：  
+
     * `ElementType.ANNOTATION_TYPE` 注解类  
     * `ElementType.CONSTRUCTOR` 构造器  
     * `ElementType.FIELD` 变量  
