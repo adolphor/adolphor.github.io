@@ -76,39 +76,40 @@ class MyClass { ... }
 
 
 ### 用途
-注解有很多用途，比如：
-* 提供编译器所需信息：编译器可以用使用注解来检测错误或忽略警告信息
-* 编译期间或者部署期间：可使用注解生成代码，XML文件等。
-* 运行期间：一些注解可在运行期间执行
+注解有很多用途，比如：  
+* 提供编译器所需信息：编译器可以用使用注解来检测错误或忽略警告信息  
+* 编译期间或者部署期间：可使用注解生成代码，XML文件等  
+* 运行期间：一些注解可在运行期间执行  
 
 
 
-As of the Java SE 8 release, annotations can also be applied to the use of types. 
-Here are some examples:
+Java之后开始支持类型注解：
 
-Class instance creation expression:
+{% highlight java %}
+// Class instance creation expression:
     new @Interned MyObject();
 
-Type cast:
+// Type cast:
     myString = (@NonNull String) str;
 
-implements clause:
+// implements clause:
     class UnmodifiableList<T> implements
         @Readonly List<@Readonly T> { ... }
 
-Thrown exception declaration:
+// Thrown exception declaration:
     void monitorTemperature() throws
         @Critical TemperatureException { ... }
+{% endhighlight %}
 
 ### 预定义注解
 预定义注解有两类，一类是可以直接用于程序代码的注解，另一个是用于定义注解时的注解。
 
 第一类注解，java.lang 包下：
-* @Deprecated 
-* @Override
-* @SuppressWarnings
-* @SafeVarargs
-* @FunctionalInterface
+* @Deprecated   
+* @Override  
+* @SuppressWarnings  
+* @SafeVarargs  
+* @FunctionalInterface  
 
 第二类注解，java.lang.annotation 包下，称为元注解（meta-annotations）：
 * @Retention  
