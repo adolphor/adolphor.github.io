@@ -107,29 +107,30 @@ void monitorTemperature() throws @Critical TemperatureException { ... }
 预定义注解有两类，一类是可以直接用于程序代码的注解，另一个是用于定义注解时的注解。
 
 第一类注解，java.lang 包下：
+
 * `@Deprecated`  
 * `@Override`  
 * `@SuppressWarnings`  
 * `@SafeVarargs`  
 * `@FunctionalInterface`  
 
-第二类注解，java.lang.annotation 包下，称为元注解（meta-annotations）：
+第二类注解，java.lang.annotation 包下，称为元注解（meta-annotations）：  
 * `@Retention` 表示注解被如何存储，有如下三个可选项：  
     * `RetentionPolicy.SOURCE` 源码级，被编译器忽略  
     * `RetentionPolicy.CLASS` 文件级，编译期间有效，被JVM忽略  
     * `RetentionPolicy.RUNTIME` 运行期，一直到运行期间都有效      
-* `@Documented` 可被 Javadoc tool 工具调用
-* `@Target` 注解可被用于何处：
+* `@Documented` 可被 Javadoc tool 工具调用   
+* `@Target` 注解可被用于何处：  
     * `ElementType.ANNOTATION_TYPE` 注解类  
     * `ElementType.CONSTRUCTOR` 构造器  
-    * `ElementType.FIELD` 变量
-    * `ElementType.LOCAL_VARIABLE` 本地变量
-    * `ElementType.METHOD` 方法
-    * `ElementType.PACKAGE` 包
-    * `ElementType.PARAMETER` 参数
-    * `ElementType.TYPE` Java类
+    * `ElementType.FIELD` 变量  
+    * `ElementType.LOCAL_VARIABLE` 本地变量  
+    * `ElementType.METHOD` 方法  
+    * `ElementType.PACKAGE` 包  
+    * `ElementType.PARAMETER` 参数  
+    * `ElementType.TYPE` Java类  
 * `@Inherited` 是否可被子类继承  
-* `@Repeatable` 是否支持Repeat
+* `@Repeatable` 是否支持Repeat  
 
 ## 使用范例
 
