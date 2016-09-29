@@ -18,10 +18,14 @@ excerpt:    Annotation 注解
 
 注解可以被用在包，类，方法，变量，参数上。
 自Java8起，有一种注解几乎可以被放在代码的任何位置，叫做类型注解。
-被注解的代码并不会直接被注解影响。这只会向第三系统提供关于自己的信息以用于不同的需求。
+被注解的代码并不会直接被注解影响。**这只会向第三系统提供关于自己的信息以用于不同的需求**。
 注解可以被编译至class文件中，而且会在运行时被处理程序提取出来用于业务逻辑。
 当然，创建在运行时不可用的注解也是可能的，甚至可以创建只在源文件中可用，
 在编译时不可用的注解。
+
+获取注解信息的时候，是根据类的Class信息来获取，不需要有对象实例，
+不方便的地方在于，使用注解的时候注解元素内容要在编译之前就要确定，
+不能够进行动态赋值。
 
 ### 规范
 最基本的注解形式如下：
@@ -87,68 +91,50 @@ Java之后开始支持类型注解：
 
 {% highlight java %}
 // Class instance creation expression:
-    new @Interned MyObject();
+new @Interned MyObject();
 
 // Type cast:
-    myString = (@NonNull String) str;
+myString = (@NonNull String) str;
 
 // implements clause:
-    class UnmodifiableList<T> implements
-        @Readonly List<@Readonly T> { ... }
+class UnmodifiableList<T> implements @Readonly List<@Readonly T> { ... }
 
 // Thrown exception declaration:
-    void monitorTemperature() throws
-        @Critical TemperatureException { ... }
+void monitorTemperature() throws @Critical TemperatureException { ... }
 {% endhighlight %}
 
 ### 预定义注解
 预定义注解有两类，一类是可以直接用于程序代码的注解，另一个是用于定义注解时的注解。
 
 第一类注解，java.lang 包下：
-* @Deprecated   
-* @Override  
-* @SuppressWarnings  
-* @SafeVarargs  
-* @FunctionalInterface  
+* `@Deprecated`  
+* `@Override`  
+* `@SuppressWarnings`  
+* `@SafeVarargs`  
+* `@FunctionalInterface`  
 
 第二类注解，java.lang.annotation 包下，称为元注解（meta-annotations）：
-* @Retention  
-    表示注解被如何存储，有如下三个可选项：  
-    * RetentionPolicy.SOURCE      
-        源码级，被编译器忽略  
-    * RetentionPolicy.CLASS   
-        文件级，编译期间有效，被JVM忽略  
-    * RetentionPolicy.RUNTIME  
-        运行期，一直到运行期间都有效      
-* @Documented  
-    可被 Javadoc tool 工具调用
-* @Target  
-    注解可被用于何处：
-    * ElementType.ANNOTATION_TYPE  
-        注解类  
-    * ElementType.CONSTRUCTOR  
-        构造器  
-    * ElementType.FIELD  
-        变量
-    * ElementType.LOCAL_VARIABLE  
-        本地变量
-    * ElementType.METHOD  
-        方法
-    * ElementType.PACKAGE  
-        包
-    * ElementType.PARAMETER  
-        参数
-    * ElementType.TYPE 
-        Java类
-* @Inherited  
-    是否可被子类继承  
-* @Repeatable  
-    是否支持Repeat
+* `@Retention` 表示注解被如何存储，有如下三个可选项：  
+    * `RetentionPolicy.SOURCE` 源码级，被编译器忽略  
+    * `RetentionPolicy.CLASS` 文件级，编译期间有效，被JVM忽略  
+    * `RetentionPolicy.RUNTIME` 运行期，一直到运行期间都有效      
+* `@Documented` 可被 Javadoc tool 工具调用
+* `@Target` 注解可被用于何处：
+    * `ElementType.ANNOTATION_TYPE` 注解类  
+    * `ElementType.CONSTRUCTOR` 构造器  
+    * `ElementType.FIELD` 变量
+    * `ElementType.LOCAL_VARIABLE` 本地变量
+    * `ElementType.METHOD` 方法
+    * `ElementType.PACKAGE` 包
+    * `ElementType.PARAMETER` 参数
+    * `ElementType.TYPE` Java类
+* `@Inherited` 是否可被子类继承  
+* `@Repeatable` 是否支持Repeat
 
 ## 使用范例
 
-定义一个类注解，一个方法注解，然后在 `AnnotatedTest` 类中使用此注解，
-在 `TestMain` 方法中获取注解内容：
+定义一个类注解`CustomClassAnnotation`，一个方法注解`CustomMethodAnnotation`，
+然后在 `AnnotatedTest` 类中使用此注解，在 `TestMain` 方法中获取注解内容：
 
 {% highlight java %}
 /**
