@@ -12,9 +12,10 @@ tomcat优化有如下几个方面：
 
 ## 1.windows下修改JVM内存大小:
 
-### 解压版本的Tomcat
+### 1.1 解压版本的Tomcat
 
 通过startup.bat启动tomcat才能加载配置，要添加在tomcat 的bin 下catalina.bat 里
+
 ```
 rem Guess CATALINA_HOME if not defined  
 set CURRENT_DIR=%cd%   
@@ -22,19 +23,19 @@ set CURRENT_DIR=%cd%
 set JAVA_OPTS=-Xms256m -Xmx512m -XX:PermSize=128M -XX:MaxNewSize=256m -XX:MaxPermSize=256m -Djava.awt.headless=true
 ```
 
-### 安装版的Tomcat下没有catalina.bat
-　　windows服务执行的是bin\tomcat.exe.他读取注册表中的值,而不是catalina.bat的设置.
-　　修改注册表HKEY_LOCAL_MACHINE\SOFTWARE\Apache Software Foundation\Tomcat Service Manager\Tomcat5\Parameters\JavaOptions
-　　原值为
+### 1.2 安装版的Tomcat下没有catalina.bat
+windows服务执行的是bin\tomcat.exe.他读取注册表中的值,而不是catalina.bat的设置.
+修改注册表HKEY_LOCAL_MACHINE\SOFTWARE\Apache Software Foundation\Tomcat Service Manager\Tomcat5\Parameters\JavaOptions
+原值为
+
 ```
 -Dcatalina.home="C:\ApacheGroup\Tomcat 5.0"
 -Djava.endorsed.dirs="C:\ApacheGroup\Tomcat 5.0\common\endorsed"
 -Xrs
 ```
-　　加入 -Xms300m -Xmx350m
-　　重起tomcat服务,设置生效
+加入 `-Xms300m -Xmx350m`，重起tomcat服务,设置生效
 
-### jvm参数说明
+### 1.3 jvm参数说明
 
 * `-server` 一定要作为第一个参数，启用JDK的server版本，在多个CPU时性能佳
 * `-Xms` java Heap初始大小。 默认是物理内存的1/64。
@@ -56,16 +57,16 @@ set JAVA_OPTS=-Xms256m -Xmx512m -XX:PermSize=128M -XX:MaxNewSize=256m -XX:MaxPer
 * `-XX:UseParallelGC` 设置后可以使用并行清除收集器(多CPU)
 
 
-注意：Java 8 以后 `-XX:PermSize` 与 `-XX:MaxPermSize` 两个配置项被废弃
 
 
 建议和注意事项:
--Xms和-Xmx选项设置为相同堆内存分配，以避免在每次GC 后调整堆的大小，堆内存建议占内存的60%~80%;非堆内存是不可回收内存，大小视项目而定;线程栈大小推荐256k.
+* Java 8 以后 `-XX:PermSize` 与 `-XX:MaxPermSize` 两个配置项被废弃
+* -Xms和-Xmx选项设置为相同堆内存分配，以避免在每次GC 后调整堆的大小，堆内存建议占内存的60%~80%;非堆内存是不可回收内存，大小视项目而定;线程栈大小推荐256k.
+* 32G内存配置如下：
 
-32G内存配置如下：
-```
-JAVA_OPTS="-Xms20480m -Xmx20480m -Xss1024K -XX:PermSize=512m -XX:MaxPermSize=2048m"
-```
+    ```
+    JAVA_OPTS="-Xms20480m -Xmx20480m -Xss1024K -XX:PermSize=512m -XX:MaxPermSize=2048m"
+    ```
 
 ## 2.并发优化
 在Tomcat 配置文件 server.xml 中的 <Connector ... /> 配置中
@@ -115,7 +116,7 @@ Tomcat 是多线程,共享内存，任何一个虚拟主机中的应用出现崩
 
 server="Neo App Srv 1.0"
 
-```
+{% highlight shell %}
 cd apache-tomcat-7.0.59/lib
 mkdir test
 cd test
@@ -126,7 +127,7 @@ server.number=6
 server.built=Jan 18 2013 14:51:10 UTC
 jar cf ../catalina.jar ./*
 rm -rf test
-```
+{% endhighlight %}
 
 ## 参考文章
 
