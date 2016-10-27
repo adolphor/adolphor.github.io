@@ -1,4 +1,3 @@
-/northfacing.github.io.iml
 /.idea/
 
 /_site
@@ -6,4 +5,5 @@ _site
 .sass-cache
 .jekyll-metadata
 
+/adolphor.iml
 /target/
