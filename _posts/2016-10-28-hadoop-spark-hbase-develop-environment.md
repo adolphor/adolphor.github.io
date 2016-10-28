@@ -355,6 +355,79 @@ $ jps
 ### 测试
 
 
+## shell脚本
+
+方便启动和关闭：
+
+{% highlight shell %}
+#! /bin/bash
+
+HADOOP_HOME=~/workspace/hadoop-2.6.0/
+SPARK_HOME=~/workspace/spark-2.0.1-bin-hadoop2.6/
+HBASE_HOME=~/workspace/hbase-1.0.3/
+
+start(){
+  echo "start Hadoop:"
+  cd $HADOOP_HOME
+  ./sbin/start-dfs.sh
+  ./sbin/start-yarn.sh
+
+  echo "start Spark:"
+  cd $SPARK_HOME
+  ./sbin/start-all.sh
+
+  echo "start HBase:"
+  cd $HBASE_HOME
+  ./bin/start-hbase.sh
+}
+
+stop(){
+  echo "stop Hadoop:"
+  cd $HADOOP_HOME
+  ./sbin/stop-dfs.sh
+  ./sbin/stop-yarn.sh
+
+  echo "stop Spark:"
+  cd $SPARK_HOME
+  ./sbin/stop-all.sh
+
+  echo "stop HBase:"
+  cd $HBASE_HOME
+  ./bin/stop-hbase.sh
+}
+
+restart(){
+  stop
+  start
+}
+
+echo "\n\n可选操作:\n"
+echo "1) STOP"
+echo "2) START"
+echo "3) RESTART"
+echo "\n"
+
+read -p '输入对应数字并回车：' actionNum
+
+case "$actionNum" in
+  '1')
+     stop
+     ;;
+  '2')
+     start
+     ;;
+  '3')
+     restart
+     ;;
+  *)
+     echo "输入错误，请输入操作对应数字"
+esac
+
+echo "============================ successed ============================"
+exit 0
+
+{% endhighlight %}
+
 ## 参考文档
 * Hadoop docs：
   * hadoop-2.6.0/share/doc/hadoop/index.html
