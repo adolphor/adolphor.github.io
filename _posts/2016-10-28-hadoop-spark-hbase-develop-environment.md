@@ -54,6 +54,7 @@ $ ssh localhost
 {% endhighlight %}
 
 如果显示如下内容，表示配置成功：
+
 ```
 Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-31-generic x86_64)
 
@@ -75,6 +76,7 @@ applicable law.
 ## 安装hadoop
 
 ### 安装路径
+
 ```
 /home/adolphor/workspace/hadoop-2.6.0
 ```
@@ -110,9 +112,11 @@ export YARN_LOG_DIR=/home/adolphor/workspace/logs/yarn
 ### core-site.xml
 
 默认配置文件路径：
+
 ```
 \share\doc\hadoop\hadoop-project-dist\hadoop-common\core-default.xml
 ```
+
 自定义配置：
 
 {% highlight xml %}
@@ -123,6 +127,7 @@ export YARN_LOG_DIR=/home/adolphor/workspace/logs/yarn
 {% endhighlight %}
 
 ### hdfs-site.xml
+
 默认配置文件路径：
 
 ```
@@ -155,10 +160,12 @@ export YARN_LOG_DIR=/home/adolphor/workspace/logs/yarn
 
 ### mapred-site.xml
 
-配置文件路径：
+默认配置文件路径：
+
 ```
 \share\doc\hadoop\hadoop-mapreduce-client\hadoop-mapreduce-client-core\mapred-default.xml
 ```
+
 从`mapred-site.xml.template`复制并更名为`mapred-site.xml`，自定义配置：
 {% highlight xml %}
 <property>
@@ -169,9 +176,13 @@ export YARN_LOG_DIR=/home/adolphor/workspace/logs/yarn
 {% endhighlight %}
 
 ### yarn-site.xml
+
+默认配置文件路径：
+
 ```
 \share\doc\hadoop\hadoop-yarn\hadoop-yarn-common\yarn-default.xml
 ```
+
 自定义配置：
 {% highlight xml %}
 <property>
@@ -187,6 +198,7 @@ export YARN_LOG_DIR=/home/adolphor/workspace/logs/yarn
 {% endhighlight %}
 
 ### 初始化
+
 初始化指令：
 
 {% highlight shell %}
@@ -195,6 +207,7 @@ $ bin/hdfs namenode -format
 {% endhighlight %}
 
 显示如果结果表示初始化成功：
+
 ```
 ………………
 
@@ -223,6 +236,7 @@ $ sbin/start-yarn.sh
 {% endhighlight %}
 
 启动日志：
+
 ```
 Starting namenodes on [localhost]
 localhost: starting namenode, logging to /home/adolphor/workspace/logs/hadoop/adolphor/hadoop-adolphor-namenode-ubuntu.out
@@ -234,7 +248,6 @@ starting yarn daemons
 starting resourcemanager, logging to /home/adolphor/workspace/logs/yarn/yarn-adolphor-resourcemanager-ubuntu.out
 localhost: starting nodemanager, logging to /home/adolphor/workspace/logs/yarn/yarn-adolphor-nodemanager-ubuntu.out
 ```
-
 
 查看启动结果：
 
@@ -285,9 +298,11 @@ $ bin/start-hbase.sh
 
 
 启动日志：
+
 ```
 starting master, logging to /home/adolphor/workspace/logs/hbase/hbase-adolphor-master-ubuntu.out
 ```
+
 查看进程：
 
 {% highlight shell %}
