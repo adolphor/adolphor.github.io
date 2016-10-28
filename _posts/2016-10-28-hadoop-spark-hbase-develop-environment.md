@@ -362,9 +362,9 @@ $ jps
 {% highlight shell %}
 #! /bin/bash
 
-HADOOP_HOME=~/workspace/hadoop-2.6.0/
-SPARK_HOME=~/workspace/spark-2.0.1-bin-hadoop2.6/
-HBASE_HOME=~/workspace/hbase-1.0.3/
+HADOOP_HOME=/home/adolphor/workspace/hadoop-2.6.0/
+SPARK_HOME=/home/adolphor/workspace/spark-2.0.1-bin-hadoop2.6/
+HBASE_HOME=/home/adolphor/workspace/hbase-1.0.3/
 
 start(){
   echo "start Hadoop:"
