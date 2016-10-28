@@ -44,6 +44,10 @@ pre {
         color: #ffbc00;
     }
 
+    .language-xml{
+        color: #ffbc00;
+    }
+
     .language-byte{
         color: #9bb4ce;
     }
@@ -90,7 +94,7 @@ pre {
     .nf    { color: #d60202; font-weight: bold } // Name.Function
     .nl    { color: #9bb4ce } //
     .nn    { color: #AF891A } // Name.Namespace
-    .nt    { color: #000080 } // Name.Tag
+    .nt    { color: #4cd405 } // Name.Tag
     .nv    { color: #4cd405 } // Name.Variable
     .o     { color: #9bb4ce; } // Operator
     .ow    { font-weight: bold } // Operator.Word
