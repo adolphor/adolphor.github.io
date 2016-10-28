@@ -203,7 +203,7 @@ export YARN_LOG_DIR=/home/adolphor/workspace/logs/yarn
 
 {% highlight shell %}
 $ cd /home/adolphor/workspace/hadoop-2.6.0
-$ bin/hdfs namenode -format
+$ ./bin/hdfs namenode -format
 {% endhighlight %}
 
 显示如果结果表示初始化成功：
@@ -230,9 +230,9 @@ SHUTDOWN_MSG: Shutting down NameNode at ubuntu/127.0.1.1
 
 {% highlight shell %}
 #启动HDFS
-$ sbin/start-dfs.sh
+$ ./sbin/start-dfs.sh
 #启动资源管理器
-$ sbin/start-yarn.sh
+$ ./sbin/start-yarn.sh
 {% endhighlight %}
 
 启动日志：
@@ -262,6 +262,46 @@ $ jps
 16476 DataNode
 {% endhighlight %}
 
+页面管理地址：
+http://localhost:50070
+
+## 安装Spark
+
+### spark-env.sh
+从 `spark-env.sh.template` 复制并更名为 `spark-env.sh` ，
+{% highlight shell %}
+export JAVA_HOME=/home/adolphor/workspace/jdk1.8.0_102
+export SCALA_HOME=/home/adolphor/workspace/scala-2.11.8
+export HADOOP_HOME=/home/adolphor/workspace/hadoop-2.6.0
+export SPARK_HOME=/home/adolphor/workspace/spark-2.0.1-bin-hadoop2.6
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export SPARK_CONF_DIR=$SPARK_HOME/conf
+export SPARK_PID_DIR=$SPARK_HOME/pid
+export SPARK_LOCAL_DIRS=/home/adolphor/workspace/data/spark/local
+export SPARK_WORKER_DIR=/home/adolphor/workspace/data/spark/work
+export SPARK_LOG_DIR=/home/adolphor/workspace/logs/spark
+{% endhighlight %}
+
+### 其它配置
+
+从 `log4j.properties.template` 复制并更名为 `log4j.properties` ，
+从 `slaves.template` 复制并更名为 `slaves` ，
+
+
+### 启动
+
+{% highlight shell %}
+$ cd /home/adolphor/workspace/spark-2.0.1-bin-hadoop2.6
+$ ./sbin/start-all.sh
+{% endhighlight %}
+
+启动日志：
+```
+starting master, logging to /home/adolphor/workspace/logs/hbase/hbase-adolphor-master-ubuntu.out
+```
+
+页面管理地址：
+http://localhost:8080
 
 ## 安装HBase
 作为单机模式
@@ -292,8 +332,8 @@ HBASE_ROOT_LOGGER=INFO,DRFA
 ### 启动
 
 {% highlight shell %}
-$ /home/adolphor/workspace/hbase-1.0.3
-$ bin/start-hbase.sh
+$ cd /home/adolphor/workspace/hbase-1.0.3
+$ ./bin/start-hbase.sh
 {% endhighlight %}
 
 
@@ -312,15 +352,13 @@ $ jps
 18171 Jps
 {% endhighlight %}
 
-测试：
-
-
+### 测试
 
 
 ## 参考文档
-* hadoop docs：
-  * /share/doc/hadoop/index.html
-* habse docs：
-  * /docs/index.html
-  * /docs/book.html
+* Hadoop docs：
+  * hadoop-2.6.0/share/doc/hadoop/index.html
+* HBase docs：
+  * hbase-1.0.3/docs/index.html
+  * hbase-1.0.3/docs/book.html
 
