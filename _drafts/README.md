@@ -2,7 +2,10 @@
 
 * 一般草稿文件名不包含日期
 * 预览草稿的方法：  
-> jekyll server --drafts --incremental --port 1888
+
+```
+jekyll server --drafts --incremental --port 1888
+```
 
 
 # 分类
@@ -12,9 +15,11 @@
 * Java
 * UML
 * Redis
+* Hadoop
 * CS
 * C/C++/C#
 * Linux
+
 
 ## tags
 * Java
@@ -29,6 +34,7 @@
 * Set
 
 * Redis
+* Hadoop
 
 * UML
 
@@ -38,3 +44,5 @@
 * C/C++/C#
 * C++
 * C
+
+* shell
