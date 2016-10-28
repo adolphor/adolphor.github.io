@@ -3,8 +3,8 @@ layout:     post
 title:      使用shell脚本部署maven项目
 date:       2016-10-27 16:02:59 +0800
 postId:     2016-10-27-16-02-59
-categories: [Java, Java]
-tags:       [tag, tag]
+categories: [Linux]
+tags:       [shell]
 geneMenu:   true
 excerpt:    使用shell脚本部署maven项目
 ---
