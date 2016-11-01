@@ -94,7 +94,23 @@ VS的版本选择有两种，第一使用推荐的VS2010版，使用这个版本
 * C:\dfs265\hadoop-common-project\hadoop-common\src\main\native\native.sln
 * C:\dfs265\hadoop-common-project\hadoop-common\src\main\winutils\winutils.sln
 
-使用VS2015分别打开上述文件，提示升级的时候进行确认即可。另外需要修改下面的文件：
+使用VS2015分别打开上述文件，提示升级的时候进行确认即可。升级成功的提示信息如下：
+
+```
+正在升级项目“native”...
+	配置“Release|x64”: 将平台工具集更改为“v140”(之前为“v100”)。
+重定目标结束: 1 个已完成，0 个未通过，0 个已跳过
+
+正在升级项目“winutils”...
+	配置“Debug|x64”: 将平台工具集更改为“v140”(之前为“v100”)。 
+	配置“Release|x64”: 将平台工具集更改为“v140”(之前为“v100”)。
+正在升级项目“libwinutils”...
+	配置“Debug|x64”: 将平台工具集更改为“v140”(之前为“v100”)。 
+	配置“Release|x64”: 将平台工具集更改为“v140”(之前为“v100”)。
+重定目标结束: 2 个已完成，0 个未通过，0 个已跳过
+```
+
+另外需要修改下面的文件：
 
 * C:\dfs265\hadoop-hdfs-project\hadoop-hdfs\pom.xml
 
