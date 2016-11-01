@@ -88,16 +88,19 @@ VS的版本选择有两种，第一使用推荐的VS2010版，使用这个版本
 我选择的是 Visual Studio Community 2015 with Update 3 – Free 的 IOS 版本，
 地址：`https://www.visualstudio.com/downloads/`。
 上面maven安装的时候，maven将系统识别为了windows 8，所以安装 visual studio 2015的时候，需要一并安装 SDK 8.1。
-
 安装完毕之后，如果使用的是VS2015版本需要升级相关的文件：
+
 * C:\dfs265\hadoop-common-project\hadoop-common\src\main\native\native.sln
 * C:\dfs265\hadoop-common-project\hadoop-common\src\main\winutils\winutils.sln
 
 使用VS2015分别打开上述文件，提示升级的时候进行确认即可。另外需要修改下面的文件：
+
 * C:\dfs265\hadoop-hdfs-project\hadoop-hdfs\pom.xml
+
 将 “Visual Studio 10” 改成 “Visual Studio 14”，保存后退出。
 
 ### Cygwin
+
 下载地址：`https://cygwin.com/install.html`，安装并添加bin目录到PAHT：
 {% highlight shell %}
 CYGWIN_HOME=cygwin安装目录
@@ -105,8 +108,10 @@ PATH=%CYGWIN_HOME%\bin;
 {% endhighlight %}
 
 ### Zlib
-好像不安装Zlib也是可以编译成功，但还是安装下吧。
-可以网上找编译好的版本，也可以自己从源码编译。
+
+好像不安装Zlib也是可以编译成功，但还是安装下吧。可以网上找编译好的版本，也可以自己从源码编译。
+下载地址忘记了，自己搜下别人编译好的windows可用即可：
+
 {% highlight shell %}
 ZLIB_HOME=zlib目录
 PATH=%ZLIB_HOME%\bin;
@@ -114,7 +119,7 @@ PATH=%ZLIB_HOME%\bin;
 
 ### 其它设置
 
-还需要将如下配置增加到环境变量：
+上面的设置好之后，还需要将如下配置增加到环境变量：
 
 {% highlight shell %}
 Platform=x64
