@@ -37,7 +37,8 @@ CLASSPATH=.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\jre\lib;
 PATH=%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
 {% endhighlight %}
 
-注意：Hadoop2.6.5最好使用JDK1.7进行编译，使用1.8的时候，会有问题，我使用的版本如下
+注意：Hadoop2.6.5最好使用JDK1.7进行编译，使用1.8的时候，会有问题，我使用的版本如下：
+
 ```
 $ java -version
 java version "1.7.0_51"
