@@ -10,14 +10,15 @@ excerpt:    GIT回滚commit/push到指定版本
 ---
 
 ## 回滚指令
-```
+
+{% highlight shell %}
 # 查看帮助文档
 $ git reset --help
 # 常用指令格式
 $ git reset [-q] [<tree-ish>] [--] <paths>…​
 $ git reset (--patch | -p) [<tree-ish>] [--] [<paths>…​]
 $ git reset [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [<commit>]
-```
+{% endhighlight %}
 
 想要回滚到指定版本，还需要知道具体的版本号，使用log命令可以进行查看：
 
