@@ -75,14 +75,28 @@ OS name: "windows 8", version: "6.2", arch: "amd64", family: "windows"
 PATH=C:\java\protoc-2.5.0-win32;
 {% endhighlight %}
 
+测试：
+```
+$ protoc --version
+libprotoc 2.5.0
+```
+
 ### CMake
 要求 CMake 2.6+ 的版本，下载地址：`https://cmake.org/download/`，
 下载并解压到安装目录，并添加bin目录到PATH，由于cygwin中也带了个cmake，
 所以在Path中，cmake 的bin目录得加在cygwin的bin 目录之前：
+
 {% highlight shell %}
 CMAKE_HOME=cmake目录
 PATH=%CMAKE_HOME%\bin;
 {% endhighlight %}
+
+测试：
+```
+$ cmake --version
+cmake version 3.7.0-rc2
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+```
 
 ### Visual Studio
 VS的版本选择有两种，第一使用推荐的VS2010版，使用这个版本比较简单方便，或者使用最新的VS2015版，需要升级一些文件。
