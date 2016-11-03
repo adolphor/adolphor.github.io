@@ -23,6 +23,7 @@ jekyll server --drafts --incremental --port 1888
 * CS
 * C/C++/C#
 * Linux
+* Tools
 
 
 ## tags
@@ -50,3 +51,5 @@ jekyll server --drafts --incremental --port 1888
 * C
 
 * shell
+
+* git
