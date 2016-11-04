@@ -4,7 +4,7 @@ title:      super关键字
 date:       2016-08-26 23:45:20 +0800
 postId:     2016-08-26-23-45-20
 categories: [Java]
-tags:       [Java, keyword]
+tags:       [Java]
 geneMenu:   true
 excerpt:    super关键字
 ---

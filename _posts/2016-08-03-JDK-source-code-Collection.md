@@ -4,7 +4,7 @@ title:      【Java8源码阅读笔记】Collection框架总述
 date:       2016-08-03 21:08:24 +0800
 postId:     2016-08-03-21-08-24
 categories: [Java]
-tags:       [Java, Collection]
+tags:       [Java]
 excerpt:    【Java8源码阅读笔记】Collection框架总述
 ---
 

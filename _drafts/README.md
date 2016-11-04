@@ -28,15 +28,10 @@ jekyll server --drafts --incremental --port 1888
 
 ## tags
 * Java
-* class
-* keyword
 
 * JVM
 
 * Java8
-* Collection
-* List
-* Set
 
 * Redis
 * Hadoop
@@ -47,8 +42,6 @@ jekyll server --drafts --incremental --port 1888
 
 * CS
 * C/C++/C#
-* C++
-* C
 
 * shell
 

@@ -4,7 +4,7 @@ title:      volatile-关键字
 date:       2016-11-04 13:42:28 +0800
 postId:     2016-11-04-13-42-28
 categories: [Java]
-tags:       [Java, keyword]
+tags:       [Java]
 geneMenu:   true
 excerpt:    volatile-关键字
 ---
