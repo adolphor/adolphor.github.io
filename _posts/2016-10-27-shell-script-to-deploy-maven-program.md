@@ -120,6 +120,42 @@ reStartFun(){
   fi
 }
 
+inputBranchName(){
+  cd $CODE_PATH;
+  read -p '请输入分支名称：' branchName
+  echo "branch name: $branchName"
+  if [ ${#branchName} -lt 2 ]; then
+    echo "名称太短，请重新输入！\n"
+    inputBranchName
+  else
+    git branch $branchName;
+    if [ $? -ne 0 ]; then
+      echo "分支已经存在，请重新命名\n"
+      inputBranchName
+    else
+      echo "创建分支完成\n"
+      echo "$branchName"
+    fi
+  fi
+}
+
+gitBack(){
+  # 获取分支名称
+  inputBranchName
+
+  git checkout $branchName;
+  echo "\n切换分支完成\n"
+  sleep 2;
+
+  git push -u origin $branchName;
+  echo "\n提交远程分支完成\n"
+  sleep 2;
+
+  git checkout master;
+  echo "\n切回master分支\n"
+  sleep 2;
+}
+
 rollback(){
   # ssh
   # mv from backup
@@ -152,6 +188,7 @@ echo "2) 备份"
 echo "3) 部署"
 echo "4) 重启"
 echo "5) 回滚"
+echo "6) 打GIT分支"
 echo "9) 编译->备份->部署->重启"
 echo "\n"
 
@@ -172,6 +209,9 @@ case "$actionNum" in
      ;;
   '5')
      rollback
+     ;;
+  '6')
+     gitBack
      ;;
   '9')
      allFun
