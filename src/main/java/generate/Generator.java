@@ -1,9 +1,10 @@
 package generate;
 
 import freemarker.template.Configuration;
-import freemarker.template.DefaultObjectWrapper;
+import freemarker.template.DefaultObjectWrapperBuilder;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
+import freemarker.template.Version;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -20,8 +21,10 @@ import java.util.Map;
 public class Generator {
 
 //  private static String postTitle = "JDK-source-code-Collection-Set-TreeSet";
-  private static String urlTitle = "annotation-tutorial";
-  private static String postTitle = "Annotation 注解";
+  private static String urlTitle = "volatile-keyword";
+  private static String postTitle = "volatile-关键字";
+  private static String categories = "Java";
+  private static String tags = "Java, keyword";
 
   private static Configuration cfg;
 
@@ -31,6 +34,8 @@ public class Generator {
     map.put("postTitle", postTitle);
     map.put("postDate", Utils.getPostDate());
     map.put("postId", Utils.getPostId());
+    map.put("categories",categories);
+    map.put("tags",tags);
 
     String templatePath = System.getProperty("user.dir") + "\\src\\main\\resources";
     Configuration configuration = getConfiguration(templatePath);
@@ -59,7 +64,7 @@ public class Generator {
       File file = new File(templatePath);
       try {
         cfg.setDirectoryForTemplateLoading(file);
-        cfg.setObjectWrapper(new DefaultObjectWrapper());
+        cfg.setObjectWrapper(new DefaultObjectWrapperBuilder(new Version("2.3.23")).build());
       } catch (IOException e) {
         e.printStackTrace();
       }
