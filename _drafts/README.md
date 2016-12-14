@@ -17,32 +17,24 @@ jekyll server --drafts --incremental --port 1888
 ## categories
 
 * Java
+  - Java
+  - JVM
+  - Java8
 * UML
-* Redis
+  - UML
 * Hadoop
+  - Hadoop
+* database
+  - mongodb
+* cache
+  - Redis
 * CS
+  - CS
+  - shell
 * C/C++/C#
+  - C/C++/C#
 * Linux
 * Tools
-
-
-## tags
-* Java
-
-* JVM
-
-* Java8
-
-* Redis
-* Hadoop
-
-* UML
-
-* 读书笔记 
-
-* CS
-* C/C++/C#
-
-* shell
-
-* git
+  - git
+* 共用
+  - 读书笔记 
