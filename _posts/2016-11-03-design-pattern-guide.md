@@ -37,7 +37,8 @@ OCP，open-close principle，一个软件实体应当对扩展开放，对修改
 
 
 ## 设计模式分类
-### 实例化相关设计模式
+
+### 1.实例化相关设计模式
 创建型设计模式（Creational design patterns），这些模式都是跟类的实例化信相关。其实可以进一步分为类的创建和对象的创建。
 类的创建通过继承来完成实例化过程，对象的创建通过授权来完成相关目标。
 These design patterns are all about class instantiation. This pattern can be further divided into class-creation patterns
@@ -72,25 +73,25 @@ Structural object-patterns define ways to compose objects to obtain new function
 #### 2.1 适配器
 Adapter：Match interfaces of different classes
 
-### 2.2 桥接模式
+#### 2.2 桥接模式
 Bridge：Separates an object’s interface from its implementation
 
-### 2.3 组件模式
+#### 2.3 组件模式
 Composite：A tree structure of simple and composite objects
 
-### 2.4 装饰模式
+#### 2.4 装饰模式
 Decorator：Add responsibilities to objects dynamically
 
-### 2.5 门面模式
+#### 2.5 门面模式
 Facade：A single class that represents an entire subsystem
 
-### 2.6 享元模式
+#### 2.6 享元模式
 Flyweight：A fine-grained instance used for efficient sharing
 
-### 2.7 私有类数据
+#### 2.7 私有类数据
 Private Class Data：Restricts accessor/mutator access
 
-### 2.8 代理模式
+#### 2.8 代理模式
 Proxy：An object representing another object
 
 
