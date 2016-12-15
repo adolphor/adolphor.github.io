@@ -24,7 +24,7 @@ excerpt:    设计模式之 —— 代理模式
 有一个售票窗口（TicketSeller），具有售票功能（sell()方法）：
 
 {% highlight java %}
-public class TicketSeller{
+public class TicketSeller {
   public void sell(int price) {
     System.out.println("TicketSeller 以价格 $" + price + " 卖了一张票 ...");
   }
@@ -49,31 +49,29 @@ TicketSeller 以价格 $30 卖了一张票 ...
 
 有时候我们去不了车站售票口，可以去代理窗口买票，但是代理窗口要收取 $5 的手续费，实现如下：
 {% highlight java %}
-public class ProxySeller{
-  private TicketSeller ticketSeller;
-  public ProxySeller(TicketSeller ticketSeller) {
-    this.ticketSeller = ticketSeller;
+public class ProxySeller {
+  private TicketSeller seller;
+  public ProxySeller(TicketSeller seller) {
+    this.seller = seller;
   }
   public void sell(int price) {
-    // 代理扣除手续费（手续费设为 $5）
-    beforeSell(price / 3);
-    // 代理以扣除手续费之后的价格从原渠道买票
-    ticketSeller.sell(price - price / 3);
-    // 代理把票给客户
-    afterSell();
+    before();
+    // 代理以扣除手续费之后的价格从原渠道购物
+    seller.sell(price - 5);
+    after();
   }
-  private void beforeSell(int price) {
-    System.out.println("ProxySeller 代理扣除手续费 $" + price);
+  private void before() {
+    System.out.println("ProxySeller 代理收取手续费 $5");
   }
-  private void afterSell() {
-    System.out.println("ProxySeller 代理把票给客户，售票完成.");
+  private void after() {
+    System.out.println("ProxySeller 代理完成");
   }
 }
 {% endhighlight %}
 
 因为代理自己没有出票的能力，所以购票还是调用的原售票方法，但是调用之前进行了
-扣除手续费的操作（beforeSell()方法），购票之后如果需要也可以进行别的操作（
-afterSell()方法）。
+扣除手续费的操作（before()方法），购票之后如果需要也可以进行别的操作（
+after()方法）。
 
 此时就如果票价是 $30，那么就要加上 $5 的手续费，共 $35，运行如下：
 
@@ -81,17 +79,17 @@ afterSell()方法）。
 public class Test {
   public static void main(String[] args) {
     // 需要传入被代理对象的实例
-    ProxySeller proxySeller = new ProxySeller(new TicketSeller());
-    proxySeller.sell(35);
+    ProxySeller tickeProxy = new ProxySeller(new TicketSeller());
+    tickeProxy.sell(35);
   }
 }
 {% endhighlight %}
 
 运行结果：
 {% highlight shell %}
-ProxySeller 代理扣除手续费 $5
+ProxySeller 代理收取手续费 $5
 TicketSeller 以价格 $30 卖了一张票 ...
-ProxySeller 代理把票给客户，售票完成.
+ProxySeller 代理完成
 {% endhighlight %}
 
 这样就在不改变原代码的前提下增加（更改）了业务逻辑，那么如果这个代理门店不仅提供
@@ -165,13 +163,13 @@ public class Test {
 
 运行结果：
 {% highlight shell %}
-ProxySeller 代理扣除手续费 $5
+ProxySeller 代理收取手续费 $5
 TicketSeller 以价格 $30 卖了一张票 ...
-ProxySeller 代理把物品给客户，代购完成.
+ProxySeller 代理完成
 
-ProxySeller 代理扣除手续费 $5
+ProxySeller 代理收取手续费 $5
 FoodSeller 以价格 $15 卖了一盒饭 ...
-ProxySeller 代理把物品给客户，代购完成.
+ProxySeller 代理完成
 {% endhighlight %}
 
 ### 动态代理
