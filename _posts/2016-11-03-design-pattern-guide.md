@@ -9,8 +9,6 @@ geneMenu:   true
 excerpt:    设计模式简介
 ---
 
-## 设计模式
-
 ## 设计原则
 
 ### 开闭原则（OCP）
@@ -101,7 +99,6 @@ These design patterns are all about Class's objects communication.
 Behavioral patterns are those patterns that are most
 specifically concerned with communication between objects.
 
-
 #### 3.1 责任链模式
 Chain of responsibility：A way of passing a request between a chain of objects
 
@@ -148,3 +145,6 @@ Visitor：Defines a new operation to a class without change
 
 {% highlight java %}
 {% endhighlight %}
+
+
+
