@@ -80,6 +80,13 @@ public class Test {
 }
 {% endhighlight %}
 
+测试结果：
+
+```
+互联网售票
+窗口售票
+```
+
 ## 参考资料
 
 * 【注-1】《Java与模式——阎宏》
