@@ -90,7 +90,8 @@ Flyweight：A fine-grained instance used for efficient sharing
 Private Class Data：Restricts accessor/mutator access
 
 #### 2.8 代理模式
-Proxy：An object representing another object
+Proxy：An object representing another object，
+详见博文：《[代理模式]({% post_url 2016-12-15-java-design-patterns-proxy %})》。
 
 
 ### 3. 行为型设计模式
