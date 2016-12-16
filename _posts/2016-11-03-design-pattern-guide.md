@@ -14,7 +14,7 @@ excerpt:    设计模式简介
 ### 开闭原则（OCP）
 OCP，open-close principle，一个软件实体应当对扩展开放，对修改关闭。
 
-做到“开-闭”u安泽不是一件容易的事情，但是又很多规律可循。这些规律同样以设计原则的身份出现，
+做到“开-闭”原则不是一件容易的事情，但是又很多规律可循。这些规律同样以设计原则的身份出现，
 但是它们都是“开-闭”原则的工具和手段，是附属于“开-闭”原则的。【注-1】
 
 ### 里氏替换原则
@@ -36,8 +36,8 @@ OCP，open-close principle，一个软件实体应当对扩展开放，对修改
 
 ## 设计模式分类
 
-### 1.实例化相关设计模式
-创建型设计模式（Creational design patterns），这些模式都是跟类的实例化信相关。其实可以进一步分为类的创建和对象的创建。
+### 1.创建设计模式
+创建设计模式（Creational design patterns），这些模式都是跟类的实例化信相关。其实可以进一步分为类的创建和对象的创建。
 类的创建通过继承来完成实例化过程，对象的创建通过授权来完成相关目标。
 These design patterns are all about class instantiation. This pattern can be further divided into class-creation patterns
 and object-creational patterns. While class-creation patterns use inheritance effectively in the instantiation process,
@@ -62,13 +62,23 @@ Prototype：A fully initialized instance to be copied or cloned
 Singleton：A class of which only a single instance can exist
 
 
-### 2. 结构相关设计模式
-结构相关设计模式 (Structural design patterns)，
+### 2. 结构设计模式
+结构设计模式 (Structural design patterns)，描述如何将类或者对象结合在一起形成更大的结构。
+分为 类的结构模式 和 对象的结构模式
+* 类的结构模式
+类的结构模式使用继承来把类、接口等组合在一起，以形成更大的结构。当一个类从父类继承并实现某接口时，
+这个心的类就把父类的结构和接口的结构结合起来。类的结构模式是静态的。
+* 对象的结构模式
+对象的结构模式描述怎样把各种不同的类型的对象组合在一起，以实现新的功能的方法。对象的结构模式是动态的。
+
 These design patterns are all about Class and Object composition. 
 Structural class-creation patterns use inheritance to compose interfaces. 
 Structural object-patterns define ways to compose objects to obtain new functionality.
 
 #### 2.1 适配器
+
+/\
+
 Adapter：Match interfaces of different classes
 
 #### 2.2 桥接模式
