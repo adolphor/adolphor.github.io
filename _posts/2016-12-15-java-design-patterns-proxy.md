@@ -44,9 +44,9 @@ public class Test {
 {% endhighlight %}
 
 运行结果：
-{% highlight shell %}
+````
 TicketSeller 以价格 $30 卖了一张票 ...
-{% endhighlight %}
+````
 
 有时候我们去不了车站售票口，可以去代理窗口买票，但是代理窗口要收取 $5 的手续费，实现如下：
 {% highlight java %}
@@ -87,11 +87,11 @@ public class Test {
 {% endhighlight %}
 
 运行结果：
-{% highlight shell %}
+````
 ProxySeller 代理收取手续费 $5
 TicketSeller 以价格 $30 卖了一张票 ...
 ProxySeller 代理完成
-{% endhighlight %}
+````
 
 这样就在不改变原代码的前提下增加（更改）了业务逻辑，那么如果这个代理门店不仅提供
 代购车票服务，还提供代购盒饭服务呢，最原始的做法就是在实现一个外卖服务类和外卖服务代理类。
@@ -163,7 +163,7 @@ public class Test {
 {% endhighlight %}
 
 运行结果：
-{% highlight shell %}
+````
 ProxySeller 代理收取手续费 $5
 TicketSeller 以价格 $30 卖了一张票 ...
 ProxySeller 代理完成
@@ -171,7 +171,10 @@ ProxySeller 代理完成
 ProxySeller 代理收取手续费 $5
 FoodSeller 以价格 $15 卖了一盒饭 ...
 ProxySeller 代理完成
-{% endhighlight %}
+````
+
+TicketSeller 和 代理类ProxySeller 都实现了相同的接口Seller，都具有相同的能力，但是代理类除了额外的逻辑之外，
+具体功能实现是调用原实现类的方法，这就是静态代理。
 
 ### 动态代理
 上述静态代理类中，如果增加了一个新的方法，比如退货接口，那么接口类、所有实现类以及代理类都要根据新接口进行修改：
@@ -214,7 +217,7 @@ public class Test {
 {% endhighlight %}
 
 运行结果：
-{% highlight shell %}
+````
 ProxySeller 代理收取手续费 $5
 TicketSeller 以价格 $30 卖了一张票 ...
 ProxySeller 代理完成
@@ -228,7 +231,7 @@ ProxySeller 代理完成
 ProxySeller 代理收取手续费 $5
 FoodSeller 退回了价值 $15 的盒饭 ...
 ProxySeller 代理完成
-{% endhighlight %}
+````
 
 使用动态方法的话就可以在不修改代理类的前提下进行方法的扩充，而动态代理有JDK动态代理，
 CGLIB字节码增强、JAVAASISST等方式。还有另外一个好处，就是各个实现类的可以继承自不同的接口，
