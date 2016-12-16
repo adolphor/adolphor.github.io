@@ -44,6 +44,7 @@ public class Test {
 {% endhighlight %}
 
 运行结果：
+
 ````
 TicketSeller 以价格 $30 卖了一张票 ...
 ````
@@ -87,6 +88,7 @@ public class Test {
 {% endhighlight %}
 
 运行结果：
+
 ````
 ProxySeller 代理收取手续费 $5
 TicketSeller 以价格 $30 卖了一张票 ...
@@ -163,6 +165,7 @@ public class Test {
 {% endhighlight %}
 
 运行结果：
+
 ````
 ProxySeller 代理收取手续费 $5
 TicketSeller 以价格 $30 卖了一张票 ...
@@ -217,6 +220,7 @@ public class Test {
 {% endhighlight %}
 
 运行结果：
+
 ````
 ProxySeller 代理收取手续费 $5
 TicketSeller 以价格 $30 卖了一张票 ...
