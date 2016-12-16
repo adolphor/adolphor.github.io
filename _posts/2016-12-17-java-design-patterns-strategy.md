@@ -31,20 +31,32 @@ excerpt:    设计模式之 —— 策略模式
 同样使用买票的例子，有抽象类 TicketSeller，表示具有售票能力，WindowSeller 和 InternetSeller 分别表示
 窗口售票和网络售票，TicketService 根据条件（传入的实例类型）调用不同的购票方法，代码如下：
 
+首先抽象出算法共同部分——购票——作为抽象类，代表 “抽象角色”：
 {% highlight java %}
 public abstract class TicketSeller {
   abstract void sell();
 }
+{% endhighlight %}
+
+继承抽象类，实现不同的算法，窗口售票和互联网售票，至于何时调用窗口售票或者互联网售票，
+是由客户端调用的时候进行决定，需要调用哪种方法就传入哪种实例，代表 “具体策略角色”：
+{% highlight java %}
 public class WindowSeller extends TicketSeller {
   public void sell() {
     System.out.println("窗口售票");
   }
 }
+{% endhighlight %}
+{% highlight java %}
 public class InternetSeller extends TicketSeller {
   public void sell() {
     System.out.println("互联网售票");
   }
 }
+{% endhighlight %}
+
+下面是持有一个Strategy类的引用的 “环境角色”：
+{% highlight java %}
 public class TicketService {
   private TicketSeller seller;
   public TicketService(TicketSeller seller) {
@@ -54,6 +66,10 @@ public class TicketService {
     seller.sell();
   }
 }
+{% endhighlight %}
+
+下面进行测试，分别测试两种算法：
+{% highlight java %}
 public class Test {
   public static void main(String[] args) {
     TicketService internetService = new TicketService(new InternetSeller());
