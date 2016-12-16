@@ -134,7 +134,7 @@ public class ProxySeller implements Seller {
   }
   public void sell(int price) {
     before();
-    // 代理以扣除手续费之后的价格从原渠道购物
+    // 代理以扣除手续费之后的价格从原渠道购物，如果只是单纯增加前后的逻辑，此参数无需修改
     seller.sell(price - 5);
     after();
   }
@@ -190,6 +190,7 @@ public void back(int price) {
 // ProxySeller代理类增加实现：
 public void back(int price) {
   before();
+  // 如果只是单纯增加前后的逻辑，此参数无需修改
   seller.back(price - 5);
   after();
 }
@@ -252,6 +253,7 @@ public class ProxySeller implements InvocationHandler {
   public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
     before();
     int price = (int) args[0];
+    // 一般情况下，如果只是单纯增加前后的逻辑，此参数无需修改
     Object result = method.invoke(target, price - 5);
     after();
     return result;
@@ -292,6 +294,7 @@ public class ProxySeller implements MethodInterceptor {
   public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
     before();
     int price = (int) args[0];
+    // 一般情况下，如果只是单纯增加前后的逻辑，此参数无需修改
     Object result = proxy.invokeSuper(obj, new Object[]{price - 5});
     after();
     return result;
