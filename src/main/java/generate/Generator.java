@@ -37,7 +37,14 @@ public class Generator {
     map.put("categories",categories);
     map.put("tags",tags);
 
-    String templatePath = System.getProperty("user.dir") + "\\src\\main\\resources";
+    StringBuffer stringBuffer = new StringBuffer(System.getProperty("user.dir"));
+    String templatePath = stringBuffer.append(File.separator)
+            .append("src")
+            .append(File.separator)
+            .append("main")
+            .append(File.separator)
+            .append("resources")
+            .toString();
     Configuration configuration = getConfiguration(templatePath);
     Template temp = configuration.getTemplate("post.ftl");
     String url = System.getProperty("user.dir") + File.separator + "_drafts"
