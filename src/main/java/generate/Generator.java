@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class Generator {
 
-//  private static String postTitle = "JDK-source-code-Collection-Set-TreeSet";
+  //  private static String postTitle = "JDK-source-code-Collection-Set-TreeSet";
   private static String urlTitle = "volatile-keyword";
   private static String postTitle = "volatile-关键字";
   private static String categories = "Java";
@@ -34,21 +34,21 @@ public class Generator {
     map.put("postTitle", postTitle);
     map.put("postDate", Utils.getPostDate());
     map.put("postId", Utils.getPostId());
-    map.put("categories",categories);
-    map.put("tags",tags);
+    map.put("categories", categories);
+    map.put("tags", tags);
 
     StringBuffer stringBuffer = new StringBuffer(System.getProperty("user.dir"));
     String templatePath = stringBuffer.append(File.separator)
-            .append("src")
-            .append(File.separator)
-            .append("main")
-            .append(File.separator)
-            .append("resources")
-            .toString();
+        .append("src")
+        .append(File.separator)
+        .append("main")
+        .append(File.separator)
+        .append("resources")
+        .toString();
     Configuration configuration = getConfiguration(templatePath);
     Template temp = configuration.getTemplate("post.ftl");
     String url = System.getProperty("user.dir") + File.separator + "_drafts"
-            + File.separator + Utils.getPostTitle(urlTitle)+".md";
+        + File.separator + Utils.getPostTitle(urlTitle) + ".md";
 
     File file = new File(url);
     createFile(file);
