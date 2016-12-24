@@ -9,7 +9,8 @@ geneMenu:   true
 excerpt:    macOS上安装多个版本的JDK
 ---
 
-### 说明
+## 说明
+
 从macOS 10.12开始，Apple公司已经已经不再对JDK6提供技术支持，
 而Oracle公司只提供了1.7以及1.8版本的JDK，所以本文主要安装这两个版本。
 
@@ -19,12 +20,12 @@ excerpt:    macOS上安装多个版本的JDK
   * 1.8：1.8.0_111
 
 
-### 安装
+## 安装
 从官网JDK归档页面可以找到Oracle提供的所有版本的JDK：
 http://www.oracle.com/technetwork/java/archive-139210.html。
 下载macOS版本的1.7和1.8，按照正常的安装方法进行安装即可。
 
-### 配置
+## 配置
 安装完成之后，调出terminal命令行工具，检验安装是否成功：
 
 {% highlight shell %}
