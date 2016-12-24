@@ -37,10 +37,17 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
 那如何进行版本切换呢？先看当前生效的JDK路径：
 {% highlight shell %}
 $ which java
+{% endhighlight %}
+
+```
 /usr/bin/java
+```
+
+{% highlight shell %}
 $ cd /usr/bin
 $ ls -l
 {% endhighlight %}
+
 ```
 ……
 lrwxr-xr-x   1 root   wheel        74 Oct 21 18:10 java -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java
@@ -75,22 +82,37 @@ $ source ~/.bash_profile
 这样，默认使用JDK1.7，然后使用`jdk7`和`jdk8`来切换当前系统的JDK版本：
 {% highlight shell %}
 $ java -version
+{% endhighlight %}
+
+```
 java version "1.7.0_80"
 Java(TM) SE Runtime Environment (build 1.7.0_80-b15)
 Java HotSpot(TM) 64-Bit Server VM (build 24.80-b11, mixed mode)
+```
+
+{% highlight shell %}
 # 切换到1.8，使用如下命令
 $ jdk8
 $ java -version
+{% endhighlight %}
+
+```
 java version "1.8.0_111"
 Java(TM) SE Runtime Environment (build 1.8.0_111-b14)
 Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
+```
+
+{% highlight shell %}
 # 再切回1.7
 $ jdk7
 $ java -version
+{% endhighlight %}
+
+```
 java version "1.7.0_80"
 Java(TM) SE Runtime Environment (build 1.7.0_80-b15)
 Java HotSpot(TM) 64-Bit Server VM (build 24.80-b11, mixed mode)
-{% endhighlight %}
+```
 
 ## 参考资料
 
