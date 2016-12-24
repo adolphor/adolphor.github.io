@@ -21,10 +21,10 @@ import java.util.Map;
 public class Generator {
 
   //  private static String postTitle = "JDK-source-code-Collection-Set-TreeSet";
-  private static String urlTitle = "volatile-keyword";
-  private static String postTitle = "volatile-关键字";
+  private static String urlTitle = "install-multiple-jdk-to-macos";
+  private static String postTitle = "macOS上安装多个版本的JDK";
   private static String categories = "Java";
-  private static String tags = "Java, keyword";
+  private static String tags = "Java, JVM, Java8";
 
   private static Configuration cfg;
 
