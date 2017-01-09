@@ -40,8 +40,16 @@ public class Utils {
     String YY = format(date, "YYYY");
     String MM = format(date, "MM");
     String src = System.getProperty("user.dir")
-            + "\\src\\main\\java"
-            + "\\Y" + YY + "\\M" + MM;
+            +File.separator
+            + "src"
+            + File.separator
+            +"main"
+            + File.separator
+            +"java"
+            + File.separator
+            +"Y" + YY
+            + File.separator
+            + "M" + MM;
     return src;
   }
 
@@ -50,8 +58,14 @@ public class Utils {
     String YY = format(date, "YYYY");
     String MM = format(date, "MM");
     String src = System.getProperty("user.dir")
-            + "\\image\\post"
-            + "\\" + YY + "\\" + MM;
+            + File.separator
+            + "image"
+            + File.separator
+            + "post"
+            + File.separator
+            + YY
+            + File.separator
+            + MM;
     return src;
   }
 

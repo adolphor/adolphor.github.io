@@ -22,7 +22,7 @@ public class Generator {
 
   //  private static String postTitle = "JDK-source-code-Collection-Set-TreeSet";
   private static String urlTitle = "swift-playgrounds";
-  private static String postTitle = "swift playgrounds 用法";
+  private static String postTitle = "swift playgrounds";
   private static String categories = "[iOS]";
   private static String tags = "[iOS, swift]";
 
