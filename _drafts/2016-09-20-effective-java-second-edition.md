@@ -3,7 +3,7 @@ layout:     post
 title:      《Effective Java —— Joshua Bloch》读书笔记
 date:       2016-09-20 10:47:57 +0800
 postId:     2016-09-20-10-47-57
-categories: [Java]
+categories: [blog]
 tags:       [Java, 读书笔记]
 geneMenu:   true
 excerpt:    《Effective Java —— Joshua Bloch》读书笔记

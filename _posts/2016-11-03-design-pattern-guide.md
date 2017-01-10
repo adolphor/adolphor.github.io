@@ -3,7 +3,7 @@ layout:     post
 title:      设计模式简介
 date:       2016-11-03 22:10:38 +0800
 postId:     2016-11-03-22-10-38
-categories: [Java]
+categories: [blog]
 tags:       [Java, UML, CS]
 geneMenu:   true
 excerpt:    设计模式简介

@@ -3,7 +3,7 @@ layout:     post
 title:      java binary structure
 date:       2016-08-06 14:52:07 +0800
 postId:     2016-08-06-14-52-08
-categories: [Java]
+categories: [blog]
 tags:       [Java, JVM]
 geneMenu:   true
 ---

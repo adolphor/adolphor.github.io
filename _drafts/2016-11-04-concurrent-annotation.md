@@ -3,7 +3,7 @@ layout:     post
 title:      并发编程注解
 date:       2016-11-04 15:35:01 +0800
 postId:     2016-11-04-15-35-01
-categories: [Java]
+categories: [blog]
 tags:       [Java]
 geneMenu:   true
 excerpt:    并发编程注解

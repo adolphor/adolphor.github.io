@@ -3,7 +3,7 @@ layout:     post
 title:      《CSAPP —— Randal.E.Bryant》读书笔记
 date:       2016-08-29 12:17:11 +0800
 postId:     2016-08-29-12-17-11
-categories: [CS]
+categories: [blog]
 tags:       [CS, 读书笔记]
 geneMenu:   true
 excerpt:    《CSAPP —— Randal.E.Bryant》读书笔记

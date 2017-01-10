@@ -3,7 +3,7 @@ layout:     post
 title:      【Java8源码阅读笔记】Collection框架之Vector
 date:       2016-08-18 10:32:30 +0800
 postId:     2016-08-18-10-32-30
-categories: [Java]
+categories: [blog]
 tags:       [Java]
 geneMenu:   true
 excerpt:    【Java8源码阅读笔记】Collection框架之Vector

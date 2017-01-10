@@ -3,7 +3,7 @@ layout:     post
 title:      Linux 性能监控工具 —— nmon
 date:       2016-09-20 15:18:00 +0800
 postId:     2016-09-20-15-18-00
-categories: [Linux]
+categories: [blog]
 tags:       [Linux]
 geneMenu:   true
 excerpt:    Linux 性能监控工具 —— nmon

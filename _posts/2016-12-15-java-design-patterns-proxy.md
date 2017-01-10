@@ -3,7 +3,7 @@ layout:     post
 title:      代理模式
 date:       2016-12-15 22:26:22 +0800
 postId:     2016-12-15-22-26-22
-categories: [Java]
+categories: [blog]
 tags:       [Java]
 geneMenu:   true
 excerpt:    设计模式之 —— 代理模式

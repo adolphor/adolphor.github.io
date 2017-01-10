@@ -3,7 +3,7 @@ layout:     post
 title:      《C++ primer —— Stanley B. Lippman》读书笔记
 date:       2016-08-29 14:02:57 +0800
 postId:     2016-08-29-14-02-57
-categories: [C/C++/C#]
+categories: [blog]
 tags:       [C/C++/C#, 读书笔记]
 geneMenu:   true
 excerpt:    《C++ primer —— Stanley B. Lippman》读书笔记

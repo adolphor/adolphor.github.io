@@ -3,7 +3,7 @@ layout:     post
 title:      设计模式：静态代理，动态打理，CGLIB代理
 date:       2016-12-14 11:20:18 +0800
 postId:     2016-12-14-11-20-18
-categories: [java]
+categories: [blog]
 tags:       [java]
 geneMenu:   true
 excerpt:    设计模式：静态代理，动态打理，CGLIB代理

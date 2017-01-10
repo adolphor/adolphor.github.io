@@ -3,7 +3,7 @@ layout:     post
 title:      Windows 10 x64 下编译 Hadoop 源码
 date:       2016-11-01 11:05:46 +0800
 postId:     2016-11-01-11-05-46
-categories: [Hadoop]
+categories: [blog]
 tags:       [Hadoop]
 geneMenu:   true
 excerpt:    Windows 10 x64 下编译 Hadoop 源码

@@ -3,7 +3,7 @@ layout:     post
 title:      transient关键字解析
 date:       2016-08-19 21:59:01 +0800
 postId:     2016-08-19-21-59-01
-categories: [Java]
+categories: [blog]
 tags:       [Java]
 geneMenu:   true
 excerpt:    java transient关键字解析

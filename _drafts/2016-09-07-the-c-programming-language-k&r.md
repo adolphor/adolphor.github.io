@@ -3,7 +3,7 @@ layout:     post
 title:      《The C Programming Language —— K&R》读书笔记
 date:       2016-09-07 10:18:21 +0800
 postId:     2016-09-07-10-18-21
-categories: [C/C++/C#]
+categories: [blog]
 tags:       [C/C++/C#, 读书笔记]
 geneMenu:   true
 excerpt:    《The C Programming Language —— K&R》读书笔记

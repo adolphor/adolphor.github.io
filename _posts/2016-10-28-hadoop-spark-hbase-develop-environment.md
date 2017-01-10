@@ -3,7 +3,7 @@ layout:     post
 title:      Hadoop，Spark，HBase 开发环境配置
 date:       2016-10-28 15:00:01 +0800
 postId:     2016-10-28-15-00-01
-categories: [Hadoop]
+categories: [blog]
 tags:       [Hadoop, Spark, HBase]
 geneMenu:   true
 excerpt:    Hadoop，Spark，HBase 开发环境配置

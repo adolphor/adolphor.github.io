@@ -3,7 +3,7 @@ layout:     post
 title:      Java8 新特性 —— Nashorn JavaScript
 date:       2016-08-27 00:02:27 +0800
 postId:     2016-08-27-00-02-27
-categories: [Java]
+categories: [blog]
 tags:       [Java, Java8]
 geneMenu:   true
 excerpt:    Java8 新特性 —— Nashorn JavaScript

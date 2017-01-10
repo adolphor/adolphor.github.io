@@ -3,7 +3,7 @@ layout:     post
 title:      《深入理解Java虚拟机 —— 周志明》读书笔记
 date:       2016-09-10 14:37:48 +0800
 postId:     2016-09-10-14-37-48
-categories: [Java]
+categories: [blog]
 tags:       [Java, JVM]
 geneMenu:   true
 excerpt:    《深入理解Java虚拟机：JVM高级特性与最佳实践 —— 周志明》读书笔记
