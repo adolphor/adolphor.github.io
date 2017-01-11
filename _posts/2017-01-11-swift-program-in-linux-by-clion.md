@@ -123,7 +123,8 @@ File -> Import Project
 
 ## 参考资料
 
-* [test](test.html)
-
-{% highlight java %}
-{% endhighlight %}
+* [Installing Swift](https://swift.org/getting-started/#installing-swift)
+* [CLion](http://www.jetbrains.com/clion/)
+* [Swift plugin for CLion](https://blog.jetbrains.com/clion/2015/12/swift-plugin-for-clion/)
+* [Setup Swift and Clion on Arch Linux](http://sayem.org/2016/09/09/running-swift-on-arch-linux/)（貌似需要科学上网）
+* [手把手教你在Ubuntu上优雅地玩Swift](http://blog.csdn.net/vic_357/article/details/50786676)
