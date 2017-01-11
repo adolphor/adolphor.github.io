@@ -94,6 +94,10 @@ work dir:$ProjectFileDir$
 ![plugin-dis](/image/post/2017/01/12/20170112-0110-swift-tools.png)
 
 
+
+## Clion中运行项目
+
+
 ### 导入swift项目
 
 File -> Import Project
@@ -104,12 +108,13 @@ File -> Import Project
 
 ![plugin-dis](/image/post/2017/01/12/20170112-0105-import-success.png)
 
-
-## Clion中运行项目
+### 配置cmake文件
 
 ![plugin-dis](/image/post/2017/01/12/20170112-0106-cmake-template.png)
 
 ![plugin-dis](/image/post/2017/01/12/20170112-0107-cmake-done.png)
+
+### 配置运行条件
 
 ![plugin-dis](/image/post/2017/01/12/20170112-0111-execute.png)
 ![plugin-dis](/image/post/2017/01/12/20170112-0112-config-all.png)
