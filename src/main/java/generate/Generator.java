@@ -21,9 +21,9 @@ import java.util.Map;
 public class Generator {
 
   //  private static String postTitle = "JDK-source-code-Collection-Set-TreeSet";
-  private static String urlTitle = "swift-playgrounds";
-  private static String postTitle = "swift playgrounds";
-  private static String categories = "[iOS]";
+  private static String urlTitle = "swift-program-in-linux-by-clion";
+  private static String postTitle = "Linux环境下使用Clion编写swift项目";
+  private static String categories = "[blog]";
   private static String tags = "[iOS, swift]";
 
   private static Configuration cfg;
