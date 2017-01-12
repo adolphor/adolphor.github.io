@@ -81,7 +81,7 @@ CLion中 File -> Settings -> Plugins -> Install plugin form disk，
 重启之后就能在 File -> Settings -> Build,Execution 目录下看到swift，
 选中之后需要指定 SDK Home：
 
-![plugin-dis](/image/post/2017/01/12/20170112-0102-swift-sdk.png)
+![swift-sdk](/image/post/2017/01/12/20170112-0102-swift-sdk.png)
 
 
 ### 配置CLion的External tools
@@ -104,12 +104,12 @@ work dir:$ProjectFileDir$
 
 配置页面展示：
 
-![plugin-dis](/image/post/2017/01/12/20170112-0108-swift-clean.png)
+![swift-clean](/image/post/2017/01/12/20170112-0108-swift-clean.png)
 
-![plugin-dis](/image/post/2017/01/12/20170112-0109-swift-build.png)
+![swift-build](/image/post/2017/01/12/20170112-0109-swift-build.png)
 
 完成之后的样子：
-![plugin-dis](/image/post/2017/01/12/20170112-0110-swift-tools.png)
+![swift-tools](/image/post/2017/01/12/20170112-0110-swift-tools.png)
 
 
 ## CLion中运行项目
@@ -119,38 +119,38 @@ work dir:$ProjectFileDir$
 将上面创建的helloSwift项目导入到CLion，需要进行如下操作：
 File -> Import Project，选择创建的项目的位置：
 
-![plugin-dis](/image/post/2017/01/12/20170112-0103-import-program.png)
+![import-program](/image/post/2017/01/12/20170112-0103-import-program.png)
 
 选择所有文件都进行导入：
-![plugin-dis](/image/post/2017/01/12/20170112-0104-import-select.png)
+![import-select](/image/post/2017/01/12/20170112-0104-import-select.png)
 
 导入成功之后的页面展示：
-![plugin-dis](/image/post/2017/01/12/20170112-0105-import-success.png)
+![import-success](/image/post/2017/01/12/20170112-0105-import-success.png)
 
 ### 配置cmake文件
 因为CLion主要是C和C++项目，编译管理主要是cmake，所以需要修改CMakeLists.txt，
 删除 “project(helloSwift)” 以下的所有配置，然后输入 “add_swift”，选择CLion的
 自动提示模板，回车：
-![plugin-dis](/image/post/2017/01/12/20170112-0106-cmake-template.png)
+![cmake-template](/image/post/2017/01/12/20170112-0106-cmake-template.png)
 
 之后在 SOURCES 后增加
 ```
 Package.swift Sources/main.swift
 ```
 配置完成的页面展示：
-![plugin-dis](/image/post/2017/01/12/20170112-0107-cmake-done.png)
+![cmake-done](/image/post/2017/01/12/20170112-0107-cmake-done.png)
 
 ### 配置运行条件
 
 运行配置，需要注意的是，选择`Executable`选项的时候，刚开始不显示`.build`文件夹，
 需要手动输入，之后就会看到此文件夹下的文件了，选择`.build/debug`目录下的`helloSwift`：
-![plugin-dis](/image/post/2017/01/12/20170112-0111-execute.png)
+![execute](/image/post/2017/01/12/20170112-0111-execute.png)
 
 `Before lunch`中增加CLion中配置的External tools：`swift-clean`和`swift-build`：
-![plugin-dis](/image/post/2017/01/12/20170112-0112-config-all.png)
+![config-all](/image/post/2017/01/12/20170112-0112-config-all.png)
 
 运行成功：
-![plugin-dis](/image/post/2017/01/12/20170112-0113-execute-done.png)
+![execute-done](/image/post/2017/01/12/20170112-0113-execute-done.png)
 
 
 ## 彩蛋
