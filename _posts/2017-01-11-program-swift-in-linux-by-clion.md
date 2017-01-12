@@ -87,7 +87,7 @@ CLion中 File -> Settings -> Plugins -> Install plugin form disk，
 ### 配置CLion的External tools
 
 为了更方便的编译swift项目，创建两个辅助命令工具`swift-clean` 和 `swift-build`，
-具体配置信息如下：
+File -> Settings -> Tools -> External Tools -> add，具体配置信息如下：
 
 ```
 group:swift
