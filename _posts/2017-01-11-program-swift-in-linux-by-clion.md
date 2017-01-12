@@ -6,7 +6,7 @@ postId:     2017-01-11-23-30-51
 categories: [blog]
 tags:       [iOS, swift]
 geneMenu:   true
-excerpt:    Linux环境下使用Clion编写swift项目
+excerpt:    Linux环境下使用CLion编写swift项目
 ---
 
 ## 安装swift
@@ -61,19 +61,19 @@ $ .build/debug/helloSwift
 Hello, world!
 ```
 
-## 安装Clion以及swift插件
+## 安装CLion以及swift插件
 
-### 安装Clion
-Clion下载地址：`http://www.jetbrains.com/clion/`，下载之后解压至安装目录`$HOME/workspace/clion-2016.3.2`，
-进入`bin`文件，使用shell命令启动Clion，最好勾选创建快捷方式选项。
+### 安装CLion
+CLion下载地址：`http://www.jetbrains.com/clion/`，下载之后解压至安装目录`$HOME/workspace/clion-2016.3.2`，
+进入`bin`文件，使用shell命令启动CLion，最好勾选创建快捷方式选项。
 {% highlight shell %}
 $ cd $HOME/workspace/clion-2016.3.2
 $ sh clion.sh
 {% endhighlight %}
 
-### 安装Clion的swift插件
+### 安装CLion的swift插件
 插件下载地址：`https://plugins.jetbrains.com/clion/plugin/8240-swift`，
-Clion中 File -> Settings -> Plugins -> Install plugin form disk，
+CLion中 File -> Settings -> Plugins -> Install plugin form disk，
 选择下载的插件，确定之后重启即可：
 
 ![plugin-dis](/image/post/2017/01/12/20170112-0101-plugin-disk.png)
@@ -84,7 +84,7 @@ Clion中 File -> Settings -> Plugins -> Install plugin form disk，
 ![plugin-dis](/image/post/2017/01/12/20170112-0102-swift-sdk.png)
 
 
-### 配置Clion的External tools
+### 配置CLion的External tools
 
 为了更方便的编译swift项目，创建两个辅助命令工具`swift-clean` 和 `swift-build`，
 具体配置信息如下：
@@ -112,11 +112,11 @@ work dir:$ProjectFileDir$
 ![plugin-dis](/image/post/2017/01/12/20170112-0110-swift-tools.png)
 
 
-## Clion中运行项目
+## CLion中运行项目
 
 ### 导入swift项目
 
-将上面创建的helloSwift项目导入到Clion，需要进行如下操作：
+将上面创建的helloSwift项目导入到CLion，需要进行如下操作：
 File -> Import Project，选择创建的项目的位置：
 
 ![plugin-dis](/image/post/2017/01/12/20170112-0103-import-program.png)
@@ -128,7 +128,7 @@ File -> Import Project，选择创建的项目的位置：
 ![plugin-dis](/image/post/2017/01/12/20170112-0105-import-success.png)
 
 ### 配置cmake文件
-因为Clion主要是C和C++项目，编译管理主要是cmake，所以需要修改CMakeLists.txt，
+因为CLion主要是C和C++项目，编译管理主要是cmake，所以需要修改CMakeLists.txt，
 删除 “project(helloSwift)” 以下的所有配置，然后输入 “add_swift”，选择CLion的
 自动提示模板，回车：
 ![plugin-dis](/image/post/2017/01/12/20170112-0106-cmake-template.png)
