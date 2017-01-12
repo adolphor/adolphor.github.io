@@ -153,6 +153,35 @@ Package.swift Sources/main.swift
 ![plugin-dis](/image/post/2017/01/12/20170112-0113-execute-done.png)
 
 
+## 彩蛋
+
+### windows10下编写swift代码
+
+如果使用的是windows10，那么是否可以在windows平台编辑swift项目？答案是可以，
+方法是windows版本CLion进行代码的编写，使用 bash on ubuntu on windows 子系统
+进行代码的编译和运行。
+
+开启ubuntu子系统之后，进行如下配置：
+
+{% highlight shell %}
+# 安装编译组件
+$ apt-get install build-essential
+# 安装3.6版本之上的clang
+$ sudo vim ~/.bashrc
+export CLANG_HOME=$HOME/clang+llvm-3.9.0
+export PATH=$CLANG_HOME/bin:$CLANG_HOME/include:$CLANG_HOME/lib:$CLANG_HOME/share:$PATH
+$ source ~/.bashrc
+# 使用bash，在windows文件夹/mnt/c/Users/Bob/ClionProjects下创建名为hello的helloSwift项目
+$ cd /mnt/c/Users/Bob/ClionProjects
+$ mkdir helloSwift && cd helloSwift
+$ swift package init --type executable
+# 编译及运行
+$ swift build && .build/debug/helloSwift
+{% endhighlight %}
+
+然后就可以导入windows下的CLion进行代码的编写了，编写完成之后使用bash进行编译及运行。
+
+
 ## 参考资料
 
 * [Installing Swift](https://swift.org/getting-started/#installing-swift)
@@ -160,3 +189,4 @@ Package.swift Sources/main.swift
 * [Swift plugin for CLion](https://blog.jetbrains.com/clion/2015/12/swift-plugin-for-clion/)
 * [Setup Swift and Clion on Arch Linux](http://sayem.org/2016/09/09/running-swift-on-arch-linux/)（貌似需要科学上网才能访问）
 * [手把手教你在Ubuntu上优雅地玩Swift](http://blog.csdn.net/vic_357/article/details/50786676)
+* [clang下载地址](http://releases.llvm.org/download.html)
