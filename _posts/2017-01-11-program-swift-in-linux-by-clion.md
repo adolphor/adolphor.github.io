@@ -86,7 +86,7 @@ CLion中 File -> Settings -> Plugins -> Install plugin form disk，
 
 ### 配置CLion的External tools
 
-为了更方便的编译swift项目，创建两个辅助命令工具`swift-clean` 和 `swift-build`，
+为了更方便的编译swift项目，创建两个 External tools： `swift-clean` 和 `swift-build`，
 File -> Settings -> Tools -> External Tools -> add，具体配置信息如下：
 
 ```
@@ -146,7 +146,7 @@ Package.swift Sources/main.swift
 需要手动输入，之后就会看到此文件夹下的文件了，选择`.build/debug`目录下的`helloSwift`：
 ![plugin-dis](/image/post/2017/01/12/20170112-0111-execute.png)
 
-`Before lunch`中增加CLion中配置的辅助命令工具：`swift-clean`和`swift-build`：
+`Before lunch`中增加CLion中配置的External tools：`swift-clean`和`swift-build`：
 ![plugin-dis](/image/post/2017/01/12/20170112-0112-config-all.png)
 
 运行成功：
