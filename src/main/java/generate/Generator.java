@@ -21,10 +21,10 @@ import java.util.Map;
 public class Generator {
 
   //  private static String postTitle = "JDK-source-code-Collection-Set-TreeSet";
-  private static String urlTitle = "swift-program-in-linux-by-clion";
-  private static String postTitle = "Linux环境下使用Clion编写swift项目";
+  private static String urlTitle = "create-cdr-image-file-under-macos";
+  private static String postTitle = "macOS下制作cdr格式的系统镜像";
   private static String categories = "[blog]";
-  private static String tags = "[iOS, swift]";
+  private static String tags = "[macOS]";
 
   private static Configuration cfg;
 
