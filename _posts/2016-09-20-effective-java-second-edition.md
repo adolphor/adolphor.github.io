@@ -77,7 +77,7 @@ public class NutritionFacts {
       this.servings = servings;
     }
     public Builder calories(int val) { // 可选属性set方法
-      calories = val;
+      this.calories = val;
       return this;
     }
     public Builder fat(int val) {
