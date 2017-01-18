@@ -74,13 +74,14 @@ excerpt:    《Effective Java —— Joshua Bloch》读书笔记
 单例模式有如下几种方法：
 
 * final修饰的公有域
-    - 最简单便捷的方法
+    - 最简单便捷的方法，需要考虑反射、序列化的问题
 * 静态工厂方法
-    - 缺点：需要保证线程安全
+    - 如果使用懒加载需要保证线程安全，同样需要考虑反射、序列化的问题
 * 枚举类型
-    - 最优方法
+    - 最优方法，代码简洁，由虚拟机提供序列化机制，绝对防止反射等方法导致的多次实例化。简洁。高效、线程安全，真的可以说是最佳单例写法。 
 
 范例代码：     
+
 [Elvis01.java](https://github.com/NorthFacing/adolphor/blob/gh-pages/src/main/java/Y2016/M09/D20_effectiv_java/tip03/Elvis01.java)  
 [Elvis02.java](https://github.com/NorthFacing/adolphor/blob/gh-pages/src/main/java/Y2016/M09/D20_effectiv_java/tip03/Elvis02.java)  
 [Elvis03.java](https://github.com/NorthFacing/adolphor/blob/gh-pages/src/main/java/Y2016/M09/D20_effectiv_java/tip03/Elvis03.java)
