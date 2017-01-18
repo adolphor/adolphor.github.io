@@ -48,6 +48,53 @@ excerpt:    《Effective Java —— Joshua Bloch》读书笔记
 
 
 ### 第2条：遇到多个构造器参数时要考虑用构建器
+如果有多个参数，而且有些参数必填，有些参数可选，在编写构造器的时候有如下几种方式：
+* JavaBeans模式
+    - 使用默认的无参构造器，其余的参数通过set方法设置
+* 使用重叠构造器模式
+    - 多个构造器每个构造器多一个参数
+* Builder构建器模式
+    - 创建一个内部类Builder，作为构造器的参数
+
+构建器模式返利代码：
+{% highlight java %}
+package Y2016.M09.D20_effectiv_java.tip02;
+public class NutritionFacts {
+  private final int servingSize;
+  private final int servings;
+  private final int calories;
+  private final int fat;
+  public static class Builder {
+    // 必填属性
+    private final int servingSize;
+    private final int servings;
+    // 可选属性
+    private int calories = 0;
+    private int fat = 0;
+    public Builder(int servingSize, int servings) {
+      this.servingSize = servingSize;
+      this.servings = servings;
+    }
+    public Builder calories(int val) {
+      calories = val;
+      return this;
+    }
+    public Builder fat(int val) {
+      this.fat = val;
+      return this;
+    }
+    public NutritionFacts build() {
+      return new NutritionFacts(this);
+    }
+  }
+  public NutritionFacts(Builder builder) {
+    servingSize = builder.servingSize;
+    servings = builder.servings;
+    calories = builder.calories;
+    fat = builder.fat;
+  }
+}
+{% endhighlight %}
 
 ### 第3条：用私有构造器或者枚举类型强化Singleton属性
 
