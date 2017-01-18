@@ -74,8 +74,18 @@ excerpt:    《Effective Java —— Joshua Bloch》读书笔记
 单例模式有如下几种方法：
 
 * final修饰的公有域
+    - 最简单便捷的方法
 * 静态工厂方法
-    - 缺点：需要保证前程安全
+    - 缺点：需要保证线程安全
+* 枚举类型
+    - 最优方法
+
+范例代码：     
+[Elvis01.java](https://github.com/NorthFacing/adolphor/blob/gh-pages/src/main/java/Y2016/M09/D20_effectiv_java/tip03/Elvis01.java)  
+[Elvis02.java](https://github.com/NorthFacing/adolphor/blob/gh-pages/src/main/java/Y2016/M09/D20_effectiv_java/tip03/Elvis02.java)  
+[Elvis03.java](https://github.com/NorthFacing/adolphor/blob/gh-pages/src/main/java/Y2016/M09/D20_effectiv_java/tip03/Elvis03.java)
+
+
 
 ### 第4条：通过私有构造器强化不可实例化的能力 {#tip04}
 

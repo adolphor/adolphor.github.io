@@ -32,6 +32,10 @@ public class Elvis02 implements Serializable { // 实现Serializable，表明可
     return SingletonHolder.INSTANCE;
   }
 
+  public void leaveTheBuilding() {
+    System.out.println("leaveTheBuilding...");
+  }
+
   public void doWork() {
     System.out.println("Do what ever...");
   }

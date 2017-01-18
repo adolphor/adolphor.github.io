@@ -20,8 +20,13 @@ public class Elvis01 implements Serializable { // 实现Serializable，表明可
     return INSTANCE;
   }
 
-  private Object readResolve(){ // 必须声明此函数，防止序列化的时候产生新的实例
+  private Object readResolve() { // 必须声明此函数，防止序列化的时候产生新的实例
     return INSTANCE;
+  }
+
+  // TODO 这方法有啥用
+  public void leaveTheBuilding() {
+    System.out.println("leaveTheBuilding...");
   }
 
   public void doWork() {
