@@ -7,10 +7,20 @@
 jekyll server --drafts --incremental --port 1888
 ```
 
-# 备忘
-## 文件引用
-[Hadoop，Spark，HBase 开发环境配置]({% post_url 2016-10-28-hadoop-spark-hbase-develop-environment %})
+# 语法备忘
 
+## 文件引用
+
+    [Hadoop，Spark，HBase 开发环境配置]({% post_url 2016-10-28-hadoop-spark-hbase-develop-environment %})
+
+## header标签
+
+    ## lambda表达式（Lambda Expressions） {#LambdaExpressions}
+
+## 注解
+
+    {% highlight java %}
+    {% endhighlight %}
 
 # 分类
 
