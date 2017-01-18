@@ -49,6 +49,7 @@ excerpt:    《Effective Java —— Joshua Bloch》读书笔记
 
 ### 第2条：遇到多个构造器参数时要考虑用构建器
 如果有多个参数，而且有些参数必填，有些参数可选，在编写构造器的时候有如下几种方式：
+
 * JavaBeans模式
     - 使用默认的无参构造器，其余的参数通过set方法设置
 * 使用重叠构造器模式
@@ -71,11 +72,11 @@ public class NutritionFacts {
     // 可选属性
     private int calories = 0;
     private int fat = 0;
-    public Builder(int servingSize, int servings) {
+    public Builder(int servingSize, int servings) { // 必填属性构造器
       this.servingSize = servingSize;
       this.servings = servings;
     }
-    public Builder calories(int val) {
+    public Builder calories(int val) { // 可选属性set方法
       calories = val;
       return this;
     }
@@ -83,11 +84,11 @@ public class NutritionFacts {
       this.fat = val;
       return this;
     }
-    public NutritionFacts build() {
+    public NutritionFacts build() { // 实例化目标对象
       return new NutritionFacts(this);
     }
   }
-  public NutritionFacts(Builder builder) {
+  public NutritionFacts(Builder builder) { // 供内部类构造方法调用
     servingSize = builder.servingSize;
     servings = builder.servings;
     calories = builder.calories;
