@@ -127,14 +127,14 @@ excerpt:    《Effective Java —— Joshua Bloch》读书笔记
 
 ### 第8条：覆盖equals时请遵守通用约定 {#tip08}
 
-在不覆盖 `equels` `方法的情况下，类的每个实例都只与它自身相等。如果满足了以下任何一个条件，
+在不覆盖 `equels` 方法的情况下，类的每个实例都只与它自身相等。如果满足了以下任何一个条件，
 这就是所期望的结果：
 
 * 类的每个实例本质上都是唯一的
 * 不需要关心类是否提供了"逻辑相等"的测试功能
 * 超类已经覆盖了equals，从超类继承过来的行为对于子类也合适，
 * 类是私有的或是包级私有的，可以确定他的euqals方法永远不会被调用（此时可以覆写一个抛出异常的equals方法）
-
+git
 在覆写的时候要遵守它的通用约定：
 
 * 自反性
@@ -157,7 +157,7 @@ excerpt:    《Effective Java —— Joshua Bloch》读书笔记
     - float域，使用 Float.compare 方法
     - double域，使用 Double.compare 方法
 
-内存泄露和解决方法范例代码：
+覆写 equals 方法范例代码：
 [User.java](https://github.com/NorthFacing/adolphor/blob/gh-pages/src/main/java/Y2016/M09/D20_effectiv_java/tip08/User.java)
 
 ### 第9条：覆盖equals时总要覆盖hashCode {#tip09}
