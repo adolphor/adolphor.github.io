@@ -37,6 +37,7 @@ public class Elvis01 implements Serializable { // 实现Serializable，表明可
     // 使用反射，获取新的实例
     Elvis01 elvis02 = null;
     try {
+      // TODO 好像不是这么玩的…… 上面的实例是使用getInstance方法获取的，这里是使用newInstance获取的……
       Class<?> aClass = Class.forName(Elvis01.class.getName());
       Object o = aClass.newInstance();
       elvis02 = (Elvis01) o;
