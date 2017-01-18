@@ -12,6 +12,8 @@ public class Elvis02 implements Serializable { // 实现Serializable，表明可
   /**
    * 类级内部类 也就是静态的成员式内部类 该内部类的实例与外部类的实例没有依赖
    * 而且只有被调用的时候才会被装载，从而实现延迟加载
+   * 参考：
+   * http://blog.csdn.net/card361401376/article/details/51340822
    */
   private static class SingletonHolder{
     //静态初始化器 由虚拟机保证线程安全
