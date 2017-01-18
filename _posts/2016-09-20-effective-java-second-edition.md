@@ -113,6 +113,8 @@ excerpt:    《Effective Java —— Joshua Bloch》读书笔记
 
 ### 第7条：避免使用终结方法 {#tip07}
 
+* 反正不要使用 `finalizer` 就行了~
+
 ## 第3章 对于所有对象都通用的方法
 
 ### 第8条：覆盖equals时请遵守通用约定 {#tip08}
