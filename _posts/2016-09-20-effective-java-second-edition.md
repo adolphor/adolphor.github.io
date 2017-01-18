@@ -57,7 +57,7 @@ excerpt:    《Effective Java —— Joshua Bloch》读书笔记
 * Builder构建器模式
     - 创建一个内部类Builder，作为构造器的参数
 
-构建器模式返利代码：
+构建器模式范例代码：
 {% highlight java %}
 package Y2016.M09.D20_effectiv_java.tip02;
 public class NutritionFacts {
