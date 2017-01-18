@@ -117,7 +117,48 @@ excerpt:    《Effective Java —— Joshua Bloch》读书笔记
 
 ## 第3章 对于所有对象都通用的方法
 
+主要的方法有：
+
+* equals
+* hashCode
+* toString
+* clone
+* finalize
+
 ### 第8条：覆盖equals时请遵守通用约定 {#tip08}
+
+在不覆盖 `equels` `方法的情况下，类的每个实例都只与它自身相等。如果满足了以下任何一个条件，
+这就是所期望的结果：
+
+* 类的每个实例本质上都是唯一的
+* 不需要关心类是否提供了"逻辑相等"的测试功能
+* 超类已经覆盖了equals，从超类继承过来的行为对于子类也合适，
+* 类是私有的或是包级私有的，可以确定他的euqals方法永远不会被调用（此时可以覆写一个抛出异常的equals方法）
+
+在覆写的时候要遵守它的通用约定：
+
+* 自反性
+    - x.equals(x) => true
+* 对称性
+    - x.equals(y) <==> y.equals(x)
+* 传递性
+    - x.equals(y), y.equals(z) => x.equals(z)
+* 一致性
+    - 多次调用返回的结果相同，不会因为调用次数不同出现不同的结果
+
+实现高质量的equals方法：
+
+* 使用"=="操作符检查"参数是否为这个对象的引用"，也就是比较是否是同一个实例对象
+* 使用instanceof操作符检查"参数是否为正确的类型"，如果不是同一个类型，肯定为false
+* 把参数转换为正确的类型
+* 对于该类中的每个"关键(significant)"域，检查参数中的域是否域该对象中对应的域相匹配
+    - 基本数据类型使用 "=="
+    - 对象引用域，递归调用equals方法
+    - float域，使用 Float.compare 方法
+    - double域，使用 Double.compare 方法
+
+内存泄露和解决方法范例代码：
+[User.java](https://github.com/NorthFacing/adolphor/blob/gh-pages/src/main/java/Y2016/M09/D20_effectiv_java/tip08/User.java)
 
 ### 第9条：覆盖equals时总要覆盖hashCode {#tip09}
 
