@@ -3,7 +3,7 @@ package Y2016.M09.D20_effectiv_java.tip02;
 /**
  * Created by Bob on 2017/1/18.
  * 引用地址：
- * http://adolphor.com/blog/2016/09/20/effective-java-second-edition.html#tip2
+ * http://adolphor.com/blog/2016/09/20/effective-java-second-edition.html#tip02
  */
 public class NutritionFacts {
   private final int servingSize;
