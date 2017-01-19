@@ -15,7 +15,6 @@ jekyll server --drafts
 * [intellij idea](http://www.jetbrains.com/idea/)
 * markdown support
 
-
 # 主题参考
 * [http://liberize.me](https://github.com/liberize/liberize.github.com)
 * [http://www.winseliu.com/](https://github.com/winse/winse.github.com)
