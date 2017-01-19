@@ -162,6 +162,30 @@ git
 
 ### 第9条：覆盖equals时总要覆盖hashCode {#tip09}
 
+    在每个覆盖了 equals 方法的类中，也必须覆盖 hashcode 方法。
+    
+对于hashcode的约定内容如下：
+
+* 一个对象在没有修改的情况下，多次调用hashcode方法必须始终如一地返回同一个整数
+* 如果两个对象根据equals方法比较是相等的，那么调用这两个对象中任何一个对象的hashcode方法都产生同样的整数结果
+* 如果两个对象根据equals方法比较是不想等的，那么hashcode不一定要产生不同的整数结果，也就是说可能相同也可能不同
+
+求取hashcode的方法：
+
+* 把某个非零的常数值，比如17，保存在一个名为 result 的int类型的变量中
+* 对于对象中每个关键域 f ，完成以下步骤：
+    * 如果该域是boolean类型，计算（f?1:0）
+    * 如果该域是byte、char、short或者int类型，则计算(int)f
+    * 如果该域是long类型，则计算(int)(f^(f>>>32))
+    * 如果该域是float类型，则计算Float.floatToIntBits(f)
+    * 如果该域是double类型，计算Double.doubleToLongBits(f)，然后按照计算long的方法继续计算
+    * 如果该域是对象引用，则递归调用hashcode方法；如果这个域为null，则返回0
+    * 如果该域是一个数组，则要把每个元素当作单独的域进行处理，递归处理每个元素
+* 按照下面的公示，将上面计算的散列码 c 合并到 result 中：
+    * result = 31 * result + c
+* 返回 result
+
+
 ### 第10条：始终要覆盖toString {#tip10}
 
 ### 第11条：谨慎地覆盖clone {#tip11}
