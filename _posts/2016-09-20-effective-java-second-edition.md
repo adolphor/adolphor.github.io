@@ -189,6 +189,9 @@ git
 
 ### 第10条：始终要覆盖toString {#tip10}
 
+* 建议所有的子类都覆盖java.lang.Object提供的toString方法
+* toString方法应该返回对象中包含的所有值得关注的信息
+
 ### 第11条：谨慎地覆盖clone {#tip11}
 
 ### 第12条：考虑实现Comparable接口 {#tip12}
