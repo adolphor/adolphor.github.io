@@ -49,7 +49,7 @@ public class Test {
 TicketSeller 以价格 $30 卖了一张票 ...
 ```
 
-有时候我们去不了车站售票口，可以去代理窗口买票，但是代理窗口要收取 $5 的手续费，实现如下：
+有时候去不了车站售票口，可以去代理窗口买票，但是代理窗口要收取 $5 的手续费，实现如下：
 {% highlight java %}
 public class ProxySeller {
   private TicketSeller seller;

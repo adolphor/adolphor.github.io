@@ -9,7 +9,7 @@ geneMenu:   true
 excerpt:    macOS下制作cdr格式的系统镜像
 ---
 
-本文主要是在macOS系统下，将官方的macOS系统安装包转换为cdr镜像文件，这样可以在别的电脑上或者虚拟机中使用。
+在macOS系统下，将官方的macOS系统安装包转换为cdr镜像文件，这样可以在别的电脑上或者虚拟机中使用。
 
 ## 下载
 打开 App Store，搜索 macOS 进行下载即可，当前最新版本是 10.12.2：

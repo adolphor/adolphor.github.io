@@ -14,7 +14,7 @@ excerpt:    Linux环境下使用CLion编写swift项目
 ### 下载安装
 
 先下载当前最新版的swift-3.0.2，下载地址：`https://swift.org/download/#releases`，
-将其解压在当前用户的workspace目录下，如下所示：
+将其解压在当前用户的workspace目录下：
 
 {% highlight shell %}
 # 安装依赖包

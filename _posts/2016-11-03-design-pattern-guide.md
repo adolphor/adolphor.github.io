@@ -77,8 +77,6 @@ Structural object-patterns define ways to compose objects to obtain new function
 
 #### 2.1 适配器
 
-/\
-
 Adapter：Match interfaces of different classes
 
 #### 2.2 桥接模式

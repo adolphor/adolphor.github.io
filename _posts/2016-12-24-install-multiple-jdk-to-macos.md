@@ -16,14 +16,16 @@ excerpt:    macOS上安装多个版本的JDK
 
 * 系统版本：10.12.2 (16C67)
 * JDK版本：
-  * 1.7：1.7.0_80
-  * 1.8：1.8.0_111
+  - 1.7：1.7.0_80
+  - 1.8：1.8.0_111
 
 
 ## 安装
 从官网JDK归档页面可以找到Oracle提供的所有版本的JDK：
-http://www.oracle.com/technetwork/java/archive-139210.html。
-下载macOS版本的1.7和1.8，按照正常的安装方法进行安装即可。
+```
+http://www.oracle.com/technetwork/java/archive-139210.html
+```
+下载macOS版本的1.7和1.8，按照正常的安装方法进行安装。
 
 ## 配置
 安装完成之后，调出terminal命令行工具，检验安装是否成功：
@@ -83,7 +85,7 @@ export JAVA_HOME=$JAVA_7_HOME
 $ source ~/.bash_profile
 {% endhighlight %}
 
-## 切换使用方法
+## 版本切换
 如上配置之后，默认使用JDK1.7，然后使用`jdk7`和`jdk8`来切换当前系统的JDK版本：
 {% highlight shell %}
 $ java -version
