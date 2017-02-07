@@ -20,11 +20,10 @@ import java.util.Map;
 
 public class Generator {
 
-  //  private static String postTitle = "JDK-source-code-Collection-Set-TreeSet";
-  private static String urlTitle = "create-cdr-image-file-under-macos";
-  private static String postTitle = "macOS下制作cdr格式的系统镜像";
+  private static String postTitle = "【Java8源码阅读笔记】Collection框架之Map";
+  private static String urlTitle = "JDK-source-code-Collection-Map";
   private static String categories = "[blog]";
-  private static String tags = "[macOS]";
+  private static String tags = "[Java]";
 
   private static Configuration cfg;
 
