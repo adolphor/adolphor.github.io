@@ -8,6 +8,20 @@ tags:       [Java]
 excerpt:    【Java8源码阅读笔记】Collection框架总述
 ---
 
+集合框架主要包括两部分内容：
+* Collection 单列集合
+    - List
+    - Set
+    -Queue
+
+* Map 双列集合
+    - Hashtable
+    - HashMap
+        * LinkedHashMap
+    - TreeMap
+
+
+
 ## Collection总类图
 
 ### 集合实现类
@@ -34,7 +48,7 @@ Map         |   HashMap     |                   |  TreeMap          |           
 ![Collection类图](/image/post/2016/08/03/20160803-Collection03.png)
 
 
-## 公共接口
+## Collection公共接口
 
 ### Iterable 接口
 
@@ -94,10 +108,17 @@ AbstractCollection具体实现，参考[【Java8源码阅读笔记】Collection�
 [EnumSet参考资料1](http://www.cnblogs.com/accessking/p/4200000.html)  
 [EnumSet参考资料2](http://blog.csdn.net/hudashi/article/details/6943843/)
 
-## 其他相关类
+## Map
 
-### Iterator接口
+### Hashtable
 
+### HashMap
+
+### LinkedHashMap
+
+### TreeMap
+
+## Collection 和 Collections的区别
 
 ## 参考资料
 
