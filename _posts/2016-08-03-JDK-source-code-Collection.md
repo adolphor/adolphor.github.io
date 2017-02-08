@@ -9,6 +9,7 @@ excerpt:    【Java8源码阅读笔记】Collection框架总述
 ---
 
 集合框架主要包括两部分内容：
+
 * Collection 单列集合
     - List
     - Set
