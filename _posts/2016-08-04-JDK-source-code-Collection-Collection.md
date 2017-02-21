@@ -10,7 +10,7 @@ excerpt:    【Java8源码阅读笔记】Collection框架之Collection
 ---
 ## Collection
 
-`Collection`集合的继承以及各个实现类之间的关系，参考[【Java8源码阅读】Collection框架总述](/collection/2016/08/03/JDK-source-code-Collection.html),
+`Collection`集合的继承以及各个实现类之间的关系，参考[【Java8源码阅读】Collection框架总述](/blog/2016/08/03/JDK-source-code-Collection.html),
 本文主要讲解各个接口定义以及用途。
 
 ## 接口定义
