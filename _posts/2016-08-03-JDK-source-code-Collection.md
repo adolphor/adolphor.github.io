@@ -12,8 +12,15 @@ excerpt:    【Java8源码阅读笔记】Collection框架总述
 
 * Collection 单列集合
     - List
+        * ArrayList
+        * LinkedList
+    - Queue
+        * ArrayDeque
+        * LinkedList
     - Set
-    -Queue
+        * HashSet
+            - LinkedHashSet
+        * TreeSet
 
 * Map 双列集合
     - Hashtable
