@@ -10,6 +10,9 @@ Collection是单列集合集合框架的根接口，也是List，Set，Queue的�
 键值对形式存储，键值对以Entry类型的对象实例形式存在。
 
 
+TreeMap，有序集合，是红黑树算法的实现
+
+
 下面主要看HashMap
 
 #### 1.1.1、HashMap 几个常量
@@ -48,14 +51,34 @@ key经过hash后，可以取模来进行放入数组，也不会出现越界的�
 注意一点，while里面的代码会造车在多线程并发下put出现死循环情况，如果涉及到多线程put情况，不要使用HashMap。
 
 #### 1.1.4、底层实现
+HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。
+此类不保证映射的顺序，特别是不保证该顺序恒久不变。
+
+HashMap的数据结构：数组 + 链表。首先使用数组对Key进行散列，如果此位置已经有元素，就使用链表挂在
+此元素节点的后面。元素节点对象是entry，保持对value的引用。
+
+#### equals 和 hashCode
+equals为true时，hashCode肯定相等；
+但是hashCode相等时，equals未必为true。
+这也就是HashMap散列Key的时候出现位置被占用，然后使用链表挂载后续数据的原因。
 
 #### 1.1.5、ConcurrentHashMap
 
+#### fail-fast 机制
 
 #### 如果让你来做HashMap扩容，如何实现在不影响读写的情况下扩容？
 来自：https://www.zhihu.com/question/53673888
 
 #### 1.1.6、WeakHashMap 和 HashMap 区别
+WeakHashMap 的工作与 HashMap类似，但是使用弱引用作为key，意思是当key对象没有任何引用时，
+key、value将会被回收。
+
+#### 1.1.7、ArrayList 和 LinkedList 区别
+ArrayList 底层的数据结构是数组，支持随机访问，
+LinkedList底层实现是双向循环链表，不支持随机访问。
+使用下标进行访问，他们的时间复杂度分别是 O(1) 和 O(n)
+
+另外，ArrayList的初始化大小是10。（相对于HashMap的初始化大小是16=2^4）
 
 
 ####  HashMap原理机制自问自答
