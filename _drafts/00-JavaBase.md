@@ -198,6 +198,30 @@ String，字符串常量，如果修改会产生新的对象，触发垃圾回�
 StringBuffer，字符串变量，线程安全  
 StringBuilder，字符串变量，非线程安全
 
+### 8.6、Java中的 ++ 是否线程安全？
+非线程安全，它涉及到多个指令，如读取变量值、增加，然后存储回内存，这个过程
+可能会出现多个线程交叉。
+
+
+# 实现一个生产者消费者队列
+两种方案：
+* 使用阻塞队列（BlockingQueue）
+* 使用wait-notify
+
+
+JDK7提供了7个阻塞队列。分别是
+
+* ArrayBlockingQueue ：一个由数组结构组成的有界阻塞队列。
+* LinkedBlockingQueue ：一个由链表结构组成的有界阻塞队列。
+* PriorityBlockingQueue ：一个支持优先级排序的无界阻塞队列。
+* DelayQueue：一个使用优先级队列实现的无界阻塞队列。
+* SynchronousQueue：一个不存储元素的阻塞队列。
+* LinkedTransferQueue：一个由链表结构组成的无界阻塞队列。
+* LinkedBlockingDeque：一个由链表结构组成的双向阻塞队列。
+
+参考：
+http://blog.csdn.net/monkey_d_meng/article/details/6251879
+http://www.infoq.com/cn/articles/java-blocking-queue
 
 
 # 4、Socket通信
