@@ -10,8 +10,6 @@ Collection是单列集合集合框架的根接口，也是List，Set，Queue的�
 键值对形式存储，键值对以Entry类型的对象实例形式存在。
 
 
-TreeMap，有序集合，是红黑树算法的实现
-
 
 下面主要看HashMap
 
@@ -100,7 +98,10 @@ LinkedList底层实现是双向循环链表，不支持随机访问。
 #### HashMap扩容机制、线程安全
 来自：http://blog.csdn.net/u010558660/article/details/50926227
 
-#### 线程安全相关
+#### TreeMap
+
+有序集合，是红黑树算法的实现
+
 
 
 ## 2、面向对象的三大特性
@@ -259,6 +260,20 @@ http://www.infoq.com/cn/articles/java-blocking-queue
 
 问题来源：
 https://www.zhihu.com/search?type=content&q=java+%E9%9D%A2%E8%AF%95
+
+## BIO，NIO，NIO2，AIO
+IO包和NIO包的内容相对来说不是很多，首先NIO模型要熟悉，特别是其中的selector一定要非常清楚它的职责和实现原理。其实NIO的核心是IO线程池，一定要记住这个关键点。有的时候，面试官可能也会问你IO包的设计模式（装饰器模式），为什么要这样设计？
+有的面试官还会问你有没有更好的设计，这个时候如果你不知道请果断说自己现在的水平有限，想不出来更好的设计，千万不要信口开河，随意YY。
+
+## select、poll、epoll之间的区别
+http://www.cnblogs.com/Anker/p/3265058.html
+
+Select在Java里指的是NIO包下的非阻塞套接字，把套解字和相应事件注册到Selector中，每次触发得到对应SelectionKey，再做相应处理。
+Poll一般指的是BlockingQueue接口和方法，和take区别在于是否有等待时间。貌似Linux下还有一个epoll机制？
+
+## 
+
+
 
 ## 大数据架构解决方案
 
