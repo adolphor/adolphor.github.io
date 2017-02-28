@@ -41,17 +41,25 @@ start()方法重新创建了一个线程,在main方法执行结束后,由于star
 因此主线程未能退出,直到线程thread也执行完毕.这里要注意,默认创建的线程是用户线程(非守护线程)
 
 
-
 ## 线程阻塞
 
 方法|说明
 ---|---
-sleep()|
-suspend()和resume()|
-yield()|
-wait()和notify()|
+sleep()| 允许指定以毫秒为单位的一段时间作为参数，它使得线程在指定的时间内进入阻塞状态，指定的时间一过，线程重新进入可执行状态。
+yield()|使得线程防窃当前分得的CPU时间，但不进入阻塞状态，即线程仍然处于可执行状态，随时可能再次分得CPU时间。调用yield() 的效果等价于调度程序认为该线程已执行了足够的时间从而转到另一个线程。
+（已废弃）suspend()和resume()|两个方法配套使用，suspend() 使得线程进入阻塞状态，并且不会自动恢复，直到使用resume()方法，才能使得线程进入可执行状态
+wait()和notify()|两个方法配套使用，wait()使得线程进入阻塞状态，他有两种形式，一种允许执行以毫秒为单位的一段时间作为参数，另一种没有参数。前者对应的notify()被调用或者超出指定时间时线程重新进入可执行状态，后者则必须对应的notify()被调用
+join()|join()方法使当前线程停下来等待，直至另一个调用join方法的线程终止。值得注意的是，线程的在被激活后不一定马上就运行，而是进入到可运行线程的队列中。但是join()可以通过interrupt()方法打断线程的暂停状态，从而使线程立刻抛出InterruptedException。
 
-待完善，白话JAVA虚拟机
+乍看，后两组方法没有区别，但事实上他们是不同的。
+
+suspend & resume | wait & notify
+---|---
+suspend 是Thread类的方法 | wait 是 Object 类的方法
+阻塞时都不会释放占用的锁（如果占用了的话）| 这一对方法阻塞时释放占用的锁，而锁是任何对象都具有的，调用任意对象的 wait() 方法导致线程阻塞，并 且该对象上的锁被释放。而调用 任意对象的notify()方法则导致因调用该对象的 wait() 方法而阻塞的线程中随机选择的一个解除阻塞（但要等 到获得锁后才真正可执行）。这一对方法却必须在 synchronized 方法或块中调用，理由也很简单，只有在 synchronized 方法或块中当前线程才占有锁，才有锁可以释放。
+
+参考：http://blog.csdn.net/apache012/article/details/9320805
+
 
 ## 线程局部变量
 
@@ -113,8 +121,7 @@ http://www.tuicool.com/articles/zuui6z
 * 给线程命名
 * 最小化同步范围
 * 优先使用volatile
-* 尽可能使用更高层次的并发工具而非使用wait和notify来实现
-线程通信，如BlockingQueue和Semeaphore
+* 尽可能使用更高层次的并发工具而非使用wait和notify来实现线程通信，如BlockingQueue和Semeaphore
 * 优先使用并发容器而非同步容器
 * 考虑使用线程池
 
@@ -136,8 +143,38 @@ CopyOnWriteArrayList等。并发容器使用了与同步容器完全不同的加
 可以并发的访问map，同时允许一定数量的写操作线程并发地修改map，
 所以它可以在并发环境下实现更高的吞吐量。
 
-## Volatile 变量 [ˈvɑ:lətl]
+## Volatile 关键字 [ˈvɑ:lətl]
+Java语言是支持多线程的，为了解决线程并发的问题，在语言内部引入了 同步块 和
+volatile 关键字机制。
 
+synchronized
+同步块大家都比较熟悉，通过 synchronized 关键字来实现，所有加上synchronized
+和 块语句，在多线程访问的时候，同一时刻只能有一个线程能够用synchronized 修饰
+的方法 或者 代码块。
+
+volatile
+用volatile修饰的变量，线程在每次使用变量的时候，都会读取变量修改后的最的值。
+volatile很容易被误用，用来进行原子性操作。
+
+
+## 可见性 && 原子性
+
+可见性，是指线程之间的可见性，一个线程修改的状态对另一个线程是可见的。也就是一个
+线程修改的结果。另一个线程马上就能看到。比如：用volatile修饰的变量，就会具有可
+见性。volatile修饰的变量不允许线程内部缓存和重排序，即直接修改内存。所以对其他
+线程是可见的。但是这里需要注意一个问题，volatile只能让被他修饰内容具有可见性，
+但不能保证它具有原子性。比如 volatile int a = 0；之后有一个操作 a++；这个变
+量a具有可见性，但是a++ 依然是一个非原子操作，也就是这个操作同样存在线程安全问题。
+
+原子是世界上的最小单位，具有不可分割性。比如 a=0；（a非long和double类型） 这个
+操作是不可分割的，那么我们说这个操作时原子操作。再比如：a++； 这个操作实际是
+a = a + 1；是可分割的，所以他不是一个原子操作。非原子操作都会存在线程安全问题，
+需要我们使用同步技术（sychronized）来让它变成一个原子操作。一个操作是原子操作，
+那么我们称它具有原子性。java的concurrent包下提供了一些原子类，我们可以通过阅读
+API来了解这些原子类的用法。比如：AtomicInteger、AtomicLong、AtomicReference等。　　
+
+
+https://www.ibm.com/developerworks/cn/java/j-jtp06197.html
 
 ## DelayQueue [kju]
 
@@ -151,6 +188,30 @@ http://developer.51cto.com/art/201403/432095.htm
 如果你还能说出很多种实现方式的话，那么继续问你，你觉得这些方式里哪个方式更好？
 如果你说出来某一个方式比较好的话，面试官依然可以继续问你，那如果让你来写的话，你觉得还有比它更好的实现方式吗？
 如果你这个时候依然可以说出来你自己更好的实现方式，那么面试官肯定还会揪着这个继续问你。
+
+CountDownLatch 的作用和 Thread.join() 方法类似，可用于一组线程和另外一组线程的
+协作。例如，主线程在做一项工作之前需要一系列的准备工作，只有这些准备工作都完成，主
+线程才能继续它的工作。这些准备工作彼此独立，所以可以并发执行以提高速度。在这个场景
+下就可以使用 CountDownLatch 协调线程之间的调度了。在直接创建线程的年代（Java 5.0
+之前），我们可以使用 Thread.join()。在 JUC 出现后，因为线程池中的线程不能直接被
+引用，所以就必须使用 CountDownLatch 了。
+
+
+
+CountDownLatch：
+一个线程等待一组线程执行完毕之后，再执行
+
+CyclicBarrier：
+一组线程等待到同一个时间点之后一起执行。
+
+
+
+# ConcurrentHashMap
+
+https://www.google.com/#newwindow=1&q=JDK8+ConcurrentHashMap+%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86&*
+http://www.cnblogs.com/huaizuo/p/5413069.html
+http://blog.csdn.net/u010723709/article/details/48007881
+
 
 
 
