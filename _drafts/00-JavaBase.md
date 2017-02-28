@@ -91,6 +91,18 @@ LinkedList底层实现是双向循环链表，不支持随机访问。
 
 另外，ArrayList的初始化大小是10。（相对于HashMap的初始化大小是16=2^4）
 
+#### foreach与正常for循环效率对比
+直接for循环效率最高，其次是迭代器和 ForEach操作。 作为语法糖，其实 ForEach 编译成 字节码之后，使用的是迭代器实现的，反编译后，testForEach方法如下：
+```
+public static void testForEach(List list) {
+    for (Iterator iterator = list.iterator(); iterator.hasNext();) {
+        Object t = iterator.next();
+        Object obj = t;
+    }
+}
+```
+可以看到，只比迭代器遍历多了生成中间变量这一步，因为性能也略微下降了一些。
+
 
 ####  HashMap原理机制自问自答
 来自：http://blog.csdn.net/wisgood/article/details/16342343
@@ -161,10 +173,6 @@ LinkedList底层实现是双向循环链表，不支持随机访问。
 |访问修饰符|可以有public，protected，default等修饰|只有默认public，不能使用其他修饰|
 |多继承|只能存在一个父类|可以实现多个接口|
 |添加新方法|添加新方法可以提供默认实现，不需要修改子类现有代码|如果添加新方法，JDK8之前的版本需要子类中进行实现|
-
-## 3、IO流
-
-FileInputStream，OutInputStream
 
 ## 8、基本数据类型
 
@@ -254,20 +262,88 @@ http://www.infoq.com/cn/articles/java-blocking-queue
 * hash加密
     - md5加密是典型应用
 
-# 4、Socket通信
+# 4、IO 相关
 
 问题来源：
 https://www.zhihu.com/search?type=content&q=java+%E9%9D%A2%E8%AF%95
 
-## BIO，NIO，NIO2，AIO
-IO包和NIO包的内容相对来说不是很多，首先NIO模型要熟悉，特别是其中的selector一定要非常清楚它的职责和实现原理。其实NIO的核心是IO线程池，一定要记住这个关键点。有的时候，面试官可能也会问你IO包的设计模式（装饰器模式），为什么要这样设计？
-有的面试官还会问你有没有更好的设计，这个时候如果你不知道请果断说自己现在的水平有限，想不出来更好的设计，千万不要信口开河，随意YY。
+## 3、IO流
 
-## select、poll、epoll之间的区别
-http://www.cnblogs.com/Anker/p/3265058.html
+字节流：InputStream,OutputStream => FileInputStream，OutInputStream
+字符流：reader,writer => FileReader,FileWriter
 
-Select在Java里指的是NIO包下的非阻塞套接字，把套解字和相应事件注册到Selector中，每次触发得到对应SelectionKey，再做相应处理。
-Poll一般指的是BlockingQueue接口和方法，和take区别在于是否有等待时间。貌似Linux下还有一个epoll机制？
+字节流主要处理二进制文件，比如图片，压缩包等等；
+字符流主要处理中文文字，一个字符占用两个字节。
+
+
+## BIO，NIO，AIO（NIO2）
+IO包和NIO包的内容相对来说不是很多，首先NIO模型要熟悉，特别是其中的selector
+一定要非常清楚它的职责和实现原理。其实NIO的核心是IO线程池，一定要记住这个关
+键点。有的时候，面试官可能也会问你IO包的设计模式（装饰器模式），为什么要这样
+设计？有的面试官还会问你有没有更好的设计，这个时候如果你不知道请果断说自己现
+在的水平有限，想不出来更好的设计，千万不要信口开河，随意YY。
+
+同步 & 异步：
+同步IO和异步IO，如何区分呢？首先一个IO操作其实分成了两个步骤：发起IO请求和
+实际的IO操作，同步IO和异步IO的区别就在于第二个步骤是否阻塞，如果实际的IO读
+写阻塞请求进程，那么就是同步IO，因此阻塞IO、非阻塞IO、IO复用、信号驱动IO都
+是同步IO，如果不阻塞，而是操作系统帮你做完IO操作再将结果返回给你，那么就是
+异步IO。
+同步指的是用户进程触发IO操作并等待或者轮询的去查看IO操作是否就绪。
+异步是指用户进程触发IO操作以后便开始做自己的事情，而当IO操作已经完成的时候
+会得到IO完成的通知（异步的特点就是通知）。
+同步和异步的概念描述的是用户线程与内核的交互方式：同步是指用户线程发起IO请
+求后需要等待或者轮询内核IO操作完成后才能继续执行；而异步是指用户线程发起IO
+请求后仍继续执行，当内核IO操作完成后会通知用户线程，或者调用用户线程注册的
+回调函数。
+
+阻塞 & 非阻塞：
+阻塞IO和非阻塞IO的区别在于第一步，发起IO请求是否会被阻塞，如果阻塞直到完成
+那么就是传统的阻塞IO，如果不阻塞，那么就是非阻塞IO。
+所谓阻塞方式的意思是指, 当试图对该文件描述符进行读写时, 如果当时没有东西可
+读,或者暂时不可写, 程序就进入等待 状态, 直到有东西可读或者可写为止。
+非阻塞状态下, 如果没有东西可读, 或者不可写, 读写函数马上返回, 而不会等待。
+阻塞和非阻塞的概念描述的是用户线程调用内核IO操作的方式：阻塞是指IO操作需要
+彻底完成后才返回到用户空间；而非阻塞是指IO操作被调用后立即返回给用户一个状
+态值，无需等到IO操作彻底完成。
+
+BIO，同步阻塞式IO，简单理解：一个连接一个线程
+NIO，同步非阻塞IO，简单理解：一个请求一个线程
+AIO，异步非阻塞IO，简单理解：一个有效请求一个线程
+
+BIO
+在JDK1.4之前，用Java编写网络请求，都是建立一个ServerSocket，然后，客户端
+建立Socket时就会询问是否有线程可以处理，如果没有，要么等待，要么被拒绝。
+即：一个连接，要求Server对应一个处理线程。
+
+NIO
+在Java里的由来，在JDK1.4及以后版本中提供了一套API来专门操作非阻塞I/O，我们
+可以在java.nio包及其子包中找到相关的类和接口。由于这套API是JDK新提供的I/O
+API，因此，也叫New I/O，这就是包名nio的由来。这套API由三个主要的部分组成：
+缓冲区（Buffers）、通道（Channels）和非阻塞I/O的核心类组成。在理解NIO的时
+候，需要区分，说的是New I/O还是非阻塞IO,New I/O是Java的包，NIO是非阻塞IO
+概念。这里讲的是后面一种。
+NIO本身是基于事件驱动思想来完成的，其主要想解决的是BIO的大并发问题。NIO基
+于Reactor，当socket有流可读或可写入socket时，操作系统会相应的通知引用程序
+进行处理，应用再将流读取到缓冲区或写入操作系统。也就是说，这个时候，已经不
+是一个连接就要对应一个处理线程了，而是有效的请求，对应一个线程，当连接没有
+数据时，是没有工作线程来处理的。
+
+AIO
+与NIO不同，当进行读写操作时，只须直接调用API的read或write方法即可。这两种
+方法均为异步的，对于读操作而言，当有流可读取时，操作系统会将可读的流传入
+read方法的缓冲区，并通知应用程序；对于写操作而言，当操作系统将write方法传
+递的流写入完毕时，操作系统主动通知应用程序。即可以理解为，read/write方法都
+是异步的，完成后会主动调用回调函数。
+
+参考：
+http://www.cnblogs.com/fanzhidongyzby/p/4098546.html
+
+## select/poll、epoll之间的区别
+select/poll：遍历注册器上注册的所有fd（socket文件描述符），如果准备就绪进行读写；
+epoll：使用事件驱动方式代替顺序扫描，性能更高，是select的升级解决方案。
+
+
 
 ## 
 
@@ -276,3 +352,9 @@ Poll一般指的是BlockingQueue接口和方法，和take区别在于是否有�
 ## 大数据架构解决方案
 
 http://www.iteye.com/topic/1128561
+
+
+## 参考
+https://zhuanlan.zhihu.com/p/23533393
+https://www.zhihu.com/question/50211894
+
