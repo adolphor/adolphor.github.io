@@ -343,9 +343,9 @@ excerpt:    各种开源协议的区别和选择
 
 ### 文章
 
-进行开源，别人可以转载、修改、收藏，但不能进行营利，需要保持版本说明。
+署名、非商业使用、进制演绎，
 
-我选择的是：[创意共享3.0](https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)
+选择的是：[创意共享3.0](https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)
 
 ## 参考资料
 
