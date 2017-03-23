@@ -36,7 +36,7 @@ jekyll server --drafts --incremental --port 1888
   - swift
 * UML
   - UML
-* Hadoop
+* bigData
   - Hadoop
 * database
   - mongodb
