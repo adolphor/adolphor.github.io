@@ -13,7 +13,7 @@ excerpt:    Redis源码安装和多服务配置
 
 ### 安装
 通过查看官网源码下载地址 `http://redis.io/download` 可知，
-当前最新版本为3.2.3，[下载地址](http://download.redis.io/releases/redis-3.2.3.tar.gz)，
+当前最新版本为3.2.3，[下载地址](http://download.redis.io/releases)，
 如果是其他版本，下面的命令替换版本号即可。进入下载目录，依次进行如下操作：
 
     # 下载
@@ -46,6 +46,11 @@ excerpt:    Redis源码安装和多服务配置
         # => (integer) 1
     get foo 
         # => (nil)
+
+其实编译完成之后，只要有redis-3.2.3/src/redis-server，之后指定redis.conf
+配置文件就可以运行了。redis-3.2.3/src/目录下还有一些其他可执行文件，比如用
+于cluster分布式的redis-trib.rb，以及测试客户端redis-cli，都可以拷贝出来直
+接使用。但是使用上面的方法进行安装之后可以自动生成6379.conf配置文件。
 
 ### 密码配置
 默认安装是没有配置密码的，如果想要配置密码，需要修改 `/etc/redis/6379.conf` 文件：
@@ -91,11 +96,12 @@ adolphor 替换为你需要的密码，为了方便地使用 `/etc/init.d/redis_
 的时候，输入不同于已存在得 6379 的端口号，比如 6380 之后回车即可。
 如果需要别的配置，参考 6379 服务的配置即可。
 
-
-## 配置参数详解
-TODO
+### 多节点通信
+默认情况下，指定客户端接口之后，比如设置了6379和6380两个实例，那么在
+redis cluster 架构下，两个节点进行通信的默认端口是客户端端口号 + 10000，
+也就是 16379 和 16380 两个端口。此端口只是节点直接使用二进制的数据方式
+进行数据的交换，不能用于客户端的连接。
 
 ## 参考资料
 
-{% highlight java %}
-{% endhighlight %}
+* [Redis cluster tutorial](https://redis.io/topics/cluster-tutorial)
