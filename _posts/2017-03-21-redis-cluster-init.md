@@ -46,11 +46,18 @@ redis启动实例的时候，一般都会指定客户端连接端口，默认的
 在redis中，有一个slot (槽) 的概念，将所有的存储空间分为16384个slot。存储的
 时候将key进行CRC16计算之后，对16384取模，得到的结果就是数据存储的slot位置。
 而slot可以存储在任意一个可以连接的服务器上，比如如果一共使用3台服务器，那么
-slot分布如下：
+slot可以设置分布如下：
 
 * Node A contains hash slots from 0 to 5500.
 * Node B contains hash slots from 5501 to 11000.
 * Node C contains hash slots from 11001 to 16383.
+
+如果使用默认的切分方式，那么分片结果为：
+
+* Node A slots: 0-5460 (5461 slots)
+* Node A slots: 5461-10922 (5462 slots)
+* Node A slots: 10923-16383 (5461 slots)
+
 
 ### 主从结构
 
