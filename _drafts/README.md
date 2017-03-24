@@ -34,21 +34,20 @@ jekyll server --drafts --incremental --port 1888
   - iOS
   - macOS
   - swift
-* UML
-  - UML
 * bigData
+  - 分布式
   - Hadoop
 * database
   - mongodb
-* cache
   - Redis
 * CS
   - CS
   - shell
+  - Linux
 * C/C++/C#
   - C/C++/C#
-* Linux
 * Tools
+  - UML
   - git
 * 共用
   - 读书笔记 
