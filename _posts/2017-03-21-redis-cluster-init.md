@@ -136,7 +136,12 @@ S: d0453790e80fbbf41a7296d2a005066b5b72c171 127.0.0.1:7004
    replicates 081da8052edae9a1b373569caa007733b47b50bd
 S: 73236ac83b7f3d1696c072027fd1b24fd4eedbc0 127.0.0.1:7005
    replicates 18c6ed2578cf04e44754ebc02ee04211f2e64cca
-Can I set the above configuration? (type 'yes' to accept): yes
+Can I set the above configuration? (type 'yes' to accept):
+```
+
+需要输入 `yes` 并回车继续：
+
+```
 >>> Nodes configuration updated
 >>> Assign a different config epoch to each node
 >>> Sending CLUSTER MEET messages to join the cluster
@@ -165,6 +170,8 @@ M: 18c6ed2578cf04e44754ebc02ee04211f2e64cca 127.0.0.1:7002
 >>> Check slots coverage...
 [OK] All 16384 slots covered.
 ```
+
+如果出现如上信息，则表示 cluster 启动完成。
 
 ### cluster测试
 
@@ -203,10 +210,4 @@ redis 127.0.0.1:7000> get hello
 * [redis集群搭建之二~使用redis-trib.rb方法](http://blog.csdn.net/naixiyi/article/details/51339374)
 * [redis cluster管理工具redis-trib.rb详解](http://blog.csdn.net/huwei2003/article/details/50973967)
 * [分布式缓存集群方案特性使用场景优缺点对比及选型](https://my.oschina.net/tantexian/blog/685620)
-
-
-## 问题
-
-* 虽然进行了集群，但是连接的时候连接哪个机器哪个端口呢？如果这个机器宕机，集
-群中的其他服务器是不是就无法使用了？
 
