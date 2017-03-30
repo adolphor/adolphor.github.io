@@ -49,5 +49,6 @@ jekyll server --drafts --incremental --port 1888
 * Tools
   - UML
   - git
+  - IDE
 * 共用
   - 读书笔记 
