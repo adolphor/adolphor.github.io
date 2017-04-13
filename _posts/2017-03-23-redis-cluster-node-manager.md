@@ -223,6 +223,18 @@ cd /home/redis/redis-cluster && \
 ./redis-trib.rb del-node 127.0.0.1:7000 8dc7291c74bd7fae0a23388464db7b8c63f211f5
 {% endhighlight %}
 
+删除成功信息：
+```
+>>> Removing node b75acaf4a0194d0c1b3cd15f967a802c83a85d8c from cluster 127.0.0.1:7000
+>>> Sending CLUSTER FORGET messages to the cluster...
+>>> SHUTDOWN the node.
+[8]   Done                    cd /home/redis/redis-cluster/7006/ && ../redis-server ./redis.conf
+>>> Removing node 8dc7291c74bd7fae0a23388464db7b8c63f211f5 from cluster 127.0.0.1:7000
+>>> Sending CLUSTER FORGET messages to the cluster...
+>>> SHUTDOWN the node.
+[10]-  Done                    cd /home/redis/redis-cluster/7007/ && ../redis-server ./redis.conf
+```
+
 ## 节点失效的处理
 
 cluster关闭之后会，调用的时候会出现如下信息：
