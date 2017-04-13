@@ -91,6 +91,7 @@ d0453790e80fbbf41a7296d2a005066b5b72c171 127.0.0.1:7004@17004 slave 081da8052eda
 
 * 新建7006文件夹
 * 添加redis.conf文件并修改对应的端口信息
+
 ```
 port 7006
 cluster-enabled yes
@@ -224,6 +225,7 @@ cd /home/redis/redis-cluster && \
 {% endhighlight %}
 
 删除成功信息：
+
 ```
 >>> Removing node b75acaf4a0194d0c1b3cd15f967a802c83a85d8c from cluster 127.0.0.1:7000
 >>> Sending CLUSTER FORGET messages to the cluster...
