@@ -19,11 +19,11 @@ excerpt:    Intellij Idea 导入一般的web项目以及相关配置
     - 首先配置application servers，也就是tomcat运行环境
     - 在project structure中选择modules，右边加号选择liberary，之后application servers
     中选择上面配置的server即可，相当于eclipse中的target runtime
-* Done
+* 之后在run/debug configuration 中配置运行环境即可
 
 ## 参考资料
 
-* [test](test.html)
+* 无
 
 {% highlight java %}
 {% endhighlight %}
