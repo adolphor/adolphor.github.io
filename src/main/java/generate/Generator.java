@@ -20,10 +20,10 @@ import java.util.Map;
 
 public class Generator {
 
-  private static String postTitle = "【Java8源码阅读笔记】Collection框架之Map";
-  private static String urlTitle = "JDK-source-code-Collection-Map";
+  private static String postTitle = "Docker基本操作";
+  private static String urlTitle = "docker-basic-operation";
   private static String categories = "[blog]";
-  private static String tags = "[Java]";
+  private static String tags = "[Docker]";
 
   private static Configuration cfg;
 

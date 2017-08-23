@@ -44,12 +44,12 @@ jekyll server --drafts --incremental --port 1888
   - CS
   - shell
   - Linux
+  - Docker
 * C/C++/C#
   - C/C++/C#
 * Tools
   - UML
   - git
   - IDE
-  - shell
 * 共用
   - 读书笔记 
