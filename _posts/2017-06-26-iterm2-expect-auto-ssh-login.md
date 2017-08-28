@@ -50,13 +50,13 @@ expect -version
 expect version 5.45
 ```    
 
-# 安装iterm2
+## 安装iterm2
 
 官网下载：`http://iterm2.com`，解压之后拖至应用程序即可。
 
-# 配置自动登录
+## 配置自动登录
 
-## expect脚本
+### expect脚本
 在`/usr/local/bin`目录新建`iterm2login.sh`文件，以及内容参考如下：
 
 {% highlight shell %}
@@ -85,7 +85,7 @@ chmod +x iterm2login.sh
 {% endhighlight %}
 
 
-## 配置itrem2
+### 配置itrem2
 
 添加profile，配置如下：
 ```
@@ -96,7 +96,14 @@ iterm2login.sh 22 root 192.168.0.2 admin
 ![iterm2login](/image/post/2017/06/26/20170626-0101-iterm2login.png)
 
 
-# 使用
+## 更改TAB页的title
 
-想要登陆的时候，选择profile即可自动登录了，现在的问题是不能改变title，当同时打开
-多个窗口的时候，不能够明显分辨出是哪个服务器，后续优化吧。
+* 先确保 Preference -> Appearance -> Show profile name 已经勾选上
+![iterm2login](/image/post/2017/06/26/20170626-0201-iterm2-preference.jpg)
+* 再打开 Preference -> Profiles，选中你要设置的 profile，点击右边的 Terminal 标签，
+![iterm2login](/image/post/2017/06/26/20170626-0202-iterm2-profile2.jpg)
+将 Terminal may set tab/window name 前的勾取消掉
+
+
+## 参考
+[iTerm2固定标签名字](http://littlewhite.us/archives/393)
