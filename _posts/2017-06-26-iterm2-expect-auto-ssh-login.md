@@ -13,7 +13,7 @@ excerpt:    iterm2 配合 expect 实现 SSH 自动登陆
 在知道了`expect`和`iterm2`之后，发现可以结合两者，实现自动输入密码快捷
 登录远程服务器的功能，废话少说，配置开始。
 
-# 安装expect
+## 安装expect
 使用HomeBrew的安装方式，首先确保此管理工具已经安装：
 
 {% highlight shell %}
