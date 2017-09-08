@@ -52,7 +52,9 @@ expect version 5.45
 
 ## 安装iterm2
 
-官网下载：`http://iterm2.com`，解压之后拖至应用程序即可。
+{% highlight shell %}
+brew cask install iterm2
+{% endhighlight %}
 
 ## 配置自动登录
 
