@@ -71,7 +71,7 @@ vim iterm2login.sh
 #!/usr/bin/expect
 
 set timeout 30
-spawn ssh -p [lindex $argv 0] [lindex $argv 1]@[lindex $argv 2]
+spawn ssh -p [lindex $argv 1] [lindex $argv 2]@[lindex $argv 0]
 expect {
         "(yes/no)?"
         {send "yes\n";exp_continue}
@@ -82,6 +82,7 @@ expect {
 }
 interact
 ```
+
 {% highlight shell %}
 chmod +x iterm2login.sh
 {% endhighlight %}
@@ -92,7 +93,7 @@ chmod +x iterm2login.sh
 添加profile，配置如下：
 ```
 # iterm2login.sh 端口号 用户 IP地址 密码
-iterm2login.sh 22 root 192.168.0.2 admin
+iterm2login.sh 192.168.0.2 22 root admin
 ```
 
 ![iterm2login](/image/post/2017/06/26/20170626-0101-iterm2login.png)
@@ -101,9 +102,9 @@ iterm2login.sh 22 root 192.168.0.2 admin
 ## 更改TAB页的title
 
 * 先确保 Preference -> Appearance -> Show profile name 已经勾选上
-![iterm2login](/image/post/2017/06/26/20170626-0201-iterm2-preference.jpg)
+![iterm2login](/image/post/2017/06/26/20170626-0201-iterm2-profile-name.jpg)
 * 再打开 Preference -> Profiles，选中你要设置的 profile，点击右边的 Terminal 标签，
-![iterm2login](/image/post/2017/06/26/20170626-0202-iterm2-profile2.jpg)
+![iterm2login](/image/post/2017/06/26/20170626-0202-iterm2-tab-title.jpg)
 将 Terminal may set tab/window name 前的勾取消掉
 
 
