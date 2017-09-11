@@ -92,7 +92,7 @@ chmod +x iterm2login.sh
 
 添加profile，配置如下：
 ```
-# iterm2login.sh 端口号 用户 IP地址 密码
+# iterm2login.sh IP地址 端口号 用户 密码
 iterm2login.sh 192.168.0.2 22 root admin
 ```
 
