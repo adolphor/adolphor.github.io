@@ -35,7 +35,7 @@ docker build --help
 ```
 其中Docker.qcow2文件比较大
 
-### 基于现有镜像创建容器
+### 官方镜像
 
 #### 搜索镜像
 ```
@@ -93,7 +93,7 @@ docker pull ubuntu
 # 指定TAG版本
 docker pull ubuntu:16.04
 ```
-#### 基于镜像创建容器
+### 基于镜像创建容器
 
 ```
 # 使用默认last镜像TAG生成随机容器名称
@@ -105,21 +105,21 @@ docker run —name myName i -t ubuntu /bin/bash
 # 退出的时候输入 exist 回车即可
 ```
 
-### 参数详解
+#### 参数详解
 * i
 
-- 创建后台守护容器：
+#### 创建后台守护容器：
 ```
 docker run -i -t -d ubuntu /bin/bash 随机名称
 ```
 
-### 查看容器列表
+#### 查看容器列表
 ```
 docker ps 当前运行容器
 docker ps -a 所有容器（包括停止运行的容器）
 ```
 
-### 查看某个容器详细信息
+#### 查看某个容器详细信息
 ```
 docker inspect dockerId/dockerName
 ```
@@ -165,9 +165,22 @@ docker images adolphor/static_web:demo01
 docker history ad2a3b2cc976
 ```
 
-？？？？创建之后的镜像在哪里？？？？？？
+### 推送镜像到docker仓库
+https://hub.docker.com/
+```
+docker push adolphor/static_web:demo01
+```
+只要用户名正确，如果没有static_web仓库的话会自动创建的
 
-## Dockerfile指令清单
+### 删除镜像
+删除本地镜像（此镜像下不能有关联的容器才可以删除）
+```
+docker rmi adolphor/static_web:demo01
+# 小技巧：删除所有容器
+docker rmi `docker images -a -q`
+```
+
+### Dockerfile指令清单
 
 * CMD
 * ENTRYPOINT
@@ -182,20 +195,6 @@ docker history ad2a3b2cc976
 * ARG
 * ONBUILD
 
-## 推送镜像到docker仓库
-https://hub.docker.com/
-```
-docker push adolphor/static_web:demo01
-```
-只要用户名正确，如果没有static_web仓库的话会自动创建的
-
-## 删除镜像
-删除本地镜像（此镜像下不能有关联的容器才可以删除）
-```
-docker rmi adolphor/static_web:demo01
-# 小技巧：删除所有容器
-docker rmi `docker images -a -q`
-```
 
 ## 参考资料
 
