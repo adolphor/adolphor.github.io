@@ -99,11 +99,11 @@ docker pull ubuntu:16.04
 # 使用默认last镜像TAG生成随机容器名称
 docker run -i -t ubuntu /bin/bash 
 # 使用默认last镜像TAG生成指定容器名称
-docker run —name myName i -t ubuntu /bin/bash 
+docker run --name myName -i -t ubuntu /bin/bash 
 # 指定镜像TAG生成指定容器名称
-docker run —name myName i -t ubuntu:16.04 /bin/bash 
+docker run --name myName -i -t ubuntu:16.04 /bin/bash 
 # 基于本地镜像生成指定容器名称
-docker run —name myName i -t adolphor/myImage:tag01 /bin/bash 
+docker run --name myName -i -t adolphor/myImage:tag01 /bin/bash 
 ```
 
 #### 创建后台守护容器：
@@ -125,11 +125,24 @@ docker inspect dockerId/dockerName
 ### 启动容器
 
 ```
-# 容器启动但是没有进入shell交互页：
+# 启动容器并进入bash交互
+docker start dockerId/dockerName -i
+# 容器启动但是不进入shell交互页：
 docker start dockerId/dockerName
-# 如果已经启动，则如下操作进入交互：
+# 如果已经启动，则如下操作进入交互(可能执行此命令之后需要一次回车操作)：
 docker attach dockerId/dockerName
 ```
+
+### 共享文件夹
+可以使用 `-v` 参数来挂在宿主机的文件夹到docker容器：
+```
+docker start rascms -i -v /Users/adolphor/IdeaProjects/joyoung:/root/joyoung/workspace /bin/bash
+```
+以上语句的含义为：初始化一个名为rascms的容器，并挂在宿主机的`/Users/adolphor/IdeaProjects/joyoung`目录到docker容器的
+`/root/joyoung/workspace`目录。
+
+注意：如果此容器关闭之后想要重新打开再次使用的时候，无需再次指定挂在目录，也就是只要执行 docker start 指令就行，无需其他参数。
+
 
 ### 日志
 ```
@@ -154,6 +167,12 @@ docker rm `docker ps -a -q`
 ```
 docker build -t="adolphor/myImage:tag01" .
 ```
+
+如果不想使用缓存镜像，需要添加如下参数：--no-cache
+```
+docker build -t adolphor/myImage:tag01 . --no-cache
+```
+
 ### 查看镜像创建过程
 ```
 docker images adolphor/myImage:tag01
@@ -198,5 +217,6 @@ docker rmi `docker images -a -q`
 
 * [docker官方文档](https://docs.docker.com/reference/)
 * 《第一本Docker书（修订版）》
+* [Docker — 从入门到实践](https://yeasy.gitbooks.io/docker_practice/content/)
 * [clean-docker-cache-for-mac](https://blog.mrtrustor.net/post/clean-docker-for-mac/)
 * [How to list all tags for a Docker image on a remote registry](https://stackoverflow.com/questions/28320134/how-to-list-all-tags-for-a-docker-image-on-a-remote-registry)
