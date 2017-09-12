@@ -28,6 +28,13 @@ docker build --help
 
 ## Docker容器基本操作
 
+### 本地镜像地址
+在MacOS系统中镜像地址是：
+```
+/Users/{username}/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux
+```
+其中Docker.qcow2文件比较大
+
 ### 基于现有镜像创建容器
 
 #### 搜索镜像
@@ -39,7 +46,7 @@ docker search ubuntu
 可以使用如下方法，查看上面镜像的所有标签。
 在`/usr/local/bin`目录下创建名为`dockertags`的文件，内容如下：
 
-```
+{% highlight shell %}
 #!/bin/bash
 
 if [ $# -lt 1 ]
@@ -67,8 +74,10 @@ then
 fi
 
 echo "${tags}"
-```
+{% endhighlight %}
+
 赋执行权限：
+
 ```
 chmod a+x dockertags
 ```
@@ -104,18 +113,18 @@ docker run —name myName i -t ubuntu /bin/bash
 docker run -i -t -d ubuntu /bin/bash 随机名称
 ```
 
-## 查看容器列表
+### 查看容器列表
 ```
 docker ps 当前运行容器
 docker ps -a 所有容器（包括停止运行的容器）
 ```
 
-## 查看某个容器详细信息
+### 查看某个容器详细信息
 ```
 docker inspect dockerId/dockerName
 ```
 
-## 启动容器
+### 启动容器
 
 ```
 # 容器启动但是没有进入shell交互页：
@@ -124,29 +133,22 @@ docker start dockerId/dockerName
 docker attach dockerId/dockerName
 ```
 
-## 日志
+### 日志
 ```
 docker logs dockerId/dockerName
 ```
 
-## 统计信息
+### 统计信息
 ```
 docker stats
 ```
 
-## 删除容器
+### 删除容器
 ```
 docker rm dockerId/dockerName
 # 小技巧：删除所有容器
 docker rm `docker ps -a -q`
 ```
-
-## 本地镜像地址
-在MacOS系统中镜像地址是：
-```
-/Users/{username}/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux
-```
-其中Docker.qcow2文件比较大
 
 ## Dockerfile
 ### 编写Dockerfile
