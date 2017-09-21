@@ -113,9 +113,9 @@ iterm2login.sh 192.168.0.2 22 root admin
 
 先在iCloud Drive创建保存配置的目录：
 
-```
+{% highlight shell %}
 mkdir -p iterm2/config
-```
+{% endhighlight %}
 
 iterm2中选择 Preferences，general页签下部勾选如下两个复选框：
 
