@@ -109,14 +109,20 @@ iterm2login.sh 192.168.0.2 22 root admin
 
 ## 保存iterm2的个性化配置
 
-为了防止配置丢失，或者重装系统能够恢复当前配置，我们可以把当前配置保存在iCloud中，
+为了防止配置丢失，或者重装系统能够恢复当前配置，可以把当前配置保存在iCloud中。
+
 先在iCloud Drive创建保存配置的目录：
+
 ```
 mkdir -p iterm2/config
 ```
+
 iterm2中选择 Preferences，general页签下部勾选如下两个复选框：
+
 ![iterm2login](/image/post/2017/06/26/20170626-0301-iterm2-config.jpg)
+
 浏览文件夹的时候选择刚才创建的目录，之后确认配置已经保存完毕：
+
 ![iterm2login](/image/post/2017/06/26/20170626-0302-iterm2-confirm.jpg)
 
 
