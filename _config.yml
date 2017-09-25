@@ -29,9 +29,6 @@ kramdown:
 # 代码高亮引擎（GitHub强制要求）
 highlighter: rouge
 
-# 多说
-#duoshuoId: adolphor
-
 # disqus
 disqusId: adolphor
 
