@@ -31,11 +31,11 @@ Hadoop并没有提供官方的 Windows 10 下的安装包，所以需要自己�
 
 ### JDK
 
-{% highlight shell %}
+```shell
 JAVA_HOME=JDK目录
 CLASSPATH=.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\jre\lib;
 PATH=%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
-{% endhighlight %}
+```
 
 注意：Hadoop2.6.5最好使用JDK1.7进行编译，使用1.8的时候，会有问题，我使用的版本如下：
 
@@ -49,10 +49,10 @@ Java HotSpot(TM) 64-Bit Server VM (build 24.51-b03, mixed mode)
 ### Maven
 下载地址：`http://maven.apache.org/download.cgi`，配置如下：
 
-{% highlight shell %}
+```shell
 M2_HOME=maven目录
 PATH=%M2_HOME%\bin;
-{% endhighlight %}
+```
 
 我使用的版本是3.3.9：
 
@@ -71,9 +71,9 @@ OS name: "windows 8", version: "6.2", arch: "amd64", family: "windows"
 ### ProtocolBuffer
 下载地址：`https://github.com/google/protobuf/releases/tag/v2.5.0`，选择 `protoc-2.5.0-win32.zip` 版本,
 解压到安装目录，并添加到PAHT，如下：
-{% highlight shell %}
+```shell
 PATH=C:\java\protoc-2.5.0-win32;
-{% endhighlight %}
+```
 
 测试：
 ```
@@ -86,10 +86,10 @@ libprotoc 2.5.0
 下载并解压到安装目录，并添加bin目录到PATH，由于cygwin中也带了个cmake，
 所以在Path中，cmake 的bin目录得加在cygwin的bin 目录之前：
 
-{% highlight shell %}
+```shell
 CMAKE_HOME=cmake目录
 PATH=%CMAKE_HOME%\bin;
-{% endhighlight %}
+```
 
 测试：
 ```
@@ -133,45 +133,45 @@ VS的版本选择有两种，第一使用推荐的VS2010版，使用这个版本
 ### Cygwin
 
 下载地址：`https://cygwin.com/install.html`，安装并添加bin目录到PAHT：
-{% highlight shell %}
+```shell
 CYGWIN_HOME=cygwin安装目录
 PATH=%CYGWIN_HOME%\bin;
-{% endhighlight %}
+```
 
 ### Zlib
 
 好像不安装Zlib也是可以编译成功，但还是安装下吧。可以网上找编译好的版本，也可以自己从源码编译。
 下载地址忘记了，自己搜下别人编译好的windows可用即可：
 
-{% highlight shell %}
+```shell
 ZLIB_HOME=zlib目录
 PATH=%ZLIB_HOME%\bin;
-{% endhighlight %}
+```
 
 ### 其它设置
 
 上面的设置好之后，还需要将如下配置增加到环境变量：
 
-{% highlight shell %}
+```shell
 Platform=x64
 VCTargetsPath=C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140
 MSBUILD_HOME=C:\Program Files (x86)\MSBuild\14.0\Bin
 PATH=%MSBUILD_HOME%;
-{% endhighlight %}
+```
 
 
 ## 编译
 
 一般指令如下所示：
 
-{% highlight shell %}
+```shell
 mvn clean package -Pdist,native-win -DskipTests -Dtar
-{% endhighlight %}
+```
 
 指令中加入 `-Dmaven.javadoc.skip=true` 参数，可以剔除指令文档的编译，如果使用的是JDK1.8，那么必须加入此参数才能编译通过：
-{% highlight shell %}
+```shell
 mvn clean package -Pdist,native-win -DskipTests -Dtar -Dmaven.javadoc.skip=true
-{% endhighlight %}
+```
 
 编译成功大概需要半小时，机器好的话可能更快，如果省略说明文档的编译也会提高速度，
 编译成功之后的目录为 `C:\dfs265\hadoop-dist\target`，成功信息显示如下：

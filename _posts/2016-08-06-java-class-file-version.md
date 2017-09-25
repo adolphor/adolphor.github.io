@@ -51,40 +51,40 @@ JDK/J2SDK|Default Source|Source Range|Default Target|Target Range
 
 ### 测试代码
     ClassVersionDemo.java
-{% highlight java %}
+```java
 public class ClassVersionDemo {
   public static void main(String[] args) {
     System.out.println("This is a test of class version.");
   }
 }
-{% endhighlight %}
+```
 
 编译指令：
-{% highlight shell %}
+```shell
 javac ClassVersionDemo.java
-{% endhighlight %}
+```
 
 ### 使用命令行查看
 
 On Unix / Linux:
-{% highlight shell %}
+```shell
 javap -verbose ClassVersionDemo | grep "major"
-{% endhighlight %}
+```
 
 On Windows:
-{% highlight shell %}
+```shell
 javap -verbose ClassVersionDemo | findstr "major"
-{% endhighlight %}
+```
 
 major version: 52，表示class文件版本为1.8。
 
 如果想要查看文件全部内容，使用如下指令：
-{% highlight shell %}
+```shell
 javap -verbose ClassVersionDemo
-{% endhighlight %}
+```
 
 结果如下：
-{% highlight java %}
+```java
 Classfile /M:/ClassVersionDemo.class
   Last modified 2016-8-6; size 458 bytes
   MD5 checksum 4362619f681e34fa4a732a4ea5c855f6
@@ -148,14 +148,14 @@ Constant pool:
         line 4: 8
 }
 SourceFile: "ClassVersionDemo.java"
-{% endhighlight %}
+```
 
 可以看到，“ minor version: 0，major version: 52 ”，也就是1.8。
 
 
 ### 从class文件源码查看
 使用文本编辑器（比如sublime Text）打开 ClassVersionDemo.class 文件，内容如下：
-{% highlight byte %}
+```
 cafe babe 0000 0034 001d 0a00 0600 0f09
 0010 0011 0800 120a 0013 0014 0700 1507
 0016 0100 063c 696e 6974 3e01 0003 2829
@@ -185,7 +185,7 @@ cafe babe 0000 0034 001d 0a00 0600 0f09
 0000 09b2 0002 1203 b600 04b1 0000 0001
 000a 0000 000a 0002 0000 0003 0008 0004
 0001 000d 0000 0002 000e 
-{% endhighlight %}
+```
 
 上面文件第一行，前四个字节——cafe babe，是magic字符，表示这个文件是一个class文件，  
 再后面两个字节 —— 0000，表示 minor version，小版本号，  

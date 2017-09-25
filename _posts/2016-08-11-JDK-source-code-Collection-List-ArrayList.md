@@ -14,9 +14,9 @@ ArrayList使用的是数组存储结构，所有数组的特性都可以用于�
 
 ArrayList非线程安全，如果有多线程共同操作这个list实例，就需要将其加锁，
 将锁加在包含这个list的对象上，或者使用如下形式：
-{% highlight java %}
+```java
 List list = Collections.synchronizedList(new ArrayList(...));
-{% endhighlight %}
+```
 
 ## 接口实现
 
@@ -30,7 +30,7 @@ List list = Collections.synchronizedList(new ArrayList(...));
 
 扩容代码具体实现如下：
 
-{% highlight java %}
+```java
 private void grow(int minCapacity) {
     // overflow-conscious code
     int oldCapacity = elementData.length;                   // 当前集合长度
@@ -42,7 +42,7 @@ private void grow(int minCapacity) {
     // minCapacity is usually close to size, so this is a win:
     elementData = Arrays.copyOf(elementData, newCapacity);  // 将数组拷贝到新集合中
 }
-{% endhighlight %}
+```
 
 所以当数组长度越大的时候，扩容消耗的资源越多；
 如果能够在数组初始化的时候大概估算出数组长度上限进行初始化，
@@ -50,7 +50,7 @@ private void grow(int minCapacity) {
 
 ### add (index, ele)
 定点插入元素到集合，实现方式是使用数组拷贝功能：
-{% highlight java %}
+```java
 public void add(int index, E element) {
     rangeCheckForAdd(index);            // 检查是否越界
     ensureCapacityInternal(size + 1);   // 保证集合有空余存储空间
@@ -59,12 +59,12 @@ public void add(int index, E element) {
     elementData[index] = element;       // 指定位置赋值
     size++;
 }
-{% endhighlight %}
+```
 
 ### trimToSize
 trimToSize方法用来释放list中空余的存储空间，当不指定list初始化大小的时候，元素增加过程中可能自动进行扩容，
 数据越多，可能空余的存储空间就越多，如果这个集合之后不进行增删操作，那么进行除空操作，能够节约内存空间：
-{% highlight java %}
+```java
 public void trimToSize() {
     modCount++;
     if (size < elementData.length) {
@@ -73,7 +73,7 @@ public void trimToSize() {
           : Arrays.copyOf(elementData, size);   // 非空，进行数据拷贝
     }
 }
-{% endhighlight %}
+```
 
 ### ensureCapacity
 用来进行手动扩容，扩容大小作为参数即可。具体实现参考add方法讲解中的"扩容代码具体实现"。
@@ -84,7 +84,7 @@ public void trimToSize() {
 
 ### indexOf
 查找元素在ArrayList中的位置，foreach遍历进行equals判断
-{% highlight java %}
+```java
 public int indexOf(Object o) {
     if (o == null) {    // 是否为空
         for (int i = 0; i < size; i++)  // 遍历
@@ -97,7 +97,7 @@ public int indexOf(Object o) {
     }
     return -1;
 }
-{% endhighlight %}
+```
 
 ### lastIndexOf
 查找最有一个所查元素在ArrayList中的位置，foreach倒叙遍历进行equals判断
@@ -108,8 +108,8 @@ public int indexOf(Object o) {
 时间复杂度为O(N)。
 
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```
 
 
 ## 参考资料

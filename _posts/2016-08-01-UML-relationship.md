@@ -30,7 +30,7 @@ UML图中类之间的关系有如下几种：依赖，关联，泛化，实现�
 * 在代码实现时，使用面向对象的继承机制来实现泛化关系，如在Java语言中使用extends关键字、在C++/C#中使用冒号“：”来实现。 
 * 在UML中，泛化关系用带空心三角形的直线来表示。
 
-{% highlight java %}
+```java
 public class Person {
   private String name;
   private String age;
@@ -47,7 +47,7 @@ public class Teacher extends Person{
   public void teach() {
   }
 }
-{% endhighlight %}
+```
 
 ![泛化关系UML](/image/post/2016/08/01/20160801-UML02.jpg)
 
@@ -59,7 +59,7 @@ public class Teacher extends Person{
 类中的操作实现了接口中所声明的操作。
 * 在UML中，类与接口之间的实现关系用带空心三角形的虚线来表示。
 
-{% highlight java %}
+```java
 public interface Animal {
   void eat();
   void sleep();
@@ -80,7 +80,7 @@ public class Panda implements Animal {
     System.out.println("睡树上");
   }
 }
-{% endhighlight %}
+```
 
 ![实现关系UML](/image/post/2016/08/01/20160801-UML03.jpg)
 
@@ -93,7 +93,7 @@ public class Panda implements Animal {
 * 在组合关系中，成员类是整体类的一部分，而且整体类可以控制成员类的生命周期，即成员类的存在依赖于整体类。
 * 在UML中，组合关系用带实心菱形的直线表示。
 
-{% highlight java %}
+```java
 public class Person {
   private Head head;
   private Arm leftArm;
@@ -107,7 +107,7 @@ public class Arm {
 }
 public class Leg {
 }
-{% endhighlight %}
+```
 
 > 备注：当然，对于胳膊和腿，因为左右是不一样的，可以再抽象出来一层父类。但本例，简单起见，不再进行抽象。
 
@@ -123,7 +123,7 @@ public class Leg {
 * 在聚合关系中，成员类是整体类的一部分，即成员对象是整体对象的一部分，但是成员对象可以脱离整体对象独立存在。
 * 在UML中，聚合关系用带空心菱形的直线表示。 
 
-{% highlight java %}
+```java
 public class Team {
   private Student student;
   public Team(Student student){
@@ -133,7 +133,7 @@ public class Team {
 public class Student {
 }
 
-{% endhighlight %}
+```
 ![聚合关系UML](/image/post/2016/08/01/20160801-UML05.jpg)
 
 ## 关联关系(Association `/ə,soʃɪ'eʃən/` )
@@ -158,7 +158,7 @@ public class Student {
 m..n | 表示另一个类的一个对象与最少m、最多n个该类对象有关系 (m<=n)
 
 
-{% highlight java %}
+```java
 public class Teacher {
   private Student[] students; // 一对多
 }
@@ -169,7 +169,7 @@ public class Student {
 public class StudentCard {
   private Student student;
 }
-{% endhighlight %}
+```
 
 ![关联关系UML](/image/post/2016/08/01/20160801-UML06.jpg)
 
@@ -183,7 +183,7 @@ public class StudentCard {
 * 在UML中，依赖关系用带箭头的虚线表示，由依赖的一方指向被依赖的一方。
 
 
-{% highlight java %}
+```java
 class Driver {
   public void drive(Car car) {
     car.move();
@@ -194,7 +194,7 @@ class Car {
     System.out.println("move……");
   }
 }
-{% endhighlight %}
+```
 
 ![依赖关系UML](/image/post/2016/08/01/20160801-UML01.png)
 

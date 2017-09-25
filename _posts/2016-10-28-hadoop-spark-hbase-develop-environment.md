@@ -38,20 +38,20 @@ excerpt:    Hadoop，Spark，HBase 开发环境配置
 
 ### 生成公匙和密匙
 
-{% highlight shell %}
+```shell
 # 安装 openssh
 $ sudo apt-get install openssh-server
 # 生成密匙对
 $ ssh-keygen -t rsa
 # 将公钥加入被认证的公钥文件
 $ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-{% endhighlight %}
+```
 
 ###  验证
 
-{% highlight shell %}
+```shell
 $ ssh localhost
-{% endhighlight %}
+```
 
 如果显示如下内容，表示配置成功：
 
@@ -83,7 +83,7 @@ applicable law.
 
 ### hadoop-env.sh
 
-{% highlight shell %}
+```shell
 # 将
 export JAVA_HOME=${JAVA_HOME}
 export HADOOP_LOG_DIR=${HADOOP_LOG_DIR}
@@ -98,16 +98,16 @@ export HADOOP_PID_DIR=/home/adolphor/workspace/hadoop-2.6.0/pid
 export HADOOP_SECURE_DN_PID_DIR=/home/adolphor/workspace/hadoop-2.6.0/pid
 # 新增
 export HADOOP_PREFIX=/home/adolphor/workspace/hadoop-2.6.0
-{% endhighlight %}
+```
 
 
 ### yarn-env.sh
 
-{% highlight shell %}
+```shell
 # 新增
 export JAVA_HOME=/home/adolphor/workspace/jdk1.8.0_102
 export YARN_LOG_DIR=/home/adolphor/workspace/logs/yarn
-{% endhighlight %}
+```
 
 ### core-site.xml
 
@@ -119,12 +119,12 @@ export YARN_LOG_DIR=/home/adolphor/workspace/logs/yarn
 
 自定义配置：
 
-{% highlight xml %}
+```xml
 <property>
   <name>fs.defaultFS</name>
   <value>hdfs://localhost:9000</value>
 </property>
-{% endhighlight %}
+```
 
 ### hdfs-site.xml
 
@@ -135,7 +135,7 @@ export YARN_LOG_DIR=/home/adolphor/workspace/logs/yarn
 ```
 
 自定义配置：
-{% highlight xml %}
+```xml
 <property>
   <name>dfs.replication</name>
   <value>1</value>
@@ -156,7 +156,7 @@ export YARN_LOG_DIR=/home/adolphor/workspace/logs/yarn
   <value>file:///home/adolphor/workspace/data/hadoop/dfs/namesecondary</value>
   <description>默认是${hadoop.tmp.dir}/dfs/namesecondary</description>
 </property>
-{% endhighlight %}
+```
 
 ### mapred-site.xml
 
@@ -167,13 +167,13 @@ export YARN_LOG_DIR=/home/adolphor/workspace/logs/yarn
 ```
 
 从`mapred-site.xml.template`复制并更名为`mapred-site.xml`，自定义配置：
-{% highlight xml %}
+```xml
 <property>
   <name>mapreduce.framework.name</name>
   <value>yarn</value>
   <description>默认local，可选：local, classic 或 yarn</description>
 </property>
-{% endhighlight %}
+```
 
 ### yarn-site.xml
 
@@ -184,7 +184,7 @@ export YARN_LOG_DIR=/home/adolphor/workspace/logs/yarn
 ```
 
 自定义配置：
-{% highlight xml %}
+```xml
 <property>
   <name>yarn.resourcemanager.hostname</name>
   <value>localhost</value>
@@ -195,16 +195,16 @@ export YARN_LOG_DIR=/home/adolphor/workspace/logs/yarn
   <value>mapreduce_shuffle</value>
   <description>NodeManager上运行的附属服务。需配置成mapreduce_shuffle，才可运行MapReduce程序</description>
 </property>
-{% endhighlight %}
+```
 
 ### 初始化
 
 初始化指令：
 
-{% highlight shell %}
+```shell
 $ cd /home/adolphor/workspace/hadoop-2.6.0
 $ ./bin/hdfs namenode -format
-{% endhighlight %}
+```
 
 显示如果结果表示初始化成功：
 
@@ -228,12 +228,12 @@ SHUTDOWN_MSG: Shutting down NameNode at ubuntu/127.0.1.1
 
 启动指令：
 
-{% highlight shell %}
+```shell
 #启动HDFS
 $ ./sbin/start-dfs.sh
 #启动资源管理器
 $ ./sbin/start-yarn.sh
-{% endhighlight %}
+```
 
 启动日志：
 
@@ -251,7 +251,7 @@ localhost: starting nodemanager, logging to /home/adolphor/workspace/logs/yarn/y
 
 查看启动结果：
 
-{% highlight shell %}
+```shell
 $ jps
 
 16643 SecondaryNameNode
@@ -260,7 +260,7 @@ $ jps
 16903 NodeManager
 16938 Jps
 16476 DataNode
-{% endhighlight %}
+```
 
 页面管理地址：
 http://localhost:50070
@@ -269,7 +269,7 @@ http://localhost:50070
 
 ### spark-env.sh
 从 `spark-env.sh.template` 复制并更名为 `spark-env.sh` ，
-{% highlight shell %}
+```shell
 export JAVA_HOME=/home/adolphor/workspace/jdk1.8.0_102
 export SCALA_HOME=/home/adolphor/workspace/scala-2.11.8
 export HADOOP_HOME=/home/adolphor/workspace/hadoop-2.6.0
@@ -280,7 +280,7 @@ export SPARK_PID_DIR=$SPARK_HOME/pid
 export SPARK_LOCAL_DIRS=/home/adolphor/workspace/data/spark/local
 export SPARK_WORKER_DIR=/home/adolphor/workspace/data/spark/work
 export SPARK_LOG_DIR=/home/adolphor/workspace/logs/spark
-{% endhighlight %}
+```
 
 ### 其它配置
 
@@ -290,10 +290,10 @@ export SPARK_LOG_DIR=/home/adolphor/workspace/logs/spark
 
 ### 启动
 
-{% highlight shell %}
+```shell
 $ cd /home/adolphor/workspace/spark-2.0.1-bin-hadoop2.6
 $ ./sbin/start-all.sh
-{% endhighlight %}
+```
 
 启动日志：
 ```
@@ -308,17 +308,17 @@ http://localhost:8080
 
 ### hbase-env.sh
 
-{% highlight shell %}
+```shell
 export JAVA_HOME=/home/adolphor/workspace/jdk1.8.0_102
 export HBASE_PID_DIR=/home/adolphor/workspace/hbase-1.0.3/pids
 export HBASE_LOG_DIR=/home/adolphor/workspace/logs/hbase
 export HBASE_MANAGES_ZK=true
 HBASE_ROOT_LOGGER=INFO,DRFA
-{% endhighlight %}
+```
 
 
 ### hbase-site.xml
-{% highlight xml %}
+```xml
 <property>
   <name>hbase.rootdir</name>
   <value>file:///home/adolphor/workspace/hbase-1.0.3</value>
@@ -327,14 +327,14 @@ HBASE_ROOT_LOGGER=INFO,DRFA
   <name>hbase.tmp.dir</name>
   <value>/home/adolphor/workspace/data/hbase/tmp</value>
 </property>
-{% endhighlight %}
+```
 
 ### 启动
 
-{% highlight shell %}
+```shell
 $ cd /home/adolphor/workspace/hbase-1.0.3
 $ ./bin/start-hbase.sh
-{% endhighlight %}
+```
 
 
 启动日志：
@@ -345,12 +345,12 @@ starting master, logging to /home/adolphor/workspace/logs/hbase/hbase-adolphor-m
 
 查看进程：
 
-{% highlight shell %}
+```shell
 $ jps
 
 18072 HMaster
 18171 Jps
-{% endhighlight %}
+```
 
 ### 测试
 
@@ -359,7 +359,7 @@ $ jps
 
 方便启动和关闭：
 
-{% highlight shell %}
+```shell
 #! /bin/bash
 
 HADOOP_HOME=/home/adolphor/workspace/hadoop-2.6.0/
@@ -426,7 +426,7 @@ esac
 echo "============================ successed ============================"
 exit 0
 
-{% endhighlight %}
+```
 
 ## 参考文档
 * Hadoop docs：

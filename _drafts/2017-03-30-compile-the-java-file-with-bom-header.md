@@ -18,5 +18,5 @@ excerpt:    含有BOM头Java文件的编译问题
 
 * [test](test.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

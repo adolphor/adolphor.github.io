@@ -16,7 +16,7 @@ excerpt:    Linux环境下使用CLion编写swift项目
 先下载当前最新版的swift-3.0.2，下载地址：`https://swift.org/download/#releases`，
 将其解压在当前用户的workspace目录下：
 
-{% highlight shell %}
+```shell
 # 安装依赖包
 $ sudo apt-get install clang
 # 配置swift环境变量
@@ -26,17 +26,17 @@ export PATH=${SWIFT_HOME}/usr/bin:$PATH
 $ source ~/.bashrc
 # 测试
 $ swift --version
-{% endhighlight %}
+```
 
 ### 创建swift项目
-{% highlight shell %}
+```shell
 # 创建swift项目目录
 $ cd ～
 $ mkdir CLionProjects && cd CLionProjects
 $ mkdir helloSwift && cd helloSwift
 # 创建swift项目
 $ swift package init --type executable
-{% endhighlight %}
+```
 ```
 Creating executable package: helloSwift
 Creating Package.swift
@@ -45,18 +45,18 @@ Creating Sources/
 Creating Sources/main.swift
 Creating Tests/
 ```
-{% highlight shell %}
+```shell
 # 编译
 $ swift build
-{% endhighlight %}
+```
 ```
 Compile Swift Module 'helloSwift' (1 sources)
 Linking ./.build/debug/helloSwift
 ```
-{% highlight shell %}
+```shell
 # 运行
 $ .build/debug/helloSwift
-{% endhighlight %}
+```
 ```
 Hello, world!
 ```
@@ -66,10 +66,10 @@ Hello, world!
 ### 安装CLion
 CLion下载地址：`http://www.jetbrains.com/clion/`，下载之后解压至安装目录`$HOME/workspace/clion-2016.3.2`，
 进入`bin`文件，使用shell命令启动CLion，最好勾选创建快捷方式选项。
-{% highlight shell %}
+```shell
 $ cd $HOME/workspace/clion-2016.3.2
 $ sh clion.sh
-{% endhighlight %}
+```
 
 ### 安装CLion的swift插件
 插件下载地址：`https://plugins.jetbrains.com/clion/plugin/8240-swift`，
@@ -163,7 +163,7 @@ Package.swift Sources/main.swift
 
 开启ubuntu子系统之后，进行如下配置：
 
-{% highlight shell %}
+```shell
 # 安装编译组件
 $ apt-get install build-essential
 # 安装3.6版本之上的clang
@@ -177,7 +177,7 @@ $ mkdir helloSwift && cd helloSwift
 $ swift package init --type executable
 # 编译及运行
 $ swift build && .build/debug/helloSwift
-{% endhighlight %}
+```
 
 然后就可以导入windows下的CLion进行代码的编写了，编写完成之后使用bash进行编译及运行。
 

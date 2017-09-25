@@ -13,16 +13,6 @@ excerpt:    macOS下mongodb的安装和GUI工具介绍
 
 ### mongodb的安装
 
-```sbtshell
-# 查找
-brew search mongodb
-# 安装
-brew install mongodb
-# 重启
-brew services restart mongodb
-brew services stop mongodb
-brew services start mongodb
-```
 ```shell
 # 查找
 brew search mongodb
@@ -33,31 +23,9 @@ brew services restart mongodb
 brew services stop mongodb
 brew services start mongodb
 ```
-```Shell
-# 查找
-brew search mongodb
-# 安装
-brew install mongodb
-# 重启
-brew services restart mongodb
-brew services stop mongodb
-brew services start mongodb
-```
-
-```java
-public abstract class TicketSeller {
-  abstract void sell(String java);
-}
-```
-
-```Java
-public abstract class TicketSeller {
-  abstract void sell(String Java);
-}
-```
-
 
 直接使用`mongo`命令进行连接：
+
 ```
 ongoDB shell version v3.4.9
 connecting to: mongodb://127.0.0.1:27017
@@ -72,7 +40,7 @@ Server has startup warnings:
 ### mongodb的默认配置
 * 查看配置文件路径：
 
-```Shell
+```shell
 # mongodb相关信息
 brew info mongodb
 ```
@@ -96,7 +64,7 @@ Or, if you don't want/need a background service you can just run:
 
 * 查看具体配置信息：
 
-```Shell
+```shell
 cat /usr/local/etc/mongod.conf
 ```
 
@@ -120,7 +88,7 @@ net:
 
 * 创建用户
 
-```Shell
+```shell
 use admin
 db.createUser(
   {
@@ -133,7 +101,7 @@ db.createUser(
 * 修改配置
 
 
-```Shell
+```shell
 vi /usr/local/etc/mongod.conf
 ```
 
@@ -154,13 +122,13 @@ security:
 
 * 重启应用
 
-```Shell
+```shell
 brew services restart mongodb
 ```
 
 * 命令行连接
 
-```Shell
+```shell
 mongo --port 27017 -u "superAdmin" -p "admin123" --authenticationDatabase "admin"
 ```
 

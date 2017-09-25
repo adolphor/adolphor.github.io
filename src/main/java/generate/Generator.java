@@ -20,10 +20,10 @@ import java.util.Map;
 
 public class Generator {
 
-  private static String postTitle = "Docker基本操作";
-  private static String urlTitle = "docker-basic-operation";
+  private static String postTitle = "macOS下mongodb的安装和GUI工具介绍";
+  private static String urlTitle = "installation-of-mongodb-on-macos-and-the-introduction-of-gui-tools";
   private static String categories = "[blog]";
-  private static String tags = "[Docker]";
+  private static String tags = "[mongodb]";
 
   private static Configuration cfg;
 

@@ -13,12 +13,12 @@ excerpt:    Docker基本操作
 
 ### 查看docker信息
 
-```
+```shell
 docker info
 ```
 
 ###  帮助信息
-```
+```shell
 # docker帮助信息
 docker
 docker help
@@ -38,7 +38,7 @@ docker build --help
 ### 官方镜像
 
 #### 搜索镜像
-```
+```shell
 docker search ubuntu
 ```
 #### 查看镜像所有TAG
@@ -46,7 +46,7 @@ docker search ubuntu
 可以使用如下方法，查看上面镜像的所有标签。
 在`/usr/local/bin`目录下创建名为`dockertags`的文件，内容如下：
 
-{% highlight shell %}
+```shell
 #!/bin/bash
 
 if [ $# -lt 1 ]
@@ -74,28 +74,28 @@ then
 fi
 
 echo "${tags}"
-{% endhighlight %}
+```
 
 赋执行权限：
 
-```
+```shell
 chmod a+x dockertags
 ```
 
 使用范例：
-```
+```shell
 dockertags ubuntu
 ```
 
 #### 下载镜像
-```
+```shell
 docker pull ubuntu
 # 指定TAG版本
 docker pull ubuntu:16.04
 ```
 ### 基于镜像创建容器
 
-```
+```shell
 # 使用默认last镜像TAG生成随机容器名称
 docker run -i -t ubuntu /bin/bash 
 # 使用默认last镜像TAG生成指定容器名称
@@ -107,24 +107,26 @@ docker run --name myName -i -t adolphor/myImage:tag01 /bin/bash
 ```
 
 #### 创建后台守护容器：
-```
+```shell
 docker run -i -t -d ubuntu /bin/bash
 ```
 
 #### 查看容器列表
-```
+
+```shell
 docker ps 当前运行容器
 docker ps -a 所有容器（包括停止运行的容器）
 ```
 
 #### 查看某个容器详细信息
-```
+
+```shell
 docker inspect dockerId/dockerName
 ```
 
 ### 启动容器
 
-```
+```shell
 # 启动容器并进入bash交互
 docker start dockerId/dockerName -i
 # 容器启动但是不进入shell交互页：
@@ -135,7 +137,7 @@ docker attach dockerId/dockerName
 
 ### 共享文件夹
 可以使用 `-v` 参数来挂在宿主机的文件夹到docker容器：
-```
+```shell
 docker start rascms -i -v /Users/adolphor/IdeaProjects/joyoung:/root/joyoung/workspace /bin/bash
 ```
 以上语句的含义为：初始化一个名为rascms的容器，并挂在宿主机的`/Users/adolphor/IdeaProjects/joyoung`目录到docker容器的
@@ -145,17 +147,17 @@ docker start rascms -i -v /Users/adolphor/IdeaProjects/joyoung:/root/joyoung/wor
 
 
 ### 日志
-```
+```shell
 docker logs dockerId/dockerName
 ```
 
 ### 统计信息
-```
+```shell
 docker stats
 ```
 
 ### 删除容器
-```
+```shell
 docker rm dockerId/dockerName
 # 小技巧：删除所有容器
 docker rm `docker ps -a -q`
@@ -164,34 +166,34 @@ docker rm `docker ps -a -q`
 ## Dockerfile
 ### 编写Dockerfile
 ### 执行Dockerfile
-```
+```shell
 docker build -t="adolphor/myImage:tag01" .
 ```
 
 如果不想使用缓存镜像，需要添加如下参数：--no-cache
-```
+```shell
 docker build -t adolphor/myImage:tag01 . --no-cache
 ```
 
 ### 查看镜像创建过程
-```
+```shell
 docker images adolphor/myImage:tag01
 ```
 ### 查看镜像创建过程
-```
+```shell
 docker history ad2a3b2cc976
 ```
 
 ### 推送镜像到docker仓库
 https://hub.docker.com/
-```
+```shell
 docker push adolphor/myImage:tag01
 ```
 只要用户名正确，如果没有static_web仓库的话会自动创建的
 
 ### 删除镜像
 删除本地镜像（此镜像下不能有关联的容器才可以删除）
-```
+```shell
 docker rmi adolphor/myImage:tag01
 # 小技巧：删除所有容器
 docker rmi `docker images -a -q`

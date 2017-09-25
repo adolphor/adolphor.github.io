@@ -18,7 +18,7 @@ excerpt:    【Java8源码阅读笔记】Collection框架之AbstractCollection
 ## 实现的方法
 
 ### boolean addAll(Collection<? extends E> c)
-{% highlight java %}
+```java
 public boolean addAll(Collection<? extends E> c) {
     boolean modified = false;
     for (E e : c)        // 遍历新增
@@ -26,10 +26,10 @@ public boolean addAll(Collection<? extends E> c) {
             modified = true;
     return modified;
 }
-{% endhighlight %}
+```
 
 ### boolean remove(Object o)
-{% highlight java %}
+```java
 public boolean remove(Object o) {
     Iterator<E> it = iterator();    // 需要子类实现iterator方法
     if (o==null) {
@@ -49,10 +49,10 @@ public boolean remove(Object o) {
     }
     return false;
 }
-{% endhighlight %}
+```
 
 ### boolean removeAll(Collection<?> c)
-{% highlight java %}
+```java
 public boolean removeAll(Collection<?> c) {
     Objects.requireNonNull(c);
     boolean modified = false;
@@ -65,10 +65,10 @@ public boolean removeAll(Collection<?> c) {
     }
     return modified;
 }
-{% endhighlight %}
+```
 
 ### boolean retainAll(Collection<?> c)
-{% highlight java %}
+```java
 public boolean retainAll(Collection<?> c) {
     Objects.requireNonNull(c);
     boolean modified = false;
@@ -81,10 +81,10 @@ public boolean retainAll(Collection<?> c) {
     }
     return modified;
 }
-{% endhighlight %}
+```
 
 ### boolean contains(Object o)
-{% highlight java %}
+```java
 public boolean contains(Object o) {
     Iterator<E> it = iterator();    // 需要子类实现add方法
     if (o==null) {
@@ -99,7 +99,7 @@ public boolean contains(Object o) {
     return false;
 }
 public abstract Iterator<E> iterator();
-{% endhighlight %}
+```
 
 遍历集合进行元素的对比，当集合中有元素与参数`equals`（相等），则返回true。
 equals 是集合中的元素的方法实现。如果有覆写，则按照覆写之后的规则进行比较。
@@ -128,17 +128,17 @@ AbstractCollection虽然实现了`contains`方法，但是并没有实现`iterat
     * PriorityQueue：内部存储结构是数组，依赖于`private int indexOf(Object o)`方法，遍历数组进行equals方法  
 
 ### boolean containsAll(Collection<?> c)
-{% highlight java %}
+```java
 public boolean containsAll(Collection<?> c) {
     for (Object e : c)
         if (!contains(e)) // contains需要子类实现iterator方法，参考本文最上面的contains方法
             return false;
     return true;
 }
-{% endhighlight %}
+```
 
 ### void clear()
-{% highlight java %}
+```java
 public void clear() {
     Iterator<E> it = iterator();    // 需要子类实现iterator方法
     while (it.hasNext()) {          // 遍历移除
@@ -146,17 +146,17 @@ public void clear() {
         it.remove();
     }
 }
-{% endhighlight %}
+```
 
 ### boolean isEmpty()
-{% highlight java %}
+```java
 public boolean isEmpty() {
     return size() == 0;
 }
-{% endhighlight %}
+```
 
 ### Object[] toArray()
-{% highlight java %}
+```java
 public Object[] toArray() {
     // Estimate size of array; be prepared to see more or fewer elements
     Object[] r = new Object[size()];
@@ -168,7 +168,7 @@ public Object[] toArray() {
     }
     return it.hasNext() ? finishToArray(r, it) : r;     // finishToArray用来修正toArray方法执行过程中的数组长度的变化
 }
-{% endhighlight %}
+```
 
 同样的，虽然实现类只需要实现`iterator()`方法即可，但是各实现类大部分还是拥有自己的`toArray`实现：
 
@@ -200,7 +200,7 @@ public Object[] toArray() {
 ### <T> T[] toArray(T[] a)
 指定数据类型的数组转换
 
-{% highlight java %}
+```java
 public <T> T[] toArray(T[] a) {
     // Estimate size of array; be prepared to see more or fewer elements
     int size = size();
@@ -228,11 +228,11 @@ public <T> T[] toArray(T[] a) {
     // more elements than expected
     return it.hasNext() ? finishToArray(r, it) : r;
 }
-{% endhighlight %}
+```
 
 
 ### String toString()
-{% highlight java %}
+```java
 public String toString() {
     Iterator<E> it = iterator();
     if (! it.hasNext())
@@ -247,18 +247,18 @@ public String toString() {
         sb.append(',').append(' ');
     }
 }
-{% endhighlight %}
+```
 
 
 ## 未实现方法
 
 ### boolean add(E e)
 add方法是一个比较特殊的存在，它并不是抽象方法，但也并没有完全实现，而是需要子类去覆写，在本抽象类中的实现方式如下：
-{% highlight java %}
+```java
 public boolean add(E e) {
     throw new UnsupportedOperationException();
 }
-{% endhighlight %}
+```
 
 本方法只是抛出了一个未支持的操作的异常信息，既然如此，为什么不直接设置为抽象呢？
 

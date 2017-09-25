@@ -82,13 +82,13 @@ redis cluster使用了主从备份的方法。一个主服务器可以配置一�
 
 进入目录，从github下载主干最新代码，并编译：
 
-{% highlight shell %}
+```shell
 cd ~/redis/
 git clone https://github.com/antirez/redis.git redis-unstable
 cd ~/redis/redis-unstable
 make
 make test
-{% endhighlight %}
+```
 
 编译完成之后，会在redis-unstable/src目录下生成redis-service可运行程序。
 只要有此程序辅以相应的配置文件配置，就可以运行redis程序实现相关功能操作。
@@ -98,14 +98,14 @@ make test
 配置cluster使用到了redis-trib.rb工具，此工具需要系统安装了ruby，以及
 gem中安装redis组件：
 
-{% highlight shell %}
+```shell
 ruby -v
 gem install redis
-{% endhighlight %}
+```
 
 之后，创建6个实例目录，以及相关配置文件，并启动：
 
-{% highlight shell %}
+```shell
 cd /home/redis/redis-cluster
 mkdir 7000 7001 7002 7003 7004 7005
 # 在这6个目录下分别创建redis.conf文件，相应端口设置为和文件夹名称一致即可：
@@ -132,7 +132,7 @@ cp /home/redis/redis-unstable/src/redis-trib.rb /home/redis/redis-cluster/
 cd /home/redis/redis-cluster
 ./redis-trib.rb create --replicas 1 127.0.0.1:7000 \
 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005
-{% endhighlight %}
+```
 
 启动成功之后会有如下信息显示：
 
@@ -199,14 +199,14 @@ M: 18c6ed2578cf04e44754ebc02ee04211f2e64cca 127.0.0.1:7002
 
 使用redis-cli测试客户端，也是从编译好的目录中拷贝到cluster目录，比较清晰：
 
-{% highlight shell %}
+```shell
 # 拷贝测试客户端
 cp /home/redis/redis-unstable/src/redis-cli /home/redis/redis-cluster/
 cd /home/redis/redis-cluster/
 
 # 启动
 redis-cli -c -p 7000
-{% endhighlight %}
+```
 
 测试具体操作
 ```

@@ -60,19 +60,19 @@ For check, fix, reshard, del-node, set-timeout you can specify the host and port
 
 初始化节点配置上文已经操作过：
 
-{% highlight shell %}
+```shell
 ./redis-trib.rb create --replicas 1 127.0.0.1:7000 \
 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005
-{% endhighlight %}
+```
 
 ## 查看当前节点信息
 
-{% highlight shell %}
+```shell
 # 使用cli登陆任一节点
 redis-cli -c -p 7000
 # 查看cluster信息
 cluster nodes
-{% endhighlight %}
+```
 
 ```
 127.0.0.1:7000> cluster nodes
@@ -107,19 +107,19 @@ loglevel debug
 
 #### 启动实例
 
-{% highlight shell %}
+```shell
 cd /home/redis/redis-cluster/7006/ && \
 ../redis-server ./redis.conf &
-{% endhighlight %}
+```
 
 #### 增加实例为 master
 
 使用 `redis-trib.rb` 工具，管理节点：
 
-{% highlight shell %}
+```shell
 cd /home/redis/redis-cluster && \
 ./redis-trib.rb  add-node 127.0.0.1:7006 127.0.0.1:7000
-{% endhighlight %}
+```
 
 此时，再次使用 `cluster nodes` 查看节点信息，就会多出一个master节点，但是
 此时节点的slots为空：
@@ -130,7 +130,7 @@ b75acaf4a0194d0c1b3cd15f967a802c83a85d8c 127.0.0.1:7006@17006 master - 0 1492052
 
 #### 新增加的 master 再分区
 
-{% highlight shell %}
+```shell
 cd /home/redis/redis-cluster && \
 ./redis-trib.rb reshard \
 --from 18c6ed2578cf04e44754ebc02ee04211f2e64cca \
@@ -139,7 +139,7 @@ cd /home/redis/redis-cluster && \
 --yes \
 --timeout 5000 \
 127.0.0.1:7000
-{% endhighlight %}
+```
 
 需要注意的是，虽然help说明中，host:port放在首位，但实际操作的时候放在首位会报错，
 具体愿意不清楚。迁移完毕之后，再查看当前节点信息：
@@ -168,23 +168,23 @@ b75acaf4a0194d0c1b3cd15f967a802c83a85d8c 127.0.0.1:7006@17006 master - 0 1492057
 
 #### 启动实例
 
-{% highlight shell %}
+```shell
 cd /home/redis/redis-cluster/7007/ && \
 ../redis-server ./redis.conf &
-{% endhighlight %}
+```
 
 #### 增加实例为 slave 并 挂载在 master
 
 从上面的nodes信息可以看到，端口7006的master的id为
  `b75acaf4a0194d0c1b3cd15f967a802c83a85d8c`，所以：
 
-{% highlight shell %}
+```shell
 cd /home/redis/redis-cluster && \
 ./redis-trib.rb add-node \
 --slave \
 --master-id b75acaf4a0194d0c1b3cd15f967a802c83a85d8c \
 127.0.0.1:7007 127.0.0.1:7000
-{% endhighlight %}
+```
 
 ## 删除节点
 
@@ -199,7 +199,7 @@ slave直接删除并没有什么影响，主要考虑删除master的情况。
 From master4 => 7006：b75acaf4a0194d0c1b3cd15f967a802c83a85d8c
 To master3 => 7002：18c6ed2578cf04e44754ebc02ee04211f2e64cca
 
-{% highlight shell %}
+```shell
 cd /home/redis/redis-cluster && \
 ./redis-trib.rb reshard \
 --from b75acaf4a0194d0c1b3cd15f967a802c83a85d8c \
@@ -208,7 +208,7 @@ cd /home/redis/redis-cluster && \
 --yes \
 --timeout 5000 \
 127.0.0.1:7000
-{% endhighlight %}
+```
 
 再次查看节点的时候会发现，master4 清空 slot 之后，其 slave 节点变成了其他
  master 的 slave 节点。
@@ -218,11 +218,11 @@ cd /home/redis/redis-cluster && \
 master4 => 7006：b75acaf4a0194d0c1b3cd15f967a802c83a85d8c
 slave4 => 7007：8dc7291c74bd7fae0a23388464db7b8c63f211f5
 
-{% highlight shell %}
+```shell
 cd /home/redis/redis-cluster && \
 ./redis-trib.rb del-node 127.0.0.1:7000 b75acaf4a0194d0c1b3cd15f967a802c83a85d8c && \
 ./redis-trib.rb del-node 127.0.0.1:7000 8dc7291c74bd7fae0a23388464db7b8c63f211f5
-{% endhighlight %}
+```
 
 删除成功信息：
 

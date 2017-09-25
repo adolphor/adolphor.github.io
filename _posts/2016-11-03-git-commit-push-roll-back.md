@@ -11,32 +11,32 @@ excerpt:    GIT回滚commit/push到指定版本
 
 ## 回滚指令
 
-{% highlight shell %}
+```shell
 # 查看帮助文档
 $ git reset --help
 # 常用指令格式
 $ git reset [-q] [<tree-ish>] [--] <paths>…​
 $ git reset (--patch | -p) [<tree-ish>] [--] [<paths>…​]
 $ git reset [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [<commit>]
-{% endhighlight %}
+```
 
 想要回滚到指定版本，还需要知道具体的版本号，使用log命令可以进行查看：
 
-{% highlight shell %}
+```shell
 # 查看帮助文档
 $ git log --help
 # 常用指令格式
 $ git log [<options>] [<revision range>] [[\--] <path>…​]
-{% endhighlight %}
+```
 
 ## 本地代码库回滚
 
-{% highlight shell %}
+```shell
 # 回滚到commit-id，讲commit-id之后提交的commit都去除
 $ git reset --hard commit-id
 # 或者将最近3次的提交回滚
 $ git reset --hard HEAD~3
-{% endhighlight %}
+```
 
 
  
@@ -51,7 +51,7 @@ $ git reset --hard HEAD~3
 
 操作步骤：
 
-{% highlight shell %}
+```shell
 $ git checkout the_branch
 $ git pull
 # 备份一下这个分支当前的情况
@@ -64,7 +64,7 @@ $ git push origin :the_branch
 $ git push origin the_branch
 # 如果前面都成功了，删除这个备份分支
 $ git push origin :the_branch_backup
-{% endhighlight %}
+```
 
 如果使用了gerrit做远程代码中心库和code review平台，需要确保操作git的用户具备分支的push权限，
 并且选择了 Force Push选项（在push权限设置里有这个选项）

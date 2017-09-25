@@ -29,16 +29,16 @@ excerpt:    Annotation 注解
 
 ### 规范
 最基本的注解形式如下：
-{% highlight java %}
+```java
 @Entity
-{% endhighlight %}
+```
 
 上面的 `@` 字符表示告知编译器后面跟的是一个注解，`Entity` 是注解的名称。最常见的比如表示
 覆写的Override注解：
-{% highlight java %}
+```java
 @Override
 void mySuperMethod() { ... }
-{% endhighlight %}
+```
 
 使用注解有如下几种方式：
 * 注解可以不包括元素内容，一般用作标记
@@ -46,7 +46,7 @@ void mySuperMethod() { ... }
 * 可以多个注解同时标注在同一个类（变量/方法等）上
 * Java8中支持重复注解（Repeating Annotations）
 
-{% highlight java %}
+```java
 
 // 没有元素
 @Override
@@ -76,7 +76,7 @@ class MyClass { ... }
 @Author(name = "John Smith")
 class MyClass { ... }
 
-{% endhighlight %}
+```
 
 
 ### 用途
@@ -90,7 +90,7 @@ class MyClass { ... }
 
 Java之后开始支持类型注解：
 
-{% highlight java %}
+```java
 // Class instance creation expression:
 new @Interned MyObject();
 
@@ -102,7 +102,7 @@ class UnmodifiableList<T> implements @Readonly List<@Readonly T> { ... }
 
 // Thrown exception declaration:
 void monitorTemperature() throws @Critical TemperatureException { ... }
-{% endhighlight %}
+```
 
 ### 预定义注解
 预定义注解有两类，一类是可以直接用于程序代码的注解，另一个是用于定义注解时的注解。
@@ -141,7 +141,7 @@ void monitorTemperature() throws @Critical TemperatureException { ... }
 定义一个类注解`CustomClassAnnotation`，一个方法注解`CustomMethodAnnotation`，
 然后在 `AnnotatedTest` 类中使用此注解，在 `TestMain` 方法中获取注解内容：
 
-{% highlight java %}
+```java
 /**
  * CustomClassAnnotation Created by Bob on 2016/9/28.
  */
@@ -231,7 +231,7 @@ public class TestMain {
   }
 }
 
-{% endhighlight %}
+```
 
 
 ## 参考资料

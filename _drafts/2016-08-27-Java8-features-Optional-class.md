@@ -15,5 +15,5 @@ excerpt:    Java8 新特性 —— Optional class
 
 * [test](test.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

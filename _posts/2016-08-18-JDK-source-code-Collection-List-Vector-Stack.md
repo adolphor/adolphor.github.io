@@ -32,8 +32,8 @@ since unknown，新增元素到栈顶端
 ### search(Object o)
 since unknown，查找元素在栈中的位置并返回
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```
 
 ## 参考资料
 

@@ -47,7 +47,7 @@ excerpt:    【Java8源码阅读笔记】Collection框架之Collection
 
     RetainAllDemo.java
 
-{% highlight java %}
+```java
 import java.util.ArrayList;
 
 public class RetainAllDemo {
@@ -78,7 +78,7 @@ public class RetainAllDemo {
     System.out.println("temp2：" + temp2);
   }
 }
-{% endhighlight %}
+```
 
 ### void clear()
 
@@ -89,7 +89,7 @@ public class RetainAllDemo {
 
 此hashCode方法，是计算整个集合的hashCode
 
-{% highlight java %}
+```java
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,7 +108,7 @@ public class HashCodeDemo {
     System.out.println(hashCode);
   }
 }
-{% endhighlight %}
+```
 
 
 ### boolean equals(Object o)
@@ -121,7 +121,7 @@ public class HashCodeDemo {
 如果equals方法有被覆写，则按照覆写之后的规则判断两个对象是否相等（范例：Student.java）。
 
     EqualsDemo.java
-{% highlight java %}
+```java
 import java.util.ArrayList;
 import org.junit.Assert;
 
@@ -217,7 +217,7 @@ class Student {
     return this.cardNum;
   }
 }
-{% endhighlight %}
+```
 
 ### boolean contains(Object o)
 是否包含参数元素
@@ -252,33 +252,33 @@ Java8数据流操作相关方法，参考
 
 ### default Stream<E> stream()
 将数据读取为数据流
-{% highlight java %}
+```java
 default Stream<E> stream() {
     return StreamSupport.stream(spliterator(), false);  // false：非并行
 }
-{% endhighlight %}
+```
 
 ### default Stream<E> parallelStream()
 将数据读取为并行数据流
-{% highlight java %}
+```java
 default Stream<E> parallelStream() {
     return StreamSupport.stream(spliterator(), true);   // true：并行
 }
-{% endhighlight %}
+```
 
 ### default Spliterator<E> spliterator()
 对数据流并行迭代预处理
-{% highlight java %}
+```java
 @Override
 default Spliterator<E> spliterator() {
     return Spliterators.spliterator(this, 0);   // 
 }
-{% endhighlight %}
+```
 
 ### default boolean removeIf(Predicate<? super E> filter)
 过滤不符合条件的数据
 
-{% highlight java %}
+```java
 default boolean removeIf(Predicate<? super E> filter) {
     Objects.requireNonNull(filter); // 非空
     boolean removed = false;
@@ -291,7 +291,7 @@ default boolean removeIf(Predicate<? super E> filter) {
     }
     return removed;
 }
-{% endhighlight %}
+```
 
 
 ## 继承的方法
@@ -299,14 +299,14 @@ default boolean removeIf(Predicate<? super E> filter) {
 ### Iterable
 
 #### default void forEach(Consumer<? super T> action)
-{% highlight java %}
+```java
 default void forEach(Consumer<? super T> action) {
     Objects.requireNonNull(action);
     for (T t : this) {  // 遍历
         action.accept(t); // 执行lambda具体操作
     }
 }
-{% endhighlight %}
+```
 
 Java8数据流操作相关方法，参考
 [Java8 新特性 —— lambda表达式]({% post_url 2016-08-24-Java8-features-lambda-expression %})

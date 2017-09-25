@@ -32,7 +32,7 @@ excerpt:    java final关键字解析
 
 
 ### 1.5 范例
-{% highlight java %}
+```java
 class PeoPle {
   public String name;
   PeoPle() {
@@ -56,7 +56,7 @@ public class FinalDemo01 {
     System.out.println(PEOPLE.name);
   }
 }
-{% endhighlight %}
+```
 
 ## 2 final 方法
 

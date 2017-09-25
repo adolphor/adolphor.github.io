@@ -85,8 +85,8 @@ excerpt:    《The C Programming Language —— K&R》读书笔记
 
 * [test](test.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```
 
 
 

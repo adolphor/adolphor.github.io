@@ -152,8 +152,8 @@ Visitor：Defines a new operation to a class without change
 * [Design Patterns in Java Tutorial](http://www.tutorialspoint.com/design_pattern/)
 * [Design Patterns](http://www.oodesign.com/)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```
 
 
 

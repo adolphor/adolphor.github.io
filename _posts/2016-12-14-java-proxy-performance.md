@@ -78,15 +78,15 @@ JAVAASSIST只需用字符串拼接出Java源码，便可生成相应字节码，
 ````
 CountService.java
 ````
-{% highlight java %}
+```java
 public interface CountService {
   int count();
 }
-{% endhighlight %}
+```
 ````
 CountServiceImpl.java
 ````
-{% highlight java %}
+```java
 public class CountServiceImpl implements CountService {
   private int count = 0;
   @Override
@@ -94,11 +94,11 @@ public class CountServiceImpl implements CountService {
     return count ++;
   }
 }
-{% endhighlight %}
+```
 ````
 DynamicProxyPerformanceTest.java
 ````
-{% highlight java %}
+```java
 import javassist.ClassPool;
 import javassist.CtClass;
 import javassist.CtField;
@@ -300,11 +300,11 @@ public class DynamicProxyPerformanceTest {
 
   }
 }
-{% endhighlight %}
+```
 
 ## 参考资料
 
 * [动态代理方案性能对比](http://javatar.iteye.com/blog/814426)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

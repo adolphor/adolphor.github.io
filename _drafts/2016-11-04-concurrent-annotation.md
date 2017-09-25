@@ -15,5 +15,5 @@ excerpt:    并发编程注解
 
 * [Java 标注（Annotation）详解](http://blog.csdn.net/nbrremix/article/details/7337274)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

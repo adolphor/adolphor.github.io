@@ -15,5 +15,5 @@ excerpt:    ${postTitle}
 
 * [test](test.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

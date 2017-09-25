@@ -15,5 +15,5 @@ excerpt:    【Java8源码阅读笔记】Collection框架之Map
 
 * [test](test.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

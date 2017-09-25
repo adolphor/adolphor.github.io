@@ -16,5 +16,5 @@ excerpt:    Java8 新特性 —— Nashorn JavaScript
 
 * [test](test.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

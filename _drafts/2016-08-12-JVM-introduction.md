@@ -23,9 +23,9 @@ excerpt:    excerpt
 
 
 
-{% highlight java %}
+```java
 
-{% endhighlight %}
+```
 
 ## 参考资料
 

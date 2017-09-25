@@ -15,5 +15,5 @@ excerpt:    【Java8源码阅读笔记】Collection框架之HashSet
 
 * [test](test.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

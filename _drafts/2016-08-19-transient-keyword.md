@@ -15,5 +15,5 @@ TODO
 
 * [Why does Java have transient fields?](http://stackoverflow.com/questions/910374/why-does-java-have-transient-fields)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

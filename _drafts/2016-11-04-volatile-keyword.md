@@ -16,5 +16,5 @@ excerpt:    volatile-关键字
 * [java中volatile关键字的含义](http://www.cnblogs.com/aigongsi/archive/2012/04/01/2429166.html)
 * [Java 理论与实践: 正确使用 Volatile 变量](http://www.ibm.com/developerworks/cn/java/j-jtp06197.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

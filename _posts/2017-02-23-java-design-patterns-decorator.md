@@ -45,5 +45,5 @@ excerpt:    装饰者模式
 
 * [test](test.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

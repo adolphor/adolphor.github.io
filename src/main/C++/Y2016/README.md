@@ -5,5 +5,5 @@
 g++ prog1.cc
 
     prog1.cc
-{% highlight C++ %}
-{% endhighlight %}
+```cpp
+```

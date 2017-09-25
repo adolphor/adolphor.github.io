@@ -24,24 +24,24 @@ Spring框架的IOC和AOP，主要依赖的就是动态代理技术。
 
 有一个售票窗口（TicketSeller），具有售票功能（sell()方法）：
 
-{% highlight java %}
+```java
 public class TicketSeller {
   public void sell(int price) {
     System.out.println("TicketSeller 以价格 $" + price + " 卖了一张票 ...");
   }
 }
-{% endhighlight %}
+```
 
 如果票价是 $30，正常情况下是这样运行的：
 
-{% highlight java %}
+```java
 public class Test {
   public static void main(String[] args) {
     TicketSeller ticketSeller = new TicketSeller();
     ticketSeller.sell(30);
   }
 }
-{% endhighlight %}
+```
 
 运行结果：
 
@@ -50,7 +50,7 @@ TicketSeller 以价格 $30 卖了一张票 ...
 ```
 
 有时候去不了车站售票口，可以去代理窗口买票，但是代理窗口要收取 $5 的手续费，实现如下：
-{% highlight java %}
+```java
 public class ProxySeller {
   private TicketSeller seller;
   public ProxySeller(TicketSeller seller) {
@@ -69,7 +69,7 @@ public class ProxySeller {
     System.out.println("ProxySeller 代理完成");
   }
 }
-{% endhighlight %}
+```
 
 因为代理自己没有出票的能力，所以购票还是调用的原售票方法，但是调用之前进行了
 扣除手续费的操作（before()方法），购票之后如果需要也可以进行别的操作（
@@ -77,7 +77,7 @@ after()方法）。
 
 此时就如果票价是 $30，那么就要加上 $5 的手续费，共 $35，运行如下：
 
-{% highlight java %}
+```java
 public class Test {
   public static void main(String[] args) {
     // 需要传入被代理对象的实例
@@ -85,7 +85,7 @@ public class Test {
     tickeProxy.sell(35);
   }
 }
-{% endhighlight %}
+```
 
 运行结果：
 
@@ -101,34 +101,34 @@ ProxySeller 代理完成
 实现代理类复用。如果不希望代理类中使用if……else……语句进行被代理类的类型判断，那么需要
 改造当前TicketSeller类，提取出Seller类，sell()接口作为公共接口，表示被代理类的售卖能力：
 
-{% highlight java %}
+```java
 public interface Seller {
   void sell(int price);
 }
-{% endhighlight %}
+```
 
 接着改造原有TicketSeller类：
 
-{% highlight java %}
+```java
 public class TicketSeller implements Seller {
   public void sell(int price) {
     System.out.println("TicketSeller 以价格 $" + price + " 卖了一张票 ...");
   }
 }
-{% endhighlight %}
+```
 
 参考TicketSeller类，实现外卖服务类：
-{% highlight java %}
+```java
 public class FoodSeller implements Seller {
   public void sell(int price) {
     System.out.println("FoodSeller 以价格 $" + price + " 卖了一盒饭 ...");
   }
 }
-{% endhighlight %}
+```
 
 再改造代理类，使代理类具有代购外卖的服务：
 
-{% highlight java %}
+```java
 public class ProxySeller implements Seller {
   private Seller seller;
   public ProxySeller(Seller seller) {
@@ -147,11 +147,11 @@ public class ProxySeller implements Seller {
     System.out.println("ProxySeller 代理完成");
   }
 }
-{% endhighlight %}
+```
 
 测试代理的买票和外卖服务：
 
-{% highlight java %}
+```java
 public class Test {
   public static void main(String[] args) {
     // 买票服务
@@ -162,7 +162,7 @@ public class Test {
     foodProxy.sell(20);
   }
 }
-{% endhighlight %}
+```
 
 运行结果：
 
@@ -182,7 +182,7 @@ TicketSeller 和 代理类ProxySeller 都实现了相同的接口Seller，都具
 ### 动态代理
 上述静态代理类中，如果增加了一个新的方法，比如退货接口，那么接口类、所有实现类以及代理类都要根据新接口进行修改：
 
-{% highlight java %}
+```java
 // Seller接口增加方法：
 void back(int price);
 // TicketSeller类增加实现：
@@ -200,10 +200,10 @@ public void back(int price) {
   seller.back(price - 5);
   after();
 }
-{% endhighlight %}
+```
 
 这样的话就可以从代理类调用退货方法：
-{% highlight java %}
+```java
 public class Test {
   public static void main(String[] args) {
     // 车票服务
@@ -217,7 +217,7 @@ public class Test {
     foodProxy.back(20); // 退外卖
   }
 }
-{% endhighlight %}
+```
 
 运行结果：
 
@@ -244,7 +244,7 @@ CGLIB字节码增强、JAVAASISST等方式。还有另外一个好处，就是�
 #### JDK动态代理方式
 JDK动态代理的前提条件是实现类必须实现了某个接口(FoodSeller和TicketSeller必须继承某个接口)，代码如下：
 
-{% highlight java %}
+```java
 public class ProxySeller implements InvocationHandler {
   private Object target;
   public Object getInstance(Object target) {
@@ -272,14 +272,14 @@ public class ProxySeller implements InvocationHandler {
     System.out.println("ProxySeller 代理完成");
   }
 }
-{% endhighlight %}
+```
 
 
 #### CGLIB字节码增强方式
 
 CGLIB没有必须实现接口的限制(FoodSeller和TicketSeller可以不继承接口)，代码如下：
 
-{% highlight java %}
+```java
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
@@ -313,7 +313,7 @@ public class ProxySeller implements MethodInterceptor {
     System.out.println("ProxySeller 代理完成");
   }
 }
-{% endhighlight %}
+```
 
 ## 代理效率
 关于各个代理模式的效率如何，可以参考文章《[Java代理性能比较]({% post_url 2016-12-14-java-proxy-performance %})》。

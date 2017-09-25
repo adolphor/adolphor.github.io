@@ -43,10 +43,10 @@ excerpt:    macOS下制作cdr格式的系统镜像
 
 ## 格式转换
 如果想要将cdr转换为ISO格式，在"终端"中执行如下命令：
-{% highlight shell %}
+```shell
 $ hdiutil convert ~/Desktop/macOS\ 10.12.2.cdr -format UDTO -o ~/Desktop/macOS\ 10.12.2.iso
 $ mv ~/Desktop/macOS\ 10.12.2.iso.cdr ~/Desktop/macOS\ 10.12.2.iso
-{% endhighlight %}
+```
 
 执行成功会显示如下信息：
 ![converted-to-iso](/image/post/2017/01/16/20170116-09-converted-to-iso.png)

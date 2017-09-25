@@ -15,5 +15,5 @@ excerpt:    Java8 新特性 —— new Date/Time API
 
 * [test](test.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

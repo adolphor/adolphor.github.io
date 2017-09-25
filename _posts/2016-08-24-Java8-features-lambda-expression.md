@@ -24,50 +24,50 @@ lambda 表达式是 Java8 中引入的最重要的一个概念之一，使得 Ja
 lambda 表达式就是一个匿名函数，Java8中可以使用lambda语法来代替匿名的内部类，先看一个范例：
 首先定义一个String类型的List变量：
 
-{% highlight Java %}
+```java
     List<String> names = Arrays.asList("Mahesh", "Suresh", "Ramesh", "Naresh", "Kalpesh");
-{% endhighlight %}
+```
 
 如果要对这个list排序，按照以前Java7版本的JDK，需要使用 `Comparator` 接口，对于接口我们一般的使用方法是继承接口，
 实现自己的实现类，则有如下的实现类：
-{% highlight Java %}
+```java
     class MyComparator implements Comparator<String> {
       @Override
       public int compare(String a, String b) {
         return a.compareTo(b);
       }
     }
-{% endhighlight %}
+```
 
 比较的时候传入 `Comparator` 实例对象:
     
-{% highlight Java %}
+```java
     // 初始化实例
     Comparator<String> myComparator = new MyComparator();
     Collections.sort(names, myComparator);
     // 匿名方式
     Collections.sort(names, new MyComparator());
-{% endhighlight %}
+```
 
 简单一些的话，不需要定义具体的实现类，只需要在实例化接口的时候覆写接口内的抽象方法即可：
 
-{% highlight Java %}
+```java
     Collections.sort(names, new Comparator<String>() {
       @Override
       public int compare(String a, String b) {
         return a.compareTo(b);
       }
     });
-{% endhighlight %}
+```
 
 上面使用了一个匿名内部实现类，覆写了compare方法，这是Java8之前进行排序时最简单的实现方式。
 下面使用lambda表达式的方式实现：
 
-{% highlight Java %}
+```java
     Collections.sort(names, (String a, String b) -> {
       return a.compareTo(b);
     });
-{% endhighlight %}
+```
 
 使用 lambda表达式 代替了匿名内部实现类，这就是lambda表达式的使用情景之一。
 虽然这样看起来并不比旧方法简单，但下面会对此方法更进一步进行简化。
@@ -98,15 +98,15 @@ lambda语法结构如上所示，具体规则如下：
 至此，已经知道了lambda表达式的详细语法，利用此规则，我们对前面的排序代码继续进行简化，
 因为它只有一个返回表达式，所以可以省略 return 和 大括号，简写为：
     
-{% highlight Java %}
+```java
     Collections.sort(names, (String a, String b) -> a.compareTo(b));
-{% endhighlight %}
+```
     
 又 lambda 可以自动进行类型推断，所以可以省略参数类型，更进一步简写为：
 
-{% highlight Java %}
+```java
     Collections.sort(names, (a, b) -> a.compareTo(b));
-{% endhighlight %}
+```
 
 至此，已经将排序方法代码由四行简化为一行。
 
@@ -116,44 +116,44 @@ lambda语法结构如上所示，具体规则如下：
 而匿名内部类是具有特定的接口(对象)类型的，那么lambda表达式也应该具有特定的目标类型（target type）。
 比如上面的排序方法：
 
-{% highlight Java %}
+```java
     Collections.sort(names, new Comparator<String>() {
       @Override
       public int compare(String a, String b) {
         return a.compareTo(b);
       }
     });
-{% endhighlight %}
+```
 
 此匿名内部类的类型是 `Comparator`：
 
-{% highlight Java %}
+```java
     Comparator<String> comparator = new Comparator<String>() {
       @Override
       public int compare(String a, String b) {
         return a.compareTo(b);
       }
     };
-{% endhighlight %}
+```
     
 那么对于上述排序方法处使用的lambda表达式的 target type 同样也是 `Comparator`：
 
-{% highlight Java %}
+```java
     Comparator<String> comparator = (a, b) -> a.compareTo(b);
-{% endhighlight %}
+```
 
 也就是说，上面排序方法需要的只是 `Comparator` 接口类的实现，至于是自定义继承类实现实例，还是使用接口实例化，
 或者使用lambda表达式，效果都是等价的，都是为了进行如下的动作：
 
-{% highlight Java %}
+```java
     Collections.sort(names, comparator);
-{% endhighlight %}
+```
 
 这也是list排序可以简写为如下 lambda 方式的原因： 
    
-{% highlight Java %}
+```java
     Collections.sort(names, (a, b) -> a.compareTo(b));
-{% endhighlight %}
+```
 
 但 lambda 表达式肯定不是只用于排序，target type 也不只是 `Comparator`，
 只要一个接口符合函数式接口规范（函数式接口见下面章节的介绍），那么在使用此接口
@@ -164,20 +164,20 @@ lambda语法结构如上所示，具体规则如下：
 lambda 表达式可以访问表达式外部的非final变量，但不能进行修改，
 这样，这个变量对于lambda表达式来说相当于一个隐式的final变量，比如：
 
-{% highlight Java %}
+```java
     String scopeTestStr = "Bob";
     Collections.sort(names, (a, b) -> {
       System.out.println(scopeTestStr);   // 可以访问非final变量
       // scopeTestStr = "change";         // 但不能进行修改
       return a.compareTo(b);
     });
-{% endhighlight %}
+```
 
 ### 范例代码
 
     LambdaExpressionDemo.java
 
-{% highlight Java %}
+```java
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -241,7 +241,7 @@ public class LambdaExpressionDemo {
 
   }
 }
-{% endhighlight %}
+```
 
 
 ## 函数式接口（Functional Interfaces） {#FunctionalInterfaces}
@@ -264,19 +264,19 @@ public class LambdaExpressionDemo {
 接口的实现类，是最原始的实现方式，比如上面的 `MyComparator` 就是 `Comparator` 接口的实现类，
 或者在需要接口实例的地方，使用如上面的匿名实现类的方式：
 
-{% highlight Java %}
+```java
     Collections.sort(names, new Comparator<String>() {
       @Override
       public int compare(String a, String b) {
         return a.compareTo(b);
       }
     });
-{% endhighlight %}
+```
 
 第二种就是在需要接口实例的地方，使用 lambda表达式方式：
-{% highlight Java %}
+```java
     Collections.sort(names, (a, b) -> a.compareTo(b)});
-{% endhighlight %}
+```
 
 
 ### 函数式接口列表
@@ -292,35 +292,35 @@ Supplier | 不需要传入参数，有返回值，可以看做Consumer的反函�
 Predicate | 对数据进行检测判断的规则，相当于判断条件的封装
 
 Function系列接口使用范例，比如输入两个 String 字符串，求出 int 类型的两个字符串长度之和：
-{% highlight Java %}
+```java
 BiFunction<String, String, Integer> biFunction = (a, b) -> (a + b).length();
 System.out.println("BiFunction<String, String, Integer> => " + biFunction.apply("Hello", "Bob"));
-{% endhighlight %}
+```
 
 Operator系列接口使用范例，Operator相当于Function的特例，只是入参类型和返回值类型都一样，比如都是String类型：
-{% highlight Java %}
+```java
 BinaryOperator<String> binaryOperator = (a, b) -> a + b;
 System.out.println("BinaryOperator<String> => " + binaryOperator.apply("Hello", "Bob"));
-{% endhighlight %}
+```
 
 Consumer系列接口使用范例，比如一个任意类型，一个int类型：
-{% highlight Java %}
+```java
 ObjIntConsumer<String> objIntConsumer = (a, b) -> System.out.println(a + b);
 objIntConsumer.accept("Hello Num: ", 11);
-{% endhighlight %}
+```
 
 Supplier系列接口使用范例，一种重要的使用情景是方法引用，具体的方法引用见下节详解：
-{% highlight Java %}
+```java
 Supplier<Person> personSupplier = Person::new;
 Person person = personSupplier.get();
 System.out.println(person.name);
-{% endhighlight %}
+```
 
 Predicate系列接口使用范例，可以看做是判断条件的封装，比如判断当前对象是否大于18岁，是否是男性：
-{% highlight Java %}
+```java
 BiPredicate<Integer, String> biPredicate = (a, b) -> a > 18 && b.equals("Male");
 System.out.println("BiPredicate<Integer, String> => " + biPredicate.test(person.age, person.gender));
-{% endhighlight %}
+```
 
 Java8中的函数接口一般位于 `java.util.function` 包下，各详细接口定义汇总如下：
 
@@ -571,7 +571,7 @@ Java8中的函数接口一般位于 `java.util.function` 包下，各详细接�
 
     FunctionalInterfaceDemo.java
 
-{% highlight Java %}
+```java
 import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
 import java.util.function.BinaryOperator;
@@ -730,7 +730,7 @@ class PersonFactory {
     return person;
   }
 }
-{% endhighlight %}
+```
 
 
 ## 方法引用（Method References） {#MethodReferences}
@@ -751,7 +751,8 @@ class PersonFactory {
 
 引用静态方法范例，
 下面是调用Integer的valueOf静态方法，将一个String类型转换为Integer类型：
-{% highlight java %}
+
+```java
 // lambda表达式方式，作为函数式接口实现
 Function<String, Integer> converter1 = num -> Integer.valueOf(num);  
 // 方法引用方式：调用静态方法，作为函数式接口实现
@@ -763,20 +764,20 @@ List<String> names = Arrays.asList("Mahesh", "Suresh", "Ramesh", "Naresh", "Kalp
 names.forEach((name) -> System.out.println(name));    
 // 方法引用：调用系统静态方法进行遍历
 names.forEach(System.out::println); 
-{% endhighlight %}
+```
 
 引用构造函数范例：
 
-{% highlight java %}
+```java
 // lambda表达式方式
 BiFunction<String, Integer, Person> biFunction = (name, age) -> new Person(name, age); 
 // 方法引用方式：构造函数
 BiFunction<String, Integer, Person> factory2 = Person::new;  
-{% endhighlight %}
+```
 
 引用实例方法范例：
 
-{% highlight java %}
+```java
 // 定义任意一个服务类
 class Something {
   String startsWith(String s) {
@@ -791,24 +792,27 @@ Something something = new Something();
 // 将实例的startsWith方法作为函数接口的实现
 UnaryOperator<String> starts = something::startsWith;
 UnaryOperator<String> ends = something::endsWith;
-{% endhighlight %}
+```
 
 不同于前面两个的测试，我们这里增加一个Function测试类
-{% highlight java %}
+```java
 class TestFunction {
   public Object funResult(Function function, String str) {
     return function.apply(str);
   }
 }
-{% endhighlight %}
+```
+
 一共需要两个参数，一个 Function 实例，一个被操作的参数，用这个函数式接口实例对数据进行处理。
 因为所有Operator系列的接口都是 `Function` 类的子类，所以，UnaryOperator的实例可以作为参数传入，
 测试如下：
-{% highlight java %}
+
+```java
 TestFunction testFun = new TestFunction();
 System.out.println("Java starts with: " + testFun.funResult(starts, "Java"));
 System.out.println("Java ends with: " + testFun.funResult(ends, "Java"));
-{% endhighlight %}
+```
+
 也就是说，funResult方法相当于一个接口规范，需要的是一个 Function 实例，这个实例的具体实现可以根据需要自由实现，
 本例的实现是直接调用其他实例（Something）的方法（startsWith、endsWith）作为自己的实现，Something不必遵守函数式接口规范，
 但它的方法却可以被函数式接口调用，这样使得函数式接口的实现方式更加灵活。
@@ -819,7 +823,7 @@ System.out.println("Java ends with: " + testFun.funResult(ends, "Java"));
 
     LambdaExpressionDemo.java
 
-{% highlight Java %}
+```java
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -911,7 +915,7 @@ class Something {
     return String.valueOf(s.charAt(s.length() - 1));
   }
 }
-{% endhighlight %}
+```
 
 
 ## 默认方法（Default Methods） {#DefaultMethods}
@@ -931,7 +935,7 @@ class Something {
 
     DefaultMethodDemo.java
 
-{% highlight Java %}
+```java
 /**
  * Created by Bob on 2016/8/25.
  */
@@ -966,7 +970,7 @@ class Car implements Vehicle, FourWheeler {
     System.out.println("I am a car!");
   }
 }
-{% endhighlight %}
+```
 
 
 ## 流操作（Streams） {#Streams}
@@ -1061,7 +1065,7 @@ collect | <R, A> R collect(Collector<? super T, A, R> collector);
 
     StreamDemo.java
 
-{% highlight Java %}
+```java
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
@@ -1411,7 +1415,7 @@ class Nested {
 class Inner {
   String foo;
 }
-{% endhighlight %}
+```
 
 
 ## 参考资料
@@ -1428,5 +1432,5 @@ class Inner {
 * [Java 8 Parallel Streams](http://www.byteslounge.com/tutorials/java-8-parallel-streams)
 
 
-{% highlight Java %}
-{% endhighlight %}
+```java
+```

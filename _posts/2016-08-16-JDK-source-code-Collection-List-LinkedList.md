@@ -14,13 +14,13 @@ LinkedList since 1.2，使用的是双向链表存储结构。
 
 LinkedList同样非线程安全，如果有多线程共同操作这个list实例，就需要将其加锁，
 将锁加在包含这个list的对象上，或者使用如下形式：
-{% highlight java %}
+```java
 List list = Collections.synchronizedList(new LinkedList(...));
-{% endhighlight %}
+```
 
 因为LinkedList是基于链表实现，其内部封装了一个Node节点内部类作为元素的载体，
 有两个自关联属性：next 和 prev，作为双向连接的实现，具体代码如下：
-{% highlight java %}
+```java
 private static class Node<E> {
     E item;
     Node<E> next;
@@ -31,7 +31,7 @@ private static class Node<E> {
         this.prev = prev;               // 下一个节点
     }
 }
-{% endhighlight %}
+```
 
 LinkedList含有很多接口，大概可以划分如下几类：
 
@@ -61,7 +61,7 @@ LinkedList含有很多接口，大概可以划分如下几类：
 这样避免index在最后一位的时候从头找到尾，提高效率：
 
 ###### Node(int index)方法实现 {#nodeIndexCode}
-{% highlight java %} 
+```java 
 Node<E> node(int index) {
     // assert isElementIndex(index);
     if (index < (size >> 1)) {  // 如果index在链表前半部分
@@ -76,7 +76,7 @@ Node<E> node(int index) {
         return x;
     }
 }
-{% endhighlight %}
+```
 
 ### addFirst(E e)
 追加元素到链首，  
@@ -140,7 +140,7 @@ since 1.5，移除第一个元素并返回，如果集合为空，返回null。
 移除第一个元素的实现如下：
 
 ###### unlinkFirst(Node<E> f) 方法实现 {#unlinkFirstCode}
-{% highlight java %}
+```java
 private E unlinkFirst(Node<E> f) {
     // assert f == first && f != null;  // 确保first不为空
     final E element = f.item;           // 中间变量，用于返回
@@ -156,7 +156,7 @@ private E unlinkFirst(Node<E> f) {
     modCount++;                         // 操作数增加1（这个是用来防止多线程操作引起的BUG）
     return element;                     // 返回移除的那个元素
 }
-{% endhighlight %}
+```
 
 
 ### pollFirst()
@@ -184,7 +184,7 @@ since 1.6，调用 removeFirst() 。
 ### remove(Object o) {#removeObjectCode}
 如果集合中含有equals此参数的元素，进行移除。
 从first进行遍历比较，实现方式如下：
-{% highlight java %}
+```java
 public boolean remove(Object o) {
     if (o == null) {
         for (Node<E> x = first; x != null; x = x.next) {
@@ -203,7 +203,7 @@ public boolean remove(Object o) {
     }
     return false;
 }
-{% endhighlight %}
+```
 
 ### removeFirstOccurrence(Object o)
 since 1.6，删除第一个符合条件的元素，直接调用的 [remove(Object o)](#removeObjectCode) 方法。
@@ -213,7 +213,7 @@ since 1.6，删除最后一个符合条件的元素，从last开始进行遍历�
 
 ### clear()
 清空集合中的所有元素，虽然 “没有必要” 将所有节点之间的链接都解除，但是这样做有助于垃圾回收。
-{% highlight java %}
+```java
 public void clear() {
     for (Node<E> x = first; x != null; ) {
         Node<E> next = x.next;
@@ -226,7 +226,7 @@ public void clear() {
     size = 0;
     modCount++;
 }
-{% endhighlight %}
+```
 
 ### clone()
 克隆集合，遍历原集合并将其添加到克隆之后的集合中。
@@ -259,7 +259,7 @@ since unknown，将LinkedList转换为数组，但是数组元素对象类型为
 since unknown，将LinkedList转换为数组，区别在于转换数组的过程中指定了数组元素对象类型为T。
 但是数组中的原有的元素并不会影响转换之后的结果，唯一起作用的就是对象类型，代码实现如下：
 
-{% highlight java %}
+```java
 public <T> T[] toArray(T[] a) {
     if (a.length < size)
         a = (T[])java.lang.reflect.Array.newInstance(       // 初始化一个新数组
@@ -274,7 +274,7 @@ public <T> T[] toArray(T[] a) {
         a[size] = null;             // 将原数组中List之后的数据舍弃
     return a;
 }
-{% endhighlight %}
+```
 
 ## 参考资料
 

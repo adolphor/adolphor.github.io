@@ -117,7 +117,7 @@ Tomcat 是多线程,共享内存，任何一个虚拟主机中的应用出现崩
 
 server="Neo App Srv 1.0"
 
-{% highlight shell %}
+```shell
 cd apache-tomcat-7.0.59/lib
 mkdir test
 cd test
@@ -128,7 +128,7 @@ server.number=6
 server.built=Jan 18 2013 14:51:10 UTC
 jar cf ../catalina.jar ./*
 rm -rf test
-{% endhighlight %}
+```
 
 ## 参考文章
 

@@ -48,5 +48,5 @@ TODO
 
 * [Playground Book Package](https://developer.apple.com/library/content/documentation/Xcode/Conceptual/swift_playgrounds_doc_format/index.html#//apple_ref/doc/uid/TP40017343-CH47-SW4)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

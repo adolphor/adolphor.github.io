@@ -15,5 +15,5 @@ excerpt:    Java8 新特性 —— Base64
 
 * [test](test.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

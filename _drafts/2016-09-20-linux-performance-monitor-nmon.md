@@ -36,5 +36,5 @@ http://nmon.sourceforge.net/pmwiki.php?n=Site.CompilingNmon
 * [nmon 性能：分析 AIX 和 Linux 性能的免费工具](http://www.ibm.com/developerworks/cn/aix/library/analyze_aix/)
 * [nmon for Linux](http://nmon.sourceforge.net/pmwiki.php?n=Main.HomePage)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

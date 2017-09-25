@@ -19,8 +19,8 @@ jekyll server --drafts --incremental --port 1888
 
 ## 注解
 
-    {% highlight java %}
-    {% endhighlight %}
+    ```java
+    ```
 
 # 分类
 

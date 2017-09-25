@@ -18,11 +18,11 @@ HashSet 默认使用 HashMap 作为存储容器，LinkedHashSet 使用 LinkedHas
 ## 接口实现
 
 ### Spliterator<E> spliterator()
-{% highlight java %}
+```java
 public Spliterator<E> spliterator() {
     return Spliterators.spliterator(this, Spliterator.DISTINCT | Spliterator.ORDERED);
 }
-{% endhighlight %}
+```
 
 ## 接口继承
 
@@ -39,5 +39,5 @@ addAll, containsAll, retainAll, toArray, toArray, toString
 
 * [JDK文档 之 LinkedHashSet](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashSet.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

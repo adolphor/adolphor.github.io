@@ -43,7 +43,7 @@ since 1.8，Java8新特性，TODO
 
 ### default void sort(Comparator<? super E> c)
 since 1.8，
-{% highlight java %}
+```java
 default void sort(Comparator<? super E> c) {
     Object[] a = this.toArray();
     Arrays.sort(a, (Comparator) c);
@@ -53,7 +53,7 @@ default void sort(Comparator<? super E> c) {
         i.set((E) e);
     }
 }
-{% endhighlight %}
+```
 
 
 ### E get(int index)
@@ -109,7 +109,7 @@ since 1.8，TODO
 * [JDK文档 之 List](https://docs.oracle.com/javase/8/docs/api/java/util/List.html)
 
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```
 
 

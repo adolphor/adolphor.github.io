@@ -17,5 +17,5 @@ java8默认方法范例的中使用到了
 
 * [test](test.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

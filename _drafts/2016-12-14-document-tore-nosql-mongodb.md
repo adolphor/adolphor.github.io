@@ -15,5 +15,5 @@ excerpt:    非关系型数据库mongodb
 
 * [test](test.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

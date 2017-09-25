@@ -17,7 +17,7 @@ Queue分支中的ArrayDeque、queue），还有一些使用链表结构（List�
 
 首先，HashSet声明了如下的全局变量，以及两个构造函数实现：
 
-{% highlight java %}
+```java
 private transient HashMap<E,Object> map;
 private static final Object PRESENT = new Object();
 public HashSet() {
@@ -37,7 +37,7 @@ HashSet(int initialCapacity, float loadFactor, boolean dummy) {
     map = new LinkedHashMap<>(initialCapacity, loadFactor);
 }
 
-{% endhighlight %}
+```
 全局变量 `map` 作为HashSet内部实现的存储容器，
 全局静态变量 `PRESENT` 作为所有的key键的value值。
 第一个构造函数，直接初始化一个新的HashMap容器；
@@ -56,20 +56,20 @@ HashSet 的子类 LinkedHashSet 就是调用这个构造函数来进行初始化
 
 ### boolean add(E e)
 TODO：为什么==null？
-{% highlight java %}
+```java
 public boolean add(E e) {
     return map.put(e, PRESENT)==null;
 }
-{% endhighlight %}
+```
 
 ### void clear()
-{% highlight java %}
+```java
 public void clear() {
     map.clear();
 }
-{% endhighlight %}
+```
 ### Object clone()
-{% highlight java %}
+```java
 public Object clone() {
     try {
         HashSet<E> newSet = (HashSet<E>) super.clone();
@@ -79,45 +79,45 @@ public Object clone() {
         throw new InternalError(e);
     }
 }
-{% endhighlight %}
+```
 ### boolean contains(Object o)
-{% highlight java %}
+```java
 public boolean contains(Object o) {
     return map.containsKey(o);
 }
-{% endhighlight %}
+```
 ### boolean isEmpty()
-{% highlight java %}
+```java
 public boolean isEmpty() {
     return map.isEmpty();
 }
-{% endhighlight %}
+```
 ### Iterator<E> iterator()
-{% highlight java %}
+```java
 public Iterator<E> iterator() {
     return map.keySet().iterator();
 }
-{% endhighlight %}
+```
 ### boolean remove(Object o)
 TODO：为什么要 ==PRESENT？
-{% highlight java %}
+```java
 public boolean remove(Object o) {
     return map.remove(o)==PRESENT;
 }
-{% endhighlight %}
+```
 ### int size()
-{% highlight java %}
+```java
 public int size() {
     return map.size();
 }
-{% endhighlight %}
+```
 ### Spliterator<E> spliterator()
 TODO：HashMap.KeySpliterator函数释义
-{% highlight java %}
+```java
 public Spliterator<E> spliterator() {
     return new HashMap.KeySpliterator<E,Object>(map, 0, -1, 0, 0);
 }
-{% endhighlight %}
+```
 
 ## 接口继承
 
@@ -136,5 +136,5 @@ addAll, containsAll, retainAll, toArray, toArray, toString
 * [JDK文档 之 HashSet](https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html)
 * [Java 泛型 <? super T> 中 super 怎么 理解？与 extends 有何不同？](https://www.zhihu.com/question/20400700/answer/117464182)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

@@ -31,11 +31,11 @@ Different compilers use different suffix conventions; the most common
 include .cc, .cxx, .cpp, .cp, and .C。本例将文件名后缀为 `.cc`，将上面那个方法保存至 `prog1.cc`文件，
 
     prog1.cc
-{% highlight C++ %}
+```cpp
 int main() {
   return 0;
 }
-{% endhighlight %}
+```
 
 ##### 1.1.1. Compiling and Executing Our Program
 使用命令行编译：
@@ -69,7 +69,7 @@ I/O 操作相关的库叫做iosteam，分别是：istream 和 ostream，并有�
 
     prog2.cc
     
-{% highlight C++ %}
+```cpp
 #include <iostream>     // 文件头，引用iostream库
 int main() {
     std::cout << "Enter two numbers:" << std::endl; // 链式操作，等价于
@@ -83,7 +83,7 @@ int main() {
     << " is " << v1 + v2 << std::endl;
     return 0;
 }
-{% endhighlight %}
+```
 
 #### 1.3. A Word about Comments
 
@@ -103,7 +103,7 @@ while 语法结构，和Java一样：
 范例：
 
     prog3.cc
-{% highlight C++ %}
+```cpp
 #include <iostream>
 int main() {
     int sum = 0, val = 1;
@@ -116,7 +116,7 @@ int main() {
         << sum << std::endl;
     return 0;
 }
-{% endhighlight %}
+```
     
 ##### 1.4.2. The for Statement
 while 语法结构，和Java一样：
@@ -127,7 +127,7 @@ while 语法结构，和Java一样：
 范例：
 
     prog4.cc
-{% highlight C++ %}
+```cpp
 #include <iostream>
 int main() {
     int sum = 0;
@@ -138,13 +138,13 @@ int main() {
         << sum << std::endl;
     return 0;
 }
-{% endhighlight %}
+```
     
 ##### 1.4.3. Reading an Unknown Number of Inputs
 先看范例：
 
     prog5.cc
-{% highlight C++ %}
+```cpp
 #include <iostream>
 int main() {
     int sum = 0, value = 0;
@@ -154,7 +154,7 @@ int main() {
     std::cout << "Sum is: " << sum << std::endl;
     return 0;
 }
-{% endhighlight %}
+```
 
 上述代码中，`std::cin >> value` 的返回值是一个iostream，那么对I/O对象进行test的时候，规则如何呢？
 在本范例中，因为使用value进行输入参数的接收，那么当输入的参数是int类型的时候，test为true；当输入的
@@ -170,7 +170,7 @@ Q：并不会抛异常……
 范例：
 
     prog6.cc
-{% highlight C++ %}
+```cpp
 #include <iostream>
 int main() {
     // currVal is the number we're counting; we'll read new values into val
@@ -194,7 +194,7 @@ int main() {
     } // outermost if statement ends here
     return 0;
 }
-{% endhighlight %}
+```
 
     # Input
     42 42 42 42 42 55 55 62 100 100 100 done
@@ -216,7 +216,7 @@ int main() {
 定义一个 `Sales_item` 类，实现如下：
 
     Sales_item.h
-{% highlight C++ %}
+```cpp
 #ifndef SALESITEM_H
 #define SALESITEM_H
 #include <iostream>
@@ -291,12 +291,12 @@ inline double Sales_item::avg_price() const
     return 0;
 }
 #endif
-{% endhighlight %}
+```
 
 下面看一些操作范例：
 
     prog7.cc
-{% highlight C++ %}
+```cpp
 #include <iostream>
 #include "Sales_item.h"
 int main() {
@@ -307,7 +307,7 @@ int main() {
     std::cout << book << std::endl;
     return 0;
 }
-{% endhighlight %}
+```
 
 对于标准库的引用，使用 `#include <iostream>` 尖括号包裹，
 对于自定义的类的引用，使用的 `#include "Sales_item.h"` 双引号包裹。
@@ -321,7 +321,7 @@ int main() {
 再来一个范例：
 
     prog8.cc
-{% highlight C++ %}
+```cpp
 #include <iostream>
 #include "Sales_item.h"
 int main() {
@@ -332,7 +332,7 @@ int main() {
     std::cout << book << std::endl;
     return 0;
 }
-{% endhighlight %}
+```
 
     # Input
     0-201-78345-X 3 20.00
@@ -345,7 +345,7 @@ int main() {
 先上代码：
 
     prog9.cc
-{% highlight C++ %}
+```cpp
 #include <iostream>
 #include "Sales_item.h"
 int main() {
@@ -361,7 +361,7 @@ int main() {
         return -1; // indicate failure
     }
 }
-{% endhighlight %}
+```
 
 代码 `item1.isbn() == item2.isbn()` 中就引用了一个叫做 `isbn` 的 `member function`。 
 A member function is a function that is defined as part of a class. 
@@ -424,5 +424,5 @@ Member functions are sometimes referred to as methods.
 
 * [C++ Primer (5th Edition)](https://book.douban.com/subject/24089577/)
 
-{% highlight C++ %}
-{% endhighlight %}
+```cpp
+```

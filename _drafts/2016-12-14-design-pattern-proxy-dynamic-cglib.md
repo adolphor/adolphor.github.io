@@ -15,5 +15,5 @@ excerpt:    设计模式：静态代理，动态打理，CGLIB代理
 
 * [test](test.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```

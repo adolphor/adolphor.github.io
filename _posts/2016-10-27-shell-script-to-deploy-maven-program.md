@@ -13,7 +13,7 @@ excerpt:    使用shell脚本部署maven项目
 
 范例如下：
 
-{% highlight shell %}
+```shell
 #! /bin/sh
 
 echo "============================ start ============================"
@@ -224,4 +224,4 @@ echo "============================ successed ============================"
 
 exit 0
 
-{% endhighlight %}
+```

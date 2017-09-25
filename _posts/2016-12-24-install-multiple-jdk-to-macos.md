@@ -31,9 +31,9 @@ http://www.oracle.com/technetwork/java/archive-139210.html
 ## 配置
 安装完成之后，调出terminal命令行工具，检验安装是否成功：
 
-{% highlight shell %}
+```shell
 $ java -version
-{% endhighlight %}
+```
 
 ```
 java version "9"
@@ -42,18 +42,18 @@ Java HotSpot(TM) 64-Bit Server VM (build 9+181, mixed mode)
 ```
 
 那如何进行版本切换呢？先看当前生效的JDK路径：
-{% highlight shell %}
+```shell
 $ which java
-{% endhighlight %}
+```
 
 ```
 /usr/bin/java
 ```
 
-{% highlight shell %}
+```shell
 $ cd /usr/bin
 $ ls -l
-{% endhighlight %}
+```
 
 ```
 ……
@@ -65,13 +65,13 @@ lrwxr-xr-x   1 root   wheel        77 Oct 21 18:10 javadoc -> /System/Library/Fr
 
 可以发现这个java只是一个当前系统生效的JDK的一个软连接，而使用如下的命令可以指定当前系统使用哪个版本的JDK：
 
-{% highlight shell %}
+```shell
 $ /usr/libexec/java_home -v 版本号
-{% endhighlight %}
+```
 
 编辑`bash_profile`文件，添加如下内容（注意：JDK9不是 -v 1.9）：
 
-{% highlight shell %}
+```shell
 $ vi ~/.bash_profile
 
 export JAVA_7_HOME="$(/usr/libexec/java_home -v 1.7)"
@@ -86,13 +86,13 @@ alias jdk9='export JAVA_HOME=$JAVA_9_HOME'
 export JAVA_HOME=$JAVA_8_HOME
 
 $ source ~/.bash_profile
-{% endhighlight %}
+```
 
 ## 版本切换
 如上配置之后，默认使用JDK1.8，然后使用`jdk7`、`jdk8`或`jdk9`来切换当前系统的JDK版本：
-{% highlight shell %}
+```shell
 $ java -version
-{% endhighlight %}
+```
 
 ```
 java version "1.7.0_80"
@@ -100,11 +100,11 @@ Java(TM) SE Runtime Environment (build 1.7.0_80-b15)
 Java HotSpot(TM) 64-Bit Server VM (build 24.80-b11, mixed mode)
 ```
 
-{% highlight shell %}
+```shell
 # 切换到JDK1.8，使用如下命令
 $ jdk8
 $ java -version
-{% endhighlight %}
+```
 
 ```
 java version "1.8.0_111"
@@ -112,11 +112,11 @@ Java(TM) SE Runtime Environment (build 1.8.0_111-b14)
 Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
 ```
 
-{% highlight shell %}
+```shell
 # 切换到JDK9
 $ jdk9
 $ java -version
-{% endhighlight %}
+```
 
 ```
 java version "9"

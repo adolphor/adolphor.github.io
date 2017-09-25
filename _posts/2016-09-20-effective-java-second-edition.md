@@ -457,5 +457,5 @@ git
 
 * [test](test.html)
 
-{% highlight java %}
-{% endhighlight %}
+```java
+```
