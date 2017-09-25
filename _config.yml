@@ -21,11 +21,16 @@ github_username:  NorthFacing
 gems: [jekyll-paginate]
 paginate: 10
 
-# Build settings
+# markdown语法解析引擎（GitHub强制要求）
 markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+
+# 代码高亮引擎（GitHub强制要求）
+highlighter: rouge
 
 # 多说
-duoshuoId: adolphor
+#duoshuoId: adolphor
 
 # disqus
 disqusId: adolphor
