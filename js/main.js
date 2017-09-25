@@ -10,7 +10,7 @@ $(document).ready(function () {
 
   // 如果有图片加载完毕重新计算导航栏高度
   $("img").load(function(){
-    menuResize();
+    heightResize();
   });
 
 });
