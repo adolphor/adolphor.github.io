@@ -12,7 +12,8 @@ excerpt:    macOS下mongodb的安装和GUI工具介绍
 ## macOS下使用brew安装mongodb
 
 ### mongodb的安装
-{% highlight shell %}
+
+```Shell
 # 查找
 brew search mongodb
 # 安装
@@ -21,7 +22,20 @@ brew install mongodb
 brew services restart mongodb
 brew services stop mongodb
 brew services start mongodb
-{% endhighlight %}
+```
+
+```java
+public abstract class TicketSeller {
+  abstract void sell(String java);
+}
+```
+
+```Java
+public abstract class TicketSeller {
+  abstract void sell(String Java);
+}
+```
+
 
 直接使用`mongo`命令进行连接：
 ```
@@ -38,10 +52,10 @@ Server has startup warnings:
 ### mongodb的默认配置
 * 查看配置文件路径：
 
-{% highlight shell %}
+```Shell
 # mongodb相关信息
 brew info mongodb
-{% endhighlight %}
+```
 
 ```
 mongodb: stable 3.4.9 (bottled), devel 3.5.11
@@ -61,9 +75,10 @@ Or, if you don't want/need a background service you can just run:
 ```
 
 * 查看具体配置信息：
-{% highlight shell %}
+
+```Shell
 cat /usr/local/etc/mongod.conf
-{% endhighlight %}
+```
 
 ```
 systemLog:
@@ -85,7 +100,7 @@ net:
 
 * 创建用户
 
-{% highlight java %}
+```Shell
 use admin
 db.createUser(
   {
@@ -93,14 +108,14 @@ db.createUser(
     pwd: "admin123",
     roles: [ { role: "root", db: "admin" } ]
   })
-{% endhighlight %}
+```
 
 * 修改配置
 
 
-{% highlight shell %}
+```Shell
 vi /usr/local/etc/mongod.conf
-{% endhighlight %}
+```
 
 内容如下所示：
 
@@ -119,14 +134,15 @@ security:
 
 * 重启应用
 
-{% highlight shell %}
+```Shell
 brew services restart mongodb
-{% endhighlight %}
+```
 
 * 命令行连接
-{% highlight shell %}
+
+```Shell
 mongo --port 27017 -u "superAdmin" -p "admin123" --authenticationDatabase "admin"
-{% endhighlight %}
+```
 
 ## GUI工具介绍
 
@@ -137,6 +153,3 @@ mongo --port 27017 -u "superAdmin" -p "admin123" --authenticationDatabase "admin
 ## 参考资料
 
 * [Mongodb enable authentication ](https://medium.com/@raj_adroit/mongodb-enable-authentication-enable-access-control-e8a75a26d332)
-
-{% highlight java %}
-{% endhighlight %}
