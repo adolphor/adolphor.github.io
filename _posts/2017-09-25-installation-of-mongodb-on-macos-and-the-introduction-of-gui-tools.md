@@ -13,6 +13,26 @@ excerpt:    macOS下mongodb的安装和GUI工具介绍
 
 ### mongodb的安装
 
+```sbtshell
+# 查找
+brew search mongodb
+# 安装
+brew install mongodb
+# 重启
+brew services restart mongodb
+brew services stop mongodb
+brew services start mongodb
+```
+```shell
+# 查找
+brew search mongodb
+# 安装
+brew install mongodb
+# 重启
+brew services restart mongodb
+brew services stop mongodb
+brew services start mongodb
+```
 ```Shell
 # 查找
 brew search mongodb
