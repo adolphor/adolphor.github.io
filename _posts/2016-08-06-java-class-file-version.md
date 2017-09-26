@@ -60,6 +60,7 @@ public class ClassVersionDemo {
 ```
 
 编译指令：
+
 ```shell
 javac ClassVersionDemo.java
 ```
@@ -67,11 +68,13 @@ javac ClassVersionDemo.java
 ### 使用命令行查看
 
 On Unix / Linux:
+
 ```shell
 javap -verbose ClassVersionDemo | grep "major"
 ```
 
 On Windows:
+
 ```shell
 javap -verbose ClassVersionDemo | findstr "major"
 ```
@@ -79,11 +82,13 @@ javap -verbose ClassVersionDemo | findstr "major"
 major version: 52，表示class文件版本为1.8。
 
 如果想要查看文件全部内容，使用如下指令：
+
 ```shell
 javap -verbose ClassVersionDemo
 ```
 
 结果如下：
+
 ```java
 Classfile /M:/ClassVersionDemo.class
   Last modified 2016-8-6; size 458 bytes
@@ -154,7 +159,9 @@ SourceFile: "ClassVersionDemo.java"
 
 
 ### 从class文件源码查看
+
 使用文本编辑器（比如sublime Text）打开 ClassVersionDemo.class 文件，内容如下：
+
 ```
 cafe babe 0000 0034 001d 0a00 0600 0f09
 0010 0011 0800 120a 0013 0014 0700 1507
@@ -207,11 +214,14 @@ Project -> Project SDK, Project language level
 Modules -> Language level  
 
 ### maven工具指定
-    <configuration>
-        <source>1.7</source>
-        <target>1.7</target>
-        <encoding>UTF-8</encoding>
-    </configuration>
+
+```xml
+<configuration>
+    <source>1.7</source>
+    <target>1.7</target>
+    <encoding>UTF-8</encoding>
+</configuration>
+```
 
 
 

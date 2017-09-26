@@ -305,6 +305,3 @@ public class DynamicProxyPerformanceTest {
 ## 参考资料
 
 * [动态代理方案性能对比](http://javatar.iteye.com/blog/814426)
-
-```java
-```

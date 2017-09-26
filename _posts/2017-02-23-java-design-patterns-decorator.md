@@ -44,6 +44,3 @@ excerpt:    装饰者模式
 ## 参考资料
 
 * [test](test.html)
-
-```java
-```

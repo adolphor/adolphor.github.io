@@ -180,17 +180,21 @@ public Object[] toArray() {
 
 * Set  
     * HashSet：实现iterator()方法  
-
-            public Iterator<E> iterator() {
-                return map.keySet().iterator();
-            }
+    
+        ```java
+        public Iterator<E> iterator() {
+            return map.keySet().iterator();
+        }
+        ```
 
     * LinkedHashSet：继承`HashSet`  
     * TreeSet：实现iterator()方法  
-
-            public Iterator<E> iterator() {
-                return m.navigableKeySet().iterator();
-            }
+    
+        ```java
+        public Iterator<E> iterator() {
+            return m.navigableKeySet().iterator();
+        }
+        ```
         
 * Queue  
     * ArrayDeque：`System.arraycopy()`  
@@ -232,6 +236,7 @@ public <T> T[] toArray(T[] a) {
 
 
 ### String toString()
+
 ```java
 public String toString() {
     Iterator<E> it = iterator();

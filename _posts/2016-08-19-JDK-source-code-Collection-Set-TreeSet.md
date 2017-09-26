@@ -20,6 +20,3 @@ TODO
 ## 参考资料
 
 * [JDK文档 之 TreeSet](https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html)
-
-```java
-```

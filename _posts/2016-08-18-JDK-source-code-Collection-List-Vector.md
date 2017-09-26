@@ -24,8 +24,6 @@ num|ArrayList | Vector
 4) |  ArrayList is fast because it is non-synchronized. | Vector is slow because it is synchronized i.e. in multithreading environment, it will hold the other threads in runnable or non-runnable state until current thread releases the lock of object.
 5) |  ArrayList uses Iterator interface to traverse the elements. | Vector uses Enumeration interface to traverse the elements. But it can use Iterator also.
 
-```java
-```
 
 ## 参考资料
 

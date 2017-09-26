@@ -16,7 +16,7 @@ tomcat优化有如下几个方面：
 
 通过startup.bat启动tomcat才能加载配置，要添加在tomcat 的bin 下catalina.bat 里
 
-```
+```shell
 rem Guess CATALINA_HOME if not defined  
 set CURRENT_DIR=%cd%   
 # 后面添加,红色的为新添加的.  

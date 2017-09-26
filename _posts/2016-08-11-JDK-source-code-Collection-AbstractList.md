@@ -138,5 +138,3 @@ addAll, contains, containsAll, isEmpty, remove, removeAll, retainAll, size, toAr
 
 * [JDK文档 之 AbstractList](https://docs.oracle.com/javase/8/docs/api/java/util/AbstractList.html)
 
-```java
-```

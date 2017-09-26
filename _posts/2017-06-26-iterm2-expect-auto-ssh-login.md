@@ -128,4 +128,4 @@ iterm2中选择 Preferences，general页签下部勾选如下两个复选框：
 
 
 ## 参考
-[iTerm2固定标签名字](http://littlewhite.us/archives/393)
+* [iTerm2固定标签名字](http://littlewhite.us/archives/393)

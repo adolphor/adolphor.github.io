@@ -13,6 +13,8 @@ excerpt:    macOS下mongodb的安装和GUI工具介绍
 
 ### mongodb的安装
 
+> 安装
+
 ```shell
 # 查找
 brew search mongodb
@@ -24,7 +26,7 @@ brew services stop mongodb
 brew services start mongodb
 ```
 
-直接使用`mongo`命令进行连接：
+> 直接使用`mongo`命令进行连接：
 
 ```
 ongoDB shell version v3.4.9
@@ -38,7 +40,8 @@ Server has startup warnings:
 ```
 
 ### mongodb的默认配置
-* 查看配置文件路径：
+
+> 查看配置文件路径：
 
 ```shell
 # mongodb相关信息
@@ -62,7 +65,7 @@ Or, if you don't want/need a background service you can just run:
   mongod --config /usr/local/etc/mongod.conf
 ```
 
-* 查看具体配置信息：
+> 查看具体配置信息：
 
 ```shell
 cat /usr/local/etc/mongod.conf
@@ -86,7 +89,7 @@ net:
 
 #### 创建 administrator 权限用户
 
-* 创建用户
+> 创建用户
 
 ```shell
 use admin
@@ -98,7 +101,7 @@ db.createUser(
   })
 ```
 
-* 修改配置
+> 修改配置
 
 
 ```shell
@@ -120,13 +123,13 @@ security:
  authorization: enabled
 ```
 
-* 重启应用
+> 重启应用
 
 ```shell
 brew services restart mongodb
 ```
 
-* 命令行连接
+> 命令行连接
 
 ```shell
 mongo --port 27017 -u "superAdmin" -p "admin123" --authenticationDatabase "admin"

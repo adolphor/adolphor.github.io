@@ -32,9 +32,6 @@ since unknown，新增元素到栈顶端
 ### search(Object o)
 since unknown，查找元素在栈中的位置并返回
 
-```java
-```
-
 ## 参考资料
 
 * [JDK文档 之 Stack](https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html)

@@ -21,7 +21,7 @@ equals 方法判断的时候，先从最简单直接的特性进行比较：如�
 至此集合和参数长度相等，值没有重复，那么如果集合包含参数中的每一个元素，
 则说明两者相等。
 
-```java
+```java 
 public boolean equals(Object o) {
     if (o == this)              // 是否是自身
         return true;
@@ -44,7 +44,7 @@ public boolean equals(Object o) {
 ### int hashCode()
 额，最简单的每个元素的哈希码求和……
 
-```java
+```java 
 public int hashCode() {
     int h = 0;
     Iterator<E> i = iterator();
@@ -62,7 +62,7 @@ public int hashCode() {
 AbstractCollection中已经实现了此方法，默认使用下面else中的实现。
 覆写之后的实现是：进行判断之后，遍历小的那个集合来提高效率：
 
-```java
+```java 
 public boolean removeAll(Collection<?> c) {
     Objects.requireNonNull(c);
     boolean modified = false;
@@ -95,6 +95,3 @@ add, addAll, clear, contains, containsAll, isEmpty, iterator, remove, retainAll,
 ## 参考资料
 
 * [JDK文档 之 AbstractSet](https://docs.oracle.com/javase/8/docs/api/java/util/AbstractSet.html)
-
-```java
-```

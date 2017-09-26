@@ -24,6 +24,3 @@ excerpt:    Intellij Idea 导入一般的web项目以及相关配置
 ## 参考资料
 
 * 无
-
-```java
-```

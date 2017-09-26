@@ -506,7 +506,4 @@ Redis集群是Redis提供的分布式数据库方案，集群通过分片（shar
 
 * [Redis设计与实现 —— 黄健宏](http://redisbook.com)
 
-```c
-```
-
 

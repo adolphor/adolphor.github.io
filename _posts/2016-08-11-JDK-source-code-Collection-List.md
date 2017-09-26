@@ -108,8 +108,3 @@ since 1.8，TODO
 
 * [JDK文档 之 List](https://docs.oracle.com/javase/8/docs/api/java/util/List.html)
 
-
-```java
-```
-
-

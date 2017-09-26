@@ -25,48 +25,48 @@ lambda 表达式就是一个匿名函数，Java8中可以使用lambda语法来�
 首先定义一个String类型的List变量：
 
 ```java
-    List<String> names = Arrays.asList("Mahesh", "Suresh", "Ramesh", "Naresh", "Kalpesh");
+List<String> names = Arrays.asList("Mahesh", "Suresh", "Ramesh", "Naresh", "Kalpesh");
 ```
 
 如果要对这个list排序，按照以前Java7版本的JDK，需要使用 `Comparator` 接口，对于接口我们一般的使用方法是继承接口，
 实现自己的实现类，则有如下的实现类：
 ```java
-    class MyComparator implements Comparator<String> {
-      @Override
-      public int compare(String a, String b) {
-        return a.compareTo(b);
-      }
-    }
+class MyComparator implements Comparator<String> {
+  @Override
+  public int compare(String a, String b) {
+    return a.compareTo(b);
+  }
+}
 ```
 
 比较的时候传入 `Comparator` 实例对象:
     
 ```java
-    // 初始化实例
-    Comparator<String> myComparator = new MyComparator();
-    Collections.sort(names, myComparator);
-    // 匿名方式
-    Collections.sort(names, new MyComparator());
+// 初始化实例
+Comparator<String> myComparator = new MyComparator();
+Collections.sort(names, myComparator);
+// 匿名方式
+Collections.sort(names, new MyComparator());
 ```
 
 简单一些的话，不需要定义具体的实现类，只需要在实例化接口的时候覆写接口内的抽象方法即可：
 
 ```java
-    Collections.sort(names, new Comparator<String>() {
-      @Override
-      public int compare(String a, String b) {
-        return a.compareTo(b);
-      }
-    });
+Collections.sort(names, new Comparator<String>() {
+  @Override
+  public int compare(String a, String b) {
+    return a.compareTo(b);
+  }
+});
 ```
 
 上面使用了一个匿名内部实现类，覆写了compare方法，这是Java8之前进行排序时最简单的实现方式。
 下面使用lambda表达式的方式实现：
 
 ```java
-    Collections.sort(names, (String a, String b) -> {
-      return a.compareTo(b);
-    });
+Collections.sort(names, (String a, String b) -> {
+  return a.compareTo(b);
+});
 ```
 
 使用 lambda表达式 代替了匿名内部实现类，这就是lambda表达式的使用情景之一。
@@ -99,13 +99,13 @@ lambda语法结构如上所示，具体规则如下：
 因为它只有一个返回表达式，所以可以省略 return 和 大括号，简写为：
     
 ```java
-    Collections.sort(names, (String a, String b) -> a.compareTo(b));
+Collections.sort(names, (String a, String b) -> a.compareTo(b));
 ```
     
 又 lambda 可以自动进行类型推断，所以可以省略参数类型，更进一步简写为：
 
 ```java
-    Collections.sort(names, (a, b) -> a.compareTo(b));
+Collections.sort(names, (a, b) -> a.compareTo(b));
 ```
 
 至此，已经将排序方法代码由四行简化为一行。
@@ -117,42 +117,42 @@ lambda语法结构如上所示，具体规则如下：
 比如上面的排序方法：
 
 ```java
-    Collections.sort(names, new Comparator<String>() {
-      @Override
-      public int compare(String a, String b) {
-        return a.compareTo(b);
-      }
-    });
+Collections.sort(names, new Comparator<String>() {
+  @Override
+  public int compare(String a, String b) {
+    return a.compareTo(b);
+  }
+});
 ```
 
 此匿名内部类的类型是 `Comparator`：
 
 ```java
-    Comparator<String> comparator = new Comparator<String>() {
-      @Override
-      public int compare(String a, String b) {
-        return a.compareTo(b);
-      }
-    };
+Comparator<String> comparator = new Comparator<String>() {
+  @Override
+  public int compare(String a, String b) {
+    return a.compareTo(b);
+  }
+};
 ```
     
 那么对于上述排序方法处使用的lambda表达式的 target type 同样也是 `Comparator`：
 
 ```java
-    Comparator<String> comparator = (a, b) -> a.compareTo(b);
+Comparator<String> comparator = (a, b) -> a.compareTo(b);
 ```
 
 也就是说，上面排序方法需要的只是 `Comparator` 接口类的实现，至于是自定义继承类实现实例，还是使用接口实例化，
 或者使用lambda表达式，效果都是等价的，都是为了进行如下的动作：
 
 ```java
-    Collections.sort(names, comparator);
+Collections.sort(names, comparator);
 ```
 
 这也是list排序可以简写为如下 lambda 方式的原因： 
    
 ```java
-    Collections.sort(names, (a, b) -> a.compareTo(b));
+Collections.sort(names, (a, b) -> a.compareTo(b));
 ```
 
 但 lambda 表达式肯定不是只用于排序，target type 也不只是 `Comparator`，
@@ -165,12 +165,12 @@ lambda 表达式可以访问表达式外部的非final变量，但不能进行�
 这样，这个变量对于lambda表达式来说相当于一个隐式的final变量，比如：
 
 ```java
-    String scopeTestStr = "Bob";
-    Collections.sort(names, (a, b) -> {
-      System.out.println(scopeTestStr);   // 可以访问非final变量
-      // scopeTestStr = "change";         // 但不能进行修改
-      return a.compareTo(b);
-    });
+String scopeTestStr = "Bob";
+Collections.sort(names, (a, b) -> {
+  System.out.println(scopeTestStr);   // 可以访问非final变量
+  // scopeTestStr = "change";         // 但不能进行修改
+  return a.compareTo(b);
+});
 ```
 
 ### 范例代码
@@ -1000,8 +1000,10 @@ Automatic iterations  |     流操作提供了数据遍历的功能
 
 先定义两个List变量如下
 
-    List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
-    List<String> strings = Arrays.asList("abc", "bc", "efg", "abcd", "jkl");
+```java
+List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
+List<String> strings = Arrays.asList("abc", "bc", "efg", "abcd", "jkl");
+```
 
 数据流操作的主要方法有：
 

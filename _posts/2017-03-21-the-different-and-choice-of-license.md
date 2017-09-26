@@ -351,6 +351,3 @@ excerpt:    各种开源协议的区别和选择
 
 * [如何选择开源许可证？](http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html)
 * [如何为你的代码选择一个开源协议](http://www.cnblogs.com/Wayou/p/how_to_choose_a_license.html)
-
-```java
-```

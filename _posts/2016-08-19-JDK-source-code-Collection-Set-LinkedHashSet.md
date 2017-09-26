@@ -38,6 +38,3 @@ addAll, containsAll, retainAll, toArray, toArray, toString
 ## 参考资料
 
 * [JDK文档 之 LinkedHashSet](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashSet.html)
-
-```java
-```

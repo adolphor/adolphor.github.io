@@ -121,6 +121,7 @@ public class HashCodeDemo {
 如果equals方法有被覆写，则按照覆写之后的规则判断两个对象是否相等（范例：Student.java）。
 
     EqualsDemo.java
+
 ```java
 import java.util.ArrayList;
 import org.junit.Assert;
@@ -251,7 +252,9 @@ Java8数据流操作相关方法，参考
 流处理部分
 
 ### default Stream<E> stream()
+
 将数据读取为数据流
+
 ```java
 default Stream<E> stream() {
     return StreamSupport.stream(spliterator(), false);  // false：非并行
@@ -259,7 +262,9 @@ default Stream<E> stream() {
 ```
 
 ### default Stream<E> parallelStream()
+
 将数据读取为并行数据流
+
 ```java
 default Stream<E> parallelStream() {
     return StreamSupport.stream(spliterator(), true);   // true：并行
@@ -267,7 +272,9 @@ default Stream<E> parallelStream() {
 ```
 
 ### default Spliterator<E> spliterator()
+
 对数据流并行迭代预处理
+
 ```java
 @Override
 default Spliterator<E> spliterator() {
@@ -276,6 +283,7 @@ default Spliterator<E> spliterator() {
 ```
 
 ### default boolean removeIf(Predicate<? super E> filter)
+
 过滤不符合条件的数据
 
 ```java
@@ -299,6 +307,7 @@ default boolean removeIf(Predicate<? super E> filter) {
 ### Iterable
 
 #### default void forEach(Consumer<? super T> action)
+
 ```java
 default void forEach(Consumer<? super T> action) {
     Objects.requireNonNull(action);
