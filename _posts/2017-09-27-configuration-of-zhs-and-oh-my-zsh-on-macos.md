@@ -42,6 +42,18 @@ $ chsh -s /usr/local/bin/zsh
 $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
+## 问题修复
+
+安装完毕之后，启动shell默认就启动了zsh，那么配置在 `~/.bash_profile`中的环境变量就不再生效了，
+为了解决这个问题，可以执行如下操作之后重启zsh即可：
+
+```shell
+# 编辑 .zshrc 文件
+$ vim ~/.zshrc
+# 添加如下内容
+source ~/.bash_profile
+```
+
 ## 更新
 
 ```shell
