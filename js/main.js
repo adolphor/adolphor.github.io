@@ -1,21 +1,18 @@
 $(document).ready(function () {
   heightFunctions();
   geneMenu();
-  heightResize();
 
-  // 如果调整
-  $(window).resize(function () {
-    menuResize();
-  });
-
-  // 如果有图片加载完毕重新计算导航栏高度
-  $("img").load(function(){
-    heightResize();
+  var position = $('#articleMenu').offset();
+  // 滚屏时固定左侧菜单栏
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > position.top) {
+      $('#articleMenu').css('position', 'fixed').css('top', '0');
+    } else {
+      $('#articleMenu').css('position', 'static');
+    }
   });
 
 });
-
-var position;
 
 function heightFunctions() {
   var winHeight = $(window).height();
@@ -49,44 +46,16 @@ function geneMenu() {
         section += subLink;
       });
       section += "</ul>";
-    })
+    });
     section += ("</ul></div></section>");
+
     $(".menu-side").append(section);
 
-    menuResize();
-
-    $(window).scroll(function () {
-      // 定位菜单位置
-      if ($(window).scrollTop() > position.top) {
-        $('#articleMenu').css('position', 'fixed').css('top', '0');
-      } else {
-        $('#articleMenu').css('position', 'static');
-      }
-      // BUG fix：如果有加载图片，会导致菜单栏高度不够，所以滚动鼠标的时候进行重新计算
-      menuResize();
-    });
+    var windowHeight = $(window).height();
+    var width = $("aside section:first").width();
+    $("#articleMenu").css("width", width);
+    $("#articleMenu ul:first").css("overflow-y", "auto")
+      .css("height", (windowHeight - 110))
+      .css("width", (width - 18));
   }
-
-}
-
-function menuResize() {
-  var windowHeight = $(window).height();
-  var width = $("aside section:first").width();
-  $("#articleMenu").css("width", width);
-  $("#articleMenu ul:first").css("overflow-y", "auto")
-    .css("height", (windowHeight - 110))
-    .css("width", (width - 18));
-
-  // bugFix:只需要赋值一次就可以了
-  if (!position) {
-    position = $('#articleMenu').offset();
-  }
-
-}
-
-function heightResize() {
-  var sideHeight = $(".menu-side").height();
-  var contHeight = $(".post-side").height();
-  var height = Math.max(sideHeight, contHeight);
-  $(".menu-side, .post-side").css("min-height", height + 260);
 }
