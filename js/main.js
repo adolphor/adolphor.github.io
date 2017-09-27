@@ -2,15 +2,17 @@ $(document).ready(function () {
   heightFunctions();
   geneMenu();
 
-  var position = $('#articleMenu').offset();
   // 滚屏时固定左侧菜单栏
-  $(window).scroll(function () {
-    if ($(window).scrollTop() > position.top) {
-      $('#articleMenu').css('position', 'fixed').css('top', '0');
-    } else {
-      $('#articleMenu').css('position', 'static');
-    }
-  });
+  if (document.getElementById("articleMenu")){ // 只有菜单DOM节点存在的时候才进行如下操作
+    var position = $('#articleMenu').offset();
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > position.top) {
+        $('#articleMenu').css('position', 'fixed').css('top', '0');
+      } else {
+        $('#articleMenu').css('position', 'static');
+      }
+    });
+  }
 
 });
 
