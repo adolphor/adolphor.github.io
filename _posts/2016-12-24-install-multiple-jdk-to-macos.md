@@ -124,6 +124,19 @@ Java(TM) SE Runtime Environment (build 9+181)
 Java HotSpot(TM) 64-Bit Server VM (build 9+181, mixed mode)
 ```
 
+## 其他
+
+linux环境下JDK配置备份如下：
+
+```shell
+$ sudo vi ~/.bashrc
+export JAVA_HOME=/my/java/home/jdk180
+export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$CLASSPATH
+export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+$ source ~/.bashrc
+```
+
+
 ## 参考资料
 
 * [Multiple JDK in Mac OSX 10.10 Yosemite](http://abetobing.com/blog/multiple-jdk-mac-osx-10-10-yosemite-88.html)

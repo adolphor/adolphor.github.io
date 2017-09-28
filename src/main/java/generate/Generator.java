@@ -20,10 +20,10 @@ import java.util.Map;
 
 public class Generator {
 
-  private static String postTitle = "macOS下mongodb的安装和GUI工具介绍";
-  private static String urlTitle = "installation-of-mongodb-on-macos-and-the-introduction-of-gui-tools";
+  private static String postTitle = "macOS系统下配置使用zsh和oh-my-zsh";
+  private static String urlTitle = "configuration-of-zhs-and-oh-my-zsh-on-macos";
   private static String categories = "[blog]";
-  private static String tags = "[mongodb]";
+  private static String tags = "[macOS]";
 
   private static Configuration cfg;
 
