@@ -63,7 +63,12 @@ lrwxr-xr-x   1 root   wheel        77 Oct 21 18:10 javadoc -> /System/Library/Fr
 ……
 ```
 
-可以发现这个java只是一个当前系统生效的JDK的一个软连接，而使用如下的命令可以指定当前系统使用哪个版本的JDK：
+可以发现这个java只是一个当前系统生效的JDK的一个软连接，Java安装的是实际位置位于
+```
+/Library/Java/JavaVirtualMachines
+```
+
+使用如下的命令可以指定当前系统使用哪个版本的JDK：
 
 ```shell
 $ /usr/libexec/java_home -v 版本号
