@@ -141,4 +141,5 @@ $ source ~/.bashrc
 
 * [Multiple JDK in Mac OSX 10.10 Yosemite](http://abetobing.com/blog/multiple-jdk-mac-osx-10-10-yosemite-88.html)
 * [Mac下同时安装多个版本的JDK](http://www.tuicool.com/articles/uUJjEb)
-
+* [Download Java 6 for macOS](https://support.apple.com/kb/DL1572?viewlocale=zh_CN&locale=en_US)
+* [历史版本JDK](http://www.oracle.com/technetwork/java/javase/archive-139210.html)
