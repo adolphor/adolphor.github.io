@@ -20,10 +20,10 @@ import java.util.Map;
 
 public class Generator {
 
-  private static String postTitle = "macOS系统下配置使用zsh和oh-my-zsh";
-  private static String urlTitle = "configuration-of-zhs-and-oh-my-zsh-on-macos";
-  private static String categories = "[blog]";
-  private static String tags = "[macOS]";
+  private static String postTitle = "HashMap中的hash方法实现解析";
+  private static String urlTitle = "the-implement-of-hash-method-in-hashmap";
+  private static String categories = "[Java]";
+  private static String tags = "[Java]";
 
   private static Configuration cfg;
 
