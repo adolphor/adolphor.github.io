@@ -39,4 +39,4 @@ sass:
     sass_dir: ./css/_sass
     style: compressed
 
-cacheVersion: 20170223
+cacheVersion: 20180129

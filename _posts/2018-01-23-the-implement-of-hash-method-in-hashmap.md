@@ -192,10 +192,10 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Map<K, V>, Clone
 
 ```java
 public class HashMap<K, V> extends AbstractMap<K, V> implements Map<K, V>, Cloneable, Serializable {
-	static final int hash(Object key) {
-		int h;
-		return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
-	}
+  static final int hash(Object key) {
+    int h;
+    return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+  }
 }
 ```
 
@@ -208,8 +208,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Map<K, V>, Clone
 
 ## 总结
 
-本文主要是学习了JDK源码中hash方法实现，目的是尽可能让对象均匀分布在哈希表中，手段是混淆高低位重新计算哈希码，DONE。
-
+本文主要是学习了JDK源码中hash方法实现，目的是尽可能让对象均匀分布在哈希表中，手段是混淆高低位重新计算哈希码。
 
 ## 参考资料
 

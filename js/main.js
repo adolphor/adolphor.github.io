@@ -28,7 +28,7 @@ function geneMenu() {
   var height = $(".post-content").height();
   var isGene = $("#geneMenu").text();
   var len = $(".post-side h2").length + $(".post-side h3").length;
-  if (isGene == "true" && len > 4 && height > 800) {  // 文章导航生成条件
+  if (isGene == "true" && (len > 1 || height > 800)) {  // 文章导航生成条件
     var section = '<section id="articleMenu" class="left-section row"><div class="col-md-12"><div class="left-title row">' +
       ' 文章导航 </div> <ul class="left-ul row menu-ul">';
     var pathname = window.location.pathname;
