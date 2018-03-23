@@ -29,7 +29,6 @@ $ brew cask install shadowsocksx-ng
 5. `||` 标记，如 `||example.com` 则 `http://example.com`、`https://example.com`、`ftp://example.com` 等地址均满足条件
 
 6. 注释 `!` 如 `! Comment`
-```
 
 ## 参考资料
 
