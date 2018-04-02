@@ -43,3 +43,4 @@ pipeline.addLast("handlerOut", new OutHandler());
 ## 参考资料
 
 * [Netty4之Future/Promise异步模型](https://blog.csdn.net/kobejayandy/article/details/47778359)
+* [Netty:Bootstrap的handler和childHandler](https://blog.csdn.net/bdmh/article/details/49927787)
