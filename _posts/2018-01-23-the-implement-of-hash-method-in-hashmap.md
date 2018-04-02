@@ -3,7 +3,7 @@ layout:   post
 title:    HashMap中的hash方法实现解析
 date:     2018-01-23 16:00:14 +0800
 postId:   2018-01-23-16-00-14
-categories: [Java]
+categories: [blog]
 tags:     [Java]
 geneMenu:   true
 excerpt:  HashMap中的hash方法实现解析
