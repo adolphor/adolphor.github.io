@@ -13,15 +13,15 @@ excerpt:    Git 相关基本操作
 
 ```Shell
 # 创建并切换
-git branch -b <branch-name>
+$ git branch -b <branch-name>
 # 切换分支
-git checkout <branch-name>
+$ git checkout <branch-name>
 # 删除分支
-git branch -d <branch-name>
+$ git branch -d <branch-name>
 # 合并分支(分支所有提交记录)
-git merge <branch-name>
+$ git merge <branch-name>
 # 合并分支(需要重新commit提交备注信息)
-git merge --squash <branch-name>
+$ git merge --squash <branch-name>
 ```
 
 ## 修改历史
