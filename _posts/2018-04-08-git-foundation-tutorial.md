@@ -11,7 +11,7 @@ excerpt:    Git 相关基本操作
 
 ## 分支
 
-```
+```Shell
 # 创建并切换
 git branch -b <branch-name>
 # 切换分支
