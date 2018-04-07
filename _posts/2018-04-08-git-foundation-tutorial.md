@@ -32,5 +32,3 @@ git merge --squash <branch-name>
 
 * [聊下git merge --squash](https://www.cnblogs.com/wangiqngpei557/p/6026007.html)
 
-```java
-```
