@@ -13,7 +13,7 @@ excerpt:    maven打包方式汇总
 
 ## 参考资料
 
-* [test](test.html)
+* [How to Create an Executable JAR with Maven](http://www.baeldung.com/executable-jar-with-maven)
 
 ```java
 ```
