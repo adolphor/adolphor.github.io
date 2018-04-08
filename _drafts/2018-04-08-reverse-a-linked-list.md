@@ -13,7 +13,8 @@ excerpt:    链表翻转实现
 
 ## 参考资料
 
-* [test](test.html)
+* [Quora](https://www.quora.com/How-do-you-reverse-a-linked-list)
+* [Java单链表反转 详细过程](https://blog.csdn.net/guyuealian/article/details/51119499)
 
 ```java
 ```
