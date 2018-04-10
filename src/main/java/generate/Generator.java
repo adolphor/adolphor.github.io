@@ -20,10 +20,10 @@ import java.util.Map;
 
 public class Generator {
 
-  private static String postTitle = "HashMap中的hash方法实现解析";
-  private static String urlTitle = "the-implement-of-hash-method-in-hashmap";
-  private static String categories = "[Java]";
-  private static String tags = "[Java]";
+  private static String postTitle = "正则表达式基础";
+  private static String urlTitle = "regular-expression-foundation-tutorial";
+  private static String categories = "[blog]";
+  private static String tags = "[Maven]";
 
   private static Configuration cfg;
 

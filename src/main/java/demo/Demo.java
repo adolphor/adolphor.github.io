@@ -1,19 +1,20 @@
-package demo;/* Block comment */
+package demo;
 
-import java.sql.Timestamp;
+import java.util.ArrayList;
 
 public class Demo {
   public static void main(String[] args) {
+    var s = "Hello var in java!";
 
-    long starttime = System.currentTimeMillis();
+    var list = new ArrayList<String>();
+    list.add("A");
+    list.add("B");
+    for (String str : list) {
+      var test = str;
+      System.out.println(test);
+    }
 
-    int st = (int)starttime;
-
-    System.out.println(st);
-
-    Timestamp timestamp = new Timestamp(st);
-
-    System.out.println(timestamp);
+    System.out.println(s);
   }
 }
 

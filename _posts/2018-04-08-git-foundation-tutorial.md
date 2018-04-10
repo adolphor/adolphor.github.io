@@ -36,7 +36,6 @@ brew install icdiff
 * git diff 比较的是工作区和暂存区的差别
 * git diff --cached 比较的是暂存区和版本库的差别
 * git diff HEAD 可以查看工作区和版本库的差别
-* 
 
 ## 分支操作
 
@@ -51,11 +50,26 @@ git branch -d <branch-name>
 git merge <branch-name>
 # 合并分支(需要重新commit提交备注信息)
 git merge --squash <branch-name>
+# 删除本地分支
+
+# 删除远程分支
+git push origin --delete <branchName>
+git push origin :<branchName>
+```
+
+重命名分支操作麻烦一些：
+```Shell
+# 删除远程分位置
+git push --delete origin devel
+# 重命名本地分支
+git branch -m devel develop
+# 推送本地分支
+git push origin develop
 ```
 
 ## 撤销工作区的修改
 
-### 回退 reset
+### 使用 reset 回退
 ```Shell
 git reset HEAD filename          回退文件，将文件从暂存区回退到工作区
 git reset HEAD^回退版本           一个^表示一个版本，可以多个，另外也可以使用 git reset HEAD～n这种形式
@@ -71,9 +85,8 @@ git reset HEAD^回退版本           一个^表示一个版本，可以多个�
   - git reset --hard HEAD～1 
   - 意为将版本库回退1个版本，但是不仅仅是将本地版本库的头指针全部重置到指定版本，也会重置暂存区，并且会将工作区代码也回退到这个版本
 
-
-### 检出 checkout
-```
+### 使用检出 checkout 进行本地回退
+```Shell
 # 使用暂存区覆盖工作区的修改
 git checkout .
 # 使用版本库覆盖工作区的修改，暂存区的修改也会被清除
@@ -81,11 +94,18 @@ git checkout HEAD .
 git checkout HEAD
 ```
 
+### 回退远程仓库
+
+在使用reset回退本地记录之后，使用如下指令进行远程回退：
+
+```Shell
+git push origin HEAD --force #远程提交回退
+```
 
 
 ## 过滤文件
 
-```
+```Shell
 /abc/             过滤整个文件夹
 !/abc/mk.d        特殊指定这个文件不被过滤
 *.zip             过滤所有.zip文件
@@ -100,6 +120,13 @@ git add .
 git commit -m "msg"
 git push
 ```
+
+## 编码
+
+* 中文文件名
+  ```Shell
+  git config --global core.quotepath false
+  ```
 
 ## 参考资料
 

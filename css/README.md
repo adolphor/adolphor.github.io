@@ -18,3 +18,18 @@
 > 代码高亮
 
 
+## table 自定义样式
+
+可以在文章正文顶部直接嵌入CSS样式：
+```
+<style>
+table tr th:first-child {
+    width: 10%;
+    text-align: center;
+}
+table tr td:first-child {
+    width: 10%;
+    text-align: center;
+}
+</style>
+```
