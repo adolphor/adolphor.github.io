@@ -9,7 +9,17 @@ geneMenu:   true
 excerpt:    Maven 相关基本操作
 ---
 
-## 声明周期
+## 基本操作
+
+### 版本管理
+
+* 更改版本
+  ```
+  mvn versions:set -DnewVersion=0.0.1-SNAPSHOT
+  ```
+
+
+## 生命周期
 
 有了生命周期，就可以将各种maven插件的执行时间绑定在某个生命节点上。
 
