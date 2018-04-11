@@ -33,9 +33,13 @@ brew install icdiff
   cmd = /usr/bin/icdiff --line-numbers $LOCAL $REMOTE
 ```
 
-* git diff 比较的是工作区和暂存区的差别
-* git diff --cached 比较的是暂存区和版本库的差别
-* git diff HEAD 可以查看工作区和版本库的差别
+* git diff             比较的是工作区和暂存区的差别
+* git diff --cached    比较的是暂存区和版本库的差别
+* git diff HEAD        可以查看工作区和版本库的差别
+* git icdiff <local-branch> <remote>/<remote-branch> 比对本地工作区和远程仓库的区别（比对前需要先git fetch）
+* git diff branch1 branch2 文件名(带路径) 显示指定文件的详细差异
+* git diff branch1 branch2 --stat       显示出所有有差异的文件列表 
+* git diff branch1 branch2              显示出所有有差异的文件的详细差异
 
 ## 分支操作
 
