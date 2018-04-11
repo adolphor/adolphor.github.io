@@ -17,7 +17,28 @@ excerpt:    Maven 相关基本操作
   ```
   mvn versions:set -DnewVersion=0.0.1-SNAPSHOT
   ```
+### 项目JRE依赖
+使用jdeps分析：
+```
+mvn jdeps:jdeps
+```
 
+需要配置如下信息：
+```
+<build>
+  <plugins>
+    <plugin>
+      <groupId>com.github.marschall</groupId>
+      <artifactId>jdeps-maven-plugin</artifactId>
+      <version>0.4.0</version>
+      <!-- optionally any configuration -->
+      <configuration>
+        <profile>true</profile>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+```
 
 ## 生命周期
 
