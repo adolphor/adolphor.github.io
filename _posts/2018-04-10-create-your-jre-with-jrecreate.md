@@ -60,10 +60,11 @@ jrecreate --dest host-destination-directory [options]
 配置文件：默认，全部 JRE API。
 
 可选项有三个：
-    - compact1 (大约12MB)
-    - compact2 (17MB)
-    - compact3 (24M)
-    - 默认     (50MB)
+
+- compact1 (大约12MB)
+- compact2 (17MB)
+- compact3 (24M)
+- 默认     (50MB)
 
 
 ```Shell
