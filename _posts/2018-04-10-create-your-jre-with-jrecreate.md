@@ -9,6 +9,8 @@ geneMenu:   true
 excerpt:    使用 jrecreate 工具创建自己的 JRE
 ---
 
+Done：Bullshit！不能用来精简JRE，GAME OVER ~
+
 本章讲述如何使用 jrecreate 工具创建自己的 Java 运行环境，包括如下内容：
 
 * [运行 jrecreate](#Running-jrecreate)
@@ -60,8 +62,61 @@ jrecreate --dest host-destination-directory [options]
 可选项有三个：
     - compact1 (大约12MB)
     - compact2 (17MB)
-    - compact3 ()
+    - compact3 (24M)
     - 默认     (50MB)
+
+
+```Shell
+compact1                     compact2                    compact3
+--------------------------   -----------------------     --------------------------
+java.io                      java.rmi                    java.lang.instrument
+java.lang                    java.rmi.activation         java.lang.management
+java.lang.annotation         java.rmi.registry           java.security.acl
+java.lang.invoke             java.rmi.server             java.util.prefs
+java.lang.ref                java.sql                    javax.annotation.processing
+java.lang.reflect            javax.rmi.ssl               javax.lang.model
+java.math                    javax.sql                   javax.lang.model.element
+java.net                     javax.transaction           javax.lang.model.type
+java.nio                     javax.transaction.xa        javax.lang.model.util
+java.nio.channels            javax.xml                   javax.management
+java.nio.channels.spi        javax.xml.datatype          javax.management.loading
+java.nio.charset             javax.xml.namespace         javax.management.modelbean
+java.nio.charset.spi         javax.xml.parsers           javax.management.monitor
+java.nio.file                javax.xml.stream            javax.management.openmbean
+java.nio.file.attribute      javax.xml.stream.events     javax.management.relation
+java.nio.file.spi            javax.xml.stream.util       javax.management.remote
+java.security                javax.xml.transform         javax.management.remote.rmi
+java.security.cert           javax.xml.transform.dom     javax.management.timer
+java.security.interfaces     javax.xml.transform.sax     javax.naming
+java.security.spec           javax.xml.transform.stax    javax.naming.directory
+java.text                    javax.xml.transform.stream  javax.naming.event
+java.text.spi                javax.xml.validation        javax.naming.ldap
+java.util                    javax.xml.xpath             javax.naming.spi
+java.util.concurrent         org.w3c.dom                 javax.script
+java.util.concurrent.atomic  org.w3c.dom.bootstrap       javax.security.auth.kerberos
+java.util.concurrent.locks   org.w3c.dom.events          javax.security.sasl
+java.util.jar                org.w3c.dom.ls              javax.sql.rowset
+java.util.logging            org.xml.sax                 javax.sql.rowset.serial
+java.util.regex              org.xml.sax.ext             javax.sql.rowset.spi
+java.util.spi                org.xml.sax.helpers         javax.tools
+java.util.zip                                            javax.xml.crypto
+javax.crypto                                             javax.xml.crypto.dom
+javax.crypto.interfaces                                  javax.xml.crypto.dsig
+javax.crypto.spec                                        javax.xml.crypto.dsig.dom
+javax.net                                                javax.xml.crypto.dsig.keyinfo
+javax.net.ssl                                            javax.xml.crypto.dsig.spec
+javax.security.auth                                      org.ieft.jgss
+javax.security.auth.callback
+javax.security.auth.login
+javax.security.auth.spi
+javax.security.auth.x500
+javax.security.cert
+
+
+
+
+```
+
 
 ```Shell
 --vm jvm
@@ -213,3 +268,6 @@ Building JRE using options Options {
 ## 参考资料
 
 * [Oracle - Create Your JRE with jrecreate](https://docs.oracle.com/javase/8/embedded/develop-apps-platforms/jrecreate.htm)
+* [Oracle - Compact Profiles](https://docs.oracle.com/javase/8/docs/technotes/guides/compactprofiles/compactprofiles.html)
+* [Oracle - Java™ Platform, Standard Edition Runtime Environment Version 8](http://www.oracle.com/technetwork/java/javase/jre-8-readme-2095710.html)
+* [An Introduction to Java 8 Compact Profiles](https://blogs.oracle.com/jtc/an-introduction-to-java-8-compact-profiles)
