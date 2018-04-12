@@ -141,6 +141,15 @@ export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
 $ source ~/.bashrc
 ```
 
+windows环境下JDK配置如下：
+
+```shell
+JAVA_HOME=/my/java/home/jdk180
+CLASSPATH=.;%JAVA_HOME%\lib;%JAVA_HOME%\jre\lib
+PATH=%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;%PATH%
+```
+
+
 
 ## 参考资料
 
