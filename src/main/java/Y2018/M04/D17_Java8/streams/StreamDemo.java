@@ -1,4 +1,4 @@
-package Y2016.M08.D24_Java8.streams;
+package Y2018.M04.D17_Java8.streams;
 
 import java.util.ArrayList;
 import java.util.Arrays;
