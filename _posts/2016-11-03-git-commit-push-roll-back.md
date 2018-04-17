@@ -4,7 +4,7 @@ title:      GIT回滚commit/push到指定版本
 date:       2016-11-03 14:51:15 +0800
 postId:     2016-11-03-14-51-15
 categories: [blog]
-tags:       [git]
+tags:       [Git]
 geneMenu:   true
 excerpt:    GIT回滚commit/push到指定版本
 ---
