@@ -39,7 +39,7 @@ Automatic iterations  |  流操作提供了数据遍历的功能
 
 流操作带来最大的遍历就是可以链式操作，更加语义化，使得代码可读性更高。
 
-```Java
+```java
 public class Student {
     int no;
     String name;
@@ -121,34 +121,35 @@ Stream类中定义的函数式接口汇总如下：
 1. Stream接口的静态工厂方法（注意：Java8里接口可以带静态方法）
     * of 其生成的Stream是有限长度的，Stream的长度为其内的元素个数
     
-    ```Java
-    - of(T... values)：返回含有多个T元素的Stream
-    - of(T t)：返回含有一个T元素的Stream
-    ```
+      ```java
+      - of(T... values)：返回含有多个T元素的Stream
+      - of(T t)：返回含有一个T元素的Stream
+      ```
     * generator 返回一个无限长度的Stream,其元素由Supplier接口的提供。一般无限长度的Stream会与filter、limit等配合使用，否则Stream会无限制的执行下去
     
-    ```Java
-    - generate(Supplier<T> s)
-    ```
+      ```java
+      - generate(Supplier<T> s)
+      ```
     * iterate 其返回的也是一个无限长度的Stream，与generate方法不同的是，其是通过函数f迭代对给指定的元素种子而产生无限连续有序Stream，其中包含的元素可以认为是：seed，f(seed),f(f(seed))无限循环。
     
-    ```Java
-    - iterate(T seed, UnaryOperator<T> f)
-    ```
+      ```java
+      - iterate(T seed, UnaryOperator<T> f)
+      ```
     * empty 返回一个空数据流
 2. Collection接口和数组的默认方法（默认方法,也使Java的新特性之一，后续介绍），把一个Collection对象转换成Stream
     * Collection.stream
     * Arrays.stream
-    ```Java
-    - Stream<T> stream(T[] array)
-    ```
+
+      ```java
+      - Stream<T> stream(T[] array)
+      ```
 3. 其他
     * Random.ints()
     * BitSet.stream()
     * Pattern.splitAsStream(java.lang.CharSequence)
     * JarFile.stream()
 
-```Java
+```java
 // 1. 静态工厂
 // -- 1.1 of
 Stream<Integer> integerStream = Stream.of(1, 2, 3);
