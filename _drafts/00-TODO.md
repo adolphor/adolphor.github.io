@@ -4,6 +4,9 @@
   - 使用场景
   - demo
 * Netty 的 几种 ByteBuf 学习和分析
+  - 之后学习 ByteToMessageDecoder
+  - 再看ReplayingDecoder
+  - 再看 Socks5InitialRequestDecoder，以及状态机
 
 
 
