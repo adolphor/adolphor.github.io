@@ -182,7 +182,7 @@ Arrays.stream(ids)
 
 ## 部分操作详解
 
-### map & flatMap 操作
+### map 
 map 操作针对泛型，另外对于基本数据类似，官方提供了三个封装类：`IntStream`、`LongStream`、`DoubleStream`，这三个封装类都可以有map
 对应的生成方法直接生成，封装类提供了基础stream类没有的一些方法，比如`sum`、`average`、`boxed`等，另外也是为了提高效率。
 
@@ -205,6 +205,7 @@ intStream.average();
 intStream.boxed();
 ```
 
+### flatMap
 对于map 和 flatMap 区别，从下面这个例子来看更明显：
 ```java
 List<String> list = Arrays.asList("hello welcome", "world hello", "hello world", "hello world welcome");
@@ -217,7 +218,7 @@ list.stream()
 
 ```
 打印结果如下：
-```shell
+```
 java.util.stream.ReferencePipeline$Head@2fc14f68
 java.util.stream.ReferencePipeline$Head@591f989e
 java.util.stream.ReferencePipeline$Head@66048bfd
@@ -246,16 +247,96 @@ list2.stream().flatMap(item -> list3.stream().map(item2 -> item + " " + item2))
   .collect(Collectors.toList()).forEach(System.out::println);
 ```
 
+### peek 
+
+peek方法生成一个包含原Stream的所有元素的新Stream，同时会提供一个消费函数（Consumer实例），
+新Stream每个元素被消费的时候都会执行给定的消费函数，并且消费函数优先执行。
+
+```java
+Stream.of(1, 2, 3, 4, 5)
+  .peek(integer -> System.out.println("accept by peek: " + integer))
+  .forEach(System.out::println);
+```
+
+上面的例子中，foreach的时候每个元素都会先执行一次peek中的操作之后才会进行foreach中定义的操作，所以结果如下：
+```
+accept by peek: 1
+1
+accept by peek: 2
+2
+accept by peek: 3
+3
+accept by peek: 4
+4
+accept by peek: 5
+5
+```
+
+### takeWhile
+
+对于有序数据流，它像 filter，又像一个 fast-fail，会在第一个失败的元素截止，然后将前面所有通过的元素返回。比如下面的例子，
+Predicate 是 n < 8，那么会在 9 的地方失败，然后返回 9 之前的所有数据，返回的数据是总的数据流的prefix。
 
 
+```java
+Stream.of(4, 1, 5, 2, 6, 9, 5, 4, 6, 8)
+  .takeWhile(n -> n < 8)
+  .forEach(System.out::print);
+// 41526
+```
+### dropWhile
+
+dropWhile 可以看做 takeWhile 取反，返回的数据是：从失败的那个数据开始，一直到数据流结束。
+
+```java
+Stream.of(4, 1, 5, 2, 6, 9, 5, 4, 6, 8)
+  .dropWhile(n -> n < 8)
+  .forEach(System.out::print);
+// 95468
+```
+
+### ofNullable
+
+将一个可能为空的数据封装为数据流进行操作，而不会出现空指针异常，直接看范例：
+没有此方法的时候只能用如下方式处理：
+
+```java
+// findCustomer can return null
+Customer customer = findCustomer(customerId);
+ 
+Stream<Order> orders = customer == null
+	? Stream.empty()
+	: customer.streamOrders();
+// do something with stream of orders ...
+ 
+// alternatively, for the Optional lovers
+Optional.ofNullable(customer)
+	.map(Customer::streamOrders)
+	.orElse(Stream.empty()
+	. // do something with stream of orders
+```
+
+此方法可以这么处理：
+
+```java
+// findCustomer can return null
+Customer customer = findCustomer(customerId);
+
+Stream.ofNullable(customer)
+	.flatMap(Customer::streamOrders)
+	. // do something with stream of orders
+```
+
+### concat
+TODO
+
+### reduce 
+TODO
 
 ## 参考资料
 
-* [Java 8 新特性](http://blog.techbeta.me/tags/java8/)
-* [Java 8 官方教程翻译](http://blog.csdn.net/code_for_fun/article/details/42169993)
 * [Java8 tutorials point](http://www.tutorialspoint.com/java8/index.htm)
 * [Java 8 Stream Tutorial](http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/)
 * [Java 8 Parallel Streams](http://www.byteslounge.com/tutorials/java-8-parallel-streams)
-* [JDK8新特性介绍](https://my.oschina.net/spinachgit/blog/1606567)
-
 * [Java 8系列之Stream的基本语法详解](https://my.oschina.net/spinachgit/blog/1604486)
+* [Java 9 Additions To Stream](https://blog.codefx.org/java/java-9-stream/)

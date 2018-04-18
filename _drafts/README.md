@@ -24,7 +24,7 @@ jekyll server --drafts --incremental --port 1888
 System.out.print("我前面有一空行！");
 ```
 * 在 * 列表中也可以使用
-    - 比如在之类使用
+    - 比如在此处使用，需要注意的是下面的代码段要比子列表再缩进一个等级样式才正确
 
     ```java
     System.out.print("我一可以缩进！");
