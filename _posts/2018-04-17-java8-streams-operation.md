@@ -77,7 +77,7 @@ Stream类中定义的函数式接口汇总如下：
 
 * Intermediate
   - `filter` 过滤：对原Stream按照指定条件过滤
-  - map相关：将对于Stream中包含的元素使用给定的转换函数进行转换操作，新生成的Stream只包含转换生成的元素。为了提高处理效率，官方已封装好了，三种变形：mapToDouble，mapToInt，mapToLong
+  - map相关：将对于Stream中包含的元素使用给定的转换函数进行转换操作，新生成的Stream只包含转换生成的元素，元素类型是lambda表达式中返回的数据类型。
     - `map` 
     - `mapToInt`
     - `mapToLang`
@@ -115,39 +115,43 @@ Stream类中定义的函数式接口汇总如下：
   - `min`：根据指定的Comparator，返回一个Optional，该Optional中的value值就是Stream中最小的元素。
   - `max`：根据指定的Comparator，返回一个Optional，该Optional中的value值就是Stream中最大的元素。
   - `count`：返回Stream中元素的个数。
+  - 
 
 ## 创建Stream
 我们有多种方式生成Stream：
 1. Stream接口的静态工厂方法（注意：Java8里接口可以带静态方法）
-    * of 其生成的Stream是有限长度的，Stream的长度为其内的元素个数
+    * `of` 其生成的Stream是有限长度的，Stream的长度为其内的元素个数
     
       ```java
-      - of(T... values)：返回含有多个T元素的Stream
-      - of(T t)：返回含有一个T元素的Stream
+      - of(T... values) // 返回含有多个T元素的Stream
+      - of(T t)         // 返回含有一个T元素的Stream
       ```
-    * generator 返回一个无限长度的Stream,其元素由Supplier接口的提供。一般无限长度的Stream会与filter、limit等配合使用，否则Stream会无限制的执行下去
+    * `generator` 返回一个无限长度的Stream,其元素由Supplier接口的提供。一般无限长度的Stream会与filter、limit等配合使用，否则Stream会无限制的执行下去
     
       ```java
       - generate(Supplier<T> s)
       ```
-    * iterate 其返回的也是一个无限长度的Stream，与generate方法不同的是，其是通过函数f迭代对给指定的元素种子而产生无限连续有序Stream，其中包含的元素可以认为是：seed，f(seed),f(f(seed))无限循环。
+    * `iterate` 其返回的也是一个无限长度的Stream，与generate方法不同的是，其是通过函数f迭代对给指定的元素种子而产生无限连续有序Stream，其中包含的元素可以认为是：seed，f(seed),f(f(seed))无限循环。
     
       ```java
       - iterate(T seed, UnaryOperator<T> f)
       ```
-    * empty 返回一个空数据流
+    * `empty` 返回一个空数据流
 2. Collection接口和数组的默认方法（默认方法,也使Java的新特性之一，后续介绍），把一个Collection对象转换成Stream
-    * Collection.stream
-    * Arrays.stream
+    * Collection.`stream`
+    * Arrays.`stream`
 
       ```java
       - Stream<T> stream(T[] array)
       ```
 3. 其他
-    * Random.ints()
-    * BitSet.stream()
-    * Pattern.splitAsStream(java.lang.CharSequence)
-    * JarFile.stream()
+    * Random.`ints`()
+    * BitSet.`stream`()
+    * Pattern.`splitAsStream`(java.lang.CharSequence)
+    * JarFile.`stream`()
+
+
+创建stream的范例代码：
 
 ```java
 // 1. 静态工厂
@@ -176,363 +180,74 @@ Arrays.stream(ids)
 
 ```
 
+## 部分操作详解
 
-
-## 范例代码：
-
-    StreamDemo.java
+### map & flatMap 操作
+map 操作针对泛型，另外对于基本数据类似，官方提供了三个封装类：`IntStream`、`LongStream`、`DoubleStream`，这三个封装类都可以有map
+对应的生成方法直接生成，封装类提供了基础stream类没有的一些方法，比如`sum`、`average`、`boxed`等，另外也是为了提高效率。
 
 ```java
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.StringJoiner;
-import java.util.concurrent.ForkJoinPool;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+List<Integer> numbers = Arrays.asList(3, 2, 8, 3, 7, 9, 5);
+// 基本操作
+numbers.stream().map(n -> n * n).filter(n -> n > 5).forEach(n -> System.out.println(n + "、"));
 
-/**
- * Created by Bob on 2016/8/25.
- */
-public class StreamDemo {
-  public static void main(String[] args) {
+// 使用map 在 IntStream 的数据基础上生成新的其他类型的数据流，注意返回的数据类型
+Stream<Person> pStream = numbers.stream().map(n -> new Person("Person", n)); // Person 类型
+pStream.forEach(p -> System.out.println(p.name + "=>" + p.age + "\n"));
 
-    List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
-    List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
+Stream<Integer> iStream = persons.stream().map(p -> ++p.age); // Person 生成 Integer 类型
+pStream.forEach(a -> System.out.println(a + "\n"));
 
-    List<Person> persons = Arrays.asList(
-            new Person("Max", 18),
-            new Person("Peter", 23),
-            new Person("Pamela", 23),
-            new Person("David", 12)
-    );
-
-    System.out.print("原数据：");
-    numbers.stream().forEach(n -> System.out.print(n + "、"));
-
-    System.out.print("\n乘方：");
-    numbers.stream().map(n -> n * n).forEach(n -> System.out.print(n + "、"));
-
-    System.out.print("\n求和方法1：");
-    int resultSum1 = numbers.stream().mapToInt(Integer::new).sum();
-    System.out.print(resultSum1);
-
-    System.out.print("\n排重：");
-    numbers.stream().distinct().forEach(n -> System.out.print(n + "、"));
-
-    System.out.print("\n过滤：");
-    numbers.stream().filter(n -> n > 3).forEach(n -> System.out.print(n + "、"));
-
-    System.out.print("\n截取：");
-    numbers.stream().limit(4).forEach(n -> System.out.print(n + "、"));
-
-    System.out.print("\n排序：");
-    numbers.stream().sorted().forEach(n -> System.out.print(n + "、"));
-    System.out.print("\n排序：");
-    numbers.stream().sorted((a, b) -> a.compareTo(b)).forEach(n -> System.out.print(n + "、"));
-    System.out.print("\n排序：");
-    numbers.stream().sorted((a, b) -> b.compareTo(a)).forEach(n -> System.out.print(n + "、"));
-
-    System.out.print("\n集合：");
-    List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
-    System.out.print(filtered);
-
-    System.out.print("\n集合：");
-    String mergedString = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
-    System.out.print(mergedString);
-
-
-    // reduce相关操作：操作的是两个元素之间的关系
-    System.out.print("\n求和方法2：");
-    Optional<Integer> resultSum2 = numbers.stream().reduce((x, y) -> x + y);
-    resultSum2.ifPresent(System.out::print);
-    System.out.print("\n求和方法3：");
-    Optional<Integer> resultSum3 = numbers.stream().reduce(Integer::sum);
-    resultSum3.ifPresent(System.out::print);
-    // —— 第一个参数0，相当于默认值
-    System.out.print("\n求和方法4：");
-    Integer resultSum4 = numbers.stream().reduce(0, (x, y) -> x + y);
-    System.out.print(resultSum4);
-    System.out.print("\n求和方法5：");
-    Integer resultSum5 = numbers.stream().reduce(0, Integer::sum);
-    System.out.print(resultSum5);
-
-    System.out.print("\n求和方法6：");
-    int resultSum6 = strings.stream().mapToInt(str -> str.length()).reduce(0, (x, y) -> x + y);
-    System.out.print(resultSum6);
-
-    /**
-     * Collectors
-     */
-    System.out.print("\n分组：");
-    Map<Integer, List<Person>> personsByAge = persons
-            .stream()
-            .collect(Collectors.groupingBy(p -> p.age));
-    personsByAge
-            .forEach((age, p) -> System.out.format("age %s: %s\n", age, p));
-
-    System.out.print("\n平均值：");
-    Double averageAge = persons
-            .stream()
-            .collect(Collectors.averagingInt(p -> p.age));
-    System.out.println(averageAge);
-
-    System.out.print("\n统计：");
-    IntSummaryStatistics ageSummary = persons
-            .stream()
-            .collect(Collectors.summarizingInt(p -> p.age));
-    System.out.println(ageSummary);
-
-    System.out.print("\n统计：\n");
-    IntSummaryStatistics stats = numbers.stream().mapToInt((x) -> x).summaryStatistics();
-    System.out.println("\t最大值: " + stats.getMax());
-    System.out.println("\t最小值: " + stats.getMin());
-    System.out.println("\t求和: " + stats.getSum());
-    System.out.println("\t平均值: " + stats.getAverage());
-
-    System.out.print("\njoining：");
-    String phrase = persons
-            .stream()
-            .filter(p -> p.age >= 18)
-            .map(p -> p.name)
-            .collect(Collectors.joining(" and ", "In Germany ", " are of legal age."));
-    System.out.println(phrase);
-
-    System.out.print("\nCollectors.toMap：");
-    Map<Integer, String> map = persons
-            .stream()
-            .collect(
-                    Collectors.toMap(
-                            p -> p.age,
-                            p -> p.name,
-                            (name1, name2) -> {
-                              System.out.println(name2);
-                              return name1 + ";" + name2;
-                            }));
-
-    System.out.print("\nCollectors.of：");
-    Collector<Person, StringJoiner, String> personNameCollector =
-            Collector.of(
-                    () -> new StringJoiner(" | "),          // supplier
-                    (j, p) -> j.add(p.name.toUpperCase()),  // accumulator
-                    (j1, j2) -> j1.merge(j2),               // combiner
-                    StringJoiner::toString);                // finisher
-    String names = persons
-            .stream()
-            .collect(personNameCollector);
-    System.out.println(names);  // MAX | PETER | PAMELA | DAVID
-
-    System.out.println(map);
-
-    /**
-     * FlatMap
-     */
-    List<Foo> foos = new ArrayList<>();
-
-// create foos
-    IntStream
-            .range(1, 4)
-            .forEach(i -> foos.add(new Foo("Foo" + i)));
-// create bars
-    foos.forEach(f ->
-            IntStream
-                    .range(1, 4)
-                    .forEach(i -> f.bars.add(new Bar("Bar" + i + " <- " + f.name))));
-
-    System.out.print("\nflatMap：");
-    foos.stream()
-            .flatMap(f -> f.bars.stream())
-            .forEach(b -> System.out.println(b.name));
-
-    IntStream.range(1, 4)
-            .mapToObj(i -> new Foo("Foo" + i))
-            .peek(f -> IntStream.range(1, 4)
-                    .mapToObj(i -> new Bar("Bar" + i + " <- " + f.name))
-                    .forEach(f.bars::add))
-            .flatMap(f -> f.bars.stream())
-            .forEach(b -> System.out.println(b.name));
-
-    Outer outer = new Outer();
-    if (outer != null && outer.nested != null && outer.nested.inner != null) {
-      System.out.println(outer.nested.inner.foo);
-    }
-
-    Optional.of(new Outer())
-            .flatMap(o -> Optional.ofNullable(o.nested))
-            .flatMap(n -> Optional.ofNullable(n.inner))
-            .flatMap(i -> Optional.ofNullable(i.foo))
-            .ifPresent(System.out::println);
-
-    /**
-     * Reduce
-     */
-    persons
-            .stream()
-            .reduce((p1, p2) -> p1.age > p2.age ? p1 : p2)
-            .ifPresent(System.out::println);    // Pamela
-    Person result =
-            persons
-                    .stream()
-                    .reduce(new Person("", 0), (p1, p2) -> {
-                      p1.age += p2.age;
-                      p1.name += p2.name;
-                      return p1;
-                    });
-
-    System.out.format("name=%s; age=%s", result.name, result.age);
-
-    Integer ageSum = persons
-            .stream()
-            .reduce(0, (sum, p) -> sum += p.age, (sum1, sum2) -> sum1 + sum2);
-
-    System.out.println(ageSum);  // 76
-
-    Integer ageSum2 = persons
-            .stream()
-            .reduce(0,
-                    (sum, p) -> {
-                      System.out.format("accumulator: sum=%s; person=%s\n", sum, p);
-                      return sum += p.age;
-                    },
-                    (sum1, sum2) -> {
-                      System.out.format("combiner: sum1=%s; sum2=%s\n", sum1, sum2);
-                      return sum1 + sum2;
-                    });
-
-    Integer ageSum3 = persons
-            .parallelStream()
-            .reduce(0,
-                    (sum, p) -> {
-                      System.out.format("accumulator: sum=%s; person=%s\n", sum, p);
-                      return sum += p.age;
-                    },
-                    (sum1, sum2) -> {
-                      System.out.format("combiner: sum1=%s; sum2=%s\n", sum1, sum2);
-                      return sum1 + sum2;
-                    });
-
-
-    /**
-     * Parallel Streams
-     */
-    System.out.print("\n并行：");
-    numbers.parallelStream().filter(n -> n > 3).forEach(n -> System.out.print(n + "、"));
-    System.out.print("\n并行排序：");
-    numbers.parallelStream().sorted().forEachOrdered(n -> System.out.print(n + "、"));
-
-    ForkJoinPool commonPool = ForkJoinPool.commonPool();
-    System.out.println(commonPool.getParallelism());    // 根据机器配置情况不同而不同
-
-    Arrays.asList("a1", "a2", "b1", "c2", "c1")
-            .parallelStream()
-            .filter(s -> {
-              System.out.format("filter: %s [%s]\n",
-                      s, Thread.currentThread().getName());
-              return true;
-            })
-            .map(s -> {
-              System.out.format("map: %s [%s]\n",
-                      s, Thread.currentThread().getName());
-              return s.toUpperCase();
-            })
-            .forEach(s -> System.out.format("forEach: %s [%s]\n",
-                    s, Thread.currentThread().getName()));
-
-    Arrays.asList("a1", "a2", "b1", "c2", "c1")
-            .parallelStream()
-            .filter(s -> {
-              System.out.format("filter: %s [%s]\n",
-                      s, Thread.currentThread().getName());
-              return true;
-            })
-            .map(s -> {
-              System.out.format("map: %s [%s]\n",
-                      s, Thread.currentThread().getName());
-              return s.toUpperCase();
-            })
-            .sorted((s1, s2) -> {
-              System.out.format("sort: %s <> %s [%s]\n",
-                      s1, s2, Thread.currentThread().getName());
-              return s1.compareTo(s2);
-            })
-            .forEach(s -> System.out.format("forEach: %s [%s]\n",
-                    s, Thread.currentThread().getName()));
-
-    persons
-            .parallelStream()
-            .reduce(0,
-                    (sum, p) -> {
-                      System.out.format("accumulator: sum=%s; person=%s [%s]\n",
-                              sum, p, Thread.currentThread().getName());
-                      return sum += p.age;
-                    },
-                    (sum1, sum2) -> {
-                      System.out.format("combiner: sum1=%s; sum2=%s [%s]\n",
-                              sum1, sum2, Thread.currentThread().getName());
-                      return sum1 + sum2;
-                    });
-
-    /**
-     * Spliterator
-     */
-    Spliterator<Integer> mySpliterator = numbers.spliterator();
-    System.out.println("mySpliterator.estimateSize() = " + mySpliterator.estimateSize());
-    // watch my ArrayList forEach() tutorial for a detailed explanation on how a Consumer functional interface works.
-    Consumer<Integer> c = x -> System.out.println("mySpliterator.forEachRemaining = " + x);
-    mySpliterator.forEachRemaining(c);
-    System.out.println("mySpliterator.estimateSize() = " + mySpliterator.estimateSize());
-
-  }
-}
-
-class Person {
-  String name;
-  int age;
-
-  Person(String name, int age) {
-    this.name = name;
-    this.age = age;
-  }
-
-  @Override
-  public String toString() {
-    return name;
-  }
-}
-
-class Foo {
-  String name;
-  List<Bar> bars = new ArrayList<>();
-
-  Foo(String name) {
-    this.name = name;
-  }
-}
-
-class Bar {
-  String name;
-
-  Bar(String name) {
-    this.name = name;
-  }
-}
-
-class Outer {
-  Nested nested;
-}
-
-class Nested {
-  Inner inner;
-}
-
-class Inner {
-  String foo;
-}
+IntStream intStream = pStream.mapToInt(p -> ++p.age); // Person 生成 int 类型
+intStream.forEach(a -> System.out.println(a + "、"));
+intStream.sum();      // int 的额外操作
+intStream.average();
+intStream.boxed();
 ```
+
+对于map 和 flatMap 区别，从下面这个例子来看更明显：
+```java
+List<String> list = Arrays.asList("hello welcome", "world hello", "hello world", "hello world welcome");
+list.stream()
+  .map(item -> Arrays.stream(item.split(" ")))
+  .distinct().collect(Collectors.toList()).forEach(System.out::println);
+list.stream()
+  .flatMap(item -> Arrays.stream(item.split(" ")))
+  .distinct().collect(Collectors.toList()).forEach(System.out::println);
+
+```
+打印结果如下：
+```shell
+java.util.stream.ReferencePipeline$Head@2fc14f68
+java.util.stream.ReferencePipeline$Head@591f989e
+java.util.stream.ReferencePipeline$Head@66048bfd
+java.util.stream.ReferencePipeline$Head@61443d8f
+----------------------------
+hello
+welcome
+world
+```
+
+使用map 生成的流类型是 `List<String>`，使用 flatMap 生成的流是 `List<Stream<String>>`。（这就是扁平化的意义？）
+```java
+List<Stream<String>> listResult = list.stream().map(item -> Arrays.stream(item.split(" ")))
+  .distinct().collect(Collectors.toList());
+List<String> listResult2 = list.stream().flatMap(item -> Arrays.stream(item.split(" ")))
+  .distinct().collect(Collectors.toList());
+// 使用如下方式可以将非扁平化的数据流扁平化处理：
+list.stream().map(item -> item.split(" ")).flatMap(Arrays::stream)
+  .distinct().collect(Collectors.toList()).forEach(System.out::println);
+```
+map 和 flatMap 结合使用个，再看一个例子：
+```java
+List<String> list2 = Arrays.asList("hello", "hi", "你好");
+List<String> list3 = Arrays.asList("zhangsan", "lisi", "wangwu", "zhaoliu");
+list2.stream().flatMap(item -> list3.stream().map(item2 -> item + " " + item2))
+  .collect(Collectors.toList()).forEach(System.out::println);
+```
+
+
+
 
 ## 参考资料
 
