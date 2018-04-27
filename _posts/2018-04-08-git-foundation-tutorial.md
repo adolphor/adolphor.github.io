@@ -44,8 +44,8 @@ brew install icdiff
 ## 分支操作
 
 ```Shell
-# 创建并切换
-git branch -b <branch-name>
+# 创建分支
+git branch <branch-name>
 # 切换分支
 git checkout <branch-name>
 # 删除分支
