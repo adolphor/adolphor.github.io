@@ -7,16 +7,18 @@
   - Java
   - JVM
   - Java8
-* iOS
+* App
   - iOS
   - macOS
   - swift
+  - Flutter
 * bigData
   - 分布式
   - Hadoop
 * database
   - mongodb
   - Redis
+  - MySQL
 * CS
   - CS
   - shell
@@ -31,7 +33,8 @@
   - Maven
 * 共用
   - 网络
-  - 读书笔记 
+  - 读书笔记
+  - 架构设计
 
 
 # 代码高亮
