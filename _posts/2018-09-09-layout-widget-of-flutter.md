@@ -63,6 +63,34 @@ Material Design布局结构的基本实现。此类提供了用于显示drawer�
 
 一个方便的widget，它封装了应用程序实现Material Design所需要的一些widget。
 
+* title ： 在任务管理窗口中所显示的应用名字
+  - 这个和启动图标名字是不一样的，和当前 Activity 的名字也是不一样的。 这个 Title 是用来定义任务管理窗口界面所看到应用名字的。
+    在原生 Android 系统中点击圆圈 Home 按钮右边的方块按钮就会打开多任务切换窗口。
+* theme ： 应用各种 UI 所使用的主题颜色
+  - 定义应用所使用的主题颜色，在纸墨设计中定义了 primaryColor、accentColor、hintColor 等颜色值。可以通过这个来指定一个 ThemeData 
+    定义应用中每个控件的颜色。
+* color ： 应用的主要颜色值（primary color），也就是安卓任务管理窗口中所显示的应用颜色
+* home ： 应用默认所显示的界面 Widget
+  - 这个是一个 Widget 对象，用来定义当前应用打开的时候，所显示的界面。
+* routes ： 应用的顶级导航表格，这个是多页面应用用来控制页面跳转的，类似于网页的网址
+  - 定义应用中页面跳转规则。 该对象是一个 Map<String, WidgetBuilder>。
+    当使用 Navigator.pushNamed 来路由的时候，会在 routes 查找路由名字，然后使用 对应的 WidgetBuilder 来构造一个带有页面切换动画的 
+    MaterialPageRoute。如果应用只有一个界面，则不用设置这个属性，使用 home 设置这个界面即可。
+    
+    如果 home 不为 null，当 routes 中包含 Navigator.defaultRouteName（'/'） 的时候会出错，两个都是 home 冲突了。
+    
+    如果所查找的路由在 routes 中不存在，则会通过 onGenerateRoute 来查找。
+* initialRoute ：第一个默认显示的路由名字，默认值为 Window.defaultRouteName
+* onGenerateRoute ： 生成路由的回调函数，当导航的命名路由的时候，会使用这个来生成界面
+* onLocaleChanged ： 当系统修改语言的时候，会触发å这个回调
+* navigatorObservers ： 应用 Navigator 的监听器
+* debugShowMaterialGrid ： 是否显示 纸墨设计 基础布局网格，用来调试 UI 的工具
+* showPerformanceOverlay ： 显示性能标签，https://flutter.io/debugging/#performanceoverlay
+* checkerboardRasterCacheImages 、showSemanticsDebugger、debugShowCheckedModeBanner 各种调试开关
+
+
+Read more: http://blog.chengyunfeng.com/?p=1041#ixzz5QaNaJDNI
+
 ### WidgetsApp
 
 [API文档](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
@@ -354,6 +382,40 @@ iOS风格的底部选项卡。 通常和CupertinoTabScaffold一起使用。
 [API文档](https://docs.flutter.io/flutter/widgets/ListView-class.html)
 
 可滚动的列表控件。ListView是最常用的滚动widget，它在滚动方向上一个接一个地显示它的孩子。在纵轴上，孩子们被要求填充ListView。
+对于少量固定的子元素，可以直接一次性全部渲染，对于大量子元素的list，则需要使用build方法：
+
+```dart
+
+// 少量的List元素可以一次性渲染
+new ListView(
+  children: <Widget>[
+    new ListTile(
+      leading: new Icon(Icons.map),
+      title: new Text('Map'),
+    ),
+    new ListTile(
+      leading: new Icon(Icons.photo),
+      title: new Text('Album'),
+    ),
+    new ListTile(
+      leading: new Icon(Icons.phone),
+      title: new Text('Phone'),
+    ),
+  ],
+),
+
+// 大量子元素的时候要使用build方法：
+new ListView.builder(
+  // item数量
+  itemCount: widget.items.length,
+  itemBuilder: (context, index) {
+    return new ListTile(
+      title: new Text('${widget.items[index]}'),
+    );
+  },
+),
+```
+
 
 ### CustomMultiChildLayout
 
@@ -574,11 +636,46 @@ Material Design下拉刷新指示器，包装一个可滚动widget
 
 一个显示图片的widget
 
+* 显示网络图片
+
+  - 可以是静态图片
+    ```dart
+    new Image.network(
+      'https://raw.githubusercontent.com/NorthFacing/adolphor/gh-pages/image/post/2018/09/09/demo_senlin.jpg',
+    ),
+    ```
+  - 也可以是gif动态图片
+    ```dart
+    new Image.network(
+      'https://raw.githubusercontent.com/NorthFacing/adolphor/gh-pages/image/post/2018/09/09/demo_coffee.gif',
+    ),
+    ``` 
+
 ### RawImage
 
 [API文档](https://docs.flutter.io/flutter/widgets/RawImage-class.html)
 
 一个直接显示dart:ui.Image的widget
+
+### 3th - FadeInImage
+
+需要增加依赖包，在添加如下依赖：
+
+```yaml
+transparent_image: ^0.1.0
+```
+
+之后运行如下指令：
+```bash
+flutter packages get
+```
+按照如下方式使用即可：
+```dart
+new FadeInImage.memoryNetwork(
+  placeholder: kTransparentImage,
+  image: 'https://raw.githubusercontent.com/NorthFacing/adolphor/gh-pages/image/post/2018/09/09/demo_senlin.jpg',
+),
+```
 
 ### Icon
 [API文档](https://docs.flutter.io/flutter/widgets/Icon-class.html)
