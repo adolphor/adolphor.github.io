@@ -9,6 +9,31 @@ geneMenu:   true
 excerpt:    Flutter 错误和解决汇总
 ---
 
+## Flutter基本操作指令
+
+```bash
+# 创建项目
+flutter create my_flutter_app
+# 获取依赖包
+flutter packages get
+# 运行项目
+flutter run
+```
+
+## Waiting for another flutter command to release the startup lock
+
+找到了解决方法，如下： 
+1、打开flutter的安装目录/bin/cache/ 
+2、删除lockfile文件 
+3、重启AndroidStudio
+
+[参考](https://github.com/flutter/flutter/issues/7768)
+
+## Android studio 中运行按钮不能点击的问题
+
+确认已经安装了dart和flutter插件，但是依然不能再ide中通过运行和调试按钮来启动，
+主要是因为么有设置flutter的
+
 ## iOS启动报错：配置开发者账号以及应用信息
 
 * 开发者账号登录

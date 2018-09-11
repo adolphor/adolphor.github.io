@@ -850,3 +850,6 @@ Flutter应用的异步模型
 ## 参考资料
 
 * [Flutter中文网 - 基础 Widgets](https://flutterchina.club/widgets/)
+* [Flutter样式和布局控件简析(一)](https://segmentfault.com/a/1190000011949751)
+* [Flutter样式和布局控件简析(二)](https://segmentfault.com/a/1190000015086603)
+* [Flutter中文开发者论坛](http://flutter-dev.cn/)
