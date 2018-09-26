@@ -79,13 +79,19 @@ $ /usr/libexec/java_home -v 版本号
 ```shell
 $ vi ~/.bash_profile
 
+export JAVA_6_HOME="$(/usr/libexec/java_home -v 1.6)"
 export JAVA_7_HOME="$(/usr/libexec/java_home -v 1.7)"
 export JAVA_8_HOME="$(/usr/libexec/java_home -v 1.8)"
 export JAVA_9_HOME="$(/usr/libexec/java_home -v 9)"
+export JAVA_10_HOME="$(/usr/libexec/java_home -v 10)"
+export JAVA_11_HOME="$(/usr/libexec/java_home -v 11)"
 
+alias jdk6='export JAVA_HOME=$JAVA_6_HOME'
 alias jdk7='export JAVA_HOME=$JAVA_7_HOME'
 alias jdk8='export JAVA_HOME=$JAVA_8_HOME'
 alias jdk9='export JAVA_HOME=$JAVA_9_HOME'
+alias jdk10='export JAVA_HOME=$JAVA_10_HOME'
+alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
 
 # 默认使用JDK8
 export JAVA_HOME=$JAVA_8_HOME
