@@ -94,15 +94,15 @@ brew services stop mysql@5.7
 ## 命令行基本操作
 
 ### 登录
+
 * -u 跟上用户名
 * -p 跟上密码
 * 最后可以加上数据库名称也可以不加
-```
-mysql -uroot -phaizhu
 
+```bash
+mysql -uroot -phaizhu
 mysql -uroot -phaizhu testdb
 ```
-
 
 ## 其他操作
 
