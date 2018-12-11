@@ -14,6 +14,3 @@ excerpt:    ${postTitle}
 ## 参考资料
 
 * [test](test.html)
-
-```java
-```
