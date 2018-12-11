@@ -30,6 +30,9 @@ System.out.print("我前面有一空行！");
     System.out.print("我一可以缩进！");
     ```
 
+## 图片
+![iterm2login](/image/post/2017/06/26/20170626-0301-iterm2-config.jpg)
+
 ## 样式
 
 第一个table的样式：
