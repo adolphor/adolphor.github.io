@@ -19,3 +19,5 @@
 * [How To Use Multi-release JARs To Target Multiple Java Versions](https://blog.codefx.org/tools/multi-release-jars-multiple-java-versions/)
 
 * [JavaAgent 简单例子](https://blog.csdn.net/catoop/article/details/51034739#commentBox)
+
+* [从零开始学习 Alfred：基础功能及设置](https://sspai.com/post/32979)
