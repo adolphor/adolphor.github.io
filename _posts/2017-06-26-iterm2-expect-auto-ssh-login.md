@@ -71,14 +71,19 @@ vim iterm2login.sh
 #!/usr/bin/expect
 
 set timeout 30
-spawn ssh -p [lindex $argv 1] [lindex $argv 2]@[lindex $argv 0]
+set host [lindex $argv 0]
+set port [lindex $argv 1]
+set user [lindex $argv 2]
+set pswd [lindex $argv 3]
+
+spawn ssh -p $port $user@$host
 expect {
         "(yes/no)?"
         {send "yes\n";exp_continue}
         "password:"
-        {send "[lindex $argv 3]\n"}
+        {send "$pswd\n"}
         "Password:"
-        {send "[lindex $argv 3]\n"}
+        {send "$pswd\n"}
 }
 interact
 ```

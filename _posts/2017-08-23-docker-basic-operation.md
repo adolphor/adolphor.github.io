@@ -15,13 +15,15 @@ excerpt:    Docker基本操作
 
 ```shell
 docker info
+
+docker --version
+docker-compose --version
+docker-machine --version
 ```
 
-###  帮助信息
+###  控制台指令相关参数及解析
 ```shell
-# docker帮助信息
-docker
-docker help
+docker --help
 # docker具体指令帮助信息，比如：
 docker build --help
 ```
@@ -96,9 +98,9 @@ docker pull ubuntu:16.04
 ### 基于镜像创建容器
 
 ```shell
-# 使用默认last镜像TAG生成随机容器名称
+# 使用默认latest镜像生成随机容器名称
 docker run -i -t ubuntu /bin/bash 
-# 使用默认last镜像TAG生成指定容器名称
+# 使用默认latest镜像生成指定容器名称
 docker run --name myName -i -t ubuntu /bin/bash 
 # 指定镜像TAG生成指定容器名称
 docker run --name myName -i -t ubuntu:16.04 /bin/bash 
