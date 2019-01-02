@@ -4,6 +4,7 @@ public class FoodSeller implements Seller {
   public void sell(int price) {
     System.out.println("FoodSeller 以价格 $" + price + " 卖了一盒饭 ...");
   }
+
   public void back(int price) {
     System.out.println("FoodSeller 退回了价值 $" + price + " 的盒饭 ...");
   }

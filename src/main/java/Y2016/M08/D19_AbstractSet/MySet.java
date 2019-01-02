@@ -11,8 +11,8 @@ import java.util.Set;
  * Created by Bob on 2016/8/19.
  */
 public class MySet<E>
-        extends AbstractSet<E>
-        implements Set<E>, Cloneable, java.io.Serializable {
+    extends AbstractSet<E>
+    implements Set<E>, Cloneable, java.io.Serializable {
 
   static final long serialVersionUID = -5024744406713321676L;
 

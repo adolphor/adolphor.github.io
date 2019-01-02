@@ -5,7 +5,7 @@ package Y2016.M09.D20_effectiv_java.tip03;
  * 引用地址：
  * http://adolphor.com/blog/2016/09/20/effective-java-second-edition.html#tip03
  */
-public enum  Elvis03 { // 无需声明实现 Serializable 接口
+public enum Elvis03 { // 无需声明实现 Serializable 接口
 
   // JVM 层级保证的单例
   INSTANCE;
@@ -13,7 +13,7 @@ public enum  Elvis03 { // 无需声明实现 Serializable 接口
   private String host; // 可以包含属性
   private int port;
 
-  public void doWork(){ // 可以包含方法
+  public void doWork() { // 可以包含方法
     System.out.println("Do what ever...");
   }
 

@@ -5,6 +5,7 @@ package Y2016.M08.D04_Collection.defaultMethod;
  */
 public interface DefaultMethodOfInterface {
   void method1();
+
   default void method2() {
     System.out.println("I'm method2 from interface.");
   }

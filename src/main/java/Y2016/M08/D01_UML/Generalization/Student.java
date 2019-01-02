@@ -5,6 +5,7 @@ package Y2016.M08.D01_UML.Generalization;
  */
 public class Student extends Person {
   private Integer score;
+
   public void study() {
   }
 }

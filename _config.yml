@@ -36,7 +36,7 @@ disqusId: adolphor
 googleAnalyticsId: UA-68980203-2
 
 sass:
-    sass_dir: ./css/_sass
-    style: compressed
+  sass_dir: ./css/_sass
+  style: compressed
 
 cacheVersion: 20180129

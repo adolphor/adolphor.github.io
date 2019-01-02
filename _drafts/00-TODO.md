@@ -23,3 +23,6 @@
 * [从零开始学习 Alfred：基础功能及设置](https://sspai.com/post/32979)
 
 * [小米运维架构服务监控Open-Falcon](https://blog.csdn.net/qq_27384769/article/details/79234270)
+
+* [你不知道的Chrome调试工具技巧(系列)](https://juejin.im/post/5c09a80151882521c81168a2)
+* [你不知道的Chrome调试工具技巧(系列)（英文原版）](https://medium.com/@tomsu/devtools-tips-day-1-the-console-dollars-3aa0d93e923c)

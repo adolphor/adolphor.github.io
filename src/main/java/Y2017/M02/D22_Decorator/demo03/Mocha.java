@@ -5,12 +5,12 @@ package Y2017.M02.D22_Decorator.demo03;
  */
 public class Mocha extends Dressing {
 
-  public Mocha(Coffee coffee){
+  public Mocha(Coffee coffee) {
     super(coffee);
   }
 
   @Override
-  public double cost(){
+  public double cost() {
     return super.cost() + 0.5;
   }
 }

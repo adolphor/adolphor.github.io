@@ -15,20 +15,20 @@ public class Elvis02 implements Serializable { // 实现Serializable，表明可
    * 参考：
    * http://blog.csdn.net/card361401376/article/details/51340822
    */
-  private static class SingletonHolder{
+  private static class SingletonHolder {
     //静态初始化器 由虚拟机保证线程安全
-    private static Elvis02 INSTANCE = new Elvis02 ();
+    private static Elvis02 INSTANCE = new Elvis02();
   }
 
-  private Elvis02 () {
+  private Elvis02() {
     System.out.println("Executing Elvis02 constructor...");
   }
 
-  public static Elvis02 getInstance(){
+  public static Elvis02 getInstance() {
     return SingletonHolder.INSTANCE;
   }
 
-  private Object readResolve(){ // 必须声明此函数，防止序列化的时候产生新的实例
+  private Object readResolve() { // 必须声明此函数，防止序列化的时候产生新的实例
     return SingletonHolder.INSTANCE;
   }
 

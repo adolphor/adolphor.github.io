@@ -7,6 +7,7 @@ public class Panda implements Animal {
   public void eat() {
     System.out.println("吃竹子");
   }
+
   public void sleep() {
     System.out.println("睡树上");
   }

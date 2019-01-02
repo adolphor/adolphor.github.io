@@ -20,10 +20,10 @@ import java.util.Map;
 
 public class Generator {
 
-  private static String postTitle = "正则表达式基础";
-  private static String urlTitle = "regular-expression-foundation-tutorial";
+  private static String postTitle = "在macOS上使用docker运行MySQL";
+  private static String urlTitle = "manage-mysql-by-docker-of-macos";
   private static String categories = "[blog]";
-  private static String tags = "[Maven]";
+  private static String tags = "[Docker]";
 
   private static Configuration cfg;
 
@@ -46,7 +46,7 @@ public class Generator {
         .toString();
     Configuration configuration = getConfiguration(templatePath);
     Template temp = configuration.getTemplate("post.ftl");
-    String url = System.getProperty("user.dir") + File.separator + "_drafts"
+    String url = System.getProperty("user.dir") + File.separator + "_posts"
         + File.separator + Utils.getPostTitle(urlTitle) + ".md";
 
     File file = new File(url);

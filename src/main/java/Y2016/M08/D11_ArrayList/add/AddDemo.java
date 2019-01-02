@@ -10,26 +10,25 @@ public class AddDemo {
     // 扩容测试
     ArrayList<String> defaultSize = new ArrayList<>();
     for (int i = 0; i < 35; i++) {
-      defaultSize.add("defaultSize => "+i);
+      defaultSize.add("defaultSize => " + i);
     }
 
     ArrayList<String> samllSize = new ArrayList<>(8);
     for (int i = 0; i < 35; i++) {
-      samllSize.add("samllSize => "+i);
+      samllSize.add("samllSize => " + i);
     }
 
     ArrayList<String> bigSize = new ArrayList<>(12);
     for (int i = 0; i < 35; i++) {
-      bigSize.add("bigSize => "+i);
+      bigSize.add("bigSize => " + i);
     }
 
     // 定点插入测试
     ArrayList<String> addIndex = new ArrayList<>(12);
     for (int i = 0; i < 8; i++) {
-      addIndex.add("addIndex => "+i);
+      addIndex.add("addIndex => " + i);
     }
-    addIndex.add(4,"insert");
-
+    addIndex.add(4, "insert");
 
 
   }

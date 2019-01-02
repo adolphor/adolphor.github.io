@@ -17,24 +17,24 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-<property>
-  <name>dfs.replication</name>
-  <value>1</value>
-  <description>默认是3，改为1</description>
-</property>
-<property>
-  <name>dfs.namenode.name.dir</name>
-  <value>file:///home/adolphor/workspace/data/hadoop/dfs/name</value>
-  <description>默认是${hadoop.tmp.dir}/dfs/name</description>
-</property>
-<property>
-  <name>dfs.datanode.data.dir</name>
-  <value>file:///home/adolphor/workspace/data/hadoop/dfs/data</value>
-  <description>默认是${hadoop.tmp.dir}/dfs/data</description>
-</property>
-<property>
-  <name>dfs.namenode.checkpoint.dir</name>
-  <value>file:///home/adolphor/workspace/data/hadoop/dfs/namesecondary</value>
-  <description>默认是${hadoop.tmp.dir}/dfs/namesecondary</description>
-</property>
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+    <description>默认是3，改为1</description>
+  </property>
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>file:///home/adolphor/workspace/data/hadoop/dfs/name</value>
+    <description>默认是${hadoop.tmp.dir}/dfs/name</description>
+  </property>
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>file:///home/adolphor/workspace/data/hadoop/dfs/data</value>
+    <description>默认是${hadoop.tmp.dir}/dfs/data</description>
+  </property>
+  <property>
+    <name>dfs.namenode.checkpoint.dir</name>
+    <value>file:///home/adolphor/workspace/data/hadoop/dfs/namesecondary</value>
+    <description>默认是${hadoop.tmp.dir}/dfs/namesecondary</description>
+  </property>
 </configuration>

@@ -12,9 +12,9 @@ postId: tag
     <h2>{{ tag[0] }}</h2>
   </div>
   <ul class="post-list">
-  {% for post in tag[1] %}
-      <li>{{ post.date | date:"%Y-%m-%d" }} <a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
+    {% for post in tag[1] %}
+    <li>{{ post.date | date:"%Y-%m-%d" }} <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
   </ul>
   {% endfor %}
 </div>

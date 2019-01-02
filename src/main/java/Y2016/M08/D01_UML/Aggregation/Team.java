@@ -5,7 +5,8 @@ package Y2016.M08.D01_UML.Aggregation;
  */
 public class Team {
   private Student student;
-  public Team(Student student){
+
+  public Team(Student student) {
     this.student = student;
   }
 }

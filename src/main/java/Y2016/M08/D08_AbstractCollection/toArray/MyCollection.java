@@ -120,5 +120,4 @@ public class MyCollection<E> extends AbstractCollection<E> {
   }
 
 
-
 }

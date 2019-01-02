@@ -6,6 +6,7 @@ package Y2016.M08.D01_UML.Generalization;
 public class Person {
   private String name;
   private String age;
-  public void eat(){
+
+  public void eat() {
   }
 }
