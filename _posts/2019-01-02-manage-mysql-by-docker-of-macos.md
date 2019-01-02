@@ -55,3 +55,4 @@ root/admin
 ## 参考资料
 
 * [外部访问docker容器(docker run -p/-P 指令)](https://www.jianshu.com/p/2b424c3bf0f7)
+* [Docker mysql 把数据存储在本地目录](https://blog.csdn.net/ataoajuan/article/details/78646581)
