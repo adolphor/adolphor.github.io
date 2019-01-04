@@ -157,6 +157,13 @@ docker logs dockerId/dockerName
 ```shell
 docker stats
 ```
+还有一个第三方的工具可以使用，top可以查看电脑的使用情况，ctop可以查看容器的使用情况：
+```bash
+# 安装
+brew install ctop
+# 运行
+ctop
+```
 
 ### 删除容器
 ```shell
