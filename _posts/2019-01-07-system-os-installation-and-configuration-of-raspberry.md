@@ -11,7 +11,9 @@ excerpt:    树莓派系统安装和配置
 
 ## 系统安装
 
-使用`win32diskimager` 安装器，选择image镜像和对应TF或者U盘，然后等待完成即可。
+* 使用`win32diskimager` 安装器，选择image镜像和对应TF或者U盘，然后等待完成即可
+* 写入完成之后，需要在boot文件的根目录创建一个名为 `ssh` 且没有后缀的空文件
+
 
 ## ssh 连接
 
