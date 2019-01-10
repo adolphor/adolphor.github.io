@@ -100,8 +100,8 @@ brew services stop mysql@5.7
 * 最后可以加上数据库名称也可以不加
 
 ```bash
-mysql -uroot -phaizhu
-mysql -uroot -phaizhu testdb
+mysql -uroot -p'adolphor!@#123'
+mysql -uroot -p'adolphor!@#123' testdb
 ```
 
 ## 其他操作
@@ -128,9 +128,23 @@ mysql
 
 use mysql
 flush privileges;
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'adolphor';
+ALTER USER 'root'@'localhost' IDENTIFIED BY ''adolphor!@#123'';
 quit
 ```
+
+### 用户访问权限
+
+```bash
+# 首先命令行登录
+mysql -uroot -p'adolphor!@#123'
+# 执行赋权语句
+GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' IDENTIFIED BY 'mypassword' WITH GRANT OPTION;
+# 刷新生效
+FLUSH PRIVILEGES;
+# 退出
+quit
+```
+
 
 
 
