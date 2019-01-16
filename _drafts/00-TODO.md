@@ -26,3 +26,5 @@
 
 * [你不知道的Chrome调试工具技巧(系列)](https://juejin.im/post/5c09a80151882521c81168a2)
 * [你不知道的Chrome调试工具技巧(系列)（英文原版）](https://medium.com/@tomsu/devtools-tips-day-1-the-console-dollars-3aa0d93e923c)
+
+* [GIT rebase](https://www.cnblogs.com/pinefantasy/articles/6287147.html)
