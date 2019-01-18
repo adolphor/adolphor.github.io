@@ -23,5 +23,10 @@ client <--> socks5 client <--> socks5 server <--> dst server
 # 参考
 
 * [JAVA写HTTP代理服务器(二)-netty实现](https://www.jianshu.com/p/005acada04e3)
+    - 
 * [TCP 代理服务器浅析](https://zhuanlan.zhihu.com/p/27670502)
-* [基于netty的tcp代理工具，可以借助公网服务器，访问内网主机tcp服务](https://github.com/ztgreat/proxy)
+    - 窗口滑动，控制流量阻塞在代理服务器
+* [GitHub - ztgreat/proxy ](https://github.com/ztgreat/proxy)
+    - 基于netty的tcp代理工具，可以借助公网服务器，访问内网主机tcp服务
+* [GitHub - HTTP tunnelingsap1ens/http-tunneling](https://github.com/sap1ens/http-tunneling)
+    - 参考如何实现ssl的中间人代理
