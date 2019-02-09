@@ -1,90 +1,362 @@
-[2019-02-09 20:11:25:558 DEBUG] 211142 [nioEventLoopGroup-4-1] io.netty.handler.logging.LoggingHandler.log(147): [id: 0xe36d941d, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0xc6684f1c, L:/127.0.0.1:9999 - R:/127.0.0.1:53686]
-[2019-02-09 20:11:25:559 DEBUG] 211143 [nioEventLoopGroup-4-1] io.netty.handler.logging.LoggingHandler.log(147): [id: 0xe36d941d, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
-[2019-02-09 20:11:25:560 DEBUG] 211144 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractInBoundInitializer.initChannel(28): [ [id: 0xc6684f1c, L:/127.0.0.1:9999 - R:/127.0.0.1:53686] ]【HttpInBoundInitializer】调用 initChannel 方法开始……
-[2019-02-09 20:11:25:560 DEBUG] 211144 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractInBoundInitializer.initChannel(31): [ c6684f1c ]【HttpInBoundInitializer】设置 outRelayChannelRef 属性：null
-[2019-02-09 20:11:25:560 DEBUG] 211144 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractInBoundInitializer.initChannel(34): [ c6684f1c ]【HttpInBoundInitializer】设置 requestTempMsg 属性：class java.util.concurrent.atomic.AtomicReference
-[2019-02-09 20:11:25:560 INFO ] 211144 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundInitializer.initChannel(32): [ c6684f1c ]【HttpInBoundInitializer】增加处理器: HttpServerCodec
-[2019-02-09 20:11:25:564 INFO ] 211148 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundInitializer.initChannel(34): [ c6684f1c ]【HttpInBoundInitializer】增加处理器: HttpObjectAggregator
-[2019-02-09 20:11:25:564 INFO ] 211148 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundInitializer.initChannel(36): [ c6684f1c ]【HttpInBoundInitializer】增加处理器: HttpProxyHandler
-[2019-02-09 20:11:25:565 DEBUG] 211149 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractInBoundHandler.channelActive(43): [ c6684f1c ]【HttpProxyHandler】调用 active 方法开始……
-[2019-02-09 20:11:25:565 DEBUG] 211149 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(30): [ [id: 0xc6684f1c, L:/127.0.0.1:9999 - R:/127.0.0.1:53686] ]【HttpProxyHandler】调用 active 方法开始……
-[2019-02-09 20:11:25:565 DEBUG] 211149 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(34): [ c6684f1c ]【HttpProxyHandler】设置 connect timestamp 属性：1549714285565
-[2019-02-09 20:11:25:565 DEBUG] 211149 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpProxyHandler.channelRead0(48): [ c6684f1c <==>  ]【HTTP请求分发】第一条 http 消息: HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
-CONNECT adolphor.com:443 HTTP/1.1
-cache-control: no-cache
-User-Agent: PostmanRuntime/7.6.0
-Accept: */*
-host: adolphor.com:443
-Connection: close
+
+[2019-02-09 20:13:10:810 DEBUG] 316394 [nioEventLoopGroup-5-3] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(97): [ 5760296b <==>  ]【HttpInBoundHandler】收到客户端消息: HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /js/main.js?version=20180129 HTTP/1.1
+Host: adolphor.com
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: _ga=GA1.2.678173588.1547553951; _gid=GA1.2.264183250.1549645056
+If-None-Match: W/"5c5ea901-9ad"
+If-Modified-Since: Sat, 09 Feb 2019 10:18:41 GMT
 content-length: 0
-[2019-02-09 20:11:25:566 DEBUG] 211150 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpProxyHandler.channelRead0(57): [ c6684f1c <==>  ]【HttpProxyHandler】HTTP请求分发 解析URL信息 adolphor.com:443=> adolphor.com:443
-[2019-02-09 20:11:25:566 INFO ] 211150 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpProxyHandler.channelRead0(63): [ c6684f1c ]【HttpProxyHandler】HTTP请求分发 添加 ATTR_IS_HTTP_TUNNEL 属性：true
-[2019-02-09 20:11:25:566 INFO ] 211150 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpProxyHandler.channelRead0(74): [ c6684f1c ]【HttpProxyHandler】HTTP请求分发 移除处理器: HttpProxyHandler
-[2019-02-09 20:11:25:566 DEBUG] 211150 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractInBoundHandler.channelActive(43): [ c6684f1c ]【HttpInBoundHandler】调用 active 方法开始……
-[2019-02-09 20:11:25:566 DEBUG] 211150 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(30): [ [id: 0xc6684f1c, L:/127.0.0.1:9999 - R:/127.0.0.1:53686] ]【HttpInBoundHandler】调用 active 方法开始……
-[2019-02-09 20:11:25:566 DEBUG] 211150 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(34): [ c6684f1c ]【HttpInBoundHandler】设置 connect timestamp 属性：1549714285566
-[2019-02-09 20:11:25:566 INFO ] 211150 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelActive(57): [ c6684f1c <==>  ]【HttpInBoundHandler】channel active...
-[2019-02-09 20:11:25:567 DEBUG] 211151 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundInitializer.initChannel(40): [ [id: 0xc644d7be] ]【HttpOutBoundInitializer】调用 initChannel 方法开始……
-[2019-02-09 20:11:25:567 INFO ] 211151 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundInitializer.initChannel(47): [ c644d7be ]【HttpOutBoundInitializer】增加处理器: HttpClientCodec
-[2019-02-09 20:11:25:567 INFO ] 211151 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundInitializer.initChannel(49): [ c644d7be ]【HttpOutBoundInitializer】增加处理器: HttpObjectAggregator
-[2019-02-09 20:11:25:567 INFO ] 211151 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundInitializer.initChannel(51): [ c644d7be ]【HttpOutBoundInitializer】增加处理器: HttpOutBoundHandler
-[2019-02-09 20:11:25:568 DEBUG] 211152 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ c6684f1c <==>  ]【HttpInBoundHandler】 内容读取完毕……
-[2019-02-09 20:11:26:483 DEBUG] 212067 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.lambda$channelActive$0(80): [ c6684f1c <==> c644d7be ]【HttpInBoundHandler】远程连接成功 => adolphor.com:443
-[2019-02-09 20:11:26:484 DEBUG] 212068 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractOutBoundHandler.channelActive(44): [ c644d7be ]【HttpOutBoundHandler】调用 active 方法开始……
-[2019-02-09 20:11:26:484 DEBUG] 212068 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(30): [ [id: 0xc644d7be, L:/192.168.1.153:53687 - R:adolphor.com/185.199.110.153:443] ]【HttpOutBoundHandler】调用 active 方法开始……
-[2019-02-09 20:11:26:484 DEBUG] 212068 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(34): [ c644d7be ]【HttpOutBoundHandler】设置 connect timestamp 属性：1549714286484
-[2019-02-09 20:11:26:484 INFO ] 212068 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractOutBoundHandler.channelActive(61): [ c6684f1c >>> c644d7be ] 无缓存消息
-[2019-02-09 20:11:26:484 DEBUG] 212068 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundHandler.channelActive(49): [ c6684f1c <==> c6684f1c ]【HttpOutBoundHandler】httpTunnel 连接成功，发送消息给客户端: DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+[2019-02-09 20:13:10:819 DEBUG] 316403 [nioEventLoopGroup-5-3] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(129): [ 5760296b >>> 61df0f60 ]【HttpInBoundHandler】发送消息到目的地址: HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /js/main.js?version=20180129 HTTP/1.1
+Host: adolphor.com
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: _ga=GA1.2.678173588.1547553951; _gid=GA1.2.264183250.1549645056
+If-None-Match: W/"5c5ea901-9ad"
+If-Modified-Since: Sat, 09 Feb 2019 10:18:41 GMT
+content-length: 0
+[2019-02-09 20:13:10:819 DEBUG] 316403 [nioEventLoopGroup-5-3] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 5760296b <==> 61df0f60 ]【HttpInBoundHandler】 内容读取完毕……
+[2019-02-09 20:13:10:982 DEBUG] 316566 [nioEventLoopGroup-5-3] com.adolphor.mynety.client.http.HttpOutBoundHandler.channelRead0(82): [ 5760296b <<< 61df0f60 ]【HttpOutBoundHandler】收到请求结果内容: HttpObjectAggregator$AggregatedFullHttpResponse(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+HTTP/1.1 304 Not Modified
+Date: Sat, 09 Feb 2019 12:13:10 GMT
+Via: 1.1 varnish
+Cache-Control: max-age=600
+ETag: W/"5c5ea901-9ad"
+Expires: Sat, 09 Feb 2019 10:38:41 GMT
+Age: 146
+Connection: keep-alive
+X-Served-By: cache-hkg17921-HKG
+X-Cache: HIT
+X-Cache-Hits: 4
+X-Timer: S1549714391.887852,VS0,VE0
+Vary: Accept-Encoding
+X-Fastly-Request-ID: d935802d0274a623a15364f6cc70e2c93de82408
+content-length: 0
+[2019-02-09 20:13:10:983 DEBUG] 316567 [nioEventLoopGroup-5-3] com.adolphor.mynety.client.http.HttpOutBoundHandler.channelRead0(89): [ 5760296b <<< 61df0f60 ]【HttpOutBoundHandler】】收到请求结果发送给客户端: HttpObjectAggregator$AggregatedFullHttpResponse(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+HTTP/1.1 304 Not Modified
+Date: Sat, 09 Feb 2019 12:13:10 GMT
+Via: 1.1 varnish
+Cache-Control: max-age=600
+ETag: W/"5c5ea901-9ad"
+Expires: Sat, 09 Feb 2019 10:38:41 GMT
+Age: 146
+Connection: keep-alive
+X-Served-By: cache-hkg17921-HKG
+X-Cache: HIT
+X-Cache-Hits: 4
+X-Timer: S1549714391.887852,VS0,VE0
+Vary: Accept-Encoding
+X-Fastly-Request-ID: d935802d0274a623a15364f6cc70e2c93de82408
+content-length: 0
+[2019-02-09 20:13:10:983 DEBUG] 316567 [nioEventLoopGroup-5-3] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 61df0f60 <==>  ]【HttpOutBoundHandler】 内容读取完毕……
+[2019-02-09 20:13:11:163 DEBUG] 316747 [nioEventLoopGroup-4-1] io.netty.handler.logging.LoggingHandler.log(147): [id: 0xe36d941d, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x0918f5ba, L:/127.0.0.1:9999 - R:/127.0.0.1:53725]
+[2019-02-09 20:13:11:163 DEBUG] 316747 [nioEventLoopGroup-4-1] io.netty.handler.logging.LoggingHandler.log(147): [id: 0xe36d941d, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+[2019-02-09 20:13:11:164 DEBUG] 316748 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractInBoundInitializer.initChannel(28): [ [id: 0x0918f5ba, L:/127.0.0.1:9999 - R:/127.0.0.1:53725] ]【HttpInBoundInitializer】调用 initChannel 方法开始……
+[2019-02-09 20:13:11:164 DEBUG] 316748 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractInBoundInitializer.initChannel(31): [ 0918f5ba ]【HttpInBoundInitializer】设置 outRelayChannelRef 属性：null
+[2019-02-09 20:13:11:164 DEBUG] 316748 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractInBoundInitializer.initChannel(34): [ 0918f5ba ]【HttpInBoundInitializer】设置 requestTempMsg 属性：class java.util.concurrent.atomic.AtomicReference
+[2019-02-09 20:13:11:164 INFO ] 316748 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpInBoundInitializer.initChannel(32): [ 0918f5ba ]【HttpInBoundInitializer】增加处理器: HttpServerCodec
+[2019-02-09 20:13:11:166 DEBUG] 316750 [nioEventLoopGroup-5-3] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(97): [ 5760296b <==>  ]【HttpInBoundHandler】收到客户端消息: HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /favicon.ico HTTP/1.1
+Host: adolphor.com
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Referer: https://adolphor.com/js/main.js?version=20180129
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: _ga=GA1.2.678173588.1547553951; _gid=GA1.2.264183250.1549645056
+content-length: 0
+[2019-02-09 20:13:11:167 INFO ] 316751 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpInBoundInitializer.initChannel(34): [ 0918f5ba ]【HttpInBoundInitializer】增加处理器: HttpObjectAggregator
+[2019-02-09 20:13:11:167 DEBUG] 316751 [nioEventLoopGroup-5-3] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(129): [ 5760296b >>> 61df0f60 ]【HttpInBoundHandler】发送消息到目的地址: HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /favicon.ico HTTP/1.1
+Host: adolphor.com
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Referer: https://adolphor.com/js/main.js?version=20180129
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: _ga=GA1.2.678173588.1547553951; _gid=GA1.2.264183250.1549645056
+content-length: 0
+[2019-02-09 20:13:11:167 INFO ] 316751 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpInBoundInitializer.initChannel(36): [ 0918f5ba ]【HttpInBoundInitializer】增加处理器: HttpProxyHandler
+[2019-02-09 20:13:11:167 DEBUG] 316751 [nioEventLoopGroup-5-3] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 5760296b <==> 61df0f60 ]【HttpInBoundHandler】 内容读取完毕……
+[2019-02-09 20:13:11:167 DEBUG] 316751 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractInBoundHandler.channelActive(43): [ 0918f5ba ]【HttpProxyHandler】调用 active 方法开始……
+[2019-02-09 20:13:11:167 DEBUG] 316751 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(30): [ [id: 0x0918f5ba, L:/127.0.0.1:9999 - R:/127.0.0.1:53725] ]【HttpProxyHandler】调用 active 方法开始……
+[2019-02-09 20:13:11:168 DEBUG] 316752 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(34): [ 0918f5ba ]【HttpProxyHandler】设置 connect timestamp 属性：1549714391168
+[2019-02-09 20:13:11:168 DEBUG] 316752 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpProxyHandler.channelRead0(48): [ 0918f5ba <==>  ]【HTTP请求分发】第一条 http 消息: HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+CONNECT api.x.xmt.cn:443 HTTP/1.1
+Host: api.x.xmt.cn:443
+Proxy-Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+content-length: 0
+[2019-02-09 20:13:11:168 DEBUG] 316752 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpProxyHandler.channelRead0(57): [ 0918f5ba <==>  ]【HttpProxyHandler】HTTP请求分发 解析URL信息 api.x.xmt.cn:443=> api.x.xmt.cn:443
+[2019-02-09 20:13:11:168 INFO ] 316752 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpProxyHandler.channelRead0(63): [ 0918f5ba ]【HttpProxyHandler】HTTP请求分发 添加 ATTR_IS_HTTP_TUNNEL 属性：true
+[2019-02-09 20:13:11:169 INFO ] 316753 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpProxyHandler.channelRead0(74): [ 0918f5ba ]【HttpProxyHandler】HTTP请求分发 移除处理器: HttpProxyHandler
+[2019-02-09 20:13:11:169 DEBUG] 316753 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractInBoundHandler.channelActive(43): [ 0918f5ba ]【HttpInBoundHandler】调用 active 方法开始……
+[2019-02-09 20:13:11:169 DEBUG] 316753 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(30): [ [id: 0x0918f5ba, L:/127.0.0.1:9999 - R:/127.0.0.1:53725] ]【HttpInBoundHandler】调用 active 方法开始……
+[2019-02-09 20:13:11:169 DEBUG] 316753 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(34): [ 0918f5ba ]【HttpInBoundHandler】设置 connect timestamp 属性：1549714391169
+[2019-02-09 20:13:11:169 INFO ] 316753 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpInBoundHandler.channelActive(57): [ 0918f5ba <==>  ]【HttpInBoundHandler】channel active...
+[2019-02-09 20:13:11:169 DEBUG] 316753 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpOutBoundInitializer.initChannel(40): [ [id: 0x35d0ee04] ]【HttpOutBoundInitializer】调用 initChannel 方法开始……
+[2019-02-09 20:13:11:170 INFO ] 316754 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpOutBoundInitializer.initChannel(47): [ 35d0ee04 ]【HttpOutBoundInitializer】增加处理器: HttpClientCodec
+[2019-02-09 20:13:11:170 INFO ] 316754 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpOutBoundInitializer.initChannel(49): [ 35d0ee04 ]【HttpOutBoundInitializer】增加处理器: HttpObjectAggregator
+[2019-02-09 20:13:11:170 INFO ] 316754 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpOutBoundInitializer.initChannel(51): [ 35d0ee04 ]【HttpOutBoundInitializer】增加处理器: HttpOutBoundHandler
+[2019-02-09 20:13:11:236 DEBUG] 316820 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 0918f5ba <==>  ]【HttpInBoundHandler】 内容读取完毕……
+[2019-02-09 20:13:11:292 DEBUG] 316876 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpInBoundHandler.lambda$channelActive$0(80): [ 0918f5ba <==> 35d0ee04 ]【HttpInBoundHandler】远程连接成功 => api.x.xmt.cn:443
+[2019-02-09 20:13:11:292 DEBUG] 316876 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractOutBoundHandler.channelActive(44): [ 35d0ee04 ]【HttpOutBoundHandler】调用 active 方法开始……
+[2019-02-09 20:13:11:292 DEBUG] 316876 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(30): [ [id: 0x35d0ee04, L:/192.168.1.153:53726 - R:api.x.xmt.cn/101.37.23.130:443] ]【HttpOutBoundHandler】调用 active 方法开始……
+[2019-02-09 20:13:11:293 DEBUG] 316877 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(34): [ 35d0ee04 ]【HttpOutBoundHandler】设置 connect timestamp 属性：1549714391293
+[2019-02-09 20:13:11:293 INFO ] 316877 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractOutBoundHandler.channelActive(61): [ 0918f5ba >>> 35d0ee04 ] 无缓存消息
+[2019-02-09 20:13:11:293 DEBUG] 316877 [nioEventLoopGroup-5-3] com.adolphor.mynety.client.http.HttpOutBoundHandler.channelRead0(82): [ 5760296b <<< 61df0f60 ]【HttpOutBoundHandler】收到请求结果内容: HttpObjectAggregator$AggregatedFullHttpResponse(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 4286, cap: 4286, components=2))
+HTTP/1.1 200 OK
+Server: GitHub.com
+Content-Type: image/vnd.microsoft.icon
+Last-Modified: Sat, 09 Feb 2019 10:18:41 GMT
+ETag: "5c5ea901-10be"
+Access-Control-Allow-Origin: *
+Expires: Sat, 09 Feb 2019 10:40:53 GMT
+Cache-Control: max-age=600
+X-GitHub-Request-Id: 0A24:11DB:A66EC7:D3AAAF:5C5EABDC
+Content-Length: 4286
+Accept-Ranges: bytes
+Date: Sat, 09 Feb 2019 12:13:11 GMT
+Via: 1.1 varnish
+Age: 144
+Connection: keep-alive
+X-Served-By: cache-hkg17921-HKG
+X-Cache: HIT
+X-Cache-Hits: 4
+X-Timer: S1549714391.235296,VS0,VE0
+Vary: Accept-Encoding
+X-Fastly-Request-ID: e0e5ea7b191ba11f82fd154b1b3cd8bc5154fa27
+[2019-02-09 20:13:11:293 DEBUG] 316877 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpOutBoundHandler.channelActive(49): [ 0918f5ba <==> 0918f5ba ]【HttpOutBoundHandler】httpTunnel 连接成功，发送消息给客户端: DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
 HTTP/1.1 200 Connection established
 connection: connection
-[2019-02-09 20:11:26:485 DEBUG] 212069 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundHandler.lambda$channelActive$0(52): [ c6684f1c <==> c644d7be ]【HttpOutBoundHandler】HTTP代理连接完毕：inRelayChannel 移除处理器: HttpObjectAggregator
-[2019-02-09 20:11:26:485 DEBUG] 212069 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundHandler.lambda$channelActive$0(54): [ c6684f1c <==> c644d7be ]【HttpOutBoundHandler】HTTP代理连接完毕：inRelayChannel 移除处理器: HttpServerCodec
-[2019-02-09 20:11:26:485 DEBUG] 212069 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundHandler.lambda$channelActive$0(57): [ c6684f1c <==> c644d7be ]【HttpOutBoundHandler】HTTP代理连接完毕：outRelayChannel 移除处理器: HttpObjectAggregator
-[2019-02-09 20:11:26:485 DEBUG] 212069 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundHandler.lambda$channelActive$0(59): [ c6684f1c <==> c644d7be ]【HttpOutBoundHandler】HTTP代理连接完毕：outRelayChannel 移除处理器: HttpClientCodec
-[2019-02-09 20:11:26:486 DEBUG] 212070 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(97): [ c6684f1c <==>  ]【HttpInBoundHandler】收到客户端消息: PooledUnsafeDirectByteBuf(ridx: 0, widx: 265, cap: 1024)
-[2019-02-09 20:11:26:490 INFO ] 212074 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(107): [ c6684f1c ]【HttpInBoundHandler】增加处理器: SslHandler
-[2019-02-09 20:11:26:491 INFO ] 212075 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(109): [ c6684f1c ]【HttpInBoundHandler】增加处理器: HttpServerCodec
-[2019-02-09 20:11:26:491 INFO ] 212075 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(111): [ c6684f1c ]【HttpInBoundHandler】增加处理器: HttpObjectAggregator
-[2019-02-09 20:11:26:491 DEBUG] 212075 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(40): =============================================start====================================================
-[2019-02-09 20:11:26:491 DEBUG] 212075 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(41): msg type: null
-[2019-02-09 20:11:26:491 DEBUG] 212075 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ c6684f1c ] sslHandler => io.netty.handler.ssl.SslHandler@244c89ea
-[2019-02-09 20:11:26:491 DEBUG] 212075 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ c6684f1c ] httpCodec => io.netty.handler.codec.http.HttpServerCodec@57cac18
-[2019-02-09 20:11:26:491 DEBUG] 212075 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ c6684f1c ] httpAggregator => io.netty.handler.codec.http.HttpObjectAggregator@3b9986f8
-[2019-02-09 20:11:26:491 DEBUG] 212075 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ c6684f1c ] HttpInBoundHandler#0 => com.adolphor.mynety.client.http.HttpInBoundHandler@37fe52cc
-[2019-02-09 20:11:26:491 DEBUG] 212075 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(48): ===============================================end====================================================
-[2019-02-09 20:11:26:492 INFO ] 212076 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(115): [ c644d7be ]【HttpInBoundHandler】增加处理器: SslHandler
-[2019-02-09 20:11:26:493 INFO ] 212077 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(117): [ c644d7be ]【HttpInBoundHandler】增加处理器: HttpClientCodec
-[2019-02-09 20:11:26:493 INFO ] 212077 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(119): [ c644d7be ]【HttpInBoundHandler】增加处理器: HttpObjectAggregator
-[2019-02-09 20:11:26:493 DEBUG] 212077 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(40): =============================================start====================================================
-[2019-02-09 20:11:26:493 DEBUG] 212077 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(41): msg type: null
-[2019-02-09 20:11:26:493 DEBUG] 212077 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ c644d7be ] sslHandler => io.netty.handler.ssl.SslHandler@16e4961c
-[2019-02-09 20:11:26:493 DEBUG] 212077 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ c644d7be ] httpCodec => io.netty.handler.codec.http.HttpClientCodec@56275ef3
-[2019-02-09 20:11:26:493 DEBUG] 212077 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ c644d7be ] httpAggregator => io.netty.handler.codec.http.HttpObjectAggregator@36db2443
-[2019-02-09 20:11:26:494 DEBUG] 212078 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ c644d7be ] HttpOutBoundHandler#0 => com.adolphor.mynety.client.http.HttpOutBoundHandler@c48e648
-[2019-02-09 20:11:26:494 DEBUG] 212078 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(48): ===============================================end====================================================
-[2019-02-09 20:11:26:498 DEBUG] 212082 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ c6684f1c <==> c644d7be ]【HttpInBoundHandler】 内容读取完毕……
-[2019-02-09 20:11:26:502 DEBUG] 212086 [nioEventLoopGroup-5-2] io.netty.handler.ssl.SslHandler.setHandshakeSuccess(1535): [id: 0xc6684f1c, L:/127.0.0.1:9999 - R:/127.0.0.1:53686] HANDSHAKEN: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-[2019-02-09 20:11:26:503 DEBUG] 212087 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ c6684f1c <==> c644d7be ]【HttpInBoundHandler】 内容读取完毕……
-[2019-02-09 20:11:26:503 DEBUG] 212087 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ c6684f1c <==> c644d7be ]【HttpInBoundHandler】 内容读取完毕……
-[2019-02-09 20:11:26:504 DEBUG] 212088 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelInactive(46): [ c6684f1c ]【HttpInBoundHandler】调用 inactive 方法，将要关闭连接……
-[2019-02-09 20:11:26:504 INFO ] 212088 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractInBoundHandler.channelClose(87): [ c6684f1c <==> c644d7be ]【HttpInBoundHandler】inRelayChannel 将要关闭连接，缓存将要丢弃:  bytes => {}
-[2019-02-09 20:11:26:504 INFO ] 212088 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractInBoundHandler.channelClose(92): [ c6684f1c <==> c644d7be ]【HttpInBoundHandler】调用 outRelayChannel 关闭方法，准备关闭……
-[2019-02-09 20:11:26:504 INFO ] 212088 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractInBoundHandler.channelClose(97): [ c6684f1c <==> c644d7be ]【HttpInBoundHandler】inRelayChannel 关闭连接，共计连接时间: 938ms
-[2019-02-09 20:11:26:505 DEBUG] 212089 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelInactive(46): [ c644d7be ]【HttpOutBoundHandler】调用 inactive 方法，将要关闭连接……
-[2019-02-09 20:11:26:505 INFO ] 212089 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractOutBoundHandler.channelClose(89): [ c6684f1c <==> c644d7be ]【HttpOutBoundHandler】outRelayChannel 关闭连接，共计连接时间: 21ms
-[2019-02-09 20:11:51:813 DEBUG] 237397 [nioEventLoopGroup-5-6] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 5ab309c9 <==>  ]【HttpOutBoundHandler】 内容读取完毕……
-[2019-02-09 20:11:51:814 DEBUG] 237398 [nioEventLoopGroup-5-6] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 5ab309c9 <==>  ]【HttpOutBoundHandler】 内容读取完毕……
-[2019-02-09 20:11:51:814 DEBUG] 237398 [nioEventLoopGroup-5-6] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelInactive(46): [ 5ab309c9 ]【HttpOutBoundHandler】调用 inactive 方法，将要关闭连接……
-[2019-02-09 20:11:51:814 INFO ] 237398 [nioEventLoopGroup-5-6] com.adolphor.mynety.common.wrapper.AbstractOutBoundHandler.channelClose(84): [ [id: 0xad0292c4, L:/127.0.0.1:9999 - R:/127.0.0.1:53666] <==> 5ab309c9 ]【HttpOutBoundHandler】调用 inRelayChannel 关闭方法，准备关闭……
-[2019-02-09 20:11:51:815 INFO ] 237399 [nioEventLoopGroup-5-6] com.adolphor.mynety.common.wrapper.AbstractOutBoundHandler.channelClose(89): [ ad0292c4 <==> 5ab309c9 ]【HttpOutBoundHandler】outRelayChannel 关闭连接，共计连接时间: 65261ms
-[2019-02-09 20:11:51:815 DEBUG] 237399 [nioEventLoopGroup-5-6] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelInactive(46): [ ad0292c4 ]【HttpInBoundHandler】调用 inactive 方法，将要关闭连接……
-[2019-02-09 20:11:51:815 INFO ] 237399 [nioEventLoopGroup-5-6] com.adolphor.mynety.common.wrapper.AbstractInBoundHandler.channelClose(87): [ ad0292c4 <==> 5ab309c9 ]【HttpInBoundHandler】inRelayChannel 将要关闭连接，缓存将要丢弃:  bytes => {}
-[2019-02-09 20:11:51:815 INFO ] 237399 [nioEventLoopGroup-5-6] com.adolphor.mynety.common.wrapper.AbstractInBoundHandler.channelClose(97): [ ad0292c4 <==> 5ab309c9 ]【HttpInBoundHandler】inRelayChannel 关闭连接，共计连接时间: 65397ms
-[2019-02-09 20:11:53:853 DEBUG] 239437 [nioEventLoopGroup-5-7] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ c7bd2675 <==>  ]【HttpOutBoundHandler】 内容读取完毕……
-[2019-02-09 20:11:53:853 DEBUG] 239437 [nioEventLoopGroup-5-7] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ c7bd2675 <==>  ]【HttpOutBoundHandler】 内容读取完毕……
-[2019-02-09 20:11:53:854 DEBUG] 239438 [nioEventLoopGroup-5-7] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelInactive(46): [ c7bd2675 ]【HttpOutBoundHandler】调用 inactive 方法，将要关闭连接……
-[2019-02-09 20:11:53:854 INFO ] 239438 [nioEventLoopGroup-5-7] com.adolphor.mynety.common.wrapper.AbstractOutBoundHandler.channelClose(84): [ [id: 0x7880b3ea, L:/127.0.0.1:9999 - R:/127.0.0.1:53667] <==> c7bd2675 ]【HttpOutBoundHandler】调用 inRelayChannel 关闭方法，准备关闭……
-[2019-02-09 20:11:53:854 INFO ] 239438 [nioEventLoopGroup-5-7] com.adolphor.mynety.common.wrapper.AbstractOutBoundHandler.channelClose(89): [ 7880b3ea <==> c7bd2675 ]【HttpOutBoundHandler】outRelayChannel 关闭连接，共计连接时间: 67300ms
-[2019-02-09 20:11:53:854 DEBUG] 239438 [nioEventLoopGroup-5-7] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelInactive(46): [ 7880b3ea ]【HttpInBoundHandler】调用 inactive 方法，将要关闭连接……
-[2019-02-09 20:11:53:855 INFO ] 239439 [nioEventLoopGroup-5-7] com.adolphor.mynety.common.wrapper.AbstractInBoundHandler.channelClose(87): [ 7880b3ea <==> c7bd2675 ]【HttpInBoundHandler】inRelayChannel 将要关闭连接，缓存将要丢弃:  bytes => {}
-[2019-02-09 20:11:53:855 INFO ] 239439 [nioEventLoopGroup-5-7] com.adolphor.mynety.common.wrapper.AbstractInBoundHandler.channelClose(97): [ 7880b3ea <==> c7bd2675 ]【HttpInBoundHandler】inRelayChannel 关闭连接，共计连接时间: 67435ms
+[2019-02-09 20:13:11:293 DEBUG] 316877 [nioEventLoopGroup-5-3] com.adolphor.mynety.client.http.HttpOutBoundHandler.channelRead0(89): [ 5760296b <<< 61df0f60 ]【HttpOutBoundHandler】】收到请求结果发送给客户端: HttpObjectAggregator$AggregatedFullHttpResponse(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 4286, cap: 4286, components=2))
+HTTP/1.1 200 OK
+Server: GitHub.com
+Content-Type: image/vnd.microsoft.icon
+Last-Modified: Sat, 09 Feb 2019 10:18:41 GMT
+ETag: "5c5ea901-10be"
+Access-Control-Allow-Origin: *
+Expires: Sat, 09 Feb 2019 10:40:53 GMT
+Cache-Control: max-age=600
+X-GitHub-Request-Id: 0A24:11DB:A66EC7:D3AAAF:5C5EABDC
+Content-Length: 4286
+Accept-Ranges: bytes
+Date: Sat, 09 Feb 2019 12:13:11 GMT
+Via: 1.1 varnish
+Age: 144
+Connection: keep-alive
+X-Served-By: cache-hkg17921-HKG
+X-Cache: HIT
+X-Cache-Hits: 4
+X-Timer: S1549714391.235296,VS0,VE0
+Vary: Accept-Encoding
+X-Fastly-Request-ID: e0e5ea7b191ba11f82fd154b1b3cd8bc5154fa27
+[2019-02-09 20:13:11:293 DEBUG] 316877 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpOutBoundHandler.lambda$channelActive$0(52): [ 0918f5ba <==> 35d0ee04 ]【HttpOutBoundHandler】HTTP代理连接完毕：inRelayChannel 移除处理器: HttpObjectAggregator
+[2019-02-09 20:13:11:293 DEBUG] 316877 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpOutBoundHandler.lambda$channelActive$0(54): [ 0918f5ba <==> 35d0ee04 ]【HttpOutBoundHandler】HTTP代理连接完毕：inRelayChannel 移除处理器: HttpServerCodec
+[2019-02-09 20:13:11:293 DEBUG] 316877 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpOutBoundHandler.lambda$channelActive$0(57): [ 0918f5ba <==> 35d0ee04 ]【HttpOutBoundHandler】HTTP代理连接完毕：outRelayChannel 移除处理器: HttpObjectAggregator
+[2019-02-09 20:13:11:293 DEBUG] 316877 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpOutBoundHandler.lambda$channelActive$0(59): [ 0918f5ba <==> 35d0ee04 ]【HttpOutBoundHandler】HTTP代理连接完毕：outRelayChannel 移除处理器: HttpClientCodec
+[2019-02-09 20:13:11:294 DEBUG] 316878 [nioEventLoopGroup-5-3] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 61df0f60 <==>  ]【HttpOutBoundHandler】 内容读取完毕……
+[2019-02-09 20:13:11:294 DEBUG] 316878 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(97): [ 0918f5ba <==>  ]【HttpInBoundHandler】收到客户端消息: PooledUnsafeDirectByteBuf(ridx: 0, widx: 517, cap: 1024)
+[2019-02-09 20:13:11:298 INFO ] 316882 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(107): [ 0918f5ba ]【HttpInBoundHandler】增加处理器: SslHandler
+[2019-02-09 20:13:11:298 INFO ] 316882 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(109): [ 0918f5ba ]【HttpInBoundHandler】增加处理器: HttpServerCodec
+[2019-02-09 20:13:11:299 INFO ] 316883 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(111): [ 0918f5ba ]【HttpInBoundHandler】增加处理器: HttpObjectAggregator
+[2019-02-09 20:13:11:299 DEBUG] 316883 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(40): =============================================start====================================================
+[2019-02-09 20:13:11:299 DEBUG] 316883 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(41): msg type: null
+[2019-02-09 20:13:11:299 DEBUG] 316883 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ 0918f5ba ] sslHandler => io.netty.handler.ssl.SslHandler@726078fd
+[2019-02-09 20:13:11:299 DEBUG] 316883 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ 0918f5ba ] httpCodec => io.netty.handler.codec.http.HttpServerCodec@55db9d93
+[2019-02-09 20:13:11:299 DEBUG] 316883 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ 0918f5ba ] httpAggregator => io.netty.handler.codec.http.HttpObjectAggregator@1452d1ba
+[2019-02-09 20:13:11:299 DEBUG] 316883 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ 0918f5ba ] HttpInBoundHandler#0 => com.adolphor.mynety.client.http.HttpInBoundHandler@37fe52cc
+[2019-02-09 20:13:11:299 DEBUG] 316883 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(48): ===============================================end====================================================
+[2019-02-09 20:13:11:300 INFO ] 316884 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(115): [ 35d0ee04 ]【HttpInBoundHandler】增加处理器: SslHandler
+[2019-02-09 20:13:11:301 INFO ] 316885 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(117): [ 35d0ee04 ]【HttpInBoundHandler】增加处理器: HttpClientCodec
+[2019-02-09 20:13:11:301 INFO ] 316885 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(119): [ 35d0ee04 ]【HttpInBoundHandler】增加处理器: HttpObjectAggregator
+[2019-02-09 20:13:11:301 DEBUG] 316885 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(40): =============================================start====================================================
+[2019-02-09 20:13:11:301 DEBUG] 316885 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(41): msg type: null
+[2019-02-09 20:13:11:301 DEBUG] 316885 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ 35d0ee04 ] sslHandler => io.netty.handler.ssl.SslHandler@72636cfa
+[2019-02-09 20:13:11:301 DEBUG] 316885 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ 35d0ee04 ] httpCodec => io.netty.handler.codec.http.HttpClientCodec@3b555db
+[2019-02-09 20:13:11:301 DEBUG] 316885 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ 35d0ee04 ] httpAggregator => io.netty.handler.codec.http.HttpObjectAggregator@a0b673b
+[2019-02-09 20:13:11:302 DEBUG] 316886 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ 35d0ee04 ] HttpOutBoundHandler#0 => com.adolphor.mynety.client.http.HttpOutBoundHandler@c48e648
+[2019-02-09 20:13:11:302 DEBUG] 316886 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(48): ===============================================end====================================================
+[2019-02-09 20:13:11:307 DEBUG] 316891 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 0918f5ba <==> 35d0ee04 ]【HttpInBoundHandler】 内容读取完毕……
+[2019-02-09 20:13:11:310 DEBUG] 316894 [nioEventLoopGroup-5-4] io.netty.handler.ssl.SslHandler.setHandshakeSuccess(1535): [id: 0x0918f5ba, L:/127.0.0.1:9999 - R:/127.0.0.1:53725] HANDSHAKEN: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+[2019-02-09 20:13:11:310 DEBUG] 316894 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 0918f5ba <==> 35d0ee04 ]【HttpInBoundHandler】 内容读取完毕……
+[2019-02-09 20:13:11:311 DEBUG] 316895 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(97): [ 0918f5ba <==>  ]【HttpInBoundHandler】收到客户端消息: HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /api/user/status HTTP/1.1
+Host: api.x.xmt.cn
+Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+Referer: https://adolphor.com/js/main.js?version=20180129
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: xid=381fda952fec4b1a8e44437093978783; xmt-session-id=b8d815e4-3256-4bcb-8c99-c80ff98625ef; fingerprint=778016cfce06b3951888b1ab8ed343b1
+content-length: 0
+[2019-02-09 20:13:11:311 DEBUG] 316895 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(129): [ 0918f5ba >>> 35d0ee04 ]【HttpInBoundHandler】发送消息到目的地址: HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /api/user/status HTTP/1.1
+Host: api.x.xmt.cn
+Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+Referer: https://adolphor.com/js/main.js?version=20180129
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: xid=381fda952fec4b1a8e44437093978783; xmt-session-id=b8d815e4-3256-4bcb-8c99-c80ff98625ef; fingerprint=778016cfce06b3951888b1ab8ed343b1
+content-length: 0
+[2019-02-09 20:13:11:311 DEBUG] 316895 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 0918f5ba <==> 35d0ee04 ]【HttpInBoundHandler】 内容读取完毕……
+[2019-02-09 20:13:11:352 DEBUG] 316936 [nioEventLoopGroup-5-4] io.netty.handler.ssl.util.InsecureTrustManagerFactory.checkServerTrusted(55): Accepting a server certificate: CN=api.x.xmt.cn
+[2019-02-09 20:13:11:356 DEBUG] 316940 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 35d0ee04 <==>  ]【HttpOutBoundHandler】 内容读取完毕……
+[2019-02-09 20:13:11:413 DEBUG] 316997 [nioEventLoopGroup-5-4] io.netty.handler.ssl.SslHandler.setHandshakeSuccess(1535): [id: 0x35d0ee04, L:/192.168.1.153:53726 - R:api.x.xmt.cn/101.37.23.130:443] HANDSHAKEN: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+[2019-02-09 20:13:11:413 DEBUG] 316997 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 35d0ee04 <==>  ]【HttpOutBoundHandler】 内容读取完毕……
+[2019-02-09 20:13:11:484 DEBUG] 317068 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpOutBoundHandler.channelRead0(82): [ 0918f5ba <<< 35d0ee04 ]【HttpOutBoundHandler】收到请求结果内容: HttpObjectAggregator$AggregatedFullHttpResponse(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 45, cap: 45, components=1))
+HTTP/1.1 200
+Server: nginx
+Date: Sat, 09 Feb 2019 12:13:11 GMT
+Content-Type: application/json;charset=utf-8
+Content-Length: 45
+Connection: keep-alive
+X-Application-Context: application:prod:10932a[2019-02-09 20:16:49:953 DEBUG] 535537 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractInBoundInitializer.initChannel(28): [ [id: 0x7b727afa, L:/127.0.0.1:9999 - R:/127.0.0.1:53922] ]【HttpInBoundInitializer】调用 initChannel 方法开始……
+                                              [2019-02-09 20:16:49:953 DEBUG] 535537 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractInBoundInitializer.initChannel(31): [ 7b727afa ]【HttpInBoundInitializer】设置 outRelayChannelRef 属性：null
+                                              [2019-02-09 20:16:49:953 DEBUG] 535537 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractInBoundInitializer.initChannel(34): [ 7b727afa ]【HttpInBoundInitializer】设置 requestTempMsg 属性：class java.util.concurrent.atomic.AtomicReference
+                                              [2019-02-09 20:16:49:954 INFO ] 535538 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundInitializer.initChannel(32): [ 7b727afa ]【HttpInBoundInitializer】增加处理器: HttpServerCodec
+                                              [2019-02-09 20:16:49:954 INFO ] 535538 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundInitializer.initChannel(34): [ 7b727afa ]【HttpInBoundInitializer】增加处理器: HttpObjectAggregator
+                                              [2019-02-09 20:16:49:954 INFO ] 535538 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundInitializer.initChannel(36): [ 7b727afa ]【HttpInBoundInitializer】增加处理器: HttpProxyHandler
+                                              [2019-02-09 20:16:49:954 DEBUG] 535538 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractInBoundHandler.channelActive(43): [ 7b727afa ]【HttpProxyHandler】调用 active 方法开始……
+                                              [2019-02-09 20:16:49:954 DEBUG] 535538 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(30): [ [id: 0x7b727afa, L:/127.0.0.1:9999 - R:/127.0.0.1:53922] ]【HttpProxyHandler】调用 active 方法开始……
+                                              [2019-02-09 20:16:49:954 DEBUG] 535538 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(34): [ 7b727afa ]【HttpProxyHandler】设置 connect timestamp 属性：1549714609954
+                                              [2019-02-09 20:16:49:954 DEBUG] 535538 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpProxyHandler.channelRead0(48): [ 7b727afa <==>  ]【HTTP请求分发】第一条 http 消息: HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+                                              CONNECT adolphor.com:443 HTTP/1.1
+                                              Host: adolphor.com:443
+                                              Proxy-Connection: keep-alive
+                                              User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+                                              content-length: 0
+                                              [2019-02-09 20:16:49:954 DEBUG] 535538 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpProxyHandler.channelRead0(57): [ 7b727afa <==>  ]【HttpProxyHandler】HTTP请求分发 解析URL信息 adolphor.com:443=> adolphor.com:443
+                                              [2019-02-09 20:16:49:954 INFO ] 535538 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpProxyHandler.channelRead0(63): [ 7b727afa ]【HttpProxyHandler】HTTP请求分发 添加 ATTR_IS_HTTP_TUNNEL 属性：true
+                                              [2019-02-09 20:16:49:955 INFO ] 535539 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpProxyHandler.channelRead0(74): [ 7b727afa ]【HttpProxyHandler】HTTP请求分发 移除处理器: HttpProxyHandler
+                                              [2019-02-09 20:16:49:955 DEBUG] 535539 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractInBoundHandler.channelActive(43): [ 7b727afa ]【HttpInBoundHandler】调用 active 方法开始……
+                                              [2019-02-09 20:16:49:955 DEBUG] 535539 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(30): [ [id: 0x7b727afa, L:/127.0.0.1:9999 - R:/127.0.0.1:53922] ]【HttpInBoundHandler】调用 active 方法开始……
+                                              [2019-02-09 20:16:49:955 DEBUG] 535539 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(34): [ 7b727afa ]【HttpInBoundHandler】设置 connect timestamp 属性：1549714609955
+                                              [2019-02-09 20:16:49:955 INFO ] 535539 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelActive(57): [ 7b727afa <==>  ]【HttpInBoundHandler】channel active...
+                                              [2019-02-09 20:16:49:955 DEBUG] 535539 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundInitializer.initChannel(40): [ [id: 0xa494f75d] ]【HttpOutBoundInitializer】调用 initChannel 方法开始……
+                                              [2019-02-09 20:16:49:955 INFO ] 535539 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundInitializer.initChannel(47): [ a494f75d ]【HttpOutBoundInitializer】增加处理器: HttpClientCodec
+                                              [2019-02-09 20:16:49:955 INFO ] 535539 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundInitializer.initChannel(49): [ a494f75d ]【HttpOutBoundInitializer】增加处理器: HttpObjectAggregator
+                                              [2019-02-09 20:16:49:956 INFO ] 535540 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundInitializer.initChannel(51): [ a494f75d ]【HttpOutBoundInitializer】增加处理器: HttpOutBoundHandler
+                                              [2019-02-09 20:16:50:044 DEBUG] 535628 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 7b727afa <==>  ]【HttpInBoundHandler】 内容读取完毕……
+                                              [2019-02-09 20:16:50:192 DEBUG] 535776 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.lambda$channelActive$0(80): [ 7b727afa <==> a494f75d ]【HttpInBoundHandler】远程连接成功 => adolphor.com:443
+                                              [2019-02-09 20:16:50:192 DEBUG] 535776 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractOutBoundHandler.channelActive(44): [ a494f75d ]【HttpOutBoundHandler】调用 active 方法开始……
+                                              [2019-02-09 20:16:50:193 DEBUG] 535777 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(30): [ [id: 0xa494f75d, L:/192.168.1.153:53923 - R:adolphor.com/185.199.109.153:443] ]【HttpOutBoundHandler】调用 active 方法开始……
+                                              [2019-02-09 20:16:50:193 DEBUG] 535777 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelActive(34): [ a494f75d ]【HttpOutBoundHandler】设置 connect timestamp 属性：1549714610193
+                                              [2019-02-09 20:16:50:193 INFO ] 535777 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractOutBoundHandler.channelActive(61): [ 7b727afa >>> a494f75d ] 无缓存消息
+                                              [2019-02-09 20:16:50:193 DEBUG] 535777 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundHandler.channelActive(49): [ 7b727afa <==> 7b727afa ]【HttpOutBoundHandler】httpTunnel 连接成功，发送消息给客户端: DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+                                              HTTP/1.1 200 Connection established
+                                              connection: connection
+                                              [2019-02-09 20:16:50:193 DEBUG] 535777 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundHandler.lambda$channelActive$0(52): [ 7b727afa <==> a494f75d ]【HttpOutBoundHandler】HTTP代理连接完毕：inRelayChannel 移除处理器: HttpObjectAggregator
+                                              [2019-02-09 20:16:50:193 DEBUG] 535777 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundHandler.lambda$channelActive$0(54): [ 7b727afa <==> a494f75d ]【HttpOutBoundHandler】HTTP代理连接完毕：inRelayChannel 移除处理器: HttpServerCodec
+                                              [2019-02-09 20:16:50:193 DEBUG] 535777 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundHandler.lambda$channelActive$0(57): [ 7b727afa <==> a494f75d ]【HttpOutBoundHandler】HTTP代理连接完毕：outRelayChannel 移除处理器: HttpObjectAggregator
+                                              [2019-02-09 20:16:50:193 DEBUG] 535777 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundHandler.lambda$channelActive$0(59): [ 7b727afa <==> a494f75d ]【HttpOutBoundHandler】HTTP代理连接完毕：outRelayChannel 移除处理器: HttpClientCodec
+                                              [2019-02-09 20:16:50:194 DEBUG] 535778 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(97): [ 7b727afa <==>  ]【HttpInBoundHandler】收到客户端消息: PooledUnsafeDirectByteBuf(ridx: 0, widx: 517, cap: 1024)
+                                              [2019-02-09 20:16:50:196 INFO ] 535780 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(107): [ 7b727afa ]【HttpInBoundHandler】增加处理器: SslHandler
+                                              [2019-02-09 20:16:50:196 INFO ] 535780 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(109): [ 7b727afa ]【HttpInBoundHandler】增加处理器: HttpServerCodec
+                                              [2019-02-09 20:16:50:196 INFO ] 535780 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(111): [ 7b727afa ]【HttpInBoundHandler】增加处理器: HttpObjectAggregator
+                                              [2019-02-09 20:16:50:196 DEBUG] 535780 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(40): =============================================start====================================================
+                                              [2019-02-09 20:16:50:196 DEBUG] 535780 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(41): msg type: null
+                                              [2019-02-09 20:16:50:197 DEBUG] 535781 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ 7b727afa ] sslHandler => io.netty.handler.ssl.SslHandler@31c3f9e3
+                                              [2019-02-09 20:16:50:197 DEBUG] 535781 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ 7b727afa ] httpCodec => io.netty.handler.codec.http.HttpServerCodec@72d43193
+                                              [2019-02-09 20:16:50:197 DEBUG] 535781 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ 7b727afa ] httpAggregator => io.netty.handler.codec.http.HttpObjectAggregator@334b0d7b
+                                              [2019-02-09 20:16:50:197 DEBUG] 535781 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ 7b727afa ] HttpInBoundHandler#0 => com.adolphor.mynety.client.http.HttpInBoundHandler@37fe52cc
+                                              [2019-02-09 20:16:50:197 DEBUG] 535781 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(48): ===============================================end====================================================
+                                              [2019-02-09 20:16:50:198 INFO ] 535782 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(115): [ a494f75d ]【HttpInBoundHandler】增加处理器: SslHandler
+                                              [2019-02-09 20:16:50:198 INFO ] 535782 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(117): [ a494f75d ]【HttpInBoundHandler】增加处理器: HttpClientCodec
+                                              [2019-02-09 20:16:50:198 INFO ] 535782 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(119): [ a494f75d ]【HttpInBoundHandler】增加处理器: HttpObjectAggregator
+                                              [2019-02-09 20:16:50:198 DEBUG] 535782 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(40): =============================================start====================================================
+                                              [2019-02-09 20:16:50:198 DEBUG] 535782 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(41): msg type: null
+                                              [2019-02-09 20:16:50:198 DEBUG] 535782 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ a494f75d ] sslHandler => io.netty.handler.ssl.SslHandler@77d53844
+                                              [2019-02-09 20:16:50:198 DEBUG] 535782 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ a494f75d ] httpCodec => io.netty.handler.codec.http.HttpClientCodec@5977cbbc
+                                              [2019-02-09 20:16:50:199 DEBUG] 535783 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ a494f75d ] httpAggregator => io.netty.handler.codec.http.HttpObjectAggregator@a7c31a8
+                                              [2019-02-09 20:16:50:199 DEBUG] 535783 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.lambda$loggerHandlers$0(46): [ a494f75d ] HttpOutBoundHandler#0 => com.adolphor.mynety.client.http.HttpOutBoundHandler@c48e648
+                                              [2019-02-09 20:16:50:199 DEBUG] 535783 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.utils.ChannelUtils.loggerHandlers(48): ===============================================end====================================================
+                                              [2019-02-09 20:16:50:203 DEBUG] 535787 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 7b727afa <==> a494f75d ]【HttpInBoundHandler】 内容读取完毕……
+                                              [2019-02-09 20:16:50:205 DEBUG] 535789 [nioEventLoopGroup-5-2] io.netty.handler.ssl.SslHandler.setHandshakeSuccess(1535): [id: 0x7b727afa, L:/127.0.0.1:9999 - R:/127.0.0.1:53922] HANDSHAKEN: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+                                              [2019-02-09 20:16:50:206 DEBUG] 535790 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 7b727afa <==> a494f75d ]【HttpInBoundHandler】 内容读取完毕……
+                                              [2019-02-09 20:16:50:345 DEBUG] 535929 [nioEventLoopGroup-5-2] io.netty.handler.ssl.SslHandler.setHandshakeSuccess(1535): [id: 0xa494f75d, L:/192.168.1.153:53923 - R:adolphor.com/185.199.109.153:443] HANDSHAKEN: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+                                              [2019-02-09 20:16:50:345 DEBUG] 535929 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ a494f75d <==>  ]【HttpOutBoundHandler】 内容读取完毕……
+                                              [2019-02-09 20:16:52:742 DEBUG] 538326 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(97): [ 9284e81c <==>  ]【HttpInBoundHandler】收到客户端消息: HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+                                              GET /api/user/status HTTP/1.1
+                                              Host: api.x.xmt.cn
+                                              Connection: keep-alive
+                                              Accept: application/json, text/javascript, */*; q=0.01
+                                              User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+                                              Referer: https://adolphor.com/js/main.js?version=20180129
+                                              Accept-Encoding: gzip, deflate, br
+                                              Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+                                              Cookie: xid=381fda952fec4b1a8e44437093978783; xmt-session-id=7d669b2c-28ef-4790-ba6c-c6a01b8166fe; fingerprint=c8eababd416b437e8951988fba91bfed
+                                              content-length: 0
+                                              [2019-02-09 20:16:52:743 DEBUG] 538327 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpInBoundHandler.channelRead0(129): [ 9284e81c >>> 89b1097f ]【HttpInBoundHandler】发送消息到目的地址: HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+                                              GET /api/user/status HTTP/1.1
+                                              Host: api.x.xmt.cn
+                                              Connection: keep-alive
+                                              Accept: application/json, text/javascript, */*; q=0.01
+                                              User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+                                              Referer: https://adolphor.com/js/main.js?version=20180129
+                                              Accept-Encoding: gzip, deflate, br
+                                              Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+                                              Cookie: xid=381fda952fec4b1a8e44437093978783; xmt-session-id=7d669b2c-28ef-4790-ba6c-c6a01b8166fe; fingerprint=c8eababd416b437e8951988fba91bfed
+                                              content-length: 0
+                                              [2019-02-09 20:16:52:743 DEBUG] 538327 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 9284e81c <==> 89b1097f ]【HttpInBoundHandler】 内容读取完毕……
+                                              [2019-02-09 20:16:52:822 DEBUG] 538406 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundHandler.channelRead0(82): [ 9284e81c <<< 89b1097f ]【HttpOutBoundHandler】收到请求结果内容: HttpObjectAggregator$AggregatedFullHttpResponse(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 45, cap: 45, components=1))
+                                              HTTP/1.1 200
+                                              Server: nginx
+                                              Date: Sat, 09 Feb 2019 12:16:52 GMT
+                                              Content-Type: application/json;charset=utf-8
+                                              Content-Length: 45
+                                              Connection: keep-alive
+                                              X-Application-Context: application:prod:10932
+                                              Pragma: No-cache
+                                              Cache-Control: no-cache
+                                              Expires: Thu, 01 Jan 1970 00:00:00 GMT
+                                              [2019-02-09 20:16:52:823 DEBUG] 538407 [nioEventLoopGroup-5-2] com.adolphor.mynety.client.http.HttpOutBoundHandler.channelRead0(89): [ 9284e81c <<< 89b1097f ]【HttpOutBoundHandler】】收到请求结果发送给客户端: HttpObjectAggregator$AggregatedFullHttpResponse(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 45, cap: 45, components=1))
+                                              HTTP/1.1 200
+                                              Server: nginx
+                                              Date: Sat, 09 Feb 2019 12:16:52 GMT
+                                              Content-Type: application/json;charset=utf-8
+                                              Content-Length: 45
+                                              Connection: keep-alive
+                                              X-Application-Context: application:prod:10932
+                                              Pragma: No-cache
+                                              Cache-Control: no-cache
+                                              Expires: Thu, 01 Jan 1970 00:00:00 GMT
+                                              [2019-02-09 20:16:52:823 DEBUG] 538407 [nioEventLoopGroup-5-2] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 89b1097f <==>  ]【HttpOutBoundHandler】 内容读取完毕……
+                                              [2019-02-09 20:16:53:588 DEBUG] 539172 [nioEventLoopGroup-4-1] io.netty.handler.logging.LoggingHandler.log(147): [id: 0xe36d941d, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0xbcb78fa9, L:/127.0.0.1:9999 - R:/127.0.0.1:53924]
+                                              [2019-02-09 20:16:53:588 DEBUG] 539172 [nioEventLoopGroup-4-1] io.netty.handler.logging.LoggingHandler.log(147): [id: 0xe36d941d, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+Pragma: No-cache
+Cache-Control: no-cache
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+[2019-02-09 20:13:11:484 DEBUG] 317068 [nioEventLoopGroup-5-4] com.adolphor.mynety.client.http.HttpOutBoundHandler.channelRead0(89): [ 0918f5ba <<< 35d0ee04 ]【HttpOutBoundHandler】】收到请求结果发送给客户端: HttpObjectAggregator$AggregatedFullHttpResponse(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 45, cap: 45, components=1))
+HTTP/1.1 200
+Server: nginx
+Date: Sat, 09 Feb 2019 12:13:11 GMT
+Content-Type: application/json;charset=utf-8
+Content-Length: 45
+Connection: keep-alive
+X-Application-Context: application:prod:10932
+Pragma: No-cache
+Cache-Control: no-cache
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+[2019-02-09 20:13:11:485 DEBUG] 317069 [nioEventLoopGroup-5-4] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.channelReadComplete(40): [ 35d0ee04 <==>  ]【HttpOutBoundHandler】 内容读取完毕……
