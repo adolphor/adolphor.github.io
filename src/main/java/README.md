@@ -7,6 +7,8 @@
   - Java
   - JVM
   - Java8
+* 开源框架
+  - netty
 * App
   - iOS
   - macOS
