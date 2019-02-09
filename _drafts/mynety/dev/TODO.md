@@ -10,5 +10,7 @@
     - 增加更多加密方式的实现
 * netty框架的学习
     - ByteBuf
+        - channel中接收的ByteBuf是堆内存还是直接内存？
+        - 池化和非池化区别是什么
     - selector原理剖析
     - outBound为什么使用inBoundChannel的loop
