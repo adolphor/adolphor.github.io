@@ -8,7 +8,7 @@
   - JVM
   - Java8
 * 开源框架
-  - netty
+  - Netty
 * App
   - iOS
   - macOS

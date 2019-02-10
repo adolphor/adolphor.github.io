@@ -13,6 +13,7 @@
     - 增加更多加密方式的实现
 * netty框架的学习
     - ByteBuf
+        - ByteBuf容量可以按需增长，那么当前mynety版本却使用了重新定义特定长度的字节对象类解决，需要优化
         - channel中接收的ByteBuf是堆内存还是直接内存？
         - 池化和非池化区别是什么
     - selector原理剖析
