@@ -118,10 +118,10 @@ if (!directBuf.hasArray()) {                                  // 直接缓冲区
 
 * 直接缓存没有 `array()`，以及 `arrayOffset()` 方法
 
-### 符合缓冲区
+### 复合缓冲区
 
-第三种也是最后一种模式，使用的是符合缓冲区，它为多个ByteBuf提供了一个聚合师徒。在这里你可以根据需要添加或者删除ByteBuf实例，这是JDK
-的ByteBuffer实现完全缺失的一个特性。Netty通过一个ByteBuf自雷——CompositeByteBuf——实现了这个模式，它提供了一个将多个缓冲区表示为单个
+第三种也是最后一种模式，使用的是复合缓冲区，它为多个ByteBuf提供了一个聚合师徒。在这里你可以根据需要添加或者删除ByteBuf实例，这是JDK
+的ByteBuffer完全缺失的一个特性。Netty通过一个ByteBuf子类——CompositeByteBuf——实现了这个模式，它提供了一个将多个缓冲区表示为单个
 合并缓冲区的虚拟表示。
 
 其他特性暂时略过。
@@ -139,7 +139,7 @@ if (!directBuf.hasArray()) {                                  // 直接缓冲区
 写索引，下图展示了ByteBuf是如何被他的两个索引划分成3个区域的：
 
     +-------------------+--------------------+------------------+
-    |    可丢弃字节      | 可读字节(CONTENT)   |      可写字节     |
+    |    可丢弃字节       | 可读字节(CONTENT)   |      可写字节      |
     +-------------------+--------------------+------------------+
     0 <---------- readerIndex <-------- writerIndex <------- capacity
 
@@ -168,6 +168,50 @@ if (!directBuf.hasArray()) {                                  // 直接缓冲区
 意味着，如果你需改了它的内容，则也同时修改了其对应的源实例，所以要小心。
 
 那派生缓冲区的用途是什么？
+
+## ByteBufHolder接口
+
+略过，没看懂
+
+## ByteBuf 分配
+
+### 按需分配：ByteBufAllocator接口
+
+为了降低分配和释放内存的开销，Netty通过 interface ByteBufAllocator 实现了 ByteBuf 的池化，它可以用来分配上面描述过的任意类型的
+ByteBuf实例。使用池化是特定于应用程序的决定，并不会以任何方式改变ByteBuf API 的语义。
+
+
+ByteBufAllocator的主要方法：
+* buffer()
+* heapBuffer()
+* directBuffer()
+* compositeBuffer()
+* compositeDirectBuffer()
+* compositeHeapBuffer()
+* ioBuffer()
+
+可以通过Channel(每个都可以有一个不同的ByteBufAllocator实例)或者绑定到 ChannelHandler 的 ChannelHandlerContext 获取一个到
+ByteBufAllocator 的引用。Netty提供了两种ByteBufAllocator的实现：PooledByteBufAllocator 和 UnpooledByteBufAllocator。
+前者池化了ByteBuf的实例以提高性能并最大限度的减少内存碎片，后者不池化ByteBuf实例，并在每次滴啊用时都返回一个新的实例。
+
+### Unpooled缓冲区
+
+可能某些情况下，未能获取一个ByteBufAllocator引用，对于这种情况，Netty提供了一个简单的称为Unpooled的工具类，它提供了讲台的辅助方法
+来创建未池化的ByteBuf实例：
+
+* buffer()
+* directBuffer()
+* wrapperBuffer()
+* copiedBuffer()
+
+Unpooled类还使得ByteBuf同样可用于哪些并不需要Netty的其他组件的非网络项目，使得其得益于高性能可扩展的缓冲区API。
+
+### ByteBufUtil类
+
+ByteBufUtil 提供了用于操作 ByteBuf 的静态的辅助方法，因为这个API是通用的，并且和池化无关，所以这些方法依然在分配类的外部实现。
+最有价值的可能就是 hexdump() 方法，它以十六进制的形式打印 ByteBuf 的内容。
+
+
 
 ## 参考资料
 
