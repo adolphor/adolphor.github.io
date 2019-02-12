@@ -30,3 +30,6 @@ client <--> socks5 client <--> socks5 server <--> dst server
     - 基于netty的tcp代理工具，可以借助公网服务器，访问内网主机tcp服务
 * [GitHub - HTTP tunnelingsap1ens/http-tunneling](https://github.com/sap1ens/http-tunneling)
     - 参考如何实现ssl的中间人代理
+* [各种HTTPS站点的SSL证书 ,扩展SSL证书,密钥交换和身份验证机制汇总](http://blog.51cto.com/shayi1983/1640723)
+    - 使用wireshark分析SSL/TLS信息传输流程
+* [HTTPS协议详解(四)：TLS/SSL握手过程](https://blog.csdn.net/hherima/article/details/52469674)
