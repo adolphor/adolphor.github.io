@@ -102,4 +102,14 @@ buf.writeBytes(msg.getData());
 如果一次有好多网站请求，比如google，baidu，当google访问失败的时候，会导致
 baidu也受到影响，会直接返回失败，是各个channel之间的通信互相影响了吗？
 
+## channnel 的异常管理
+
+* 报错怎么处理？
+* 报错需要关闭channel吗？关闭和不关闭的判断标准？各有什么影响？
+* exception 在 channel 之间的传递过程？ 
+
+## 方法覆写，是否需要调用父类实现？
+* 心跳相关，超时的时候，在自定义的方法中是否有必要调用 `super.channelIdle(ctx, evt);` ？
+
+
 
