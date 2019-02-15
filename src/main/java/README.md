@@ -17,6 +17,7 @@
 * bigData
   - 分布式
   - Hadoop
+  - Spring Cloud
 * database
   - mongodb
   - Redis
@@ -37,7 +38,7 @@
   - 网络
   - 读书笔记
   - 架构设计
-
+* 其他
  
 # 代码高亮
 

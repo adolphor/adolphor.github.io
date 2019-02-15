@@ -3,6 +3,7 @@
     - 一个lan一个秘钥，一个秘钥只能存在一条连接
     - 增加秘钥有效时间段限制
     - 增加lan管理的远程连接和server管理的请求连接之间的心跳检测机制，防止某一端异常断开连接没有通知到另一端进行关闭的情况
+    - 各个请求中间会产生影响，一个请求的失败不应该影响另一个请求，导致另一个请求也失败
 * 加密方式增加 none 不做任何加密的限制
     - ss加密和lan加密分离，可以启动任一加密对另一端没有影响
 * SSL/TLS
@@ -20,7 +21,9 @@
     - outBound为什么使用inBoundChannel的loop
 * 框架优化
     - （待评估）将channel自动接收功能关闭，改为手动控制，这样能够保证接收信息不回乱序，另外，节省服务器内存占用
-
+* JDK 升级 
+    - 模块化之路：[Migrate Maven Projects to Java 11](https://winterbe.com/posts/2018/08/29/migrate-maven-projects-to-java-11-jigsaw/)
+    - 新的语法糖，不好奇吗？
 
 
 

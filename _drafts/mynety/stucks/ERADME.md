@@ -93,6 +93,13 @@ buf.writeBytes(msg.getData());
 
 在log日志中打印ByteBuf的时候会消耗引用计数，那么使用copy方法的时候消耗吗？
 
+## postman 使用HTTPS MITM的时候报错
 
+待解决
+
+## channel间的影响
+
+如果一次有好多网站请求，比如google，baidu，当google访问失败的时候，会导致
+baidu也受到影响，会直接返回失败，是各个channel之间的通信互相影响了吗？
 
 

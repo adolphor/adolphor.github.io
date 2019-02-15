@@ -111,6 +111,18 @@ git checkout HEAD
 git push origin HEAD --force #远程提交回退
 ```
 
+## 远程分支被别人rebase之后force提交
+
+* 使用远程分支的代码，放弃本地修改
+
+```shell
+# 更新远程代码到本地仓库，但不合并
+git fetch --all
+# 更新之后就可以使用idea进行可视化比对，比对过程
+# git -> Repository -> Branches ->  选择需要比对的分支 -> Compare with current
+git reset --hard origin/master
+```
+
 
 ## 过滤文件
 

@@ -28,3 +28,6 @@
 * [你不知道的Chrome调试工具技巧(系列)（英文原版）](https://medium.com/@tomsu/devtools-tips-day-1-the-console-dollars-3aa0d93e923c)
 
 * [GIT rebase](https://www.cnblogs.com/pinefantasy/articles/6287147.html)
+
+
+* [一文讲透前端开发所需网络知识](https://segmentfault.com/a/1190000018038491?utm_source=weekly&utm_medium=email&utm_campaign=email_weekly)
