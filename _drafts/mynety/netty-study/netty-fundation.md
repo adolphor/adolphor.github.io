@@ -7,3 +7,7 @@ ByteBuf byteBuf = Unpooled.buffer().writeBytes(decrypt);
 第二种方法开辟的空间过大，浪费内存。
 
 变通方法，使用定长，需要追加的时候重新创建一个对象。
+
+
+# future.cancel(true);
+啥作用？
