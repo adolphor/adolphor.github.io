@@ -112,4 +112,57 @@ baidu也受到影响，会直接返回失败，是各个channel之间的通信�
 * 心跳相关，超时的时候，在自定义的方法中是否有必要调用 `super.channelIdle(ctx, evt);` ？
 
 
+## lan接收消息过长
+
+```
+[2019-02-16 00:31:15:540 WARN ] 110079 [nioEventLoopGroup-5-1] com.adolphor.mynety.common.wrapper.AbstractSimpleHandler.exceptionCaught(61): [ 726bc8ad ] [com.adolphor.mynety.server.lan.LanConnInBoundHandler] error
+io.netty.handler.codec.TooLongFrameException: Adjusted frame length exceeds 2097152: 15044400 - discarded
+	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.fail(LengthFieldBasedFrameDecoder.java:522) ~[netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.failIfNecessary(LengthFieldBasedFrameDecoder.java:500) ~[netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.exceededFrameLength(LengthFieldBasedFrameDecoder.java:387) ~[netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.decode(LengthFieldBasedFrameDecoder.java:430) ~[netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at com.adolphor.mynety.common.bean.lan.LanMessageDecoder.decode(LanMessageDecoder.java:36) ~[mynety-common-0.0.6-SNAPSHOT.jar:?]
+	at com.adolphor.mynety.common.bean.lan.LanMessageDecoder.decode(LanMessageDecoder.java:27) ~[mynety-common-0.0.6-SNAPSHOT.jar:?]
+	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.decode(LengthFieldBasedFrameDecoder.java:343) ~[netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:502) ~[netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:441) ~[netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:278) ~[netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340) [netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434) [netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362) [netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348) [netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965) [netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163) [netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:656) [netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:591) [netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:508) [netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:470) [netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:909) [netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) [netty-all-4.1.32.Final.jar:4.1.32.Final]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+```
+## 内存溢出
+
+```
+[2019-02-16 11:05:00:382 ERROR] 9574626 [nioEventLoopGroup-130-1] io.netty.util.ResourceLeakDetector.reportTracedLeak(317): LEAK: ByteBuf.release() was not called before it's garbage-collected. See http://netty.io/wiki/reference-counted-objects.html for more information.
+Recent access records: 
+Created at:
+	io.netty.buffer.PooledByteBufAllocator.newDirectBuffer(PooledByteBufAllocator.java:331)
+	io.netty.buffer.AbstractByteBufAllocator.directBuffer(AbstractByteBufAllocator.java:185)
+	io.netty.buffer.AbstractByteBufAllocator.directBuffer(AbstractByteBufAllocator.java:176)
+	io.netty.buffer.AbstractByteBufAllocator.ioBuffer(AbstractByteBufAllocator.java:137)
+	io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator$MaxMessageHandle.allocate(DefaultMaxMessagesRecvByteBufAllocator.java:114)
+	io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:147)
+	io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:656)
+	io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:591)
+	io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:508)
+	io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:470)
+	io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:909)
+	io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	java.lang.Thread.run(Thread.java:745)
+```
+
+
 
