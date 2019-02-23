@@ -20,9 +20,14 @@ excerpt:    树莓派系统安装和配置
 也可以直接修改相关文件，修改`/etc/wpa_supplicant/wpa_supplicant.conf`文件，增加如下内容：
 ```
 country=CN
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
 network={
-	ssid="jysmart"
-	psk="jysmart123"
+  ssid="CMCC-adolphor"
+  psk="haizhu@1314"
+  key_mgmt=WPA-PSK
+  priority=1
 }
 ```
 
@@ -32,6 +37,29 @@ network={
 ```
 ssh -p 22 pi@192.168.1.38
 ssh -p 22 pi@raspberrypi.local
+
+
+# 修改系统默认配置
+
+sudo raspi-config
+修改密码：haizhu.rasp
+修改时区：Asia/Shanghai
+
+# 系统默认hostname
+raspberrypi
+
+# 必要软件安装
+sudo apt-get install git
+sudo apt-get install vim --fix-missing
+sudo apt-get install nginx
+
+# 安装vim之后要配置vim编码，防止乱码，在文件末尾增加
+sudo vim /etc/vim/vimrc
+
+set fileencodings=utf-8,gb2312,gbk,gb18030
+set termencoding=utf-8
+set fileformats=unix
+set encoding=prc
 ```
 
 ## VPN 内网穿透
