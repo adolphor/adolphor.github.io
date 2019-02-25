@@ -20,10 +20,10 @@ import java.util.Map;
 
 public class Generator {
 
-  private static String postTitle = "在macOS上使用docker运行MySQL";
-  private static String urlTitle = "manage-mysql-by-docker-of-macos";
+  private static String postTitle = "资源收集";
+  private static String urlTitle = "sources-list-from-net";
   private static String categories = "[blog]";
-  private static String tags = "[Docker]";
+  private static String tags = "[其他]";
 
   private static Configuration cfg;
 

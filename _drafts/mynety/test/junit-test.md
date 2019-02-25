@@ -15,6 +15,13 @@ http://127.0.0.1:8080/
 http://mynetylan.adolphor.com:8080/
 ```
 
+# terminal
+
+```
+wget -e “http_proxy=127.0.0.1:9999″ 
+curl -x 127.0.0.1:9999
+```
+
 # chrome
 
 SwitchyOmega 过滤如下网址不走代理，以免影响测试数据
