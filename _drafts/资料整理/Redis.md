@@ -19,3 +19,4 @@
       - 黄健宏新作，更加偏重于使用，参考作者之前的作品，值得大家期待。
       
 * [如果20万用户同时访问一个热点缓存，如何优化你的缓存架构？](https://mp.weixin.qq.com/s/RqBla4rg8ut3zEBKhyBo1w)
+* [阿里云 Redis 开发规范](https://www.infoq.cn/article/K7dB5AFKI9mr5Ugbs_px)
