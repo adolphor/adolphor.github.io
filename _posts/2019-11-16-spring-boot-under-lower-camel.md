@@ -40,10 +40,35 @@ spring:
 
 ### 其他请求
 
-需要自己写处理器，但是引发了另外一个问题：
+需要自己写处理器，如果通过继承 `WebMvcConfigurationSupport` 来实现，就会引发了另外一个问题，yaml配置文件中的配置信息会失效，原因如下：
 
 * [继承WebMvcConfigurationSupport后自动配置不生效的问题及如何配置拦截器](https://blog.csdn.net/qq_36850813/article/details/87859047)
 * [springboot 2.0配置文件不生效原因](https://www.dockop.com/article/17)
+
+解决方法是通过继承 `WebMvcConfigurer` 来覆写 `addArgumentResolvers` 实现：
+
+```java
+import com.joyoung.base.boot.utils.spring.UnderlineToCamelArgumentResolver;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.List;
+
+/**
+ * @author Hongbo.Zhu
+ */
+@Configuration
+public class WebMvcConfig implements WebMvcConfigurer {
+    /**
+     * 添加参数解析，将参数的形式从下划线转化为驼峰
+     */
+    @Override
+    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+        argumentResolvers.add(new UnderlineToCamelArgumentResolver());
+    }
+}
+```
 
 ## 其他JSONObject配置
 
