@@ -12,7 +12,8 @@ excerpt:    spring-boot 下划线和驼峰转换
 spring boot 框架中，下划线和驼峰相互转换问题：
 
 * 返回数据：驼峰转下划线
-    - 只需要配置文件配置即可全局生效
+    - 如果使用的是Java bean，只需要配置文件配置即可全局生效
+    
 * 接收前端传参：下划线转驼峰，使用实体类接收
     - POST请求且使用RAW的json形式：自动转换，无需配置
     - 其他请求（包括POST请求的form表单提交形式）：需要自己特殊处理
@@ -84,5 +85,78 @@ MenuInfoVo menu = dataCenter.query(sql, sqlParam(id), MenuInfoVo.class);
 ```
 
 ## 参考资料
+
+
+## 代码
+
+> UnderlineToCamelArgumentResolver.java
+
+```java
+import com.joyoung.smart.base.exceptions.ParamException;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanWrapper;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.PropertyAccessorFactory;
+import org.springframework.core.MethodParameter;
+import org.springframework.web.bind.support.WebDataBinderFactory;
+import org.springframework.web.context.request.NativeWebRequest;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.method.support.ModelAndViewContainer;
+
+import java.util.Iterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static com.joyoung.smart.base.constant.ResponseError.PARAM_RESOLVE_ERR;
+
+@Slf4j
+public class UnderlineToCamelArgumentResolver implements HandlerMethodArgumentResolver {
+
+    /**
+     * 匹配下划线的格式
+     */
+    private static final Pattern pattern = Pattern.compile("_(\\w)");
+
+    private static String underLineToCamel(String source) {
+        Matcher matcher = pattern.matcher(source);
+        StringBuffer sb = new StringBuffer();
+        while (matcher.find()) {
+            matcher.appendReplacement(sb, matcher.group(1).toUpperCase());
+        }
+        matcher.appendTail(sb);
+        return sb.toString();
+    }
+
+    @Override
+    public boolean supportsParameter(MethodParameter methodParameter) {
+        // return methodParameter.hasParameterAnnotation(ParamModel.class);
+        // 全局使用的话，直接返回true
+        return true;
+    }
+
+    @Override
+    public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer container, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws ParamException {
+        Object obj;
+        try {
+            obj = parameter.getParameterType().newInstance();
+        } catch (Exception e) {
+            log.error("无法实例化的数据类型：{}", parameter.getParameterType());
+            throw new ParamException(PARAM_RESOLVE_ERR);
+        }
+        BeanWrapper wrapper = PropertyAccessorFactory.forBeanPropertyAccess(obj);
+        Iterator<String> paramNames = webRequest.getParameterNames();
+        while (paramNames.hasNext()) {
+            String paramName = paramNames.next();
+            Object o = webRequest.getParameter(paramName);
+            try {
+                wrapper.setPropertyValue(underLineToCamel(paramName), o);
+            } catch (BeansException e) {
+                log.info("下划线转驼峰时出错，实体类 {} 中无对应属性：{}", o.getClass().getName(), paramName);
+            }
+        }
+        return obj;
+    }
+}
+```
 
 * [test](test.html)
