@@ -15,7 +15,10 @@ excerpt:    【置顶】博文目录汇总
 
 ## 算法 [algorithm]
 
-## 设计模式
+## 设计模式 [Design pattern]
+
+* [6大接口设计原则]({% post_url 2020-01-21-design-pattern-principle %})
+* [3大类24种设计模式]({% post_url 2016-11-03-design-pattern-menus %})
 
 ## 源码
 

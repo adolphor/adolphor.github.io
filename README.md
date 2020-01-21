@@ -11,6 +11,7 @@ jekyll server --drafts
 
 * [jekyll 官网](http://jekyllrb.com/)
 * [jekyll theme](https://github.com/Huxpro/huxpro.github.io)
+* [Jekyll 中的配置和模板语法](https://gist.github.com/biezhi/f88be58ef4ae0f3741bb36ab8daa53c5https://gist.github.com/biezhi/f88be58ef4ae0f3741bb36ab8daa53c5)
 
 # 主题参考
 

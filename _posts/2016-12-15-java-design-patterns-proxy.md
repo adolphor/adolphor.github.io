@@ -320,4 +320,4 @@ public class ProxySeller implements MethodInterceptor {
 
 ## 参考资料
 
-* 【注-1】《Java与模式——阎宏》
+* 【注-1】[《Java与模式》--阎宏](https://book.douban.com/subject/1214074/)
