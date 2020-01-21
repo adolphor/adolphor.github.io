@@ -8,6 +8,15 @@ postId: index
     <h1 class="post-title">全部文章</h1>
   </header>
   <ul class="post-list">
+    {% if paginator.page == 1 %}
+    <li>
+      <article class="post-content">
+        <h3>
+          <a href="{{ '/blog/1997/01/01/top-blog-article-menus.html' | prepend: site.baseurl }}">【置顶】博文目录汇总</a>
+        </h3>
+      </article>
+    </li>
+    {% endif %}
     {% for post in paginator.posts %}
     <li>
       <article class="post-content">
