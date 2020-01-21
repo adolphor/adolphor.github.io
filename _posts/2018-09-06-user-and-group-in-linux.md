@@ -19,7 +19,10 @@ excerpt:    Linux 用户管理
 useradd -m -U -s /bin/bash my_java
 # 修改密码 haizhu@1314.aly.java
 passwd my_java
-
+# 增加用户组，不然无法使用sudo权限
+usermod -aG sudo,adm my_java
+# 汇总
+useradd -m -U -aG sudo,adm -s /bin/bash -p password my_java
 ```
 
 ```bash
