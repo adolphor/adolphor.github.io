@@ -8,12 +8,12 @@
 # Site settings
 title: Adolphor
 author: adolphor
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
+email: 0haihzu0@gmail.com
+description: > # this means to ignore newlines until "subpath:"
   学习笔记，技术分享，包括但不限于：
   Java，JVM，Spring，Spring MVC，myBatis，Tomcat，Maven，Git，Intellij
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "http://www.adolphor.com" # the base hostname & protocol for your site
+# subpath: "/article" # the subpath of your site, e.g. /blog
+destination: "./_site/article" # 指定编译路径可以方便管理nginx分流配置，且不影响github托管
 twitter_username: 0haizhu0
 github_username:  NorthFacing
 

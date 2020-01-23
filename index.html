@@ -21,7 +21,7 @@ postId: index
     <li>
       <article class="post-content">
         <h3>
-          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <a href="{{ post.url | prepend: site.subpath }}">{{ post.title }}</a>
           <span class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</span>
         </h3>
         <!--<p>-->
@@ -37,7 +37,7 @@ postId: index
     <ul class="pagination">
       {% if paginator.previous_page %}
       <li>
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"
+        <a href="{{ paginator.previous_page_path | prepend: site.subpath | replace: '//', '/' }}"
            aria-label="Previous">
           <span aria-hidden="true">&laquo;</span>
         </a>
@@ -57,18 +57,18 @@ postId: index
       </li>
       {% elsif page == 1 %}
       <li>
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+        <a href="{{ paginator.previous_page_path | prepend: site.subpath | replace: '//', '/' }}">{{ page }}</a>
       </li>
       {% else %}
       <li>
-        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">
+        <a href="{{ site.paginate_path | prepend: site.subpath | replace: '//', '/' | replace: ':num', page }}">
           {{ page }}</a>
       </li>
       {% endif %}
       {% endfor %}
 
       {% if paginator.next_page %}
-      <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+      <li><a href="{{ paginator.next_page_path | prepend: site.subpath | replace: '//', '/' }}">
         <span aria-hidden="true">&raquo;</span>
       </a></li>
       {% else %}

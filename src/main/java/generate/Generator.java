@@ -20,10 +20,10 @@ import java.util.Map;
 
 public class Generator {
 
-  private static String postTitle = "资源收集";
-  private static String urlTitle = "sources-list-from-net";
+  private static String postTitle = "设计模式目录";
+  private static String urlTitle = "design-pattern-menus";
   private static String categories = "[blog]";
-  private static String tags = "[其他]";
+  private static String tags = "[设计模式]";
 
   private static Configuration cfg;
 

@@ -21,7 +21,7 @@ useradd -m -U -s /bin/bash my_java
 passwd my_java
 # 增加用户组，不然无法使用sudo权限
 usermod -aG sudo,adm my_java
-# 汇总
+# 汇总 (只有确认需要使用sudo切换的时候才使用-aG，)
 useradd -m -U -aG sudo,adm -s /bin/bash -p password my_java
 ```
 
