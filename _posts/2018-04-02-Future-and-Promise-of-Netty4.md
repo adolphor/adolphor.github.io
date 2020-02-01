@@ -4,7 +4,7 @@ title:      Netty4之Future/Promise异步模型
 date:       2018-04-02 22:23:56 +0800
 postId:     2018-04-02-22-23-56
 categories: [blog]
-tags:       [Java]
+tags:       [Netty]
 geneMenu:   true
 excerpt:    Netty4之Future/Promise异步模型
 ---
