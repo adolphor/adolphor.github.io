@@ -120,7 +120,9 @@ Memento：Capture and restore an object's internal state
 Designed to act as a default value of an object
 
 ### 3.8 观察者模式（Observer）
-Observer：A way of notifying change to a number of classes
+Observer：A way of notifying change to a number of classes。
+
+也称为事件驱动模式，比如著名的Netty框架。
 
 ### 3.9 状态模式（State）
 State：Alter an object's behavior when its state changes
