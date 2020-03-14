@@ -7,9 +7,11 @@
   - Java
   - JVM
   - Java8
+  - concurrent
 * 开源框架
   - Netty
   - Spring
+  - Spring Cloud
 * App
   - iOS
   - macOS
@@ -18,7 +20,6 @@
 * bigData
   - 分布式
   - Hadoop
-  - Spring Cloud
 * database
   - mongodb
   - Redis
@@ -35,12 +36,12 @@
   - Git
   - IDE
   - Maven
-* 共用
+* system
   - 设计模式
   - 网络
   - 读书笔记
   - 架构设计
-* 其他
+* other
  
 # 代码高亮
 

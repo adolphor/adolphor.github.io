@@ -3,7 +3,7 @@ layout:     post
 title:      设计模式
 date:       2016-11-03 22:10:38 +0800
 postId:     2016-11-03-22-10-38
-categories: [blog]
+categories: [设计模式]
 tags:       [UML, 设计模式]
 geneMenu:   true
 excerpt:    设计模式简介
@@ -16,6 +16,8 @@ excerpt:    设计模式简介
 * 问题(problem) 
 * 解决方案(solution) 
 * 效果(consequences) 
+ 
+为了更加理解模式使用，需要增加开源项目使用范例内容。
 
 三类设计模式：
 * 创建型模式提供生存环境：为其他两种模式使用提供了环境
@@ -26,11 +28,8 @@ excerpt:    设计模式简介
 
 创建型模式为其他两种模式使用提供了环境
 
-创建设计模式（Creational design patterns），这些模式都是跟类的实例化信相关。其实可以进一步分为类的创建和对象的创建。
-类的创建通过继承来完成实例化过程，对象的创建通过授权来完成相关目标。
-These design patterns are all about class instantiation. This pattern can be further divided into class-creation patterns
-and object-creational patterns. While class-creation patterns use inheritance effectively in the instantiation process,
-object-creation patterns use delegation effectively to get the job done.
+These design patterns are all about class instantiation. This pattern can be further divided into class-creation patterns and object-creational patterns. While class-creation patterns use inheritance effectively in the instantiation process, object-creation patterns use delegation effectively to get the job done.
+创建设计模式（Creational design patterns），这些模式都是跟类的实例化信相关。其实可以进一步分为类的创建和对象的创建。类的创建通过继承来完成实例化过程，对象的创建通过授权来完成相关目标。
 
 ### 1.1 简单工厂模式（Simple Factory）
 
@@ -63,9 +62,7 @@ Object Pool：Avoid expensive acquisition and release of resources by recycling 
 * 对象的结构模式
     对象的结构模式描述怎样把各种不同的类型的对象组合在一起，以实现新的功能的方法。对象的结构模式是动态的。
 
-These design patterns are all about Class and Object composition. 
-Structural class-creation patterns use inheritance to compose interfaces. 
-Structural object-patterns define ways to compose objects to obtain new functionality.
+These design patterns are all about Class and Object composition. Structural class-creation patterns use inheritance to compose interfaces. Structural object-patterns define ways to compose objects to obtain new functionality.
 
 ### 2.1 适配器模式（Adapter）
 
@@ -94,9 +91,7 @@ Private Class Data：Restricts accessor/mutator access
 
 ## 3. 行为型设计模式
 行为型设计模式 (Behavioral design patterns)，
-These design patterns are all about Class's objects communication. 
-Behavioral patterns are those patterns that are most
-specifically concerned with communication between objects.
+These design patterns are all about Class's objects communication. Behavioral patterns are those patterns that are most specifically concerned with communication between objects.
 
 ### 3.1 责任链模式（Chain of Responsibility）
 Chain of responsibility：A way of passing a request between a chain of objects
@@ -120,9 +115,9 @@ Memento：Capture and restore an object's internal state
 Designed to act as a default value of an object
 
 ### 3.8 观察者模式（Observer）
-Observer：A way of notifying change to a number of classes。
+Observer：A way of notifying change to a number of classes。观察者模式也称为事件驱动模式，比如著名的Netty框架。
 
-也称为事件驱动模式，比如著名的Netty框架。
+详见：[设计模式之 —— 观察者模式]({% post_url 2020-01-23-java-design-patterns-Observer %})
 
 ### 3.9 状态模式（State）
 State：Alter an object's behavior when its state changes
