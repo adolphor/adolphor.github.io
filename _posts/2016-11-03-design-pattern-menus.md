@@ -118,8 +118,8 @@ Designed to act as a default value of an object
 Observer：A way of notifying change to a number of classes。观察者模式也称为事件驱动模式，比如著名的Netty框架。
 
 详见：
-[设计模式之 —— 观察者模式]({% post_url 2020-01-23-java-design-patterns-Observer %})
-[设计模式之 —— 观察者模式进阶：监听器模式]({% post_url 2020-03-14-java-design-patterns-listener %})
+* [设计模式之 —— 观察者模式]({% post_url 2020-01-23-java-design-patterns-Observer %})
+* [设计模式之 —— 观察者模式进阶：监听器模式]({% post_url 2020-03-14-java-design-patterns-listener %})
 
 ### 3.9 状态模式（State）
 State：Alter an object's behavior when its state changes
