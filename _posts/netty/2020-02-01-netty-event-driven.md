@@ -3,7 +3,7 @@ layout:     post
 title:      Netty源码 - 事件驱动
 date:       2020-02-01 21:37:49 +0800
 postId:     2020-02-01-21-37-49
-categories: [blog]
+categories: [Netty]
 tags:       [Netty]
 geneMenu:   true
 excerpt:    Netty源码 - 事件驱动
@@ -11,7 +11,7 @@ excerpt:    Netty源码 - 事件驱动
 
 在本文之前有两方面的基础知识需要掌握：
 * [设计模式之 —— 观察者模式]({% post_url 2020-01-23-java-design-patterns-Observer %})
-* [Java源码 —— 并发包 ScheduledExecutorService]({% post_url 2020-02-09-java-concurrent-ScheduledExecutorService %})
+* [Java源码 —— 并发包 ScheduledExecutorService]({% post_url concurrent/2020-02-09-java-util-concurrent-ScheduledExecutorService %})
 
 Netty使用了异步的事件驱动模型，来触发网络I/O的各种操作，其在socket层上面封装一层异步事件驱动模型，使得业务代码不需要关心网络底层，
 就可以编写异步的无网络I/O阻塞的代码。

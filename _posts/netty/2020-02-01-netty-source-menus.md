@@ -3,7 +3,7 @@ layout:     post
 title:      Netty源码学习汇总目录
 date:       2020-02-01 21:11:24 +0800
 postId:     2020-02-01-21-11-24
-categories: [blog]
+categories: [Netty]
 tags:       [Netty]
 geneMenu:   true
 excerpt:    Netty源码学习汇总目录
@@ -11,16 +11,23 @@ excerpt:    Netty源码学习汇总目录
 
 ## 预备知识
 
-* [Java源码-并发包 ScheduledExecutorService]({% post_url 2020-02-09-java-concurrent-ScheduledExecutorService %})
+### 设计模式
+
+* [设计模式之 —— 观察者模式]({% post_url 2020-01-23-java-design-patterns-Observer %})
+* [设计模式之 —— 观察者模式进阶：监听器模式]({% post_url 2020-03-14-java-design-patterns-listener %})
+
+### 多线程知识
+
+* [Java源码-并发包 ScheduledExecutorService]({% post_url concurrent/2020-02-09-java-util-concurrent-ScheduledExecutorService %})
 
 ## Netty 核心类库介绍
 
-* [Netty源码 - Netty主要类介绍]({% post_url 2020-03-12-netty-main-class %})
+* [Netty源码 - Netty主要类介绍]({% post_url netty/2020-03-12-netty-main-class %})
 
 ## 事件驱动：Reactor模式
 
-* [Netty源码 - 事件驱动]({% post_url 2020-02-01-netty-event-driven %})
-* [Netty4之Future/Promise异步模型]({% post_url 2018-04-02-Future-and-Promise-of-Netty4 %})
+* [Netty源码 - 事件驱动]({% post_url netty/2020-02-01-netty-event-driven %})
+* [Netty4之Future/Promise异步模型]({% post_url netty/2018-04-02-Future-and-Promise-of-Netty4 %})
 * [Netty之Reactor模式](https://zhuanlan.zhihu.com/p/33272452)
 
 ## ByteBuf详解
