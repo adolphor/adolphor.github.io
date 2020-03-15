@@ -33,7 +33,13 @@ network={
 
 ## ssh 连接
 
-新系统默认没有开启SSH，所以需要在boot启动盘的根目录创建一个名称为`ssh`且没有后缀名的文件。之后用网线连接到局域网之后，使用其他的电脑进行SSH连接即可。如果有路由器，可以看到树莓派分配的动态IP，如果没有路由器查看权限，则可直接使用hostname进行局域网内的连接，用户名 `pi`，密码`raspberry`：
+新系统默认没有开启SSH，有两种方法开启：
+* 在boot启动盘的根目录创建一个名称为`ssh`且没有后缀名的文件
+* 如果能键盘和屏幕接入，使用如下命令开启：`sudo /etc/init.d/ssh start`
+
+之后用网线连接到局域网之后，使用其他的电脑进行SSH连接即可。
+如果有路由器，可以看到树莓派分配的动态IP，如果没有路由器查看权限，
+则可直接使用hostname进行局域网内的连接，用户名 `pi`，密码`raspberry`：
 ```
 ssh -p 22 pi@192.168.1.38
 ssh -p 22 pi@raspberrypi.local
@@ -60,81 +66,6 @@ set fileencodings=utf-8,gb2312,gbk,gb18030
 set termencoding=utf-8
 set fileformats=unix
 set encoding=prc
-```
-
-## VPN 内网穿透
-
-### 使用蒲公英（没成功，VPN和surge/shadowsocks不能共存）
-
-https://pgy.oray.com/download/
-
-```bash
-chmod a+x PgyVPN-1.0.0-arm.deb
-sudo dpkg -i PgyVPN-1.0.0-arm.deb
-sudo pgyvpn
-  adolphor
-  haizhu@1314.hsk
-```
-
-```bash
-1,getmbrs:	get group membership info
-2,bypass:	check coustom routes
-3,chgacnt:	change account
-4,showsets:	show setting
-5,prtinfo:	turn on real-time info(when group membership changes)
-6,noinfo:	turn off real-time info
-7,slang:	change language(切换语言)
-8,qservice:	exit and close VPN service
-9,quit:		exit PgyVPN interface
-```
-
-### 使用lanproxy
-
-此方法需要一个有公网IP的服务器，创建后台启动sh文件 `/home/pi/lanproxy.sh`：
-
-```
-nohup /home/pi/client_linux_arm7 -s 107.175.23.142 -p 4900 -k ea247997c01c462eb169ccbcd3ad90c1 >/dev/null 2>&1 &
-```
-
-编辑`/etc/rc.local`设置lanproxy为开机运行：
-
-```
-su pi -c "exec /home/pi/lanproxy.sh"
-```
-其中 `su` 表示使用root用户执行的此命令，`pi`表示切换到pi用户，`-c` 表示运行，双引号之内的为运行的具体内容。
-
-### shadowsocks
-
-```bash
-# 安装Pip
-sudo apt-get install python-pip python-gevent python-m2crypto
-# 安装Shadowsocks
-sudo pip install shadowsocks
-# 配置文件 shadowsocks.json 内容如下
-{
-    "server":"0.0.0.0",
-    "server_port":8388,
-    "local_address": "127.0.0.1",
-    "local_port":1080,
-    "password":"123456",
-    "timeout":300,
-    "method":"aes-256-cfb",
-    "fast_open": false,
-    "workers": 1
-}
-# 将json配置移动到 /etc/文件夹下：
-sudo mv ~/shadowsocks.json /etc/shadowsocks.json
-# 启动服务
-ssserver -c /etc/shadowsocks.json
-
-# 如果报错，`AttributeError: /usr/lib/arm-linux-gnueabihf/libcrypto.so.1.1: undefined symbol: EVP_CIPHER_CTX_cleanup`，需要执行如下命令：
-# 请你将此文件中的52行和111行中的cleanup更新为reset后，再尝试启动。这是由于openssl库更新导致名称变更的问题
-# /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py 
-
-# 设定为自动启动的方法：
-#  到 /etc/rc.local 文件的 exit 之前 
-sudo vim /etc/rc.local
-  nohup ssserver -c /etc/shadowsocks.json >/dev/null 2>&1 &
 ```
 
 ## update & proxy

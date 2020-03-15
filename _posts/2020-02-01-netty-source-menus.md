@@ -41,15 +41,22 @@ excerpt:    Netty源码学习汇总目录
 
 ## 备忘
 
+### 参考书籍
+
+* [Doug Lea - Scalable IO in Java](http://gee.cs.oswego.edu/dl/cpjslides/nio.pdf)
+
 ### 文章
+
 * [源码之下无秘密 ── 做最好的 Netty 源码分析教程](https://segmentfault.com/a/1190000007282628)
 * [Netty 实现原理与源码解析系统](http://www.iocoder.cn/Netty/Netty-collection/?vip)
 * [Github - netty-learning](https://github.com/code4craft/netty-learning)
 * [认真的 Netty 源码解析（一）](https://juejin.im/post/5bdfde8251882516f6632dfe)
 
 ### 视频
-* [57 Reactor模式透彻理解及其在Netty中的应用](https://www.youtube.com/watch?v=zR4Bro5bphI&list=PLfFz9jdZIa8cj6XIwkSaUbzEdPQZMmhCj&index=28)
-
+* [junfeng hu - 57 Reactor模式透彻理解及其在Netty中的应用](https://www.youtube.com/watch?v=zR4Bro5bphI&list=PLfFz9jdZIa8cj6XIwkSaUbzEdPQZMmhCj&index=28)
+* [junfeng hu - Reactor模式5大角色彻底分析](https://www.youtube.com/watch?v=PyiPA_liKKo)
+* [Reactive Programming in Java by Venkat Subramaniam](https://www.youtube.com/watch?v=f3acAsSZPhU)
+* [Introduction to CompletableFuture in Java 8](https://www.youtube.com/watch?v=ImtZgX1nmr8)
 
 ## 待细化知识点
 

@@ -3,15 +3,13 @@ layout:     post
 title:      Java源码 —— 并发包 ScheduledExecutorService
 date:       2020-02-09 14:46:19 +0800
 postId:     2020-02-09-14-46-19
-categories: [Java]
+categories: [concurrent]
 tags:       [Java,concurrent]
 geneMenu:   true
 excerpt:    Java源码-并发包 ScheduledExecutorService
 ---
 
 `java.util.concurrent.ScheduledExecutorService` 是一种执行服务，它可以安排任务在延迟一定时间后运行，或者在每次执行之间以固定的时间间隔重复执行。而且此任务是由一个工作线程异步执行的，而不是由将任务交给预定执行程序服务的线程执行。
-
-
 
 ## ScheduledExecutorService例子
 
@@ -61,7 +59,7 @@ A Java *Future*, `java.util.concurrent.Future`, represents the result of an asyn
 
 ## 参考资料
 
+* [Java常用类源码——Thread源码解析](https://wangchangchung.github.io/2016/12/05/Java常用类源码——Thread源码解析/)
 * [Java并发包：ScheduledExecutorService](https://blog.csdn.net/zxc123e/article/details/51911652)
-
 * [Java Concurrency Utilities - ScheduledExecutorService](http://tutorials.jenkov.com/java-util-concurrent/scheduledexecutorservice.html)
-
+* [Java concurrency (multi-threading) - Tutorial](https://www.vogella.com/tutorials/JavaConcurrency/article.html)
