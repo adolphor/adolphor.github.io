@@ -5,18 +5,16 @@ import java.util.Vector;
 /**
  * @author adolphor
  */
-public abstract class Subject {
-  // 存储所有观察者对象的实例
-  private Vector<Observer> observersVector = new Vector<Observer>();
+public class Subject {
+  private Vector<Observer> observersVector = new Vector<>();
 
-  public void attach(Observer observer) {
+  public void addObserver(Observer observer) {
     observersVector.add(observer);
   }
 
-  public void notifyObservers(Object msg) {
+  public void notifyObservers() {
     for (Observer observer : observersVector) {
-      observer.update(msg);
+      observer.update();
     }
   }
-
 }

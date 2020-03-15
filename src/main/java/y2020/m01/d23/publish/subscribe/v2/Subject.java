@@ -8,13 +8,13 @@ import java.util.Vector;
 public class Subject {
   private Vector<Observer> observersVector = new Vector<>();
 
-  public void attach(Observer observer) {
+  public void addObserver(Observer observer) {
     observersVector.add(observer);
   }
 
-  public void notifyObservers() {
+  public void notifyObservers(Object state) {
     for (Observer observer : observersVector) {
-      observer.update();
+      observer.update(state);
     }
   }
 }

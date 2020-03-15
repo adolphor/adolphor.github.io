@@ -9,7 +9,7 @@ public abstract class Subject {
   // 存储所有观察者对象的实例
   private Vector<Observer> observersVector = new Vector<>();
 
-  public void attach(Observer observer) {
+  public void addObserver(Observer observer) {
     observersVector.add(observer);
   }
 

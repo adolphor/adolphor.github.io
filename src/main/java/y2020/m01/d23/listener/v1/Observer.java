@@ -1,4 +1,4 @@
-package y2020.m01.d23.publish.subscribe.v2;
+package y2020.m01.d23.listener.v1;
 
 /**
  * @author adolphor

@@ -1,4 +1,4 @@
-package y2020.m01.d23.listener.v5;
+package y2020.m01.d23.publish.subscribe.v4;
 
 import java.util.Vector;
 
@@ -10,7 +10,7 @@ public abstract class Subject {
   // 存储所有观察者对象的实例
   private Vector<Observer> observersVector = new Vector<Observer>();
 
-  public void attach(Observer observer) {
+  public void addObserver(Observer observer) {
     observersVector.add(observer);
   }
 

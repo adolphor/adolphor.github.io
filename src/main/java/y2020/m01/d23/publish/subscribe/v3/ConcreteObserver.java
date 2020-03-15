@@ -1,16 +1,13 @@
 package y2020.m01.d23.publish.subscribe.v3;
 
-/**
- * @author adolphor
- */
-public class ConcreteObserver implements Observer {
-  @Override
-  public void update(Object msg) {
-    System.out.println(msg);
-  }
+import java.util.Observable;
+import java.util.Observer;
 
+public class ConcreteObserver implements Observer {
+  private Object newState;
   @Override
-  public void subscribe(Subject subject) {
-    subject.attach(this);
+  public void update(Observable o, Object state) {
+    newState = state;
+    System.out.println(state);
   }
 }
