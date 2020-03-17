@@ -3,7 +3,7 @@ layout:     post
 title:      Redis缓存集群解决方案：Redis cluster 节点管理
 date:       2017-03-23 16:41:30 +0800
 postId:     2017-03-23-16-41-30
-categories: [blog]
+categories: [article]
 tags:       [Redis]
 geneMenu:   true
 excerpt:    Redis缓存集群解决方案：Redis cluster 节点管理

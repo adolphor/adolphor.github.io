@@ -3,7 +3,7 @@ layout:     post
 title:      final关键字解析
 date:       2016-07-26 12:00:00 +0800
 postId:     2016-07-26-22-00-00
-categories: [blog]
+categories: [article]
 tags:       [Java]
 geneMenu:   true
 excerpt:    java final关键字解析

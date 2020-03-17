@@ -3,7 +3,7 @@ layout:     post
 title:      Netty源码学习汇总目录
 date:       2020-02-01 21:11:24 +0800
 postId:     2020-02-01-21-11-24
-categories: [Netty]
+categories: [article,Netty]
 tags:       [Netty]
 geneMenu:   true
 excerpt:    Netty源码学习汇总目录
@@ -13,8 +13,8 @@ excerpt:    Netty源码学习汇总目录
 
 ### 设计模式
 
-* [设计模式之 —— 观察者模式]({% post_url 2020-01-23-java-design-patterns-Observer %})
-* [设计模式之 —— 观察者模式进阶：监听器模式]({% post_url 2020-03-14-java-design-patterns-listener %})
+* [设计模式之 —— 观察者模式]({% post_url design-pattern/2020-01-23-java-design-patterns-Observer %})
+* [设计模式之 —— 观察者模式进阶：监听器模式]({% post_url design-pattern/2020-03-14-java-design-patterns-listener %})
 
 ### 多线程知识
 

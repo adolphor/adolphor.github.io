@@ -3,7 +3,7 @@ layout:     post
 title:      WireShark 配置和使用
 date:       2018-04-27 13:13:51 +0800
 postId:     2018-04-27-13-13-51
-categories: [blog]
+categories: [article]
 tags:       [Tools,网络]
 geneMenu:   true
 excerpt:    WireShark 配置和使用

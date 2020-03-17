@@ -3,7 +3,7 @@ layout:     post
 title:      使用泛型和lambda表达式重构代码
 date:       2019-11-18 10:47:43 +0800
 postId:     2019-11-18-10-47-43
-categories: [blog]
+categories: [article]
 tags:       [Spring]
 geneMenu:   true
 excerpt:    使用泛型和lambda表达式重构代码

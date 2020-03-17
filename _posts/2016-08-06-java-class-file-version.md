@@ -3,7 +3,7 @@ layout:     post
 title:      Java class 编译版本相关设置和查看
 date:       2016-08-06 14:28:52 +0800
 postId:     2016-08-06-14-28-53
-categories: [blog]
+categories: [article]
 tags:       [Java, JVM]
 geneMenu:   true
 excerpt:    Java class version, Java class file, Java class 编译版本相关设置和查看，从class文件查看Java版本，javap -verbose，major version，minor version

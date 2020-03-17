@@ -3,7 +3,7 @@ layout:     post
 title:      设计模式之 —— 观察者模式
 date:       2020-01-23 12:21:17 +0800
 postId:     2020-01-23-12-21-17
-categories: [设计模式]
+categories: [article,design-pattern]
 tags:       [设计模式]
 geneMenu:   true
 excerpt:    设计模式之 —— 观察者模式
@@ -155,7 +155,7 @@ public class PublishSubscribeDemo {
 ```
 
 * 第一，更深刻理解了匿名实现类中的方法是如何接收参数的；
-* 第二，这里的代码形式已经具有了监听器模式的雏形，具体参考《[设计模式之 —— 观察者模式进阶：监听器模式]({% post_url 2020-03-14-java-design-patterns-listener %})》。
+* 第二，这里的代码形式已经具有了监听器模式的雏形，具体参考《[设计模式之 —— 观察者模式进阶：监听器模式]({% post_url design-pattern/2020-03-14-java-design-patterns-listener %})》。
 
 ## 按照自然语义改写
 

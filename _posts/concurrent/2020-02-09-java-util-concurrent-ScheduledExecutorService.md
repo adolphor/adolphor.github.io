@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发包 ——  ScheduledExecutorService
 date:       2020-02-09 14:46:19 +0800
 postId:     2020-02-09-14-46-19
-categories: [concurrent]
+categories: [article,concurrent]
 tags:       [Java,concurrent]
 geneMenu:   true
 excerpt:    Java并发包 ——  ScheduledExecutorService

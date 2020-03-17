@@ -3,7 +3,7 @@ layout:     post
 title:      RFC相关协议整理
 date:       2019-02-09 00:56:20 +0800
 postId:     2019-02-09-00-56-20
-categories: [blog]
+categories: [article]
 tags:       [网络]
 geneMenu:   true
 excerpt:    RFC相关协议整理

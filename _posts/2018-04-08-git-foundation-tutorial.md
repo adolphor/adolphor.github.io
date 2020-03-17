@@ -3,7 +3,7 @@ layout:     post
 title:      Git 相关基本操作
 date:       2018-04-08 00:23:01 +0800
 postId:     2018-04-08-00-23-01
-categories: [blog]
+categories: [article]
 tags:       [Git]
 geneMenu:   true
 excerpt:    Git 相关基本操作

@@ -3,7 +3,7 @@ layout:     post
 title:      【置顶】博文目录汇总
 date:       1997-01-01 17:18:40 +0800
 postId:     1997-01-01-17-18-40
-categories: []
+categories: [article]
 tags:       []
 geneMenu:   true
 excerpt:    【置顶】博文目录汇总
@@ -23,8 +23,8 @@ excerpt:    【置顶】博文目录汇总
 
 ## 设计模式 [Design pattern]
 
-* [6大接口设计原则]({% post_url 2020-01-21-design-pattern-principle %})
-* [3大类24种设计模式]({% post_url 2016-11-03-design-pattern-menus %})
+* [6大接口设计原则]({% post_url design-pattern/2020-01-21-design-pattern-principle %})
+* [3大类24种设计模式]({% post_url design-pattern/2016-11-03-design-pattern-menus %})
 
 ## 源码
 

@@ -3,7 +3,7 @@ layout:     post
 title:      macOS系统下配置使用zsh和oh-my-zsh
 date:       2017-09-27 10:57:44 +0800
 postId:     2017-09-27-10-57-44
-categories: [blog]
+categories: [article]
 tags:       [macOS]
 geneMenu:   true
 excerpt:    macOS系统下配置使用zsh和oh-my-zsh

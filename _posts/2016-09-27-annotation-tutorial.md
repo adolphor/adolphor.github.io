@@ -3,7 +3,7 @@ layout:     post
 title:      Annotation 注解
 date:       2016-09-27 16:47:28 +0800
 postId:     2016-09-27-16-47-28
-categories: [blog]
+categories: [article]
 tags:       [Java]
 geneMenu:   true
 excerpt:    Annotation 注解

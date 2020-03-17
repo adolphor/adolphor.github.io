@@ -3,7 +3,7 @@ layout:     post
 title:      Spring Cloud 学习
 date:       2019-01-07 13:43:28 +0800
 postId:     2019-01-07-13-43-28
-categories: [blog]
+categories: [article]
 tags:       [分布式,Spring Cloud]
 geneMenu:   true
 excerpt:    Spring Cloud 学习

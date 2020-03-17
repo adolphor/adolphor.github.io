@@ -3,7 +3,7 @@ layout:     post
 title:      Flutter 错误和解决汇总
 date:       2018-09-09 10:17:53 +0800
 postId:     2018-09-09-10-17-53
-categories: [blog]
+categories: [article]
 tags:       [App,Flutter]
 geneMenu:   true
 excerpt:    Flutter 错误和解决汇总

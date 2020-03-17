@@ -3,7 +3,7 @@ layout:     post
 title:      log4j/log4j2 配置方法
 date:       2018-05-29 10:06:51 +0800
 postId:     2018-05-29-10-06-52
-categories: [blog]
+categories: [article]
 tags:       [Tools]
 geneMenu:   true
 excerpt:    log4j/log4j2 配置方法

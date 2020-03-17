@@ -3,7 +3,7 @@ layout:     post
 title:      MySQL 之 join 语句
 date:       2018-06-08 13:20:16 +0800
 postId:     2018-06-08-13-20-17
-categories: [blog]
+categories: [article]
 tags:       [database,MySQL]
 geneMenu:   true
 excerpt:    MySQL 之 join 语句

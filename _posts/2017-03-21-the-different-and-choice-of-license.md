@@ -3,7 +3,7 @@ layout:     post
 title:      各种开源协议的区别和选择
 date:       2017-03-21 10:01:02 +0800
 postId:     2017-03-21-10-01-02
-categories: [blog]
+categories: [article]
 tags:       [CS]
 geneMenu:   true
 excerpt:    各种开源协议的区别和选择

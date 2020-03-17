@@ -3,7 +3,7 @@ layout:     post
 title:      spring-boot 下划线和驼峰转换
 date:       2019-11-16 09:39:32 +0800
 postId:     2019-11-16-09-39-32
-categories: [blog]
+categories: [article]
 tags:       [Spring]
 geneMenu:   true
 excerpt:    spring-boot 下划线和驼峰转换

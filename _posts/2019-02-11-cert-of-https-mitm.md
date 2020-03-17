@@ -3,7 +3,7 @@ layout:     post
 title:      HTTPS进行MITM时的那些事
 date:       2019-02-11 22:21:53 +0800
 postId:     2019-02-11-22-21-53
-categories: [blog]
+categories: [article]
 tags:       [网络]
 geneMenu:   true
 excerpt:    HTTPS进行MITM时的那些事

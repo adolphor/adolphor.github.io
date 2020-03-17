@@ -3,7 +3,7 @@ layout:     post
 title:      Java8 新特性 —— lambda表达式
 date:       2016-08-24 09:00:57 +0800
 postId:     2016-08-24-09-00-57
-categories: [Java]
+categories: [article]
 tags:       [Java, Java8]
 geneMenu:   true
 excerpt:    Java8 新特性 —— lambda表达式

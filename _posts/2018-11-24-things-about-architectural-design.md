@@ -3,7 +3,7 @@ layout:     post
 title:      聊一聊架构设计的主要指标
 date:       2018-11-24 12:15:22 +0800
 postId:     2018-11-24-12-15-23
-categories: [blog]
+categories: [article]
 tags:       [架构设计]
 geneMenu:   true
 excerpt:    聊一聊架构设计的主要指标

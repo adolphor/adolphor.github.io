@@ -3,7 +3,7 @@ layout:     post
 title:      使用 jrecreate 工具创建自己的 JRE
 date:       2018-04-10 20:56:12 +0800
 postId:     2018-04-10-20-56-13
-categories: [blog]
+categories: [article]
 tags:       [Java,JVM]
 geneMenu:   true
 excerpt:    使用 jrecreate 工具创建自己的 JRE

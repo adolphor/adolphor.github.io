@@ -3,7 +3,7 @@ layout:     post
 title:      来使用markdown吧
 date:       2018-11-29 22:11:08 +0800
 postId:     2018-11-29-22-11-08
-categories: [blog]
+categories: [article]
 tags:       [Tools]
 geneMenu:   true
 excerpt:    来使用markdown吧

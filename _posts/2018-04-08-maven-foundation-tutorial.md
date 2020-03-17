@@ -3,7 +3,7 @@ layout:     post
 title:      Maven 相关基本操作
 date:       2018-04-08 00:44:06 +0800
 postId:     2018-04-08-00-44-06
-categories: [blog]
+categories: [article]
 tags:       [Maven]
 geneMenu:   true
 excerpt:    Maven 相关基本操作

@@ -3,7 +3,7 @@ layout:     post
 title:      设计模式之 —— 观察者模式进阶：监听器模式
 date:       2020-03-14 21:23:26 +0800
 postId:     2020-03-14-21-23-26
-categories: [设计模式]
+categories: [article,design-pattern]
 tags:       [设计模式]
 geneMenu:   true
 excerpt:    设计模式之 —— 监听器模式
@@ -22,7 +22,7 @@ excerpt:    设计模式之 —— 监听器模式
 
 ## 观察者模式进阶
 
-在《[设计模式之 —— 观察者模式]({% post_url 2020-01-23-java-design-patterns-Observer %})》一文中，如果使用匿名实现类的方式来写观察者模式如下所示：
+在《[设计模式之 —— 观察者模式]({% post_url design-pattern/2020-01-23-java-design-patterns-Observer %})》一文中，如果使用匿名实现类的方式来写观察者模式如下所示：
 
 ```java
 public abstract class Subject {

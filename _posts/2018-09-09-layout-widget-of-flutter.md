@@ -3,7 +3,7 @@ layout:     post
 title:      Flutter 组件
 date:       2018-09-09 12:05:46 +0800
 postId:     2018-09-09-12-05-47
-categories: [blog]
+categories: [article]
 tags:       [App,Flutter]
 geneMenu:   true
 excerpt:    Flutter 布局组件

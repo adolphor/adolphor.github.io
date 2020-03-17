@@ -3,7 +3,7 @@ layout:     post
 title:      资源整理收藏
 date:       2019-02-18 16:51:55 +0800
 postId:     2019-02-18-16-51-56
-categories: [blog]
+categories: [article]
 tags:       [其他]
 geneMenu:   true
 excerpt:    资源整理收藏

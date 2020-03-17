@@ -3,7 +3,7 @@ layout:     post
 title:      持续集成：travis-ci
 date:       2018-12-11 11:11:01 +0800
 postId:     2018-12-11-11-11-01
-categories: [blog]
+categories: [article]
 tags:       [Tools]
 geneMenu:   true
 excerpt:    持续集成：travis-ci

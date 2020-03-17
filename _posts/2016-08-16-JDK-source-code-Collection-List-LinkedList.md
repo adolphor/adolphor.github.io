@@ -3,7 +3,7 @@ layout:     post
 title:      【Java8源码阅读笔记】Collection框架之LinkedList
 date:       2016-08-16 15:59:31 +0800
 postId:     2016-08-16-15-59-31
-categories: [blog]
+categories: [article]
 tags:       [Java]
 geneMenu:   true
 excerpt:    【Java8源码阅读笔记】Collection框架之LinkedList
