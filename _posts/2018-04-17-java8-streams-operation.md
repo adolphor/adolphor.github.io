@@ -3,7 +3,7 @@ layout:     post
 title:      Java 数据流操作
 date:       2018-04-17 22:14:29 +0800
 postId:     2018-04-17-22-14-29
-categories: [article]
+categories: []
 tags:       [Java,Java8]
 geneMenu:   true
 excerpt:    Java 数据流操作

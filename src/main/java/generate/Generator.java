@@ -17,14 +17,12 @@ import java.util.Map;
 /**
  * Created by Bob on 2016/8/2.
  */
-
 public class Generator {
 
-  private static String postTitle = "设计模式目录";
-  private static String urlTitle = "design-pattern-menus";
-  private static String categories = "[blog]";
-  private static String tags = "[设计模式]";
-
+  private static String postTitle = "Java并发包学习汇总目录";
+  private static String urlTitle = "java-util-concurrent-menus";
+  private static String categories = "[concurrent]";
+  private static String tags = "[concurrent]";
   private static Configuration cfg;
 
   public static void main(String[] args) throws IOException, TemplateException {

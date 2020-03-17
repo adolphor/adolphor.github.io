@@ -3,7 +3,7 @@ layout:     post
 title:      https 原理及相关
 date:       2018-04-28 15:51:29 +0800
 postId:     2018-04-28-15-51-30
-categories: [article]
+categories: []
 tags:       [网络]
 geneMenu:   true
 excerpt:    https 原理及相关

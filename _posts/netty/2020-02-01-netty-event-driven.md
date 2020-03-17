@@ -3,7 +3,7 @@ layout:     post
 title:      Netty源码 - 事件驱动
 date:       2020-02-01 21:37:49 +0800
 postId:     2020-02-01-21-37-49
-categories: [article,Netty]
+categories: [Netty]
 tags:       [Netty]
 geneMenu:   true
 excerpt:    Netty源码 - 事件驱动

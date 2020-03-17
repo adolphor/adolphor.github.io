@@ -6,7 +6,7 @@
     </div>
     <ul class="left-ul row">
       {% for post in site.posts offset: 0 limit: 5 %}
-      <li style="margin-bottom: 10px;"><a href="{{ post.url | prepend: site.subpath }}">{{ post.title }}</a></li>
+      <li style="margin-bottom: 10px;"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
       {% endfor %}
     </ul>
   </div>
@@ -52,28 +52,9 @@
       {% else %}
       {% assign color = 8 | minus: base %}
       {% endif %}
-      <a href="/tags.html#{{ tag[0] }} | prepend: site.subpath "
+      <a href="/tags.html#{{ tag[0] }} | prepend: site.baseurl "
          style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
       {% endfor %}
     </div>
   </div>
-</section>
-
-<section class="left-section row">
-  <div class="col-md-12">
-    <div class="left-title row">
-      <!--<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>-->
-      访问量统计
-    </div>
-    <div class="left-ul row">
-      <span id="busuanzi_container_site_pv">本站总访问量 <b><span id="busuanzi_value_site_pv"></span></b> 次</span>
-      <br>
-      <span id="busuanzi_container_site_uv">本站总访客数 <b><span id="busuanzi_value_site_uv"></span></b> 人次</span>
-      <br>
-      <span id="busuanzi_container_page_pv">本文总阅读量 <b><span id="busuanzi_value_page_pv"></span></b> 次</span>
-      <br>
-    </div>
-  </div>
-</section>
-<section class="left-section row">
 </section>

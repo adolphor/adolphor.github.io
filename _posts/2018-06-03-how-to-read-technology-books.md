@@ -3,7 +3,7 @@ layout:     post
 title:      如何阅读技术书籍
 date:       2018-06-03 16:42:04 +0800
 postId:     2018-06-03-16-42-04
-categories: [article]
+categories: []
 tags:       [读书笔记]
 geneMenu:   true
 excerpt:    如何阅读技术书籍

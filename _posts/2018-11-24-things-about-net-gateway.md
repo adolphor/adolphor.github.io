@@ -3,7 +3,7 @@ layout:     post
 title:      聊一聊网关
 date:       2018-11-24 11:42:09 +0800
 postId:     2018-11-24-11-42-09
-categories: [article]
+categories: []
 tags:       [架构设计]
 geneMenu:   true
 excerpt:    聊一聊网关

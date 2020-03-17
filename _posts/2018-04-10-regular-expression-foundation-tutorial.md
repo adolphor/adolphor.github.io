@@ -3,7 +3,7 @@ layout:     post
 title:      正则表达式基础语法
 date:       2018-04-10 16:17:03 +0800
 postId:     2018-04-10-16-17-03
-categories: [article]
+categories: []
 tags:       [Java]
 geneMenu:   true
 excerpt:    正则表达式基础

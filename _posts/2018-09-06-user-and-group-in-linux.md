@@ -3,7 +3,7 @@ layout:     post
 title:      Linux 用户和组管理
 date:       2018-09-06 09:31:07 +0800
 postId:     2018-09-06-09-31-08
-categories: [article]
+categories: []
 tags:       [Linux]
 geneMenu:   true
 excerpt:    Linux 用户管理

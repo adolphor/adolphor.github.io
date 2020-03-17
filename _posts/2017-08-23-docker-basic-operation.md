@@ -3,7 +3,7 @@ layout:     post
 title:      Docker基本操作
 date:       2017-08-23 19:00:47 +0800
 postId:     2017-08-23-19-00-47
-categories: [article]
+categories: []
 tags:       [Docker]
 geneMenu:   true
 excerpt:    Docker基本操作

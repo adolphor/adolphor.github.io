@@ -3,7 +3,7 @@ layout:     post
 title:      Netty源码 - Future/Promise异步模型
 date:       2018-04-02 22:23:56 +0800
 postId:     2018-04-02-22-23-56
-categories: [article,Netty]
+categories: [Netty]
 tags:       [Netty]
 geneMenu:   true
 excerpt:    Netty源码 - Future/Promise异步模型

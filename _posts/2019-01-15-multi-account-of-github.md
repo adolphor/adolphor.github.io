@@ -3,7 +3,7 @@ layout:     post
 title:      在同一个电脑上配置多个GitHub账号
 date:       2019-01-15 21:02:05 +0800
 postId:     2019-01-15-21-02-05
-categories: [article]
+categories: []
 tags:       [其他]
 geneMenu:   true
 excerpt:    在同一个电脑上配置多个GitHub账号

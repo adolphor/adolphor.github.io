@@ -3,7 +3,7 @@ layout:     post
 title:      设计模式之 —— 观察者模式
 date:       2020-01-23 12:21:17 +0800
 postId:     2020-01-23-12-21-17
-categories: [article,design-pattern]
+categories: [design-pattern]
 tags:       [设计模式]
 geneMenu:   true
 excerpt:    设计模式之 —— 观察者模式

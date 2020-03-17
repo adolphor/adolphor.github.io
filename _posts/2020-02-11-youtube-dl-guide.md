@@ -3,7 +3,7 @@ layout:     post
 title:      youtube-dl的使用
 date:       2020-02-11 17:28:27 +0800
 postId:     2020-02-11-17-28-27
-categories: [article]
+categories: []
 tags:       [其他,ffmpeg]
 geneMenu:   true
 excerpt:    youtube-dl的使用

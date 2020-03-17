@@ -3,7 +3,7 @@ layout:     post
 title:      Dash使用方法
 date:       2020-03-12 21:44:48 +0800
 postId:     2020-03-12-21-44-48
-categories: [article]
+categories: []
 tags:       [Tools]
 geneMenu:   true
 excerpt:    Dash使用方法

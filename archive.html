@@ -37,7 +37,7 @@ postId: archive
     <!--月份结束-->
 
     {% endunless %}
-    <li>{{ post.date | date:"%Y-%m-%d" }} <a href="{{ post.url | prepend: site.subpath }}"> {{ post.title }}</a></li>
+    <li>{{ post.date | date:"%Y-%m-%d" }} <a href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a></li>
     {% endfor %}
   </ul>
 </div>

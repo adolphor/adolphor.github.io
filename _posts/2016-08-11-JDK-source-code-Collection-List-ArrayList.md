@@ -3,7 +3,7 @@ layout:     post
 title:      【Java8源码阅读笔记】Collection框架之ArrayList
 date:       2016-08-11 15:15:50 +0800
 postId:     2016-08-11-15-15-50
-categories: [article]
+categories: []
 tags:       [Java]
 geneMenu:   true
 excerpt:    【Java8源码阅读笔记】Collection框架之ArrayList

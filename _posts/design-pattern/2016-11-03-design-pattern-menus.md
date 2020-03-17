@@ -3,7 +3,7 @@ layout:     post
 title:      设计模式
 date:       2016-11-03 22:10:38 +0800
 postId:     2016-11-03-22-10-38
-categories: [article,design-pattern]
+categories: [design-pattern]
 tags:       [UML, 设计模式]
 geneMenu:   true
 excerpt:    设计模式简介
@@ -76,6 +76,8 @@ Composite：A tree structure of simple and composite objects
 
 ### 2.4 装饰模式（Decorator）
 Decorator：Add responsibilities to objects dynamically
+
+* [设计模式之 —— 装饰者模式]({% post_url design-pattern/2017-02-23-java-design-patterns-decorator %})
 
 ### 2.5 门面模式（Facade）
 Facade：A single class that represents an entire subsystem

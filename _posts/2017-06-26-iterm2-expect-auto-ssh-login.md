@@ -3,7 +3,7 @@ layout:     post
 title:      iterm2 配合 expect 实现 SSH 自动登陆
 date:       2017-06-26 10:20:54 +0800
 postId:     2017-06-26-10-20-54
-categories: [article]
+categories: []
 tags:       [shell]
 geneMenu:   true
 excerpt:    iterm2 配合 expect 实现 SSH 自动登陆

@@ -15,13 +15,13 @@ postId: categories
 
   <ul class="post-list">
     {% for post in category.last %}
-    <li>{{ post.date | date:"%Y-%m-%d" }} <a href="{{ post.url | prepend: site.subpath }}"> {{ post.title }}</a></li>
+    <li>{{ post.date | date:"%Y-%m-%d" }} <a href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a></li>
     {% endfor %}
   </ul>
   {% endfor %}
 
   <!--分类单独页面-->
-  <!--<script src="{{ '/js/jquery.query.min.js' | prepend: site.subpath }}"></script>-->
+  <!--<script src="{{ '/js/jquery.query.min.js' | prepend: site.baseurl }}"></script>-->
   <!--<script>-->
   <!--debugger-->
   <!--var dataStr = '{ {% for cat in site.categories %}{% if cat[0] != site.categories.first[0] %},{% endif %}"{{ cat[0] }}":[{% for post in cat[1] %}{% if post != cat[1].first %},{% endif %}{"url":"{{post.url}}", "title":"{{post.title}}", "date":"{{post.date | date:"%d/%m/%Y"}}"}{% endfor %}]{% endfor %} }';-->

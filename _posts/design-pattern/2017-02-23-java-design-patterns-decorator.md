@@ -3,8 +3,8 @@ layout:     post
 title:      装饰者模式
 date:       2017-02-23 15:48:55 +0800
 postId:     2017-02-23-15-48-55
-categories: [article]
-tags:       [Java]
+categories: [design-pattern]
+tags:       [设计模式]
 geneMenu:   true
 excerpt:    装饰者模式
 ---

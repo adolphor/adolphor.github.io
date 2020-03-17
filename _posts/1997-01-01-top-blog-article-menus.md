@@ -3,7 +3,7 @@ layout:     post
 title:      【置顶】博文目录汇总
 date:       1997-01-01 17:18:40 +0800
 postId:     1997-01-01-17-18-40
-categories: [article]
+categories: []
 tags:       []
 geneMenu:   true
 excerpt:    【置顶】博文目录汇总

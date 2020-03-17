@@ -3,7 +3,7 @@ layout:     post
 title:      macOS下mongodb的安装和GUI工具介绍
 date:       2017-09-25 14:57:25 +0800
 postId:     2017-09-25-14-57-25
-categories: [article]
+categories: []
 tags:       [mongodb]
 geneMenu:   true
 excerpt:    macOS下mongodb的安装和GUI工具介绍

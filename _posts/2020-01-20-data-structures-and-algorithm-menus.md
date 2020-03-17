@@ -3,7 +3,7 @@ layout:     post
 title:      算法汇总
 date:       2020-01-20 17:24:57 +0800
 postId:     2020-01-20-17-24-57
-categories: [article]
+categories: []
 tags:       [其他]
 geneMenu:   true
 excerpt:    算法汇总

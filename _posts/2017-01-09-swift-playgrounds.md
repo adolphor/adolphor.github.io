@@ -3,7 +3,7 @@ layout:     post
 title:      swift playgrounds 用法
 date:       2017-01-09 23:29:55 +0800
 postId:     2017-01-09-23-29-55
-categories: [article]
+categories: []
 tags:       [iOS, swift]
 geneMenu:   true
 excerpt:    swift playgrounds 用法

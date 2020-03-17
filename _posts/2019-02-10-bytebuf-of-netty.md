@@ -3,7 +3,7 @@ layout:     post
 title:      ByteBuf of Netty
 date:       2019-02-10 02:39:05 +0800
 postId:     2019-02-10-02-39-05
-categories: [article]
+categories: []
 tags:       [开源框架, Netty]
 geneMenu:   true
 excerpt:    ByteBuf of Netty

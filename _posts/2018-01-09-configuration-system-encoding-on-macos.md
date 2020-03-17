@@ -3,7 +3,7 @@ layout:     post
 title:      macOS下的系统编码设置
 date:       2018-01-09 13:30:51 +0800
 postId:     2018-01-09-13-30-51
-categories: [article]
+categories: []
 tags:       [macOS]
 geneMenu:   true
 excerpt:    macOS下的系统编码设置
