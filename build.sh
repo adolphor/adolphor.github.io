@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-jekyll serve --baseurl "/article"
+jekyll build --baseurl "/article"
