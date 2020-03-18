@@ -49,7 +49,7 @@ public class Teacher extends Person{
 }
 ```
 
-![泛化关系UML](/image/post/2016/08/01/20160801-UML02.jpg)
+![泛化关系UML]({{ site.baseurl }}/image/post/2016/08/01/20160801-UML02.jpg)
 
 
 ## 实现关系（Realization `/ˌriələ'zeʃən/`）
@@ -82,7 +82,7 @@ public class Panda implements Animal {
 }
 ```
 
-![实现关系UML](/image/post/2016/08/01/20160801-UML03.jpg)
+![实现关系UML]({{ site.baseurl }}/image/post/2016/08/01/20160801-UML03.jpg)
 
 ## 组合关系(Composition `/ˌkɑmpə'zɪʃən/`)
 
@@ -111,7 +111,7 @@ public class Leg {
 
 > 备注：当然，对于胳膊和腿，因为左右是不一样的，可以再抽象出来一层父类。但本例，简单起见，不再进行抽象。
 
-![组合关系UML](/image/post/2016/08/01/20160801-UML04.jpg)
+![组合关系UML]({{ site.baseurl }}/image/post/2016/08/01/20160801-UML04.jpg)
 
 
 ## 聚合关系(Aggregation `/ˌægrɪ'geʃən/`)
@@ -134,7 +134,7 @@ public class Student {
 }
 
 ```
-![聚合关系UML](/image/post/2016/08/01/20160801-UML05.jpg)
+![聚合关系UML]({{ site.baseurl }}/image/post/2016/08/01/20160801-UML05.jpg)
 
 ## 关联关系(Association `/ə,soʃɪ'eʃən/` )
 
@@ -171,7 +171,7 @@ public class StudentCard {
 }
 ```
 
-![关联关系UML](/image/post/2016/08/01/20160801-UML06.jpg)
+![关联关系UML]({{ site.baseurl }}/image/post/2016/08/01/20160801-UML06.jpg)
 
 ## 依赖关系(Dependence `/dɪ'pɛndəns/`)
 
@@ -196,12 +196,12 @@ class Car {
 }
 ```
 
-![依赖关系UML](/image/post/2016/08/01/20160801-UML01.png)
+![依赖关系UML]({{ site.baseurl }}/image/post/2016/08/01/20160801-UML01.png)
 
 
 ## 综合示例
 
-![综合示例UML](/image/post/2016/08/01/20160801-UML00.png)
+![综合示例UML]({{ site.baseurl }}/image/post/2016/08/01/20160801-UML00.png)
 
 
 ## 参考文章

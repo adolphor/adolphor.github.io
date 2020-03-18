@@ -109,16 +109,16 @@ p img[alt="TLS/SSL 加密算法"] {
 HTTPS (Secure Hypertext Transfer Protocol)安全超文本传输协议，是一个安全通信通道，它基于HTTP开发用于在客户计算机和服务器之间交换信
 息。它使用安全套接字层(SSL)进行信息交换，简单来说它是HTTP的安全版,是使用TLS/SSL加密的HTTP协议。
 
-![HTTP vs HTTPS](/image/post/2018/04/28/20180428-http-vs-https.jpg)
+![HTTP vs HTTPS]({{ site.baseurl }}/image/post/2018/04/28/20180428-http-vs-https.jpg)
 
 协议栈如下所示：
 
-![HTTPS流程图](/image/post/2018/04/28/20180428-https-ssl-protocol.jpg)
+![HTTPS流程图]({{ site.baseurl }}/image/post/2018/04/28/20180428-https-ssl-protocol.jpg)
 
 TLS/SSL的功能实现主要依赖于三类基本算法：散列函数 Hash、对称加密和非对称加密，其利用非对称加密实现身份认证和密钥协商，
 对称加密算法采用协商的密钥对数据加密，基于散列函数验证信息的完整性。
 
-![TLS/SSL 加密算法](/image/post/2018/04/28/20190209-tls-ssl-encrypt.jpg)    
+![TLS/SSL 加密算法]({{ site.baseurl }}/image/post/2018/04/28/20190209-tls-ssl-encrypt.jpg)    
 
 ### 流程简图
 
@@ -129,7 +129,7 @@ HTTPS在传输的过程中会涉及到三个密钥：
 
 总的流程如下所示：
 
-![HTTPS流程图](/image/post/2018/04/28/20180428-https-flow.jpg)
+![HTTPS流程图]({{ site.baseurl }}/image/post/2018/04/28/20180428-https-flow.jpg)
 
 一个HTTPS请求实际上包含了两次HTTP传输，可以细分为8步：
 
@@ -155,7 +155,7 @@ SSL握手协议作用是在通信双方之间协商出密钥，SSL记录层的�
 
 所以，SSL握手协议是在TCP协议完成之后进行，整个过程如下所示：
 
-![HTTPS流程图](/image/post/2018/04/28/20180428-ssl-flow.jpg)
+![HTTPS流程图]({{ site.baseurl }}/image/post/2018/04/28/20180428-ssl-flow.jpg)
 
 * client_hello
 
@@ -279,7 +279,7 @@ echo "\nexport SSLKEYLOGFILE=~/tls/sslkeylog.log" >> ~/.bash_profile && source ~
 ```
 接着，在 Wireshark 的 SSL 配置面板的 「(Pre)-Master-Secret log filename」选项中这个文件选上。如下图：
 
-![wireShark配置SSLKEYLOGFILE](/image/post/2018/04/28/20180428-ssl-wireshark-sslkeylogfile.jpg)
+![wireShark配置SSLKEYLOGFILE]({{ site.baseurl }}/image/post/2018/04/28/20180428-ssl-wireshark-sslkeylogfile.jpg)
 
 通过 `terminal` 终端启动 Firefox 或 Chrome（确保能读取到环境变量，本机使用iterm2启动的时候没有成功）：
 
@@ -290,12 +290,12 @@ open /Applications/Google\ Chrome.app
 
 这时再访问 HTTPS 网站，sslkeylog.log 文件中应该有浏览器写入的数据了。
 
-![ssl log content](/image/post/2018/04/28/20180428-ssl-wireshark-ssllog-content.jpg)
-![ssl key log file content](/image/post/2018/04/28/20180428-ssl-wireshark-sslkeylogfile-content.jpg)
+![ssl log content]({{ site.baseurl }}/image/post/2018/04/28/20180428-ssl-wireshark-ssllog-content.jpg)
+![ssl key log file content]({{ site.baseurl }}/image/post/2018/04/28/20180428-ssl-wireshark-sslkeylogfile-content.jpg)
 
 检查无误后，就可以开启 Wireshark，选择合适的网卡开始抓包（本文目的是抓取 HTTP/2 数据包，可以将 TCP 端口限定在 443，让抓到的数据少一些）：
 
-![wireShark监听443](/image/post/2018/04/28/20180428-ssl-wireshark-443.jpg)
+![wireShark监听443]({{ site.baseurl }}/image/post/2018/04/28/20180428-ssl-wireshark-443.jpg)
 
 这里就可以看到解密之后的数据（就看到了一次！！！！雾~ 以后再说吧，等解密之后再上图~）。
 

@@ -17,10 +17,10 @@ excerpt:    设计模式之 —— 观察者模式
 
 定义观察者为Observer，此对象有一个（回调）函数；被观察者为Subject（主题），被观察者有一个列表vector容器，可以存储所有观察者对象的实例，这样当主题发生变化或者其他情况需要通知观察者的时候，可以通过遍历vector列表获取每一个观察者实例，来调用实例对应的回调方法：
 
-![发布订阅模式-UML](/image/post/2020/01/23/PublishSubscribe-UML.png)
+![发布订阅模式-UML]({{ site.baseurl }}/image/post/2020/01/23/PublishSubscribe-UML.png)
 
 
-![发布订阅模式](/image/post/2020/01/23/PublishSubscribe.png)
+![发布订阅模式]({{ site.baseurl }}/image/post/2020/01/23/PublishSubscribe.png)
 
 具体代码实现如下：
 

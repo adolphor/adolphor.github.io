@@ -13,7 +13,7 @@ excerpt:    算法汇总
 
 原文件在boot-note项目存储：
 
-![data-structures-and-algorithm.jpg](/image/post/2020/01/20/data-structures-and-algorithm.jpg)
+![data-structures-and-algorithm.jpg]({{ site.baseurl }}/image/post/2020/01/20/data-structures-and-algorithm.jpg)
 
 ## 参考资料
 

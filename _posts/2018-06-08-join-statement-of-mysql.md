@@ -9,7 +9,7 @@ geneMenu:   true
 excerpt:    MySQL 之 join 语句
 ---
 
-![Visual_SQL_JOINS](/image/post/2018/06/08/Visual_SQL_JOINS_orig.jpg)
+![Visual_SQL_JOINS]({{ site.baseurl }}/image/post/2018/06/08/Visual_SQL_JOINS_orig.jpg)
 
 ## 参考资料
 

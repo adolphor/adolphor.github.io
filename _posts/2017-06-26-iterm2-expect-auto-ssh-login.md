@@ -101,15 +101,15 @@ chmod +x iterm2login.sh
 iterm2login.sh 192.168.0.2 22 root admin
 ```
 
-![iterm2login](/image/post/2017/06/26/20170626-0101-iterm2login.png)
+![iterm2login]({{ site.baseurl }}/image/post/2017/06/26/20170626-0101-iterm2login.png)
 
 
 ## 更改TAB页的title
 
 * 先确保 Preference -> Appearance -> Show profile name 已经勾选上
-![iterm2login](/image/post/2017/06/26/20170626-0201-iterm2-profile-name.jpg)
+![iterm2login]({{ site.baseurl }}/image/post/2017/06/26/20170626-0201-iterm2-profile-name.jpg)
 * 再打开 Preference -> Profiles，选中你要设置的 profile，点击右边的 Terminal 标签，
-![iterm2login](/image/post/2017/06/26/20170626-0202-iterm2-tab-title.jpg)
+![iterm2login]({{ site.baseurl }}/image/post/2017/06/26/20170626-0202-iterm2-tab-title.jpg)
 将 Terminal may set tab/window name 前的勾取消掉
 
 ## 保存iterm2的个性化配置
@@ -124,11 +124,11 @@ mkdir -p iterm2/config
 
 iterm2中选择 Preferences，general页签下部勾选如下两个复选框：
 
-![iterm2login](/image/post/2017/06/26/20170626-0301-iterm2-config.jpg)
+![iterm2login]({{ site.baseurl }}/image/post/2017/06/26/20170626-0301-iterm2-config.jpg)
 
 浏览文件夹的时候选择刚才创建的目录，之后确认配置已经保存完毕：
 
-![iterm2login](/image/post/2017/06/26/20170626-0302-iterm2-confirm.jpg)
+![iterm2login]({{ site.baseurl }}/image/post/2017/06/26/20170626-0302-iterm2-confirm.jpg)
 
 
 

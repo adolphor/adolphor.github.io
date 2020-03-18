@@ -65,11 +65,11 @@ The system works well despite physical network partitions。
 
 ### 图表1
 
-![CAP基本分类](/image/post/2017/03/23/20170323-0101-cap.jpg)
+![CAP基本分类]({{ site.baseurl }}/image/post/2017/03/23/20170323-0101-cap.jpg)
 
 ### 图表2
 
-![CAP详细分类](/image/post/2017/03/23/20170323-0102-cap.jpg)
+![CAP详细分类]({{ site.baseurl }}/image/post/2017/03/23/20170323-0102-cap.jpg)
 
 ## 参考资料
 

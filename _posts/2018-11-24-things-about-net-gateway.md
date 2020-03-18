@@ -35,7 +35,7 @@ excerpt:    聊一聊网关
 * 核心系统，负责接收、分发请求并且返回结果。
 * 监控系统，负责呈现API的各项监控指标。
 
-![youzan-carmen](/image/post/2018/11/24/carmen.svg)
+![youzan-carmen]({{ site.baseurl }}/image/post/2018/11/24/carmen.svg)
 
 整个网关系统需要完成下列目标：
 
@@ -58,7 +58,7 @@ excerpt:    聊一聊网关
 * 结果处理模块
 * 监控数据收集模块
 
-![youzan-carmen](/image/post/2018/11/24/carmen-detail.svg)
+![youzan-carmen]({{ site.baseurl }}/image/post/2018/11/24/carmen-detail.svg)
 
 ### 控制台系统
 

@@ -28,7 +28,7 @@ excerpt:    Spring Cloud 学习
 
 ### 单体服务架构图
 
-![单体服务的集群化](/image/post/2019/01/07/The-Cluster-of-single-Service.jpg)
+![单体服务的集群化]({{ site.baseurl }}/image/post/2019/01/07/The-Cluster-of-single-Service.jpg)
 
 ### 微服务优势
 

@@ -641,13 +641,13 @@ Material Design下拉刷新指示器，包装一个可滚动widget
   - 可以是静态图片
     ```dart
     new Image.network(
-      'https://raw.githubusercontent.com/NorthFacing/adolphor/gh-pages/image/post/2018/09/09/demo_senlin.jpg',
+      'https://raw.githubusercontent.com/NorthFacing/adolphor/gh-pages{{ site.baseurl }}/image/post/2018/09/09/demo_senlin.jpg',
     ),
     ```
   - 也可以是gif动态图片
     ```dart
     new Image.network(
-      'https://raw.githubusercontent.com/NorthFacing/adolphor/gh-pages/image/post/2018/09/09/demo_coffee.gif',
+      'https://raw.githubusercontent.com/NorthFacing/adolphor/gh-pages{{ site.baseurl }}/image/post/2018/09/09/demo_coffee.gif',
     ),
     ``` 
 
@@ -673,7 +673,7 @@ flutter packages get
 ```dart
 new FadeInImage.memoryNetwork(
   placeholder: kTransparentImage,
-  image: 'https://raw.githubusercontent.com/NorthFacing/adolphor/gh-pages/image/post/2018/09/09/demo_senlin.jpg',
+  image: 'https://raw.githubusercontent.com/NorthFacing/adolphor/gh-pages{{ site.baseurl }}/image/post/2018/09/09/demo_senlin.jpg',
 ),
 ```
 

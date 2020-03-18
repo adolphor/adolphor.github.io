@@ -23,18 +23,18 @@ Netty的异步事件驱动模型主要涉及到下面几个核心的概念：
 
 ## Channel
 
-![Channel](/image/post/2020/03/12/netty/Channel.png)
+![Channel]({{ site.baseurl }}/image/post/2020/03/12/netty/Channel.png)
 
 ## ChannelPipeline
 
-![Channel](/image/post/2020/03/12/netty/ChannlePipeline.png)
+![Channel]({{ site.baseurl }}/image/post/2020/03/12/netty/ChannlePipeline.png)
 
 ## ChannelFuture && ChannelPromise
 
 * ChannelFuture: The result of an asynchronous `Channel` I/O operation.
 * ChannelPromise: Special `ChannelFuture` which is writable.
 
-![Channel](/image/post/2020/03/12/netty/ChannelPromise.png)
+![Channel]({{ site.baseurl }}/image/post/2020/03/12/netty/ChannelPromise.png)
 
 ## NioEventLoop.png
 
@@ -42,15 +42,15 @@ Netty的异步事件驱动模型主要涉及到下面几个核心的概念：
 * EventExecutor: The EventExecutor is a special EventExecutorGroup which comes with some handy methods to see if a Thread is executed in a event loop. Besides this, it also extends the EventExecutorGroup to allow for a generic way to access methods.
 * EventLoopGroup: Special EventExecutorGroup which allows registering Channels that get processed for later selection during the event loop.
 
-![Channel](/image/post/2020/03/12/netty/NioEventLoop.png)
+![Channel]({{ site.baseurl }}/image/post/2020/03/12/netty/NioEventLoop.png)
 
 ## NioEventLoopGroup
 
-![Channel](/image/post/2020/03/12/netty/NioEventLoopGroup.png)
+![Channel]({{ site.baseurl }}/image/post/2020/03/12/netty/NioEventLoopGroup.png)
 
 ## SimpleChannelInboundHandler
 
-![Channel](/image/post/2020/03/12/netty/SimpleChannelInboundHandler.png)
+![Channel]({{ site.baseurl }}/image/post/2020/03/12/netty/SimpleChannelInboundHandler.png)
 
 
 

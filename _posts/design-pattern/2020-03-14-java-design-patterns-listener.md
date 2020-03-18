@@ -108,7 +108,7 @@ public class PublishSubscribeDemo {
 
 先用一张图，来比较观察者模式和监听器模式的联系和区别：
 
-![观察者模式和监听器模式](/image/post/2020/03/14/publish-vs-listener.png)
+![观察者模式和监听器模式]({{ site.baseurl }}/image/post/2020/03/14/publish-vs-listener.png)
 
 一句话，事件源产生事件，事件带有事件源，监听器监听事件：
 * 事件源：上面的 `ConcreteSubject`
@@ -186,7 +186,7 @@ public class PublishSubscribeDemo {
 
 如下类图所示，实际使用的时候，事件源可能产生不止一种事件类型，那么实现的时候需要根据不同事件类型做出不同响应（监听器实现类中需要定义不同的方法来对应不同的事件处理）：
 
-![监听器模式类图](/image/post/2020/03/14/MouseListener.png)
+![监听器模式类图]({{ site.baseurl }}/image/post/2020/03/14/MouseListener.png)
 
 ## 总结
 

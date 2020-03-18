@@ -31,7 +31,7 @@ System.out.print("我前面有一空行！");
     ```
 
 ## 图片
-![iterm2login](/image/post/2017/06/26/20170626-0301-iterm2-config.jpg)
+![iterm2login]({{ site.baseurl }}/image/post/2017/06/26/20170626-0301-iterm2-config.jpg)
 
 ## 样式
 

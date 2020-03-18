@@ -37,15 +37,15 @@ Map         |   HashMap     |                   |  TreeMap          |           
 
 先看下Java8中Collection各继承和实现关系图，先看下精简之后的关系图：
 
-![Collection类图](/image/post/2016/08/03/20160803-Collection01.png)
+![Collection类图]({{ site.baseurl }}/image/post/2016/08/03/20160803-Collection01.png)
 
 再看下稍微补充抽象继承类之后的关系图：
 
-![Collection类图](/image/post/2016/08/03/20160803-Collection02.png)
+![Collection类图]({{ site.baseurl }}/image/post/2016/08/03/20160803-Collection02.png)
 
 下面是Collection集合类的全部关系图：
 
-![Collection类图](/image/post/2016/08/03/20160803-Collection03.png)
+![Collection类图]({{ site.baseurl }}/image/post/2016/08/03/20160803-Collection03.png)
 
 ##  Map 双列集合
 

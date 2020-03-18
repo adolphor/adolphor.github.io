@@ -17,7 +17,7 @@ HTTP是`应用层`协议，主要解决如何包装数据，用以封装 HTTP �
 因为HTTP是在TCP/IP之上的应用层协议，所以关于HTTP的三次握手，其实就是使用三次TCP握手确认建立一个HTTP连接。
 
 先看TCP报文格式：
-![TCP协议首部](/image/post/2018/04/26/20180426-TCP-protocol.jpg)
+![TCP协议首部]({{ site.baseurl }}/image/post/2018/04/26/20180426-TCP-protocol.jpg)
 
 上图中有几个字段需要重点介绍下：
 * 序号：Seq序号，占32位，用来标识从TCP源端向目的端发送的字节流，发起方发送数据时对此进行标记。
@@ -52,7 +52,7 @@ HTTP是`应用层`协议，主要解决如何包装数据，用以封装 HTTP �
   Server检查ack是否为K+1，ACK是否为1，如果正确则连接建立成功，Client和Server进入ESTABLISHED状态，完成三次握手，随后Client与
   Server之间可以开始传输数据了。
 
-![TCP 3次握手](/image/post/2018/04/26/20180426-TCP-handshake.jpg)
+![TCP 3次握手]({{ site.baseurl }}/image/post/2018/04/26/20180426-TCP-handshake.jpg)
 
 ## 四次挥手断开连接
 所谓四次挥手（Four-Way Wavehand）即终止TCP连接，就是指断开一个TCP连接时，需要客户端和服务端总共发送4个包以确认连接的断开。
@@ -70,7 +70,7 @@ HTTP是`应用层`协议，主要解决如何包装数据，用以封装 HTTP �
 
 * 第四次挥手：Client收到FIN后，Client进入TIME_WAIT状态，接着发送一个ACK给Server，确认序号为收到序号+1，Server进入CLOSED状态，完成四次挥手。
 
-![TCP 3次握手](/image/post/2018/04/26/20180426-TCP-close-handshake.jpg)
+![TCP 3次握手]({{ site.baseurl }}/image/post/2018/04/26/20180426-TCP-close-handshake.jpg)
 
 ## WireShark 监测 HTTP
 
@@ -88,7 +88,7 @@ tcp && host adolphor.com
 curl http://news.baidu.com/passport
 ```
 
-![WireShark监测HTTP请求](/image/post/2018/04/26/20180426-http-wireshark-snapshot.jpg)
+![WireShark监测HTTP请求]({{ site.baseurl }}/image/post/2018/04/26/20180426-http-wireshark-snapshot.jpg)
 
 可以看到
 * 第一次请求，TCP协议，客户端个向服务器发送请求，SYN，且 seq=0。
@@ -96,7 +96,7 @@ curl http://news.baidu.com/passport
 * 第三次请求，TCP协议，客户端响应第二步中服务器的请求，ACK，且 seq=1 & ack=1。
 * 第四次请求，HTTP协议，也就是建立连接之后的具体HTTP业务请求信息。
 
-![WireShark监测HTTP请求](/image/post/2018/04/26/20180426-http-wireshark-snapshot-get.jpg)
+![WireShark监测HTTP请求]({{ site.baseurl }}/image/post/2018/04/26/20180426-http-wireshark-snapshot-get.jpg)
 
 ## 参考资料
 
