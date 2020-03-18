@@ -12,7 +12,7 @@ email: 0haihzu0@gmail.com
 description: > # this means to ignore newlines until "subpath:"
   学习笔记，技术分享，包括但不限于：
   Java，JVM，Spring，Spring MVC，myBatis，Tomcat，Maven，Git，Intellij
-baseurl: "/article" #
+# baseurl: "/article" # 如果指定baseurl，提交到github会出现路径错误，所以在需要的时候手动添加路径比较好，比如 build.sh 中示例那样
 destination: "./_site/www" # 指定编译路径可以方便管理nginx分流配置，且不影响github托管
 twitter_username: 0haizhu0
 github_username:  NorthFacing
