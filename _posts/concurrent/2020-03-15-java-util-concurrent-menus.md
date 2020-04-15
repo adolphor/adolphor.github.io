@@ -11,10 +11,10 @@ excerpt:    Java并发包学习汇总目录
 
 ## 基本并发类
 
-* Thread 类:该类描述了执行并发 Java 应用程序的所有线程。
-* Runnable 接口:这是 Java 中创建并发应用程序的另一种方式。
-* ThreadLocal 类:该类用于存放从属于某一线程的变量。
-* ThreadFactory 接口:这是实现 Factory 设计模式的基类，你可以用它来创建定制线程。
+* Thread 类: 该类描述了执行并发 Java 应用程序的所有线程。
+* Runnable 接口: 这是 Java 中创建并发应用程序的另一种方式。
+* ThreadLocal 类: 该类用于存放从属于某一线程的变量。
+* ThreadFactory 接口: 这是实现 Factory 设计模式的基类，你可以用它来创建定制线程。
 
 ## 同步机制
 
@@ -27,7 +27,7 @@ Java 并发 API 包括多种同步机制，可以支持你：
 synchronized 关键字允许你在某个代码块或者某个完整的方法中定义一个临界段。
 
 ### Lock 接口
-Lock 提供了比 synchronized 关键字更为灵活的同步操作。Lock 接口有多种不同类型:ReentrantLock 用于实现一个可与某种条件相关联的锁;ReentrantRead- WriteLock 将读写操作分离开来;StampedLock 是 Java 8 中增加的一种新特性，它包括三种 控制读/写访问的模式。
+Lock 提供了比 synchronized 关键字更为灵活的同步操作。Lock 接口有多种不同类型: ReentrantLock 用于实现一个可与某种条件相关联的锁; ReentrantRead- WriteLock 将读写操作分离开来; StampedLock 是 Java 8 中增加的一种新特性，它包括三种 控制读/写访问的模式。
 
 ### Semaphore 类
 该类通过实现经典的信号量机制来实现同步。Java 支持二进制信号量和一般 信号量。
@@ -174,3 +174,4 @@ Java 并发 API 包含了 ThreadLocal 类，该类实现了这种设计模式。
 
 * [Mastering Concurrency Programming with Java 9 - 精通Java并发编程（第2版）](https://book.douban.com/subject/30327401/)
 * [Java Concurrency and Multithreading Tutorial](http://tutorials.jenkov.com/java-concurrency/index.html)
+* [JAVA 拾遗 — JMH（微基准测试） 与 8 个测试陷阱](https://www.cnkirito.moe/java-jmh/)

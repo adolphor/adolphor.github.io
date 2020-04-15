@@ -19,8 +19,8 @@ import java.util.Map;
  */
 public class Generator {
 
-  private static String postTitle = "Java并发包学习汇总目录";
-  private static String urlTitle = "java-util-concurrent-menus";
+  private static String postTitle = "Java并发包 ——  Thread 和 Runnable";
+  private static String urlTitle = "java-util-concurrent-thread-runnable";
   private static String categories = "[concurrent]";
   private static String tags = "[concurrent]";
   private static Configuration cfg;

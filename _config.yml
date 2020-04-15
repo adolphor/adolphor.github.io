@@ -40,7 +40,7 @@ sass:
   sass_dir: ./css/_sass
   style: compressed
 
-cacheVersion: 20200318
+cacheVersion: 20200415
 
 future: true
 

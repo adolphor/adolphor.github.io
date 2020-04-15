@@ -58,6 +58,7 @@ excerpt:    Netty源码学习汇总目录
 * [Netty 实现原理与源码解析系统](http://www.iocoder.cn/Netty/Netty-collection/?vip)
 * [Github - netty-learning](https://github.com/code4craft/netty-learning)
 * [认真的 Netty 源码解析（一）](https://juejin.im/post/5bdfde8251882516f6632dfe)
+* [epoll 的本质是什么？](https://zhuanlan.zhihu.com/p/63179839)
 
 ### 视频
 * [junfeng hu - 57 Reactor模式透彻理解及其在Netty中的应用](https://www.youtube.com/watch?v=zR4Bro5bphI&list=PLfFz9jdZIa8cj6XIwkSaUbzEdPQZMmhCj&index=28)
