@@ -10,7 +10,7 @@
   <description>jekyll集成Java项目</description>
   <properties>
     <freemarker.version>2.3.23</freemarker.version>
-    <junit.version>4.12</junit.version>
+    <junit.version>4.13.1</junit.version>
 
     <jedis.version>2.1.0</jedis.version>
 
