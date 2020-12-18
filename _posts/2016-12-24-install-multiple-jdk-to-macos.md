@@ -155,6 +155,13 @@ CLASSPATH=.;%JAVA_HOME%\lib;%JAVA_HOME%\jre\lib
 PATH=%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;%PATH%
 ```
 
+## big sur
+
+查看已安装所有JDK：
+```
+/usr/libexec/java_home -V
+
+```
 
 
 ## 参考资料

@@ -265,7 +265,7 @@ main:
 
 ## 安装配置
 参考另外一篇博文：
-《[Hadoop，Spark，HBase 开发环境配置]({% post_url 2016-10-28-hadoop-spark-hbase-develop-environment %})》
+《[Hadoop，Spark，HBase 开发环境配置]({% post_url hadoop/2016-10-28-hadoop-spark-hbase-develop-environment %})》
 ，需要注意的是需要将sh的文件配置更改为cmd的文件配置。
 
 ## 参考资料

@@ -16,6 +16,9 @@ excerpt:    Java并发包学习汇总目录
 * ThreadLocal 类: 该类用于存放从属于某一线程的变量。
 * ThreadFactory 接口: 这是实现 Factory 设计模式的基类，你可以用它来创建定制线程。
 
+详见：[Java并发包 ——  Thread 和 Runnable]({% post_url concurrent/2020-03-22-java-util-concurrent-thread-runnable %})
+
+
 ## 同步机制
 
 Java 并发 API 包括多种同步机制，可以支持你：
@@ -43,7 +46,11 @@ Lock 提供了比 synchronized 关键字更为灵活的同步操作。Lock 接�
 
 ## 执行器
 
-执行器框架是在实现并发任务时将线程的创建和管理分割开来的一种机制。你不必担心线程的创 建和管理，只需要关心任务的创建并且将其发送给执行器。该框架中涉及的主要类如下。
+执行器框架是在实现并发任务时将线程的创建和管理分割开来的一种机制。你不必担心线程的创 建和管理，只需要关心任务的创建并且将其发送给执行器。执行器框架另一个重要的优势是 Callable 接口。它类似于 Runnable 接口，但是却提供了两方面的增强：
+* 这个接口的主方法名称为 call() ，可以返回结果。
+* 当发送一个 Callable 对象给执行器时，将获得一个实现了 Future 接口的对象。可以使用这个对象来控制 Callable 对象的状态和结果。
+
+该框架中涉及的主要类如下：
 
 ### Executor 接口和 ExecutorService 接口
 它们包含了所有执行器共有的 execute()方法。
@@ -64,7 +71,7 @@ Lock 提供了比 synchronized 关键字更为灵活的同步操作。Lock 接�
 该接口包含了一些能获取 Callable 接口返回值并且控制其状态的方法。
 
 
-详见：[Java源码-并发包 ScheduledExecutorService]({% post_url concurrent/2020-02-09-java-util-concurrent-ScheduledExecutorService %})
+详见：[Java并发包 ScheduledExecutorService]({% post_url concurrent/2020-02-09-java-util-concurrent-ScheduledExecutorService %})
 
 ## Fork/Join 框架
 Fork/Join 框架定义了一种特殊的执行器，尤其针对采用分治方法进行求解的问题。针对解决这类 问题的并发任务，它还提供了一种优化其执行的机制。Fork/Join 是为细粒度并行处理量身定制的，因 为它的开销非常小，这也是将新任务加入队列中并且按照队列排序执行任务的需要。该框架涉及的主 要类和接口如下。
@@ -172,6 +179,14 @@ Java 并发 API 包含了 ThreadLocal 类，该类实现了这种设计模式。
 
 ## 参考资料
 
-* [Mastering Concurrency Programming with Java 9 - 精通Java并发编程（第2版）](https://book.douban.com/subject/30327401/)
-* [Java Concurrency and Multithreading Tutorial](http://tutorials.jenkov.com/java-concurrency/index.html)
-* [JAVA 拾遗 — JMH（微基准测试） 与 8 个测试陷阱](https://www.cnkirito.moe/java-jmh/)
+* 书籍
+    - [9.1' - Concurrent Programming in Java](https://book.douban.com/subject/1440218/)
+    - [8.6' - 图解Java多线程设计模式](https://book.douban.com/subject/27116724/)
+    - [8.2' - 精通Java并发编程（第二版）]({% post_url concurrent/2020-09-15-mastering-concurrency-programming-with-java9-2th-edition %})
+
+* 文章
+    - [如何学习Java多线程](https://zhuanlan.zhihu.com/p/35382932)
+    - [Java Concurrency and Multithreading Tutorial](http://tutorials.jenkov.com/java-concurrency/index.html)
+    - [Java Concurrency Utilities - ScheduledExecutorService](http://tutorials.jenkov.com/java-util-concurrent/scheduledexecutorservice.html)
+    - [Java concurrency (multi-threading) - Tutorial](https://www.vogella.com/tutorials/JavaConcurrency/article.html)
+

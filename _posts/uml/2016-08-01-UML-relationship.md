@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "UML中的类图关系"
+title:      UML中的类图关系
 date:       2016-08-01 16:08:00 +0800
 postId:     2016-08-01-16-08-00
 categories: []

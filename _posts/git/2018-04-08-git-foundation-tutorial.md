@@ -19,9 +19,7 @@ excerpt:    Git 相关基本操作
 * 版本库
   - commit 仅对暂存区的文件有效，对工作区的文件没有影响
   - commit之后的代码就被在版本库中进行管理
-
-## 
-
+  
 ## 版本比对
 
 * 先安装个新工具
@@ -43,25 +41,41 @@ brew install icdiff
 
 ## 分支操作
 
-```Shell
-# 创建分支
-git branch <branch-name>
-# 切换分支
-git checkout <branch-name>
-# 删除分支
-git branch -d <branch-name>
-# 合并分支(分支所有提交记录)
-git merge <branch-name>
-# 合并分支(需要重新commit提交备注信息)
-git merge --squash <branch-name>
-# 删除本地分支
+### 创建/切换分支
 
+```Shell
+# 创建本地分支
+git branch <branch-name>
+# 切换本地分支
+git checkout <branch-name>
+
+# 拉取远程分支
+git fetch origin
+# 查看所有分支
+git branch -a
+# 切换远程分支
+git branch -t remotes/origin/<branch-name>
+```
+
+### 删除分支
+
+```Shell
+# 删除本地分支
+git branch -d <branch-name>
 # 删除远程分支
 git push origin --delete <branchName>
 git push origin :<branchName>
 ```
+### 合并分支
 
-重命名分支操作麻烦一些：
+```
+# 合并分支(分支所有提交记录)
+git merge <branch-name>
+# 合并分支(需要重新commit提交备注信息)
+git merge --squash <branch-name>
+```
+
+### 重命名分支
 ```Shell
 # 删除远程分位置
 git push --delete origin devel
@@ -71,7 +85,7 @@ git branch -m devel develop
 git push origin develop
 ```
 
-## 撤销工作区的修改
+## 回退/撤销 工作区的修改
 
 ### 使用 reset 回退
 ```Shell
