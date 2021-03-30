@@ -11,7 +11,7 @@ jekyll server --drafts --incremental --port 1888
 
 ## 文件引用
 
-    [Hadoop，Spark，HBase 开发环境配置]({% post_url 2016-10-28-hadoop-spark-hbase-develop-environment %})
+    [Hadoop，Spark，HBase 开发环境配置]({% post_url hadoop/2016-10-28-hadoop-spark-hbase-develop-environment %})
 
 ## 目录ID，目录跳转锚点
 

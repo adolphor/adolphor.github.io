@@ -64,6 +64,50 @@ public class CertUtils {
     Security.addProvider(new BouncyCastleProvider());
   }
 
+
+  /**
+   * Generate all kinds of ca root cert
+   *
+   * @param args
+   * @throws Exception
+   */
+  public static void main(String[] args) throws Exception {
+
+    final String caCnName = "mynety Root CA";
+
+    Date notBefore = today();
+    Date notAfter = addYears(notBefore, 100);
+    KeyPair keyPair = CertUtils.genKeyPair();
+    String subject = preSubject + caCnName;
+    X509Certificate caCert = CertUtils.genCACert(subject, notBefore, notAfter, keyPair);
+
+    final String filePath = "/Users/liangwang/IdeaProjects/adolphor/target/";
+
+    // save cert to file
+    String outName = filePath + "mynety-root-ca.crt";
+    saveCertToFile(caCert.getEncoded(), outName);
+    // save private key to file
+    outName = filePath + "mynety-root-ca-private-key.der";
+    saveCertToFile(keyPair.getPrivate().getEncoded(), outName);
+
+    // save keyStore as jks file
+    String storeType = KeyStore.getDefaultType();
+    outName = filePath + "mynety-root-ca.jks";
+    saveKeyStoreToFile(caCert, storeType, keyPair, outName);
+    // save keyStore as pkcs base64 file
+    storeType = KeyStore.getDefaultType();
+    outName = filePath + "mynety-root-ca-jks-base64.txt";
+    saveKeyStoreToFile(caCert, storeType, keyPair, outName);
+    // save keyStore as pkcs12 file
+    storeType = "PKCS12";
+    outName = filePath + "mynety-root-ca.p12";
+    saveKeyStoreToFile(caCert, storeType, keyPair, outName);
+    // save keyStore as pkcs base64 file
+    storeType = "PKCS12";
+    outName = filePath + "mynety-root-ca-pkcs12-base64.txt";
+    saveKeyStoreToFile(caCert, storeType, keyPair, outName);
+  }
+
   public static PrivateKey loadPriKey(String filePath, String password)
       throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, UnrecoverableKeyException {
     KeyStore keyStore = loadKeyStore(filePath, password);
@@ -258,46 +302,4 @@ public class CertUtils {
     return cal.getTime();
   }
 
-  /**
-   * Generate all kinds of ca root cert
-   *
-   * @param args
-   * @throws Exception
-   */
-  public static void main(String[] args) throws Exception {
-
-    final String caCnName = "mynety Root CA";
-
-    Date notBefore = today();
-    Date notAfter = addYears(notBefore, 100);
-    KeyPair keyPair = CertUtils.genKeyPair();
-    String subject = preSubject + caCnName;
-    X509Certificate caCert = CertUtils.genCACert(subject, notBefore, notAfter, keyPair);
-
-    final String filePath = "/Users/liangwang/IdeaProjects/adolphor/target/";
-
-    // save cert to file
-    String outName = filePath + "mynety-root-ca.crt";
-    saveCertToFile(caCert.getEncoded(), outName);
-    // save private key to file
-    outName = filePath + "mynety-root-ca-private-key.der";
-    saveCertToFile(keyPair.getPrivate().getEncoded(), outName);
-
-    // save keyStore as jks file
-    String storeType = KeyStore.getDefaultType();
-    outName = filePath + "mynety-root-ca.jks";
-    saveKeyStoreToFile(caCert, storeType, keyPair, outName);
-    // save keyStore as pkcs base64 file
-    storeType = KeyStore.getDefaultType();
-    outName = filePath + "mynety-root-ca-jks-base64.txt";
-    saveKeyStoreToFile(caCert, storeType, keyPair, outName);
-    // save keyStore as pkcs12 file
-    storeType = "PKCS12";
-    outName = filePath + "mynety-root-ca.p12";
-    saveKeyStoreToFile(caCert, storeType, keyPair, outName);
-    // save keyStore as pkcs base64 file
-    storeType = "PKCS12";
-    outName = filePath + "mynety-root-ca-pkcs12-base64.txt";
-    saveKeyStoreToFile(caCert, storeType, keyPair, outName);
-  }
 }

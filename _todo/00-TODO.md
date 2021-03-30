@@ -31,3 +31,4 @@
 
 
 * [一文讲透前端开发所需网络知识](https://segmentfault.com/a/1190000018038491?utm_source=weekly&utm_medium=email&utm_campaign=email_weekly)
+* [JAVA 拾遗 — JMH（微基准测试） 与 8 个测试陷阱](https://www.cnkirito.moe/java-jmh/)

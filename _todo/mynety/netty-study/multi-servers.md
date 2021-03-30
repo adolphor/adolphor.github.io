@@ -8,7 +8,7 @@
 ```
 
 
-![不是必须要使用sync](./qq-okou.png)
+![不是必须要使用sync](qq-okou.png)
 
 ```java
 package com.adolphor.mynety.server;

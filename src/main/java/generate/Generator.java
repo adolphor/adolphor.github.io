@@ -19,10 +19,10 @@ import java.util.Map;
  */
 public class Generator {
 
-  private static String postTitle = "Java并发包 ——  Thread 和 Runnable";
-  private static String urlTitle = "java-util-concurrent-thread-runnable";
-  private static String categories = "[concurrent]";
-  private static String tags = "[concurrent]";
+  private static String postTitle = "Java数据结构和算法 - 时间复杂度";
+  private static String urlTitle = "data-structure-and-algorithms-time-complexity";
+  private static String categories = "[system]";
+  private static String tags = "[数据结构和算法]";
   private static Configuration cfg;
 
   public static void main(String[] args) throws IOException, TemplateException {
@@ -36,16 +36,18 @@ public class Generator {
 
     StringBuffer stringBuffer = new StringBuffer(System.getProperty("user.dir"));
     String templatePath = stringBuffer.append(File.separator)
-        .append("src")
-        .append(File.separator)
-        .append("main")
-        .append(File.separator)
-        .append("resources")
-        .toString();
+      .append("src")
+      .append(File.separator)
+      .append("main")
+      .append(File.separator)
+      .append("resources")
+      .toString();
     Configuration configuration = getConfiguration(templatePath);
     Template temp = configuration.getTemplate("post.ftl");
-    String url = System.getProperty("user.dir") + File.separator + "_posts"
-        + File.separator + Utils.getPostTitle(urlTitle) + ".md";
+    String url = System.getProperty("user.dir")
+      + File.separator + "_posts"
+      + File.separator + "algorithm"
+      + File.separator + Utils.getPostTitle(urlTitle) + ".md";
 
     File file = new File(url);
     createFile(file);
