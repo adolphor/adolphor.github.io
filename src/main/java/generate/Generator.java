@@ -19,10 +19,11 @@ import java.util.Map;
  */
 public class Generator {
 
-  private static String postTitle = "Java数据结构和算法 - 时间复杂度";
-  private static String urlTitle = "data-structure-and-algorithms-time-complexity";
+  private static String postTitle = "Java数据结构和算法 - 简单排序";
+  private static String urlTitle = "data-structure-and-algorithms-simple-sorting";
   private static String categories = "[system]";
   private static String tags = "[数据结构和算法]";
+  private static String folder = "algorithm";
   private static Configuration cfg;
 
   public static void main(String[] args) throws IOException, TemplateException {
@@ -46,7 +47,7 @@ public class Generator {
     Template temp = configuration.getTemplate("post.ftl");
     String url = System.getProperty("user.dir")
       + File.separator + "_posts"
-      + File.separator + "algorithm"
+      + File.separator + folder
       + File.separator + Utils.getPostTitle(urlTitle) + ".md";
 
     File file = new File(url);
