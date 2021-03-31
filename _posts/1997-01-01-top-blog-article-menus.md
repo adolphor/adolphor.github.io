@@ -13,7 +13,14 @@ excerpt:    【置顶】博文目录汇总
 
 ## 编译原理 []
 
-## 算法 [algorithm]
+## 数据结构和算法 [data structure and algorithm]
+
+* [Java数据结构和算法 - 时间复杂度]({% post_url algorithm/classic/2021-03-30-data-structure-and-algorithms-time-complexity %})
+* [Java数据结构和算法 - 数组 Array]({% post_url algorithm/classic/2021-03-30-data-structure-and-algorithms-array-by-java %})
+    - [无序数组]({% post_url algorithm/classic/2021-03-30-data-structure-and-algorithms-array-by-java %})
+    - [有序数组]({% post_url algorithm/classic/2021-03-30-data-structure-and-algorithms-array-by-java %})
+* 
+
 
 ### 参考
 
