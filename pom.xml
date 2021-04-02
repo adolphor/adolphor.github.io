@@ -10,7 +10,6 @@
   <description>jekyll集成Java项目</description>
   <properties>
     <freemarker.version>2.3.23</freemarker.version>
-    <junit.version>4.12</junit.version>
 
     <jedis.version>2.1.0</jedis.version>
 
@@ -40,13 +39,13 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-all</artifactId>
-      <version>4.1.32.Final</version>
+      <version>[4.1.42,)</version>
     </dependency>
 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
+      <version>[4.13.1,)</version>
     </dependency>
     <dependency>
       <groupId>javassist</groupId>
