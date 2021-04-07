@@ -12,12 +12,13 @@ excerpt:    Java数据结构和算法 - 简单排序
 ## 冒泡排序
 冒泡排序算法运行起来非常慢，但在概念上他是排序算法中最简单的，因为冒泡排序算法在刚开始研究排序技术时是一个非常好的算法。
 
-### 核心思路
+### 排序思路
 * 首先确定，最大的放在最右边
 * 外层循环从右到左，逐步缩小范围
 * 内层循环从小到大，一直到外层最大下标
 * 每次比较大小，大的放在右边
 
+### 核心代码
 ```java
   /**
    * 冒泡核心算法
@@ -46,11 +47,13 @@ excerpt:    Java数据结构和算法 - 简单排序
 
 选择排序的比较次数和冒泡排序一样，但是交换次数会减少很多，每次遍历最多只交换一次即可。
 
-### 核心思路
+### 排序思路
 * 首先确定，最小的放在最左边
 * 外层循环从左到右，逐步缩小范围
 * 内层循环从外层最小下标，一直到最后
 * 比较大小，记住最小值下标，比较完毕之后交换外层和最小值
+
+### 核心代码
 
 ```java
   /**
@@ -73,7 +76,30 @@ excerpt:    Java数据结构和算法 - 简单排序
 
 ## 插入排序
 
-TODO
+### 排序思路
+* 外层for循环中，out变量从1开始向右移动，它标记了未排序部分的最左端的数据
+* 内层的while循环中，in变量从out变量开始，向左移动，直到temp变量小于in所指的数组数据项，或者它已经不能再往左移动为止
+* while循环的每一趟都向右移动了一个已排序的数据项
+
+### 核心代码
+```java
+  /**
+   * 选择排序核心算法
+   */
+  @Override
+  public void sort() {
+    int out, in;
+    for (out = 1; out < data.length; out++) {   // out is dividing line
+      int temp = data[out];                     // remove marked item
+      in = out;                                 // start shifts at out
+      while (in > 0 && data[in - 1] >= temp) {  // until one is smaller
+        data[in] = data[in - 1];                // shift item right
+        --in;                                   // go left one position
+      }
+      data[in] = temp;                          // insert marked item
+    }
+  }
+```
 
 ## 参考资料
 
