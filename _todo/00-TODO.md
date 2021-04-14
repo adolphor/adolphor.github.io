@@ -3,6 +3,7 @@
   - 原理
   - 使用场景
   - demo
+  - [Java有限状态机的4种实现对比](https://zhuanlan.zhihu.com/p/97442825)
 * Netty 的 几种 ByteBuf 学习和分析
   - 之后学习 ByteToMessageDecoder
   - 再看ReplayingDecoder
