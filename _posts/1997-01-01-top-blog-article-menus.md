@@ -15,16 +15,18 @@ excerpt:    【置顶】博文目录汇总
 
 ## 数据结构和算法 [data structure and algorithm]
 
-* [Java数据结构和算法 - 时间复杂度]({% post_url algorithm/classic/2021-03-30-data-structure-and-algorithms-time-complexity %})
-* [Java数据结构和算法 - 数组 Array]({% post_url algorithm/classic/2021-03-30-data-structure-and-algorithms-array-by-java %})
+* [时间复杂度]({% post_url algorithm/classic/2021-03-30-data-structure-and-algorithms-time-complexity %})
+* [数组 Array]({% post_url algorithm/classic/2021-03-30-data-structure-and-algorithms-array-by-java %})
   - [无序数组]({% post_url algorithm/classic/2021-03-30-data-structure-and-algorithms-array-by-java %}#无序数组)
   - [有序数组]({% post_url algorithm/classic/2021-03-30-data-structure-and-algorithms-array-by-java %}#有序数组)
-* [Java数据结构和算法 - 简单排序]({% post_url algorithm/classic/2021-03-31-data-structure-and-algorithms-simple-sorting %})
+* [简单排序]({% post_url algorithm/classic/2021-03-31-data-structure-and-algorithms-simple-sorting %})
   - [冒泡排序]({% post_url algorithm/classic/2021-03-31-data-structure-and-algorithms-simple-sorting %}#冒泡排序)
   - [选择排序]({% post_url algorithm/classic/2021-03-31-data-structure-and-algorithms-simple-sorting %}#选择排序)
   - [插入排序]({% post_url algorithm/classic/2021-03-31-data-structure-and-algorithms-simple-sorting %}#插入排序)
-
-
+* 栈和队列
+  - [栈]({% post_url algorithm/classic/2021-04-07-data-structure-and-algorithms-stack %})
+  - [队列]({% post_url algorithm/classic/2021-04-07-data-structure-and-algorithms-queue %})
+  - [中缀、后缀 表达式及计算]({% post_url algorithm/classic/2021-04-14-data-structure-and-algorithms-infix-postfix-expression %})
 
 ### 参考
 

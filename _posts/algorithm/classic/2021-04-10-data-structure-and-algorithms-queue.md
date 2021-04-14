@@ -1,0 +1,84 @@
+---
+layout:     post
+title:      Java数据结构和算法 - 队列
+date:       2021-04-10 16:16:10 +0800
+postId:     2021-04-10-16-16-10
+categories: [system]
+tags:       [数据结构和算法]
+geneMenu:   true
+excerpt:    Java数据结构和算法 - 队列
+---
+
+## 队列
+"队列"(queue)这个单词是英国人说的"排"(line)，也就是排队的意思。
+
+## 实现机制
+
+## 核心代码
+不同于栈的push和pop操作，队列的方法至今灭有标准化的命名，本文采用如下命名：
+* insert：插入
+* remove：移除
+* front：队头指针
+* rear：队尾指针
+* peek：查看
+
+```java
+/**
+ * @author adolphor
+ */
+public class MyItemQueue {
+  private int maxSize;
+  private long[] queueArr;
+  private int front;
+  private int rear;
+  private int nItems; // 辅助变量，在 isEmpty、isFull 和 size 的时候更加方便
+
+  public MyItemQueue(int size) {
+    this.maxSize = size;
+    this.queueArr = new long[maxSize];
+    this.front = 0;
+    this.rear = -1;
+    this.nItems = 0;
+  }
+
+  public void insert(long val) {
+    if (rear == maxSize - 1) {
+      rear = -1;
+    }
+    queueArr[++rear] = val;
+    nItems++;
+  }
+
+  public long remove() {
+    long temp = queueArr[front++];
+    if (front == maxSize) {
+      front = 0;
+    }
+    nItems--;
+    return temp;
+  }
+
+  public long peekFront(){
+    return queueArr[front];
+  }
+
+  public boolean isEmpty(){
+    return nItems==0;
+  }
+
+  public boolean isFull(){
+    return (nItems==maxSize);
+  }
+
+  public int size(){
+    return nItems;
+  }
+
+}
+```
+
+## 使用场景
+
+## 参考资料
+
+* [Java数据结构和算法](https://book.douban.com/subject/1144007/)
