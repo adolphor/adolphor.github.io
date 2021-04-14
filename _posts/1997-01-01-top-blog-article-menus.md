@@ -27,6 +27,9 @@ excerpt:    【置顶】博文目录汇总
   - [栈]({% post_url algorithm/classic/2021-04-07-data-structure-and-algorithms-stack %})
   - [队列]({% post_url algorithm/classic/2021-04-07-data-structure-and-algorithms-queue %})
   - [中缀、后缀 表达式及计算]({% post_url algorithm/classic/2021-04-14-data-structure-and-algorithms-infix-postfix-expression %})
+* 链表
+  - [单链表]({% post_url algorithm/classic/2021-04-07-data-structure-and-algorithms-link %})
+
 
 ### 参考
 
