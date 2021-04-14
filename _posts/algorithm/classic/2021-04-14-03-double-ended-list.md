@@ -16,7 +16,8 @@ excerpt:    Java数据结构和算法 - 双端链表
 增加这个引用的好处在于，传统的单链表只有在表头增加元素比较方便，如果想要在表尾增加节点，那么就需要遍历列表找到
 最后一个节点再添加上去，但如果有了尾节点的引用，则可以直接定位到尾节点添加即可。
 
-![双端链表数据结构]({{ site.baseurl }}/image/post/2021/04/14/link/双端链表.jpeg)
+![双端链表数据结构]({{ site.baseurl }}/image/post/2021/04/14/link/双端链表.png)
+
 [图片来源](https://houzi.blog.csdn.net/article/details/8153165)
 
 ## 核心代码

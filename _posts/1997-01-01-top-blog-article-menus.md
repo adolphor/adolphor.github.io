@@ -15,22 +15,22 @@ excerpt:    【置顶】博文目录汇总
 
 ## 数据结构和算法 [data structure and algorithm]
 
-* [时间复杂度]({% post_url algorithm/classic/2021-03-30-data-structure-and-algorithms-time-complexity %})
-* [数组 Array]({% post_url algorithm/classic/2021-03-30-data-structure-and-algorithms-array-by-java %})
-  - [无序数组]({% post_url algorithm/classic/2021-03-30-data-structure-and-algorithms-array-by-java %}#无序数组)
-  - [有序数组]({% post_url algorithm/classic/2021-03-30-data-structure-and-algorithms-array-by-java %}#有序数组)
-* [简单排序]({% post_url algorithm/classic/2021-03-31-data-structure-and-algorithms-simple-sorting %})
-  - [冒泡排序]({% post_url algorithm/classic/2021-03-31-data-structure-and-algorithms-simple-sorting %}#冒泡排序)
-  - [选择排序]({% post_url algorithm/classic/2021-03-31-data-structure-and-algorithms-simple-sorting %}#选择排序)
-  - [插入排序]({% post_url algorithm/classic/2021-03-31-data-structure-and-algorithms-simple-sorting %}#插入排序)
+* [时间复杂度]({% post_url algorithm/classic/2021-03-30-01-time-complexity %})
+* [数组 Array]({% post_url algorithm/classic/2021-03-30-02-array %})
+  - [无序数组]({% post_url algorithm/classic/2021-03-30-02-array %}#无序数组)
+  - [有序数组]({% post_url algorithm/classic/2021-03-30-02-array %}#有序数组)
+* [简单排序]({% post_url algorithm/classic/2021-03-31-simple-sorting %})
+  - [冒泡排序]({% post_url algorithm/classic/2021-03-31-simple-sorting %}#冒泡排序)
+  - [选择排序]({% post_url algorithm/classic/2021-03-31-simple-sorting %}#选择排序)
+  - [插入排序]({% post_url algorithm/classic/2021-03-31-simple-sorting %}#插入排序)
 * 栈和队列
-  - [栈]({% post_url algorithm/classic/2021-04-07-data-structure-and-algorithms-stack %})
-  - [队列]({% post_url algorithm/classic/2021-04-07-data-structure-and-algorithms-queue %})
-  - [中缀、后缀 表达式及计算]({% post_url algorithm/classic/2021-04-14-data-structure-and-algorithms-infix-postfix-expression %})
-* [链表]({% post_url algorithm/classic/2021-04-07-data-structure-and-algorithms-link %})
-  - [单链表]({% post_url algorithm/classic/2021-04-14-data-structure-and-algorithms-single-ended-list %})
-  - [双端链表]({% post_url algorithm/classic/2021-04-14-data-structure-and-algorithms-double-ended-list %})
-  - [使用链表实现栈和队列]({% post_url algorithm/classic/2021-04-14-data-structure-and-algorithms-stack-queue-by-link %})
+  - [栈]({% post_url algorithm/classic/2021-04-07-stack %})
+  - [队列]({% post_url algorithm/classic/2021-04-10-queue %})
+  - [中缀、后缀 表达式及计算]({% post_url algorithm/classic/2021-04-13-infix-postfix-expression %})
+* [链表]({% post_url algorithm/classic/2021-04-14-01-link %})
+  - [单链表]({% post_url algorithm/classic/2021-04-14-02-single-ended-list %})
+  - [双端链表]({% post_url algorithm/classic/2021-04-14-03-double-ended-list %})
+  - [使用链表实现栈和队列]({% post_url algorithm/classic/2021-04-14-04-stack-queue-by-link %})
   
 ### 参考
 

@@ -16,7 +16,8 @@ excerpt:    Java数据结构和算法 - 单链表
 一个单向链表的节点被分成两个部分。第一个部分保存或者显示关于节点的信息，
 第二个部分存储下一个节点的地址。单向链表只可向一个方向遍历。
 
-![单链表数据结构]({{ site.baseurl }}/image/post/2021/04/14/link/单链表.jpeg)
+![单链表数据结构]({{ site.baseurl }}/image/post/2021/04/14/link/单链表.png)
+
 [图片来源](https://houzi.blog.csdn.net/article/details/8152816)
 
 ## 核心代码
