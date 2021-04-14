@@ -1,5 +1,7 @@
 package y2021.m04.d14.single;
 
+import y2021.m04.d14.link.Node;
+
 /**
  * @author adolphor
  */

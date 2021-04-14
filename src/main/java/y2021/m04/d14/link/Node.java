@@ -1,4 +1,4 @@
-package y2021.m04.d14.single;
+package y2021.m04.d14.link;
 
 /**
  * @author adolphor

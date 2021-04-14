@@ -18,6 +18,7 @@ excerpt:    Java数据结构和算法 - 链表
 * 单链表
 ![单链表数据结构]({{ site.baseurl }}/image/post/2021/04/14/link/单链表.jpeg)
 * 双端链表
+![双端列表数据结构]({{ site.baseurl }}/image/post/2021/04/14/link/双端列表.jpeg)
 * 有序列表
 * 双向链表
 * 迭代器
@@ -30,3 +31,4 @@ excerpt:    Java数据结构和算法 - 链表
 
 ## 参考资料
 * [Java数据结构和算法](https://book.douban.com/subject/1144007/)
+* [wiki-链表](https://zh.wikipedia.org/wiki/链表)
