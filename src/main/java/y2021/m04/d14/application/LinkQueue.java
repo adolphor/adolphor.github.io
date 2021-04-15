@@ -1,15 +1,15 @@
 package y2021.m04.d14.application;
 
-import y2021.m04.d14.double_.DoubleEndedLink;
+import y2021.m04.d14.first_last.FirstLastLinkList;
 
 /**
  * @author adolphor
  */
 public class LinkQueue {
-  private DoubleEndedLink theList;
+  private FirstLastLinkList theList;
 
   public LinkQueue() {
-    theList = new DoubleEndedLink();
+    theList = new FirstLastLinkList();
   }
 
   public void insert(int data) {

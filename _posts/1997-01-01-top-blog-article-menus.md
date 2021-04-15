@@ -31,6 +31,9 @@ excerpt:    【置顶】博文目录汇总
   - [单链表]({% post_url algorithm/classic/2021-04-14-02-single-ended-list %})
   - [双端链表]({% post_url algorithm/classic/2021-04-14-03-double-ended-list %})
   - [使用链表实现栈和队列]({% post_url algorithm/classic/2021-04-14-04-stack-queue-by-link %})
+  - [有序链表]({% post_url algorithm/classic/2021-04-15-01-sorted-link %})
+  - [双向链表]({% post_url algorithm/classic/2021-04-15-02-doubly-link %})
+
   
 ### 参考
 

@@ -1,15 +1,15 @@
-package y2021.m04.d14.double_;
+package y2021.m04.d14.first_last;
 
 import y2021.m04.d14.link.Node;
 
 /**
  * @author adolphor
  */
-public class DoubleEndedLink {
+public class FirstLastLinkList {
   private Node first;
   private Node last;
 
-  public DoubleEndedLink() {
+  public FirstLastLinkList() {
     first = null;
     last = null;
   }

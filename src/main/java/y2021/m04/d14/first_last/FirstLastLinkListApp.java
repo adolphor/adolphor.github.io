@@ -1,13 +1,13 @@
-package y2021.m04.d14.double_;
+package y2021.m04.d14.first_last;
 
 import y2021.m04.d14.link.Node;
 
 /**
  * @author adolphor
  */
-public class DoubleEndedLinkApp {
+public class FirstLastLinkListApp {
   public static void main(String[] args) {
-    DoubleEndedLink list = new DoubleEndedLink();
+    FirstLastLinkList list = new FirstLastLinkList();
     list.insertFirst(22);
     list.insertFirst(44);
     list.insertFirst(66);
