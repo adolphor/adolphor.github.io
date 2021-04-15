@@ -1,5 +1,8 @@
 package y2021.m04.d15.doubly;
 
+/**
+ * @author adolphor
+ */
 public class Node {
   public int data;
   public Node previous;
