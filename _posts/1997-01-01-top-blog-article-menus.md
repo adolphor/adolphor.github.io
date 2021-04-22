@@ -9,10 +9,6 @@ geneMenu:   true
 excerpt:    【置顶】博文目录汇总
 ---
 
-## 操作系统
-
-## 编译原理 []
-
 ## 数据结构和算法 [data structure and algorithm]
 
 * [时间复杂度]({% post_url algorithm/classic/2021-03-30-01-time-complexity %})
@@ -34,7 +30,8 @@ excerpt:    【置顶】博文目录汇总
   - [有序链表]({% post_url algorithm/classic/2021-04-15-01-sorted-link %})
   - [双向链表]({% post_url algorithm/classic/2021-04-15-02-doubly-link %})
   - [迭代器]({% post_url algorithm/classic/2021-04-15-03-link-iterator %})
-
+* 分治算法
+  - [递归]({% post_url algorithm/classic/2021-04-15-04-recursion %})
   
 ### 参考
 
@@ -47,6 +44,10 @@ excerpt:    【置顶】博文目录汇总
 * [UML中的类图关系]({% post_url uml/2016-08-01-UML-relationship %})
 * [6大接口设计原则]({% post_url design-pattern/2020-01-21-design-pattern-principle %})
 * [3大类24种设计模式]({% post_url design-pattern/2016-11-03-design-pattern-menus %})
+
+## 操作系统
+
+## 编译原理
 
 ## Java
 ### Java基础
