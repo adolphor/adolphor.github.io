@@ -15,8 +15,8 @@ excerpt:    GIT回滚commit/push到指定版本
 # 查看帮助文档
 $ git reset --help
 # 常用指令格式
-$ git reset [-q] [<tree-ish>] [--] <paths>…​
-$ git reset (--patch | -p) [<tree-ish>] [--] [<paths>…​]
+$ git reset [-q] [<tree-ish>] [--] <paths>…
+$ git reset (--patch | -p) [<tree-ish>] [--] [<paths>…
 $ git reset [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [<commit>]
 ```
 
@@ -26,7 +26,7 @@ $ git reset [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [<commit>]
 # 查看帮助文档
 $ git log --help
 # 常用指令格式
-$ git log [<options>] [<revision range>] [[\--] <path>…​]
+$ git log [<options>] [<revision range>] [[\--] <path>…
 ```
 
 ## 本地代码库回滚

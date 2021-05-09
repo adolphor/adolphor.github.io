@@ -45,4 +45,4 @@ Java 使用 Thread 类实现执行线程。你可以使用以下机制在应用�
 
 ## 参考资料
 
-* [8.2' - 精通Java并发编程（第二版）]({% post_url concurrent/2020-09-15-mastering-concurrency-programming-with-java9-2th-edition %})
+* [8.2' - 精通Java并发编程（第二版）]({% post_url book/2020-09-15-mastering-concurrency-programming-with-java9-2th-edition %})

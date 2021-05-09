@@ -182,7 +182,7 @@ Java 并发 API 包含了 ThreadLocal 类，该类实现了这种设计模式。
 * 书籍
     - [9.1' - Concurrent Programming in Java](https://book.douban.com/subject/1440218/)
     - [8.6' - 图解Java多线程设计模式](https://book.douban.com/subject/27116724/)
-    - [8.2' - 精通Java并发编程（第二版）]({% post_url concurrent/2020-09-15-mastering-concurrency-programming-with-java9-2th-edition %})
+    - [8.2' - 精通Java并发编程（第二版）]({% post_url book/2020-09-15-mastering-concurrency-programming-with-java9-2th-edition %})
 
 * 文章
     - [如何学习Java多线程](https://zhuanlan.zhihu.com/p/35382932)

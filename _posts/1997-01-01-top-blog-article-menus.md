@@ -32,6 +32,11 @@ excerpt:    【置顶】博文目录汇总
   - [迭代器]({% post_url algorithm/classic/2021-04-15-03-link-iterator %})
 * 分治算法
   - [递归]({% post_url algorithm/classic/2021-04-15-04-recursion %})
+  - 归并排序：TODO
+* 高级排序
+  - 希尔排序
+  - 快速排序
+  - 基数排序
   
 ### 参考
 

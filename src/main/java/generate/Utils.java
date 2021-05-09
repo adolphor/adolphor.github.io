@@ -47,9 +47,9 @@ public class Utils {
         + File.separator
         + "java"
         + File.separator
-        + "Y" + YY
+        + "y" + YY
         + File.separator
-        + "M" + MM;
+        + "m" + MM;
     return src;
   }
 
