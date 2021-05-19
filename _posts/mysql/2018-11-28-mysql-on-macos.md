@@ -12,6 +12,8 @@ excerpt:    MySQL那些事
 
 ## macOS上安装 MySQL 5.7
 
+### 使用brew安装
+
 ```bash
 brew search mysql@5.7
 brew install mysql@5.7
@@ -91,6 +93,17 @@ brew services start mysql@5.7
 brew services stop mysql@5.7
 ```
 
+### 重新安装
+如果需要重新安装，那么先使用brew进行卸载，再删除相关文件
+
+```
+# 卸载
+brew uninstall mysql
+# 删除文件
+sudo rm -rf /usr/local/var/mysql
+sudo rm /usr/local/etc/my.cnf
+```
+
 ## 命令行基本操作
 
 ### 登录
@@ -100,15 +113,15 @@ brew services stop mysql@5.7
 * 最后可以加上数据库名称也可以不加
 
 ```bash
-mysql -uroot -p'adolphor!@#123'
-mysql -uroot -p'adolphor!@#123' testdb
+mysql -uroot -p'Adolphor!@#123'
+mysql -uroot -p'Adolphor!@#123' testdb
 ```
 
 ## 其他操作
 
-### 修改 ROOT 密码
+### ERROR 1045 
 
-如果出现以下错误，可以通过修改密码来解决：
+如果出现以下错误，可以通过修改 ROOT 密码来解决：
 ```log
 ERROR 1045 (28000): Access denied for user 'root'@'localhost'
 ```
@@ -128,15 +141,22 @@ mysql
 
 use mysql
 flush privileges;
-ALTER USER 'root'@'localhost' IDENTIFIED BY ''adolphor!@#123'';
+ALTER USER 'root'@'localhost' IDENTIFIED BY ''Adolphor!@#123'';
 quit
+```
+
+### ERROR 2002
+不知道什么错误，通过删除MySQL文件，重新安装解决问题
+
+```
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)
 ```
 
 ### 用户访问权限
 
 ```bash
 # 首先命令行登录
-mysql -uroot -p'adolphor!@#123'
+mysql -uroot -p'Adolphor!@#123'
 # 执行赋权语句
 GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' IDENTIFIED BY 'mypassword' WITH GRANT OPTION;
 # 刷新生效
