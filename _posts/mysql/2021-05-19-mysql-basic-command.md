@@ -34,6 +34,23 @@ use adophor;
 
 ### 表编码
 
+## 表结构
+
+### 查看表结构
+
+```mysql
+# 最简单的查询语句，不显示注释
+describe micro_menu_info;
+explain micro_menu_info ;
+# 增加显示注释
+show full columns from micro_menu_info;
+```
+
+## 性能解析
+```mysql
+
+```
+
 ## 事务
 
 ```mysql
@@ -52,4 +69,5 @@ rollback; # 回滚，撤销所有操作（可能出现脏读）
 
 ## 参考资料
 
-* [test](test.html)
+* [MySQL 8.0 Reference Manual - DESCRIBE Statement](https://dev.mysql.com/doc/refman/8.0/en/describe.html)
+* [MySQL 8.0 Reference Manual - SHOW COLUMNS Statement](https://dev.mysql.com/doc/refman/8.0/en/show-columns.html)

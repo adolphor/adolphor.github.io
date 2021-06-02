@@ -17,6 +17,8 @@ excerpt:    MySQL 汇总目录
 ## 知识体系
 
 * [MySQL 事务隔离]({% post_url mysql/2021-05-18-mysql-transaction-isolation %})
+* [MySQL 索引]({% post_url mysql/2021-05-20-mysql-index %})
+* [MySQL 存储引擎]({% post_url mysql/2021-05-20-mysql-engines %})
 * [MySQL 之 join 语句]({% post_url mysql/2018-06-08-join-statement-of-mysql %})
 
 
@@ -28,4 +30,5 @@ excerpt:    MySQL 汇总目录
 
 ## 参考资料
 
-* [test](test.html)
+* [官方-MySQL 8.0 Reference Manual](https://dev.mysql.com/doc/refman/8.0/en/)
+* [极客课程-MySQL实战45讲](http://gk.link/a/10rxk)
