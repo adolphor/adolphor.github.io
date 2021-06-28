@@ -32,3 +32,4 @@ excerpt:    MySQL 汇总目录
 
 * [官方-MySQL 8.0 Reference Manual](https://dev.mysql.com/doc/refman/8.0/en/)
 * [极客课程-MySQL实战45讲](http://gk.link/a/10rxk)
+* 【TODO】[mysql面试题](https://zhuanlan.zhihu.com/p/116866170)
