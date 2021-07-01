@@ -15,6 +15,7 @@
 
     <source.version>1.8</source.version>
     <target.version>1.8</target.version>
+    <lombok.version>1.18.8</lombok.version>
   </properties>
   <dependencies>
     <dependency>
@@ -63,6 +64,14 @@
       <groupId>org.bouncycastle</groupId>
       <artifactId>bcpkix-jdk15on</artifactId>
       <version>1.58</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
+      <optional>true</optional>
     </dependency>
 
   </dependencies>
