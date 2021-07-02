@@ -18,7 +18,7 @@ excerpt:    Netty源码学习汇总目录
 
 ### 多线程知识
 
-* [Java源码-并发包 ScheduledExecutorService]({% post_url concurrent/2020-02-09-java-util-concurrent-ScheduledExecutorService %})
+* [Java源码-并发包 ScheduledExecutorService]({% post_url java/concurrent/2020-02-09-java-util-concurrent-ScheduledExecutorService %})
 
 ## Netty 核心类库介绍
 
@@ -32,7 +32,7 @@ excerpt:    Netty源码学习汇总目录
 
 ## ByteBuf详解
 
-* [ByteBuf of Netty]({% post_url 2019-02-10-bytebuf-of-netty %})
+* [ByteBuf of Netty]({% post_url netty/2019-02-10-bytebuf-of-netty %})
 
 ## Netty中的设计模式
 

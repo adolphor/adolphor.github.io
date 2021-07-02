@@ -316,7 +316,7 @@ public class ProxySeller implements MethodInterceptor {
 ```
 
 ## 代理效率
-关于各个代理模式的效率如何，可以参考文章《[Java代理性能比较]({% post_url 2016-12-14-java-proxy-performance %})》。
+关于各个代理模式的效率如何，可以参考文章《[Java代理性能比较]({% post_url java/proxy/2016-12-14-java-proxy-performance %})》。
 
 ## 参考资料
 

@@ -16,7 +16,7 @@ excerpt:    Java并发包学习汇总目录
 * ThreadLocal 类: 该类用于存放从属于某一线程的变量。
 * ThreadFactory 接口: 这是实现 Factory 设计模式的基类，你可以用它来创建定制线程。
 
-详见：[Java并发包 ——  Thread 和 Runnable]({% post_url concurrent/2020-03-22-java-util-concurrent-thread-runnable %})
+详见：[Java并发包 ——  Thread 和 Runnable]({% post_url java/concurrent/2020-03-22-java-util-concurrent-thread-runnable %})
 
 
 ## 同步机制
@@ -71,7 +71,7 @@ Lock 提供了比 synchronized 关键字更为灵活的同步操作。Lock 接�
 该接口包含了一些能获取 Callable 接口返回值并且控制其状态的方法。
 
 
-详见：[Java并发包 ScheduledExecutorService]({% post_url concurrent/2020-02-09-java-util-concurrent-ScheduledExecutorService %})
+详见：[Java并发包 ScheduledExecutorService]({% post_url java/concurrent/2020-02-09-java-util-concurrent-ScheduledExecutorService %})
 
 ## Fork/Join 框架
 Fork/Join 框架定义了一种特殊的执行器，尤其针对采用分治方法进行求解的问题。针对解决这类 问题的并发任务，它还提供了一种优化其执行的机制。Fork/Join 是为细粒度并行处理量身定制的，因 为它的开销非常小，这也是将新任务加入队列中并且按照队列排序执行任务的需要。该框架涉及的主 要类和接口如下。
