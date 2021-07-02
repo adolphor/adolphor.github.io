@@ -89,7 +89,7 @@ Flyweight：A fine-grained instance used for efficient sharing
 Private Class Data：Restricts accessor/mutator access
 
 ### 2.8 代理模式（Proxy）
-详见 [代理模式]({% post_url 2016-12-15-java-design-patterns-proxy %})。
+详见 [代理模式]({% post_url design-pattern/2016-12-15-java-design-patterns-proxy %})。
 
 ## 3. 行为型设计模式
 行为型设计模式 (Behavioral design patterns)，
@@ -128,6 +128,8 @@ State：Alter an object's behavior when its state changes
 
 ### 3.10 策略模式（Strategy）
 Strategy：Encapsulates an algorithm inside a class
+
+详见 [策略模式]({% post_url design-pattern/2016-12-17-java-design-patterns-strategy %})。
 
 ### 3.11 模板方法模式（Template Method）
 Template method：Defer the exact steps of an algorithm to a subclass
