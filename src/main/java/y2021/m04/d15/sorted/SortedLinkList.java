@@ -28,9 +28,9 @@ public class SortedLinkList {
     newNode.next = current;
   }
 
-  public Node remove(){
-    Node temp =first;
-    first=first.next;
+  public Node remove() {
+    Node temp = first;
+    first = first.next;
     return temp;
   }
 

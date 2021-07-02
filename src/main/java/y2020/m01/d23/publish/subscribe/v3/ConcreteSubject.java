@@ -4,6 +4,7 @@ import java.util.Observable;
 
 public class ConcreteSubject extends Observable {
   private String state;
+
   public void changeState(String newState) {
     state = newState;
     setChanged();

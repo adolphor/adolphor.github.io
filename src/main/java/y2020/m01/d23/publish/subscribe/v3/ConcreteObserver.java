@@ -5,6 +5,7 @@ import java.util.Observer;
 
 public class ConcreteObserver implements Observer {
   private Object newState;
+
   @Override
   public void update(Observable o, Object state) {
     newState = state;

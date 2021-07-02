@@ -1,8 +1,8 @@
 package Y2016.M08.D04_Collection.equals;
 
-import java.util.ArrayList;
-
 import org.junit.Assert;
+
+import java.util.ArrayList;
 
 /**
  * Created by Bob on 2016/8/5.

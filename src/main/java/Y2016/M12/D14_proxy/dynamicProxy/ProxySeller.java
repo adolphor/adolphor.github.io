@@ -12,9 +12,9 @@ public class ProxySeller implements InvocationHandler {
     this.target = target;
     //Get the proxy object
     return Proxy.newProxyInstance(
-        target.getClass().getClassLoader(),
-        target.getClass().getInterfaces(),
-        this
+      target.getClass().getClassLoader(),
+      target.getClass().getInterfaces(),
+      this
     );//To bind interface (this is a defect, cglib made up for this shortcoming)
   }
 

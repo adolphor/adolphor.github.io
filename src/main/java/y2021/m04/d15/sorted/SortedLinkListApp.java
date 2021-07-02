@@ -1,7 +1,6 @@
 package y2021.m04.d15.sorted;
 
 import y2021.m04.d14.link.Node;
-import y2021.m04.d14.single.LinkList;
 
 /**
  * @author adolphor

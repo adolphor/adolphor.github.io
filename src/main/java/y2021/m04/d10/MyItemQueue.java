@@ -19,7 +19,7 @@ public class MyItemQueue {
   }
 
   public void insert(long val) throws Exception {
-    if (isFull()){
+    if (isFull()) {
       throw new Exception("queue is full");
     }
     if (rear == maxSize - 1) {
@@ -30,7 +30,7 @@ public class MyItemQueue {
   }
 
   public long remove() throws Exception {
-    if (isEmpty()){
+    if (isEmpty()) {
       throw new Exception("queue is empty");
     }
     long temp = queueArr[front++];
@@ -41,19 +41,19 @@ public class MyItemQueue {
     return temp;
   }
 
-  public long peekFront(){
+  public long peekFront() {
     return queueArr[front];
   }
 
-  public boolean isEmpty(){
-    return nItems==0;
+  public boolean isEmpty() {
+    return nItems == 0;
   }
 
-  public boolean isFull(){
-    return (nItems==maxSize);
+  public boolean isFull() {
+    return (nItems == maxSize);
   }
 
-  public int size(){
+  public int size() {
     return nItems;
   }
 

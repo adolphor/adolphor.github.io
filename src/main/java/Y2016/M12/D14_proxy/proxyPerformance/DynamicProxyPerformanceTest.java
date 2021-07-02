@@ -12,7 +12,6 @@ import javassist.CtNewMethod;
 import javassist.util.proxy.MethodHandler;
 import javassist.util.proxy.ProxyFactory;
 import javassist.util.proxy.ProxyObject;
-
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
@@ -69,7 +68,7 @@ public class DynamicProxyPerformanceTest {
   }
 
   private static void test(CountService service, String label)
-      throws Exception {
+    throws Exception {
     service.count(); // warm up
     int count = 10000000;
     long time = System.currentTimeMillis();
@@ -82,7 +81,7 @@ public class DynamicProxyPerformanceTest {
 
   private static CountService createJdkDynamicProxy(final CountService delegate) {
     CountService jdkProxy = (CountService) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),
-        new Class[]{CountService.class}, new JdkHandler(delegate));
+      new Class[]{CountService.class}, new JdkHandler(delegate));
     return jdkProxy;
   }
 
@@ -95,7 +94,7 @@ public class DynamicProxyPerformanceTest {
     }
 
     public Object invoke(Object object, Method method, Object[] objects)
-        throws Throwable {
+      throws Throwable {
       return method.invoke(delegate, objects);
     }
   }

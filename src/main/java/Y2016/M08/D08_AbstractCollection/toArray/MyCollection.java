@@ -1,7 +1,6 @@
 package Y2016.M08.D08_AbstractCollection.toArray;
 
 import java.util.AbstractCollection;
-import java.util.Arrays;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;

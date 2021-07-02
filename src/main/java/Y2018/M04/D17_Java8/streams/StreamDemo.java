@@ -24,10 +24,10 @@ public class StreamDemo {
     List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
 
     List<Person> persons = Arrays.asList(
-        new Person("Max", 18),
-        new Person("Peter", 23),
-        new Person("Pamela", 23),
-        new Person("David", 12)
+      new Person("Max", 18),
+      new Person("Peter", 23),
+      new Person("Pamela", 23),
+      new Person("David", 12)
     );
 
     System.out.print("原数据：");
@@ -89,21 +89,21 @@ public class StreamDemo {
      */
     System.out.print("\n分组：");
     Map<Integer, List<Person>> personsByAge = persons
-        .stream()
-        .collect(Collectors.groupingBy(p -> p.age));
+      .stream()
+      .collect(Collectors.groupingBy(p -> p.age));
     personsByAge
-        .forEach((age, p) -> System.out.format("age %s: %s\n", age, p));
+      .forEach((age, p) -> System.out.format("age %s: %s\n", age, p));
 
     System.out.print("\n平均值：");
     Double averageAge = persons
-        .stream()
-        .collect(Collectors.averagingInt(p -> p.age));
+      .stream()
+      .collect(Collectors.averagingInt(p -> p.age));
     System.out.println(averageAge);
 
     System.out.print("\n统计：");
     IntSummaryStatistics ageSummary = persons
-        .stream()
-        .collect(Collectors.summarizingInt(p -> p.age));
+      .stream()
+      .collect(Collectors.summarizingInt(p -> p.age));
     System.out.println(ageSummary);
 
     System.out.print("\n统计：\n");
@@ -115,34 +115,34 @@ public class StreamDemo {
 
     System.out.print("\njoining：");
     String phrase = persons
-        .stream()
-        .filter(p -> p.age >= 18)
-        .map(p -> p.name)
-        .collect(Collectors.joining(" and ", "In Germany ", " are of legal age."));
+      .stream()
+      .filter(p -> p.age >= 18)
+      .map(p -> p.name)
+      .collect(Collectors.joining(" and ", "In Germany ", " are of legal age."));
     System.out.println(phrase);
 
     System.out.print("\nCollectors.toMap：");
     Map<Integer, String> map = persons
-        .stream()
-        .collect(
-            Collectors.toMap(
-                p -> p.age,
-                p -> p.name,
-                (name1, name2) -> {
-                  System.out.println(name2);
-                  return name1 + ";" + name2;
-                }));
+      .stream()
+      .collect(
+        Collectors.toMap(
+          p -> p.age,
+          p -> p.name,
+          (name1, name2) -> {
+            System.out.println(name2);
+            return name1 + ";" + name2;
+          }));
 
     System.out.print("\nCollectors.of：");
     Collector<Person, StringJoiner, String> personNameCollector =
-        Collector.of(
-            () -> new StringJoiner(" | "),          // supplier
-            (j, p) -> j.add(p.name.toUpperCase()),  // accumulator
-            (j1, j2) -> j1.merge(j2),               // combiner
-            StringJoiner::toString);                // finisher
+      Collector.of(
+        () -> new StringJoiner(" | "),          // supplier
+        (j, p) -> j.add(p.name.toUpperCase()),  // accumulator
+        (j1, j2) -> j1.merge(j2),               // combiner
+        StringJoiner::toString);                // finisher
     String names = persons
-        .stream()
-        .collect(personNameCollector);
+      .stream()
+      .collect(personNameCollector);
     System.out.println(names);  // MAX | PETER | PAMELA | DAVID
 
     System.out.println(map);
@@ -154,26 +154,26 @@ public class StreamDemo {
 
 // create foos
     IntStream
-        .range(1, 4)
-        .forEach(i -> foos.add(new Foo("Foo" + i)));
+      .range(1, 4)
+      .forEach(i -> foos.add(new Foo("Foo" + i)));
 // create bars
     foos.forEach(f ->
-        IntStream
-            .range(1, 4)
-            .forEach(i -> f.bars.add(new Bar("Bar" + i + " <- " + f.name))));
+      IntStream
+        .range(1, 4)
+        .forEach(i -> f.bars.add(new Bar("Bar" + i + " <- " + f.name))));
 
     System.out.print("\nflatMap：");
     foos.stream()
-        .flatMap(f -> f.bars.stream())
-        .forEach(b -> System.out.println(b.name));
+      .flatMap(f -> f.bars.stream())
+      .forEach(b -> System.out.println(b.name));
 
     IntStream.range(1, 4)
-        .mapToObj(i -> new Foo("Foo" + i))
-        .peek(f -> IntStream.range(1, 4)
-            .mapToObj(i -> new Bar("Bar" + i + " <- " + f.name))
-            .forEach(f.bars::add))
-        .flatMap(f -> f.bars.stream())
-        .forEach(b -> System.out.println(b.name));
+      .mapToObj(i -> new Foo("Foo" + i))
+      .peek(f -> IntStream.range(1, 4)
+        .mapToObj(i -> new Bar("Bar" + i + " <- " + f.name))
+        .forEach(f.bars::add))
+      .flatMap(f -> f.bars.stream())
+      .forEach(b -> System.out.println(b.name));
 
     Outer outer = new Outer();
     if (outer != null && outer.nested != null && outer.nested.inner != null) {
@@ -181,58 +181,58 @@ public class StreamDemo {
     }
 
     Optional.of(new Outer())
-        .flatMap(o -> Optional.ofNullable(o.nested))
-        .flatMap(n -> Optional.ofNullable(n.inner))
-        .flatMap(i -> Optional.ofNullable(i.foo))
-        .ifPresent(System.out::println);
+      .flatMap(o -> Optional.ofNullable(o.nested))
+      .flatMap(n -> Optional.ofNullable(n.inner))
+      .flatMap(i -> Optional.ofNullable(i.foo))
+      .ifPresent(System.out::println);
 
     /**
      * Reduce
      */
     persons
-        .stream()
-        .reduce((p1, p2) -> p1.age > p2.age ? p1 : p2)
-        .ifPresent(System.out::println);    // Pamela
+      .stream()
+      .reduce((p1, p2) -> p1.age > p2.age ? p1 : p2)
+      .ifPresent(System.out::println);    // Pamela
     Person result =
-        persons
-            .stream()
-            .reduce(new Person("", 0), (p1, p2) -> {
-              p1.age += p2.age;
-              p1.name += p2.name;
-              return p1;
-            });
+      persons
+        .stream()
+        .reduce(new Person("", 0), (p1, p2) -> {
+          p1.age += p2.age;
+          p1.name += p2.name;
+          return p1;
+        });
 
     System.out.format("name=%s; age=%s", result.name, result.age);
 
     Integer ageSum = persons
-        .stream()
-        .reduce(0, (sum, p) -> sum += p.age, (sum1, sum2) -> sum1 + sum2);
+      .stream()
+      .reduce(0, (sum, p) -> sum += p.age, (sum1, sum2) -> sum1 + sum2);
 
     System.out.println(ageSum);  // 76
 
     Integer ageSum2 = persons
-        .stream()
-        .reduce(0,
-            (sum, p) -> {
-              System.out.format("accumulator: sum=%s; person=%s\n", sum, p);
-              return sum += p.age;
-            },
-            (sum1, sum2) -> {
-              System.out.format("combiner: sum1=%s; sum2=%s\n", sum1, sum2);
-              return sum1 + sum2;
-            });
+      .stream()
+      .reduce(0,
+        (sum, p) -> {
+          System.out.format("accumulator: sum=%s; person=%s\n", sum, p);
+          return sum += p.age;
+        },
+        (sum1, sum2) -> {
+          System.out.format("combiner: sum1=%s; sum2=%s\n", sum1, sum2);
+          return sum1 + sum2;
+        });
 
     Integer ageSum3 = persons
-        .parallelStream()
-        .reduce(0,
-            (sum, p) -> {
-              System.out.format("accumulator: sum=%s; person=%s\n", sum, p);
-              return sum += p.age;
-            },
-            (sum1, sum2) -> {
-              System.out.format("combiner: sum1=%s; sum2=%s\n", sum1, sum2);
-              return sum1 + sum2;
-            });
+      .parallelStream()
+      .reduce(0,
+        (sum, p) -> {
+          System.out.format("accumulator: sum=%s; person=%s\n", sum, p);
+          return sum += p.age;
+        },
+        (sum1, sum2) -> {
+          System.out.format("combiner: sum1=%s; sum2=%s\n", sum1, sum2);
+          return sum1 + sum2;
+        });
 
 
     /**
@@ -247,53 +247,53 @@ public class StreamDemo {
     System.out.println(commonPool.getParallelism());    // 根据机器配置情况不同而不同
 
     Arrays.asList("a1", "a2", "b1", "c2", "c1")
-        .parallelStream()
-        .filter(s -> {
-          System.out.format("filter: %s [%s]\n",
-              s, Thread.currentThread().getName());
-          return true;
-        })
-        .map(s -> {
-          System.out.format("map: %s [%s]\n",
-              s, Thread.currentThread().getName());
-          return s.toUpperCase();
-        })
-        .forEach(s -> System.out.format("forEach: %s [%s]\n",
-            s, Thread.currentThread().getName()));
+      .parallelStream()
+      .filter(s -> {
+        System.out.format("filter: %s [%s]\n",
+          s, Thread.currentThread().getName());
+        return true;
+      })
+      .map(s -> {
+        System.out.format("map: %s [%s]\n",
+          s, Thread.currentThread().getName());
+        return s.toUpperCase();
+      })
+      .forEach(s -> System.out.format("forEach: %s [%s]\n",
+        s, Thread.currentThread().getName()));
 
     Arrays.asList("a1", "a2", "b1", "c2", "c1")
-        .parallelStream()
-        .filter(s -> {
-          System.out.format("filter: %s [%s]\n",
-              s, Thread.currentThread().getName());
-          return true;
-        })
-        .map(s -> {
-          System.out.format("map: %s [%s]\n",
-              s, Thread.currentThread().getName());
-          return s.toUpperCase();
-        })
-        .sorted((s1, s2) -> {
-          System.out.format("sort: %s <> %s [%s]\n",
-              s1, s2, Thread.currentThread().getName());
-          return s1.compareTo(s2);
-        })
-        .forEach(s -> System.out.format("forEach: %s [%s]\n",
-            s, Thread.currentThread().getName()));
+      .parallelStream()
+      .filter(s -> {
+        System.out.format("filter: %s [%s]\n",
+          s, Thread.currentThread().getName());
+        return true;
+      })
+      .map(s -> {
+        System.out.format("map: %s [%s]\n",
+          s, Thread.currentThread().getName());
+        return s.toUpperCase();
+      })
+      .sorted((s1, s2) -> {
+        System.out.format("sort: %s <> %s [%s]\n",
+          s1, s2, Thread.currentThread().getName());
+        return s1.compareTo(s2);
+      })
+      .forEach(s -> System.out.format("forEach: %s [%s]\n",
+        s, Thread.currentThread().getName()));
 
     persons
-        .parallelStream()
-        .reduce(0,
-            (sum, p) -> {
-              System.out.format("accumulator: sum=%s; person=%s [%s]\n",
-                  sum, p, Thread.currentThread().getName());
-              return sum += p.age;
-            },
-            (sum1, sum2) -> {
-              System.out.format("combiner: sum1=%s; sum2=%s [%s]\n",
-                  sum1, sum2, Thread.currentThread().getName());
-              return sum1 + sum2;
-            });
+      .parallelStream()
+      .reduce(0,
+        (sum, p) -> {
+          System.out.format("accumulator: sum=%s; person=%s [%s]\n",
+            sum, p, Thread.currentThread().getName());
+          return sum += p.age;
+        },
+        (sum1, sum2) -> {
+          System.out.format("combiner: sum1=%s; sum2=%s [%s]\n",
+            sum1, sum2, Thread.currentThread().getName());
+          return sum1 + sum2;
+        });
     /**
      * Spliterator
      */

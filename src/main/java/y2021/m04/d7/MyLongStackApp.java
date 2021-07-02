@@ -11,7 +11,7 @@ public class MyLongStackApp {
     myStack.push(60);
     myStack.push(80);
 
-    while (!myStack.isEmpty()){
+    while (!myStack.isEmpty()) {
       long pop = myStack.pop();
       System.out.println(pop);
     }

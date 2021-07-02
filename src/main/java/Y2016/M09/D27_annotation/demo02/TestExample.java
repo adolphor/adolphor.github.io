@@ -5,9 +5,9 @@ package Y2016.M09.D27_annotation.demo02;
  */
 
 @MyTesterInfo(
-    priority = MyTesterInfo.Priority.HIGH,
-    createdBy = "mkyong.com",
-    tags = {"sales", "test"}
+  priority = MyTesterInfo.Priority.HIGH,
+  createdBy = "mkyong.com",
+  tags = {"sales", "test"}
 )
 public class TestExample {
 

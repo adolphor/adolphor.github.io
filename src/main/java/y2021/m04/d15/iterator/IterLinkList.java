@@ -18,19 +18,19 @@ public class IterLinkList {
     return first;
   }
 
-  public void setFirst(Node node){
-    first=node;
+  public void setFirst(Node node) {
+    first = node;
   }
 
-  public boolean isEmpty(){
-    return (first==null);
+  public boolean isEmpty() {
+    return (first == null);
   }
 
-  public ListIterator getIterator(){
+  public ListIterator getIterator() {
     return new ListIterator(this);
   }
 
-  public void display(){
+  public void display() {
     Node current = first;
     while (current != null) {
       current.display();

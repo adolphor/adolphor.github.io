@@ -9,23 +9,23 @@ public class LinkStack {
 
   private LinkList thisList;
 
-  public LinkStack(){
+  public LinkStack() {
     thisList = new LinkList();
   }
 
-  public void push(int data){
+  public void push(int data) {
     thisList.insertFirst(data);
   }
 
-  public int pop(){
+  public int pop() {
     return thisList.deleteFirst().data;
   }
 
-  public boolean isEmpty(){
+  public boolean isEmpty() {
     return thisList.isEmpty();
   }
 
-  public void display(){
+  public void display() {
     thisList.display();
   }
 

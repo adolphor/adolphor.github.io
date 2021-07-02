@@ -23,8 +23,8 @@ public class DoublyLinkListApp {
 
     theList.displayForward();
 
-    theList.insertAfter(22,77);
-    theList.insertAfter(33,88);
+    theList.insertAfter(22, 77);
+    theList.insertAfter(33, 88);
 
     theList.displayForward();
 

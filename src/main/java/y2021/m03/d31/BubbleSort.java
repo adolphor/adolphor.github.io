@@ -4,7 +4,7 @@ package y2021.m03.d31;
 /**
  * @author adolphor
  */
-public class BubbleSort extends AbstractSort{
+public class BubbleSort extends AbstractSort {
 
   public static void main(String[] args) {
     BubbleSort bubbleSort = new BubbleSort();

@@ -15,16 +15,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Bob on 2016/8/2.
+ * @author Bob
+ * @date 2016/8/2
  */
 public class Generator {
 
-  private static String postTitle = "Java数据结构和算法 - 简单排序";
-  private static String urlTitle = "data-structure-and-algorithms-simple-sorting";
-  private static String categories = "[system]";
-  private static String tags = "[数据结构和算法]";
-  private static String folder = "algorithm";
+  private static String postTitle = "IDEA - code style";
+  private static String urlTitle = "idea-code-style";
+  private static String categories = "[IDE]";
+  private static String tags = "[IDE]";
+  private static String folder = "ide";
   private static Configuration cfg;
+
+//  private static String postTitle = "Java数据结构和算法 - 跳表";
+//  private static String urlTitle = "01-skip-list";
+//  private static String categories = "[system]";
+//  private static String tags = "[数据结构和算法]";
+//  private static String folder = "algorithm" + File.separator + "classic";
+//  private static Configuration cfg;
 
   public static void main(String[] args) throws IOException, TemplateException {
 
@@ -57,8 +65,8 @@ public class Generator {
     temp.process(map, new OutputStreamWriter(System.out));
     out.flush();
 
-    File sourse = new File(Utils.getSourcePath());
-    makeDir(sourse);
+    File source = new File(Utils.getSourcePath());
+    makeDir(source);
     File img = new File(Utils.getImgPath());
     makeDir(img);
 

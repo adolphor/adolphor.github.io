@@ -7,9 +7,11 @@ import java.util.Vector;
  */
 public abstract class Subject {
   private Vector<Listener> observersVector = new Vector<Listener>();
+
   public void addListener(Listener observer) {
     observersVector.add(observer);
   }
+
   public void notifyObservers(MyMouseEvent event) {
     for (Listener observer : observersVector) {
       observer.onClick(event);

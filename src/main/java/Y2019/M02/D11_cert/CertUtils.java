@@ -67,7 +67,6 @@ public class CertUtils {
 
   /**
    * Generate all kinds of ca root cert
-   *
    * @param args
    * @throws Exception
    */
@@ -109,7 +108,7 @@ public class CertUtils {
   }
 
   public static PrivateKey loadPriKey(String filePath, String password)
-      throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, UnrecoverableKeyException {
+    throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, UnrecoverableKeyException {
     KeyStore keyStore = loadKeyStore(filePath, password);
     Enumeration<String> aliasesEnum = keyStore.aliases();
     while (aliasesEnum.hasMoreElements()) {
@@ -120,7 +119,7 @@ public class CertUtils {
   }
 
   public static X509Certificate loadCert(String filePath, String password)
-      throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException {
+    throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException {
     KeyStore keyStore = loadKeyStore(filePath, password);
     Enumeration<String> aliasesEnum = keyStore.aliases();
     while (aliasesEnum.hasMoreElements()) {
@@ -140,15 +139,15 @@ public class CertUtils {
    * generate MITM cert by CA
    */
   public static X509Certificate genMitmCert(String issuer, PrivateKey caPriKey, Date notBefore, Date notAfter, PublicKey publicKey, String... hosts)
-      throws CertIOException, CertificateException, OperatorCreationException {
+    throws CertIOException, CertificateException, OperatorCreationException {
     String subject = preSubject + hosts[0];
     JcaX509v3CertificateBuilder jv3Builder = new JcaX509v3CertificateBuilder(
-        new X500Name(RFC4519Style.INSTANCE, issuer),
-        BigInteger.valueOf(System.currentTimeMillis() + getRandomInt(1000, 9999)),
-        notBefore,
-        notAfter,
-        new X500Name(RFC4519Style.INSTANCE, subject),
-        publicKey
+      new X500Name(RFC4519Style.INSTANCE, issuer),
+      BigInteger.valueOf(System.currentTimeMillis() + getRandomInt(1000, 9999)),
+      notBefore,
+      notAfter,
+      new X500Name(RFC4519Style.INSTANCE, subject),
+      publicKey
     );
     GeneralName[] generalNames = new GeneralName[hosts.length];
     for (int i = 0; i < hosts.length; i++) {
@@ -169,12 +168,12 @@ public class CertUtils {
    */
   public static X509Certificate genCACert(String subject, Date notBefore, Date notAfter, KeyPair keyPair) throws Exception {
     JcaX509v3CertificateBuilder jv3Builder = new JcaX509v3CertificateBuilder(
-        new X500Name(RFC4519Style.INSTANCE, subject),
-        BigInteger.valueOf(System.currentTimeMillis() + getRandomInt(1000, 9999)),
-        notBefore,
-        notAfter,
-        new X500Name(RFC4519Style.INSTANCE, subject),
-        keyPair.getPublic()
+      new X500Name(RFC4519Style.INSTANCE, subject),
+      BigInteger.valueOf(System.currentTimeMillis() + getRandomInt(1000, 9999)),
+      notBefore,
+      notAfter,
+      new X500Name(RFC4519Style.INSTANCE, subject),
+      keyPair.getPublic()
     );
     jv3Builder.addExtension(Extension.basicConstraints, true, new BasicConstraints(0));
     ContentSigner signer = new JcaContentSignerBuilder(signatureAlgorithm).build(keyPair.getPrivate());
@@ -188,7 +187,7 @@ public class CertUtils {
   }
 
   public static void saveKeyStoreToFile(Certificate cert, String storeType, KeyPair keyPair, String fileName)
-      throws KeyStoreException, CertificateException, NoSuchAlgorithmException, IOException, InvalidKeyException, NoSuchProviderException, SignatureException {
+    throws KeyStoreException, CertificateException, NoSuchAlgorithmException, IOException, InvalidKeyException, NoSuchProviderException, SignatureException {
     KeyStore store = KeyStore.getInstance(storeType);
     store.load(null, null);
     store.setKeyEntry(caAlias, keyPair.getPrivate(), caPassword, new Certificate[]{cert});
@@ -213,13 +212,13 @@ public class CertUtils {
   // ************************************* change cert type *************************************
 
   public static void jksToPkcs12(String filePath, String password, String type)
-      throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, UnrecoverableKeyException, InvalidKeyException, NoSuchProviderException, SignatureException {
+    throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, UnrecoverableKeyException, InvalidKeyException, NoSuchProviderException, SignatureException {
     String endName = "p12";
     changeType(filePath, password, type, endName);
   }
 
   public static void pkcs12ToJks(String filePath, String password, String type)
-      throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, UnrecoverableKeyException, InvalidKeyException, NoSuchProviderException, SignatureException {
+    throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, UnrecoverableKeyException, InvalidKeyException, NoSuchProviderException, SignatureException {
     String endName = "jks";
     changeType(filePath, password, type, endName);
   }
@@ -239,7 +238,7 @@ public class CertUtils {
    * load keyStore, supported type: jks, jks base64, p12(pkcs12), p12 base64
    */
   private static KeyStore loadKeyStore(String filePath, String password)
-      throws IOException, KeyStoreException, CertificateException, NoSuchAlgorithmException {
+    throws IOException, KeyStoreException, CertificateException, NoSuchAlgorithmException {
     if (StringUtils.isEmpty(filePath.trim())) {
       throw new IllegalArgumentException("cert keyStore path can NOT be null!");
     }
