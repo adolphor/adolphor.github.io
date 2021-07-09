@@ -9,7 +9,7 @@ geneMenu:   true
 excerpt:    【置顶】博文目录汇总
 ---
 
-## 数据结构和算法 [data structure and algorithm]
+## 数据结构和算法
 
 * [时间复杂度]({% post_url algorithm/classic/2021-03-30-01-time-complexity %})
 * [数组 Array]({% post_url algorithm/classic/2021-03-30-02-array %})
@@ -33,14 +33,16 @@ excerpt:    【置顶】博文目录汇总
 * 分治算法
   - [递归]({% post_url algorithm/classic/2021-04-15-04-recursion %})
   - 归并排序：TODO
-* 高级排序
-  - 希尔排序
-  - 快速排序
-  - 基数排序
-  
+* [高级排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %})
+  - [希尔排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %}#希尔排序)
+  - [快速排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %}#快速排序)
+  - [基数排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %}#基数排序)
+
 ### 参考
 
+* [Java数据结构和算法](https://book.douban.com/subject/1144007/)
 * [算法网](http://ddrv.cn/a/88315)
+
 
 比较全面的算法教程，而且是java代码实现
 
@@ -61,6 +63,7 @@ excerpt:    【置顶】博文目录汇总
 ### 并发
 * [Java并发包源码学习汇总目录]({% post_url java/concurrent/2020-03-15-java-util-concurrent-menus %})
 * [servlet的线程安全问题](https://www.jianshu.com/p/672a8ecada6c)
+* [Frank's Blog](https://hellofrank.github.io/archives/)
 
 ## 框架
 

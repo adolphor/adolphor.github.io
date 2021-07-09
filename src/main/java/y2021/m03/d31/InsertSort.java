@@ -19,8 +19,9 @@ public class InsertSort extends AbstractSort {
   @Override
   public void sort() {
     int out, in;
+    int temp;
     for (out = 1; out < data.length; out++) {   // out is dividing line
-      int temp = data[out];                     // remove marked item    临时存储当前操作的需要插入的值
+      temp = data[out];                     // remove marked item    临时存储当前操作的需要插入的值
       in = out;                                 // start shifts at out   内部循环开始位置
       while (in > 0 && data[in - 1] >= temp) {  // until one is smaller  判断是否需要移动
         data[in] = data[in - 1];                // shift item right      将左边的值右移腾出插入的位置，被覆盖的值已经存储在temp或者已经右移到新位置了

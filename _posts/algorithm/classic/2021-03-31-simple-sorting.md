@@ -115,3 +115,5 @@ excerpt:    Java数据结构和算法 - 简单排序
 ## 参考资料
 
 * [Java数据结构和算法](https://book.douban.com/subject/1144007/)
+* [可视化排序过程](https://visualgo.net/zh/sorting)
+* [高级排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %})
