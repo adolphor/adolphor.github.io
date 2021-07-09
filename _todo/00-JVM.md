@@ -107,4 +107,14 @@ JSTACK 常用方式方法？
 
 
 
+## 其他
+参考：https://snailclimb.gitee.io/javaguide/#/docs/java/basis/Java基础知识?id=jvm
+* 对象引用存放在栈内存中
+* 从变量在内存中的存储方式来看,如果成员变量是使用 static 修饰的，那么这个成员变量是属于类的，如果没有使用 static 修饰，这个成员变量是属于实例的。而对象存在于堆内存，局部变量则存在于栈内存。
+* 类变量随着类的加载存在于方法区中，实例变量随着对象的对象的建立存在于堆内存里
+
+参考：http://xzoo.org/posts/java-classinstancevariable/
+
+
+
 

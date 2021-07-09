@@ -214,7 +214,6 @@ http://www.cnblogs.com/huaizuo/p/5413069.html
 http://blog.csdn.net/u010723709/article/details/48007881
 
 
-
 * 非静态方法:
 给对象加锁(可以理解为给这个对象的内存上锁,注意 只是这块内存,其他同类对象都会有各自的内存锁),这时候
 在其他一个以上线程中执行该对象的这个同步方法(注意:是该对象)就会产生互斥
@@ -227,4 +226,5 @@ http://blog.csdn.net/u010723709/article/details/48007881
 
 
 
-
+# 参考
+* [Java并发编程那些事儿](https://hellofrank.github.io/2020/06/22/Java并发编程那些事儿-一-——任务与线程/)
