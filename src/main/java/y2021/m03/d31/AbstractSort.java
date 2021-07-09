@@ -15,17 +15,21 @@ public abstract class AbstractSort {
   abstract public void sort();
 
   public void init() {
+    init(1000);
+  }
+
+  public void init(int max) {
     data = new int[10];
     for (int i = 0, length = data.length; i < length; i++) {
-      data[i] = getNextInt();
+      data[i] = getNextInt(max);
     }
   }
 
-  private int getNextInt() {
+  private int getNextInt(int max) {
     Random random = new Random();
-    int nextInt = random.nextInt(1000);
+    int nextInt = random.nextInt(max);
     if (check(nextInt)) {
-      return getNextInt();
+      return getNextInt(max);
     } else {
       return nextInt;
     }
