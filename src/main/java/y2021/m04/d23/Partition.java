@@ -3,19 +3,22 @@ package y2021.m04.d23;
 import y2021.m03.d31.AbstractSort;
 
 /**
+ * 划分算法：是快速排序算法的基础
  * @Author: Bob.Zhu
  * @Date: 2021/7/9 17:23
  */
 public class Partition extends AbstractSort {
 
   public static void main(String[] args) {
+    int size = 10;
     int pivot = 99;
     int maxValue = 199;
 
     Partition partition = new Partition();
-    partition.init(maxValue);
+    partition.init(size, maxValue);
     partition.display();
-    int size = partition.data.length;
+
+    size = partition.data.length;
 
     System.out.print("Pivot is " + pivot);
     int partDex = partition.partitionIt(0, size - 1, pivot);

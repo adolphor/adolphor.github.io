@@ -7,7 +7,7 @@ import java.util.Random;
  */
 public abstract class AbstractSort {
 
-  protected int[] data;
+  public int[] data;
 
   /**
    * 具体普通排序算法需要各自实现
@@ -15,11 +15,11 @@ public abstract class AbstractSort {
   abstract public void sort();
 
   public void init() {
-    init(1000);
+    init(10, 1000);
   }
 
-  public void init(int max) {
-    data = new int[10];
+  public void init(int size, int max) {
+    data = new int[size];
     for (int i = 0, length = data.length; i < length; i++) {
       data[i] = getNextInt(max);
     }

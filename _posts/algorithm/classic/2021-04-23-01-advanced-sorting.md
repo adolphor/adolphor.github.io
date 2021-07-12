@@ -59,16 +59,77 @@ excerpt:    Java数据结构和算法 - 高级排序
 注意：划分的两组的元素数量可以不相等，这取决于枢纽以及数据的关键字的值。
 
 ### 排序思路
-### 动图展示
-### 核心代码
+* 设定一个分组值，作为分组的标准
+* 从左往右找到比分组值小的值的下标，从右往左找到比分组值大的值的下标，并进行交换
+* 循环执行此操作，直至小的值全在左边，大的值全在右边
 
+### 动图展示
+
+### 核心代码
+```java
+  public int partitionIt(int left, int right, long pivot) {
+    int leftPtr = left - 1;
+    int rightPtr = right + 1;
+    while (true) {
+      while (leftPtr < right && data[++leftPtr] < pivot) {
+      }
+      while (rightPtr > left && data[--rightPtr] > pivot) {
+      }
+      if (leftPtr >= rightPtr) {
+        break;
+      } else {
+        swap(leftPtr, rightPtr);
+      }
+    }
+    return leftPtr;
+  }
+```
 
 ## 快速排序
+快排基于划分的思想，唯一的区别就是：
+* 指定数组的最右边元素为比较值，也就是下标为 right
+* 分区算法中的分组完毕之后，需要交换一下leftPtr和right值，这样
 
 ### 排序思路
+
+
 ### 动图展示
 ### 核心代码
+```java
+  @Override
+  public void sort() {
+    reQuickSort(0, data.length - 1);
+  }
 
+  public void reQuickSort(int left, int right) {
+    if (right - left <= 0) {
+      return;
+    } else {
+      int pivot = data[right];
+      int partition = partitionIt(left, right, pivot);
+      reQuickSort(left, partition - 1);
+      reQuickSort(partition + 1, right);
+    }
+  }
+
+  public int partitionIt(int left, int right, int pivot) {
+    int leftPtr = left - 1;
+    int rightPtr = right;
+    while (true) {
+      while (leftPtr < data.length && data[++leftPtr] < pivot) {
+      }
+      while (rightPtr > 0 && data[--rightPtr] > pivot) {
+      }
+      if (leftPtr >= rightPtr) {
+        break;
+      } else {
+        swap(leftPtr, rightPtr);
+      }
+    }
+    swap(leftPtr, right);
+    return leftPtr;
+  }
+```
 
 ## 基数排序
 
