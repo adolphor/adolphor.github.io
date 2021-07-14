@@ -20,19 +20,26 @@ import java.util.Map;
  */
 public class Generator {
 
-  private static String postTitle = "Java代理 - 反射";
-  private static String urlTitle = "17-java-proxy-reflection";
-  private static String categories = "[Java]";
-  private static String tags = "[Java]";
-  private static String folder = "java/proxy";
-  private static Configuration cfg;
+//  private static String postTitle = "Java代理 - 反射";
+//  private static String urlTitle = "17-java-proxy-reflection";
+//  private static String categories = "[Java]";
+//  private static String tags = "[Java]";
+//  private static String folder = "java/proxy";
+//  private static Configuration cfg;
 
-//  private static String postTitle = "Java数据结构和算法 - 跳表";
-//  private static String urlTitle = "01-skip-list";
+//  private static String postTitle = "Java数据结构和算法 - 二叉树";
+//  private static String urlTitle = "01-binary-tree";
 //  private static String categories = "[system]";
 //  private static String tags = "[数据结构和算法]";
 //  private static String folder = "algorithm" + File.separator + "classic";
 //  private static Configuration cfg;
+
+  private static String postTitle = "MySQL - 复制";
+  private static String urlTitle = "02-mysql-replication";
+  private static String categories = "[database]";
+  private static String tags = "[database,MySQL]";
+  private static String folder = "database/mysql";
+  private static Configuration cfg;
 
   public static void main(String[] args) throws IOException, TemplateException {
 

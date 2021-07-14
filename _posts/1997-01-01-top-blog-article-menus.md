@@ -32,31 +32,16 @@ excerpt:    【置顶】博文目录汇总
   - [迭代器]({% post_url algorithm/classic/2021-04-15-03-link-iterator %})
 * 分治算法
   - [递归]({% post_url algorithm/classic/2021-04-15-04-recursion %})
-  - 归并排序：TODO
+  - 归并排序：[参考](https://zhuanlan.zhihu.com/p/95080265)
 * [高级排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %})
   - [希尔排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %}#希尔排序)
   - [快速排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %}#快速排序)
   - [基数排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %}#基数排序)
-
-### 参考
-
-* [Java数据结构和算法](https://book.douban.com/subject/1144007/)
-* [算法网](http://ddrv.cn/a/88315)
-
-
-比较全面的算法教程，而且是java代码实现
-
-## 设计模式 [Design pattern]
-
-* [UML中的类图关系]({% post_url tools/uml/2016-08-01-UML-relationship %})
-* [6大接口设计原则]({% post_url design-pattern/2020-01-21-design-pattern-principle %})
-* [3大类24种设计模式]({% post_url design-pattern/2016-11-03-design-pattern-menus %})
-
-## 操作系统
-
-## 编译原理
+* 二叉树
+  -
 
 ## Java
+
 ### Java基础
 * [Java基础目录汇总]({% post_url java/1997-01-01-java-basic-menus %})
 
@@ -64,6 +49,11 @@ excerpt:    【置顶】博文目录汇总
 * [Java并发包源码学习汇总目录]({% post_url java/concurrent/2020-03-15-java-util-concurrent-menus %})
 * [servlet的线程安全问题](https://www.jianshu.com/p/672a8ecada6c)
 * [Frank's Blog](https://hellofrank.github.io/archives/)
+
+## 数据库
+
+### Mysql
+* [MySQL 汇总目录]({% post_url database/mysql/1970-01-01-mysql-article-menus %})
 
 ## 框架
 
@@ -77,9 +67,24 @@ excerpt:    【置顶】博文目录汇总
 ### Tomcat
 * [Tomcat 优化]({% post_url tomcat/2016-10-11-tomcat-optimizing %})
 
+### MyBatis
+* 
+
 ### Hadoop & Spark & HBase
 * [Hadoop，Spark，HBase 开发环境配置]({% post_url database/hadoop/2016-10-28-hadoop-spark-hbase-develop-environment %})
 * [Windows 10 x64 下编译 Hadoop 源码]({% post_url database/hadoop/2016-11-01-build-hadoop-on-windows-10 %})
+
+## 设计模式 [Design pattern]
+
+* [UML中的类图关系]({% post_url tools/uml/2016-08-01-UML-relationship %})
+* [6大接口设计原则]({% post_url design-pattern/2020-01-21-design-pattern-principle %})
+* [3大类24种设计模式]({% post_url design-pattern/2016-11-03-design-pattern-menus %})
+
+## 分布式微服务
+
+## 操作系统
+
+## 编译原理
 
 ## 读书笔记
 * [Effective Java —— Joshua Bloch]({% post_url book/2016-09-20-effective-java-second-edition %})
