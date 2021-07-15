@@ -43,10 +43,3 @@ sass:
 cacheVersion: 20200415
 
 future: true
-
-## compress
-compress_html:
-  clippings:      all
-  comments:       ["<!--", "-->"]
-  endings:        all
-  startings:      [html, head, body]
