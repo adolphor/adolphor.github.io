@@ -12,6 +12,7 @@ public class TreeApp {
     theTree.insert(75, 1.9);
 
     Node found = theTree.find(30);
+    theTree.display();
     if (found != null) {
       System.out.println("Found the node with key 25");
     } else {

@@ -10,4 +10,12 @@ public class Node {
 
   Node leftChild;
   Node rightChild;
+
+  @Override
+  public String toString() {
+    return "Node{" +
+      "iData=" + iData +
+      ", fData=" + fData +
+      '}';
+  }
 }

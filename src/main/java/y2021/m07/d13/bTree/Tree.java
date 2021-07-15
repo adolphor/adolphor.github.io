@@ -26,11 +26,72 @@ public class Tree {
   }
 
   public void insert(int id, double dd) {
-
+    Node newNode = new Node();
+    newNode.iData = id;
+    newNode.fData = dd;
+    if (root == null) {
+      root = newNode;
+    } else {
+      Node current = root;
+      Node parent;
+      while (true) {
+        parent = current;
+        if (id < current.iData) {
+          current = current.leftChild;
+          if (current == null) {
+            parent.leftChild = newNode;
+            return;
+          }
+        } else {
+          current = current.rightChild;
+          if (current == null) {
+            parent.rightChild = newNode;
+            return;
+          }
+        }
+      }
+    }
   }
 
   public void deleted(int d) {
 
+  }
+
+  public void display() {
+    inOrder(root);
+  }
+
+  /**
+   * 中序遍历：A*(B+C)
+   */
+  private void inOrder(Node localRoot){
+    if (localRoot!=null){
+      inOrder(localRoot.leftChild);
+      System.out.println(localRoot);
+      inOrder(localRoot.rightChild);
+    }
+  }
+
+  /**
+   * 前序遍历：*A+BC
+   */
+  private void preOrder(Node localRoot){
+    if (localRoot!=null){
+      System.out.println(localRoot);
+      inOrder(localRoot.leftChild);
+      inOrder(localRoot.rightChild);
+    }
+  }
+
+  /**
+   * 后序遍历：ABC+*
+   */
+  private void postOrder(Node localRoot){
+    if (localRoot!=null){
+      inOrder(localRoot.leftChild);
+      inOrder(localRoot.rightChild);
+      System.out.println(localRoot);
+    }
   }
 
 }
