@@ -12,7 +12,6 @@ timezone: Asia/Shanghai
 encoding: "utf-8"
 side_bar_repo_limit: 5
 repository: adolphor/adolphor
-destination: "./_site/www" # 指定编译路径可以方便管理nginx分流配置，且不影响github托管
 # 对 css 和 js 资源的 cdn 加速配置
 cdn:
     jsdelivr:
