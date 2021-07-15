@@ -4,9 +4,7 @@ title:      brew 使用相关
 date:       2018-04-29 20:58:37 +0800
 postId:     2018-04-29-20-58-37
 categories: []
-tags:       [Tools]
-geneMenu:   true
-excerpt:    brew 使用相关
+keywords:   [Tools]
 ---
 ## 安装
 

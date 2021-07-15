@@ -4,9 +4,7 @@ title:      macOS上使用MySQL的那些事
 date:       2018-11-28 19:45:19 +0800
 postId:     2018-11-28-19-45-19
 categories: []
-tags:       [database,MySQL]
-geneMenu:   true
-excerpt:    MySQL那些事
+keywords:   [database,MySQL]
 ---
 
 

@@ -4,9 +4,7 @@ title:      Redis缓存集群解决方案：Redis cluster 节点管理
 date:       2017-03-23 16:41:30 +0800
 postId:     2017-03-23-16-41-30
 categories: []
-tags:       [Redis]
-geneMenu:   true
-excerpt:    Redis缓存集群解决方案：Redis cluster 节点管理
+keywords:   [Redis]
 ---
 
 在上篇文章《[Redis缓存集群解决方案：Redis cluster 安装]({% post_url database/redis/2017-03-21-redis-cluster-init %})》

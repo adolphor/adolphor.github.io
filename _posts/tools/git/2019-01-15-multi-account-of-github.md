@@ -4,9 +4,7 @@ title:      在同一个电脑上配置多个GitHub账号
 date:       2019-01-15 21:02:05 +0800
 postId:     2019-01-15-21-02-05
 categories: []
-tags:       [其他]
-geneMenu:   true
-excerpt:    在同一个电脑上配置多个GitHub账号
+keywords:   [其他]
 ---
 
 最近在使用github的时候,有这样的一个需求,就是一台电脑上登录两个github账号,并上传项目和更新自己的代码,大家都知道需要给该账号添加一个SSH key才能访问，参考： 具体设置 。当然如果你在多台机器使用一个账户，你可以为该账户添加多个SSH key。由于github是使用SSH key的fingerprint来判定你是哪个账户，而不是通过用户名，这样你就可以在设置完之后，在本地直接执行下面的语句，它就会自动使用你的.ssh/id_rsa.pub所对应的账户进行登陆，然后执行相关命令。

@@ -4,9 +4,7 @@ title:      Netty源码 - 核心类
 date:       2020-03-12 20:25:55 +0800
 postId:     2020-03-12-20-25-55
 categories: [Netty]
-tags:       [Netty]
-geneMenu:   true
-excerpt:    Netty源码 - 核心类
+keywords:   [Netty]
 ---
 
 ## 核心的概念

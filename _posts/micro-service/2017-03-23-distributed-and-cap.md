@@ -4,9 +4,7 @@ title:      分布式以及CAP理论
 date:       2017-03-23 16:43:07 +0800
 postId:     2017-03-23-16-43-07
 categories: []
-tags:       [分布式]
-geneMenu:   true
-excerpt:    分布式以及CAP理论
+keywords:   [分布式]
 ---
 
 ## CAP定理

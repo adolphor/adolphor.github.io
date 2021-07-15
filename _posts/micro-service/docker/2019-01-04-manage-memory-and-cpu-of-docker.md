@@ -4,9 +4,7 @@ title:      docker的资源管理
 date:       2019-01-04 15:14:45 +0800
 postId:     2019-01-04-15-14-45
 categories: []
-tags:       [Docker]
-geneMenu:   true
-excerpt:    docker的资源管理
+keywords:   [Docker]
 ---
 
 ## 资源占用情况查看

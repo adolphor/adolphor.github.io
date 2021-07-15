@@ -3,10 +3,8 @@ layout:     post
 title:      Java数据结构和算法 - 简单排序
 date:       2021-03-31 10:47:04 +0800
 postId:     2021-03-31-10-47-04
-categories: [system]
-tags:       [数据结构和算法]
-geneMenu:   true
-excerpt:    Java数据结构和算法 - 简单排序
+categories: [algorithm]
+keywords:   [数据结构和算法]
 ---
 
 ## 冒泡排序

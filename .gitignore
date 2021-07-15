@@ -9,10 +9,12 @@ _site
 .sass-cache
 /.jekyll-metadata
 .jekyll-metadata
-
+/.jekyll-cache/
+.jekyll-cache
 
 /adolphor.iml
 adolphor.iml
 /target/
 target
-/.jekyll-cache/
+
+Gemfile.lock

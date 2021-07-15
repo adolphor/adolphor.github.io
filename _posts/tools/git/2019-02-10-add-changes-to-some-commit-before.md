@@ -4,9 +4,7 @@ title:      Git追加代码更改到之前某次commit
 date:       2019-02-10 13:15:13 +0800
 postId:     2019-02-10-13-15-14
 categories: []
-tags:       [Tools, Git]
-geneMenu:   true
-excerpt:    Git追加代码更改到之前某次commit
+keywords:   [Tools, Git]
 ---
 
 Git提交原则上保持每个功能点一个commit，每次commit之后保持工作空间干净防止遗漏某些修改。

@@ -4,9 +4,7 @@ title:      Redis - 数据结构
 date:       2021-06-15 09:09:39 +0800
 postId:     2021-06-15-09-09-39
 categories: [database]
-tags:       [database,Redis]
-geneMenu:   true
-excerpt:    Redis - 数据结构
+keywords:   [database,Redis]
 ---
 
 ## 数据结构

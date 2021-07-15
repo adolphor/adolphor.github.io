@@ -4,9 +4,7 @@ title:      HTTP 通信 —— 三次握手和四次挥手
 date:       2018-04-26 10:51:35 +0800
 postId:     2018-04-26-10-51-35
 categories: []
-tags:       [Tools,网络]
-geneMenu:   true
-excerpt:    HTTP 通信 —— 三次握手和四次挥手
+keywords:   [Tools,网络]
 ---
 
 ## TCP 报文格式

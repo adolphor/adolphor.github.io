@@ -4,9 +4,7 @@ title:      MySQL 备忘录
 date:       2021-05-14 09:52:17 +0800
 postId:     2021-05-14-09-52-17
 categories: [database]
-tags:       [database,MySQL]
-geneMenu:   true
-excerpt:    MySQL 备忘录
+keywords:   [database,MySQL]
 ---
 
 ## 自增主键

@@ -4,9 +4,7 @@ title:      MySQL分组排序
 date:       2020-09-22 17:36:48 +0800
 postId:     2020-09-22-17-36-48
 categories: [database]
-tags:       [database,MySQL]
-geneMenu:   true
-excerpt:    MySQL分组排序
+keywords:   [database,MySQL]
 ---
 
 ## 存档

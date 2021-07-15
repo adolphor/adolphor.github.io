@@ -4,9 +4,7 @@ title:      IDEA - code style
 date:       2021-07-01 09:05:40 +0800 
 postId:     2021-07-01-09-05-41
 categories: [IDE]
-tags:       [idea]
-geneMenu:   true 
-excerpt:    IDEA - code style
+keywords:   [idea]
 ---
 
 ## 代码格式规范的必要性

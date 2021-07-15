@@ -4,9 +4,7 @@ title:      macOS下制作cdr格式的系统镜像
 date:       2017-01-16 20:16:51 +0800
 postId:     2017-01-16-20-16-51
 categories: []
-tags:       [macOS]
-geneMenu:   true
-excerpt:    macOS下制作cdr格式的系统镜像
+keywords:   [macOS]
 ---
 
 在macOS系统下，将官方的macOS系统安装包转换为cdr镜像文件，这样可以在别的电脑上或者虚拟机中使用。

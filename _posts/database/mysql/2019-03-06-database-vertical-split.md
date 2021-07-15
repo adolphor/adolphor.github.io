@@ -4,9 +4,7 @@ title:      数据库垂直拆分
 date:       2019-03-06 11:32:17 +0800
 postId:     2019-03-06-11-32-17
 categories: []
-tags:       [database,MySQL]
-geneMenu:   true
-excerpt:    数据库垂直拆分
+keywords:   [database,MySQL]
 ---
 
 ## 

@@ -4,9 +4,7 @@ title:      Java基础学习汇总目录
 date:       2020-03-15 22:28:27 +0800
 postId:     2020-03-15-22-28-28
 categories: [Java]
-tags:       [Java]
-geneMenu:   true
-excerpt:    Java基础学习汇总目录
+keywords:   [Java]
 ---
 
 ## 关键字

@@ -4,9 +4,7 @@ title:      WireShark 配置和使用
 date:       2018-04-27 13:13:51 +0800
 postId:     2018-04-27-13-13-51
 categories: []
-tags:       [Tools,网络]
-geneMenu:   true
-excerpt:    WireShark 配置和使用
+keywords:   [Tools,网络]
 ---
 
 WireShark过滤器有两种，捕捉过滤器和显示过滤器。

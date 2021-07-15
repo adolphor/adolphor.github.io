@@ -4,9 +4,7 @@ title:      初识 java agent
 date:       2018-12-11 22:11:52 +0800
 postId:     2018-12-11-22-11-53
 categories: []
-tags:       [Java]
-geneMenu:   true
-excerpt:    初识 java agent
+keywords:   [Java]
 ---
 
 ## 起由

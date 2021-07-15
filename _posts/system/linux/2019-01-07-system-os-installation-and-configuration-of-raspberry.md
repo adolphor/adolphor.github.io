@@ -4,9 +4,7 @@ title:      树莓派系统安装和配置
 date:       2019-01-07 22:04:49 +0800
 postId:     2019-01-07-22-04-49
 categories: []
-tags:       [其他]
-geneMenu:   true
-excerpt:    树莓派系统安装和配置
+keywords:   [其他]
 ---
 
 ## 系统安装

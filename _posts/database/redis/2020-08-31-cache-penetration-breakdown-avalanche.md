@@ -4,9 +4,7 @@ title:      缓存雪崩 & 缓存穿透 & 缓存击穿
 date:       2020-08-31 10:58:43 +0800
 postId:     2020-08-31-10-58-43
 categories: [Redis]
-tags:       [Redis]
-geneMenu:   true
-excerpt:    缓存雪崩 & 缓存穿透 & 缓存击穿
+keywords:   [Redis]
 ---
 
 

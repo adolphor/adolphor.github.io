@@ -4,9 +4,7 @@ title:      设计模式
 date:       2016-11-03 22:10:38 +0800
 postId:     2016-11-03-22-10-38
 categories: [design-pattern]
-tags:       [UML, 设计模式]
-geneMenu:   true
-excerpt:    设计模式简介
+keywords:   [UML, 设计模式]
 ---
 
 ## 概述

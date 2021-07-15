@@ -4,9 +4,7 @@ title:      聊一聊网关
 date:       2018-11-24 11:42:09 +0800
 postId:     2018-11-24-11-42-09
 categories: []
-tags:       [架构设计]
-geneMenu:   true
-excerpt:    聊一聊网关
+keywords:   [架构设计]
 ---
 
 本文主要讨论网关的相关概念，具体关注如下几个问题：

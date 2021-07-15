@@ -4,9 +4,7 @@ title:      ffmpeg的使用
 date:       2020-02-11 17:28:01 +0800
 postId:     2020-02-11-17-28-01
 categories: []
-tags:       [其他,ffmpeg]
-geneMenu:   true
-excerpt:    ffmpeg的使用
+keywords:   [其他,ffmpeg]
 ---
 
 开始写作吧

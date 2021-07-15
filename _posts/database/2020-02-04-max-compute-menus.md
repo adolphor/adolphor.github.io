@@ -4,9 +4,7 @@ title:      阿里云MaxCompute
 date:       2020-02-04 12:40:42 +0800
 postId:     2020-02-04-12-40-42
 categories: []
-tags:       [bigData]
-geneMenu:   true
-excerpt:    阿里云MaxCompute
+keywords:   [bigData]
 ---
 
 开始写作吧

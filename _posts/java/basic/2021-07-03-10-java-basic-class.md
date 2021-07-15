@@ -4,9 +4,7 @@ title:      Java基础 - 面向对象：类
 date:       2021-07-03 15:13:20 +0800
 postId:     2021-07-03-15-13-20
 categories: [Java]
-tags:       [Java]
-geneMenu:   true
-excerpt:    Java基础 - 面向对象：类
+keywords:   [Java]
 ---
 
 ## 面向对象三大特征

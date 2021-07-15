@@ -4,9 +4,7 @@ title:      设计模式之 —— 观察者模式进阶：监听器模式
 date:       2020-03-14 21:23:26 +0800
 postId:     2020-03-14-21-23-26
 categories: [design-pattern]
-tags:       [设计模式]
-geneMenu:   true
-excerpt:    设计模式之 —— 监听器模式
+keywords:   [设计模式]
 ---
 
 ## 监听器模式简介

@@ -4,9 +4,7 @@ title:      Java8 新特性 —— lambda表达式
 date:       2016-08-24 09:00:57 +0800
 postId:     2016-08-24-09-00-57
 categories: []
-tags:       [Java, Java8]
-geneMenu:   true
-excerpt:    Java8 新特性 —— lambda表达式
+keywords:   [Java, Java8]
 ---
 
 本文主要介绍 Java8 的以下几个新特性：

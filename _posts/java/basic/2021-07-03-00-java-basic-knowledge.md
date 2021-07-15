@@ -4,9 +4,7 @@ title:      Java基础知识
 date:       2021-07-03 10:51:25 +0800
 postId:     2021-07-03-10-51-26
 categories: [Java]
-tags:       [Java]
-geneMenu:   true
-excerpt:    Java基础知识
+keywords:   [Java]
 ---
 
 ## JVM vs JDK vs JRE

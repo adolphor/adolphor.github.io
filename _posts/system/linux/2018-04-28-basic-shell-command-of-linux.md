@@ -4,9 +4,7 @@ title:      linux 基本操作指令
 date:       2018-04-28 09:12:20 +0800
 postId:     2018-04-28-09-12-20
 categories: []
-tags:       [Linux,shell]
-geneMenu:   true
-excerpt:    linux 基本操作指令
+keywords:   [Linux,shell]
 ---
 
 ## 网络

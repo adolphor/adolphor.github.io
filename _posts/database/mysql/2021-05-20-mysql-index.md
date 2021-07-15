@@ -4,9 +4,7 @@ title:      MySQL 索引
 date:       2021-05-20 14:02:40 +0800
 postId:     2021-05-20-14-02-40
 categories: [database]
-tags:       [database,MySQL]
-geneMenu:   true
-excerpt:    MySQL 索引
+keywords:   [database,MySQL]
 ---
 
 ## 概念

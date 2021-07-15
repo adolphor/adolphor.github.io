@@ -1,45 +1,153 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# ---------------- #
+#   Main Configs   #
+# ---------------- #
+baseurl:
+url: https://adolphor.com
+date_format: "ordinal"
+title: Bob.Zhu
+subtitle: "Keep going"
+description: "Bob.Zhu的个人博客"
+keywords: adolphor, Bob.Zhu,
+timezone: Asia/Shanghai
+encoding: "utf-8"
+side_bar_repo_limit: 5
+repository: mzlogin/mzlogin.github.io
+# 对 css 和 js 资源的 cdn 加速配置
+cdn:
+    jsdelivr:
+        enabled: true
+# 可选组件配置
+components:
+    # 分享
+    # weibo,qq,wechat,douban,qzone,linkedin,facebook,twitter
+    share:
+        enabled: false
+        hide-platforms: qq,facebook
+    # 不蒜子访问统计
+    busuanzi:
+        enabled: false
+        start_date: 2020-05-03
+    # My Popular Repositories
+    side_bar_repo:
+        enabled: true
+        limit: 5
+    # 文章字数统计
+    word_count:
+        enabled: true
+    # 页面右上角，以及「关于」页面的二维码
+    # 修改图片请替换 assets/images/qrcode.jpg
+    qrcode:
+        enabled: true
+        image_alt: 闷骚的程序员
+# 压缩页面内容
+compress_html:
+  clippings: all
+  comments: ["<!--", "-->"]
+# 代码高亮风格，支持的 theme 列表见 https://github.com/mzlogin/rouge-themes
+highlight_theme: github
 
-# Site settings
-title: Adolphor
-author: adolphor
-email: 0haihzu0@gmail.com
-description: > # this means to ignore newlines until "subpath:"
-  学习笔记，技术分享，包括但不限于：
-  Java，JVM，Spring，Spring MVC，myBatis，Tomcat，Maven，Git，Intellij
-# baseurl: "/article" # 如果指定baseurl，提交到github会出现路径错误，所以在需要的时候手动添加路径比较好，比如 build.sh 中示例那样
-destination: "./_site/www" # 指定编译路径可以方便管理nginx分流配置，且不影响github托管
-twitter_username: 0haizhu0
-github_username:  NorthFacing
+# ---------------- #
+#      Author      #
+# ---------------- #
+author: Bob.Zhu
+organization: 
+organization_url: 
+github_username: adolphor
+location: HangZhou, China
+email: 0haizhu0@gmail.com
 
-# paginate
-plugins:
-    - jekyll-paginate
-paginate: 10
+# ---------------- #
+#    Navigation    #
+# ---------------- #
+navs:
+  - href: /
+    label: 首页
+  - href: /categories/
+    label: 分类
+  - href: /archives/
+    label: 归档
+#  - href: /open-source/
+#    label: 开源
+#  - href: /wiki/
+#    label: 维基
+  - href: /links/
+    label: 链接
+  - href: /about/
+    label: 关于
 
-# markdown语法解析引擎（GitHub强制要求）
+# ---------------- #
+#       RSS        #
+# ---------------- #
+subscribe_rss: /feed.xml
+
+# ---------------- #
+#      Jekyll      #
+# ---------------- #
 markdown: kramdown
 kramdown:
-  syntax_highlighter: rouge
-
-# 代码高亮引擎（GitHub强制要求）
+    input: GFM
 highlighter: rouge
+paginate: 10
+lsi: false
+quiet: false
+excerpt_separator: "\n\n"
+permalink: /:year/:month/:day/:title/
+plugins:
+    - jekyll-github-metadata
+    - rouge
+#     - jekyll-html-pipeline
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-feed
+    - jemoji
+#     - jekyll-mentions
+collections:
+    wiki:
+        output: true
+        permalink: /wiki/:path/
 
-# disqus
-disqusId: adolphor
+# ---------------- #
+#      Comments    #
+# ---------------- #
+# support provider: disqus, gitment, gitalk
+comments_provider: gitalk
+# !!!重要!!! 请修改下面这些信息为你自己申请的
+# !!!Important!!! Please modify infos below to yours
+# https://disqus.com
+disqus:
+    username: 
+# https://imsun.net/posts/gitment-introduction/
+gitment:
+    owner: mzlogin
+    repo: blog-comments
+    oauth:
+        client_id: d2e1cbbd298958076462
+        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+# https://github.com/gitalk/gitalk#install
+gitalk:
+    owner: mzlogin
+    repo: blog-comments
+    clientID: d2e1cbbd298958076462
+    clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+# 在使用其它评论组件时可点击显示 Disqus
+lazy_load_disqus : false
 
-# google 分析
-googleAnalyticsId: UA-68980203-2
+# ---------------- #
+#      Search      #
+# ---------------- #
+simple_jekyll_search:
+    # 是否支持全文搜索
+    fulltext: false
+    # 最多显示多少条搜索结果
+    limit: 10
 
-sass:
-  sass_dir: ./css/_sass
-  style: compressed
-
-cacheVersion: 20200415
-
-future: true
+# ---------------- #
+#      Google      #
+# ---------------- #
+google:
+    analytics_id: UA-80669434-1
+    adsense:
+        footer: true
+        sidebar: true 
+        content_header: true
+        content_footer: false

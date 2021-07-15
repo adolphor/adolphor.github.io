@@ -4,9 +4,7 @@ title:      Linux环境下使用Clion编写swift项目
 date:       2017-01-11 23:30:51 +0800
 postId:     2017-01-11-23-30-51
 categories: []
-tags:       [iOS, swift]
-geneMenu:   true
-excerpt:    Linux环境下使用CLion编写swift项目
+keywords:   [iOS, swift]
 ---
 
 ## 安装swift

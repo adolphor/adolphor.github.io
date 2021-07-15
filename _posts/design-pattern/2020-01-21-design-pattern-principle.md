@@ -4,9 +4,7 @@ title:      接口设计原则
 date:       2020-01-21 16:05:59 +0800
 postId:     2020-01-21-16-06-00
 categories: [design-pattern]
-tags:       [设计模式]
-geneMenu:   true
-excerpt:    设计模式目录
+keywords:   [设计模式]
 ---
 
 ## 开闭原则（OCP）

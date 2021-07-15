@@ -4,9 +4,7 @@ title:      MySQL - 逻辑架构
 date:       2021-07-13 21:54:54 +0800
 postId:     2021-07-13-21-54-54
 categories: [database]
-tags:       [database,MySQL]
-geneMenu:   true
-excerpt:    MySQL - 逻辑架构
+keywords:   [database,MySQL]
 ---
 
 ## MySQL逻辑架构

@@ -4,9 +4,7 @@ title:      MySQL 命令行基础指令
 date:       2021-05-19 13:51:04 +0800
 postId:     2021-05-19-13-51-04
 categories: [database]
-tags:       [database,MySQL]
-geneMenu:   true
-excerpt:    MySQL 命令行基础指令
+keywords:   [database,MySQL]
 ---
 
 ## 登录连接

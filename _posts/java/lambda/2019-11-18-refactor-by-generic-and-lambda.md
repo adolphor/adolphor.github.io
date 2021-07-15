@@ -4,9 +4,7 @@ title:      使用泛型和lambda表达式重构代码
 date:       2019-11-18 10:47:43 +0800
 postId:     2019-11-18-10-47-43
 categories: []
-tags:       [Spring]
-geneMenu:   true
-excerpt:    使用泛型和lambda表达式重构代码
+keywords:   [Spring]
 ---
 
 参考代码，后续写篇完整的文章吧：

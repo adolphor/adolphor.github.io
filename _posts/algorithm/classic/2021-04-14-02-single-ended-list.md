@@ -3,10 +3,8 @@ layout:     post
 title:      Java数据结构和算法 - 单链表
 date:       2021-04-14 14:01:50 +0800
 postId:     2021-04-14-14-01-50
-categories: [system]
-tags:       [数据结构和算法]
-geneMenu:   true
-excerpt:    Java数据结构和算法 - 单链表
+categories: [algorithm]
+keywords:   [数据结构和算法]
 ---
 
 ## 定义

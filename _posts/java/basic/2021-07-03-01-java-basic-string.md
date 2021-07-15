@@ -4,9 +4,7 @@ title:      Java基础类 - String
 date:       2021-07-03 11:03:29 +0800
 postId:     2021-07-03-11-03-29
 categories: [Java]
-tags:       [Java]
-geneMenu:   true
-excerpt:    Java基础类 - String
+keywords:   [Java]
 ---
 
 ## 字符型常量和字符串常量的区别

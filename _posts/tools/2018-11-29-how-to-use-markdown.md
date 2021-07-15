@@ -4,9 +4,7 @@ title:      来使用markdown吧
 date:       2018-11-29 22:11:08 +0800
 postId:     2018-11-29-22-11-08
 categories: []
-tags:       [Tools]
-geneMenu:   true
-excerpt:    来使用markdown吧
+keywords:   [Tools]
 ---
 
 markdown已经成为了程序员文档编辑的标配，也得到越来越多编辑器的支持，基础语法就不讲了，讲讲其他的吧。

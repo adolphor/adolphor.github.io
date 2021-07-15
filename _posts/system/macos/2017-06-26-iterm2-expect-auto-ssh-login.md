@@ -4,9 +4,7 @@ title:      iterm2 配合 expect 实现 SSH 自动登陆
 date:       2017-06-26 10:20:54 +0800
 postId:     2017-06-26-10-20-54
 categories: []
-tags:       [shell]
-geneMenu:   true
-excerpt:    iterm2 配合 expect 实现 SSH 自动登陆
+keywords:   [shell]
 ---
 
 在macOS中，文件传输工具使用小卡车，但是远程连接的shell没有找到好用的工具，

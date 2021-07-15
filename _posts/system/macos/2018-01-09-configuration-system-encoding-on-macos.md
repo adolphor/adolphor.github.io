@@ -4,9 +4,7 @@ title:      macOS下的系统编码设置
 date:       2018-01-09 13:30:51 +0800
 postId:     2018-01-09-13-30-51
 categories: []
-tags:       [macOS]
-geneMenu:   true
-excerpt:    macOS下的系统编码设置
+keywords:   [macOS]
 ---
 
 macOS下，当系统语言是中文的时候，系统编码信息如下：

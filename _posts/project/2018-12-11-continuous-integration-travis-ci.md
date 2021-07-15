@@ -4,9 +4,7 @@ title:      持续集成：travis-ci
 date:       2018-12-11 11:11:01 +0800
 postId:     2018-12-11-11-11-01
 categories: []
-tags:       [Tools]
-geneMenu:   true
-excerpt:    持续集成：travis-ci
+keywords:   [Tools]
 ---
 
 ## Travis CI 使用条件和方法

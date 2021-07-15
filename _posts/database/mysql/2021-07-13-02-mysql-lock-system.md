@@ -4,9 +4,7 @@ title:      MySQL - 锁机制
 date:       2021-07-13 22:14:14 +0800
 postId:     2021-07-13-22-14-14
 categories: [database]
-tags:       [database,MySQL]
-geneMenu:   true
-excerpt:    MySQL - 读写锁
+keywords:   [database,MySQL]
 ---
 
 ## 读写锁

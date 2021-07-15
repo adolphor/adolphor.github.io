@@ -4,9 +4,7 @@ title:      MySQL - 数据类型
 date:       2021-07-14 00:13:06 +0800
 postId:     2021-07-14-00-13-06
 categories: [database]
-tags:       [database,MySQL]
-geneMenu:   true
-excerpt:    MySQL - 数据类型
+keywords:   [database,MySQL]
 ---
 
 ## 优化 SQL 的策略

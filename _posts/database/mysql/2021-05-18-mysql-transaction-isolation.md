@@ -4,9 +4,7 @@ title:      MySQL 事务隔离
 date:       2021-05-18 14:58:45 +0800
 postId:     2021-05-18-14-58-45
 categories: [database]
-tags:       [database,MySQL]
-geneMenu:   true
-excerpt:    MySQL 事务隔离
+keywords:   [database,MySQL]
 ---
 
 ## ACID

@@ -1,0 +1,13 @@
+- name: Software Engineer Keywords
+  keywords:
+      - Java
+      - Design Patterns
+      - MySQL
+      - Spring Cloud
+      - Redis
+      - RocketMQ
+
+- name: Mobile Developer Keywords
+  keywords:
+      - Android
+      - iOS

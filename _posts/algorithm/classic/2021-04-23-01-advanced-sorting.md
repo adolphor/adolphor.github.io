@@ -3,10 +3,8 @@ layout:     post
 title:      Java数据结构和算法 - 高级排序
 date:       2021-04-23 15:04:03 +0800
 postId:     2021-04-23-15-04-03
-categories: [system]
-tags:       [数据结构和算法]
-geneMenu:   true
-excerpt:    Java数据结构和算法 - 高级排序
+categories: [algorithm]
+keywords:   [数据结构和算法]
 ---
 ## 高级排序
 前面学习过简单排序：冒泡排序、选择排序、插入排序，都是一些容易实现但速度比较慢的排序算法；

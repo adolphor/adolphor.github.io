@@ -4,9 +4,7 @@ title:      RFC相关协议整理
 date:       2019-02-09 00:56:20 +0800
 postId:     2019-02-09-00-56-20
 categories: []
-tags:       [网络]
-geneMenu:   true
-excerpt:    RFC相关协议整理
+keywords:   [网络]
 ---
 
 - <span id="RFC1945">[1996年 - RFC 1945 - Hypertext Transfer Protocol -- HTTP/1.0](https://www.rfc-editor.org/info/rfc1945)</span>

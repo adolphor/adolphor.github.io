@@ -4,9 +4,7 @@ title:      使用 jrecreate 工具创建自己的 JRE
 date:       2018-04-10 20:56:12 +0800
 postId:     2018-04-10-20-56-13
 categories: []
-tags:       [Java,JVM]
-geneMenu:   true
-excerpt:    使用 jrecreate 工具创建自己的 JRE
+keywords:   [Java,JVM]
 ---
 
 Done：Bullshit！不能用来精简JRE，GAME OVER ~

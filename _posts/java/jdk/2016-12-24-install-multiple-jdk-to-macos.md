@@ -4,9 +4,7 @@ title:      macOS上安装多个版本的JDK
 date:       2016-12-24 17:31:08 +0800
 postId:     2016-12-24-17-31-08
 categories: []
-tags:       [Java, JVM, Java8]
-geneMenu:   true
-excerpt:    macOS上安装多个版本的JDK
+keywords:   [Java, JVM, Java8]
 ---
 
 ## 说明

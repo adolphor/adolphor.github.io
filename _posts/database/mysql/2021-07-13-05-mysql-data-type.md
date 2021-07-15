@@ -4,9 +4,7 @@ title:      MySQL - 数据类型
 date:       2021-07-13 23:12:35 +0800
 postId:     2021-07-13-23-12-35
 categories: [database]
-tags:       [database,MySQL]
-geneMenu:   true
-excerpt:    MySQL - 数据类型
+keywords:   [database,MySQL]
 ---
 
 ## 数据类型

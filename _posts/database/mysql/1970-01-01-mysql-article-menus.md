@@ -4,9 +4,7 @@ title:      MySQL 汇总目录
 date:       1970-01-01 13:27:52 +0800
 postId:     1970-01-01-13-27-52
 categories: [database]
-tags:       [database,MySQL]
-geneMenu:   true
-excerpt:    MySQL 汇总目录
+keywords:   [database,MySQL]
 ---
 
 ## 安装配置

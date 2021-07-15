@@ -4,9 +4,7 @@ title:      Redis源码安装和多服务配置
 date:       2016-08-23 15:33:17 +0800
 postId:     2016-08-23-15-33-17
 categories: []
-tags:       [Redis]
-geneMenu:   true
-excerpt:    Redis源码安装和多服务配置
+keywords:   [Redis]
 ---
 
 ## 源码下载和安装

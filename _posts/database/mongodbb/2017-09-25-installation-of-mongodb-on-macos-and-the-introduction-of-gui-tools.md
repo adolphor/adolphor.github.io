@@ -4,9 +4,7 @@ title:      macOS下mongodb的安装和GUI工具介绍
 date:       2017-09-25 14:57:25 +0800
 postId:     2017-09-25-14-57-25
 categories: []
-tags:       [mongodb]
-geneMenu:   true
-excerpt:    macOS下mongodb的安装和GUI工具介绍
+keywords:   [mongodb]
 ---
 
 ## macOS下使用brew安装mongodb

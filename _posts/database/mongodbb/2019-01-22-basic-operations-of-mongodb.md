@@ -4,9 +4,7 @@ title:      mongodb数据库基本操作
 date:       2019-01-22 20:51:31 +0800
 postId:     2019-01-22-20-51-31
 categories: []
-tags:       [mongodb]
-geneMenu:   true
-excerpt:    mongodb数据库基本操作
+keywords:   [mongodb]
 ---
 
 ## 登录

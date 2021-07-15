@@ -4,9 +4,7 @@ title:      X509证书体系
 date:       2020-11-30 09:49:53 +0800
 postId:     2020-11-30-09-49-53
 categories: [database]
-tags:       [网络]
-geneMenu:   true
-excerpt:    X509证书体系
+keywords:   [网络]
 ---
 
 

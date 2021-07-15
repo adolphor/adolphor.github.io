@@ -4,9 +4,7 @@ title:      Intellij Idea 导入一般的web项目以及相关配置
 date:       2017-03-30 10:14:17 +0800
 postId:     2017-03-30-10-14-18
 categories: []
-tags:       [IDE]
-geneMenu:   true
-excerpt:    Intellij Idea 导入一般的web项目以及相关配置
+keywords:   [IDE]
 ---
 
 * 导入的时候选择new而不是open

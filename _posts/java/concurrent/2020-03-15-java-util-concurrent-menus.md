@@ -4,9 +4,7 @@ title:      Java并发包学习汇总目录
 date:       2020-03-15 22:28:27 +0800
 postId:     2020-03-15-22-28-28
 categories: [concurrent]
-tags:       [concurrent]
-geneMenu:   true
-excerpt:    Java并发包学习汇总目录
+keywords:   [concurrent]
 ---
 
 ## 基本并发类

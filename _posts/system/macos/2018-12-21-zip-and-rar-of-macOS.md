@@ -4,9 +4,7 @@ title:      macOS 压缩和解压缩
 date:       2018-12-21 11:23:51 +0800
 postId:     2018-12-21-11-23-51
 categories: []
-tags:       [Tools]
-geneMenu:   true
-excerpt:    macOS 压缩和解压缩
+keywords:   [Tools]
 ---
 
 ## tar

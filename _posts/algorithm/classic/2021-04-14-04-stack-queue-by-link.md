@@ -3,10 +3,8 @@ layout:     post
 title:      Java数据结构和算法 - 链表实现栈和队列
 date:       2021-04-14 17:05:15 +0800
 postId:     2021-04-14-17-05-15
-categories: [system]
-tags:       [数据结构和算法]
-geneMenu:   true
-excerpt:    Java数据结构和算法 - 链表实现栈和队列
+categories: [algorithm]
+keywords:   [数据结构和算法]
 ---
 
 ## 链表实现栈

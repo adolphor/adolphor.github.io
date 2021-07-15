@@ -4,9 +4,7 @@ title:      策略模式
 date:       2016-12-17 00:10:28 +0800
 postId:     2016-12-17-00-10-28
 categories: []
-tags:       [Java]
-geneMenu:   true
-excerpt:    设计模式之 —— 策略模式
+keywords:   [Java]
 ---
 
 在看策略模式之前，可以先看下《[代理模式]({% post_url design-pattern/2016-12-15-java-design-patterns-proxy %})》,
