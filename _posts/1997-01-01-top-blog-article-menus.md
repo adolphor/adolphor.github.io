@@ -58,14 +58,14 @@ excerpt:    【置顶】博文目录汇总
 ## 框架
 
 ### Netty
-* [Netty源码学习]({% post_url netty/2020-02-01-netty-source-menus %})
+* [Netty源码学习]({% post_url framework/netty/2020-02-01-netty-source-menus %})
 
 ### Redis
 * [Redis源码安装和多服务配置]({% post_url database/redis/2016-08-23-Redis-multi-install-and-config %})
 * [Redis设计与实现 —— 黄健宏]({% post_url book/2016-08-20-Redis-design-and-implementation %})
 
 ### Tomcat
-* [Tomcat 优化]({% post_url tomcat/2016-10-11-tomcat-optimizing %})
+* [Tomcat 优化]({% post_url framework/tomcat/2016-10-11-tomcat-optimizing %})
 
 ### MyBatis
 * 

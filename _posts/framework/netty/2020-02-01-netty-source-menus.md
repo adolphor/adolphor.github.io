@@ -22,17 +22,17 @@ excerpt:    Netty源码学习汇总目录
 
 ## Netty 核心类库介绍
 
-* [Netty源码 - Netty主要类介绍]({% post_url netty/2020-03-12-netty-main-class %})
+* [Netty源码 - Netty主要类介绍]({% post_url framework/netty/2020-03-12-netty-main-class %})
 
 ## 事件驱动：Reactor模式
 
-* [Netty源码 - 事件驱动]({% post_url netty/2020-02-01-netty-event-driven %})
-* [Netty4之Future/Promise异步模型]({% post_url netty/2018-04-02-Future-and-Promise-of-Netty4 %})
+* [Netty源码 - 事件驱动]({% post_url framework/netty/2020-02-01-netty-event-driven %})
+* [Netty4之Future/Promise异步模型]({% post_url framework/netty/2018-04-02-Future-and-Promise-of-Netty4 %})
 * [Netty之Reactor模式](https://zhuanlan.zhihu.com/p/33272452)
 
 ## ByteBuf详解
 
-* [ByteBuf of Netty]({% post_url netty/2019-02-10-bytebuf-of-netty %})
+* [ByteBuf of Netty]({% post_url framework/netty/2019-02-10-bytebuf-of-netty %})
 
 ## Netty中的设计模式
 
