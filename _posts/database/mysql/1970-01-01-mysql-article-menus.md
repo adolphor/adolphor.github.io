@@ -34,6 +34,18 @@ keywords:   [database,MySQL]
 
 ## 参考资料
 
+* [高性能MySQL](https://book.douban.com/subject/23008813/)
 * [官方-MySQL 8.0 Reference Manual](https://dev.mysql.com/doc/refman/8.0/en/)
 * [极客课程-MySQL实战45讲](http://gk.link/a/10rxk)
 * 【TODO】[mysql面试题](https://zhuanlan.zhihu.com/p/116866170)
+
+## 模板参数
+
+```java
+private static String postTitle = "MySQL - 逻辑架构";
+private static String urlTitle = "mysql-logical-architecture";
+private static String categories = "[database]";
+private static String tags = "[database,MySQL]";
+private static String folder = "database/mysql";
+private static Configuration cfg;
+```

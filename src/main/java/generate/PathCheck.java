@@ -54,27 +54,35 @@ public class PathCheck {
           try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             StringBuffer buf = new StringBuffer();
             String line;
+            boolean isFirst = true;
             while ((line = br.readLine()) != null) {
-              int index = line.indexOf(preFlag);
-              if (index > 0) {
+              if (line.startsWith("geneMenu:") || line.startsWith("excerpt:")) {
+                continue;
+              } else if (line.startsWith("tags:")) {
+                if (line.contains("tags:    ")) {
+                  line = line.replace("tags:    ", "keywords:");
+                  buf.append(line);
+                } else {
+                  line = line.replace("tags:", "keywords:");
+                  buf.append(line);
+                }
+              } else if (line.indexOf(preFlag) > 0) {
                 System.out.println(line);
-                int preIndex = index + preFlag.length();
+                int preIndex = line.indexOf(preFlag) + preFlag.length();
                 String preUrl = line.substring(0, preIndex);
                 int endIndex = line.indexOf(endFlag);
                 String endUrl = line.substring(endIndex);
                 String oldPathFile = line.substring(preIndex, endIndex);
                 String[] split = oldPathFile.split("/");
-                String fileName = split[split.length-1];
+                String fileName = split[split.length - 1];
                 String newUrl = preUrl + map.get(fileName) + endUrl;
-                System.out.println(newUrl);
-                System.out.println("===================================================");
                 buf.append(newUrl);
               } else {
                 buf.append(line);
               }
               buf.append(System.getProperty("line.separator"));
             }
-            writeUrl(file,buf);
+            writeUrl(file, buf);
           } catch (FileNotFoundException e) {
             e.printStackTrace();
           } catch (IOException e) {
@@ -87,8 +95,8 @@ public class PathCheck {
     }
   }
 
-  private static void writeUrl(File file, StringBuffer sb){
-    try(BufferedWriter bfw = new BufferedWriter(new FileWriter(file))) {
+  private static void writeUrl(File file, StringBuffer sb) {
+    try (BufferedWriter bfw = new BufferedWriter(new FileWriter(file))) {
       bfw.write(sb.toString());
       bfw.flush();
     } catch (IOException e) {

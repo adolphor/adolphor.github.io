@@ -228,3 +228,4 @@ http://blog.csdn.net/u010723709/article/details/48007881
 
 # 参考
 * [Java并发编程那些事儿](https://hellofrank.github.io/2020/06/22/Java并发编程那些事儿-一-——任务与线程/)
+* [ava 线程池配置的常见误区](https://mp.weixin.qq.com/s/o1hPkM8TMP4k5Mw2mCOEWw)
