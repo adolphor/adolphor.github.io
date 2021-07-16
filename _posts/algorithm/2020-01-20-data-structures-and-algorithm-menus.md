@@ -54,7 +54,8 @@ keywords:   [数据结构和算法]
 
 ### 树
 * [B树]({% post_url algorithm/classic/2021-07-13-01-binary-tree %})
-
+* [B+树]({% post_url algorithm/classic/2021-07-16-01-b+tree %})
+* [红黑树]({% post_url algorithm/classic/2021-07-16-02-red-black-tree %})
 
 ## 关系图
 
