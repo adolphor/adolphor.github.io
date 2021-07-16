@@ -4,10 +4,10 @@
 baseurl:
 url: https://adolphor.com
 date_format: "ordinal"
-title: Bob.Zhu
+title: Bob的城堡
 subtitle: "Keep going"
 description: "Bob.Zhu的个人博客"
-keywords: adolphor, Bob.Zhu,
+keywords: adolphor, Bob.Zhu, Bob, 鲍勃, Bob的城堡
 timezone: Asia/Shanghai
 encoding: "utf-8"
 side_bar_repo_limit: 5
@@ -36,10 +36,9 @@ components:
     word_count:
         enabled: true
     # 页面右上角，以及「关于」页面的二维码
-    # 修改图片请替换 assets/images/qrcode.jpg
     qrcode:
         enabled: true
-        image_alt: 闷骚的程序员
+        image_alt: Bob.Zhu
 # 压缩页面内容
 compress_html:
   clippings: all
@@ -116,20 +115,20 @@ comments_provider: gitalk
 # !!!Important!!! Please modify infos below to yours
 # https://disqus.com
 disqus:
-    username: 
+    username: adolphor
 # https://imsun.net/posts/gitment-introduction/
 gitment:
-    owner: mzlogin
+    owner: adolphor
     repo: blog-comments
     oauth:
-        client_id: d2e1cbbd298958076462
-        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+        client_id: 5bdf261e281899c3ee94
+        client_secret: ebc1f74837304e62affab51d3c56e160429a4db5
 # https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: mzlogin
+    owner: adolphor
     repo: blog-comments
-    clientID: d2e1cbbd298958076462
-    clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+    clientID: 5bdf261e281899c3ee94
+    clientSecret: ebc1f74837304e62affab51d3c56e160429a4db5
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
@@ -148,7 +147,7 @@ simple_jekyll_search:
 google:
     analytics_id: UA-80669434-1
     adsense:
-        footer: true
-        sidebar: true 
-        content_header: true
+        footer: false
+        sidebar: false
+        content_header: false
         content_footer: false
