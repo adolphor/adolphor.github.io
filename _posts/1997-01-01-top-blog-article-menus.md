@@ -12,32 +12,32 @@ topmost:    true
 [数据结构和算法 汇总目录]({% post_url /algorithm/2020-01-20-data-structures-and-algorithm-menus %})
 
 ### 时间复杂度
-  * [时间复杂度]({% post_url algorithm/classic/2021-03-30-01-time-complexity %})
+* [时间复杂度]({% post_url algorithm/classic/2021-03-30-01-time-complexity %})
 ### [数组 Array]({% post_url algorithm/classic/2021-03-30-02-array %})
-  * [无序数组]({% post_url algorithm/classic/2021-03-30-02-array %}#无序数组)
-  * [有序数组]({% post_url algorithm/classic/2021-03-30-02-array %}#有序数组)
+* [无序数组]({% post_url algorithm/classic/2021-03-30-02-array %}#无序数组)
+* [有序数组]({% post_url algorithm/classic/2021-03-30-02-array %}#有序数组)
 ### [简单排序]({% post_url algorithm/classic/2021-03-31-simple-sorting %})
-  * [冒泡排序]({% post_url algorithm/classic/2021-03-31-simple-sorting %}#冒泡排序)
-  * [选择排序]({% post_url algorithm/classic/2021-03-31-simple-sorting %}#选择排序)
-  * [插入排序]({% post_url algorithm/classic/2021-03-31-simple-sorting %}#插入排序)
+* [冒泡排序]({% post_url algorithm/classic/2021-03-31-simple-sorting %}#冒泡排序)
+* [选择排序]({% post_url algorithm/classic/2021-03-31-simple-sorting %}#选择排序)
+* [插入排序]({% post_url algorithm/classic/2021-03-31-simple-sorting %}#插入排序)
 ### 栈和队列
-  * [栈]({% post_url algorithm/classic/2021-04-07-stack %})
-  * [队列]({% post_url algorithm/classic/2021-04-10-queue %})
-  * [中缀、后缀 表达式及计算]({% post_url algorithm/classic/2021-04-13-infix-postfix-expression %})
+* [栈]({% post_url algorithm/classic/2021-04-07-stack %})
+* [队列]({% post_url algorithm/classic/2021-04-10-queue %})
+* [中缀、后缀 表达式及计算]({% post_url algorithm/classic/2021-04-13-infix-postfix-expression %})
 ### [链表]({% post_url algorithm/classic/2021-04-14-01-link %})
-  * [单链表]({% post_url algorithm/classic/2021-04-14-02-single-ended-list %})
-  * [双端链表]({% post_url algorithm/classic/2021-04-14-03-double-ended-list %})
-  * [使用链表实现栈和队列]({% post_url algorithm/classic/2021-04-14-04-stack-queue-by-link %})
-  * [有序链表]({% post_url algorithm/classic/2021-04-15-01-sorted-link %})
-  * [双向链表]({% post_url algorithm/classic/2021-04-15-02-doubly-link %})
-  * [迭代器]({% post_url algorithm/classic/2021-04-15-03-link-iterator %})
+* [单链表]({% post_url algorithm/classic/2021-04-14-02-single-ended-list %})
+* [双端链表]({% post_url algorithm/classic/2021-04-14-03-double-ended-list %})
+* [使用链表实现栈和队列]({% post_url algorithm/classic/2021-04-14-04-stack-queue-by-link %})
+* [有序链表]({% post_url algorithm/classic/2021-04-15-01-sorted-link %})
+* [双向链表]({% post_url algorithm/classic/2021-04-15-02-doubly-link %})
+* [迭代器]({% post_url algorithm/classic/2021-04-15-03-link-iterator %})
 ### 分治算法
-  * [递归]({% post_url algorithm/classic/2021-04-15-04-recursion %})
-  * 归并排序：[参考](https://zhuanlan.zhihu.com/p/95080265)
+* [递归]({% post_url algorithm/classic/2021-04-15-04-recursion %})
+* 归并排序：[参考](https://zhuanlan.zhihu.com/p/95080265)
 ### [高级排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %})
-  * [希尔排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %}#希尔排序)
-  * [快速排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %}#快速排序)
-  * [基数排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %}#基数排序)
+* [希尔排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %}#希尔排序)
+* [快速排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %}#快速排序)
+* [基数排序]({% post_url algorithm/classic/2021-04-23-01-advanced-sorting %}#基数排序)
 ### 二叉树
 
 ## Java
@@ -88,7 +88,7 @@ topmost:    true
 * [Tomcat 优化]({% post_url framework/tomcat/2016-10-11-tomcat-optimizing %})
 
 ### MyBatis
-* 
+*
 
 ### Hadoop & Spark & HBase
 * [Hadoop，Spark，HBase 开发环境配置]({% post_url database/hadoop/2016-10-28-hadoop-spark-hbase-develop-environment %})

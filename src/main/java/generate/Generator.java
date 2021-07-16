@@ -20,25 +20,12 @@ import java.util.Map;
  */
 public class Generator {
 
-//  private static String postTitle = "Java代理 - 反射";
-//  private static String urlTitle = "17-java-proxy-reflection";
-//  private static String categories = "[Java]";
-//  private static String tags = "[Java]";
-//  private static String folder = "java/proxy";
-//  private static Configuration cfg;
-
-//  private static String postTitle = "Java数据结构和算法 - 二叉树";
-//  private static String urlTitle = "01-binary-tree";
-//  private static String categories = "[system]";
-//  private static String tags = "[数据结构和算法]";
-//  private static String folder = "algorithm" + File.separator + "classic";
-//  private static Configuration cfg;
-
-  private static String postTitle = "MySQL - 复制";
-  private static String urlTitle = "02-mysql-replication";
-  private static String categories = "[database]";
-  private static String tags = "[database,MySQL]";
-  private static String folder = "database/mysql";
+  private static String postTitle = "Java数据结构和算法 - B+树";
+  private static String urlTitle = "b+tree";
+  private static String categories = "[algorithm]";
+  private static String tags = "[数据结构和算法]";
+  private static String folder = "algorithm" + File.separator + "classic";
+  private static String number = "01";
   private static Configuration cfg;
 
   public static void main(String[] args) throws IOException, TemplateException {
@@ -46,6 +33,10 @@ public class Generator {
     Map map = new HashMap();
     map.put("postTitle", postTitle);
     map.put("postDate", Utils.getPostDate());
+    map.put("year", Utils.getYear());
+    map.put("month", Utils.getMonth());
+    map.put("date", Utils.getDate());
+    map.put("number", number);
     map.put("postId", Utils.getPostId());
     map.put("categories", categories);
     map.put("tags", tags);
@@ -60,21 +51,29 @@ public class Generator {
       .toString();
     Configuration configuration = getConfiguration(templatePath);
     Template temp = configuration.getTemplate("post.ftl");
+    String dateTitle = Utils.getDateTitle(number, urlTitle);
     String url = System.getProperty("user.dir")
       + File.separator + "_posts"
       + File.separator + folder
-      + File.separator + Utils.getPostTitle(urlTitle) + ".md";
+      + File.separator + dateTitle + ".md";
 
     File file = new File(url);
     createFile(file);
     Writer out = new FileWriter(file);
     temp.process(map, out);
+
+    String postUrl = folder + File.separator + dateTitle;
+    String postLink = "[" + Generator.postTitle + "]({% post_url " + postUrl + " %})";
+    System.out.println(postLink);
+
+    out.write("\n* " + postLink + "\n");
+
     temp.process(map, new OutputStreamWriter(System.out));
     out.flush();
 
     File source = new File(Utils.getSourcePath());
     makeDir(source);
-    File img = new File(Utils.getImgPath());
+    File img = new File(Utils.getImgPath(number));
     makeDir(img);
 
   }

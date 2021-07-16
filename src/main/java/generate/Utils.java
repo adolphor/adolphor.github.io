@@ -14,58 +14,60 @@ public class Utils {
     return sdf.format(date);
   }
 
-  public static String getPostDate() {
+  private static String format(String format) {
     Date date = new Date();
-    String pattern = "YYYY-MM-dd HH:mm:ss";
-    String format = format(date, pattern);
-    return format;
+    return format(date, format);
+  }
+
+  public static String getYear() {
+    return format("YYYY");
+  }
+
+  public static String getMonth() {
+    return format("MM");
+  }
+
+  public static String getDate() {
+    return format("dd");
+  }
+
+  public static String getPostDate() {
+    return format("YYYY-MM-dd HH:mm:ss");
   }
 
   public static String getPostId() {
-    Date date = new Date();
-    String pattern = "YYYY-MM-dd-HH-mm-ss";
-    String format = format(date, pattern);
-    return format;
+    return format("YYYY-MM-dd-HH-mm-ss");
   }
 
-  public static String getPostTitle(String title) {
-    Date date = new Date();
-    String pattern = "YYYY-MM-dd-";
-    String format = format(date, pattern);
-    return format + title;
+  public static String getDateTitle(String number, String title) {
+    return format("YYYY-MM-dd-") + number + "-" + title;
   }
 
   public static String getSourcePath() {
-    Date date = new Date();
-    String YY = format(date, "YYYY");
-    String MM = format(date, "MM");
+    String YY = format("YYYY");
+    String MM = format("MM");
+    String dd = format("dd");
     String src = System.getProperty("user.dir")
-      + File.separator
-      + "src"
-      + File.separator
-      + "main"
-      + File.separator
-      + "java"
-      + File.separator
-      + "y" + YY
-      + File.separator
-      + "m" + MM;
+      + File.separator + "src"
+      + File.separator + "main"
+      + File.separator + "java"
+      + File.separator + "y" + YY
+      + File.separator + "m" + MM
+      + File.separator + "d" + dd;
     return src;
   }
 
-  public static String getImgPath() {
-    Date date = new Date();
-    String YY = format(date, "YYYY");
-    String MM = format(date, "MM");
+  public static String getImgPath(String number) {
+    String YY = format("YYYY");
+    String MM = format("MM");
+    String dd = format("dd");
     String src = System.getProperty("user.dir")
-      + File.separator
-      + "image"
-      + File.separator
-      + "post"
-      + File.separator
-      + YY
-      + File.separator
-      + MM;
+      + File.separator + "image"
+      + File.separator + "post"
+      + File.separator + YY
+      + File.separator + MM
+      + File.separator + dd
+      + File.separator + number;
     return src;
   }
 
