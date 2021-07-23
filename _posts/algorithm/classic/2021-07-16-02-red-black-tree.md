@@ -12,5 +12,5 @@ keywords:   [数据结构和算法]
 
 ## 参考资料
 
-* [test](test.html)
+* [Java数据结构和算法](https://book.douban.com/subject/1144007/)
 * [Java数据结构和算法 - 红黑树]({% post_url algorithm/classic/2021-07-16-02-red-black-tree %})
