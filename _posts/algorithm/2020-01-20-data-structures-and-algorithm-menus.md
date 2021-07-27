@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      算法汇总
+title:      算法目录
 date:       2020-01-20 17:24:57 +0800
 postId:     2020-01-20-17-24-57
 categories: [algorithm]
