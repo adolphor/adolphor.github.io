@@ -8,7 +8,9 @@ keywords:   [数据结构和算法]
 ---
 
 开始写作吧
+```
 ![image-alter]({{ site.baseurl }}/image/post/2021/07/16/02/xxx.jpg)
+```
 
 ## 参考资料
 
