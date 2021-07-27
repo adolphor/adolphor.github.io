@@ -17,9 +17,9 @@ keywords:   [concurrent]
 
 * 考虑伸缩性：可以动态获取系统的核心数来评估创建多少线程
 
-  ```java
-  int numThreads = Runtime.getRuntime().availableProcessors();
-  ```
+```java
+int numThreads = Runtime.getRuntime().availableProcessors();
+```
 
 * 使用线程安全API：使用 Concurrent 相关线程安全类代替非线程安全集合类
 
@@ -125,6 +125,6 @@ keywords:   [concurrent]
 
 ## 参考资料
 
-* [精通Java并发编程（第2版）](https://book.douban.com/subject/30327401/)
+
 
 

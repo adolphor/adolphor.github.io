@@ -9,7 +9,7 @@ topmost:    true
 ---
 
 ## 数据结构和算法
-[数据结构和算法 汇总目录]({% post_url /algorithm/2020-01-20-data-structures-and-algorithm-menus %})
+[数据结构和算法 汇总目录]({% post_url algorithm/2020-01-20-data-structures-and-algorithm-menus %})
 
 ### 时间复杂度
 * [时间复杂度]({% post_url algorithm/classic/2021-03-30-01-time-complexity %})
@@ -57,7 +57,7 @@ topmost:    true
 * [Java基础目录汇总]({% post_url java/1997-01-01-java-basic-menus %})
 
 ### 并发
-* [Java并发包源码学习汇总目录]({% post_url java/concurrent/2020-03-15-java-util-concurrent-menus %})
+* [Java并发目录]({% post_url java/concurrent/2020-03-15-java-concurrent-menus %})
 * [servlet的线程安全问题](https://www.jianshu.com/p/672a8ecada6c)
 * [Frank's Blog](https://hellofrank.github.io/archives/)
 
