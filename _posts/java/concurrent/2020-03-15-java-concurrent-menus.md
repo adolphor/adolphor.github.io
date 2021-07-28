@@ -12,6 +12,11 @@ keywords:   [concurrent]
 
 ## 基本元素
 * [Thread 和 Runnable]({% post_url java/concurrent/2020-03-22-concurrent-thread-runnable %})
+* [synchronized 关键字]({% post_url java/concurrent/content/2021-07-29-01-concurrent-keyword-synchronized %})
+* [volatile 关键字]({% post_url java/concurrent/content/2021-07-29-02-concurrent-keyword-volatile %})
+
+## 锁
+* [锁分类]({% post_url java/concurrent/content/2021-07-29-03-concurrent-lock-type %})
 
 ## 同步机制
 * [同步机制]({% post_url java/concurrent/content/2021-07-27-02-concurrent-synchronization-mechanism %})
