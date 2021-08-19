@@ -12,6 +12,12 @@ keywords:   [Java,concurrent]
 ### synchronized 关键字
 synchronized 关键字允许你在某个代码块或者某个完整的方法中定义一个临界段。
 
+### volatile 关键字
+
+### final 关键字
+
+### static 关键字
+
 ### Lock 接口
 Lock 提供了比 synchronized 关键字更为灵活的同步操作。Lock 接口有多种不同类型: 
 ReentrantLock 用于实现一个可与某种条件相关联的锁; ReentrantRead- WriteLock 将读写操作
@@ -33,3 +39,4 @@ ReentrantLock 用于实现一个可与某种条件相关联的锁; ReentrantRead
 
 * [Java并发 - 同步机制]({% post_url java/concurrent/content/2021-07-27-02-concurrent-synchronization-mechanism %})
 * [7.4' - 精通Java并发编程（第2版）](https://book.douban.com/subject/30327401/)
+* [8.8' - Java多线程编程实战指南-核心篇](https://book.douban.com/subject/27034721/)

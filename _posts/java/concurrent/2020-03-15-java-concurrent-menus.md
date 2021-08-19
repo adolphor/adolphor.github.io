@@ -11,15 +11,16 @@ keywords:   [concurrent]
 * [基本概念]({% post_url java/concurrent/content/2021-07-27-01-concurrent-basic-conception %})
 
 ## 基本元素
-* [Thread 和 Runnable]({% post_url java/concurrent/2020-03-22-concurrent-thread-runnable %})
+* [Thread 和 Runnable]({% post_url java/concurrent/content/2020-03-22-concurrent-thread-runnable %})
 * [synchronized 关键字]({% post_url java/concurrent/content/2021-07-29-01-concurrent-keyword-synchronized %})
 * [volatile 关键字]({% post_url java/concurrent/content/2021-07-29-02-concurrent-keyword-volatile %})
 
-## 锁
-* [锁分类]({% post_url java/concurrent/content/2021-07-29-03-concurrent-lock-type %})
-
 ## 同步机制
 * [同步机制]({% post_url java/concurrent/content/2021-07-27-02-concurrent-synchronization-mechanism %})
+* [CAS与原子变量]({% post_url java/concurrent/content/2021-08-06-01-concurrent-cas-atomic %})
+
+## 锁
+* [锁分类]({% post_url java/concurrent/content/2021-07-29-03-concurrent-lock-type %})
 
 ## 执行器
 * [执行器]({% post_url java/concurrent/content/2021-07-27-03-concurrent-executor %})
@@ -55,6 +56,8 @@ private static String number = "01";
     - [7.4' - 精通Java并发编程（第2版）](https://book.douban.com/subject/30327401/)
     - [9.1' - Concurrent Programming in Java](https://book.douban.com/subject/1440218/)
     - [8.6' - 图解Java多线程设计模式](https://book.douban.com/subject/27116724/)
+    - [7.4' - Java并发编程的艺术](https://book.douban.com/subject/26591326/)
+    - [8.8' - Java多线程编程实战指南-核心篇](https://book.douban.com/subject/27034721/) ：[源码下载](https://github.com/viscent/javamtia)
 
 * 文章
     - [如何学习Java多线程](https://zhuanlan.zhihu.com/p/35382932)
