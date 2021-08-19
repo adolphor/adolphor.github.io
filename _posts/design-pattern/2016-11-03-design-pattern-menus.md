@@ -46,7 +46,7 @@ Prototype：A fully initialized instance to be copied or cloned
 ### 1.6 单例模式（Singleton）
 Singleton：A class of which only a single instance can exist
 
-[设计模式之 - 单例模式]({% post_url design-pattern/2021-08-06-01-java-design-patterns-singleton %})
+[设计模式之 - 单例模式]({% post_url design-pattern/2021-08-06-01-singleton %})
 
 ### 1.7 对象池 ？
 Object Pool：Avoid expensive acquisition and release of resources by recycling objects that are no longer in use
