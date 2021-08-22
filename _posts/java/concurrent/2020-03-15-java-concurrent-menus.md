@@ -18,9 +18,8 @@ keywords:   [concurrent]
 ## 同步机制
 * [同步机制]({% post_url java/concurrent/content/2021-07-27-02-concurrent-synchronization-mechanism %})
 * [CAS与原子变量]({% post_url java/concurrent/content/2021-08-06-01-concurrent-cas-atomic %})
-
-## 锁
 * [锁分类]({% post_url java/concurrent/content/2021-07-29-03-concurrent-lock-type %})
+* [线程安全的设计方式]({% post_url java/concurrent/content/2021-08-23-03-java-concurrent-thread-safe-design %})
 
 ## 线程间协作
 * [wait和notify]({% post_url java/concurrent/content/2021-08-22-03-java-concurrent-wait-notify %})
