@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Java基础知识
+title:      Java基本概念
 date:       2021-07-03 10:51:25 +0800
 postId:     2021-07-03-10-51-26
 categories: [Java]
