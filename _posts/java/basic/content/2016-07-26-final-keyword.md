@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      final关键字解析
+title:      Java基础 - final 关键字
 date:       2016-07-26 12:00:00 +0800
 postId:     2016-07-26-22-00-00
-categories: []
+categories: [Java]
 keywords:   [Java]
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Java基础知识目录
+title:      Java基础 - static 关键字
 date:       2021-08-22 19:09:50 +0800
 postId:     2021-08-22-19-09-50
 categories: [Java]
