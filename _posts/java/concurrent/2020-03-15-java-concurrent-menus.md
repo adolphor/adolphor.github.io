@@ -24,6 +24,8 @@ keywords:   [concurrent]
 
 ## 线程间协作
 * [wait和notify]({% post_url java/concurrent/content/2021-08-22-03-java-concurrent-wait-notify %})
+* [线程中断]({% post_url java/concurrent/content/2021-08-23-01-java-concurrent-interrupt %})
+* [线程停止]({% post_url java/concurrent/content/2021-08-23-02-java-concurrent-thread-stop %})
 
 ## 执行器
 * [执行器]({% post_url java/concurrent/content/2021-07-27-03-concurrent-executor %})
