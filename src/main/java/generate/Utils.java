@@ -1,5 +1,7 @@
 package generate;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -40,7 +42,11 @@ public class Utils {
   }
 
   public static String getDateTitle(String number, String title) {
-    return format("YYYY-MM-dd-") + number + "-" + title;
+    if (StringUtils.isBlank(number)) {
+      return format("YYYY-MM-dd-") + title;
+    } else {
+      return format("YYYY-MM-dd-") + number + "-" + title;
+    }
   }
 
   public static String getSourcePath() {

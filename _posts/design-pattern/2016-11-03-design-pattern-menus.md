@@ -46,7 +46,7 @@ Prototype：A fully initialized instance to be copied or cloned
 ### 1.6 单例模式（Singleton）
 Singleton：A class of which only a single instance can exist
 
-[设计模式之 - 单例模式]({% post_url design-pattern/2021-08-06-01-singleton %})
+[设计模式之 - 单例模式]({% post_url design-pattern/content/2021-08-06-01-singleton %})
 
 ### 1.7 对象池 ？
 Object Pool：Avoid expensive acquisition and release of resources by recycling objects that are no longer in use
@@ -77,7 +77,7 @@ Composite：A tree structure of simple and composite objects
 ### 2.4 装饰模式（Decorator）
 Decorator：Add responsibilities to objects dynamically
 
-* [设计模式之 —— 装饰者模式]({% post_url design-pattern/2017-02-23-java-design-patterns-decorator %})
+* [设计模式之 —— 装饰者模式]({% post_url design-pattern/content/2017-02-23-java-design-patterns-decorator %})
 
 ### 2.5 门面模式（Facade）
 Facade：A single class that represents an entire subsystem
@@ -89,7 +89,7 @@ Flyweight：A fine-grained instance used for efficient sharing
 Private Class Data：Restricts accessor/mutator access
 
 ### 2.8 代理模式（Proxy）
-详见 [代理模式]({% post_url design-pattern/2016-12-15-java-design-patterns-proxy %})。
+详见 [代理模式]({% post_url design-pattern/content/2016-12-15-java-design-patterns-proxy %})。
 
 ## 3. 行为型设计模式
 行为型设计模式 (Behavioral design patterns)，
@@ -120,8 +120,8 @@ Designed to act as a default value of an object
 Observer：A way of notifying change to a number of classes。观察者模式也称为事件驱动模式，比如著名的Netty框架。
 
 详见：
-* [设计模式之 —— 观察者模式]({% post_url design-pattern/2020-01-23-java-design-patterns-Observer %})
-* [设计模式之 —— 观察者模式进阶：监听器模式]({% post_url design-pattern/2020-03-14-java-design-patterns-listener %})
+* [设计模式之 —— 观察者模式]({% post_url design-pattern/content/2020-01-23-java-design-patterns-Observer %})
+* [设计模式之 —— 观察者模式进阶：监听器模式]({% post_url design-pattern/content/2020-03-14-java-design-patterns-listener %})
 
 ### 3.9 状态模式（State）
 State：Alter an object's behavior when its state changes
@@ -129,7 +129,7 @@ State：Alter an object's behavior when its state changes
 ### 3.10 策略模式（Strategy）
 Strategy：Encapsulates an algorithm inside a class
 
-详见 [策略模式]({% post_url design-pattern/2016-12-17-java-design-patterns-strategy %})。
+详见 [策略模式]({% post_url design-pattern/content/2016-12-17-java-design-patterns-strategy %})。
 
 ### 3.11 模板方法模式（Template Method）
 Template method：Defer the exact steps of an algorithm to a subclass

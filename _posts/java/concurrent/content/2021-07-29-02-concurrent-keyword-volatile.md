@@ -93,7 +93,7 @@ volatile只能禁止指令重排，并不能保证多步骤操作的原子性。
 ### 单例模式
 单例模式会使用synchronize关键字保证判断和创建过程中的原子性，但还需要volatile关键字修饰
 单利变量，以保证创建过程中不会发生指令重排导致创建对象却未初始化的情况。具体参考：
-[设计模式之 - 单例模式]({% post_url design-pattern/2021-08-06-01-singleton %})
+[设计模式之 - 单例模式]({% post_url design-pattern/content/2021-08-06-01-singleton %})
 
 ## 参考资料
 
@@ -103,5 +103,5 @@ volatile只能禁止指令重排，并不能保证多步骤操作的原子性。
 * [方程的博客 - volatile为什么能禁止指令重排](https://www.chuckfang.com/2020/07/05/volatile/)
 * [volatile底层原理详解](https://zhuanlan.zhihu.com/p/133851347)
 * [Java 并发编程：volatile的使用及其原理](https://www.cnblogs.com/paddix/p/5428507.html)
-* [设计模式之 - 单例模式]({% post_url design-pattern/2021-08-06-01-singleton %})
+* [设计模式之 - 单例模式]({% post_url design-pattern/content/2021-08-06-01-singleton %})
 

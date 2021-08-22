@@ -20,7 +20,7 @@ keywords:   [设计模式]
 
 ## 观察者模式进阶
 
-在《[设计模式之 —— 观察者模式]({% post_url design-pattern/2020-01-23-java-design-patterns-Observer %})》一文中，如果使用匿名实现类的方式来写观察者模式如下所示：
+在《[设计模式之 —— 观察者模式]({% post_url design-pattern/content/2020-01-23-java-design-patterns-Observer %})》一文中，如果使用匿名实现类的方式来写观察者模式如下所示：
 
 ```java
 public abstract class Subject {

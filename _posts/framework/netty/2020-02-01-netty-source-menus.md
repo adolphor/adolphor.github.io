@@ -11,12 +11,12 @@ keywords:   [Netty]
 
 ### 设计模式
 
-* [设计模式之 —— 观察者模式]({% post_url design-pattern/2020-01-23-java-design-patterns-Observer %})
-* [设计模式之 —— 观察者模式进阶：监听器模式]({% post_url design-pattern/2020-03-14-java-design-patterns-listener %})
+* [设计模式之 —— 观察者模式]({% post_url design-pattern/content/2020-01-23-java-design-patterns-Observer %})
+* [设计模式之 —— 观察者模式进阶：监听器模式]({% post_url design-pattern/content/2020-03-14-java-design-patterns-listener %})
 
 ### 多线程知识
 
-* [Java源码-并发包 ScheduledExecutorService]({% post_url java/concurrent/2020-02-09-java-util-concurrent-ScheduledExecutorService %})
+* [Java源码-并发包 ScheduledExecutorService]({% post_url java/concurrent/content/2020-02-09-java-util-concurrent-ScheduledExecutorService %})
 
 ## Netty 核心类库介绍
 

@@ -108,7 +108,7 @@ topmost:    true
 ## 设计模式 [Design pattern]
 
 * [UML中的类图关系]({% post_url tools/uml/2016-08-01-UML-relationship %})
-* [6大接口设计原则]({% post_url design-pattern/2020-01-21-design-pattern-principle %})
+* [6大接口设计原则]({% post_url design-pattern/content/2020-01-21-design-pattern-principle %})
 * [3大类24种设计模式]({% post_url design-pattern/2016-11-03-design-pattern-menus %})
 
 ## 分布式微服务

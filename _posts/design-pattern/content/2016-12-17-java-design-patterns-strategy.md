@@ -7,7 +7,7 @@ categories: []
 keywords:   [Java]
 ---
 
-在看策略模式之前，可以先看下《[代理模式]({% post_url design-pattern/2016-12-15-java-design-patterns-proxy %})》,
+在看策略模式之前，可以先看下《[代理模式]({% post_url design-pattern/content/2016-12-15-java-design-patterns-proxy %})》,
 
 ## 策略模式
 

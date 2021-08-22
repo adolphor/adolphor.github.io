@@ -20,12 +20,13 @@ import java.util.Map;
  */
 public class Generator {
 
-  private static String postTitle = "Java数据结构和算法 - B+树";
-  private static String urlTitle = "b+tree";
-  private static String categories = "[algorithm]";
-  private static String tags = "[数据结构和算法]";
-  private static String folder = "algorithm" + File.separator + "classic";
+  private static String postTitle = "Java基础知识目录";
+  private static String urlTitle = "static-keyword";
+  private static String categories = "[Java]";
+  private static String tags = "[Java]";
+  private static String folder = "java" + File.separator + "basic" + File.separator + "content";
   private static String number = "01";
+
   private static Configuration cfg;
 
   public static void main(String[] args) throws IOException, TemplateException {
