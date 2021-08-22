@@ -22,6 +22,9 @@ keywords:   [concurrent]
 ## 锁
 * [锁分类]({% post_url java/concurrent/content/2021-07-29-03-concurrent-lock-type %})
 
+## 线程间协作
+* [wait和notify]({% post_url java/concurrent/content/2021-08-22-03-java-concurrent-wait-notify %})
+
 ## 执行器
 * [执行器]({% post_url java/concurrent/content/2021-07-27-03-concurrent-executor %})
 

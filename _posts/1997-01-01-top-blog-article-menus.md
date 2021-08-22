@@ -54,7 +54,7 @@ topmost:    true
 ## Java
 
 ### Java基础
-* [Java基础知识目录]({% post_url java/basic/2016-08-22-java-basic-menus %})
+* [Java基础目录汇总]({% post_url java/basic/2016-08-22-java-basic-menus %})
 
 ### 并发
 * [Java并发目录]({% post_url java/concurrent/2020-03-15-java-concurrent-menus %})
