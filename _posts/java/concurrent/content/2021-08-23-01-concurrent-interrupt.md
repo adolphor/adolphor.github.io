@@ -84,5 +84,5 @@ public final class Tools {
 ```
 
 ## 参考资料
-* [Java并发 - 线程中断]({% post_url java/concurrent/content/2021-08-23-01-java-concurrent-interrupt %})
+* [Java并发 - 线程中断]({% post_url java/concurrent/content/2021-08-23-01-concurrent-interrupt %})
 * [8.8' - Java多线程编程实战指南-核心篇](https://book.douban.com/subject/27034721/)

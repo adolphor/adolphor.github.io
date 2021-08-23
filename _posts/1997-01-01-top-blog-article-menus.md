@@ -51,57 +51,101 @@ topmost:    true
 * [B+树]({% post_url algorithm/classic/2021-07-16-01-b+tree %})
 * [红黑树]({% post_url algorithm/classic/2021-07-16-02-red-black-tree %})
 
-## Java
-
-### Java基础
+## Java基础
 * [Java基础目录汇总]({% post_url java/basic/2016-08-22-java-basic-menus %})
+* [Java基本概念：JVM & JDK & JRE]({% post_url java/basic/content/2021-07-03-00-java-basic-knowledge %})
+* 面向对象
+    - [类]({% post_url java/basic/content/2021-07-03-10-java-basic-class %})
+    - [方法]({% post_url java/basic/content/2021-07-03-11-java-basic-method %})
+* 关键字
+    - [final]({% post_url java/basic/content/2021-08-22-01-static-keyword %})
+    - [static]({% post_url java/basic/content/2021-08-22-01-static-keyword %})
+* JDK 类
+    - [String]({% post_url java/basic/content/2021-07-03-01-java-basic-string %})
+* 集合
+    - [Collection继承图]({% post_url java/collection/2016-08-03-JDK-source-code-Collection %})
+    - [ArrayList]({% post_url java/collection/2016-08-11-JDK-source-code-Collection-List-ArrayList %})
+    - [LinkedList]({% post_url java/collection/2016-08-16-JDK-source-code-Collection-List-LinkedList %})
+* [Annotation 注解]({% post_url java/basic/content/2016-09-27-annotation-tutorial %})
+* [异常体系]({% post_url java/basic/content/2021-07-03-17-java-basic-exception %})
+* lambda
+    - [lambda表达式]({% post_url java/lambda/2016-08-24-Java8-features-lambda-expression %})
+* [Java class 编译版本相关设置和查看]({% post_url java/jvm/content/2016-08-06-java-class-file-version %})
 
-### 并发
+
+## 并发
 * [Java并发目录]({% post_url java/concurrent/2020-03-15-java-concurrent-menus %})
-* [servlet的线程安全问题](https://www.jianshu.com/p/672a8ecada6c)
-* [Frank's Blog](https://hellofrank.github.io/archives/)
+
+### 并发基础知识
+* [基本概念]({% post_url java/concurrent/content/2021-07-27-01-concurrent-basic-conception %})
+* [同步机制]({% post_url java/concurrent/content/2021-07-27-02-concurrent-synchronization-mechanism %})
+    - synchronized 关键字
+    - volatile 关键字
+    - final 关键字
+    - static 关键字
+    - Lock 接口
+    - Semaphore 类
+    - CountDownLatch 类
+    - CyclicBarrier 类
+    - Phaser 类
+
+### 基本元素
+* [Thread 和 Runnable]({% post_url java/concurrent/content/2020-03-22-concurrent-thread-runnable %})
+* [synchronized 关键字]({% post_url java/concurrent/content/2021-07-29-01-concurrent-keyword-synchronized %})
+* [volatile 关键字]({% post_url java/concurrent/content/2021-07-29-02-concurrent-keyword-volatile %})
+
+### 同步机制
+* [Java内存模型]({% post_url java/concurrent/content/2021-08-23-04-concurrent-memory-model %})
+* [CAS与原子变量]({% post_url java/concurrent/content/2021-08-06-01-concurrent-cas-atomic %})
+* [线程安全的设计方式]({% post_url java/concurrent/content/2021-08-23-03-concurrent-thread-safe-design %})
+* [锁类型和演化过程]({% post_url java/concurrent/content/2021-07-29-03-concurrent-lock-type %})
+
+### 线程间协作
+* [wait和notify]({% post_url java/concurrent/content/2021-08-22-03-concurrent-wait-notify %})
+* [线程中断]({% post_url java/concurrent/content/2021-08-23-01-concurrent-interrupt %})
+* [线程停止]({% post_url java/concurrent/content/2021-08-23-02-concurrent-thread-stop %})
+* [执行器]({% post_url java/concurrent/content/2021-07-27-03-concurrent-executor %})
+    - Executor 接口
+    - ExecutorService 接口
+    - Callable 接口
+    - Future 接口
+* [Fork/Join 框架]({% post_url java/concurrent/content/2021-07-27-04-concurrent-fork-join-framework %})
+
+### 并行流
+* [并行流]({% post_url java/concurrent/content/2021-07-27-05-concurrent-stream %})
+
+### 并发数据结构
+* [并发数据结构]({% post_url java/concurrent/content/2021-07-27-06-concurrent-data-structure %})
+
+### 并发设计模式
+* [并发设计模式]({% post_url java/concurrent/content/2021-07-27-07-concurrent-design-patterns %})
 
 ## 数据库 MySQL
 * [MySQL 汇总目录]({% post_url database/mysql/2021-05-19-mysql-article-menus %})
-
-### MySQL 汇总目录
-* [MySQL 汇总目录]({% post_url database/mysql/2021-05-19-mysql-article-menus %})
-### MySQL逻辑架构
 * [MySQL逻辑架构]({% post_url database/mysql/2021-07-13-01-mysql-logical-architecture %})
-### MySQL 锁机制
 * [MySQL 锁机制]({% post_url database/mysql/2021-07-13-02-mysql-lock-system %})
-### MySQL 多版本并发控制 MVVC
 * [MySQL 多版本并发控制 MVVC]({% post_url database/mysql/2021-07-13-03-mysql-mvcc %})
-### MySQL 事务
 * [MySQL 事务]({% post_url database/mysql/2021-05-18-mysql-transaction-isolation %})
-### MySQL 存储引擎
 * [MySQL 存储引擎]({% post_url database/mysql/2021-05-20-mysql-engines %})
-### MySQL 数据类型
 * [MySQL 数据类型]({% post_url database/mysql/2021-07-13-05-mysql-data-type %})
-### MySQL 索引
 * [MySQL 索引]({% post_url database/mysql/2021-05-20-mysql-index %})
-### MySQL 调优
 * [MySQL 调优]({% post_url database/mysql/2021-07-14-01-mysql-performance-optimization %})
-### MySQL 复制
 * [MySQL 复制]({% post_url database/mysql/2021-07-14-02-mysql-replication %})
 
-
-## 框架
-
-### Netty
+## Netty
 * [Netty源码学习]({% post_url framework/netty/2020-02-01-netty-source-menus %})
 
-### Redis
+## Redis
 * [Redis源码安装和多服务配置]({% post_url database/redis/2016-08-23-Redis-multi-install-and-config %})
 * [Redis设计与实现 —— 黄健宏]({% post_url book/2016-08-20-Redis-design-and-implementation %})
 
-### Tomcat
+## Tomcat
 * [Tomcat 优化]({% post_url framework/tomcat/2016-10-11-tomcat-optimizing %})
 
-### MyBatis
+## MyBatis
 *
 
-### Hadoop & Spark & HBase
+## Hadoop & Spark & HBase
 * [Hadoop，Spark，HBase 开发环境配置]({% post_url database/hadoop/2016-10-28-hadoop-spark-hbase-develop-environment %})
 * [Windows 10 x64 下编译 Hadoop 源码]({% post_url database/hadoop/2016-11-01-build-hadoop-on-windows-10 %})
 
@@ -121,7 +165,5 @@ topmost:    true
 * [Effective Java —— Joshua Bloch]({% post_url book/2016-09-20-effective-java-second-edition %})
 * [Redis设计与实现 —— 黄健宏]({% post_url book/2016-08-20-Redis-design-and-implementation %})
 
-## 协同工具
-
-### Git
+## Git
 * [GIT回滚commit/push到指定版本]({% post_url tools/git/2016-11-03-git-commit-push-roll-back %})

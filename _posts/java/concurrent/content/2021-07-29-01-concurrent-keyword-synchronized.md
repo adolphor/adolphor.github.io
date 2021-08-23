@@ -31,3 +31,5 @@ Java SE 1.6 中为了减少获得锁和释放锁带来的性能消耗而引入�
 ## 参考资料
 
 * [Java并发 - synchronized 关键字]({% post_url java/concurrent/content/2021-07-29-01-concurrent-keyword-synchronized %})
+* [8.8' - Java多线程编程实战指南-核心篇](https://book.douban.com/subject/27034721/)
+* [Java并发 - Java内存模型]({% post_url java/concurrent/content/2021-08-23-04-concurrent-memory-model %})

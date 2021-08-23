@@ -104,4 +104,5 @@ volatile只能禁止指令重排，并不能保证多步骤操作的原子性。
 * [volatile底层原理详解](https://zhuanlan.zhihu.com/p/133851347)
 * [Java 并发编程：volatile的使用及其原理](https://www.cnblogs.com/paddix/p/5428507.html)
 * [设计模式之 - 单例模式]({% post_url design-pattern/content/2021-08-06-01-singleton %})
+* [Java并发 - Java内存模型]({% post_url java/concurrent/content/2021-08-23-04-concurrent-memory-model %})
 

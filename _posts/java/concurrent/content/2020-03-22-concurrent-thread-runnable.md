@@ -21,7 +21,6 @@ keywords:   [Java,concurrent]
 ### ThreadFactory 接口
 这是实现 Factory 设计模式的基类，你可以用它来创建定制线程。
 
-
 ## 创建线程
 
 在Java平台中，一个线程就是一一个对象，对象的创建离不开内存空间的分配。创建

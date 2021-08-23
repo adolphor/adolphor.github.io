@@ -9,6 +9,16 @@ keywords:   [concurrent]
 
 ## 并发基础知识
 * [基本概念]({% post_url java/concurrent/content/2021-07-27-01-concurrent-basic-conception %})
+* [同步机制]({% post_url java/concurrent/content/2021-07-27-02-concurrent-synchronization-mechanism %})
+  - synchronized 关键字
+  - volatile 关键字
+  - final 关键字
+  - static 关键字
+  - Lock 接口
+  - Semaphore 类
+  - CountDownLatch 类
+  - CyclicBarrier 类
+  - Phaser 类
 
 ## 基本元素
 * [Thread 和 Runnable]({% post_url java/concurrent/content/2020-03-22-concurrent-thread-runnable %})
@@ -16,20 +26,20 @@ keywords:   [concurrent]
 * [volatile 关键字]({% post_url java/concurrent/content/2021-07-29-02-concurrent-keyword-volatile %})
 
 ## 同步机制
-* [同步机制]({% post_url java/concurrent/content/2021-07-27-02-concurrent-synchronization-mechanism %})
+* [Java内存模型]({% post_url java/concurrent/content/2021-08-23-04-concurrent-memory-model %})
 * [CAS与原子变量]({% post_url java/concurrent/content/2021-08-06-01-concurrent-cas-atomic %})
-* [锁分类]({% post_url java/concurrent/content/2021-07-29-03-concurrent-lock-type %})
-* [线程安全的设计方式]({% post_url java/concurrent/content/2021-08-23-03-java-concurrent-thread-safe-design %})
+* [线程安全的设计方式]({% post_url java/concurrent/content/2021-08-23-03-concurrent-thread-safe-design %})
+* [锁类型和演化过程]({% post_url java/concurrent/content/2021-07-29-03-concurrent-lock-type %})
 
 ## 线程间协作
-* [wait和notify]({% post_url java/concurrent/content/2021-08-22-03-java-concurrent-wait-notify %})
-* [线程中断]({% post_url java/concurrent/content/2021-08-23-01-java-concurrent-interrupt %})
-* [线程停止]({% post_url java/concurrent/content/2021-08-23-02-java-concurrent-thread-stop %})
-
-## 执行器
+* [wait和notify]({% post_url java/concurrent/content/2021-08-22-03-concurrent-wait-notify %})
+* [线程中断]({% post_url java/concurrent/content/2021-08-23-01-concurrent-interrupt %})
+* [线程停止]({% post_url java/concurrent/content/2021-08-23-02-concurrent-thread-stop %})
 * [执行器]({% post_url java/concurrent/content/2021-07-27-03-concurrent-executor %})
-
-## Fork/Join 框架
+  - Executor 接口
+  - ExecutorService 接口
+  - Callable 接口
+  - Future 接口
 * [Fork/Join 框架]({% post_url java/concurrent/content/2021-07-27-04-concurrent-fork-join-framework %})
 
 ## 并行流
@@ -41,20 +51,17 @@ keywords:   [concurrent]
 ## 并发设计模式
 * [并发设计模式]({% post_url java/concurrent/content/2021-07-27-07-concurrent-design-patterns %})
 
-
 ## 模板代码
-
 ```java
 private static String postTitle = "Java并发 - 基本概念";
 private static String urlTitle = "java-concurrent-basic-conception";
 private static String categories = "[concurrent]";
 private static String tags = "[Java,concurrent]";
-private static String folder = "java" + File.separator + "concurrent" + File.separator + "content";
+private static String folder = "concurrent" + File.separator + "content";
 private static String number = "01";
 ```
 
 ## 参考资料
-
 * [Java并发目录]({% post_url java/concurrent/2020-03-15-java-concurrent-menus %})
 * 书籍
     - [7.4' - 精通Java并发编程（第2版）](https://book.douban.com/subject/30327401/)

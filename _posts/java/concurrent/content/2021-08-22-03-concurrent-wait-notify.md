@@ -170,6 +170,6 @@ AlarmAgent.java
 
 
 ## 参考资料
-* [Java并发 - wait和notify]({% post_url java/concurrent/content/2021-08-22-03-java-concurrent-wait-notify %})
+* [Java并发 - wait和notify]({% post_url java/concurrent/content/2021-08-22-03-concurrent-wait-notify %})
 * [8.8' - Java多线程编程实战指南-核心篇](https://book.douban.com/subject/27034721/)
 

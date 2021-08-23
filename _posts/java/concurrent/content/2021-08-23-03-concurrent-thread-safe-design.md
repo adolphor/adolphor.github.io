@@ -73,5 +73,5 @@ ThreadLocal实例来创建并访问其不同的线程特有对象。多个线程
 ![ThreadLocal]({{ site.baseurl }}/image/post/2021/08/23/03/threadlocal.png)
 
 ## 参考资料
-* [Java并发 - 线程安全的设计方式]({% post_url java/concurrent/content/2021-08-23-03-java-concurrent-thread-safe-design %})
+* [Java并发 - 线程安全的设计方式]({% post_url java/concurrent/content/2021-08-23-03-concurrent-thread-safe-design %})
 * [8.8' - Java多线程编程实战指南-核心篇](https://book.douban.com/subject/27034721/)

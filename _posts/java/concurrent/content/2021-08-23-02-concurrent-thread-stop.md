@@ -29,6 +29,6 @@ keywords:   [Java,concurrent]
 
 
 ## 参考资料
-* [Java并发 - 线程停止]({% post_url java/concurrent/content/2021-08-23-02-java-concurrent-thread-stop %})
+* [Java并发 - 线程停止]({% post_url java/concurrent/content/2021-08-23-02-concurrent-thread-stop %})
 * [8.8' - Java多线程编程实战指南-核心篇](https://book.douban.com/subject/27034721/)
 
