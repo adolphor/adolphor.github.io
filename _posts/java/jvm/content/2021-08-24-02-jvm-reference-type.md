@@ -105,12 +105,6 @@ public class SoftReferenceCache<K, V> {
 }
 ```
 
-
-开始写作吧
-```
-![image-alter]({{ site.baseurl }}/image/post/2021/08/24/02/xxx.jpg)
-```
-
 ## 参考资料
 * [JVM - 引用类型]({% post_url java/jvm/content/2021-08-24-02-jvm-reference-type %})
 * [深入理解Java虚拟机（第3版）](https://book.douban.com/subject/34907497/)
