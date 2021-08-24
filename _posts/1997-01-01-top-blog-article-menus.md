@@ -72,6 +72,17 @@ topmost:    true
     - [lambda表达式]({% post_url java/lambda/2016-08-24-Java8-features-lambda-expression %})
 * [Java class 编译版本相关设置和查看]({% post_url java/jvm/content/2016-08-06-java-class-file-version %})
 
+## JVM
+
+### JVM知识梳理
+* [内存区域]({% post_url java/jvm/content/2021-08-23-05-jvm-memory %})
+* [Class对象]({% post_url java/jvm/content/2021-07-29-02-jvm-class-object %})
+* [引用类型]({% post_url java/jvm/content/2021-08-24-02-jvm-reference-type %})
+* [垃圾回收]({% post_url java/jvm/content/2021-08-24-01-jvm-gc %})
+
+
+### JVM工具介绍
+* [jstack工具]({% post_url java/jvm/tools/2021-07-29-01-jvm-jstack %})
 
 ## 并发
 * [Java并发目录]({% post_url java/concurrent/2020-03-15-java-concurrent-menus %})
