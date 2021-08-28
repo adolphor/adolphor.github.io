@@ -3,8 +3,8 @@ layout:     post
 title:      brew 使用相关
 date:       2018-04-29 20:58:37 +0800
 postId:     2018-04-29-20-58-37
-categories: [blog]
-keywords:   [Tools]
+categories: [macOS]
+keywords:   [brew]
 ---
 ## 安装
 

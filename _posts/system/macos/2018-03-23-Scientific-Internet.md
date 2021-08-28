@@ -3,7 +3,7 @@ layout:     post
 title:      Mac科学上网
 date:       2018-03-23 11:37:37 +0800
 postId:     2018-03-23-11-37-37
-categories: []
+categories: [macOS]
 keywords:   [网络]
 ---
 

@@ -3,7 +3,7 @@ layout:     post
 title:      macOS下制作cdr格式的系统镜像
 date:       2017-01-16 20:16:51 +0800
 postId:     2017-01-16-20-16-51
-categories: []
+categories: [macOS]
 keywords:   [macOS]
 ---
 

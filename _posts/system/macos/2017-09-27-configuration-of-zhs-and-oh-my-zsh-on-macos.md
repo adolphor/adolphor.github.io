@@ -3,8 +3,8 @@ layout:     post
 title:      macOS系统下配置使用zsh和oh-my-zsh
 date:       2017-09-27 10:57:44 +0800
 postId:     2017-09-27-10-57-44
-categories: []
-keywords:   [macOS]
+categories: [macOS]
+keywords:   [zsh]
 ---
 
 ## 安装 zsh
