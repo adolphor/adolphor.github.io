@@ -26,4 +26,4 @@ private static String number = "01";
 
 * [test](test.html)
 
-* [系统软件目录汇总]({% post_url system/2021-08-28-01-pc-system-software %})
+* [系统软件目录汇总]({% post_url system/2021-08-28-01-pc-system-software-menus %})

@@ -81,7 +81,15 @@ mvn jdeps:jdeps
 3. post-site
 4. site-deploy    ：发布生成的站点文档
 
+## 推送到仓库
+
+```
+mvn deploy:deploy-file -DgroupId=com.wlwx -DartifactId=wlwx-sms-sdk -Dversion=1.1.0 -Dpackaging=jar -Dfile=/Users/adolphor/Downloads/wlwx-sms-sdk-1.1.0.jar -Durl=http://maven.dev.joyoung.com/repository/maven-releases/ -DrepositoryId=nexus-releases
+mvn install:install-file -DgroupId=com.wlwx -DartifactId=wlwx-sms-sdk -Dversion=1.1.0 -Dpackaging=jar -Dfile=/Users/adolphor/Downloads/wlwx-sms-sdk-1.1.0.jar
+```
+
 ## 参考资料
 
+* [Maven 相关基本操作]({% post_url maven/2018-04-08-maven-foundation-tutorial %})
 * [Maven入门指南⑦：Maven的生命周期和插件](https://www.cnblogs.com/luotaoyeah/p/3819001.html)
-
+* [druid 1.2.6 依赖 openjdk 的问题]({% post_url maven/2021-09-02-01-maven-druid-openjdk %})
