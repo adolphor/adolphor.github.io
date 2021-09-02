@@ -139,7 +139,7 @@ mysql
 
 use mysql
 flush privileges;
-ALTER USER 'root'@'localhost' IDENTIFIED BY ''Adolphor!@#123'';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Adolphor!@#123';
 quit
 ```
 
