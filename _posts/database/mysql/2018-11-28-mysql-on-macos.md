@@ -139,7 +139,7 @@ mysql
 
 use mysql
 flush privileges;
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'Adolphor!@#123';
+ALTER USER 'root'@'%' IDENTIFIED BY 'Adolphor!@#123';
 quit
 ```
 
@@ -156,7 +156,7 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mys
 # 首先命令行登录
 mysql -uroot -p'Adolphor!@#123'
 # 执行赋权语句
-GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' IDENTIFIED BY 'mypassword' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'Adolphor!@#123' WITH GRANT OPTION;
 # 刷新生效
 FLUSH PRIVILEGES;
 # 退出

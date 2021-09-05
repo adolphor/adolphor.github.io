@@ -67,16 +67,11 @@ IdeaProjects
 
 ## 手动安装brew软件
 
-### openJDK
-```
-mkdir -p /usr/local/Cellar/openjdk
-cd /usr/local/Cellar/openjdk
-ln -s /Library/Java/JavaVirtualMachines/jdk-16.0.2.jdk/Contents/Home 16.0.2
-cd /usr/local/opt
-ln -s ../Cellar/openjdk/16.0.2 openjdk
-```
-
 ### openSSL@1.1
+
+> 此方法不是最好的解决办法，虽然这么处理后能够编译安装成功，但是使用的时候依然会报同样的错误
+> 具体信息：https://github.com/openssl/openssl/issues/16407
+
 再macOS 10.13.6 上安装 OpenSSL@1.1报错：
 ```
 In file included from crypto/rand/rand_unix.c:38:
@@ -173,11 +168,13 @@ For pkg-config to find openssl@1.1 you may need to set:
 
 ### 手动软链示意
 ```
-perl ./Configure --prefix=/usr/local/Cellar/openssl@1.1/1.1.1l \
-    --openssldir=/usr/local/etc/openssl@1.1 no-ssl3 no-ssl3-method no-zlib \
-    -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include \
-    darwin64-x86_64-cc enable-ec_nistp_64_gcc_128
+# 下载最新源码，切换到 分支编译安装：
 
+git clone git@github.com:openssl/openssl.git
+cd openssl
+git checkout OpenSSL_1_1_1-stable
+
+perl ./Configure --prefix=/usr/local/Cellar/openssl@1.1/1.1.1l --openssldir=/usr/local/etc/openssl@1.1 no-ssl3 no-ssl3-method no-zlib darwin64-x86_64-cc enable-ec_nistp_64_gcc_128
 make
 make install
 
@@ -185,6 +182,32 @@ cd /usr/local/opt
 ln -s ../Cellar/openssl@1.1/1.1.1l openssl
 ln -s ../Cellar/openssl@1.1/1.1.1l openssl@1.1
 ```
+
+
+### openJDK
+```
+mkdir -p /usr/local/Cellar/openjdk
+cd /usr/local/Cellar/openjdk
+ln -s /Library/Java/JavaVirtualMachines/jdk-16.0.2.jdk/Contents/Home 16.0.2
+cd /usr/local/opt
+ln -s ../Cellar/openjdk/16.0.2 openjdk
+```
+
+### docker启动应用
+
+```
+docker run --name nacos-standalone -e MODE=standalone -p 8848:8848 -d nacos/nacos-server:latest
+
+docker run --name oracle12g -d -p 1521:1521 truevoly/oracle-12c
+#Orale服务器连接参数:   
+hostname: localhost   
+port: 1521   
+sid: xe   
+service name: xe   
+username: system   
+password: oracle   
+```
+
 
 ## 参考资料
 * [macOS 系统软件备份]({% post_url system/macos/2021-08-28-01-macos-system-software-backup %})

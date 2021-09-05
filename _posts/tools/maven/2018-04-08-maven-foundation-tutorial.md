@@ -88,6 +88,25 @@ mvn deploy:deploy-file -DgroupId=com.wlwx -DartifactId=wlwx-sms-sdk -Dversion=1.
 mvn install:install-file -DgroupId=com.wlwx -DartifactId=wlwx-sms-sdk -Dversion=1.1.0 -Dpackaging=jar -Dfile=/Users/adolphor/Downloads/wlwx-sms-sdk-1.1.0.jar
 ```
 
+## 源码安装
+需要在项目自己的pom.xml文件中配置，父类的配置不生效
+```xml
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-source-plugin</artifactId>
+  <executions>
+      <execution>
+          <id>attach-sources</id>
+          <phase>verify</phase>
+          <goals>
+              <goal>jar-no-fork</goal>
+          </goals>
+      </execution>
+  </executions>
+</plugin>
+```
+
+
 ## 参考资料
 
 * [Maven 相关基本操作]({% post_url maven/2018-04-08-maven-foundation-tutorial %})
