@@ -15,22 +15,26 @@ Spring boot 和 Mybatis 搭配使用的范例已经很多了，多数据源的�
 主要是将java代码中的dao/mapper层拆分为多数据源，然后对应的配置文件中mapper目录下的文件拆分为多数据源：
 
 ```
-|- java
-    |- controller
-    |- service
-        |- impl
-    |- dao
-        |- db1
-            |- Db1TestDao.java
-        |- db2
-            |- Db2TestDao.java
-    |- entity
-|- resources
-    |- mapper
-        |- db1
-            |- Db1TestDao.xml
-        |- db2
-            |- Db2TestDao.xml
+├── pom.xml
+└── src
+    └── main
+        ├── java
+        │   └── com.example
+        │      ├── controller
+        │      ├── service
+        │      │   └── impl
+        │      ├── dao
+        │      │   ├── db1
+        │      │   │   └── Db1TestDao.java
+        │      │   └── db2
+        │      │       └── Db2TestDao.java
+        │      └── entity
+        └── resources
+            └── mapper
+                ├── db1
+                │   └── Db1TestDao.xml
+                └── db2
+                    └── Db2TestDao.xml
 ```
 
 ## 配置数据源
