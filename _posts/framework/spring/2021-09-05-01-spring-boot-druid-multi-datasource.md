@@ -12,6 +12,7 @@ Spring boot 和 Mybatis 搭配使用的范例已经很多了，多数据源的�
 
 
 ## 项目结构
+主要是将java代码中的dao/mapper层拆分为多数据源，然后对应的配置文件中mapper目录下的文件拆分为多数据源：
 
 ```
 |- java
@@ -34,7 +35,7 @@ Spring boot 和 Mybatis 搭配使用的范例已经很多了，多数据源的�
 
 ## 配置数据源
 
-因为后面手动配置了多数据源，所以App启动类需要排除 `DataSourceAutoConfiguration` 的自动加载
+因为后面手动配置了多数据源，所以App启动类需要排除 `DataSourceAutoConfiguration.class` 的自动加载
 
 > SpringBootDemoApplication.java
 
@@ -176,12 +177,25 @@ public class Db2Config {
 }
 ```
 
+```yaml
+multi-datasource:
+  db1:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/adolphor?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: root
+    password: Adolphor!@#123
+  db2:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: system
+    password: oracle
+```
+
 ## 扫描配置
 
 1. spring 的扫描策略是只要再App.java目录下标记了 `@Configuration` 的都会自动扫描
-2. 但是配置了多数据源之后，需要排除
-3. 但是 `@Repository` 需要通过 `@MapperScan` 指定扫描路径才会被spring加载
-4. 
+2. 但是配置了多数据源之后，需要排除 `DataSourceAutoConfiguration.class` 的自动加载
+3. 对于 `@Repository` 注解，spring扫描后不会自动加载，需要通过 `@MapperScan` 指定扫描路径才会被加载
 
 ## 参考资料
 * [spring boot 和 mybatis 中配置多数据源]({% post_url framework/spring/2021-09-05-01-spring-boot-druid-multi-datasource %})
