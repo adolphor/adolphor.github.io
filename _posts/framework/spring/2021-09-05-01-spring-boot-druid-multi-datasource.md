@@ -34,6 +34,23 @@ Spring boot 和 Mybatis 搭配使用的范例已经很多了，多数据源的�
 
 ## 配置数据源
 
+因为后面手动配置了多数据源，所以App启动类需要排除 `DataSourceAutoConfiguration` 的自动加载
+
+> SpringBootDemoApplication.java
+
+```java
+@SpringBootApplication(
+    scanBasePackages = {"com.example.**"},
+    exclude = {DataSourceAutoConfiguration.class}
+)
+public class DataScmApplication {
+  public static void main(String[] args) {
+    SpringApplication.run(DataScmApplication.class, args);
+  }
+}
+```
+
+
 > Db1Config.java
 
 ```java
@@ -161,9 +178,10 @@ public class Db2Config {
 
 ## 扫描配置
 
-* spring 的扫描策略是只要再App.java目录下标记了 `@Configuration` 的都会自动扫描
-* 但是 `@Repository` 需要通过 `@MapperScan` 指定扫描路径才会被spring加载
-
+1. spring 的扫描策略是只要再App.java目录下标记了 `@Configuration` 的都会自动扫描
+2. 但是配置了多数据源之后，需要排除
+3. 但是 `@Repository` 需要通过 `@MapperScan` 指定扫描路径才会被spring加载
+4. 
 
 ## 参考资料
 * [spring boot 和 mybatis 中配置多数据源]({% post_url framework/spring/2021-09-05-01-spring-boot-druid-multi-datasource %})
