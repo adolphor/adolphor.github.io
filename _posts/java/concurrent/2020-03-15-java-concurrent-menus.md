@@ -22,6 +22,7 @@ keywords:   [concurrent]
 
 ## 基本元素
 * [Thread 和 Runnable]({% post_url java/concurrent/content/2020-03-22-concurrent-thread-runnable %})
+* [Java并发 - ThreadLocal]({% post_url concurrent/content/2021-09-05-01-java-concurrent-threadLocal %})
 * [synchronized 关键字]({% post_url java/concurrent/content/2021-07-29-01-concurrent-keyword-synchronized %})
 * [volatile 关键字]({% post_url java/concurrent/content/2021-07-29-02-concurrent-keyword-volatile %})
 
@@ -57,7 +58,7 @@ private static String postTitle = "Java并发 - 基本概念";
 private static String urlTitle = "java-concurrent-basic-conception";
 private static String categories = "[concurrent]";
 private static String tags = "[Java,concurrent]";
-private static String folder = "concurrent" + File.separator + "content";
+private static String folder = "java" + File.separator + "concurrent" + File.separator + "content";
 private static String number = "01";
 ```
 
