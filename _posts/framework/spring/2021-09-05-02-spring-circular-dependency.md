@@ -196,3 +196,4 @@ public abstract class AbstractAutowireCapableBeanFactory
 ## 参考资料
 * [Spring 循环依赖解决方案]({% post_url framework/spring/2021-09-05-02-spring-circular-dependency %})
 * [程序员黑哥 —— Spring循环依赖](https://zhuanlan.zhihu.com/p/382066829)
+* [Spring循环依赖三级缓存是否可以去掉第三级缓存](https://segmentfault.com/a/1190000023647227)
