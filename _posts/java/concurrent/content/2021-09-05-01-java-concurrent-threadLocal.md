@@ -179,5 +179,5 @@ private void set(ThreadLocal<?> key, Object value) {
 ![weakreference]({{ site.baseurl }}/image/post/2021/09/05/01/weak-reference.jpg)
 
 ## 参考资料
-* [Java并发 - ThreadLocal]({% post_url concurrent/content/2021-09-05-01-java-concurrent-threadLocal %})
+* [Java并发 - ThreadLocal]({% post_url java/concurrent/content/2021-09-05-01-java-concurrent-threadLocal %})
 * [是Yes呀 —— ThreadLocal 能问的，都写了](https://zhuanlan.zhihu.com/p/404403218)

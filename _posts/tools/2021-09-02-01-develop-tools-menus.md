@@ -8,8 +8,8 @@ keywords:   [Tools]
 ---
 
 ## maven
-* [Maven 相关基本操作]({% post_url maven/2018-04-08-maven-foundation-tutorial %})
-* [druid 1.2.6 依赖 openjdk 的问题]({% post_url maven/2021-09-02-01-maven-druid-openjdk %})
+* [Maven 相关基本操作]({% post_url tools/maven/2018-04-08-maven-foundation-tutorial %})
+* [druid 1.2.6 依赖 openjdk 的问题]({% post_url tools/maven/2021-09-02-01-maven-druid-openjdk %})
 
 
 ## 格式模板

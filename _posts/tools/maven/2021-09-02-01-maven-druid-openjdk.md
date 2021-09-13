@@ -101,4 +101,4 @@ cp --path $(/usr/libexec/java_home -v 1.8)/lib/jconsole.jar lib/openjdk-1.8-jcon
 ```
 
 ## 参考资料
-* [druid 1.2.6 依赖 openjdk 的问题]({% post_url maven/2021-09-02-01-maven-druid-openjdk %})
+* [druid 1.2.6 依赖 openjdk 的问题]({% post_url tools/maven/2021-09-02-01-maven-druid-openjdk %})

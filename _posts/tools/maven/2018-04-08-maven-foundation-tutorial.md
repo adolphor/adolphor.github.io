@@ -109,6 +109,6 @@ mvn install:install-file -DgroupId=com.wlwx -DartifactId=wlwx-sms-sdk -Dversion=
 
 ## 参考资料
 
-* [Maven 相关基本操作]({% post_url maven/2018-04-08-maven-foundation-tutorial %})
+* [Maven 相关基本操作]({% post_url tools/maven/2018-04-08-maven-foundation-tutorial %})
 * [Maven入门指南⑦：Maven的生命周期和插件](https://www.cnblogs.com/luotaoyeah/p/3819001.html)
-* [druid 1.2.6 依赖 openjdk 的问题]({% post_url maven/2021-09-02-01-maven-druid-openjdk %})
+* [druid 1.2.6 依赖 openjdk 的问题]({% post_url tools/maven/2021-09-02-01-maven-druid-openjdk %})
