@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      【Java8源码阅读笔记】Collection框架之Stack
+title:      Collection框架之Stack
 date:       2016-08-18 11:22:53 +0800
 postId:     2016-08-18-11-22-54
 categories: [blog]
 tags:       [Java]
 geneMenu:   true
-excerpt:    【Java8源码阅读笔记】Collection框架之Stack
+excerpt:    Collection框架之Stack
 ---
 
 ## Stack

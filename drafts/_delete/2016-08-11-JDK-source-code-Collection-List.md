@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      【Java8源码阅读笔记】Collection框架之List
+title:      Collection框架之List
 date:       2016-08-11 10:14:15 +0800
 postId:     2016-08-11-10-14-15
 categories: [blog]
 tags:       [Java]
 geneMenu:   true
-excerpt:    【Java8源码阅读笔记】Collection框架之List
+excerpt:    Collection框架之List
 ---
 ## List
 `List`接口是List集合分支的中接口定义，所有的List实现类都直接或间接实现此接口，而此接口继承自`Collection`，

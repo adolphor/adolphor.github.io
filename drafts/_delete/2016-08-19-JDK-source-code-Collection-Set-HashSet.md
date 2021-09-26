@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      【Java8源码阅读笔记】Collection框架之HashSet
+title:      Collection框架之HashSet
 date:       2016-08-19 21:18:41 +0800
 postId:     2016-08-19-21-18-41
 categories: [blog]
 tags:       [Java]
 geneMenu:   true
-excerpt:    【Java8源码阅读笔记】Collection框架之HashSet
+excerpt:    Collection框架之HashSet
 ---
 
 ## HashSet

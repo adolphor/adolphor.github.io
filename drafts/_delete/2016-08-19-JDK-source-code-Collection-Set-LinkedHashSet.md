@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      【Java8源码阅读笔记】Collection框架之LinkedHashSet
+title:      Collection框架之LinkedHashSet
 date:       2016-08-19 23:00:28 +0800
 postId:     2016-08-19-23-00-28
 categories: [blog]
 tags:       [Java]
 geneMenu:   true
-excerpt:    【Java8源码阅读笔记】Collection框架之LinkedHashSet
+excerpt:    Collection框架之LinkedHashSet
 ---
 
 ## LinkedHashSet

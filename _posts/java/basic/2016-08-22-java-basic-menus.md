@@ -17,9 +17,9 @@ keywords:   [Java]
 * JDK 类
   - [String]({% post_url java/basic/content/2021-07-03-01-java-basic-string %})
 * 集合
-  - [Collection继承图]({% post_url java/collection/2016-08-03-JDK-source-code-Collection %})
-  - [ArrayList]({% post_url java/collection/2016-08-11-JDK-source-code-Collection-List-ArrayList %})
-  - [LinkedList]({% post_url java/collection/2016-08-16-JDK-source-code-Collection-List-LinkedList %})
+  - [Collection继承图]({% post_url java/collection/content/2016-08-03-JDK-Collection %})
+  - [ArrayList]({% post_url java/collection/content/2016-08-11-JDK-ArrayList %})
+  - [LinkedList]({% post_url java/collection/content/2016-08-16-JDK-LinkedList %})
 * [Annotation 注解]({% post_url java/basic/content/2016-09-27-annotation-tutorial %})
 * [异常体系]({% post_url java/basic/content/2021-07-03-17-java-basic-exception %})
 * lambda
