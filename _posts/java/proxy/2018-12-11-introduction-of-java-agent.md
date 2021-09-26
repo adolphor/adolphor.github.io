@@ -3,8 +3,8 @@ layout:     post
 title:      初识 java agent
 date:       2018-12-11 22:11:52 +0800
 postId:     2018-12-11-22-11-53
-categories: []
-keywords:   [Java]
+categories: [proxy]
+keywords:   [Java, proxy]
 ---
 
 ## 起由

@@ -46,7 +46,4 @@ spring:
 ```
 
 ## 参考资料
-
-* [test](test.html)
-
 * [Spring boot 脚手架相关]({% post_url framework/spring/2021-09-18-01-spring-boot-base-project %})

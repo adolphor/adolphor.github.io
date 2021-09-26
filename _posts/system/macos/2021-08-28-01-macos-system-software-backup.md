@@ -198,6 +198,21 @@ ln -s ../Cellar/openjdk/16.0.2 openjdk
 ```
 docker run --name nacos-standalone -e MODE=standalone -p 8848:8848 -d nacos/nacos-server:latest
 
+docker run -d \
+-e MODE=standalone \
+-e SPRING_DATASOURCE_PLATFORM=mysql \
+-e MYSQL_SERVICE_HOST=sie-saaf-mysql \
+-e MYSQL_SERVICE_PORT=3313 \
+-e MYSQL_SERVICE_USER=app \
+-e MYSQL_SERVICE_PASSWORD='!Apps@61' \
+-e MYSQL_SERVICE_DB_NAME=nacos \
+-p 8848:8848 \
+--name nacos-sie \
+nacos/nacos-server:latest
+————————————————
+版权声明：本文为CSDN博主「等那时夕颜」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_33562996/article/details/106014197
+
 docker run --name oracle12g -d -p 1521:1521 truevoly/oracle-12c
 #Orale服务器连接参数:   
 hostname: localhost   

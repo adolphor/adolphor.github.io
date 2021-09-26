@@ -3,8 +3,8 @@ layout:     post
 title:      Java代理性能比较
 date:       2016-12-14 14:50:32 +0800
 postId:     2016-12-14-14-50-32
-categories: []
-keywords:   [Java]
+categories: [proxy]
+keywords:   [Java, proxy]
 ---
 
 ## 性能分析
