@@ -295,7 +295,6 @@ public class DynamicProxyPerformanceTest {
       }
       return defineClass(name, code, 0, code.length);
     }
-
   }
 }
 ```
@@ -303,4 +302,5 @@ public class DynamicProxyPerformanceTest {
 ## 参考资料
 
 * [动态代理方案性能对比](http://javatar.iteye.com/blog/814426)
-* TODO [代理模式详解](https://snailclimb.gitee.io/javaguide/#/docs/java/basis/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F%E8%AF%A6%E8%A7%A3)
+* [代理模式详解](https://snailclimb.gitee.io/javaguide/#/docs/java/basis/代理模式详解)
+* [Java动态代理机制详解](https://blog.csdn.net/luanlouis/article/details/24589193)
