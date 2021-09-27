@@ -22,10 +22,11 @@ keywords:   [concurrent]
 
 ## 基本元素
 * [Thread 和 Runnable]({% post_url java/concurrent/content/2020-03-22-concurrent-thread-runnable %})
-* [Java并发 - ThreadLocal]({% post_url java/concurrent/content/2021-09-05-01-java-concurrent-threadLocal %})
+* [ThreadLocal]({% post_url java/concurrent/content/2021-09-05-01-java-concurrent-threadLocal %})
 * [synchronized 关键字]({% post_url java/concurrent/content/2021-07-29-01-concurrent-keyword-synchronized %})
 * [volatile 关键字]({% post_url java/concurrent/content/2021-07-29-02-concurrent-keyword-volatile %})
 * [ReentrantLock]({% post_url java/concurrent/content/2021-09-27-03-java-concurrent-ReentrantLock %})
+* [线程池]({% post_url java/concurrent/content/2021-09-27-04-java-concurrent-ThreadPool %})
 
 ## 同步机制
 * [Java内存模型]({% post_url java/concurrent/content/2021-08-23-04-concurrent-memory-model %})
