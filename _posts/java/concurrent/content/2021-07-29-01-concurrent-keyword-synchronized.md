@@ -136,6 +136,11 @@ ObjectMonitor是它的原理实现。
 ![ObjectMonitor]({{ site.baseurl }}/image/post/2021/07/29/01/ObjectMonitor.awebp)
 
 #### 操作系统的管程
+
+并发编程的两大核心问题：一是互斥，即同一时刻只允许一个线程访问共享资源；二是同步，即线程之间的 "wait-notify" 机制。
+管程能够解决这两大问题。Java SDK 并发包通过 Lock 和 Condition 两个接口来实现管程，其中 Lock 
+用于解决互斥问题，Condition 用于解决同步问题。
+
 * 管程 (英语：Monitors，也称为监视器) 是一种程序结构，结构内的多个子程序（对象或模块）形成的多个工作线程互斥访问共享资源。
 * 这些共享资源一般是硬件设备或一群变量。管程实现了在一个时间点，最多只有一个线程在执行管程的某个子程序。
 * 与那些通过修改数据结构实现互斥访问的并发程序设计相比，管程实现很大程度上简化了程序设计。
@@ -341,3 +346,4 @@ MarkWord复制到锁记录中. 然后线程尝试使用CAS将对象头中的Mark
 * [Java并发 - Java内存模型]({% post_url java/concurrent/content/2021-08-23-04-concurrent-memory-model %})
 * [Synchronized解析——如果你愿意一层一层剥开我的心](https://juejin.cn/post/6844903918653145102#heading-18)
 * [Java6及以上版本对synchronized的优化](https://www.cnblogs.com/wuqinglong/p/9945618.html)
+* [锁原理 - 信号量 vs 管程：JDK 为什么选择管程](https://www.cnblogs.com/binarylei/p/12544002.html)

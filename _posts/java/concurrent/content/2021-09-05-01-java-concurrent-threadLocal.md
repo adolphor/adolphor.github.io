@@ -181,3 +181,4 @@ private void set(ThreadLocal<?> key, Object value) {
 ## 参考资料
 * [Java并发 - ThreadLocal]({% post_url java/concurrent/content/2021-09-05-01-java-concurrent-threadLocal %})
 * [是Yes呀 —— ThreadLocal 能问的，都写了](https://zhuanlan.zhihu.com/p/404403218)
+* [万字详解ThreadLocal关键字](https://snailclimb.gitee.io/javaguide/#/docs/java/multi-thread/万字详解ThreadLocal关键字)
