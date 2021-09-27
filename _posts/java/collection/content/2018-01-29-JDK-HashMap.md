@@ -25,4 +25,4 @@ Map 接口中有一个内部接口 Entry，在AbstractMap中有两个内部实�
 ## 参考资料
 
 * [Java 8系列之重新认识HashMap](https://tech.meituan.com/java-hashmap.html)
-* [HashMap(JDK1.8)源码+底层数据结构分析](https://snailclimb.gitee.io/javaguide/#/docs/java/collection/HashMap(JDK1.8)源码+底层数据结构分析)
+* [](https://snailclimb.gitee.io/javaguide/#/docs/java/collection/HashMap(JDK1.8)源码+底层数据结构分析)
