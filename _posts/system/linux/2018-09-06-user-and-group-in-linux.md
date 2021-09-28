@@ -3,7 +3,7 @@ layout:     post
 title:      Linux 用户和组管理
 date:       2018-09-06 09:31:07 +0800
 postId:     2018-09-06-09-31-08
-categories: []
+categories: [Linux]
 keywords:   [Linux]
 ---
 
@@ -12,7 +12,7 @@ keywords:   [Linux]
 ### 用户的新增
 
 使用范例：
-```bash
+```shell
 # 创建新用户：-m 创建home目录；-U 创建同名用户组；-s 指定shell类型不然登录之后无法使用命令行
 useradd -m -U -s /bin/bash my_java
 # 修改密码 haizhu@1314.aly.java
@@ -23,7 +23,7 @@ usermod -aG sudo,adm my_java
 useradd -m -U -aG sudo,adm -s /bin/bash -p password my_java
 ```
 
-```bash
+```shell
 useradd --help
 ```
 ```
@@ -64,7 +64,7 @@ Options:
       --extrausers              Use the extra users database
 ```
 
-```bash
+```shell
 sudo useradd [options] <username>
 # 创建一个用户名为olivia的用户，但此用户没有自己的home目录，且不能登录：
 sudo useradd olivia
@@ -76,7 +76,7 @@ sudo passwd olivia
 
 ### 用户的修改
 
-```bash
+```shell
 usermod --help
 ```
 ```
@@ -114,11 +114,11 @@ Options:
 ### 用户的删除
 
 使用范例：
-```bash
+```shell
 userdel -r username
 ```
 
-```bash
+```shell
 userdel --help
 ```
 ```
@@ -136,7 +136,7 @@ Options:
 
 ### 用户切换
 
-```bash
+```shell
 # 普通用户切到root用户
 su -
 # root用户切到普通用户
@@ -146,7 +146,7 @@ su - username
 
 ### 查看所有用户
 
-```bash
+```shell
 # 可以查看所有用户的列表，但不够直观
 cat /etc/passwd 
 # 改进之后的查看命令
@@ -161,7 +161,7 @@ cat /etc/passwd|grep -v nologin|grep -v halt|grep -v shutdown|awk -F":" '{ print
 
 ### 用户组下的用户管理
 
-```bash
+```shell
 # 查看当前登录用户的组内成员
 groups
 # 查看root用户所在的组，以及组内成员

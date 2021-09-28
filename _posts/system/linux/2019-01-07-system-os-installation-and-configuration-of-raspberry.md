@@ -3,7 +3,7 @@ layout:     post
 title:      树莓派系统安装和配置
 date:       2019-01-07 22:04:49 +0800
 postId:     2019-01-07-22-04-49
-categories: []
+categories: [Linux]
 keywords:   [其他]
 ---
 
@@ -123,7 +123,7 @@ sudo passwd pi
 
 ## 开机后运行脚本
 
-```bash
+```shell
 # 编辑 rc.local 文件
 sudo vim /etc/rc.local
 # 增加如下配置

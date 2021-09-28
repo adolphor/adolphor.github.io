@@ -12,7 +12,7 @@ keywords:   [brew]
 
 ## 一般应用
 
-```bash
+```shell
 # 检查过时应用
 brew outdated
 # 升级
@@ -23,7 +23,7 @@ brew cleanup --prune=10
 
 ## 可视化应用
 
-```bash
+```shell
 # 首先确保本命令执行过
 brew tap buo/cask-upgrade
 # 检查过时

@@ -7,10 +7,8 @@ categories: [system]
 keywords:   [system]
 ---
 
-开始写作吧
-```
-![image-alter]({{ site.baseurl }}/image/post/2021/08/28/01/xxx.jpg)
-```
+## Linux
+* [Linux 排查进程和线程]({% post_url system/linux/2021-09-28-01-linux-progress-thread %})
 
 ## 格式模板
 ```java
