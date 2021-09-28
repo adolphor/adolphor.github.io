@@ -3,7 +3,7 @@ layout:     post
 title:      MySQL 备忘录
 date:       2021-05-14 09:52:17 +0800
 postId:     2021-05-14-09-52-17
-categories: [database]
+categories: [MySQL]
 keywords:   [database,MySQL]
 ---
 

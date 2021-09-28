@@ -3,7 +3,7 @@ layout:     post
 title:      MySQL - 数据类型
 date:       2021-07-13 23:12:35 +0800
 postId:     2021-07-13-23-12-35
-categories: [database]
+categories: [MySQL]
 keywords:   [database,MySQL]
 ---
 

@@ -3,8 +3,8 @@ layout:     post
 title:      Redis缓存集群解决方案：Redis cluster 安装
 date:       2017-03-21 14:57:27 +0800
 postId:     2017-03-21-14-57-27
-categories: []
-keywords:   [Redis]
+categories: [Redis]
+keywords:   [database, Redis]
 ---
 
 ## Redis集群解决方案

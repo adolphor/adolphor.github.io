@@ -3,7 +3,7 @@ layout:     post
 title:      MySQL - 优化策略
 date:       2021-07-14 00:13:06 +0800
 postId:     2021-07-14-00-13-06
-categories: [database]
+categories: [MySQL]
 keywords:   [database,MySQL]
 ---
 

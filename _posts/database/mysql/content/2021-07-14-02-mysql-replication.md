@@ -3,8 +3,8 @@ layout:     post
 title:      MySQL - 复制
 date:       2021-07-14 00:24:57 +0800
 postId:     2021-07-14-00-24-57
-categories: [database]
-
+categories: [MySQL]
+keywords:   [database,MySQL]
 ---
 
 ## MySQL 主从复制的作用

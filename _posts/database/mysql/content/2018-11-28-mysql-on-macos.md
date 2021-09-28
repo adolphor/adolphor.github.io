@@ -3,7 +3,7 @@ layout:     post
 title:      macOS上使用MySQL的那些事
 date:       2018-11-28 19:45:19 +0800
 postId:     2018-11-28-19-45-19
-categories: []
+categories: [MySQL]
 keywords:   [database,MySQL]
 ---
 

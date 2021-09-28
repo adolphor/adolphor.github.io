@@ -3,7 +3,7 @@ layout:     post
 title:      MySQL分组排序
 date:       2020-09-22 17:36:48 +0800
 postId:     2020-09-22-17-36-48
-categories: [database]
+categories: [MySQL]
 keywords:   [database,MySQL]
 ---
 

@@ -3,7 +3,7 @@ layout:     post
 title:      MySQL - 锁机制
 date:       2021-07-13 22:14:14 +0800
 postId:     2021-07-13-22-14-14
-categories: [database]
+categories: [MySQL]
 keywords:   [database,MySQL]
 ---
 

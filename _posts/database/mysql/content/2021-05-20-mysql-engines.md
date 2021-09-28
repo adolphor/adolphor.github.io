@@ -3,7 +3,7 @@ layout:     post
 title:      MySQL 存储引擎
 date:       2021-05-20 14:03:36 +0800
 postId:     2021-05-20-14-03-37
-categories: [database]
+categories: [MySQL]
 keywords:   [database,MySQL]
 ---
 

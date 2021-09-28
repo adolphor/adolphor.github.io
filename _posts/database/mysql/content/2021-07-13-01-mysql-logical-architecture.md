@@ -3,7 +3,7 @@ layout:     post
 title:      MySQL - 逻辑架构
 date:       2021-07-13 21:54:54 +0800
 postId:     2021-07-13-21-54-54
-categories: [database]
+categories: [MySQL]
 keywords:   [database,MySQL]
 ---
 

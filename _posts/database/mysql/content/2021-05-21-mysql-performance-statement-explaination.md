@@ -3,7 +3,7 @@ layout:     post
 title:      MySQL 性能调优 - SQL语句解析
 date:       2021-05-21 10:28:35 +0800
 postId:     2021-05-21-10-28-35
-categories: [database]
+categories: [MySQL]
 keywords:   [database,MySQL]
 ---
 

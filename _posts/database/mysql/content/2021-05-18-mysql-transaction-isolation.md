@@ -3,7 +3,7 @@ layout:     post
 title:      MySQL 事务隔离
 date:       2021-05-18 14:58:45 +0800
 postId:     2021-05-18-14-58-45
-categories: [database]
+categories: [MySQL]
 keywords:   [database,MySQL]
 ---
 

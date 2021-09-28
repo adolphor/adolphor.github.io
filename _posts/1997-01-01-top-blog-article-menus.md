@@ -133,21 +133,21 @@ topmost:    true
 
 ## 数据库 MySQL
 * [MySQL 汇总目录]({% post_url database/mysql/2021-05-19-mysql-article-menus %})
-* [MySQL逻辑架构]({% post_url database/mysql/2021-07-13-01-mysql-logical-architecture %})
-* [MySQL 锁机制]({% post_url database/mysql/2021-07-13-02-mysql-lock-system %})
-* [MySQL 多版本并发控制 MVVC]({% post_url database/mysql/2021-07-13-03-mysql-mvcc %})
-* [MySQL 事务]({% post_url database/mysql/2021-05-18-mysql-transaction-isolation %})
-* [MySQL 存储引擎]({% post_url database/mysql/2021-05-20-mysql-engines %})
-* [MySQL 数据类型]({% post_url database/mysql/2021-07-13-05-mysql-data-type %})
-* [MySQL 索引]({% post_url database/mysql/2021-05-20-mysql-index %})
-* [MySQL 调优]({% post_url database/mysql/2021-07-14-01-mysql-performance-optimization %})
-* [MySQL 复制]({% post_url database/mysql/2021-07-14-02-mysql-replication %})
+* [MySQL逻辑架构]({% post_url database/mysql/content/2021-07-13-01-mysql-logical-architecture %})
+* [MySQL 锁机制]({% post_url database/mysql/content/2021-07-13-02-mysql-lock-system %})
+* [MySQL 多版本并发控制 MVVC]({% post_url database/mysql/content/2021-07-13-03-mysql-mvcc %})
+* [MySQL 事务]({% post_url database/mysql/content/2021-05-18-mysql-transaction-isolation %})
+* [MySQL 存储引擎]({% post_url database/mysql/content/2021-05-20-mysql-engines %})
+* [MySQL 数据类型]({% post_url database/mysql/content/2021-07-13-05-mysql-data-type %})
+* [MySQL 索引]({% post_url database/mysql/content/2021-05-20-mysql-index %})
+* [MySQL 调优]({% post_url database/mysql/content/2021-07-14-01-mysql-performance-optimization %})
+* [MySQL 复制]({% post_url database/mysql/content/2021-07-14-02-mysql-replication %})
 
 ## Netty
 * [Netty源码学习]({% post_url framework/netty/2020-02-01-netty-source-menus %})
 
 ## Redis
-* [Redis源码安装和多服务配置]({% post_url database/redis/2016-08-23-Redis-multi-install-and-config %})
+* [Redis源码安装和多服务配置]({% post_url database/redis/content/2016-08-23-Redis-multi-install-and-config %})
 * [Redis设计与实现 —— 黄健宏]({% post_url book/2016-08-20-Redis-design-and-implementation %})
 
 ## Tomcat
