@@ -38,19 +38,132 @@ boolean tryLock(long time, TimeUnit unit) throws InterruptedException;
 boolean tryLock();
 ```
 
-## AQS 原理概览
-AQS 核心思想是，如果被请求的共享资源空闲，则将当前请求资源的线程设置为有效的工作线程，
-并且将共享资源设置为锁定状态。如果被请求的共享资源被占用，那么就需要一套线程阻塞等待以及被唤醒时锁分配的机制，
-这个机制 AQS 是用 CLH 队列锁实现的，即将暂时获取不到锁的线程加入到队列中。
+## AQS基础之 CLH锁
+CLH锁也是一种基于链表的可扩展、高性能、公平（提供先来先服务）的自旋锁，申请线程只在本地变量上自旋，
+它不断轮询前驱的状态，如果发现前驱释放了锁就结束自旋。由于是 Craig、Landin 和 Hagersten
+三位大佬的发明，因此命名为CLH锁。
 
-> CLH(Craig,Landin,and Hagersten)队列是一个虚拟的双向队列（虚拟的双向队列即不存在队列实例，
-> 仅存在结点之间的关联关系）。AQS 是将每条请求共享资源的线程封装成一个 CLH 锁队列的一个结点（Node）
-> 来实现锁的分配。
+### 数据结构
+* **locked**：volatile 修饰的boolean变量保证此变量对不同的线程可见，表示加锁状态
+  - true：代表持有锁成功或正在等待加锁
+  - false：表示锁被释放
+* **tailNode**：尾节点
+* **currentThreadNode**：当前节点
+
+```java
+public class CLHLock {
+
+  private AtomicReference<CLHLock> tailNode = new AtomicReference<>();
+  private ThreadLocal<CLHLock> currentThreadNode = new ThreadLocal<>();
+
+  static final class CLHNode {
+    private volatile boolean locked = true;
+
+    public boolean isLocked() {
+      return locked;
+    }
+
+    public void setLocked(boolean locked) {
+      this.locked = locked;
+    }
+  }
+}
+```
+
+### 核心思想
+获取尾节点，如果尾节点是null，则表示当前线程是第一个过来抢锁的，可以直接加锁成功；
+如果不为空，则将当前节点设置为尾节点，并对当前节点的前驱结点的locked进行自旋，
+如果发现其前驱结点的locked字段变为了false，则给当前节点加锁成功。
+
+#### 加锁过程
+获取尾节点，如果尾节点是null，则表示当前线程是第一个过来抢锁的，可以直接加锁成功；
+如果不为空，则将当前节点设置为尾节点，并对当前节点的前驱结点的locked进行自旋，
+如果发现其前驱结点的locked字段变为了false，则给当前节点加锁成功。
+
+```java
+public class CLHLock {
+  public void lock() {
+    // 首先对当前节点进行初始化
+    CLHNode currentNode = currentThreadNode.get();
+    if (currentNode == null) {
+      currentNode = new CLHNode();
+      // 设置状态，标识当前节点正在加锁
+      currentNode.setLocked(true);
+      currentThreadNode.set(currentNode);
+    }
+
+    // 先判断当前尾节点，是否有其他线程节点
+    CLHNode preNode = tailNode.getAndSet(currentNode);
+    // 如果没有尾节点，则当前节点之前不存在其他线程竞争锁，直接加锁成功
+    if (preNode==null){
+      return;
+    }
+    // 如果有尾节点，则说明前驱节点不为空，需要自选等待前驱节点的线程释放锁以后，再进行加锁
+    while (preNode.isLocked()){
+    }
+  }
+}
+```
+
+#### 释放锁过程
+释放锁的过程主要是将当前节点locked标志位置为false的过程。也分情况，
+如果当前释放锁的线程节点是尾节点，则说明没有其他线程在等待队列中，
+直接将尾节点设置为null即可，否则需要将当前节点的locked标志位设置为false，
+来通知等待队列中线程锁已被释放。
+
+```java
+public class CLHLock {
+  public void unlock() {
+    // 获取当前线程节点
+    CLHNode currentNode = currentThreadNode.get();
+    if (currentNode == null || currentNode.isLocked() == false) {
+      // 当前线程没有锁，所以不用释放直接返回，也可以抛出异常
+      return;
+    }
+    // CAS 尝试将尾节点设置为null
+    if (tailNode.compareAndSet(currentNode, null)) {
+      // 成功，说明当前线程节点是尾节点，阻塞队列中没有其他线程在竞争锁，将尾节点设置为null，即可释放锁
+    } else {
+      // 失败，说明当前线程节点不是尾节点，有其他线程正在自旋当前线程的locked变量
+      currentNode.setLocked(false);
+    }
+  }
+}
+```
+
+## AQS 原理概览
+
+### 双向队列节点
+对应实现为 **`java.util.concurrent.locks.AbstractQueuedSynchronizer.Node`**
+
+* **共享 OR 独占**
+  - **Exclusive（独占）**：只有一个线程能执行，如 ReentrantLock。又可分为公平锁和非公平锁：
+    * **公平锁**：按照线程在队列中的排队顺序，先到者先拿到锁
+    * **非公平锁**：当线程要获取锁时，无视队列顺序直接去抢锁，谁抢到就是谁的
+  - **Share（共享）**：多个线程可同时执行，如 CountDownLatch、Semaphore、 CyclicBarrier、ReadWriteLock
+* **等待状态**
+  - Canceled = 1：代表此节点因超时或者中断取消了争夺锁
+  - Signal = -1：代表本节点释放锁或者放弃争夺锁时，需要唤醒当前线程节点的后继节点
+  - Condition = -2：代表当前节点正等待一个condition
+  - propagate = -3：释放共享锁需要传播到其他节点
+* **双向队列组成**
+  - Node prev：当前节点的前驱结点
+  - Node next：当前节点的后继节点
+* **其他**
+  - volatile Thread thread：当前节点的线程
+  - Node nextWaiter：下一个等待condition的node
 
 ![AQS原理图]({{ site.baseurl }}/image/post/2021/09/27/06/AQS原理图.png)
 
 AQS 使用一个 int 成员变量来表示同步状态，通过内置的 FIFO 队列来完成获取资源线程的排队工作。
 AQS 使用 CAS 对该同步状态进行原子操作实现对其值的修改。
+
+### 核心属性
+
+* **state**：表示当前锁的状态，在不同的功能实现中代表不同的含义。
+* **head**：等待队列的头节点，是懒加载的
+* **tail**：等待队列的尾节点，也是延迟初始化的
+* **exclusiveOwnerThread**：代表当前持有独占锁的线程。
 
 ```java
 public abstract class AbstractQueuedSynchronizer
@@ -74,22 +187,39 @@ public abstract class AbstractQueuedSynchronizer
 }
 ```
 
-## AQS 对资源的共享方式
-AQS 定义两种资源共享方式：
-* Exclusive（独占）
-* Share（共享）
+### 扩展方法
 
-### Exclusive（独占）
-只有一个线程能执行，如 ReentrantLock。又可分为公平锁和非公平锁：
-* 公平锁：按照线程在队列中的排队顺序，先到者先拿到锁
-* 非公平锁：当线程要获取锁时，无视队列顺序直接去抢锁，谁抢到就是谁的
+AbstractQueuedSynchronizer采用模板方法，将排队、阻塞等操作统一包装起来，
+仅暴漏核心方法根据需要实现功能覆写对应的方法即可，所有其他方法都声明为final，
+因为它们不能被独立更改。这些核心方法的实现需要是线程安全的。
 
-### Share（共享）
-多个线程可同时执行，如 CountDownLatch、Semaphore、 CyclicBarrier、ReadWriteLock 我们都会在后面讲到。
-ReentrantReadWriteLock 可以看成是组合式，因为 ReentrantReadWriteLock 也就是读写锁允许多个线程同时对某一资源进行读。
+#### 排它锁对应相关方法
+```java
+protected boolean tryAcquire(int arg) {
+  throw new UnsupportedOperationException();
+}
+protected boolean tryRelease(int arg) {
+  throw new UnsupportedOperationException();
+}
+```
 
-不同的自定义同步器争用共享资源的方式也不同。自定义同步器在实现时只需要实现共享资源 state 
-的获取与释放方式即可，至于具体线程等待队列的维护（如获取资源失败入队/唤醒出队等），AQS 已经在顶层实现好了。
+#### 共享锁对应相关方法
+```java
+protected int tryAcquireShared(int arg) {
+  throw new UnsupportedOperationException();
+}
+protected boolean tryReleaseShared(int arg) {
+  throw new UnsupportedOperationException();
+}
+```
+
+#### 其他方法
+该线程是否正在独占资源。只有用到condition才需要去实现它
+```java
+protected boolean isHeldExclusively() {
+  throw new UnsupportedOperationException();
+}
+```
 
 ## AQS 组件总结
 
@@ -113,3 +243,4 @@ ReentrantReadWriteLock 可以看成是组合式，因为 ReentrantReadWriteLock 
 * [Java并发 - AQS 原理分析]({% post_url java/concurrent/content/2021-09-27-06-java-concurrent-AQS %})
 * [AQS](https://snailclimb.gitee.io/javaguide/#/docs/java/multi-thread/Java并发进阶常见面试题总结?id=_6-aqs)
 * [锁原理 - AQS 源码分析：有了 synchronized 为什么还要重复造轮子](https://www.cnblogs.com/binarylei/p/12555166.html)
+* [我有一只喵喵 - 终于搞懂了JUC中的AQS](https://juejin.cn/post/6913925439723405319)

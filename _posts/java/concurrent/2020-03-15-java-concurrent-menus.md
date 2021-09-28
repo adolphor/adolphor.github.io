@@ -25,6 +25,7 @@ keywords:   [concurrent]
 * [ThreadLocal]({% post_url java/concurrent/content/2021-09-05-01-java-concurrent-threadLocal %})
 * [synchronized 关键字]({% post_url java/concurrent/content/2021-07-29-01-concurrent-keyword-synchronized %})
 * [volatile 关键字]({% post_url java/concurrent/content/2021-07-29-02-concurrent-keyword-volatile %})
+* [AQS 原理分析]({% post_url java/concurrent/content/2021-09-27-06-java-concurrent-AQS %})
 * [ReentrantLock]({% post_url java/concurrent/content/2021-09-27-03-java-concurrent-ReentrantLock %})
 * [线程池]({% post_url java/concurrent/content/2021-09-27-04-java-concurrent-ThreadPool %})
 
