@@ -12,7 +12,7 @@ keywords:   [database,MySQL]
 
 ### 使用brew安装
 
-```bash
+```shell
 brew search mysql@5.7
 brew install mysql@5.7
 
@@ -110,7 +110,7 @@ sudo rm /usr/local/etc/my.cnf
 * -p 跟上密码
 * 最后可以加上数据库名称也可以不加
 
-```bash
+```shell
 mysql -uroot -p'Adolphor!@#123'
 mysql -uroot -p'Adolphor!@#123' testdb
 ```
@@ -126,7 +126,7 @@ ERROR 1045 (28000): Access denied for user 'root'@'localhost'
 
 具体步骤：
 
-```bash
+```shell
 # 停止mysql服务
 brew services stop mysql@5.7
 # 检查并kill所有相关进程
@@ -152,7 +152,7 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mys
 
 ### 用户访问权限
 
-```bash
+```shell
 # 首先命令行登录
 mysql -uroot -p'Adolphor!@#123'
 # 执行赋权语句

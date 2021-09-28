@@ -664,7 +664,7 @@ transparent_image: ^0.1.0
 ```
 
 之后运行如下指令：
-```bash
+```shell
 flutter packages get
 ```
 按照如下方式使用即可：

@@ -9,7 +9,7 @@ keywords:   [mongodb]
 
 ## 登录
 
-```bash
+```shell
 
 ```
 
@@ -17,7 +17,7 @@ keywords:   [mongodb]
 
 ### 查看帮助文档
 
-```bash
+```shell
 mongoexport --help
 ```
 
@@ -29,7 +29,7 @@ mongoexport --help
 * -o 导出的文件名，需要填写，不然只是在命令行显示不会在本地存储
 
 ### 导出范例
-```bash
+```shell
 mongoexport -h 127.0.0.1:27017 -u root -p password -d database -c collection -o ./collection_backup.json
 ```
 

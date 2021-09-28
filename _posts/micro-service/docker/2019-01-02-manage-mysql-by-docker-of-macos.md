@@ -8,22 +8,22 @@ keywords:   [Docker]
 ---
 
 搜索镜像
-```bash
+```shell
 docker search msyql
 ```
 
 使用之前配置的脚本文件，查看镜像版本
-```bash
+```shell
 dockertags mysql
 ```
 
 下载镜像
-```bash
+```shell
 docker pull mysql:5.7
 ```
 
 创建mysql容器
-```bash
+```shell
 sudo docker run --name mysql -p 3301:3306 -e MYSQL_ROOT_PASSWORD=admin -d mysql:5.7
 ```
 需要具体解释一下：
@@ -62,7 +62,7 @@ sudo docker run --name mysql -p 3301:3306 -e MYSQL_ROOT_PASSWORD=admin -d mysql:
 
 
 使用inspect命令，加上容器名称或者id即可，可以看到IP等信息：
-```bash
+```shell
 sudo docker inspect mysql
 ```
 

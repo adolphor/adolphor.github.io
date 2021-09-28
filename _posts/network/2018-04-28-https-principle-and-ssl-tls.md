@@ -266,7 +266,7 @@ Wireshark 的抓包原理是直接读取并分析网卡数据，要想让它解�
 Firefox 和 Chrome 都支持生成上述第二种方式的文件，具体格式见这里：NSS Key Log Format。但 Firefox 和 Chrome 只会在系统环境变量中存在
 SSLKEYLOGFILE 路径时才会生成它，先来加上这个环境变量（以 OSX 为例，如果是windows就新建一个名为SSLKEYLOGFILE的环境变量）：
 
-```bash
+```shell
 mkdir ~/tls && touch ~/tls/sslkeylog.log
 
 #zsh
@@ -281,7 +281,7 @@ echo "\nexport SSLKEYLOGFILE=~/tls/sslkeylog.log" >> ~/.bash_profile && source ~
 
 通过 `terminal` 终端启动 Firefox 或 Chrome（确保能读取到环境变量，本机使用iterm2启动的时候没有成功）：
 
-```bash
+```shell
 open /Applications/Firefox.app
 open /Applications/Google\ Chrome.app
 ```

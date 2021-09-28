@@ -23,6 +23,7 @@ public class CountDownLatchExample1 {
         try {
           //处理文件的业务操作
           //......
+          throw new InterruptedException();
         } catch (InterruptedException e) {
           e.printStackTrace();
         } finally {

@@ -8,7 +8,7 @@ keywords:   [其他,ffmpeg]
 ---
 
 
-```bash
+```shell
 # 查看可以下载的格式列表
 youtube-dl -F url
 # 下载指定的格式

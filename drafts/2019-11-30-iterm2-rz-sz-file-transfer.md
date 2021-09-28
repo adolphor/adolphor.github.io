@@ -17,7 +17,7 @@ excerpt:    iterm2 配合 rz & sz 实现文件上传下载
 ## 安装并配置 lrzsz
 
 ### 安装
-```bash
+```shell
 brew install lrzsz
 ```
 
@@ -46,7 +46,7 @@ brew install lrzsz
 ## 具体配置代码
 
 ### iterm2-recv-zmodem.sh
-```bash
+```shell
 #!/bin/bash
 # Author: Matt Mastracci (matthew@mastracci.com)
 # AppleScript from http://stackoverflow.com/questions/4309087/cancel-button-on-osascript-in-a-bash-script
@@ -78,7 +78,7 @@ fi
 ```
 ### iterm2-send-zmodem.sh
 
-```bash
+```shell
 #!/bin/bash
 # Author: Matt Mastracci (matthew@mastracci.com)
 # AppleScript from http://stackoverflow.com/questions/4309087/cancel-button-on-osascript-in-a-bash-script

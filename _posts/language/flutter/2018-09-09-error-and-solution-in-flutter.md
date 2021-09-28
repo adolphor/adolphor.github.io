@@ -9,7 +9,7 @@ keywords:   [App,Flutter]
 
 ## Flutter基本操作指令
 
-```bash
+```shell
 # 创建项目
 flutter create my_flutter_app
 # 获取依赖包

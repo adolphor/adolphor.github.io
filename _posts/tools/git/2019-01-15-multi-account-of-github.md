@@ -9,7 +9,7 @@ keywords:   [其他]
 
 最近在使用github的时候,有这样的一个需求,就是一台电脑上登录两个github账号,并上传项目和更新自己的代码,大家都知道需要给该账号添加一个SSH key才能访问，参考： 具体设置 。当然如果你在多台机器使用一个账户，你可以为该账户添加多个SSH key。由于github是使用SSH key的fingerprint来判定你是哪个账户，而不是通过用户名，这样你就可以在设置完之后，在本地直接执行下面的语句，它就会自动使用你的.ssh/id_rsa.pub所对应的账户进行登陆，然后执行相关命令。
 
-```bash
+```shell
 # 本地建库
 git init
 git commit -am "first commit" 
@@ -23,13 +23,13 @@ git push origin master
 
 存储key的时候，不要覆盖现有的id_rsa，使用一个新的名字，比如id_rsa_work：
 
-```bash
+```shell
 $ ssh-keygen -t rsa -C "your-email-address"  -f /c/Users/Administrator/.ssh/id_rsa_work
 ```
 
 把该key加到ssh agent上。由于不是使用默认的.ssh/id_rsa，所以你需要显示告诉ssh agent你的新key的位置
 
-```bash
+```shell
 ssh-add ~/.ssh/id_rsa_work
 ```
 可以通过ssh-add -l来确认结果
@@ -42,7 +42,7 @@ ssh-add ~/.ssh/id_rsa_work
 
 使用命令行编辑文件：
 
-```bash
+```shell
 sudo vim .ssh/config
 ```
 
@@ -62,7 +62,7 @@ Host github_work
 
 按照上面的文件中的Host名字，更改需要使用 `id_rsa_work` 秘钥的项目路径：
 
-```bash
+```shell
 git remote rm origin
 git remote add origin git@github_work:adolphor/test.git
 git remote -v
@@ -72,7 +72,7 @@ git remote -v
 
 这样的话，你就可以通过使用github.com别名github_work来明确说你要是使用id_rsa_work的SSH key来连接github，即使用工作账号进行操作。
 
-```bash
+```shell
 # 本地建库
 git init
 git commit -am "first commit"

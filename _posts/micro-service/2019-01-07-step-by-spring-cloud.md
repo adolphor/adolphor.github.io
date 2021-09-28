@@ -117,7 +117,7 @@ spring:
 
 然后创建多环境配置文件，文件名的格式为：application-{profile}.yml，其中，{profile} 替换为环境名字，如 application-dev.yml，我们就实现了多环境的配置，每次编译打包我们无需修改任何东西，编译为 jar 文件后，运行命令：
 
-```bash
+```shell
 java -jar api.jar --spring.profiles.active=dev
 ```
 

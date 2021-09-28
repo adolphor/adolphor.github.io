@@ -9,7 +9,7 @@ keywords:   [database,MySQL]
 
 ## 登录连接
 
-```bash
+```shell
 mysql -uroot -p'Adolphor!@#123'
 ```
 
