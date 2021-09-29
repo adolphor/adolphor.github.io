@@ -3,8 +3,8 @@ layout:     post
 title:      Git 相关基本操作
 date:       2018-04-08 00:23:01 +0800
 postId:     2018-04-08-00-23-01
-categories: []
-keywords:   [Git]
+categories: [Git]
+keywords:   [Tools, Git]
 ---
 
 ## Git 分区
@@ -91,19 +91,19 @@ git reset HEAD filename          回退文件，将文件从暂存区回退到�
 git reset HEAD^回退版本           一个^表示一个版本，可以多个，另外也可以使用 git reset HEAD～n这种形式
 ```
 
-* soft
+* **soft**
   
   所谓 '软回退'，表示将本地版本库的头指针全部重置到指定版本，且将这次提交之后的所有变更都移动到暂存区。比如：最后面的几次提交都是为了解决某个问题，当rebase 不好用的时候，就可以使用reset --soft来合并最后几次提交的代码。
 
-  - git reset --soft HEAD～1         
+  - `git reset --soft HEAD～1`
     - 意为将版本库软回退1个版本，且这些代码因为移动到暂存区，所以可以再次进行commit提交，或者修正之后再提交
-  - git reset --soft c3caab4
+  - `git reset --soft c3caab4`
     - 意为将版本库软回退到 'c3caab4'，所有在 'c3caab4' 之后改动提交的代码都可以再次一起提，
-* mixed
-  - git reset HEAD～1 
+* **mixed**
+  - `git reset HEAD～1 `
   - 意为将版本库回退1个版本，将本地版本库的头指针全部重置到指定版本，且会重置暂存区，即这次提交之后的所有变更都移动到未暂存阶段  
-* hard
-  - git reset --hard HEAD～1 
+* **hard**
+  - `git reset --hard HEAD～1 `
   - 意为将版本库回退1个版本，但是不仅仅是将本地版本库的头指针全部重置到指定版本，也会重置暂存区，并且会将工作区代码也回退到这个版本
 
 ### 使用检出 checkout 进行本地回退
@@ -157,9 +157,10 @@ git push
 ## 编码
 
 * 中文文件名
-  ```Shell
-  git config --global core.quotepath false
-  ```
+
+```Shell
+git config --global core.quotepath false
+```
 
 ## 参考资料
 

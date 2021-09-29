@@ -3,7 +3,7 @@ layout:     post
 title:      Git追加代码更改到之前某次commit
 date:       2019-02-10 13:15:13 +0800
 postId:     2019-02-10-13-15-14
-categories: []
+categories: [Git]
 keywords:   [Tools, Git]
 ---
 

@@ -3,8 +3,8 @@ layout:     post
 title:      如何编写 Git commit 信息
 date:       2018-12-13 13:34:43 +0800
 postId:     2018-12-13-13-34-43
-categories: []
-keywords:   [Tools,Git]
+categories: [Git]
+keywords:   [Tools, Git]
 ---
 
 ## Git版本规范
