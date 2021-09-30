@@ -97,8 +97,21 @@ dr-x------   2 jyapp jyapp 0 Sep  7 11:27 fd
 在获取PID之后，同样，使用 `ll /proc/PID` 查看项目信息，以及后续使用 `jstack` 等指令
 分析应用相关线程运行情况。
 
+更新：
+**jps** 增加 **-lm** 参数之后，等价于 **jcmd**：
+```shell
+jps -lm
+```
+```
+29587 sun.tools.jps.Jps -lm
+19343 org.apache.catalina.startup.Bootstrap start
+32577 org.apache.catalina.startup.Bootstrap start
+14029 org.apache.catalina.startup.Bootstrap start
+```
+
 ## 参考资料
 * [Linux 排查进程和线程]({% post_url system/linux/2021-09-28-01-linux-progress-thread %})
 * [JVM - jstack工具]({% post_url java/jvm/tools/2021-07-29-01-jvm-jstack %})
+* [JVM - jps工具]({% post_url java/jvm/tools/2021-09-29-01-jvm-jps %})
 * [Linux通过PID查看进程完整信息](https://blog.csdn.net/Great_Smile/article/details/50114133)
 * [使用jcmd进行JVM性能和内存跟踪微调](https://www.jdon.com/54887)
