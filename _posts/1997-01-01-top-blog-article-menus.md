@@ -149,12 +149,12 @@ topmost:    true
 ## Redis
 * [Redis源码安装和多服务配置]({% post_url database/redis/content/2016-08-23-Redis-multi-install-and-config %})
 * [Redis - 数据结构]({% post_url database/redis/content/2021-06-15-redis-data-structure %})
+* [Redis - 事务]({% post_url database/redis/content/2021-10-02-02-redis-transaction %})
 
 ## Tomcat
 * [Tomcat 优化]({% post_url framework/tomcat/2016-10-11-tomcat-optimizing %})
 
 ## MyBatis
-*
 
 ## Hadoop & Spark & HBase
 * [Hadoop，Spark，HBase 开发环境配置]({% post_url database/hadoop/2016-10-28-hadoop-spark-hbase-develop-environment %})
