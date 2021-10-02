@@ -152,6 +152,7 @@ topmost:    true
 * [Redis - 事务]({% post_url database/redis/content/2021-10-02-02-redis-transaction %})
 * [Redis - 订阅与发布]({% post_url database/redis/content/2021-10-02-03-redis-publish-subscribe %})
 * [Redis - 持久化]({% post_url database/redis/content/2021-10-02-04-redis-persistence %})
+* [Redis - 分布式锁]({% post_url database/redis/content/2021-10-02-06-redis-distributed-lock %})
 
 ## Tomcat
 * [Tomcat 优化]({% post_url framework/tomcat/2016-10-11-tomcat-optimizing %})
