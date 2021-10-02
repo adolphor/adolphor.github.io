@@ -3,8 +3,8 @@ layout:     post
 title:      分布式以及CAP理论
 date:       2017-03-23 16:43:07 +0800
 postId:     2017-03-23-16-43-07
-categories: []
-keywords:   [分布式]
+categories: [Microservice]
+keywords:   [Microservice, 分布式]
 ---
 
 ## CAP定理
@@ -70,7 +70,7 @@ The system works well despite physical network partitions。
 ![CAP详细分类]({{ site.baseurl }}/image/post/2017/03/23/20170323-0102-cap.jpg)
 
 ## 参考资料
-
+* []()
 * [CAP定理 —— 维基百科](https://zh.wikipedia.org/wiki/CAP%E5%AE%9A%E7%90%86)
 * [可能是CAP理论的最好解释](http://blog.csdn.net/dc_726/article/details/42784237)
 * [分布式系统的CAP理论](http://www.hollischuang.com/archives/666)

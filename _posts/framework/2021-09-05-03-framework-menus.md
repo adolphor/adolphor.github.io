@@ -26,7 +26,4 @@ private static String number = "02";
 ```
 
 ## 参考资料
-
-* [test](test.html)
-
 * [开原框架目录汇总]({% post_url framework/2021-09-05-03-framework-menus %})

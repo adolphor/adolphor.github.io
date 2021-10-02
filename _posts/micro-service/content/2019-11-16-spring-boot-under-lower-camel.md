@@ -3,8 +3,8 @@ layout:     post
 title:      spring-boot 下划线和驼峰转换
 date:       2019-11-16 09:39:32 +0800
 postId:     2019-11-16-09-39-32
-categories: []
-keywords:   [Spring]
+categories: [Microservice]
+keywords:   [Microservice, Spring]
 ---
 
 spring boot 框架中，下划线和驼峰相互转换问题：
