@@ -24,6 +24,7 @@ Redis相关文章目录汇总
 * [MySQL 索引]({% post_url database/mysql/content/2021-05-20-mysql-index %})
 * [MySQL 调优]({% post_url database/mysql/content/2021-07-14-01-mysql-performance-optimization %})
 * [MySQL 复制]({% post_url database/mysql/content/2021-07-14-02-mysql-replication %})
+* [MySQL - 分表分库组件]({% post_url database/mysql/content/2021-10-02-07-mysql-sharding-component %})
 
 ## 经验汇总
 * [MySQL 之 join 语句]({% post_url database/mysql/content/2018-06-08-join-statement-of-mysql %})

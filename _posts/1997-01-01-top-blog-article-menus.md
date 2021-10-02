@@ -142,6 +142,7 @@ topmost:    true
 * [MySQL 索引]({% post_url database/mysql/content/2021-05-20-mysql-index %})
 * [MySQL 调优]({% post_url database/mysql/content/2021-07-14-01-mysql-performance-optimization %})
 * [MySQL 复制]({% post_url database/mysql/content/2021-07-14-02-mysql-replication %})
+* [MySQL - 分表分库组件]({% post_url database/mysql/content/2021-10-02-07-mysql-sharding-component %})
 
 ## Netty
 * [Netty源码学习]({% post_url framework/netty/2020-02-01-netty-source-menus %})
