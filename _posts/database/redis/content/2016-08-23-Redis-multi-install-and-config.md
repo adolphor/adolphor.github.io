@@ -111,5 +111,5 @@ redis cluster 架构下，两个节点进行通信的默认端口是客户端端
 进行数据的交换，不能用于客户端的连接。
 
 ## 参考资料
-
 * [Redis cluster tutorial](https://redis.io/topics/cluster-tutorial)
+

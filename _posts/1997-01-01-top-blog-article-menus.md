@@ -148,7 +148,7 @@ topmost:    true
 
 ## Redis
 * [Redis源码安装和多服务配置]({% post_url database/redis/content/2016-08-23-Redis-multi-install-and-config %})
-* [Redis设计与实现 —— 黄健宏]({% post_url book/2016-08-20-Redis-design-and-implementation %})
+* [Redis - 数据结构]({% post_url database/redis/content/2021-06-15-redis-data-structure %})
 
 ## Tomcat
 * [Tomcat 优化]({% post_url framework/tomcat/2016-10-11-tomcat-optimizing %})
@@ -177,7 +177,6 @@ topmost:    true
 
 ## 读书笔记
 * [Effective Java —— Joshua Bloch]({% post_url book/2016-09-20-effective-java-second-edition %})
-* [Redis设计与实现 —— 黄健宏]({% post_url book/2016-08-20-Redis-design-and-implementation %})
 
 ## Git
 * [GIT回滚commit/push到指定版本]({% post_url tools/git/2016-11-03-git-commit-push-roll-back %})
