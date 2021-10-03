@@ -1,21 +1,59 @@
 ---
 layout:     post
-title:      MySQL 事务隔离
+title:      MySQL 事务
 date:       2021-05-18 14:58:45 +0800
 postId:     2021-05-18-14-58-45
 categories: [MySQL]
 keywords:   [database,MySQL]
 ---
 
-## ACID
-提到事务，肯定会想到ACID，今天说的事务就是其中的I，也就是隔离性。
+## 事务的特性
+提到事务，肯定会想到ACID：
 
 * Atomicity    [ˌætəˈmɪsəti]    原子性
 * Consistency  [kənˈsɪstənsi]   一致性
 * Isolation    [ˌaɪsəˈleɪʃn]    隔离性
 * Durability   [ˌdʊrəˈbɪləti]   持久性
 
-## 概念
+### Atomicity 原子性
+事务的原子性是指，一组操作要么全部成功，要么全部失败。原子性由 **undo log 日志** 来保证，
+因为 undo log 记录着数据修改前的信息。
+
+比如，insert 一条数据的时候，undo log 就会记录一条对应的 delete 语句；
+update 一条记录的时候，那么 undo log 机会记录一条之前旧值的 update 语句。
+
+如果执行事务中出现异常的情况，那么执行 "回滚"，InnoDB 引擎就是利用 undo log 记录下的
+日志，来将数据 "恢复" 到事务开始之前的样子。
+
+### Isolation 隔离性
+隔离性是指，在事务 **并发** 执行时，他们内部的操作不能相互干扰。如果多个事务可以在同一时刻
+操作同一份数据，那么就可能产生 `脏读`、`重复读`、`幻读` 的问题。于是，在事务中需要存在一定
+的隔离。在InnoDB引擎中，定义了四种隔离级别供我们使用：
+* 读未提交
+* 读已提交
+* 可重复读
+* 串行化
+
+### Durability 持久性
+持久性是指，一旦提交了事务，他对数据库的改变就应该是永久性的，也就是将数据持久化在磁盘上。
+而持久性，由 redo log 日志来保证。
+
+当要修改数据时， MySQL 是先将这条记录所在的页找到，然后把该页加载到内存中，
+将对应记录进行修改。为了防止在修改完内存的时候，数据库挂掉（如果内存修改完，数据库挂掉，
+那么这次修改就丢失了），MySQL 引入了 redo log，内存写完的时候，会写一份redo log，
+这个 redo log 记载着这次在哪个页上做了什么修改，即便MySQL中途挂掉，还可以根据 redo log
+进行重放，对数据进行恢复。
+
+redo log 是顺序记载，写入速度很快，并且它记录的是物理修改（XX页做了XX修改），文件的体积很小，
+恢复速度也快。
+
+### Consistency 一致性
+一致性可以理解为使用事务的目的，而 原子性、隔离性、持久性 均是为了保障 一致性 采用的手段，
+保证一致性，需要由应用程序代码来保证。
+
+比如，如果在事务过程中出现了异常，就需要回滚事务，而不是强行提交事务而导致数据不一致。
+
+## 事务可能产生的问题
 
 简单来说，事务就是要保证一组数据库操作，要么全部成功，要么全部失败。在 MySQL 中，事务支持是在引擎层实现的。
 MySQL 是一个支持多引擎的系统，但并不是所有的引擎都支持事务。比如 MySQL 原生的 MyISAM 引擎就不支持事务，
@@ -174,5 +212,5 @@ set global transaction isolation level repeatable read;
 * 隔离级别的粒度：库？表？
 
 ## 参考资料
-
 * [MySQL事务隔离级别和实现原理](https://zhuanlan.zhihu.com/p/117476959)
+* [MySQL 事务&&锁机制&&MVCC](https://mp.weixin.qq.com/s?__biz=MzU4NzA3MTc5Mg==&mid=2247484480&idx=1&sn=3571b89575e8c37c114c9f290b953a1c&chksm=fdf0ec1fca87650913e6673a453d0ba1614341433aa67dd9977fef7231a3d825f7da4e4a132a&token=1651214636&lang=zh_CN&scene=21#wechat_redirect)
