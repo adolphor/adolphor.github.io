@@ -65,6 +65,10 @@ yaaw
 ## 项目备份
 IdeaProjects
 
+## xcode
+在 macOS 10.13.6（High Sierra）上可以正常安装的版本是 xcode 9.4.1，如果想要安装 xcode
+10.3 需要按照 [Xcode 10.2 on High Sierra – Step by Step](https://codewithchris.com/xcode-update/) 
+进行操作（10.4及其后续版本是否可用尚未验证）。
 
 ## docker启动应用
 
@@ -95,4 +99,4 @@ password: oracle
 
 ## 参考资料
 * [macOS 系统软件备份]({% post_url system/macos/2021-08-28-01-macos-system-software-backup %})
-
+* [macOS resource Downloads](https://developer.apple.com/download/all/)
