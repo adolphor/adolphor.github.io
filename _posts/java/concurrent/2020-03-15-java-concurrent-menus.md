@@ -9,18 +9,6 @@ keywords:   [concurrent]
 
 ## 并发基础知识
 * [基本概念]({% post_url java/concurrent/content/2021-07-27-01-concurrent-basic-conception %})
-* [同步机制]({% post_url java/concurrent/content/2021-07-27-02-concurrent-synchronization-mechanism %})
-  - synchronized 关键字
-  - volatile 关键字
-  - final 关键字
-  - static 关键字
-  - Lock 接口
-  - Semaphore 类
-  - CountDownLatch 类
-  - CyclicBarrier 类
-  - Phaser 类
-
-## 基本元素
 * [Thread 和 Runnable]({% post_url java/concurrent/content/2020-03-22-concurrent-thread-runnable %})
 * [ThreadLocal]({% post_url java/concurrent/content/2021-09-05-01-java-concurrent-threadLocal %})
 * [synchronized 关键字]({% post_url java/concurrent/content/2021-07-29-01-concurrent-keyword-synchronized %})
@@ -34,6 +22,16 @@ keywords:   [concurrent]
 * [CAS与原子变量]({% post_url java/concurrent/content/2021-08-06-01-concurrent-cas-atomic %})
 * [线程安全的设计方式]({% post_url java/concurrent/content/2021-08-23-03-concurrent-thread-safe-design %})
 * [锁类型和演化过程]({% post_url java/concurrent/content/2021-07-29-03-concurrent-lock-type %})
+* [同步机制]({% post_url java/concurrent/content/2021-07-27-02-concurrent-synchronization-mechanism %})
+  - synchronized 关键字
+  - volatile 关键字
+  - final 关键字
+  - static 关键字
+  - Lock 接口
+  - Semaphore 类
+  - CountDownLatch 类
+  - CyclicBarrier 类
+  - Phaser 类
 
 ## 线程间协作
 * [wait和notify]({% post_url java/concurrent/content/2021-08-22-03-concurrent-wait-notify %})
@@ -45,6 +43,7 @@ keywords:   [concurrent]
   - Callable 接口
   - Future 接口
 * [Fork/Join 框架]({% post_url java/concurrent/content/2021-07-27-04-concurrent-fork-join-framework %})
+* []()
 
 ## 并行流
 * [并行流]({% post_url java/concurrent/content/2021-07-27-05-concurrent-stream %})
@@ -58,11 +57,10 @@ keywords:   [concurrent]
 ## 模板代码
 ```java
 private static String postTitle = "Java并发 - 基本概念";
-private static String urlTitle = "java-concurrent-basic-conception";
+private static String urlTitle = "basic-conception";
 private static String categories = "[concurrent]";
 private static String tags = "[Java,concurrent]";
 private static String folder = "java" + File.separator + "concurrent" + File.separator + "content";
-private static String number = "01";
 ```
 
 ## 参考资料
