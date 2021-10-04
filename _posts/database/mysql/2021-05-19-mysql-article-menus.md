@@ -24,7 +24,8 @@ Redis相关文章目录汇总
 * [MySQL 索引]({% post_url database/mysql/content/2021-05-20-mysql-index %})
 * [MySQL 调优]({% post_url database/mysql/content/2021-07-14-01-mysql-performance-optimization %})
 * [MySQL 复制]({% post_url database/mysql/content/2021-07-14-02-mysql-replication %})
-* [MySQL - 分表分库组件]({% post_url database/mysql/content/2021-10-02-07-mysql-sharding-component %})
+* [MySQL 分表分库组件]({% post_url database/mysql/content/2021-10-02-07-mysql-sharding-component %})
+* [MySQL 日志]({% post_url database/mysql/content/2021-10-04-04-mysql-log %})
 
 ## 经验汇总
 * [MySQL 之 join 语句]({% post_url database/mysql/content/2018-06-08-join-statement-of-mysql %})
@@ -35,12 +36,11 @@ Redis相关文章目录汇总
 ## 模板参数
 
 ```java
-private static String postTitle = "MySQL - 逻辑架构";
+  private static String postTitle = "MySQL - 逻辑架构";
 private static String urlTitle = "mysql-logical-architecture";
 private static String categories = "[database]";
 private static String tags = "[database,MySQL]";
-private static String folder = "database/mysql";
-private static Configuration cfg;
+private static String folder = "database" + File.separator + "mysql" + File.separator + "content";
 ```
 
 ## 参考资料

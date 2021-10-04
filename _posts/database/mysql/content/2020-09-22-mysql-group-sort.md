@@ -29,9 +29,6 @@ order by name, dcode in (?, ?) desc, create_time desc
     - 分组之后使用 group_concat 可以将分组内此列所有参数合并以逗号分隔
 
 
-
-
-
 ## 参考资料
-
-* [test](test.html)
+* [MySQL 分组排序]({% post_url database/mysql/content/2020-09-22-mysql-group-sort %})
+* TODO [聊聊MySql8.0中的group by 和 max函数取最新(优)一条记录的问题](https://zhuanlan.zhihu.com/p/414683659)

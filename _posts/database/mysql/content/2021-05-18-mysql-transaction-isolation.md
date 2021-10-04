@@ -212,5 +212,6 @@ set global transaction isolation level repeatable read;
 * 隔离级别的粒度：库？表？
 
 ## 参考资料
+* [MySQL 事务]({% post_url database/mysql/content/2021-05-18-mysql-transaction-isolation %})
 * [MySQL事务隔离级别和实现原理](https://zhuanlan.zhihu.com/p/117476959)
 * [MySQL 事务&&锁机制&&MVCC](https://mp.weixin.qq.com/s?__biz=MzU4NzA3MTc5Mg==&mid=2247484480&idx=1&sn=3571b89575e8c37c114c9f290b953a1c&chksm=fdf0ec1fca87650913e6673a453d0ba1614341433aa67dd9977fef7231a3d825f7da4e4a132a&token=1651214636&lang=zh_CN&scene=21#wechat_redirect)
