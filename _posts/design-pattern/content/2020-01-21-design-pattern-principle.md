@@ -3,7 +3,7 @@ layout:     post
 title:      接口设计原则
 date:       2020-01-21 16:05:59 +0800
 postId:     2020-01-21-16-06-00
-categories: [design-pattern]
+categories: [设计模式]
 keywords:   [设计模式]
 ---
 

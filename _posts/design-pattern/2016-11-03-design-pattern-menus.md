@@ -3,8 +3,8 @@ layout:     post
 title:      设计模式
 date:       2016-11-03 22:10:38 +0800
 postId:     2016-11-03-22-10-38
-categories: [design-pattern]
-keywords:   [UML, 设计模式]
+categories: [设计模式]
+keywords:   [设计模式]
 ---
 
 ## 概述
@@ -134,17 +134,18 @@ Strategy：Encapsulates an algorithm inside a class
 ### 3.11 模板方法模式（Template Method）
 Template method：Defer the exact steps of an algorithm to a subclass
 
+详见 [模板方法]({% post_url design-pattern/content/2021-10-04-01-template-method %})
+
 ### 3.12 访问者模式（Visitor）
 Visitor：Defines a new operation to a class without change
 
 ## 模板代码
 ```java
-private static String postTitle = "设计模式之 - 单例模式";
-private static String urlTitle = "java-design-patterns-singleton";
-private static String categories = "[design-pattern]";
-private static String tags = "[UML, 设计模式]";
-private static String folder = "design-pattern";
-private static String number = "01";
+private static String postTitle = "设计模式之 - 模板方法";
+private static String urlTitle = "template-method";
+private static String categories = "[设计模式]";
+private static String tags = "[设计模式]";
+private static String folder = "design-pattern" + File.separator + "content";
 ```
 
 ## 参考资料

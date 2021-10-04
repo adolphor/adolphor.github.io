@@ -3,8 +3,8 @@ layout:     post
 title:      代理模式
 date:       2016-12-15 22:26:22 +0800
 postId:     2016-12-15-22-26-22
-categories: []
-keywords:   [Java]
+categories: [设计模式]
+keywords:   [设计模式]
 ---
 
 ## 代理模式

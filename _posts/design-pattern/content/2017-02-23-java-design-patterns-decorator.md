@@ -3,7 +3,7 @@ layout:     post
 title:      装饰者模式
 date:       2017-02-23 15:48:55 +0800
 postId:     2017-02-23-15-48-55
-categories: [design-pattern]
+categories: [设计模式]
 keywords:   [设计模式]
 ---
 
