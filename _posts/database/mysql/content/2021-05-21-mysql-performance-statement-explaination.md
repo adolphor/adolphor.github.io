@@ -99,6 +99,18 @@ explain select * from user;
 1 row in set, 1 warning (0.00 sec)
 ```
 
+## MySQL优化器
+sql在执行时，并不一定就会按照我们写的顺序执行，mysql优化器会重写sql，如何才能看到sql优化器
+重写后的sql呢？这就要用到 **explain extended** 和 **show warnings** 了。
+```mysql
+EXPLAIN <你的SQL>;
+SHOW WARNINGS;
+```
+其中第一句EXPLAIN是查看SQL执行计划的语句，通常用来查看MySQL如何使用索引来处理SELECT语句以及连接表。
+
+第二句SHOW WARNINGS表示显示上一句的警告，所以一定要和上一句一起运行，我们要查看的优化后语句就在
+SHOW WARNINGS 运行后显示的 result 的 message 字段里。
+
 ## exlpain详解
 
 
