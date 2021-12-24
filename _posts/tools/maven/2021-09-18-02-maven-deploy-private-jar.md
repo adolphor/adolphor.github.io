@@ -204,7 +204,7 @@ keywords:   [maven]
 </settings>
 ```
 
-## 使用
+## 源码编译
 使用有两种方式，第一种方式是在项目的 `pom.xml` 中指定需要上传的仓库地址，但弊端是
 只能配置一个私服地址，而且如果泄露源码，那么会会泄露私服地址。
 
@@ -238,15 +238,19 @@ alias mvnalidpl='mvn clean deploy -D skipTests -P rdc'
 
 如果没有配置profile，可以直接配置全部的url地址信息，但不好的地方在于，还需要区分release和snapshots
 ```
-mvn clean deploy -D skipTests -D altDeploymentRepository=joyoung-releases::default::http://maven.dev.joyoung.com/repository/maven-snapshots/
+mvn clean deploy -D skipTests -D altDeploymentRepository=adolphor-releases::default::http://maven.dev.adolphor.com/repository/maven-snapshots/
 ```
 
-
-
-
-开始写作吧
+## 独立文件
+只能使用命令行方式，指令如下：
 ```
-![image-alter]({{ site.baseurl }}/image/post/2021/09/18/02/xxx.jpg)
+mvn deploy:deploy-file -DgroupId=com.adolphor.cloud \
+                       -DartifactId=cloud-sunyur-interface \
+                       -Dversion=2.0-SNAPSHOT \
+                       -Dpacckaging=jar \
+                       -Dfile=cloud-sunyur-interface-prod.jar \
+                       -DrepositoryId=adolphor-snapshots \
+                       -Durl=http://maven.dev.adolphor.com/repository/maven-snapshots/
 ```
 
 ## 参考资料
