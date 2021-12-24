@@ -25,6 +25,16 @@ keywords:   [Java]
 * lambda
   - [lambda表达式]({% post_url java/lambda/2016-08-24-Java8-features-lambda-expression %})
 * [Java class 编译版本相关设置和查看]({% post_url java/jvm/content/2016-08-06-java-class-file-version %})
+* [打包或更新jar包]({% post_url java/basic/content/2021-12-24-01-create-update-jar-file %})
+
+## 模板代码
+```java
+private static String postTitle = "打包或更新jar包";
+private static String urlTitle = "create-update-jar-file";
+private static String categories = "[Java]";
+private static String tags = "[Java]";
+private static String folder = "java" + File.separator + "basic" + File.separator + "content";
+```
 
 ## 参考资料
 
