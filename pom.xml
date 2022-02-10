@@ -9,15 +9,23 @@
   <url>adolphor.com</url>
   <description>jekyll集成Java项目</description>
   <properties>
+    <maven-compiler.version>3.9.0</maven-compiler.version>
     <freemarker.version>2.3.23</freemarker.version>
-
     <jedis.version>2.1.0</jedis.version>
-
     <source.version>1.8</source.version>
     <target.version>1.8</target.version>
     <lombok.version>1.18.8</lombok.version>
+    <cglib.version>3.3.0</cglib.version>
+    <netty.version>4.1.72.Final</netty.version>
+    <junit.version>4.13.2</junit.version>
+    <bcpkix-jdk15on.version>1.70</bcpkix-jdk15on.version>
+    <javassist.version>3.12.1.GA</javassist.version>
+    <commons-net.version>3.6</commons-net.version>
+    <commons-lang3.version>3.7</commons-lang3.version>
+    <dependency-check.version>6.5.3</dependency-check.version>
   </properties>
   <dependencies>
+
     <dependency>
       <groupId>redis.clients</groupId>
       <artifactId>jedis</artifactId>
@@ -33,47 +41,47 @@
     <dependency>
       <groupId>cglib</groupId>
       <artifactId>cglib</artifactId>
-      <version>3.3.0</version>
+      <version>${cglib.version}</version>
     </dependency>
 
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-all</artifactId>
-      <version>[4.1.42,)</version>
+      <version>${netty.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>io.netty</groupId>
+          <artifactId>netty-tcnative-classes</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>[4.13.1,)</version>
+      <version>${junit.version}</version>
     </dependency>
     <dependency>
       <groupId>javassist</groupId>
       <artifactId>javassist</artifactId>
-      <version>3.12.1.GA</version>
+      <version>${javassist.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
-      <version>3.7</version>
+      <version>${commons-lang3.version}</version>
     </dependency>
     <dependency>
       <groupId>commons-net</groupId>
       <artifactId>commons-net</artifactId>
-      <version>3.6</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.tomcat.embed</groupId>
-      <artifactId>tomcat-embed-core</artifactId>
-      <version>9.0.48</version>
+      <version>${commons-net.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.bouncycastle</groupId>
       <artifactId>bcpkix-jdk15on</artifactId>
-      <version>1.58</version>
+      <version>${bcpkix-jdk15on.version}</version>
     </dependency>
 
     <dependency>
@@ -90,6 +98,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler.version}</version>
         <configuration>
           <source>${source.version}</source>
           <target>${target.version}</target>
@@ -100,7 +109,7 @@
         <!-- 安全扫描指令：mvn org.owasp:dependency-check-maven:check -->
         <groupId>org.owasp</groupId>
         <artifactId>dependency-check-maven</artifactId>
-        <version>6.2.2</version>
+        <version>${dependency-check.version}</version>
         <executions>
           <execution>
             <goals>
