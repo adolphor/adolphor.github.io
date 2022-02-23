@@ -102,6 +102,28 @@ sudo rm -rf /usr/local/var/mysql
 sudo rm /usr/local/etc/my.cnf
 ```
 
+## 账号创建
+
+不建议直接使用root账号进行相关操作，可以设置只能本机使用root账号登录，其他账号才可以远程登录：
+
+```
+FLUSH PRIVILEGES;
+SELECT user,authentication_string,plugin,host FROM mysql.user;
+exit;
+
+mysql -u root -p
+
+# 修改密码，限制 localhost 登录
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Adolphor!@#123';
+
+# 创建 bobzhu 账号，并开放所有权限
+CREATE USER 'bobzhu'@'%' IDENTIFIED BY 'Adolphor!@#123';
+GRANT ALL PRIVILEGES ON *.* TO 'bobzhu'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+exit;
+
+```
+
 ## 命令行基本操作
 
 ### 登录
@@ -162,6 +184,9 @@ FLUSH PRIVILEGES;
 # 退出
 quit
 ```
+
+## 参考
+* [How To Install MySQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04)
 
 
 
