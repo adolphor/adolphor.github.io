@@ -23,7 +23,7 @@ keywords:   [Nacos]
 
 ## 启动命令
 
-使用桥接网络方式，：
+使用桥接网络方式，注意 MYSQL_SERVICE_HOST 要改成虚拟机的内网IP，不然docker无法访问宿主机的数据库：
 ```shell
 docker run -d --name nacos --restart=always \
 -e MODE=standalone \
@@ -39,7 +39,39 @@ docker run -d --name nacos --restart=always \
 -v /home/nacos/init.d/custom.properties:/home/nacos/init.d/custom.properties \
 -v /home/nacos/logs:/home/nacos/logs \
 -p 8848:8848 \
-nacos/nacos-server:last
+nacos/nacos-server:latest
+```
+
+
+```shell
+docker logs -f nacos
+```
+```
+……
+
+         ,--.
+       ,--.'|
+   ,--,:  : |                                           Nacos 2.0.4
+,`--.'`|  ' :                       ,---.               Running in stand alone mode, All function modules
+|   :  :  | |                      '   ,'\   .--.--.    Port: 8848
+:   |   \ | :  ,--.--.     ,---.  /   /   | /  /    '   Pid: 1
+|   : '  '; | /       \   /     \.   ; ,. :|  :  /`./   Console: http://172.17.0.2:8848/nacos/index.html
+'   ' ;.    ;.--.  .-. | /    / ''   | |: :|  :  ;_
+|   | | \   | \__\/: . ..    ' / '   | .; : \  \    `.      https://nacos.io
+'   : |  ; .' ," .--.; |'   ; :__|   :    |  `----.   \
+|   | '`--'  /  /  ,.  |'   | '.'|\   \  /  /  /`--'  /
+'   : |     ;  :   .'   \   :    : `----'  '--'.     /
+;   |.'     |  ,     .-./\   \  /            `--'---'
+'---'        `--`---'     `----'
+
+……
+
+2022-03-16 11:14:38,671 INFO Initializing ExecutorService 'taskScheduler'
+2022-03-16 11:14:38,886 INFO Exposing 16 endpoint(s) beneath base path '/actuator'
+2022-03-16 11:14:39,537 INFO Tomcat started on port(s): 8848 (http) with context path '/nacos'
+2022-03-16 11:14:39,559 INFO Nacos started successfully in stand alone mode. use external storage
+2022-03-16 11:14:54,950 INFO Initializing Servlet 'dispatcherServlet'
+2022-03-16 11:14:54,986 INFO Completed initialization in 35 ms
 ```
 
 ## 参考资料
