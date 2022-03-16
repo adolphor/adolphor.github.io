@@ -3,8 +3,8 @@ layout:     post
 title:      Docker基本操作
 date:       2017-08-23 19:00:47 +0800
 postId:     2017-08-23-19-00-47
-categories: []
-keywords:   [Docker]
+categories: [Microservice]
+keywords:   [Microservice, Docker]
 ---
 
 ## Docker相关指令
@@ -170,7 +170,18 @@ docker start rascms -i -v /Users/adolphor/IdeaProjects/joyoung:/root/joyoung/wor
 
 ### 日志
 ```shell
-docker logs dockerId/dockerName
+# 最后的日志
+docker logs [dockerId/dockerName]
+
+# 实时日志
+docker logs -f [dockerId/dockerName]
+
+# --since : 此参数指定了输出日志开始日期，即只输出指定日期之后的日志。
+# -f : 查看实时日志
+# -t : 查看日志产生的日期
+# -tail=10 : 查看最后的10条日志。
+# [dockerId/dockerName] : 容器名称
+docker logs -f -t --since="2017-05-31" --tail=10 [dockerId/dockerName]
 ```
 
 ### 统计信息
@@ -245,3 +256,4 @@ docker rmi `docker images -a -q`
 * [Docker — 从入门到实践](https://yeasy.gitbooks.io/docker_practice/content/)
 * [clean-docker-cache-for-mac](https://blog.mrtrustor.net/post/clean-docker-for-mac/)
 * [How to list all tags for a Docker image on a remote registry](https://stackoverflow.com/questions/28320134/how-to-list-all-tags-for-a-docker-image-on-a-remote-registry)
+* [docker logs 查看实时日志](https://www.cnblogs.com/qufanblog/p/6927411.html)
