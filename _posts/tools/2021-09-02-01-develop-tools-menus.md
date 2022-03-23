@@ -10,6 +10,7 @@ keywords:   [Tools]
 ## maven
 * [Maven 相关基本操作]({% post_url tools/maven/2018-04-08-maven-foundation-tutorial %})
 * [druid 1.2.6 依赖 openjdk 的问题]({% post_url tools/maven/2021-09-02-01-maven-druid-openjdk %})
+* [Maven deploy 上传jar包到私服的方法及其配置文件]({% post_url tools/maven/2021-09-18-02-maven-deploy-private-jar %})
 
 ## Git
 * [在同一个电脑上配置多个GitHub账号]({% post_url tools/git/2019-01-15-multi-account-of-github %})
