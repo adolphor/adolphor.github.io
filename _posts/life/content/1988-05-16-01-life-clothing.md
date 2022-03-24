@@ -19,7 +19,4 @@ keywords:   [日常,衣]
 ```
 
 ## 参考资料
-
-* [test](test.html)
-
-* [衣]({% post_url life/content/2021-11-01-01-life-clothing %})
+* [衣]({% post_url life/content/1988-05-16-01-life-clothing %})
