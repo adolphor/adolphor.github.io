@@ -18,7 +18,16 @@ keywords:   [macOS]
 以下是词典链接：
 [zh_CN 简体中文词典](http://download.huzheng.org/zh_CN/)
 
+
+[Dictionary Development Kit](https://github.com/SebastianSzturo/Dictionary-Development-Kit)
+
+```
+pip3 install -U prompt-toolkit
+```
+
 ## 参考资料
 
 * [macOS 自带词典词库转换]({% post_url system/macos/2022-03-25-01-macos-dictionary-convert %})
 * [苹果Mac自带词典完美扩充#可爱小蛇](https://www.jianshu.com/p/c57be986589b)
+* [mdx.mdict.org](https://mdx.mdict.org/)
+* [zh_CN 简体中文词典](http://download.huzheng.org/zh_CN/)
