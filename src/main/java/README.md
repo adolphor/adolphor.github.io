@@ -7,6 +7,7 @@
     - JVM
     - Java8
     - concurrent
+    - Swing
 * 开源框架
     - Netty
     - Spring
