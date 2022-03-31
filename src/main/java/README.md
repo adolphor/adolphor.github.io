@@ -11,6 +11,7 @@
     - Netty
     - Spring
     - Spring Cloud
+    - Nacos
 * App
     - iOS
     - macOS
@@ -44,7 +45,11 @@
 * project
     - spring
 * other
-
+* 日常
+  * 衣
+  * 食
+  * 住
+  * 行
 # 代码高亮
 
 [文档连接](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)

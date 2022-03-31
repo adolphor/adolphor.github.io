@@ -20,3 +20,4 @@ target
 Gemfile.lock
 num_temp.md
 Generate.java
+/src/main/java/proxy/block.list

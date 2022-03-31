@@ -66,6 +66,10 @@ keywords:   [数据结构和算法]
 ## 图
 * [Java数据结构和算法 - 图]({% post_url algorithm/classic/2021-07-27-01-graph %})
 
+## 刷题吧
+* [ACM金牌选手整理的【LeetCode刷题顺序】](https://zhuanlan.zhihu.com/p/388470520)
+* [刷完 300 道 LeetCode 题后，我飘了！](https://mp.weixin.qq.com/s/wvzB1p9_Yu7n7Ak83DrrdA)
+
 ## 模板参数
 ```java
 private static String postTitle = "Java数据结构和算法 - 哈希表";

@@ -1,5 +1,7 @@
 package proxy;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,13 +23,17 @@ public class Rules {
   private static final Set<String> domainKeywordSet = new HashSet<>();
   private static final Set<String> ipCidrSet = new HashSet<>();
   private static final Set<String> urlRegexSet = new HashSet<>();
+  private static final Set<String> otherSet = new HashSet<>();
+  private static final Set<String> userAgentSet = new HashSet<>();
 
   public static void main(String[] args) throws IOException {
 
-    String fileName = "/Users/adolphor/IdeaProjects/bob/adolphor/src/main/java/proxy/adblock.list";
+    String fileName = "/Users/adolphor/IdeaProjects/bob/adolphor/src/main/java/proxy/block.list";
     readUrlListToSet(fileName);
 
     ipCidrSet.stream().sorted().forEach(System.out::println);
+    otherSet.stream().sorted().forEach(System.out::println);
+    userAgentSet.stream().sorted().forEach(System.out::println);
     urlRegexSet.stream().sorted().forEach(System.out::println);
     domainKeywordSet.stream().sorted().forEach(System.out::println);
     sort(domainSet, "DOMAIN,");
@@ -74,6 +80,9 @@ public class Rules {
     String str;
 
     while ((str = bufferedReader.readLine()) != null) {
+      if (StringUtils.isEmpty(str.trim())) {
+        continue;
+      }
       if (str.startsWith("DOMAIN,")) {
         domainSet.add(str);
       } else if (str.startsWith("DOMAIN-SUFFIX,")) {
@@ -82,10 +91,14 @@ public class Rules {
         domainKeywordSet.add(str);
       } else if (str.startsWith("URL-REGEX,")) {
         urlRegexSet.add(str);
-      } else if (str.startsWith("IP-CIDR,")) {
+      } else if (str.startsWith("USER-AGENT,")) {
+        userAgentSet.add(str);
+      } else if (str.startsWith("IP-CIDR")) {
         ipCidrSet.add(str);
-      } else if (str.startsWith("# ")) {
-      } else if (str.startsWith("// ")) {
+      } else if (str.startsWith("AND") || str.startsWith("OR") || str.startsWith("PROCESS-NAME")) {
+        otherSet.add(str);
+      } else if (str.startsWith("#")) {
+      } else if (str.startsWith("//")) {
       } else {
         throw new RuntimeException("地址错误：" + str);
       }

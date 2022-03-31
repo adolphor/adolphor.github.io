@@ -51,6 +51,47 @@ InnoDB 是聚集索引，MyISAM 是非聚集索引。聚簇索引的文件存放
 InnoDB 不保存表的具体行数，执行 select count(*) from table 时需要全表扫描。
 而MyISAM 用一个变量保存了整个表的行数，执行上述语句时只需要读出该变量即可，速度很快；
 
+## 存储引擎相关的命令
+
+### 查看 MySQL 提供的所有存储引擎
+
+```mysql
+show engines;
+```
+```
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| Engine             | Support | Comment                                                        | Transactions | XA   | Savepoints |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| InnoDB             | DEFAULT | Supports transactions, row-level locking, and foreign keys     | YES          | YES  | YES        |
+| MRG_MYISAM         | YES     | Collection of identical MyISAM tables                          | NO           | NO   | NO         |
+| MEMORY             | YES     | Hash based, stored in memory, useful for temporary tables      | NO           | NO   | NO         |
+| BLACKHOLE          | YES     | /dev/null storage engine (anything you write to it disappears) | NO           | NO   | NO         |
+| MyISAM             | YES     | MyISAM storage engine                                          | NO           | NO   | NO         |
+| CSV                | YES     | CSV storage engine                                             | NO           | NO   | NO         |
+| ARCHIVE            | YES     | Archive storage engine                                         | NO           | NO   | NO         |
+| PERFORMANCE_SCHEMA | YES     | Performance Schema                                             | NO           | NO   | NO         |
+| FEDERATED          | NO      | Federated MySQL storage engine                                 | NULL         | NULL | NULL       |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+```
+
+从上图我们可以查看出 MySQL 当前默认的存储引擎是 InnoDB，并且在 5.7 后的版本所有的存储引擎中只有 
+InnoDB 是事务性存储引擎，也就是说只有 InnoDB 支持事务。
+
+### 查看 MySQL 当前默认的存储引擎
+```mysql
+show variables like '%storage_engine%';
+```
+```
++----------------------------------+--------+
+| Variable_name                    | Value  |
++----------------------------------+--------+
+| default_storage_engine           | InnoDB |
+| default_tmp_storage_engine       | InnoDB |
+| disabled_storage_engines         |        |
+| internal_tmp_disk_storage_engine | InnoDB |
++----------------------------------+--------+
+```
+
 ## 参考资料
 
 * [高性能MySQL](https://book.douban.com/subject/23008813/)

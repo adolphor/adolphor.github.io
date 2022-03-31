@@ -330,3 +330,4 @@ Mark Word 的指向到线程栈帧的 Lock Record，假设CAS修改成功，则�
 * [Java6及以上版本对synchronized的优化](https://www.cnblogs.com/wuqinglong/p/9945618.html)
 * [锁原理 - 信号量 vs 管程：JDK 为什么选择管程](https://www.cnblogs.com/binarylei/p/12544002.html)
 * [synchronized 原理是什么？](https://www.zhihu.com/question/485107493/answer/2108506796)
+* [自旋锁跟轻量级锁的关系是什么？](https://www.zhihu.com/question/270564693)

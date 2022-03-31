@@ -5,12 +5,17 @@ import freemarker.template.DefaultObjectWrapperBuilder;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.Version;
+import org.apache.commons.lang3.time.DateFormatUtils;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,11 +30,21 @@ public class Generator {
   private static String categories = "[Java]";
   private static String tags = "[Java]";
   private static String folder = "java" + File.separator + "basic" + File.separator + "content";
-  private static String number = "01";
 
   private static Configuration cfg;
 
-  public static void main(String[] args) throws IOException, TemplateException {
+  public static void main(String[] args) throws TemplateException, IOException {
+    build(postTitle,urlTitle,categories,tags,folder);
+  }
+
+  protected static void build(String postTitle,
+                       String urlTitle,
+                       String categories,
+                       String tags,
+                       String folder
+                       ) throws IOException, TemplateException {
+
+    String number = getSeqNum();
 
     Map map = new HashMap();
     map.put("postTitle", postTitle);
@@ -64,7 +79,7 @@ public class Generator {
     temp.process(map, out);
 
     String postUrl = folder + File.separator + dateTitle;
-    String postLink = "[" + Generator.postTitle + "]({% post_url " + postUrl + " %})";
+    String postLink = "[" + postTitle + "]({% post_url " + postUrl + " %})";
     System.out.println(postLink);
 
     out.write("\n* " + postLink + "\n");
@@ -76,9 +91,42 @@ public class Generator {
     makeDir(source);
     File img = new File(Utils.getImgPath(number));
     makeDir(img);
-
   }
 
+  protected static String getSeqNum() throws IOException {
+    String format = DateFormatUtils.format(new Date(), "yyyyMMdd");
+    String seq;
+    File file = new File("./num_temp.md");
+    if (file.exists()) {
+      FileReader reader = new FileReader(file);
+      BufferedReader bufferedReader = new BufferedReader(reader);
+      String dateNum = bufferedReader.readLine();
+      if (format.equals(dateNum)) {
+        String num = bufferedReader.readLine();
+        seq = wrapperNum(Integer.valueOf(num) + 1);
+      } else {
+        seq = wrapperNum(1);
+      }
+    } else {
+      seq = wrapperNum(1);
+      file.createNewFile();
+    }
+    FileWriter fileWriter = new FileWriter(file);
+    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+    bufferedWriter.write(format);
+    bufferedWriter.write("\n");
+    bufferedWriter.write(seq);
+    bufferedWriter.flush();
+    return seq;
+  }
+
+  private static String wrapperNum(Integer num) {
+    String seqNum = String.valueOf(num);
+    while (seqNum.length() < 2) {
+      seqNum = "0" + seqNum;
+    }
+    return seqNum;
+  }
 
   public static Configuration getConfiguration(String templatePath) {
     if (cfg == null) {
@@ -107,5 +155,6 @@ public class Generator {
     }
     dir.mkdir();
   }
+
 
 }

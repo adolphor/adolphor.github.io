@@ -7,6 +7,10 @@ categories: [concurrent]
 keywords:   [Java,concurrent]
 ---
 
+
+![AQS-ReentrantLock]({{ site.baseurl }}/image/post/2021/09/27/03/AQS-ReentrantLock.webp)
+
+
 ## synchronized 和 ReentrantLock 的区别
 
 ### 两者都是可重入锁
@@ -24,3 +28,5 @@ synchronized 是依赖于 JVM 实现的，前面我们也讲到了 虚拟机团�
 ## 参考资料
 * [Java并发 - ReentrantLock]({% post_url java/concurrent/content/2021-09-27-03-java-concurrent-ReentrantLock %})
 * [synchronized-和-reentrantlock-的区别](https://snailclimb.gitee.io/javaguide/#/docs/java/multi-thread/Java并发进阶常见面试题总结?id=_15-谈谈-synchronized-和-reentrantlock-的区别)
+* [AQS&&ReentrantLock](https://mp.weixin.qq.com/s?__biz=MzU4NzA3MTc5Mg==&mid=2247484035&idx=1&sn=ccaec352e192f1fd40020d9a984e9461&chksm=fdf0eadcca8763ca5c44bd19118fd00e843c163deb40cda444b3fc08430c57760db15eca1ea6&scene=21&cur_album_id=1657204970858872832#wechat_redirect)
+

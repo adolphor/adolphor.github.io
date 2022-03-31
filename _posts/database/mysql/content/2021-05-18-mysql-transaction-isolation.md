@@ -207,9 +207,10 @@ set global transaction isolation level repeatable read;
 串行化是4种事务隔离级别中隔离效果最好的，解决了脏读、可重复读、幻读的问题，但是效果最差，它将事务的执行变为顺序执行，
 与其他三个隔离级别相比，它就相当于单线程，后一个事务的执行必须等待前一个事务结束。
 
-## 疑问
-
-* 隔离级别的粒度：库？表？
+## 总结
+* MySQL InnoDB 引擎使用 redo log(重做日志) 保证事务的持久性，使用 undo log(回滚日志) 来保证事务的原子性。
+* MySQL InnoDB 引擎通过 锁机制、MVCC 等手段来保证事务的隔离性（ 默认支持的隔离级别是 REPEATABLE-READ ）。
+* 保证了事务的持久性、原子性、隔离性之后，一致性才能得到保障。
 
 ## 参考资料
 * [MySQL 事务]({% post_url database/mysql/content/2021-05-18-mysql-transaction-isolation %})

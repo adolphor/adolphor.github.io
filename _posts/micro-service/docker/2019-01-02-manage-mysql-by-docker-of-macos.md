@@ -3,8 +3,8 @@ layout:     post
 title:      在macOS上使用docker运行MySQL
 date:       2019-01-02 14:50:38 +0800
 postId:     2019-01-02-14-50-38
-categories: []
-keywords:   [Docker]
+categories: [Microservice]
+keywords:   [Microservice, Docker]
 ---
 
 搜索镜像

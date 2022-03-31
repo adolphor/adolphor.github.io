@@ -12,9 +12,11 @@ keywords:   [Maven]
 ### 版本管理
 
 * 更改版本
-  ```
-  mvn versions:set -DnewVersion=0.0.1-SNAPSHOT
-  ```
+
+```
+mvn versions:set -DnewVersion=0.0.1-SNAPSHOT
+```
+
 ### 项目JRE依赖
 使用jdeps分析：
 ```
@@ -84,8 +86,15 @@ mvn jdeps:jdeps
 ## 推送到仓库
 
 ```
-mvn deploy:deploy-file -DgroupId=com.wlwx -DartifactId=wlwx-sms-sdk -Dversion=1.1.0 -Dpackaging=jar -Dfile=/Users/adolphor/Downloads/wlwx-sms-sdk-1.1.0.jar -Durl=http://maven.dev.joyoung.com/repository/maven-releases/ -DrepositoryId=nexus-releases
+mvn   deploy:deploy-file -DgroupId=com.wlwx -DartifactId=wlwx-sms-sdk -Dversion=1.1.0 -Dpackaging=jar -Dfile=/Users/adolphor/Downloads/wlwx-sms-sdk-1.1.0.jar -Durl=http://maven.dev.joyoung.com/repository/maven-releases/ -DrepositoryId=joyoung-releases
 mvn install:install-file -DgroupId=com.wlwx -DartifactId=wlwx-sms-sdk -Dversion=1.1.0 -Dpackaging=jar -Dfile=/Users/adolphor/Downloads/wlwx-sms-sdk-1.1.0.jar
+
+groupId=com.joyoung.android
+artifactId=link-library
+version=1.0-SNAPSHOT
+packaging=aar
+file=/Users/adolphor/Downloads/temp/joyounglibrary-release.aar
+mvn deploy:deploy-file -DgroupId=$groupId -DartifactId=$artifactId -Dversion=$version -Dpackaging=$packaging -Dfile=$file -Durl=http://maven.dev.joyoung.com/repository/maven-snapshots/ -DrepositoryId=joyoung-snapshots
 ```
 
 ## 源码安装

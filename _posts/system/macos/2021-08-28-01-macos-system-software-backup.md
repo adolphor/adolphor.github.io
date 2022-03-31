@@ -70,6 +70,18 @@ IdeaProjects
 10.3 需要按照 [Xcode 10.2 on High Sierra – Step by Step](https://codewithchris.com/xcode-update/) 
 进行操作（10.4及其后续版本是否可用尚未验证）。
 
+1. 修改 文件的 Minimum System Version 为 10.13.6
+    * Xcode.app/Contents/Info.plist
+    * Xcode.app/Contents/Applications/FileMerge/Contents/Info.plist
+    * Xcode.app/Contents/Developer/Applications/Simulator.app/Contents/Info.plist
+2. 拷贝老版本 Xcode.app/Contents/Developer/usr/bin/xcodebuild 覆盖新版本
+
+
+安装后，需要指定命令行所使用的xcode版本：
+```
+sudo xcode-select --switch path/to/Xcode.app
+```
+
 ## docker启动应用
 
 ```

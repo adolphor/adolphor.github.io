@@ -424,3 +424,4 @@ public class MyRunnable implements Runnable {
 * [线程池原来还可以优先扩容核心线程数](https://generalthink.github.io/2020/08/12/tomcat-thread-pool-executor/)
 * [线程池全面解析，一篇就够了！](https://juejin.cn/post/6844903978073849863)
 * [深入线程池，并连环17问](https://mp.weixin.qq.com/s/HWoyHgZiUz7pqFhYxfLDNA)
+* [如何优雅的使用和理解线程池](https://crossoverjie.top/2018/07/29/java-senior/ThreadPool/)

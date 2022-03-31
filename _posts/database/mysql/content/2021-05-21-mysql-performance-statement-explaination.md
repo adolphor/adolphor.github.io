@@ -6,11 +6,14 @@ postId:     2021-05-21-10-28-35
 categories: [MySQL]
 keywords:   [database,MySQL]
 ---
+MySQL 性能调优的主要手段，就是分析SQL语句，查看是否使用了索引，是否有回表操作。使用的主要关键字
+就是 **explain**， 分析结果主要关注 type 类型、索引 key、以及 Extra 信息。
 
 ## 准备工作
 
 本文章所有执行代码均在版本为 `mysql: stable 8.0.23 (bottled)` 的MySQL上执行。
-初始化语句如下：
+
+使用 **`mysql -uroot -p'Adolphor!@#123'`** 登录本地MySQL，初始化语句如下：
 ```mysql
 create table recipe (
     id int auto_increment primary key,
