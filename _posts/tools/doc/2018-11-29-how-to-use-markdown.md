@@ -40,3 +40,5 @@ p {
 ## 参考
 
 * [在 Markdown 语言中，如何实现段首空格的显示](https://www.zhihu.com/question/21420126/answer/18183047)
+* [选择使用正确的 Markdown Parser](https://github.com/xitu/gold-miner/blob/master/TODO/choosing-right-markdown-parser.md)
+* [markdown / markdown.github.com](https://github.com/markdown/markdown.github.com/wiki/Implementations)
