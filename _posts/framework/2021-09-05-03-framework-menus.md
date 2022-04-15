@@ -18,6 +18,7 @@ keywords:   [menus]
 
 ## Nginx
 * [Nginx 匹配]({% post_url framework/nginx/2021-12-14-02-nginx-parameter %})
+* [Nginx Rewrite 规则]({% post_url framework/nginx/2022-04-15-01-nginx-rewrite-policy %})
 
 
 ## 模板代码
