@@ -17,7 +17,7 @@ keywords:   [menus]
 * [RocketMQ Q&A]({% post_url framework/rocketmq/2021-09-13-02-rocketmq-qa %})
 
 ## Nginx
-
+* [Nginx 匹配]({% post_url framework/nginx/2021-12-14-02-nginx-parameter %})
 
 
 ## 模板代码
