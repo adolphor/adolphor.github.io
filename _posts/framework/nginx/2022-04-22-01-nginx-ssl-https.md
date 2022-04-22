@@ -7,13 +7,15 @@ categories: [framework]
 keywords:   [Nginx]
 ---
 
+两个目的：1. 配置https的ssl证书，2. 对于http请求自动跳转到https
+
 ## 配置范例
 
 ```
 server {
     listen                       443  ssl;
     listen                       [::]:443  ssl;
-    server_name                  dev-sentry.joyoung.com;
+    server_name                  adolphor.com;
     access_log                   /var/log/nginx/hosts.sentry.access.log  main;
     ssl_certificate              /home/adolphor/certs/fullchain.cer;
     ssl_certificate_key          /home/adolphor/certs/adolphor.com.key;
@@ -22,6 +24,8 @@ server {
     fastcgi_intercept_errors     on;
     proxy_intercept_errors       on;
     proxy_ssl_server_name        on;
+    # 需要指定body size，不能太小，以支持sentry需求
+    client_max_body_size         20m;
 
     location / {
         proxy_pass http://127.0.0.1:8080;
@@ -31,7 +35,7 @@ server {
 server {
     listen                      80;
     listen                      [::]:80;
-    server_name                 dev-sentry.joyoung.com;
+    server_name                 adolphor.com;
     access_log                  /var/log/nginx/host.sentry.access.log  main;
     # 将http转为https
     rewrite ^(.*)$   https://$host$1    permanent;
