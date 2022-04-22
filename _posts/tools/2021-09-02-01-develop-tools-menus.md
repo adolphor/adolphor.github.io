@@ -18,6 +18,7 @@ keywords:   [Tools]
 * [GIT回滚commit/push到指定版本]({% post_url tools/git/2016-11-03-git-commit-push-roll-back %})
 * [如何编写 Git commit 信息]({% post_url tools/git/2018-12-13-how-to-write-git-commit-messages %})
 * [Git追加代码更改到之前某次commit]({% post_url tools/git/2019-02-10-add-changes-to-some-commit-before %})
+* [Git ignore 配置文件]({% post_url tools/git/2022-04-22-02-tools-git-ignore-file %})
 
 ## 格式模板
 
