@@ -33,10 +33,13 @@ Redis相关文章目录汇总
 * [MySQL 备忘录]({% post_url database/mysql/content/2021-05-14-mysql-notebook %})
     - 自增主键
 
+## 存储优化
+* [MySQL - 存储空间占用分析]({% post_url database/mysql/content/2022-04-25-01-mysql-storage-space-analysis %})
+
 ## 模板参数
 
 ```java
-  private static String postTitle = "MySQL - 逻辑架构";
+private static String postTitle = "MySQL - 逻辑架构";
 private static String urlTitle = "mysql-logical-architecture";
 private static String categories = "[database]";
 private static String tags = "[database,MySQL]";
