@@ -53,6 +53,13 @@ install_on_request: 21,422 (30 days), 61,918 (90 days), 114,651 (365 days)
 build_error: 0 (30 days)
 ```
 
+### 初始化配置
+安装之后，使用 `mysql_secure_installation` 进行相关设置：
+* 修改Root密码：`Adolphor!@#123`
+* 进制远程登录：`Disallow root login remotely?`
+* 移除匿名用户：`Remove anonymous users?`
+* 移除测试库：`Remove test database and access to it?`
+
 ### 配置文件
 可以看到mysql的配置文件为：
 ```
