@@ -34,10 +34,5 @@ where table_schema = 'adolphor'
 order by data_length desc, index_length desc;
 ```
 
-## 其他
-```
-![image-alter]({{ site.baseurl }}/image/post/2022/04/25/01/xxx.jpg)
-```
-
 ## 参考资料
 * [MySQL - 存储空间占用分析]({% post_url database/mysql/content/2022-04-25-01-mysql-storage-space-analysis %})
