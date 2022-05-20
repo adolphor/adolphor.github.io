@@ -20,6 +20,15 @@ keywords:   [menus]
 * [Nginx 匹配]({% post_url framework/nginx/2021-12-14-02-nginx-parameter %})
 * [Nginx Rewrite 规则]({% post_url framework/nginx/2022-04-15-01-nginx-rewrite-policy %})
 * [Nginx 配置SSL支持HTTPS协议]({% post_url framework/nginx/2022-04-22-01-nginx-ssl-https %})
+* [Nginx中server的匹配顺序]({% post_url framework/nginx/2022-05-20-01-nginx-server-match-rule %})
+
+```java
+private static String postTitle = "Nginx Rewrite 规则";
+private static String urlTitle = "nginx-rewrite-policy";
+private static String categories = "[framework]";
+private static String tags = "[Nginx]";
+private static String folder = "framework" + File.separator + "nginx";
+```
 
 ## 模板代码
 ```java
