@@ -172,6 +172,21 @@ whoami
 grep <groupname> /etc/group
 ```
 
+## sudo 免密配置
+
+```shell
+chmod +w /etc/sudoers
+vim /etc/sudoers
+```
+在 root    ALL=(ALL)       ALL下面，修改对应用户的免密配置：
+```
+jyapp   ALL=(ALL)       NOPASSWD:ALL
+```
+保存成功之后，去掉编辑权限：
+```shell
+chmod -w /etc/sudoers
+```
+
 
 ## 参考资料
 
