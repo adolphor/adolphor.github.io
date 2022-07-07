@@ -25,4 +25,4 @@ keywords:   [Tools]
 
 ## 参考资料
 
-* [test](test.html)
+* [log4j/log4j2 配置方法]({% post_url java/log/content/2018-05-29-log4j-log4j2-configuration %})
