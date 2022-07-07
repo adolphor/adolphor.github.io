@@ -113,12 +113,50 @@ mvn dependency:tree -Dverbose > tree.txt
 配置多个profile：jdk-1.8, adolphor-nexus, rdc-nexus，
 上传的时候通过 `-P` 参数指定使用哪个profile即可：
 
-```
+```shell
 # 启用 adolphor，停用 rdc
 mvn deploy -D skipTests --settings /Users/adolphor/.m2/settings-adolphor.xml -P adolphor,!rdc
 # 停用 adolphor，启用 rdc
 mvn deploy -D skipTests --settings /Users/adolphor/.m2/settings-adolphor.xml -P !adolphor,rdc
 ```
+profile范例：
+
+```xml
+<profile>
+  <id>aliyun-repository</id>
+  <properties>
+    <altReleaseDeploymentRepository>
+      aliyun-repository-releases::default::https://packages.aliyun.com/maven/repository/release-test/
+    </altReleaseDeploymentRepository>
+    <altSnapshotDeploymentRepository>
+      aliyun-repository-snapshots::default::https://packages.aliyun.com/maven/repository/snapshot-test/
+    </altSnapshotDeploymentRepository>
+  </properties>
+  <repositories>
+    <repository>
+      <id>aliyun-repository-releases</id>
+      <url>https://packages.aliyun.com/maven/repository/release-test/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>aliyun-repository-snapshots</id>
+      <url>https://packages.aliyun.com/maven/repository/snapshot-test/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+</profile>
+```
+
 
 ### 推送普通jar包
 
@@ -132,6 +170,19 @@ version=1.0-SNAPSHOT
 packaging=aar
 file=/Users/adolphor/Downloads/temp/adolphorlibrary-release.aar
 mvn deploy:deploy-file -DgroupId=$groupId -DartifactId=$artifactId -Dversion=$version -Dpackaging=$packaging -Dfile=$file -Durl=http://maven.adolphor.com/repository/maven-snapshots/ -DrepositoryId=adolphor-snapshots
+```
+
+### 剔除某个module
+如果一个项目有多个module，有些module不希望推送到仓库，那么可以使用如下插件，在推送的时候过滤掉不需要推送的module：
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-deploy-plugin</artifactId>
+    <version>2.8.2</version>
+    <configuration>
+        <skip>true</skip>
+    </configuration>
+</plugin>
 ```
 
 ## 参考资料
