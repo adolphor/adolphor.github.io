@@ -1,0 +1,6 @@
+# ---------------- #
+#   Main Configs   #
+# ---------------- #
+# 编译
+# bundle exec jekyll build --config _config.yml,_config_blog.yml
+url: https://note.adolphor.com
