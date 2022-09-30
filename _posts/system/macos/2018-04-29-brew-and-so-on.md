@@ -38,6 +38,19 @@ brew cask cleanup --outdated
 brew cleanup
 ```
 
+## xcode
+软件更新的时候可能提示需要xcode相关工具包，那么使用如下方式解决：
+
+### 安装了xcode
+```shell
+xcode-select --install
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -license accept
+```
+
+### 没有安装xcode
+按照提示安装独立的工具包即可
+
 ## 手动安装
 
 2021年10月的时候，发现brew不再支持macOS 10.13.6 High Serria版本，但如果把MacBook Pro 2016
