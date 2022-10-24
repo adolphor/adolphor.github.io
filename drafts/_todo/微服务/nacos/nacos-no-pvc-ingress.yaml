@@ -99,6 +99,8 @@ spec:
             - containerPort: 7848
               name: old-raft-rpc
           env:
+            - name: NACOS_AUTH_ENABLE
+              value: true
             - name: NACOS_REPLICAS
               value: "2"
             - name: MYSQL_SERVICE_HOST

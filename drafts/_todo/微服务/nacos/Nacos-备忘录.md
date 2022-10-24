@@ -17,3 +17,55 @@ old-raft-rpc 7848
 
 
 172.16.4.163:8848
+
+# 本地测试版本兼容性
+```shell
+docker run -d \
+    --name nacos-server-210 \
+    --restart always \
+    -e TZ=Asia/Shanghai \
+    --network host
+    --privileged=true --restart=always \
+    -e JVM_XMS=256m -e JVM_XMX=256m \
+    -e MODE=standalone \
+    -e SPRING_DATASOURCE_PLATFORM=mysql \
+    -e MYSQL_SERVICE_HOST=10.157.170.233 \
+    -e MYSQL_SERVICE_PORT=3306 \
+    -e MYSQL_SERVICE_DB_NAME=jy_microservice_auth \
+    -e MYSQL_SERVICE_USER=bobzhu \
+    -e MYSQL_SERVICE_PASSWORD='Adolphor!@#123' \
+    -e MYSQL_DATABASE_NUM=1 \
+    -e NACOS_AUTH_ENABLE=true \
+    -v /Users/adolphor/Applications/nacos/logs/nacos/:/home/nacos/logs \
+    -p 8848:8848 \
+    -d nacos/nacos-server:v2.1.0
+
+docker run -d \
+    --name nacos-server-131 \
+    --restart always \
+    -e TZ=Asia/Shanghai \
+    --privileged=true --restart=always \
+    -e JVM_XMS=256m -e JVM_XMX=256m \
+    -e MODE=standalone \
+    -e SPRING_DATASOURCE_PLATFORM=mysql \
+    -e MYSQL_SERVICE_HOST=10.157.170.233 \
+    -e MYSQL_SERVICE_PORT=3306 \
+    -e MYSQL_SERVICE_DB_NAME=jy_microservice_auth \
+    -e MYSQL_SERVICE_USER=bobzhu \
+    -e MYSQL_SERVICE_PASSWORD='Adolphor!@#123' \
+    -e MYSQL_DATABASE_NUM=1 \
+    -e NACOS_AUTH_ENABLE=true \
+    -v /Users/adolphor/logs/nacos/:/home/nacos/logs \
+    -p 8847:8848 \
+    -d registry.cn-hangzhou.aliyuncs.com/jy-cloud-dev/nacos:1.3.1
+
+
+
+docker tag nacos/nacos-server:v2.1.0 registry.cn-hangzhou.aliyuncs.com/jy-cloud-dev/nacos-server:v2.1.0
+docker push registry.cn-hangzhou.aliyuncs.com/jy-cloud-dev/nacos-server:v2.1.0
+
+
+```
+
+
+
