@@ -10,7 +10,7 @@ keywords:   [system]
 ## Linux
 * [Linux 排查进程和线程]({% post_url system/linux/2021-09-28-01-linux-progress-thread %})
 * [Linux 磁盘空间分析和删除日志文件]({% post_url system/linux/2021-09-28-02-linux-disk-analysis-delete-log-file %})
-
+* [Linux系统中自动检测并重启Java项目]({% post_url system/linux/2022-11-23-01-linux-restart-java-project %})
 
 ## macOS
 * [macOS 自带词典词库转换]({% post_url system/macos/2022-03-25-01-macos-dictionary-convert %})
