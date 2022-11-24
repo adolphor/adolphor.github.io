@@ -3,7 +3,7 @@ layout:     post
 title:      docker的资源管理
 date:       2019-01-04 15:14:45 +0800
 postId:     2019-01-04-15-14-45
-categories: [Microservice]
+categories: [Docker]
 keywords:   [Microservice, Docker]
 ---
 

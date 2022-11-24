@@ -3,8 +3,8 @@ layout:     post
 title:      修改docker容器内hosts配置的方法
 date:       2022-11-07 11:14:59 +0800
 postId:     2022-11-07-11-14-59
-categories: [docker]
-keywords:   [micro-service, docker]
+categories: [Docker]
+keywords:   [Microservice, Docker]
 ---
 
 当docker内使用HBase数据库的时候，由于zookeeper特性，需要在hosts文件内配置host域名映射，

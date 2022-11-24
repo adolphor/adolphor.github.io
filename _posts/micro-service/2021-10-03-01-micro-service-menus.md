@@ -18,14 +18,26 @@ keywords:   [Microservice]
 
 ## Docker
 * [修改docker容器内hosts配置的方法]({% post_url micro-service/docker/2022-11-07-01-change-docker-hosts-content %})
+* [配置K8S集群中JVM相关内存参数]({% post_url micro-service/docker/2022-11-24-01-k8s-jvm-memory-limit %})
 
 ## 模板代码
+
+### content
 ```java
 private static String postTitle = "领域驱动设计";
 private static String urlTitle = "micro-service-ddd";
 private static String categories = "[Microservice]";
 private static String tags = "[Microservice]";
 private static String folder = "micro-service" + File.separator + "content";
+```
+
+### docker
+```java
+private static String postTitle = "配置K8S集群中JVM相关内存参数";
+private static String urlTitle = "k8s-jvm-memory-limit";
+private static String categories = "[Docker]";
+private static String tags = "[Microservice, Docker]";
+private static String folder = "micro-service" + File.separator + "docker";
 ```
 
 ## 参考资料
