@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      spring-boot 项目模板
+title:      spring-boot 脚手架项目
 date:       2022-10-12 11:34:05 +0800
 postId:     2022-10-12-11-34-05
 categories: [framework]
@@ -8,7 +8,16 @@ keywords:   [Spring]
 ---
 
 简便SpringBoot项目开发，直接参考下面配置即可。
-
+## 脚手架核心功能
+* JDK版本
+* build设置
+* 返回值自动封装
+* 单元测试
+* 日志组件
+* swagger
+* MyBatis
+* HTTP交互编码
+* 健康检查接口
 
 ## Java编译
 ```xml
@@ -172,6 +181,9 @@ public @interface IgnoreResponseAdvice {
 }
 ```
 
+## 下划线和驼峰转换
+参考：[spring-boot 下划线和驼峰转换]({% post_url framework/spring/2019-11-16-spring-boot-under-lower-camel %})
+
 ## 单元测试
 
 > pom.xml
@@ -231,5 +243,82 @@ public class GlobalResponseHandler implements ResponseBodyAdvice<Object> {
 }
 ```
 
+## 整合MyBatis
+
+### 扫描注解
+再spring整合mybatis的时候，有两个注解需要注意：
+
+* @SpringBootApplication(scanBasePackages ={})
+scanBasePackages 中配置的扫描路径，只加载 @RestController、@Service、@Repository 等Spring中的注解，但是Mybatis的组件的注解，Spring扫描到了也不会加载解析。
+
+* @MapperScan
+所有MyBatis的接口，都需要配置在这个扫描路径中，这样的话，所有Dao接口类，才会被加载生成操作数据库的代理类。
+但是要注意，如果使用了tk-myBatis需要使用tk的注解类。
+
+```xml
+<!--通用mapper-->
+<dependency>
+    <groupId>tk.mybatis</groupId>
+    <artifactId>mapper-spring-boot-starter</artifactId>
+</dependency>
+<!--分页插件-->
+<dependency>
+    <groupId>com.github.pagehelper</groupId>
+    <artifactId>pagehelper-spring-boot-starter</artifactId>
+</dependency>
+<!--druid连接池-->
+<dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>druid-spring-boot-starter</artifactId>
+</dependency>
+<!--mysql驱动-->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+</dependency>
+```
+
+## HTTP交互编码
+从Spring boot 2.2 开始，对于HTTP请求的默认编码不再是UTF-8，即便在 `HttpMessageConverters`
+等序列化类中指定了UTF-8编码，但返回的HTTP返回头中的值依然是 `Content-Type: application/json`，
+而不是 `Content-Type: application/json;charset=UTF-8`，如果需要显示指定返回头中的编码是
+UTF-8，需要在项目的 `bootstrap.yml` 配置文件中，添加如下配置：
+```yaml
+spring:
+  http:
+    encoding:
+      enabled: true
+      force: true
+      charset: UTF-8
+```
+
+## 健康检查接口
+### 具体实现
+> HelloController.java
+
+```java
+package com.demo.HelloController;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+    @RequestMapping("/hello")
+    public String hello(){
+        return "Hello Kitty!";
+    }
+}
+```
+### 配置自动加载启动接口
+> resources/META-INF/spring.factories
+
+```factories
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.demo.HelloController,\
+……
+```
+
+
 ## 参考资料
-* [spring-boot 项目模板]({% post_url framework/spring/2022-10-12-01-spring-boot-template-project %})
+* [spring-boot 脚手架项目]({% post_url framework/spring/2022-10-12-01-spring-boot-template-project %})
