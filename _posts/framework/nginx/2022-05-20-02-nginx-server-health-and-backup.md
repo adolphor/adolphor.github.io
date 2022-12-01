@@ -3,7 +3,7 @@ layout:     post
 title:      nginx的健康检查机制&灾备使用
 date:       2022-05-20 11:46:48 +0800
 postId:     2022-05-20-11-46-49
-categories: [framework]
+categories: [Nginx]
 keywords:   [Nginx]
 ---
 

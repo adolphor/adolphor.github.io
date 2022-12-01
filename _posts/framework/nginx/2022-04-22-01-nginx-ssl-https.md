@@ -3,7 +3,7 @@ layout:     post
 title:      Nginx 配置SSL支持HTTPS协议
 date:       2022-04-22 09:51:08 +0800
 postId:     2022-04-22-09-51-09
-categories: [framework]
+categories: [Nginx]
 keywords:   [Nginx]
 ---
 

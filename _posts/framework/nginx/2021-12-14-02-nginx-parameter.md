@@ -3,7 +3,7 @@ layout:     post
 title:      Nginx 匹配
 date:       2021-12-14 14:37:57 +0800
 postId:     2021-12-14-14-37-57
-categories: [framework]
+categories: [Nginx]
 keywords:   [Nginx]
 ---
 

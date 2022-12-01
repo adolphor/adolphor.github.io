@@ -3,7 +3,7 @@ layout:     post
 title:      Nginx中server的匹配顺序
 date:       2022-05-20 09:44:29 +0800
 postId:     2022-05-20-09-44-29
-categories: [framework]
+categories: [Nginx]
 keywords:   [Nginx]
 ---
 

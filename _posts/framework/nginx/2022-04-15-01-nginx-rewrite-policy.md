@@ -3,7 +3,7 @@ layout:     post
 title:      Nginx Rewrite 规则
 date:       2022-04-15 11:37:22 +0800
 postId:     2022-04-15-11-37-22
-categories: [framework]
+categories: [Nginx]
 keywords:   [Nginx]
 ---
 

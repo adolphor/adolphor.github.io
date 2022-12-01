@@ -3,7 +3,7 @@ layout:     post
 title:      spring-boot 脚手架项目
 date:       2022-10-12 11:34:05 +0800
 postId:     2022-10-12-11-34-05
-categories: [framework]
+categories: [Spring]
 keywords:   [Spring]
 ---
 

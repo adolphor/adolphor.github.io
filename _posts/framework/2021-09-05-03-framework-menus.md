@@ -3,8 +3,8 @@ layout:     post
 title:      开源框架目录汇总
 date:       2021-09-05 20:02:51 +0800
 postId:     2021-09-05-20-02-51
-categories: [framework]
-keywords:   [menus]
+categories: [Framework]
+keywords:   [Framework, menus]
 ---
 
 ## Spring
@@ -17,7 +17,7 @@ keywords:   [menus]
 ```java
 private static String postTitle = "spring-boot 下划线和驼峰转换";
 private static String urlTitle = "spring-boot-under-lower-camel";
-private static String categories = "[framework]";
+private static String categories = "[Spring]";
 private static String tags = "[Spring]";
 private static String folder = "framework" + File.separator + "spring";
 ```
@@ -35,7 +35,7 @@ private static String folder = "framework" + File.separator + "spring";
 ```java
 private static String postTitle = "Nginx Rewrite 规则";
 private static String urlTitle = "nginx-rewrite-policy";
-private static String categories = "[framework]";
+private static String categories = "[Nginx]";
 private static String tags = "[Nginx]";
 private static String folder = "framework" + File.separator + "nginx";
 ```
@@ -44,7 +44,7 @@ private static String folder = "framework" + File.separator + "nginx";
 ```java
 private static String postTitle = "spring 循环依赖解决方案";
 private static String urlTitle = "spring-circular-dependency";
-private static String categories = "[framework]";
+private static String categories = "[Spring]";
 private static String tags = "[Spring]";
 private static String folder = "framework" + File.separator + "spring";
 ```

@@ -3,7 +3,7 @@ layout:     post
 title:      Tomcat 优化
 date:       2016-10-11 14:22:43 +0800
 postId:     2016-10-11-14-22-43
-categories: []
+categories: [Tomcat]
 keywords:   [Tomcat]
 ---
 tomcat优化有如下几个方面：

@@ -3,7 +3,7 @@ layout:     post
 title:      spring boot 和 mybatis 中配置druid多数据源
 date:       2021-09-05 15:29:56 +0800
 postId:     2021-09-05-15-29-56
-categories: [framework]
+categories: [Spring]
 keywords:   [Spring, Mybatis]
 ---
 

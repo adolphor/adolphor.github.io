@@ -3,7 +3,7 @@ layout:     post
 title:      spring 循环依赖解决方案 
 date:       2021-09-05 20:01:49 +0800 
 postId:     2021-09-05-20-01-49
-categories: [framework]
+categories: [Spring]
 keywords:   [Spring]
 ---
 

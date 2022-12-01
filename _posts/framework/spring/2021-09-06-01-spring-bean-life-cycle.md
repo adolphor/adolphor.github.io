@@ -3,7 +3,7 @@ layout:     post
 title:      spring bean 的生命周期
 date:       2021-09-06 19:51:54 +0800
 postId:     2021-09-06-19-51-55
-categories: [framework]
+categories: [Spring]
 keywords:   [Spring]
 ---
 在传统的Java应用中，bean的生命周期很简单。使用Java关键字new进行bean实例化，然后该bean就可以使用了。
