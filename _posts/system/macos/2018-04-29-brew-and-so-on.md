@@ -38,7 +38,7 @@ brew cask cleanup --outdated
 brew cleanup
 ```
 
-## xcode
+## xcode command-line tools
 软件更新的时候可能提示需要xcode相关工具包，那么使用如下方式解决：
 
 ### 安装了xcode
@@ -50,6 +50,12 @@ sudo xcodebuild -license accept
 
 ### 没有安装xcode
 按照提示安装独立的工具包即可
+
+### 当前选项
+```shell
+xcode-select --print-path
+```
+
 
 ## 手动安装
 

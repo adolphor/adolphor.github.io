@@ -3,7 +3,7 @@ layout:     post
 title:      重复提交问题及解决方案
 date:       2018-06-05 13:41:44 +0800
 postId:     2018-06-05-13-41-44
-categories: []
+categories: [project]
 keywords:   [架构设计]
 ---
 
