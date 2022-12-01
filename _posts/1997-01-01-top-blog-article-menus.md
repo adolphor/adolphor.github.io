@@ -3,8 +3,8 @@ layout:     post
 title:      博文目录汇总
 date:       1997-01-01 17:18:40 +0800
 postId:     1997-01-01-17-18-40
-categories: []
-keywords:   []
+categories: [Program]
+keywords:   [Program]
 topmost:    true
 ---
 
@@ -173,9 +173,7 @@ topmost:    true
 ## 分布式微服务
 
 ## 操作系统
-
-* [Linux 排查进程和线程]({% post_url system/linux/2021-09-28-01-linux-progress-thread %})
-* [Linux 磁盘空间分析和删除日志文件]({% post_url system/linux/2021-09-28-02-linux-disk-analysis-delete-log-file %})
+* [系统软件目录汇总]({% post_url system/2021-08-28-01-pc-system-software-menus %})
 
 ## 编译原理
 

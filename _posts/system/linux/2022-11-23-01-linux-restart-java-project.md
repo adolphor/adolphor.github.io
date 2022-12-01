@@ -27,7 +27,7 @@ procnum=`ps -ef | grep java | grep -v grep | wc -l`
 if [ $procnum -eq 0 ]
 then
     echo `date +%Y-%m-%d` `date +%H:%M:%S` "restart service" >> /root/logs/restart.log
-    ./start.sh
+    source start.sh
 fi
 ```
 
@@ -43,7 +43,7 @@ then
     # 如果进程异常退出，可能需要删除pid文件才能重启成功
     rm -rf /mnt/runSys/jy_cms/server.pid
     echo `date +%Y-%m-%d` `date +%H:%M:%S` "restart service" >> /mnt/runSys/monitor.log
-    ./start.sh
+    source start.sh
 fi
 ```
 

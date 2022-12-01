@@ -80,6 +80,40 @@ dr-x------   2 jyapp jyapp 0 Sep  7 11:27 fd
 * **`environ`**：记录了进程运行时的环境变量；
 * **`fd`**：目录下是进程打开或使用的文件的符号连接。
 
+
+## netstat命令
+```shell
+netstat -an | grep <port>
+```
+
+范例：
+
+```shell
+$ netstat -an | grep 1087
+tcp4       0      0  *.1087                 *.*                    LISTEN    
+```
+
+## lsof命令
+
+通过`list open file`命令可以查看到当前打开文件，在linux中所有事物都是以文件形式存在，包括网络连接及硬件设备。
+-i参数表示网络链接，:80指明端口号，该命令会同时列出PID，方便kill。
+
+```shell
+lsof -i:<port>
+```
+
+查看所有进程监听的端口（耗时很长，慎用）：
+```shell
+sudo lsof -i -P | grep -i "listen"
+```
+
+范例：
+```shell
+$ lsof -i:1087
+COMMAND   PID      USER   FD   TYPE              DEVICE  SIZE/OFF  NODE  NAME
+privoxy  1052  adolphor    3u  IPv4  0xf5bc06c5ea3112fd       0t0   TCP  *:cplscrambler-in (LISTEN)
+```
+
 ## java应用
 如果是Java应用，那么可以使用JDK自带的命令行工具来查找相应的PID：
 * jps
