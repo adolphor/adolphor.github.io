@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - ThreadLocal
 date:       2021-09-05 18:18:29 +0800
 postId:     2021-09-05-18-18-29
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

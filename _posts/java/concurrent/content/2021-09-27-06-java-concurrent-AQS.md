@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - AQS 原理分析
 date:       2021-09-27 15:04:01 +0800
 postId:     2021-09-27-15-04-01
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

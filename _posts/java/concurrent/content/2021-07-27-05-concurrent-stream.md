@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - 并行流
 date:       2021-07-27 23:19:10 +0800
 postId:     2021-07-27-23-19-11
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

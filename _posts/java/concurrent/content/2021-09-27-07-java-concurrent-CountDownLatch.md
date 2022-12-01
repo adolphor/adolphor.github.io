@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - CountDownLatch
 date:       2021-09-27 15:57:19 +0800
 postId:     2021-09-27-15-57-19
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

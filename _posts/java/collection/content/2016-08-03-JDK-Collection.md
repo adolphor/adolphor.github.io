@@ -3,7 +3,7 @@ layout:     post
 title:      Collection框架总述
 date:       2016-08-03 21:08:24 +0800
 postId:     2016-08-03-21-08-24
-categories: [collection]
+categories: [Collection]
 keywords:   [Java, collection]
 ---
 

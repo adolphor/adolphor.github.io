@@ -3,7 +3,7 @@ layout:     post
 title:      Java数据结构和算法 - 高级排序
 date:       2021-04-23 15:04:03 +0800
 postId:     2021-04-23-15-04-03
-categories: [algorithm]
+categories: [Algorithm]
 keywords:   [数据结构和算法]
 ---
 ## 高级排序

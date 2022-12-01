@@ -3,7 +3,7 @@ layout:     post
 title:      Map框架之HashMap
 date:       2018-01-29 23:49:35 +0800
 postId:     2018-01-29-23-49-35
-categories: [collection]
+categories: [Collection]
 keywords:   [Java, collection]
 ---
 

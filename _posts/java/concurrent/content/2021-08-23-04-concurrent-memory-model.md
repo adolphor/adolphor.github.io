@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - Java内存模型
 date:       2021-08-23 15:55:43 +0800
 postId:     2021-08-23-15-55-43
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

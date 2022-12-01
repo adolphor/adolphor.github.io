@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - 线程安全的设计方式
 date:       2021-08-23 01:28:25 +0800
 postId:     2021-08-23-01-28-25
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

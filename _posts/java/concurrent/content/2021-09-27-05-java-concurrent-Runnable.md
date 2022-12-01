@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - Runnable
 date:       2021-09-27 11:27:07 +0800
 postId:     2021-09-27-11-27-07
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

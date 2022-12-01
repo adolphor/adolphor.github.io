@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - ReentrantLock
 date:       2021-09-27 11:05:56 +0800
 postId:     2021-09-27-11-05-56
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

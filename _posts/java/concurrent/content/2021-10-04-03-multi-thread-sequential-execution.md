@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - 多线程顺序执行案例
 date:       2021-10-04 21:18:56 +0800
 postId:     2021-10-04-21-18-56
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 多线程顺序执行，主要考察多线程之间的通信问题。

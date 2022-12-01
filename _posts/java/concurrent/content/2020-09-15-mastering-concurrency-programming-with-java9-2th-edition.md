@@ -3,8 +3,8 @@ layout:     post
 title:      精通Java并发编程（第二版）
 date:       2020-09-15 16:47:56 +0800
 postId:     2020-09-15-16-47-56
-categories: [concurrent]
-keywords:   [concurrent]
+categories: [Concurrent]
+keywords:   [Concurrent]
 ---
 
 ## 第一章 并发设计原理

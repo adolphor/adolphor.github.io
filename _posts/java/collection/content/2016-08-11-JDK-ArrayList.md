@@ -3,7 +3,7 @@ layout:     post
 title:      Collection框架之ArrayList
 date:       2016-08-11 15:15:50 +0800
 postId:     2016-08-11-15-15-50
-categories: [collection]
+categories: [Collection]
 keywords:   [Java, collection]
 ---
 

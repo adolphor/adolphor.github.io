@@ -3,7 +3,7 @@ layout:     post
 title:      Java数据结构和算法 - 迭代器
 date:       2021-04-15 13:52:35 +0800
 postId:     2021-04-15-13-52-35
-categories: [algorithm]
+categories: [Algorithm]
 keywords:   [数据结构和算法]
 ---
 

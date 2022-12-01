@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - CAS与原子变量
 date:       2021-08-06 17:53:51 +0800
 postId:     2021-08-06-17-53-51
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

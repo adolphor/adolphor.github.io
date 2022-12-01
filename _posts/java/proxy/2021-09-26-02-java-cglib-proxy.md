@@ -3,7 +3,7 @@ layout:     post
 title:      Java cglib 代理
 date:       2021-09-26 17:00:00 +0800
 postId:     2021-09-26-17-00-00
-categories: [proxy]
+categories: [Proxy]
 keywords:   [Java, proxy]
 ---
 JDK 动态代理有一个最致命的问题是其只能代理实现了接口的类，CGLIB 动态代理机制就可以避免这个限制。

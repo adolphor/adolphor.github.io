@@ -3,7 +3,7 @@ layout:     post
 title:      Java 集合目录
 date:       2021-09-27 00:08:14 +0800
 postId:     2021-09-27-00-08-14
-categories: [collection]
+categories: [Collection]
 keywords:   [Java, collection]
 ---
 
@@ -11,7 +11,7 @@ keywords:   [Java, collection]
 ```java
 private static String postTitle = "Collection框架之ConcurrentHashMap";
 private static String urlTitle = "jdk-ConcurrentHashMap";
-private static String categories = "[collection]";
+private static String categories = "[Collection]";
 private static String tags = "[Java, collection]";
 private static String folder = "java" + File.separator + "collection"+ File.separator + "content";
 private static String number = "01";

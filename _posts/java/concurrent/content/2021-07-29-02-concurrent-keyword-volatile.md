@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - volatile 实现原理
 date:       2021-07-29 00:51:35 +0800
 postId:     2021-07-29-00-51-35
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

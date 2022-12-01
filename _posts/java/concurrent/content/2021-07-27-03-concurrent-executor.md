@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - 执行器
 date:       2021-07-27 23:14:40 +0800
 postId:     2021-07-27-23-14-40
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

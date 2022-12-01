@@ -41,7 +41,7 @@ Redis相关文章目录汇总
 ```java
 private static String postTitle = "MySQL - 逻辑架构";
 private static String urlTitle = "mysql-logical-architecture";
-private static String categories = "[database]";
+private static String categories = "[Database]";
 private static String tags = "[database,MySQL]";
 private static String folder = "database" + File.separator + "mysql" + File.separator + "content";
 ```

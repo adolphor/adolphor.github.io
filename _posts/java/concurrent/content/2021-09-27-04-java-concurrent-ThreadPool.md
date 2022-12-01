@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - 线程池
 date:       2021-09-27 11:22:22 +0800
 postId:     2021-09-27-11-22-22
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 线程是一个重资源，JVM 中的线程与操作系统的线程是一对一的关系，所以在 JVM 中每创建一个线程

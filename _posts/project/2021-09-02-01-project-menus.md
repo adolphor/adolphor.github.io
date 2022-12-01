@@ -15,8 +15,8 @@ keywords:   [Tools]
 ```java
 private static String postTitle = "项目开发目录汇总";
 private static String urlTitle = "project-menus";
-private static String categories = "[project]";
-private static String tags = "[project]";
+private static String categories = "[Project]";
+private static String tags = "[Project]";
 private static String folder = "project" + File.separator + "content";
 ```
 

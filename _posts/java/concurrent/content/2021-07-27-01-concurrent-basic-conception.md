@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - 基本概念
 date:       2021-07-27 22:10:44 +0800
 postId:     2021-07-27-22-10-45
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

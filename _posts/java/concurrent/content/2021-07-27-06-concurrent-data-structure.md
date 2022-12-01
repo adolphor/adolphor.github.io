@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - 并发数据结构
 date:       2021-07-27 23:19:56 +0800
 postId:     2021-07-27-23-19-56
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

@@ -3,7 +3,7 @@ layout:     post
 title:      MySQL - 分表分库组件
 date:       2021-10-02 23:07:00 +0800
 postId:     2021-10-02-23-07-00
-categories: [database]
+categories: [Database]
 keywords:   [database, MySQL]
 ---
 

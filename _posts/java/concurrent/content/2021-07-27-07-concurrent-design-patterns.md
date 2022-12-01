@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - 并发设计模式
 date:       2021-07-27 23:21:54 +0800
 postId:     2021-07-27-23-21-54
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

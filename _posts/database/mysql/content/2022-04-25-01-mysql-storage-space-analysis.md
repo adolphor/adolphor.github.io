@@ -3,7 +3,7 @@ layout:     post
 title:      MySQL - 存储空间占用分析
 date:       2022-04-25 17:06:04 +0800
 postId:     2022-04-25-17-06-04
-categories: [database]
+categories: [Database]
 keywords:   [database,MySQL]
 ---
 

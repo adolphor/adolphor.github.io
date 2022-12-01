@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - 锁分类
 date:       2021-07-29 00:54:10 +0800
 postId:     2021-07-29-00-54-10
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

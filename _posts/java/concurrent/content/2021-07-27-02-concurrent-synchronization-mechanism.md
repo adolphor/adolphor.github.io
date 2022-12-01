@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - 同步机制
 date:       2021-07-27 23:10:36 +0800
 postId:     2021-07-27-23-10-36
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

@@ -3,8 +3,8 @@ layout:     post
 title:      Java并发目录
 date:       2020-03-15 22:28:27 +0800
 postId:     2020-03-15-22-28-28
-categories: [concurrent]
-keywords:   [concurrent]
+categories: [Concurrent]
+keywords:   [Concurrent]
 ---
 
 ## 并发基础知识
@@ -58,7 +58,7 @@ keywords:   [concurrent]
 ```java
 private static String postTitle = "Java并发 - 基本概念";
 private static String urlTitle = "basic-conception";
-private static String categories = "[concurrent]";
+private static String categories = "[Concurrent]";
 private static String tags = "[Java,concurrent]";
 private static String folder = "java" + File.separator + "concurrent" + File.separator + "content";
 ```

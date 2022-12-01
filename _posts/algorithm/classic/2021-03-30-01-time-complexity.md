@@ -3,7 +3,7 @@ layout:     post
 title:      Java数据结构和算法 - 时间复杂度
 date:       2021-03-30 14:22:37 +0800
 postId:     2021-03-30-14-22-38
-categories: [algorithm]
+categories: [Algorithm]
 keywords:   [数据结构和算法]
 ---
 

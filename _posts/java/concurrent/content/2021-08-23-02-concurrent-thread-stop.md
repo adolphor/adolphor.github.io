@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - 线程停止
 date:       2021-08-23 00:42:03 +0800
 postId:     2021-08-23-00-42-03
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

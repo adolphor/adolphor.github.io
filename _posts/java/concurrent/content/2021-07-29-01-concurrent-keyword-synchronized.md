@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - synchronized 关键字
 date:       2021-07-29 00:50:32 +0800
 postId:     2021-07-29-00-50-32
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

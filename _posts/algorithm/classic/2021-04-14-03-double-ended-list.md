@@ -3,7 +3,7 @@ layout:     post
 title:      Java数据结构和算法 - 双端链表
 date:       2021-04-14 13:50:55 +0800
 postId:     2021-04-14-13-50-55
-categories: [algorithm]
+categories: [Algorithm]
 keywords:   [数据结构和算法]
 ---
 

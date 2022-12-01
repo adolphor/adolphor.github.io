@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - Fork/Join 框架
 date:       2021-07-27 23:17:38 +0800
 postId:     2021-07-27-23-17-38
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

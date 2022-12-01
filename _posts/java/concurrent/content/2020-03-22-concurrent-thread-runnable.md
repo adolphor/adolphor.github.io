@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - 基本元素 Thread 和 Runnable
 date:       2020-03-22 17:19:35 +0800
 postId:     2020-03-22-17-19-36
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

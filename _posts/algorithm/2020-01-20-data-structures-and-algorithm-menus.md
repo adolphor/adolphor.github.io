@@ -3,7 +3,7 @@ layout:     post
 title:      算法目录
 date:       2020-01-20 17:24:57 +0800
 postId:     2020-01-20-17-24-57
-categories: [algorithm]
+categories: [Algorithm]
 keywords:   [数据结构和算法]
 ---
 
@@ -74,7 +74,7 @@ keywords:   [数据结构和算法]
 ```java
 private static String postTitle = "Java数据结构和算法 - 哈希表";
 private static String urlTitle = "hash-table";
-private static String categories = "[algorithm]";
+private static String categories = "[Algorithm]";
 private static String tags = "[数据结构和算法]";
 private static String folder = "algorithm" + File.separator + "classic";
 private static String number = "01";

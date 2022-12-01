@@ -3,7 +3,7 @@ layout:     post
 title:      Java并发 - wait和notify
 date:       2021-08-22 21:39:57 +0800
 postId:     2021-08-22-21-39-57
-categories: [concurrent]
+categories: [Concurrent]
 keywords:   [Java,concurrent]
 ---
 

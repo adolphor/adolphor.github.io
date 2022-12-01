@@ -3,7 +3,7 @@ layout:     post
 title:      Collection框架之LinkedList
 date:       2016-08-16 15:59:31 +0800
 postId:     2016-08-16-15-59-31
-categories: [collection]
+categories: [Collection]
 keywords:   [Java, collection]
 ---
 

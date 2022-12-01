@@ -3,7 +3,7 @@ layout:     post
 title:      Linux系统中自动检测并重启Java项目
 date:       2022-11-23 09:58:05 +0800
 postId:     2022-11-23-09-58-05
-categories: [linux]
+categories: [Linux]
 keywords:   [Java, Linux]
 ---
 

@@ -3,7 +3,7 @@ layout:     post
 title:      Java JDK 代理
 date:       2021-09-26 16:59:45 +0800
 postId:     2021-09-26-16-59-45
-categories: [proxy]
+categories: [Proxy]
 keywords:   [Java, proxy]
 ---
 

@@ -3,7 +3,7 @@ layout:     post
 title:      Collection框架之ConcurrentHashMap
 date:       2021-09-27 00:10:10 +0800
 postId:     2021-09-27-00-10-10
-categories: [collection]
+categories: [Collection]
 keywords:   [Java, collection]
 ---
 

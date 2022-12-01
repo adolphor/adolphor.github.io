@@ -3,7 +3,7 @@ layout:     post
 title:      Java数据结构和算法 - 哈弗曼编码
 date:       2021-07-22 16:39:06 +0800
 postId:     2021-07-22-16-39-06
-categories: [algorithm]
+categories: [Algorithm]
 keywords:   [数据结构和算法]
 ---
 

@@ -3,8 +3,8 @@ layout:     post
 title:      系统软件目录汇总
 date:       2021-08-28 19:23:48 +0800
 postId:     2021-08-28-19-23-48
-categories: [system]
-keywords:   [system]
+categories: [System]
+keywords:   [System]
 ---
 
 ## Linux
