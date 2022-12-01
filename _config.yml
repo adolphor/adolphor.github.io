@@ -2,7 +2,6 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://adolphor.com
 date_format: "ordinal"
 title: Bob的城堡
 subtitle: "Keep going"
