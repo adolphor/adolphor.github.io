@@ -17,6 +17,7 @@ keywords:   [Nginx]
 ### nginx 配置
 
 > nginx-backup-8088.conf
+
 ```nginx
 upstream tree {
     server 127.0.0.1:8901 max_fails=3 fail_timeout=10s; 
@@ -205,6 +206,7 @@ docker build -t adolphor/nginx-check .
 ### 完整示例
 
 > nginx-check-8988.conf
+
 ```nginx
 upstream cluster {
   # 127.0.0.1
@@ -237,7 +239,6 @@ server {
   }
 }
 ```
-
 
 ## 参考资料
 * [nginx的原生被动健康检查机制&灾备使用]({% post_url framework/nginx/2022-05-20-02-nginx-server-health-and-backup %})
