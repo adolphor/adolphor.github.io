@@ -43,7 +43,8 @@ then
     # 如果进程异常退出，可能需要删除pid文件才能重启成功
     rm -rf /mnt/runSys/jy_cms/server.pid
     echo `date +%Y-%m-%d` `date +%H:%M:%S` "restart service" >> /mnt/runSys/monitor.log
-    source start.sh
+    # 注意：因为要使用cron，所以这里必须写被调用脚本的绝对路径
+    source /mnt/runSys/jy_cms/start.sh
 fi
 ```
 
@@ -56,3 +57,4 @@ crontab -e
 
 ## 参考资料
 * [Linux系统中自动检测并重启Java项目]({% post_url system/linux/2022-11-23-01-linux-restart-java-project %})
+* [Linux系统shell脚本基础]({% post_url system/linux/2022-12-01-01-linux-system-shell %}#cron定时任务调用脚本)

@@ -47,7 +47,7 @@ spring:
 解决方法是通过继承 `WebMvcConfigurer` 来覆写 `addArgumentResolvers` 实现：
 
 ```java
-import com.joyoung.base.boot.utils.spring.UnderlineToCamelArgumentResolver;
+import com.adolphor.base.boot.utils.spring.UnderlineToCamelArgumentResolver;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -90,7 +90,7 @@ MenuInfoVo menu = dataCenter.query(sql, sqlParam(id), MenuInfoVo.class);
 > UnderlineToCamelArgumentResolver.java
 
 ```java
-import com.joyoung.smart.base.exceptions.ParamException;
+import com.adolphor.smart.base.exceptions.ParamException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeansException;
@@ -105,7 +105,7 @@ import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.joyoung.smart.base.constant.ResponseError.PARAM_RESOLVE_ERR;
+import static com.adolphor.smart.base.constant.ResponseError.PARAM_RESOLVE_ERR;
 
 @Slf4j
 public class UnderlineToCamelArgumentResolver implements HandlerMethodArgumentResolver {

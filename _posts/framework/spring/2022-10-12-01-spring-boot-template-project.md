@@ -198,7 +198,7 @@ public @interface IgnoreResponseAdvice {
 > StudentTest.java
 ```java
 @ExtendWith(SpringExtension.class)
-@SpringBootTest(classes = JoyoungFunctionsDemoApplication.class)
+@SpringBootTest(classes = FunctionsDemoApplication.class)
 public class StudentTest {
 
     @Autowired

@@ -13,9 +13,9 @@ keywords:   [Spring]
 package org.jy.smart.thirdparty.menu.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.joyoung.base.boot.utils.db.DataCenter;
-import com.joyoung.smart.base.exceptions.BaseException;
-import com.joyoung.smart.base.model.DBList;
+import com.adolphor.base.boot.utils.db.DataCenter;
+import com.adolphor.smart.base.exceptions.BaseException;
+import com.adolphor.smart.base.model.DBList;
 import org.apache.commons.lang3.StringUtils;
 import org.jy.smart.thirdparty.menu.dao.MenuInfoDao;
 import org.jy.smart.thirdparty.menu.model.*;
@@ -28,7 +28,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import static com.joyoung.base.boot.utils.db.DataCenter.sqlParam;
+import static com.adolphor.base.boot.utils.db.DataCenter.sqlParam;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
 

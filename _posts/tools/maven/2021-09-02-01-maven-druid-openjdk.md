@@ -14,7 +14,7 @@ openjdk路径，导致编译报错，具体原因和解决方案如下。
 ## 报错信息
 ```
 $ mvn clean source:jar install -D skipTests
-[ERROR] Failed to execute goal on project cloud-common: Could not resolve dependencies for project com.joyoung:cloud-common:jar:0.0.2-SNAPSHOT: The following artifacts could not be resolved: com.sun:tools:jar:1.8, com.sun:jconsole:jar:1.8: Could not find artifact com.sun:tools:jar:1.8 at specified path /Users/adolphor/.m2/repository/com/alibaba/druid/1.2.6/lib/openjdk-1.8-tools.jar -> [Help 1]
+[ERROR] Failed to execute goal on project cloud-common: Could not resolve dependencies for project com.adolphor:cloud-common:jar:0.0.2-SNAPSHOT: The following artifacts could not be resolved: com.sun:tools:jar:1.8, com.sun:jconsole:jar:1.8: Could not find artifact com.sun:tools:jar:1.8 at specified path /Users/adolphor/.m2/repository/com/alibaba/druid/1.2.6/lib/openjdk-1.8-tools.jar -> [Help 1]
 [ERROR] 
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
 [ERROR] Re-run Maven using the -X switch to enable full debug logging.

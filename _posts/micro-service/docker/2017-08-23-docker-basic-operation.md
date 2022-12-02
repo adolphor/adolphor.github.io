@@ -161,10 +161,10 @@ docker exec my-nginx nginx -s reload # 重载nginx配置文件
 
 可以使用 `-v` 参数来挂在宿主机的文件夹到docker容器：
 ```shell
-docker start rascms -i -v /Users/adolphor/IdeaProjects/joyoung:/root/joyoung/workspace /bin/bash
+docker start rascms -i -v /Users/adolphor/IdeaProjects/adolphor:/root/adolphor/workspace /bin/bash
 ```
-以上语句的含义为：初始化一个名为rascms的容器，并挂在宿主机的`/Users/adolphor/IdeaProjects/joyoung`目录到docker容器的
-`/root/joyoung/workspace`目录。
+以上语句的含义为：初始化一个名为rascms的容器，并挂在宿主机的`/Users/adolphor/IdeaProjects/adolphor`目录到docker容器的
+`/root/adolphor/workspace`目录。
 
 注意：如果此容器关闭之后想要重新打开再次使用的时候，无需再次指定挂在目录，也就是只要执行 docker start 指令就行，无需其他参数。
 

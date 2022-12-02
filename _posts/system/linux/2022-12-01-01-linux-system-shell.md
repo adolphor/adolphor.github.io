@@ -103,6 +103,27 @@ second:
 ```
 可见，使用sh命令开启一个子进程来调用指定的shell脚本无法访问父进程的变量。我们如何让子进程访问父进程中变量呢？可以使用 export 命令。
 
+## cron定时任务调用脚本
+使用cron调用定时任务，范例如下：
+```shell
+*/1 * * * * sh /mnt/runSys/monitor.sh >> /mnt/runSys/monitor.log
+```
+如果 `monitor.sh` 应用了其他脚本，比如 `start.sh`，那么需要使用绝对路径：
+
+> parent.sh
+
+```shell
+#!/bin/bash
+echo 'running parent.sh'
+source /home/temp/content.sh
+```
+
+> parent.sh
+
+```shell
+#!/bin/bash
+echo 'running content.sh'
+```
 
 ## 参考资料
 * [Linux系统shell脚本基础]({% post_url system/linux/2022-12-01-01-linux-system-shell %})
