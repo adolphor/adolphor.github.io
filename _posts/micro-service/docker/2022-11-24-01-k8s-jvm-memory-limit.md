@@ -61,28 +61,25 @@ Command line:  -javaagent:/data/agent.jar -Dxmiast.ip=172.31.1.194 -Dxmiast.port
 
 # 推荐配置参数
 ### K8S参数
-CPU：最小值0.25，最大值0.3
-RAM：最大值比最小值大25%，如 最小值 1024，最大值1280
-```
-最小值：0.25 CPU，1024 MB
-最大值：0.3 CPU，1280 MB
-```
-
-512-640
-1024-1280
+CPU：一般项目配置0.2即可，最大值和最小值保持一致，避免资源挤占出现资源不足
+RAM：根据Java项目需要配置即可，最大值和最小值保持一致，避免资源挤占出现资源不足
 
 ### JVM参数
 ```
--XX:+UseContainerSupport：会默认开启，不需要显示配置
--XX:InitialRAMPercentage=80.0 -XX:MaxRAMPercentage=80.0
-```
-
-开始写作吧
-```
-![image-alter]({{ site.baseurl }}/image/post/2022/11/24/01/xxx.jpg)
+# 会默认开启，不需要显示配置
+-XX:+UseContainerSupport
+# 最小内存50%，
+# 最大内存80%，不要使用100%，需要给Docker内的其他进程预留内存空间
+-XX:InitialRAMPercentage=50.0 -XX:MaxRAMPercentage=80.0
 ```
 
 ## 参考资料
 * [配置K8S集群中JVM相关内存参数]({% post_url micro-service/docker/2022-11-24-01-k8s-jvm-memory-limit %})
 * [Java/Spring应用在k8s环境中的内存配置实践](https://segmentfault.com/a/1190000040295369?from_wecom=1)
 * [Difference Between InitialRAMPercentage, MinRAMPercentage, MaxRAMPercentage](https://dzone.com/articles/difference-between-initialrampercentage-minramperc)
+
+开始写作吧
+```
+![image-alter]({{ site.baseurl }}/image/post/2022/11/24/01/xxx.jpg)
+```
+
