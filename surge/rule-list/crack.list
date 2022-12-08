@@ -1,0 +1,27 @@
+# 屏蔽破解软件升级
+
+## adobe
+DOMAIN-SUFFIX,adobe.io
+DOMAIN-SUFFIX,adobe.com
+DOMAIN-SUFFIX,adobelogin.com
+PROCESS-NAME,Adobe_CCXProcess.node
+
+## 破解 wondershare video converter ultimate 激活之前需要屏蔽一下地址
+DOMAIN-SUFFIX,        wondershare.cn.edgesuite.net
+DOMAIN-SUFFIX,                  my.wondershare.com
+DOMAIN-SUFFIX,                  us.wondershare.com
+DOMAIN-SUFFIX,                 api.wondershare.com
+DOMAIN-SUFFIX,                 cbs.wondershare.com
+DOMAIN-SUFFIX,            platform.wondershare.com
+DOMAIN-SUFFIX,         macplatform.wondershare.com
+DOMAIN-SUFFIX,            resource.wondershare.com
+DOMAIN-SUFFIX,            download.wondershare.com
+DOMAIN-SUFFIX,ori-myphone-download.wondershare.cc
+
+# 禁止自动更新
+
+## 禁止dash自动更新
+DOMAIN-SUFFIX,kapeli.com
+
+## 进制Docker检测更新，屏蔽 "OS X 10.13 is not supported" 的提示
+# DOMAIN-SUFFIX,desktop.docker.com

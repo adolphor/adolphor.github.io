@@ -1,0 +1,15 @@
+#!name= Wireguard
+#!desc= Get cookie info
+#!system=ios
+
+# subscribe：https://blog.adolphor.com/surge/sgmodule/wireguard.sgmodule
+
+[Proxy]
+tx-wr = wireguard, section-name=3F86194C
+
+[WireGuard 3F86194C]
+private-key = yCfr1XcXqKQWk9Yx/jXHwwaV+JjxH5yNw43CvLYxWW0=
+self-ip = 192.168.10.2
+dns-server = 8.8.8.8
+mtu = 1000
+peer = (public-key = MdwVMZrVRMu03ezTGPkJIRH1fUVTjpqAyAzRFSfsgUE=, allowed-ips = 0.0.0.0/0, endpoint = 42.192.198.159:51820, preshared-key = yk1KTLe6WF05DtUd2YKgRBpnSDbtrfSZq9TAvgYN7Qs=)

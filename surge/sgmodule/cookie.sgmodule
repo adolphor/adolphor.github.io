@@ -1,0 +1,20 @@
+#!name= cookie
+#!desc= Get cookie info
+#!system=ios
+
+# subscribe：https://blog.adolphor.com/surge/sgmodule/cookie.sgmodule
+
+[Script]
+# 网易云：
+# 先登录: https://music.163.com/m/login
+# 再访问: https://music.163.com/#/user/level
+# 提示: 获取会话: 成功!
+neteasemusic = type=http-request,requires-body=1,pattern=^https:\/\/music.163.com\/weapi\/user\/level,script-path=https://blog.adolphor.com/surge/js-list/neteasemusic/neteasemusic.cookie.js
+
+# 叮咚买菜：
+# 登录APP后，点击签到
+# 提示: 获取会话: 成功!
+neteasemusic = type=http-request,requires-body=1,pattern=^https:\/\/maicai.api.ddxq.mobi\/user\/checkLogin,script-path=https://blog.adolphor.com/surge/js-list/dingdong/DingDong.cookie.js
+
+[MITM]
+hostname = %APPEND% music.163.com, maicai.api.ddxq.mobi

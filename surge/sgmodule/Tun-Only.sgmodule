@@ -1,0 +1,15 @@
+#!name=Tun Only
+#!desc=兼容模式
+#!system=ios
+
+# subscribe：https://blog.adolphor.com/surge/sgmodule/Tun-Only.sgmodule
+# author：0haizhu0@gmail.com
+# source：telegram 收藏夹
+# update：11 27, 2020
+
+[General]
+compatibility-mode = 3
+
+
+
+

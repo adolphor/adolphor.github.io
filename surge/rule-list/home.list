@@ -1,0 +1,4 @@
+# 内网穿透局域网IP段
+IP-CIDR,192.168.1.0/24,no-resolve
+IP-CIDR,192.168.68.0/24,no-resolve
+IP-CIDR,192.168.123.0/24,no-resolve

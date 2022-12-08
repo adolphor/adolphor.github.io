@@ -1,0 +1,8 @@
+#!name=MitM
+#!desc=Allows MitM for all hostnames on all ports, excludes the appointed ones.
+
+# subscribe：https://blog.adolphor.com/surge/sgmodule/MitM.sgmodule
+# author：0haizhu0@gmail.com
+
+[MITM]
+hostname = %APPEND% *:0

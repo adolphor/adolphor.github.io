@@ -1,0 +1,35 @@
+# 对于 REJECT 和 office.list 配置中列外放行的情况
+# 需要配置相关域名并启动 MITM 功能
+
+# 主机
+# -- 腾讯
+IP-CIDR,42.192.198.159/32,no-resolve
+DOMAIN,note.adolphor.com
+# -- 搬瓦工
+IP-CIDR,80.251.211.229/32,no-resolve
+DOMAIN,blog.adolphor.com
+# wireguard VPN
+IP-CIDR,192.168.10.1/24,no-resolve
+
+# 小米
+URL-REGEX,api.io.mi.com/app/stat/stat_info
+URL-REGEX,api.io.mi.com/app/v2/plugin/fetch_plugin
+URL-REGEX,data.mistat.xiaomi.com/get_all_config
+
+# 中邮取件
+URL-REGEX,^https?://odin\.re\.taobao\.com/m/NbabaFarm
+# 芭芭农场
+URL-REGEX,^https?://w\.cnzz\.com/c\.php
+
+# 建行网页广告放行，不然网页功能异常
+DOMAIN-SUFFIX,adv.ccb.com
+
+# 抖音小黄车
+DOMAIN,lianmengapi-lf.snssdk.com
+
+# Joyoung
+DOMAIN,soa.joyoung.com
+DOMAIN,joyoung.yunxuetang.cn
+
+# ClashX Pro
+PROCESS-NAME,/Applications/ClashX Pro.app/Contents/MacOS/ClashX Pro,DIRECT

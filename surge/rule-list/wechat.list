@@ -1,0 +1,15 @@
+# wechat
+IP-CIDR,43.130.194.1/24,no-resolve
+IP-CIDR,43.135.106.1/24,no-resolve
+IP-CIDR,101.32.104.1/24,no-resolve
+IP-CIDR,101.32.118.1/24,no-resolve
+IP-CIDR,101.32.133.1/24,no-resolve
+IP-CIDR,101.32.139.1/24,no-resolve
+IP-CIDR,117.68.25.1/24,no-resolve
+IP-CIDR,129.226.3.1/24,no-resolve
+IP-CIDR,203.205.220.1/24,no-resolve
+
+DOMAIN-SUFFIX,qq.com
+DOMAIN-SUFFIX,wechat.com
+DOMAIN-SUFFIX,qpic.cn
+DOMAIN-SUFFIX,qlogo.cn
