@@ -19,6 +19,8 @@ keywords:   [Microservice]
 ## Docker
 * [修改docker容器内hosts配置的方法]({% post_url micro-service/docker/2022-11-07-01-change-docker-hosts-content %})
 * [配置K8S集群中JVM相关内存参数]({% post_url micro-service/docker/2022-11-24-01-k8s-jvm-memory-limit %})
+* [基础JDK的Docker镜像]({% post_url micro-service/docker/2022-12-08-01-basic-jdk-docker-image %})
+
 
 ## 模板代码
 
