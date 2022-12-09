@@ -21,6 +21,9 @@ keywords:   [Microservice]
 * [配置K8S集群中JVM相关内存参数]({% post_url micro-service/docker/2022-11-24-01-k8s-jvm-memory-limit %})
 * [基础JDK的Docker镜像]({% post_url micro-service/docker/2022-12-08-01-basic-jdk-docker-image %})
 
+## K8S
+* [K8S滚动升级策略]({% post_url micro-service/k8s/2022-12-09-02-k8s-rolling-upgrade-policy %})
+* [k8s 中 ingress 重写请求路径]({% post_url micro-service/k8s/2022-04-14-01-k8s-ingress-rewrite-path %})
 
 ## 模板代码
 
@@ -43,4 +46,4 @@ private static String folder = "micro-service" + File.separator + "docker";
 ```
 
 ## 参考资料
-* [开原框架目录汇总]({% post_url framework/2021-09-05-03-framework-menus %})
+* [微服务目录汇总]({% post_url micro-service/2021-10-03-01-micro-service-menus %})
