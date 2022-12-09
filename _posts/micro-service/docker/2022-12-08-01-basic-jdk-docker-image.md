@@ -7,11 +7,13 @@ categories: [Docker]
 keywords:   [Microservice, Docker]
 ---
 
-基础镜像脚本文件：
+定制化基础镜像可以方便的进行运维部署，也可以方便的进行JDK版本的管控。
+
+## 基础镜像脚本文件
 
 ```dockerfile
 FROM centos:7
-LABEL maintainer="wang.zhe8@iwhalecloud.com"
+LABEL maintainer="adolphor.github.io"
 
 #设置系统语言和时区
 ENV LANG en_US.UTF-8
@@ -34,7 +36,27 @@ RUN wget http://microservice-oss.oss-cn-hangzhou.aliyuncs.com/plugins/jdk-8u341-
 CMD ["/bin/bash"]
 ```
 
-Java项目范例文件：
+## 阿里云流水线构建镜像
+1) 使用阿里云CodeUp代码仓库，创建上面的 `dockerfile` 文件
+2) 使用阿里云流水线构建工具，使用上面的源码文件构建镜像，并推送到镜像仓库
+
+## 手动构建并推送到仓库
+参考如下构建和推送指令：
+```shell
+####### 构建 #######
+docker build -f Dockerfile -t jdk-basic/jdk8u341 .
+
+####### 推送到仓库 #######
+# 查询验证基础镜像
+docker images | grep jdk-basic
+docker tag b8659becaeba docker.adolphor.github.io/base/jdk-basic:jdk8u341
+# 登录
+docker login --username=adolphor https://docker.adolphor.github.io
+# 推送
+docker push docker.adolphor.github.io/base/jdk-basic:jdk8u341
+```
+
+## Java项目范例文件
 
 ```dockerfile
 #FROM centos
