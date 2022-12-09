@@ -1,10 +1,10 @@
 ---
 layout:     post
-title:      在macOS上使用docker运行MySQL
+title:      使用Docker在本地部署MySQL
 date:       2019-01-02 14:50:38 +0800
 postId:     2019-01-02-14-50-38
 categories: [Docker]
-keywords:   [Microservice, Docker]
+keywords:   [MicroService, Docker]
 ---
 
 搜索镜像
@@ -75,6 +75,6 @@ root/admin
 
 
 ## 参考资料
-
+* [在macOS上使用docker运行MySQL]({% post_url micro-service/docker/2019-01-02-manage-mysql-by-docker-of-macos %})
 * [外部访问docker容器(docker run -p/-P 指令)](https://www.jianshu.com/p/2b424c3bf0f7)
 * [Docker mysql 把数据存储在本地目录](https://blog.csdn.net/ataoajuan/article/details/78646581)

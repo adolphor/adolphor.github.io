@@ -4,7 +4,7 @@ title:      Docker基本操作
 date:       2017-08-23 19:00:47 +0800
 postId:     2017-08-23-19-00-47
 categories: [Docker]
-keywords:   [Microservice, Docker]
+keywords:   [MicroService, Docker]
 ---
 
 ## Docker相关指令
@@ -250,7 +250,7 @@ docker rmi `docker images -a -q`
 
 
 ## 参考资料
-
+* [Docker基本操作]({% post_url micro-service/docker/2017-08-23-docker-basic-operation %})
 * [docker官方文档](https://docs.docker.com/reference/)
 * 《第一本Docker书（修订版）》
 * [Docker — 从入门到实践](https://yeasy.gitbooks.io/docker_practice/content/)
