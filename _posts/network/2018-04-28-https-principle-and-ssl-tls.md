@@ -239,11 +239,11 @@ SSL握手协议作用是在通信双方之间协商出密钥，SSL记录层的�
 配置wireshark过滤规则：
 
 ```shell
-tcp && host adolphor.com
+tcp && host adolphor.github.io
 ```
 
 ```shell
-curl https://adolphor.com/js/main.js?version=20180129
+curl https://adolphor.github.io/js/main.js?version=20180129
 ```
 
 ### 浏览器下使用MITM

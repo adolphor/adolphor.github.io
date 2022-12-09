@@ -35,7 +35,7 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
   rules:
-    - host: swagger.adolphor.com
+    - host: swagger.adolphor.github.io
       http:
         paths:
           - backend:

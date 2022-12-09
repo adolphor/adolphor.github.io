@@ -24,7 +24,7 @@ permalink: /about/
         <li>{{website.sitename }}：<a href="{{ website.url }}" target="_blank">@{{ website.name }}</a></li>
     {% endif %}
 {% endfor %}
-{% if site.url contains 'adolphor.com' %}
+{% if site.url contains 'adolphor.github.io' %}
     <li>微信：<br /><img style="height:192px;width:192px;border:1px solid lightgrey;" src="{{ assets_base_url }}/assets/images/bob.zhu.png" alt="Bob.Zhu" /></li>
 {% endif %}
 </ul>

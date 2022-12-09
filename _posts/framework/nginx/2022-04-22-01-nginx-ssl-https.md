@@ -15,10 +15,10 @@ keywords:   [Nginx]
 server {
     listen                       443  ssl;
     listen                       [::]:443  ssl;
-    server_name                  adolphor.com;
+    server_name                  adolphor.github.io;
     access_log                   /var/log/nginx/hosts.sentry.access.log  main;
     ssl_certificate              /home/adolphor/certs/fullchain.cer;
-    ssl_certificate_key          /home/adolphor/certs/adolphor.com.key;
+    ssl_certificate_key          /home/adolphor/certs/adolphor.github.io.key;
     ssl_protocols                TLSv1 TLSv1.1 TLSv1.2;
     ssl_ciphers                  HIGH:!aNULL:!MD5;
     fastcgi_intercept_errors     on;
@@ -35,7 +35,7 @@ server {
 server {
     listen                      80;
     listen                      [::]:80;
-    server_name                 adolphor.com;
+    server_name                 adolphor.github.io;
     access_log                  /var/log/nginx/host.sentry.access.log  main;
     # 将http转为https
     rewrite ^(.*)$   https://$host$1    permanent;
@@ -51,16 +51,16 @@ server {
   * `netstat -anp | grep nginx`
 * 排查防火墙是否开放了80和443端口
 * 测试外网访问是否连接成功
-  * `telnet adolphor.com 443`
+  * `telnet adolphor.github.io 443`
 * 网页请求是否成功
-  * `curl adolphor.com`
+  * `curl adolphor.github.io`
 
 ## 错误排查
 
 ### ssl协议错误
 需要在指定443端口的时候，指定`ssl`协议，否则会出现如下错误：
 ```
-➜  ~ curl https://sentry.adolphor.com/auth/login/jyfe/\#exception
+➜  ~ curl https://sentry.adolphor.github.io/auth/login/jyfe/\#exception
 curl: (35) error:1400410B:SSL routines:CONNECT_CR_SRVR_HELLO:wrong version number
 ```
 

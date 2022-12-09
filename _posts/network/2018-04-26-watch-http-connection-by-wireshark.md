@@ -74,10 +74,10 @@ HTTP是`应用层`协议，主要解决如何包装数据，用以封装 HTTP �
 
 配置好wireshark的过滤规则之后，使用curl命名发送HTTP的GET请求，就可以看到握手以及资源访问相关的请求和连接了。
 
-配置规则，只监测TCP协议，而且是访问`adolphor.com`域名的链接：
+配置规则，只监测TCP协议，而且是访问`adolphor.github.io`域名的链接：
 
 ```shell
-tcp && host adolphor.com
+tcp && host adolphor.github.io
 ```
 
 请求指令：

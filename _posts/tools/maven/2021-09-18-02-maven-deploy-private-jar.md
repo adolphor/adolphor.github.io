@@ -83,16 +83,16 @@ keywords:   [Tools,Maven]
       <id>adolphor</id>
       <properties>
         <altReleaseDeploymentRepository>
-          adolphor-releases::default::http://maven.adolphor.com/repository/maven-releases/
+          adolphor-releases::default::http://maven.adolphor.github.io/repository/maven-releases/
         </altReleaseDeploymentRepository>
         <altSnapshotDeploymentRepository>
-          adolphor-snapshots::default::http://maven.adolphor.com/repository/maven-snapshots/
+          adolphor-snapshots::default::http://maven.adolphor.github.io/repository/maven-snapshots/
         </altSnapshotDeploymentRepository>
       </properties>
       <repositories>
         <repository>
           <id>adolphor-repository</id>
-          <url>http://maven.adolphor.com/repository/maven-public/</url>
+          <url>http://maven.adolphor.github.io/repository/maven-public/</url>
           <releases>
             <enabled>true</enabled>
           </releases>
@@ -175,7 +175,7 @@ mvn deploy -D skipTests --settings /Users/adolphor/.m2/settings.adolphor.xml -P 
 
 如果没有配置profile，可以直接配置全部的url地址信息，但不好的地方在于，还需要区分release和snapshots
 ```
-mvn clean deploy -D skipTests -D altDeploymentRepository=adolphor-releases::default::http://maven.adolphor.com/repository/maven-snapshots/
+mvn clean deploy -D skipTests -D altDeploymentRepository=adolphor-releases::default::http://maven.adolphor.github.io/repository/maven-snapshots/
 ```
 
 ## 独立文件
@@ -188,7 +188,7 @@ mvn deploy:deploy-file -DgroupId=com.adolphor.cloud \
                        -Dpacckaging=jar \
                        -Dfile=cloud-sunyur-interface-prod.jar \
                        -DrepositoryId=adolphor-snapshots \
-                       -Durl=http://maven.adolphor.com/repository/maven-snapshots/
+                       -Durl=http://maven.adolphor.github.io/repository/maven-snapshots/
 ```
 
 ## 参考资料

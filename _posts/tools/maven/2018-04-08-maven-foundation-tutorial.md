@@ -162,14 +162,14 @@ profile范例：
 
 ```
 mvn install:install-file -DgroupId=com.wlwx -DartifactId=wlwx-sms-sdk -Dversion=1.1.0 -Dpackaging=jar -Dfile=/Users/adolphor/Downloads/wlwx-sms-sdk-1.1.0.jar
-mvn   deploy:deploy-file -DgroupId=com.wlwx -DartifactId=wlwx-sms-sdk -Dversion=1.1.0 -Dpackaging=jar -Dfile=/Users/adolphor/Downloads/wlwx-sms-sdk-1.1.0.jar -Durl=http://maven.adolphor.com/repository/maven-releases/ -DrepositoryId=adolphor-releases
+mvn   deploy:deploy-file -DgroupId=com.wlwx -DartifactId=wlwx-sms-sdk -Dversion=1.1.0 -Dpackaging=jar -Dfile=/Users/adolphor/Downloads/wlwx-sms-sdk-1.1.0.jar -Durl=http://maven.adolphor.github.io/repository/maven-releases/ -DrepositoryId=adolphor-releases
 
 groupId=com.adolphor.android
 artifactId=link-library
 version=1.0-SNAPSHOT
 packaging=aar
 file=/Users/adolphor/Downloads/temp/adolphorlibrary-release.aar
-mvn deploy:deploy-file -DgroupId=$groupId -DartifactId=$artifactId -Dversion=$version -Dpackaging=$packaging -Dfile=$file -Durl=http://maven.adolphor.com/repository/maven-snapshots/ -DrepositoryId=adolphor-snapshots
+mvn deploy:deploy-file -DgroupId=$groupId -DartifactId=$artifactId -Dversion=$version -Dpackaging=$packaging -Dfile=$file -Durl=http://maven.adolphor.github.io/repository/maven-snapshots/ -DrepositoryId=adolphor-snapshots
 ```
 
 ### 剔除某个module

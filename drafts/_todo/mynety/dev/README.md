@@ -19,16 +19,16 @@ com.adolphor.mynety.common.utils.SocksServerUtils.loggerHandlers()
 
 ```
 export http_proxy=http://0.0.0.0:1187;export https_proxy=http://0.0.0.0:1187;
-curl http://adolphor.com/js/main.js?version=20180129
+curl http://adolphor.github.io/js/main.js?version=20180129
 
 telnet 127.0.0.1 1187
 
-GET http://adolphor.com/js/main.js?version=20180129 HTTP/1.1
-Host: adolphor.com
+GET http://adolphor.github.io/js/main.js?version=20180129 HTTP/1.1
+Host: adolphor.github.io
 Proxy-Connection: keep-alive
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36
 Accept: */*
-Referer: http://adolphor.com/
+Referer: http://adolphor.github.io/
 ```
 
 #### 建立隧道连接的过程
@@ -59,7 +59,7 @@ Proxy-Connection: Keep-Alive
 
 ```
 export http_proxy=http://0.0.0.0:1187;export https_proxy=http://0.0.0.0:1187;
-curl http://adolphor.com/js/main.js\?version\=20180129
+curl http://adolphor.github.io/js/main.js\?version\=20180129
 ```
 
 

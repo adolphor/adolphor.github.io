@@ -4,15 +4,15 @@
 wireshark不能抓取本地回环请求数据……
 
 ```shell
-tcp && host adolphor.com
+tcp && host adolphor.github.io
 ```
 
 # postman
 
 ```shell
-https://adolphor.com/js/main.js?version=20180129
+https://adolphor.github.io/js/main.js?version=20180129
 http://127.0.0.1:8080/
-http://mynetylan.adolphor.com:8080/
+http://mynetylan.adolphor.github.io:8080/
 ```
 
 # terminal
@@ -45,7 +45,7 @@ api.x.xmt.cn
 # 测试地址
 
 * http://jekyllthemes.org/assets/css/syntax.css
-* https://adolphor.com/js/main.js?version=20180129
+* https://adolphor.github.io/js/main.js?version=20180129
 
 
 
