@@ -44,10 +44,12 @@ CMD ["/bin/bash"]
 参考如下构建和推送指令：
 ```shell
 ####### 构建 #######
-docker build -f Dockerfile -t jdk-basic/jdk8u341 .
+docker build -f Dockerfile -t adolphor/jdk-basic:jdk8u341 .
 
 ####### 推送到仓库 #######
-# 查询验证基础镜像
+# 使用名称打TAG
+docker tag adolphor/jdk-basic:jdk8u341 docker.adolphor.github.io/base/jdk-basic:jdk8u341
+# 或者查询验证基础镜像后根据ID打TAG
 docker images | grep jdk-basic
 docker tag b8659becaeba docker.adolphor.github.io/base/jdk-basic:jdk8u341
 # 登录
