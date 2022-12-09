@@ -73,16 +73,15 @@ public class Generator {
       + File.separator + folder
       + File.separator + dateTitle + ".md";
 
+    String postUrl = folder + File.separator + dateTitle;
+    String postLink = "[" + postTitle + "]({% post_url " + postUrl + " %})";
+    System.out.println(postLink);
+    map.put("postLink", postLink);
+
     File file = new File(url);
     createFile(file);
     Writer out = new FileWriter(file);
     temp.process(map, out);
-
-    String postUrl = folder + File.separator + dateTitle;
-    String postLink = "[" + postTitle + "]({% post_url " + postUrl + " %})";
-    System.out.println(postLink);
-
-    out.write("\n* " + postLink + "\n");
 
     temp.process(map, new OutputStreamWriter(System.out));
     out.flush();
