@@ -25,14 +25,17 @@ keywords:   [Microservice]
 * [K8S滚动升级策略]({% post_url micro-service/k8s/2022-12-09-02-k8s-rolling-upgrade-policy %})
 * [k8s 中 ingress 重写请求路径]({% post_url micro-service/k8s/2022-04-14-01-k8s-ingress-rewrite-path %})
 
+## SkyWalking
+* [使用Docker在本地部署SkyWalking]({% post_url micro-service/skywalking/2022-12-09-03-skywalking-in-docker %})
+
 ## 模板代码
 
 ### content
-```java
+```content
 private static String postTitle = "领域驱动设计";
 private static String urlTitle = "micro-service-ddd";
-private static String categories = "[Microservice]";
-private static String tags = "[Microservice]";
+private static String categories = "[MicroService]";
+private static String tags = "[MicroService]";
 private static String folder = "micro-service" + File.separator + "content";
 ```
 
@@ -41,8 +44,17 @@ private static String folder = "micro-service" + File.separator + "content";
 private static String postTitle = "配置K8S集群中JVM相关内存参数";
 private static String urlTitle = "k8s-jvm-memory-limit";
 private static String categories = "[Docker]";
-private static String tags = "[Microservice, Docker]";
+private static String tags = "[Docker]";
 private static String folder = "micro-service" + File.separator + "docker";
+```
+
+### skywalking
+```java
+private static String postTitle = "使用Docker在本地部署SkyWalking";
+private static String urlTitle = "skywalking-in-docker";
+private static String categories = "[SkyWalking]";
+private static String tags = "[SkyWalking]";
+private static String folder = "micro-service" + File.separator + "skywalking";
 ```
 
 ## 参考资料
