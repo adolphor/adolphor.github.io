@@ -50,9 +50,11 @@ docker run --name skywalking-oap-server-9.1.0-es7 \
     --link elasticsearch7:es7 \
     -e SW_STORAGE=elasticsearch \
     -e SW_STORAGE_ES_CLUSTER_NODES=es7:9200 \
+    -e SW_NAMESPACE=skywalking \
     -p 11800:11800 -p 12800:12800 \
     -d apache/skywalking-oap-server:9.1.0
 ```
+* 环境变量参数：[skywalking-es-storage](https://skywalking.apache.org/docs/main/v9.2.0/en/setup/backend/backend-storage/#elasticsearch)
 
 ### SkyWalking UI
 验证地址：[http://127.0.0.1:18080/](http://127.0.0.1:18080/)
@@ -83,9 +85,12 @@ java -javaagent:/Users/adolphor/Applications/skywalking-agent-9.1.0/skywalking-a
 * [docker hub - kibana](https://hub.docker.com/_/kibana?tab=tags)
 * [基于Docker实现Skywalking安装](https://juejin.cn/post/7073720092273590309)
 * [Docker部署ElasticSearch及使用](https://juejin.cn/post/6844904202204872711#heading-4)
-* [skywalking 官网](https://skywalking.apache.org/downloads/)
+* [skywalking 官网下载](https://skywalking.apache.org/downloads/)
+* [skywalking 官网文档](https://skywalking.apache.org/docs/main/v9.3.0/readme/)
+* [使用CURL命令操作ES](https://cloud.tencent.com/developer/article/1509404)
 
 开始写作吧
+
 ```
 ![image-alter]({{ site.baseurl }}/image/post/2022/12/09/03/xxx.jpg)
 ```
