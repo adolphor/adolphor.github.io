@@ -120,6 +120,7 @@ keywords:   [Spring]
 ### 配置全局过滤
 
 > GlobalResponseHandler.java
+
 ```java
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.core.MethodParameter;
@@ -169,6 +170,7 @@ public class GlobalResponseHandler implements ResponseBodyAdvice<Object> {
 ### 手动去掉封装
 
 > IgnoreResponseAdvice.java
+
 ```java
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -187,6 +189,7 @@ public @interface IgnoreResponseAdvice {
 ## 单元测试
 
 > pom.xml
+
 ```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -196,6 +199,7 @@ public @interface IgnoreResponseAdvice {
 ```
 
 > StudentTest.java
+
 ```java
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = FunctionsDemoApplication.class)
