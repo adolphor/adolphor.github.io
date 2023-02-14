@@ -11,24 +11,32 @@ Java项目logback快速搭建范例
 
 ## pom文件配置
 ```xml
-<dependencies>
-  <dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-api</artifactId>
-    <version>${slf4j.version}</version>
-    <scope>compile</scope>
-  </dependency>
-  <dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-core</artifactId>
-    <version>${logback.version}</version>
-  </dependency>
-  <dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-classic</artifactId>
-    <version>${logback.version}</version>
-  </dependency>
-</dependencies>
+<project>
+    <properties>
+        <slf4j.version>1.7.33</slf4j.version>
+        <logback.version>1.2.10</logback.version>
+        <lombok.version>1.18.20</lombok.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+    </dependencies>
+</project>
 ```
 
 ## 配置范例
@@ -39,7 +47,7 @@ Java项目logback快速搭建范例
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
     <!--定义日志文件的存储地址 ，这个使用的是相对路径，即在日志文件存放在项目根路径logs文件夹下-->
-    <property name="LOG_HOME" value="./logs/"/>
+    <property name="LOG_HOME" value="./logs"/>
     <!-- 控制台输出 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
