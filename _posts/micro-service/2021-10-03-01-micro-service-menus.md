@@ -23,6 +23,7 @@ keywords:   [Microservice]
 * [基础JDK的Docker镜像]({% post_url micro-service/docker/2022-12-08-01-basic-jdk-docker-image %})
 * [使用Docker在本地部署SkyWalking]({% post_url micro-service/skywalking/2022-12-09-03-skywalking-in-docker %})
 * [使用Docker在本地部署MySQL]({% post_url micro-service/docker/2019-01-02-manage-mysql-by-docker-of-macos %})
+* [Docker内查询jvm状态报错：Can't attach to the process: ptrace]({% post_url micro-service/docker/2023-03-07-01-k8s-docker-jvm-ptrace %})
 
 ## K8S
 * [K8S滚动升级策略]({% post_url micro-service/k8s/2022-12-09-02-k8s-rolling-upgrade-policy %})
