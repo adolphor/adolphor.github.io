@@ -35,7 +35,7 @@ public class RedisDistributedLock {
         // key序列化 // value序列化
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setValueSerializer(new FastJsonRedisSerializer<>(Object.class));
-        return this.redisTemplate.opsForValue().setIfAbsent(PREFIX + lockKey, value, Duration.ofSeconds(lockExpireSec));
+        return this.redisTemplate.opsForValue().setIfAbsent(PREFIX + lockKey, value, Duration.ofMillis(lockExpireSec));
     }
 
     /**
@@ -43,11 +43,12 @@ public class RedisDistributedLock {
      *
      * @param lockKey            锁住的key
      * @param value              锁住的value,  解锁时,value 必须一致
-     * @param acquireTimeoutMils 获取超时时间
-     * @param lockExpireSec      锁住的时长。如果超时未解锁，视为加锁线程死亡，其他线程可夺取锁
+     * @param acquireTimeoutMils 获取超时时间：毫秒
+     * @param lockExpireSec      锁住的时长：毫秒。如果超时未解锁，视为加锁线程死亡，其他线程可夺取锁
      * @return
      */
     public boolean getLock(String lockKey, String value, long acquireTimeoutMils, long lockExpireSec) {
+        log.debug(" {} 尝试获取锁：{} => {}", Thread.currentThread(), lockKey, value);
         long now = System.currentTimeMillis();
         Boolean isLock = false;
         while (true) {
@@ -56,7 +57,7 @@ public class RedisDistributedLock {
                 return true;
             }
             if (System.currentTimeMillis() >= now + acquireTimeoutMils) {
-                //获取超时
+                log.warn(" {} 获取锁超时：{} => {}", Thread.currentThread(), lockKey, value);
                 return false;
             }
             try {
