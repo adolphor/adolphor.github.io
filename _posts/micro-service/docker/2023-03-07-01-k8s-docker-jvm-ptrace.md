@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Docker内查询jvm状态报错：Can't attach to the process: ptrace
+title:      Docker内查询jvm状态报错 Cannot attach to the process ptrace
 date:       2023-03-07 17:03:49 +0800
 postId:     2023-03-07-17-03-49
 categories: [Docker]
