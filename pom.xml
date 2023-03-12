@@ -9,12 +9,12 @@
   <url>adolphor.com</url>
   <description>jekyll集成Java项目</description>
   <properties>
+    <source.version>18</source.version>
+    <target.version>18</target.version>
     <maven-compiler.version>3.9.0</maven-compiler.version>
     <freemarker.version>2.3.23</freemarker.version>
     <jedis.version>2.1.0</jedis.version>
-    <source.version>1.8</source.version>
-    <target.version>1.8</target.version>
-    <lombok.version>1.18.8</lombok.version>
+    <lombok.version>1.18.22</lombok.version>
     <cglib.version>3.3.0</cglib.version>
     <netty.version>4.1.72.Final</netty.version>
     <junit.version>4.13.2</junit.version>
