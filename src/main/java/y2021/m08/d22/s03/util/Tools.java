@@ -12,8 +12,6 @@ http://www.broadview.com.cn/31065
 */
 package y2021.m08.d22.s03.util;
 
-import sun.misc.Unsafe;
-
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.Closeable;
@@ -27,12 +25,9 @@ import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public final class Tools {
   private static final Random rnd = new Random();
-  private static final Logger LOGGER = Logger.getAnonymousLogger();
 
   public static void startAndWaitTerminated(Thread... threads)
       throws InterruptedException {
@@ -87,17 +82,17 @@ public final class Tools {
       Thread.currentThread().interrupt();
     }
   }
-
-  public static Unsafe getUnsafe() {
-    try {
-      Field f = Unsafe.class.getDeclaredField("theUnsafe");
-      f.setAccessible(true);
-      return (Unsafe) f.get(null);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return null;
-  }
+// jdk.unsupported
+//  public static Unsafe getUnsafe() {
+//    try {
+//      Field f = Unsafe.class.getDeclaredField("theUnsafe");
+//      f.setAccessible(true);
+//      return (Unsafe) f.get(null);
+//    } catch (Exception e) {
+//      e.printStackTrace();
+//    }
+//    return null;
+//  }
 
   public static void silentClose(Closeable... closeable) {
     if (null == closeable) {
@@ -135,7 +130,7 @@ public final class Tools {
   }
 
   public static void log(String message) {
-    LOGGER.log(Level.INFO, message);
+    System.out.println(message);
   }
 
   public static String md5sum(final InputStream in) throws NoSuchAlgorithmException, IOException {

@@ -152,5 +152,6 @@ AsyncTask抽象类同时实现了Runnable 接口和Callable接口。AsyncTask �
 ## 参考资料
 
 * [Java并发 - 执行器]({% post_url java/concurrent/content/2021-07-27-03-concurrent-executor %})
+* [Java并发 - 【转】在 Java 中我们该如何应对阻塞调用]({% post_url java/concurrent/content/2023-03-11-02-a-tale-of-two-cities-how-blocking-calls-are-treated %})
 * [7.4' - 精通Java并发编程（第2版）](https://book.douban.com/subject/30327401/)
 * [8.8' - Java多线程编程实战指南-核心篇](https://book.douban.com/subject/27034721/)
