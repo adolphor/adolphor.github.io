@@ -20,7 +20,7 @@
     <junit.version>4.13.2</junit.version>
     <bcpkix-jdk15on.version>1.70</bcpkix-jdk15on.version>
     <javassist.version>3.12.1.GA</javassist.version>
-    <commons-net.version>3.6</commons-net.version>
+    <commons-net.version>3.9.0</commons-net.version>
     <commons-lang3.version>3.7</commons-lang3.version>
     <dependency-check.version>6.5.3</dependency-check.version>
   </properties>
