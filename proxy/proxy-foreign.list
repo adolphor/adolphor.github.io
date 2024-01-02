@@ -1,0 +1,86 @@
+PROCESS-NAME,git-remote-http
+PROCESS-NAME,minikube
+DOMAIN-KEYWORD,datou
+DOMAIN-KEYWORD,bighead
+DOMAIN-KEYWORD,paragon
+DOMAIN-KEYWORD,google
+DOMAIN-KEYWORD,apache-mirror
+DOMAIN-SUFFIX,1drv.com // safeincloud
+DOMAIN-SUFFIX,500px.com // picture website
+DOMAIN-SUFFIX,64clouds.com
+DOMAIN-SUFFIX,alpinelinux.org // docker 下载 alpine 系统
+DOMAIN-SUFFIX,api.segment.io // docker
+DOMAIN-SUFFIX,akamaized.net // 外国CDN网站，Microsoft Office 使用
+DOMAIN-SUFFIX,azurewebsites.net // ci网站，Microsoft Office 使用
+DOMAIN-SUFFIX,amazon.com
+DOMAIN-SUFFIX,amazonaws.com
+DOMAIN-SUFFIX,apache.org
+DOMAIN-SUFFIX,aixcoder.com
+DOMAIN-SUFFIX,bintray.com
+DOMAIN-SUFFIX,cataspboa.site
+DOMAIN-SUFFIX,cdn.jsdelivr.net
+DOMAIN-SUFFIX,cloudfront.net
+DOMAIN-SUFFIX,cloudflare-dns.com
+DOMAIN-SUFFIX,charlesproxy.com
+DOMAIN-SUFFIX,crisp.chat
+DOMAIN-SUFFIX,cdn.sstatic.net
+DOMAIN-SUFFIX,coursera.org
+DOMAIN-SUFFIX,docker.io
+DOMAIN-SUFFIX,docker.com
+DOMAIN-SUFFIX,en.bab.la
+DOMAIN-SUFFIX,fossies.org
+DOMAIN-SUFFIX,gee.cs.oswego.edu
+DOMAIN-SUFFIX,getpostman.com
+DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,githubusercontent.com
+DOMAIN-SUFFIX,githubassets.com
+DOMAIN-SUFFIX,gnu.org
+DOMAIN-SUFFIX,golang.org
+DOMAIN-SUFFIX,gradle.org
+DOMAIN-SUFFIX,home-assistant.cc
+DOMAIN-SUFFIX,ilovepdf.com
+DOMAIN-SUFFIX,imagemagick.org
+DOMAIN-SUFFIX,infopicked.com
+DOMAIN-SUFFIX,iterm2.com
+DOMAIN-SUFFIX,java.net
+DOMAIN-SUFFIX,jetbrains.com
+DOMAIN-SUFFIX,jekyllthemes.org
+DOMAIN-SUFFIX,kapeli.com
+DOMAIN-SUFFIX,k8s.gcr.io
+DOMAIN-SUFFIX,libsdl.org
+DOMAIN-SUFFIX,linux-ia64.org
+DOMAIN-SUFFIX,macbartender.com
+DOMAIN-SUFFIX,maven.org
+DOMAIN-SUFFIX,mycdn.co
+DOMAIN-SUFFIX,microsoft.com
+DOMAIN-SUFFIX,mirror.os6.org
+DOMAIN-SUFFIX,mycdn.co
+DOMAIN-SUFFIX,nektony.com
+DOMAIN-SUFFIX,npmjs.org
+DOMAIN-SUFFIX,office.com
+DOMAIN-SUFFIX,onedrive.com
+DOMAIN-SUFFIX,oracle.com
+DOMAIN-SUFFIX,pstmn.io
+DOMAIN-SUFFIX,pypi.org
+DOMAIN-SUFFIX,python.org
+DOMAIN-SUFFIX,pythonhosted.org
+DOMAIN-SUFFIX,right.com.cn
+DOMAIN-SUFFIX,rubygems.org
+DOMAIN-SUFFIX,rust-lang.org
+DOMAIN-SUFFIX,sqlite.org
+DOMAIN-SUFFIX,sw-update.obdev.at // little snitch
+DOMAIN-SUFFIX,segmentfault.com
+DOMAIN-SUFFIX,sourceforge.net
+DOMAIN-SUFFIX,sdifen.com
+DOMAIN-SUFFIX,seagate.com
+DOMAIN-SUFFIX,spring.io
+DOMAIN-SUFFIX,stackoverflow.com
+DOMAIN-SUFFIX,textnow.com // 美国虚拟电话卡
+DOMAIN-SUFFIX,travis-ci.org // IT
+DOMAIN-SUFFIX,travis-ci.com // IT
+DOMAIN-SUFFIX,vmware.com
+DOMAIN-SUFFIX,v2ex.com
+DOMAIN-SUFFIX,yandex.ru // 虚拟信用卡
+DOMAIN-SUFFIX,ghcr.io // brew
+DOMAIN-SUFFIX,brew.sh // brew
+DOMAIN-SUFFIX,medium.com // surge 论坛

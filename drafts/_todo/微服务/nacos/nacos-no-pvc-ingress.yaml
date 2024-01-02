@@ -1,0 +1,353 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nacos-svc-for-hostname
+  labels:
+    app: nacos-svc-for-hostname
+spec:
+  type: LoadBalancer
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.221.6.216
+  clusterIPs:
+    - 10.221.6.216
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+    - name: server
+      nodePort: 32536
+      port: 8848
+      protocol: TCP
+      targetPort: 8848
+    - name: client-rpc
+      nodePort: 30582
+      port: 9848
+      protocol: TCP
+      targetPort: 9848
+    - name: raft-rpc
+      nodePort: 32205
+      port: 9849
+      protocol: TCP
+      targetPort: 9849
+    ## 兼容1.4.x版本的选举端口
+    - name: old-raft-rpc
+      nodePort: 31455
+      port: 7848
+      protocol: TCP
+      targetPort: 7848
+  selector:
+    app: nacos
+  sessionAffinity: None
+status:
+  loadBalancer:
+    ingress:
+      - ip: 172.16.4.167
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nacos-cm
+data:
+  mysql.host: "rm-bp1z907t13ljt4k70.mysql.rds.aliyuncs.com"
+  mysql.db.name: "jy_microservice_auth"
+  mysql.port: "3306"
+  mysql.user: "jymsc_auth"
+  mysql.password: "baB39DMJAy"
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  creationTimestamp: '2022-06-22T02:12:55Z'
+  generation: 4
+  managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:podManagementPolicy': {}
+          'f:replicas': {}
+          'f:revisionHistoryLimit': {}
+          'f:selector': {}
+          'f:serviceName': {}
+          'f:template':
+            'f:metadata':
+              'f:annotations':
+                .: {}
+                'f:pod.alpha.kubernetes.io/initialized': {}
+              'f:labels':
+                .: {}
+                'f:app': {}
+            'f:spec':
+              'f:affinity':
+                .: {}
+                'f:podAntiAffinity':
+                  .: {}
+                  'f:requiredDuringSchedulingIgnoredDuringExecution': {}
+              'f:containers':
+                'k:{"name":"k8snacos"}':
+                  .: {}
+                  'f:env':
+                    .: {}
+                    'k:{"name":"JVM_MMS"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"JVM_MS"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"JVM_XMN"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"JVM_XMS"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"JVM_XMX"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MODE"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MYSQL_SERVICE_DB_NAME"}':
+                      .: {}
+                      'f:name': {}
+                      'f:valueFrom':
+                        .: {}
+                        'f:configMapKeyRef': {}
+                    'k:{"name":"MYSQL_SERVICE_HOST"}':
+                      .: {}
+                      'f:name': {}
+                      'f:valueFrom':
+                        .: {}
+                        'f:configMapKeyRef': {}
+                    'k:{"name":"MYSQL_SERVICE_PASSWORD"}':
+                      .: {}
+                      'f:name': {}
+                      'f:valueFrom':
+                        .: {}
+                        'f:configMapKeyRef': {}
+                    'k:{"name":"MYSQL_SERVICE_PORT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:valueFrom':
+                        .: {}
+                        'f:configMapKeyRef': {}
+                    'k:{"name":"MYSQL_SERVICE_USER"}':
+                      .: {}
+                      'f:name': {}
+                      'f:valueFrom':
+                        .: {}
+                        'f:configMapKeyRef': {}
+                    'k:{"name":"NACOS_REPLICAS"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"NACOS_SERVERS"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"NACOS_SERVER_PORT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"PREFER_HOST_MODE"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                  'f:image': {}
+                  'f:imagePullPolicy': {}
+                  'f:name': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":7848,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:name': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":8848,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:name': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":9848,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:name': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":9849,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:name': {}
+                      'f:protocol': {}
+                  'f:resources':
+                    .: {}
+                    'f:limits':
+                      .: {}
+                      'f:cpu': {}
+                      'f:memory': {}
+                    'f:requests':
+                      .: {}
+                      'f:cpu': {}
+                      'f:memory': {}
+                  'f:terminationMessagePath': {}
+                  'f:terminationMessagePolicy': {}
+              'f:dnsPolicy': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:securityContext': {}
+              'f:terminationGracePeriodSeconds': {}
+          'f:updateStrategy':
+            'f:rollingUpdate':
+              .: {}
+              'f:partition': {}
+            'f:type': {}
+      manager: ACK-Console Apache-HttpClient
+      operation: Update
+      time: '2022-11-23T06:36:57Z'
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:availableReplicas': {}
+          'f:collisionCount': {}
+          'f:currentReplicas': {}
+          'f:currentRevision': {}
+          'f:observedGeneration': {}
+          'f:readyReplicas': {}
+          'f:replicas': {}
+          'f:updateRevision': {}
+          'f:updatedReplicas': {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: '2023-04-13T16:06:49Z'
+  name: nacos
+  namespace: gateway
+  resourceVersion: '116647853'
+  uid: 0f5581ca-5a99-4bba-97bf-4ff2fa96cd8c
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: nacos
+  serviceName: nacos-svc-for-hostname
+  template:
+    metadata:
+      annotations:
+        pod.alpha.kubernetes.io/initialized: 'true'
+      labels:
+        app: nacos
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - nacos
+              topologyKey: kubernetes.io/hostname
+      containers:
+        - env:
+            - name: NACOS_REPLICAS
+              value: '2'
+            - name: MYSQL_SERVICE_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: mysql.host
+                  name: nacos-cm
+            - name: MYSQL_SERVICE_DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  key: mysql.db.name
+                  name: nacos-cm
+            - name: MYSQL_SERVICE_PORT
+              valueFrom:
+                configMapKeyRef:
+                  key: mysql.port
+                  name: nacos-cm
+            - name: MYSQL_SERVICE_USER
+              valueFrom:
+                configMapKeyRef:
+                  key: mysql.user
+                  name: nacos-cm
+            - name: MYSQL_SERVICE_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  key: mysql.password
+                  name: nacos-cm
+            - name: MODE
+              value: cluster
+            - name: NACOS_SERVER_PORT
+              value: '8848'
+            - name: PREFER_HOST_MODE
+              value: hostname
+            - name: NACOS_SERVERS
+              value: >-
+                nacos-0.nacos-svc-for-hostname.gateway.svc.cluster.local:8848
+                nacos-1.nacos-svc-for-hostname.gateway.svc.cluster.local:8848
+            - name: JVM_XMS
+              value: 1g
+            - name: JVM_XMX
+              value: 2g
+            - name: JVM_XMN
+              value: 1g
+            - name: JVM_MS
+              value: 128m
+            - name: JVM_MMS
+              value: 320m
+          image: 'nacos/nacos-server:latest'
+          imagePullPolicy: Always
+          name: k8snacos
+          ports:
+            - containerPort: 8848
+              name: client
+              protocol: TCP
+            - containerPort: 9848
+              name: client-rpc
+              protocol: TCP
+            - containerPort: 9849
+              name: raft-rpc
+              protocol: TCP
+            - containerPort: 7848
+              name: old-raft-rpc
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 500m
+              memory: 3Gi
+            requests:
+              cpu: 200m
+              memory: 3Gi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate
+status:
+  availableReplicas: 2
+  collisionCount: 0
+  currentReplicas: 2
+  currentRevision: nacos-79cc7786f9
+  observedGeneration: 4
+  readyReplicas: 2
+  replicas: 2
+  updateRevision: nacos-79cc7786f9
+  updatedReplicas: 2
+

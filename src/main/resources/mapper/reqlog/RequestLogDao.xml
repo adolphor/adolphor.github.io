@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="y2023.m10.d08.reqlog.mvc.dao.RequestLogDao">
+
+    <resultMap type="y2023.m10.d08.reqlog.mvc.entity.RequestLog" id="MemberDouyinLogMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="uri" column="uri" jdbcType="VARCHAR"/>
+        <result property="method" column="method" jdbcType="VARCHAR"/>
+        <result property="reqParam" column="req_param" jdbcType="VARCHAR"/>
+        <result property="respParam" column="resp_param" jdbcType="VARCHAR"/>
+        <result property="asyncResult" column="async_result" jdbcType="VARCHAR"/>
+        <result property="wasSuccess" column="was_success" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <insert id="insertDouyinLog" useGeneratedKeys="true" keyProperty="id">
+        insert into member_douyin_log
+            (uri, method, req_param, resp_param, was_success, create_time, update_time)
+        values
+            (#{uri},#{method},#{reqParam},#{respParam},0,now(),now());
+    </insert>
+
+    <update id="updateDouyinLogResult">
+        update member_douyin_log
+        <set>
+            <if test="reqParam != null">
+                req_param=#{reqParam},
+            </if>
+            <if test="wasSuccess != null">
+                was_success=#{wasSuccess},
+            </if>
+            <if test="respParam != null">
+                resp_param=#{respParam},
+            </if>
+            <if test="asyncResult != null">
+                async_result=#{asyncResult},
+            </if>
+            update_time=now()
+        </set>
+        where id = #{id}
+    </update>
+
+</mapper>
