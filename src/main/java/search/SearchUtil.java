@@ -6,40 +6,47 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class SearchUtil {
 
-    private final static String parent = "/Users/adolphor/IdeaProjects/";
+    private final static String parent = "/opt/homebrew/lib/node_modules/";
     private final static String keyWord = "skywalking-agent";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 //        searchJavaName(parent);
-        searchJavaContent(parent);
+//        searchJavaContent(parent);
+        searchPathName(parent);
 //        searchAllContent(parent);
 //        searchDockerfileContent(parent);
     }
 
-    private static void searchJavaName(String path) {
+    private static void searchPathName(String path) throws IOException {
+        recursion(new File(path), "node_modules", "pathName");
+    }
+
+    private static void searchJavaName(String path) throws IOException {
         recursion(new File(path), ".java", "fileName");
     }
 
-    private static void searchJavaContent(String path) {
+    private static void searchJavaContent(String path) throws IOException {
         recursion(new File(path), ".java", "fileContent");
     }
 
-    private static void searchAllContent(String path) {
+    private static void searchAllContent(String path) throws IOException {
         recursion(new File(path), ".", "fileContent");
     }
 
-    private static void searchDockerfileContent(String path) {
+    private static void searchDockerfileContent(String path) throws IOException {
         recursion(new File(path), "Dockerfile", "fileContent");
     }
 
-    private static void searchYamlContent(String path) {
+    private static void searchYamlContent(String path) throws IOException {
         recursion(new File(path), "yaml", "fileContent");
     }
 
-    private static void recursion(File file, String suffix, String type) {
+    private static void recursion(File file, String suffix, String type) throws IOException {
         if (file.isFile()) {
             if (!file.getName().contains(suffix)) {
                 return;
@@ -51,6 +58,11 @@ public class SearchUtil {
                 searchByContent(file);
             }
         } else if (file.isDirectory()) {
+            if (type.equalsIgnoreCase("pathName")) {
+                if (file.getName().contains(suffix)) {
+                    System.out.println("["+ Files.getLastModifiedTime(Paths.get(file.getAbsolutePath()))+"]"+file.getAbsolutePath());;
+                }
+            }
             File[] files = file.listFiles();
             for (File child : files) {
                 recursion(child, suffix, type);
